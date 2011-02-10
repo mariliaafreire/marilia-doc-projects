@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.epf.uma:ProcessComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.epf.uma="http://www.eclipse.org/epf/uma/1.0.5/uma.ecore" xmi:id="_bTQQ4FKfEd6RC4N0BJN41w" name="iteracao" guid="_bTQQ4FKfEd6RC4N0BJN41w" authors="Wanderson">
+  <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_NTEowVKhEd6xi8DHJhvoxg" name="New Activity" guid="_NTEowVKhEd6xi8DHJhvoxg">
+    <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_NTEowlKhEd6xi8DHJhvoxg" name="New Activity" guid="_NTEowlKhEd6xi8DHJhvoxg" presentationName="Analise OO" superActivities="_bTQQ4VKfEd6RC4N0BJN41w"/>
+  </childPackages>
+  <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_OiiFgVKhEd6xi8DHJhvoxg" name="New Activity_2" guid="_OiiFgVKhEd6xi8DHJhvoxg">
+    <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_OiiFglKhEd6xi8DHJhvoxg" name="New Activity_2" guid="_OiiFglKhEd6xi8DHJhvoxg" presentationName="Projeto OO" superActivities="_bTQQ4VKfEd6RC4N0BJN41w" linkToPredecessor="_XpWgEFKhEd6xi8DHJhvoxg"/>
+    <processElements xsi:type="org.eclipse.epf.uma:WorkOrder" xmi:id="_XpWgEFKhEd6xi8DHJhvoxg" guid="_XpWgEFKhEd6xi8DHJhvoxg" pred="_NTEowlKhEd6xi8DHJhvoxg"/>
+  </childPackages>
+  <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_PiqFwVKhEd6xi8DHJhvoxg" name="New Activity_3" guid="_PiqFwVKhEd6xi8DHJhvoxg">
+    <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_PiqFwlKhEd6xi8DHJhvoxg" name="New Activity_3" guid="_PiqFwlKhEd6xi8DHJhvoxg" presentationName="Projeto de Testes" superActivities="_bTQQ4VKfEd6RC4N0BJN41w" linkToPredecessor="_mph6sVKhEd6xi8DHJhvoxg"/>
+    <processElements xsi:type="org.eclipse.epf.uma:WorkOrder" xmi:id="_mph6sVKhEd6xi8DHJhvoxg" guid="_mph6sVKhEd6xi8DHJhvoxg" pred="_OiiFglKhEd6xi8DHJhvoxg"/>
+  </childPackages>
+  <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_Q94GkVKhEd6xi8DHJhvoxg" name="New Activity_4" guid="_Q94GkVKhEd6xi8DHJhvoxg">
+    <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_Q94GklKhEd6xi8DHJhvoxg" name="New Activity_4" guid="_Q94GklKhEd6xi8DHJhvoxg" presentationName="Implementacao" superActivities="_bTQQ4VKfEd6RC4N0BJN41w" linkToPredecessor="_mH50UFKhEd6xi8DHJhvoxg"/>
+    <processElements xsi:type="org.eclipse.epf.uma:WorkOrder" xmi:id="_mH50UFKhEd6xi8DHJhvoxg" guid="_mH50UFKhEd6xi8DHJhvoxg" pred="_OiiFglKhEd6xi8DHJhvoxg"/>
+  </childPackages>
+  <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_SOhPEFKhEd6xi8DHJhvoxg" name="New Activity_5" guid="_SOhPEFKhEd6xi8DHJhvoxg">
+    <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_SOhPEVKhEd6xi8DHJhvoxg" name="New Activity_5" guid="_SOhPEVKhEd6xi8DHJhvoxg" presentationName="Implementacao dos testes" superActivities="_bTQQ4VKfEd6RC4N0BJN41w" linkToPredecessor="_nYQo8VKhEd6xi8DHJhvoxg"/>
+    <processElements xsi:type="org.eclipse.epf.uma:WorkOrder" xmi:id="_nYQo8VKhEd6xi8DHJhvoxg" guid="_nYQo8VKhEd6xi8DHJhvoxg" pred="_PiqFwlKhEd6xi8DHJhvoxg"/>
+  </childPackages>
+  <childPackages xsi:type="org.eclipse.epf.uma:ProcessPackage" xmi:id="_UFszIVKhEd6xi8DHJhvoxg" name="New Activity_6" guid="_UFszIVKhEd6xi8DHJhvoxg">
+    <processElements xsi:type="org.eclipse.epf.uma:Activity" xmi:id="_UFszIlKhEd6xi8DHJhvoxg" name="New Activity_6" guid="_UFszIlKhEd6xi8DHJhvoxg" presentationName="Execucao dos testes" superActivities="_bTQQ4VKfEd6RC4N0BJN41w" linkToPredecessor="_tlaHsVKhEd6xi8DHJhvoxg _tlaHslKhEd6xi8DHJhvoxg"/>
+    <processElements xsi:type="org.eclipse.epf.uma:WorkOrder" xmi:id="_tlaHsVKhEd6xi8DHJhvoxg" guid="_tlaHsVKhEd6xi8DHJhvoxg" pred="_SOhPEVKhEd6xi8DHJhvoxg"/>
+    <processElements xsi:type="org.eclipse.epf.uma:WorkOrder" xmi:id="_tlaHslKhEd6xi8DHJhvoxg" guid="_tlaHslKhEd6xi8DHJhvoxg" pred="_Q94GklKhEd6xi8DHJhvoxg"/>
+  </childPackages>
+  <process xsi:type="org.eclipse.epf.uma:DeliveryProcess" xmi:id="_bTQQ4VKfEd6RC4N0BJN41w" name="iteração" guid="_bTQQ4VKfEd6RC4N0BJN41w" presentationName="iteracao" breakdownElements="_NTEowlKhEd6xi8DHJhvoxg _OiiFglKhEd6xi8DHJhvoxg _PiqFwlKhEd6xi8DHJhvoxg _Q94GklKhEd6xi8DHJhvoxg _SOhPEVKhEd6xi8DHJhvoxg _UFszIlKhEd6xi8DHJhvoxg">
+    <presentation href="uma://-Ww3VcMCvuCu4oUuj8OB-IA#-Ww3VcMCvuCu4oUuj8OB-IA"/>
+    <defaultContext href="uma://_ubLO4VKdEd6RC4N0BJN41w#_8pZysFKeEd6RC4N0BJN41w"/>
+    <validContext href="uma://_ubLO4VKdEd6RC4N0BJN41w#_8pZysFKeEd6RC4N0BJN41w"/>
+  </process>
+</org.eclipse.epf.uma:ProcessComponent>

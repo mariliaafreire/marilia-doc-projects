@@ -1,0 +1,234 @@
+modeltype JPDL uses jpdl31('urn:jbpm.org:jpdl-3.1');
+modeltype MTRC uses MetricModel('Metrica');
+modeltype UMA uses uma('http://www.eclipse.org/epf/uma/1.0.5/uma.ecore');
+	
+transformation UMA2JPDL(in pro:UMA, in mt:MTRC ,out jpdl:JPDL);
+
+main() {
+	pro.rootObjects()[UMA::ProcessComponent]->map Process2Process(mt);	 
+}
+
+/*****************
+ *  MAPEAMENTOS  *
+ *****************/
+
+mapping UMA::ProcessComponent::Process2Process(in met: MTRC) : JPDL::ProcessDefinitionType {
+	
+	name := self.name;
+	//cria o nó inicial e final do processo
+	
+	    result.startState := object JPDL::StartStateType { 
+				name := 'Inicio'; 
+				
+		};
+		result.endState := object JPDL::EndStateType { 
+				name := 'End'; 
+				
+		};
+	
+	taskNode := self.childPackages.allInstances(UMA::Activity)-> map Activity2TaskNode(self, met,result)-> asOrderedSet();
+	
+	self.childPackages.allInstances(UMA::Activity)-> map ligarAosJoinsAndStart(result)->asOrderedSet(); 
+	
+	 
+}
+
+mapping UMA::Activity::Activity2TaskNode(in epfSpec : UMA::ProcessComponent,in met: MTRC, inout process : JPDL::ProcessDefinitionType) : JPDL::TaskNodeType {
+	
+		-- verifica a existencia de um no join como origem
+			if (self.linkToPredecessor->size()>1) then{
+			
+			var join := object JPDL::JoinType {
+				name := 'join' + self.name;
+				transition := object JPDL::TransitionType{
+					name := 'to_'+ self.name;
+					to:= self.name;
+				};
+			};
+			process.join += Sequence{join};
+		}
+		endif;
+		
+			
+		
+	name := self.name;
+	
+	transition := epfSpec.childPackages.allInstances(UMA::WorkOrder)->map criarTransicoes(epfSpec,self)->asOrderedSet();
+	
+	if(self.allInstances(UMA::TaskDescriptor)->isEmpty())then{
+		log('task is empty');
+	    var t := object JPDL::TaskType {
+	    	name := self.name;
+	    };
+	    result.task += Sequence{t};
+	} else {
+	     task := self.allInstances(UMA::TaskDescriptor)-> map Task2Task(met)-> asOrderedSet();
+	}endif;
+	
+   var metrics := met.objectsOfType(MTRC::ActivityMetric); 	
+   var nomeInput: String;
+   var i :=0;
+   metrics->forEach(ele) 
+   { 		log(ele.activityBegin + ' vs ' + self.name);
+   			if(ele.form = 0)then{
+   				//result.blocking = true;
+   			}endif;
+            if(ele.activityBegin.equalsIgnoreCase(self.name) or ele.activityEnd.equalsIgnoreCase(self.name)) then {
+   				result.event += Sequence {
+   					object JPDL::EventType{
+   					type:="task-end";
+   					
+   					action+=Sequence {
+   						object JPDL::ActionType{
+   							name:=ele.name;
+   							
+   						}
+   					}
+   						
+   					}
+   				}
+   			} endif;
+   			i:=i+1;
+   };
+	
+	
+	end{
+	
+		if (result.transition->size()>1)then{
+			log('achou um fork');
+			var i=1;
+		
+			epfSpec.childPackages.allInstances(UMA::Activity)->forEach (ativ) {
+			 	ativ.linkToPredecessor.pred->forEach (atividade | atividade.name.equalsIgnoreCase(self.name)) {
+			 	result.transition->at(i).name := result.transition->at(i).name+(i.oclAsType(String));
+			  	result.transition->at(i).to := ativ.name;
+			  	
+			  	i := i+1;
+			  }
+			 };			
+			
+			var no := object JPDL::ForkType {
+					name := 'fork'+result.name;
+					transition := result.transition;
+				};
+			
+			process.fork+= Sequence{no};
+		    
+		    var forkT := object JPDL::TransitionType{
+					name := 'forkTransition' + result.name;
+					to := 'fork'+result.name;
+			};
+			result.transition += Sequence{forkT}
+		
+		}endif;	
+	
+	}
+	
+}
+mapping UMA::TaskDescriptor::Task2Task(in met: MTRC):JPDL::TaskType{
+  name := self.name;
+  var metrics := met.objectsOfType(MTRC::TaskMetric); 	
+  var nomeInput: String;
+   var i :=0;
+   metrics->forEach(ele) 
+   { 		log(ele.tasksBase->at(i) + ' vs ' + self.name);
+   			if(ele.form = 0)then{
+   				result.blocking = true;
+   			}endif;
+            if(ele.tasksBase->at(0).equalsIgnoreCase(self.name) ) then {
+   				result.event += Sequence {
+   					object JPDL::EventType{
+   					type:="task-end";
+   					
+   					action+=Sequence {
+   						object JPDL::ActionType{
+   							name:=ele.name;
+   							
+   						}
+   					}
+   						
+   					}
+   				}
+   			} endif;
+   			i:= i+1;
+   };
+}
+
+mapping UMA::WorkOrder::criarTransicoes(in epfSpec: UMA::ProcessComponent,in atividade:UMA::Activity): JPDL::TransitionType
+	when{self.pred.name.equalsIgnoreCase(atividade.name)}{	
+		
+	log('criou transicao'+atividade.name);
+	name := atividade.name+'Transition';
+	to := getProximo(atividade.name,epfSpec);
+	end{
+	   	
+	}
+}
+
+
+
+mapping UMA::Activity::ligarAosJoinsAndStart(inout process: JPDL::ProcessDefinitionType){
+		if (self.linkToPredecessor->size()>1)then {
+			self.linkToPredecessor->forEach (pred) {
+				var i := 1;
+				log("PRED "+pred.pred.presentationName);
+			process.allInstances(JPDL::TaskNodeType)->forEach(ativ|ativ.name=pred.pred.presentationName){//
+			
+				ativ.transition->at(i).name :=  'join' + self.name + 'transition';
+				ativ.transition->at(i).to := 'join' + self.name;
+				i := i+1;
+			};
+		  }
+		}endif;
+		
+		// CRIA TRANSIÇÕES FROM STARTSTATE
+		if (self.linkToPredecessor->isEmpty())then {
+		   log('transição inicio');
+			var i := 1;
+			process.allInstances(JPDL::StartStateType)->forEach(ativ){
+			log('estado inicial');
+			var trst := object JPDL::TransitionType {
+				name := 'start' + self.name + 'transition';
+				to := self.name;
+			};
+			ativ.transition += trst;
+			}
+		}endif;
+		
+		// cria transições para o fim...
+		
+		process.allInstances(JPDL::TaskNodeType)->forEach(task) {
+			if(task.transition->isEmpty())then{
+				var trst := object JPDL::TransitionType {
+				name := task.name + 'transition';
+				to := 'End';
+			};
+			task.transition += trst;
+			}endif;
+		};
+	
+}
+/************
+ *  QUERYS  *
+ ************/
+ 
+query getProximo(in atual : String, in epfSpec : UMA::ProcessComponent) : String {
+	var proximo := 'End';
+	epfSpec.childPackages.allInstances(UMA::Activity)->forEach (ativ) { ativ.linkToPredecessor.pred->forEach (atividade | atividade.name.equalsIgnoreCase(atual)) {  proximo := ativ.name;}};
+	return proximo;
+}
+/**
+query criarTransicao(in atual: PRO::Activity, in epfSpec: PRO::Process): Sequence {
+	
+
+	epfSpec.activity->forEach (ativ) { ativ.predecessor->forEach (atividade | atividade.name = atual) {  
+	
+	}};
+	
+	var t := object JPDL::TransitionType{
+	name := atual.name+'Transition';
+	
+	to := getProximo(atual.name,epfSpec);
+	};
+	return t;
+}*/

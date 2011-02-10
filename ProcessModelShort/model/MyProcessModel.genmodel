@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ProcessModelShort/src"
+    modelPluginID="ProcessModelShort" modelName="MyProcessModel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>MyProcessModel.ecore</foreignModel>
+  <genPackages prefix="ProcessModel" disposableProviderFactory="true" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="MyProcessModel.ecore#/">
+    <genClasses ecoreClass="MyProcessModel.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyProcessModel.ecore#//Task/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyProcessModel.ecore#//Task/input"/>
+    </genClasses>
+    <genClasses ecoreClass="MyProcessModel.ecore#//Activity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyProcessModel.ecore#//Activity/task"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyProcessModel.ecore#//Activity/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyProcessModel.ecore#//Activity/predecessor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyProcessModel.ecore#//Activity/index"/>
+    </genClasses>
+    <genClasses ecoreClass="MyProcessModel.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyProcessModel.ecore#//Process/name"/>
+      <genFeatures ecoreFeature="ecore:EAnnoation MyProcessModel.ecore#//Activity/task"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyProcessModel.ecore#//Process/activity"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

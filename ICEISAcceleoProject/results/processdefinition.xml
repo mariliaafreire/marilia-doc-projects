@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-definition name = "iceis">
+
+<swimlane name="manager">
+	<assignment actor-id="manager"/>
+</swimlane>
+
+
+	<start-state name="Inicio">
+		<task name="Inicio" swimlane="manager">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+			<transition name="startidentify_and_refine_requirementstransition" to="identify_and_refine_requirements"/>
+			<transition name="starttest_solutiontransition" to="test_solution"/>
+			<transition name="startdevelop_solutiontransition" to="develop_solution"/>
+			<transition name="startdevelop_architecturetransition" to="develop_architecture"/>
+			<transition name="startongoing_taskstransition" to="ongoing_tasks"/>
+			<transition name="startplan_manage_iterationtransition" to="plan_manage_iteration"/>
+	</start-state>
+	<task-node name="develop_architecture" >
+		 
+			<task name="develop_architecture" swimlane="manager">
+			  <controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			  </controller>
+				
+			</task>
+			<transition name="develop_architecturetransition" to="joinEnd"/>
+		
+	</task-node>
+	<task-node name="identify_and_refine_requirements" >
+		 
+			<task name="identify_and_refine_requirements" swimlane="manager">
+			  <controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			  </controller>
+				
+			</task>
+			<transition name="identify_and_refine_requirementstransition" to="joinEnd"/>
+		
+			<event type="task-end">
+					<action name="UCReq" class="">
+					</action>
+			</event>
+	</task-node>
+	<task-node name="test_solution" >
+		 
+			<task name="test_solution" swimlane="manager">
+			  <controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			  </controller>
+				
+			</task>
+			<transition name="test_solutiontransition" to="joinEnd"/>
+		
+			<event type="task-end">
+					<action name="UCDev" class="">
+					</action>
+			</event>
+	</task-node>
+	<task-node name="ongoing_tasks" >
+		 
+			<task name="ongoing_tasks" swimlane="manager">
+			  <controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			  </controller>
+				
+			</task>
+			<transition name="ongoing_taskstransition" to="joinEnd"/>
+		
+	</task-node>
+	<task-node name="develop_solution" >
+		 
+			<task name="develop_solution" swimlane="manager">
+			  <controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			  </controller>
+				
+			</task>
+			<transition name="develop_solutiontransition" to="joinEnd"/>
+		
+			<event type="task-end">
+					<action name="UCDev" class="">
+					</action>
+			</event>
+	</task-node>
+	<task-node name="plan_manage_iteration" >
+		 
+			<task name="plan_manage_iteration" swimlane="manager">
+			  <controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			  </controller>
+				
+			</task>
+			<transition name="plan_manage_iterationtransition" to="joinEnd"/>
+		
+	</task-node>
+	<join name=joinEnd">
+			<transition name="to_EndTransition" to="End"/>
+	</join>
+	<end-state name="End"/>
+</process-definition>

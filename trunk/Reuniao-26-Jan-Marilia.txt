@@ -1,0 +1,54 @@
+
+
+---------------------------------------------------------
+
+  - Titulo: Automatic Deployment and Monitoring of Software Processes
+
+     - Section 1
+       - Motivar a importancia de metricas, mas ressaltar que existe pouca preocupacao e trabalhos explorando o deployment automatico de metricas em ambientes de execução de processos... (embora muitas sao usadas em cenarios de processos de negocio)...
+
+   
+     - Section 2: Automatic Monitoring of Software Development Processes
+
+        - Section 2.1: A Model-Driven Approach to Managing Variabilities
+
+
+        - Section 2.2: Model-Driven Strategies and Techniques to Automatically Monitoring Software Processes
+             - Mostrar em linhas gerais como estamos adaptando o processo anterior para monitorar processos de software
+              (olhar na figura do ICEIS/SBES/SBCARs, e ver quem os quadrados tracejados que vao entrar para poder descreve-los em linhas gerais um-a-um)
+
+     - Section 3: Implementation Issues (melhorar esse nome)
+         - Section 3.1: Automatic Derivation of Software Processes
+             (mostrar uma figura de um processo com os modelos de variabilidade, e sua respectiva selecao, dando ideia de um exemplo de processo que será explorado - focalizar fluxo de requisito e implementacao) 
+
+         - Section 3.2: Composing Metrics in Software Processes
+           (mostrar o metamodelo e explicá-lo, tem que ser modelado de tal forma a deixar alguns elementos gerais - metric )             
+
+             (ilustrar um exemplo de um modelo de metricas com respectiva composicao, dando ideia de como é feita a selecao de atividades/tasks que uma data metrica afeta)
+
+         - Section 3.3: Automatic Deployment of Software Processes and Metrics (aproveitar exemplo ou descricao/texto do artigo SBCARS)
+
+            - Mapeamento Modelo-para-Modelo 
+            - Mapeamento Modelo-para-Texto
+
+         - Section 3.4: Monitoring of Software Processes with Metrics
+            - Exemplo mostrando a execucao e eventual codigo/artefato gerado para contemplar a metrica
+ 
+
+     - Section 4: (Related Work)
+        - algumas abordagens propostas promovendo a execucao de processos, mas nenhuma com foco no deployment de metricas para fins de monitoramento do processo
+        - trablahos de processos de negocio
+
+
+     - Section 5:
+
+ 
+---------------------------------------------------------
+
+Proximos Passos:
+
+(i) Focalizar a escrita da Secao 3
+
+(ii) 
+
+---------------------------------------------------------

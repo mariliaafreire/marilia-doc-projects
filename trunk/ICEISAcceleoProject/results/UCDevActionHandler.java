@@ -1,4 +1,4 @@
-package com.sample.action;
+package br.ufrn.dimap.ppgsc;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ public class UCDevActionHandler implements ActionHandler {
 	Log log = LogFactory.getLog(this.getClass());
 	 
 	public void execute(ExecutionContext context) throws Exception {
-		long develop = (Long)context.getContextInstance().getVariable("UCDevTime");
+		double slice = (Double)context.getContextInstance().getVariable("UCDevTime");
 		
 		Date inicio = context.getTaskInstance().getStart();
 		Date fim = context.getTaskInstance().getEnd();
@@ -24,9 +24,9 @@ public class UCDevActionHandler implements ActionHandler {
 		
 		double hoursTime = timeTotal / (1000.0 * 60.0 * 60.0);
 		
-		log.info(context.getTaskInstance().getName()+ " Updating   UCDev " + hoursTime + "h(s)"));
+		log.info(context.getTaskInstance().getName()+ " Updating   UCDev " + hoursTime + "h(s)");
 		
-		context.getTaskInstance().setVariable("UCDev", hoursTime);
+		context.getTaskInstance().setVariable("UCDevTime", hoursTime + slice);
 	}
 	
 	

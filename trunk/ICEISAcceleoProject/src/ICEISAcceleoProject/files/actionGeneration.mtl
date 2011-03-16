@@ -3,7 +3,7 @@
 
 [template public actionGeneration(a : ActionType)]
 [file (a.name.concat('ActionHandler.java'), false, 'UTF-8')]
-package com.sample.action;
+package br.ufrn.dimap.ppgsc;
 
 import java.util.Date;
 
@@ -18,7 +18,7 @@ public class [a.name/]ActionHandler implements ActionHandler {
 	Log log = LogFactory.getLog(this.getClass());
 	 
 	public void execute(ExecutionContext context) throws Exception {
-		long develop = (Long)context.getContextInstance().getVariable("[a.name/]Time");
+		double slice = (Double)context.getContextInstance().getVariable("[a.name/]Time");
 		
 		Date inicio = context.getTaskInstance().getStart();
 		Date fim = context.getTaskInstance().getEnd();
@@ -29,9 +29,9 @@ public class [a.name/]ActionHandler implements ActionHandler {
 		
 		double hoursTime = timeTotal / (1000.0 * 60.0 * 60.0);
 		
-		log.info(context.getTaskInstance().getName()+ " Updating   [a.name/] " + hoursTime + "h(s)"));
+		log.info(context.getTaskInstance().getName()+ " Updating   [a.name/] " + hoursTime + "h(s)");
 		
-		context.getTaskInstance().setVariable("[a.name/]", hoursTime);
+		context.getTaskInstance().setVariable("[a.name/]Time", hoursTime + slice);
 	}
 	
 	

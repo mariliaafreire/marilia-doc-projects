@@ -22,21 +22,24 @@
   </f:facet>
   <!-- TASKFORM ROWS -->
   <jbpm:datacell>
+      <h:outputText value="[t.ancestors(VariableType).name/]" />
+  </jbpm:datacell> 
+  <jbpm:datacell>
       <f:facet name="header">	  
       <h:outputText value="Comment"/>
     </f:facet>
-    <h:inputText value="#{var"[ '[' /]'comment'[']'/]"}" />
+    <h:inputText value="#{var[ '[' /]'comment'[']'/]}" />
   </jbpm:datacell> 
   <jbpm:datacell>
    <f:facet name="header">	  
       <h:outputText value="Completed"/>
     </f:facet>
-    <h:selectOneMenu id="completed" value="#var"[ '[' /]'completed'[']'/]>   
+    <h:selectOneMenu id="completed" value="#var[ '[' /]'completed'[']'/]" >   
 		<f:selectItem id="it1" itemLabel="0%" itemValue="0" /> 
-		<f:selectItem id="it1" itemLabel="25%" itemValue="25" />  
-		<f:selectItem id="it1" itemLabel="50%" itemValue="50" />  
-		<f:selectItem id="it1" itemLabel="75%" itemValue="75" />
-		<f:selectItem id="it1" itemLabel="100%" itemValue="100" />      
+		<f:selectItem id="it2" itemLabel="25%" itemValue="25" />  
+		<f:selectItem id="it3" itemLabel="50%" itemValue="50" />  
+		<f:selectItem id="it4" itemLabel="75%" itemValue="75" />
+		<f:selectItem id="it5" itemLabel="100%" itemValue="100" />        
 	</h:selectOneMenu>
   </jbpm:datacell>
   <jbpm:datacell>

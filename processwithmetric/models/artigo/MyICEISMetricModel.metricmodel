@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Metrica:MetricModelPlan xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Metrica="Metrica" name="ICEIS Example Metric Model">
-  <metrics xsi:type="Metrica:ActivityMetric" name="duration cdu requirements " description="Duration of cdu requirements tasks" id="1" activityBegin="identify_and_refine_requirements"/>
-  <metrics xsi:type="Metrica:ActivityMetric" name="Duration of all cdu devlopment tasks" description="Duration of all cdu development solution tasks" activityBegin="develop_solution" activityEnd="test_solution"/>
-</Metrica:MetricModelPlan>

@@ -3,6 +3,7 @@
 [import ICEISAcceleoProject::files::actionGeneration/]
 [import ICEISAcceleoProject::files::formsGenerate/]
 [import ICEISAcceleoProject::files::generate/]
+[import ICEISAcceleoProject::files::generateStartAction/]
 [import ICEISAcceleoProject::files::startxhtml/]
 [import ICEISAcceleoProject::files::xhtml/]
 
@@ -18,6 +19,7 @@
 	[comment @main /]
 	[p.formsGenerate()/]
 	[p.generate()/]
+	[p.generateStartAction()/]
 	
 [/template]
 [template public mainStartStateType(s : StartStateType)]

@@ -13,30 +13,29 @@
 <jbpm:dataform>
 
   <f:facet name="header">
-    <h:outputText value="Inicio"/>
+    <h:outputText value="Starting"/>
   </f:facet>
   
   <!-- TASKFORM ROWS -->
   
   <jbpm:datacell>
     <f:facet name="header">	  
-      <h:outputText value="Comentario"/>
+      <h:outputText value="Comment"/>
     </f:facet>
-   <!-- <h:inputText value="#{varcomentario}" /> -->
-    <h:inputText value="#{var"['comment']"}" />
+        <h:inputText value="#{var['comment']}" />
   </jbpm:datacell>
   
   
   <jbpm:datacell>
-    <!-- TASKFORM BUTTONS -->  <tf:saveButton value="Save"/>
+    <!-- TASKFORM BUTTONS -->  
       <tf:saveButton value="Save"/>
 
-    	<tf:transitionButton value="identify_and_refine_requirements"/>
     	<tf:transitionButton value="test_solution"/>
-    	<tf:transitionButton value="develop_solution"/>
-    	<tf:transitionButton value="develop_architecture"/>
-    	<tf:transitionButton value="ongoing_tasks"/>
     	<tf:transitionButton value="plan_manage_iteration"/>
+    	<tf:transitionButton value="identify_and_refine_requirements"/>
+    	<tf:transitionButton value="develop_solution"/>
+    	<tf:transitionButton value="ongoing_tasks"/>
+    	<tf:transitionButton value="develop_architecture"/>
   </jbpm:datacell>
 
 </jbpm:dataform>

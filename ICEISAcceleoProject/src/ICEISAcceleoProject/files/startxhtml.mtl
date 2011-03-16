@@ -25,16 +25,14 @@
   
   <jbpm:datacell>
     <f:facet name="header">	  
-      <h:outputText value="Comentario"/>
+      <h:outputText value="Comment"/>
     </f:facet>
-    [comment Uma task pode ter tags do tipo controller dentro delas e dentro das tags controller pode-se criar tags do tipo variable com parametros (name="nomeDavariavel",acess="read,write,required") /]
-   <!-- <h:inputText value="#{var['comentario'/]}" /> -->
-    <h:inputText value="#{var"[ '[' /]'comment'[']'/]"}" />
+        <h:inputText value="#{var[ '[' /]'comment'[']'/]}" />
   </jbpm:datacell>
   
   
   <jbpm:datacell>
-    <!-- TASKFORM BUTTONS -->  <tf:saveButton value="Save"/>
+    <!-- TASKFORM BUTTONS -->  
       <tf:saveButton value="Save"/>
 
     [for ( transition )]

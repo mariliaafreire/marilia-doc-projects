@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jpdl:process-definition xmlns:jpdl="urn:jbpm.org:jpdl-3.1" name="elaboration_phase_iteration">
-  <jpdl:start-state name="Inicio">
+  <jpdl:start-state name="Starting">
     <jpdl:transition name="startdevelop_architecturetransition" to="develop_architecture"/>
-    <jpdl:transition name="startdevelop_solutiontransition" to="develop_solution"/>
-    <jpdl:transition name="starttest_solutiontransition" to="test_solution"/>
-    <jpdl:transition name="startidentify_and_refine_requirementstransition" to="identify_and_refine_requirements"/>
     <jpdl:transition name="startplan_manage_iterationtransition" to="plan_manage_iteration"/>
+    <jpdl:transition name="starttest_solutiontransition" to="test_solution"/>
     <jpdl:transition name="startongoing_taskstransition" to="ongoing_tasks"/>
+    <jpdl:transition name="startdevelop_solutiontransition" to="develop_solution"/>
+    <jpdl:transition name="startidentify_and_refine_requirementstransition" to="identify_and_refine_requirements"/>
   </jpdl:start-state>
   <jpdl:end-state name="End"/>
   <jpdl:task-node name="test_solution">
     <jpdl:task name="test_solution"/>
     <jpdl:event type="task-end">
-      <jpdl:action name="Duration of all cdu devlopment tasks"/>
+      <jpdl:action class="br.ufrn.dimpa.ppgsc.UCDevActionHandler" name="UCDev" ref-name="UCDev"/>
     </jpdl:event>
     <jpdl:transition name="test_solutiontransition" to="joinEnd"/>
+  </jpdl:task-node>
+  <jpdl:task-node name="develop_solution">
+    <jpdl:task name="develop_solution"/>
+    <jpdl:event type="task-end">
+      <jpdl:action class="br.ufrn.dimpa.ppgsc.UCDevActionHandler" name="UCDev" ref-name="UCDev"/>
+    </jpdl:event>
+    <jpdl:transition name="develop_solutiontransition" to="joinEnd"/>
+  </jpdl:task-node>
+  <jpdl:task-node name="identify_and_refine_requirements">
+    <jpdl:task name="identify_and_refine_requirements"/>
+    <jpdl:event type="task-end">
+      <jpdl:action class="br.ufrn.dimpa.ppgsc.UCReqActionHandler" name="UCReq" ref-name="UCReq"/>
+    </jpdl:event>
+    <jpdl:transition name="identify_and_refine_requirementstransition" to="joinEnd"/>
+  </jpdl:task-node>
+  <jpdl:task-node name="ongoing_tasks">
+    <jpdl:task name="ongoing_tasks"/>
+    <jpdl:transition name="ongoing_taskstransition" to="joinEnd"/>
   </jpdl:task-node>
   <jpdl:task-node name="plan_manage_iteration">
     <jpdl:task name="plan_manage_iteration"/>
@@ -23,24 +41,6 @@
   <jpdl:task-node name="develop_architecture">
     <jpdl:task name="develop_architecture"/>
     <jpdl:transition name="develop_architecturetransition" to="joinEnd"/>
-  </jpdl:task-node>
-  <jpdl:task-node name="ongoing_tasks">
-    <jpdl:task name="ongoing_tasks"/>
-    <jpdl:transition name="ongoing_taskstransition" to="joinEnd"/>
-  </jpdl:task-node>
-  <jpdl:task-node name="develop_solution">
-    <jpdl:task name="develop_solution"/>
-    <jpdl:event type="task-end">
-      <jpdl:action name="Duration of all cdu devlopment tasks"/>
-    </jpdl:event>
-    <jpdl:transition name="develop_solutiontransition" to="joinEnd"/>
-  </jpdl:task-node>
-  <jpdl:task-node name="identify_and_refine_requirements">
-    <jpdl:task name="identify_and_refine_requirements"/>
-    <jpdl:event type="task-end">
-      <jpdl:action name="duration cdu requirements "/>
-    </jpdl:event>
-    <jpdl:transition name="identify_and_refine_requirementstransition" to="joinEnd"/>
   </jpdl:task-node>
   <jpdl:join name="joinEnd">
     <jpdl:transition name="to_EndTransition" to="End"/>

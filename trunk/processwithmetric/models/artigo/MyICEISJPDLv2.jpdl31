@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jpdl:process-definition xmlns:jpdl="urn:jbpm.org:jpdl-3.1" name="inception_phase_iteration">
-  <jpdl:start-state name="Inicio">
-    <jpdl:transition name="startinitiate_projecttransition" to="initiate_project"/>
+<jpdl:process-definition xmlns:jpdl="urn:jbpm.org:jpdl-3.1" name="elaboration_phase_iteration">
+  <jpdl:start-state name="Starting">
+    <jpdl:transition name="starttest_solutiontransition" to="test_solution"/>
     <jpdl:transition name="startplan_manage_iterationtransition" to="plan_manage_iteration"/>
+    <jpdl:transition name="startidentify_and_refine_requirementstransition" to="identify_and_refine_requirements"/>
+    <jpdl:transition name="startdevelop_solutiontransition" to="develop_solution"/>
+    <jpdl:transition name="startongoing_taskstransition" to="ongoing_tasks"/>
+    <jpdl:transition name="startdevelop_architecturetransition" to="develop_architecture"/>
   </jpdl:start-state>
-  
   <jpdl:end-state name="End"/>
-  
-  <jpdl:fork name="forkinitiate_project">
-    <jpdl:transition name="initiate_projectTransition1" to="identify_and_refine_requirements"/>
-    <jpdl:transition name="initiate_projectTransition2" to="agree_technical_approach"/>
-  </jpdl:fork>
-  
-  <jpdl:task-node name="initiate_project">
-    <jpdl:task name="initiate_project"/>
-    <jpdl:transition name="forkTransitioninitiate_project" to="forkinitiate_project"/>
+  <jpdl:task-node name="develop_architecture">
+    <jpdl:task name="develop_architecture"/>
+    <jpdl:transition name="develop_architecturetransition" to="joinEnd"/>
   </jpdl:task-node>
-  
   <jpdl:task-node name="plan_manage_iteration">
     <jpdl:task name="plan_manage_iteration"/>
     <jpdl:transition name="plan_manage_iterationtransition" to="joinEnd"/>
   </jpdl:task-node>
-  
-  <jpdl:task-node name="agree_technical_approach">
-    <jpdl:task name="agree_technical_approach"/>
-    <jpdl:transition name="agree_technical_approachtransition" to="joinEnd"/>
+  <jpdl:task-node name="ongoing_tasks">
+    <jpdl:task name="ongoing_tasks"/>
+    <jpdl:transition name="ongoing_taskstransition" to="joinEnd"/>
   </jpdl:task-node>
-  
+  <jpdl:task-node name="test_solution">
+    <jpdl:task name="test_solution"/>
+    <jpdl:event type="task-end">
+      <jpdl:action class="br.ufrn.dimap.ppgsc.UCDevActionHandler" name="UCDev" ref-name="UCDev"/>
+    </jpdl:event>
+    <jpdl:transition name="test_solutiontransition" to="joinEnd"/>
+  </jpdl:task-node>
   <jpdl:task-node name="identify_and_refine_requirements">
     <jpdl:task name="identify_and_refine_requirements"/>
     <jpdl:event type="task-end">
-      <jpdl:action name="cduRequirementsDuration"/>
+      <jpdl:action class="br.ufrn.dimap.ppgsc.UCReqActionHandler" name="UCReq" ref-name="UCReq"/>
     </jpdl:event>
     <jpdl:transition name="identify_and_refine_requirementstransition" to="joinEnd"/>
   </jpdl:task-node>
-  
+  <jpdl:task-node name="develop_solution">
+    <jpdl:task name="develop_solution"/>
+    <jpdl:event type="task-end">
+      <jpdl:action class="br.ufrn.dimap.ppgsc.UCDevActionHandler" name="UCDev" ref-name="UCDev"/>
+    </jpdl:event>
+    <jpdl:transition name="develop_solutiontransition" to="joinEnd"/>
+  </jpdl:task-node>
   <jpdl:join name="joinEnd">
     <jpdl:transition name="to_EndTransition" to="End"/>
   </jpdl:join>
-  
 </jpdl:process-definition>

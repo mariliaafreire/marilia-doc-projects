@@ -18,7 +18,7 @@ mapping UMA::ProcessComponent::Process2Process(in met: MTRC) : JPDL::ProcessDefi
 	//cria o nó inicial e final do processo
 	
 	    result.startState := object JPDL::StartStateType { 
-				name := 'Inicio'; 
+				name := 'Starting'; 
 				
 		};
 		result.endState := object JPDL::EndStateType { 
@@ -54,6 +54,11 @@ mapping UMA::Activity::Activity2TaskNode(in epfSpec : UMA::ProcessComponent,in m
 		
 	name := self.name;
 	
+	
+	
+	
+	
+	
 	transition := epfSpec.childPackages.allInstances(UMA::WorkOrder)->map criarTransicoes(epfSpec,self)->asOrderedSet();
 	
 	if(self.allInstances(UMA::TaskDescriptor)->isEmpty())then{
@@ -81,7 +86,9 @@ mapping UMA::Activity::Activity2TaskNode(in epfSpec : UMA::ProcessComponent,in m
    					
    					action+=Sequence {
    						object JPDL::ActionType{
-   						refName := ele.name;
+   						refName := ele.id;
+   						name := ele.id;
+   						_class := "br.ufrn.dimap.ppgsc.".concat(ele.id).concat("ActionHandler");
    						}
    					}
    						
@@ -127,9 +134,11 @@ mapping UMA::Activity::Activity2TaskNode(in epfSpec : UMA::ProcessComponent,in m
 }
 mapping UMA::TaskDescriptor::Task2Task(in met: MTRC):JPDL::TaskType{
   name := self.name;
+  
   var metrics := met.objectsOfType(MTRC::TaskMetric); 	
   var nomeInput: String;
    var i :=0;
+   
    metrics->forEach(ele) 
    { 		log(ele.tasksBase->at(i) + ' vs ' + self.name);
    			if(ele.form = 0)then{
@@ -183,7 +192,7 @@ mapping UMA::Activity::ligarAosJoinsAndStart(inout process: JPDL::ProcessDefinit
 		
 		// CRIA TRANSIÇÕES FROM STARTSTATE
 		if (self.linkToPredecessor->isEmpty())then {
-		   log('transição inicio');
+		   log('startTransition');
 			var i := 1;
 			process.allInstances(JPDL::StartStateType)->forEach(ativ){
 			log('estado inicial');

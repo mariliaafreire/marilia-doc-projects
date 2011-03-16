@@ -50,7 +50,7 @@ mapping UMA::Activity::Activity2TaskNode(in epfSpec : UMA::ProcessComponent, ino
 	} endif;
 	
 	name := self.presentationName;
-	//description := self.briefDescription;
+	async := self.briefDescription;
 	transition := epfSpec.childPackages.allInstances(UMA::WorkOrder)->map criarTransicoes(epfSpec,self)->asOrderedSet();
 	
 	end{

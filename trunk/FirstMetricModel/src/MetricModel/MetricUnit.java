@@ -23,54 +23,54 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum MetricUnit implements Enumerator {
 	/**
-	 * The '<em><b>Hours</b></em>' literal object.
+	 * The '<em><b>Minutes</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HOURS_VALUE
+	 * @see #MINUTES_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	HOURS(0, "hours", "hours"),
+	MINUTES(0, "minutes", "minutes"),
 
 	/**
-	 * The '<em><b>Cdu</b></em>' literal object.
+	 * The '<em><b>Uc</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CDU_VALUE
+	 * @see #UC_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CDU(1, "cdu", "cdu");
+	UC(1, "uc", "uc");
 
 	/**
-	 * The '<em><b>Hours</b></em>' literal value.
+	 * The '<em><b>Minutes</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Hours</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Minutes</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #HOURS
-	 * @model name="hours"
+	 * @see #MINUTES
+	 * @model name="minutes"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HOURS_VALUE = 0;
+	public static final int MINUTES_VALUE = 0;
 
 	/**
-	 * The '<em><b>Cdu</b></em>' literal value.
+	 * The '<em><b>Uc</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Cdu</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Uc</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CDU
-	 * @model name="cdu"
+	 * @see #UC
+	 * @model name="uc"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CDU_VALUE = 1;
+	public static final int UC_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Metric Unit</b></em>' enumerators.
@@ -80,8 +80,8 @@ public enum MetricUnit implements Enumerator {
 	 */
 	private static final MetricUnit[] VALUES_ARRAY =
 		new MetricUnit[] {
-			HOURS,
-			CDU,
+			MINUTES,
+			UC,
 		};
 
 	/**
@@ -132,8 +132,8 @@ public enum MetricUnit implements Enumerator {
 	 */
 	public static MetricUnit get(int value) {
 		switch (value) {
-			case HOURS_VALUE: return HOURS;
-			case CDU_VALUE: return CDU;
+			case MINUTES_VALUE: return MINUTES;
+			case UC_VALUE: return UC;
 		}
 		return null;
 	}

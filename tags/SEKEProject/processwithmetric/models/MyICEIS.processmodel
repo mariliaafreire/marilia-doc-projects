@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myModel:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:myModel="myModel" name="ICEIS OpenUp  - Inception Phase">
+  <activity name="Initiate Project"/>
+  <activity name="Plan and Manage Iteration"/>
+  <activity name="  Identify and Refine Requirements ">
+    <task name="Agree on Technical Approach">
+    
+    </task>
+    <task name="Create Test Cases" input=""/>
+    <task name="Detail Use-Case Scenarios"/>
+    <task name="Detail System-Wide Requirements"/>
+  </activity>
+  <activity name="Agree on Technical Approach"/>
+</myModel:Process>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="Process2Process" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Process2Process"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement">
+          <intermediateElement xsi:type="MTRC"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Activity2TaskNode" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Activity2TaskNode"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskNodeType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="criarTransicoes" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//criarTransicoes"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="atividade" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TransitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.0/@transition.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Activity2TaskNode" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Activity2TaskNode"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskNodeType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="criarTransicoes" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//criarTransicoes"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="atividade" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.1"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TransitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.1/@transition.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Activity2TaskNode" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Activity2TaskNode"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskNodeType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="criarTransicoes" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//criarTransicoes"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="atividade" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TransitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.2/@transition.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Task2Task" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Task2Task"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Task">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2/@task.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.2/@task.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Task2Task" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Task2Task"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Task">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2/@task.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.2/@task.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Task2Task" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Task2Task"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Task">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2/@task.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.2/@task.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Task2Task" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Task2Task"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Task">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2/@task.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.2/@task.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="Activity2TaskNode" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//Activity2TaskNode"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="met" type="MTRC">
+        <value modelElement="//@traceRecords.0/@parameters/@parameters.0/@value/@intermediateElement"/>
+      </parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TaskNodeType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="criarTransicoes" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//criarTransicoes"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="epfSpec" type="Process">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#/"/>
+        </value>
+      </parameters>
+      <parameters name="atividade" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.3"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="TransitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#//@taskNode.3/@transition.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="ligarAosJoinsAndStart" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//ligarAosJoinsAndStart"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result/>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="ligarAosJoinsAndStart" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//ligarAosJoinsAndStart"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result/>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="ligarAosJoinsAndStart" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//ligarAosJoinsAndStart"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result/>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="ligarAosJoinsAndStart" package="UMA2JPDL" module="UMA2JPDL">
+      <runtimeMappingOperation href="platform:/resource/processwithmetric/transforms/MyProcessAndMetric2PDL2.qvtox#//ligarAosJoinsAndStart"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Activity">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEIS_2011Example.processmodel#//@activity.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="process" type="ProcessDefinitionType">
+        <value>
+          <modelElement href="platform:/resource/processwithmetric/models/ICEISTesteMerged.jpdl31#/"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result/>
+  </traceRecords>
+</trace:Trace>

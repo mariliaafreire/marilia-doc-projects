@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+	<form task="Starting" form="Starting.xhtml"/>  
+	<form task="develop_architecture" form="develop_architecture.xhtml"/>  
+	<form task="plan_manage_iteration" form="plan_manage_iteration.xhtml"/>  
+	<form task="ongoing_tasks" form="ongoing_tasks.xhtml"/>  
+	<form task="test_solution" form="test_solution.xhtml"/>  
+	<form task="identify_and_refine_requirements" form="identify_and_refine_requirements.xhtml"/>  
+	<form task="develop_solution" form="develop_solution.xhtml"/>  
+	<form task="joinEnd" form="joinEnd.xhtml"/>  
+</forms>

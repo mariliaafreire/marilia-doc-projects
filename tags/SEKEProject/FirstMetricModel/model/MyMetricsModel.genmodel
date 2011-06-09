@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FirstMetricModel/src"
+    modelPluginID="FirstMetricModel" modelName="MyMetricsModel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>MyMetricsModel.ecore</foreignModel>
+  <genPackages prefix="MetricModel" disposableProviderFactory="true" ecorePackage="MyMetricsModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMetricsModel.ecore#//MetricType">
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricType/hardData"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricType/softData"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricType/normalizedData"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMetricsModel.ecore#//BaseElement">
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//BaseElement/Task"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//BaseElement/Activity"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMetricsModel.ecore#//ColectType">
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//ColectType/continuous"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//ColectType/intercalated"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMetricsModel.ecore#//MetricUnit">
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricUnit/minutes"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricUnit/uc"/>
+    </genEnums>
+    <genClasses ecoreClass="MyMetricsModel.ecore#//Metric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/form"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="MyMetricsModel.ecore#//ActivityMetric">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//ActivityMetric/activityBegin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//ActivityMetric/activityEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="MyMetricsModel.ecore#//TaskMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//TaskMetric/tasksBase"/>
+    </genClasses>
+    <genClasses ecoreClass="MyMetricsModel.ecore#//MetricPlanModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//MetricPlanModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMetricsModel.ecore#//MetricPlanModel/metrics"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

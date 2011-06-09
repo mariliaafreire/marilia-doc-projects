@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:myModel="myModel">
+  <myModel:Process name="OpenUp Inception Phase">
+    <activity name="Initiate Project"/>
+    <activity name="Plan and Manage Iteration"/>
+    <activity name="Identify and Refine Requirements">
+      <task name="Identify and Outline Requirements"/>
+      <task name="Detail Use-Case Scenarios" input="metrica"/>
+      <task name="  Detail System-Wide Requirements "/>
+      <task name="Create Test Cases"/>
+    </activity>
+    <activity name="Agree on Technical Approach"/>
+  </myModel:Process>
+  <ecore:EAnnotation source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData" references="/0/@activity.2/@task.1">
+    <details key="begin" value="Detail Use-Case Scenarios"/>
+    <details key="end" value="Create Test Cases"/>
+  </ecore:EAnnotation>
+  <myModel:Process name="OpenUp Inception Phase">
+    <activity name="Initiate Project"/>
+    <activity name="Plan and Manage Iteration"/>
+    <activity name="Identify and Refine Requirements">
+      <task name="Identify and Outline Requirements"/>
+      <task name="Detail Use-Case Scenarios" input="metrica"/>
+      <task name="  Detail System-Wide Requirements "/>
+      <task name="Create Test Cases"/>
+    </activity>
+    <activity name="Agree on Technical Approach"/>
+  </myModel:Process>
+  <ecore:EAnnotation source="UseCase Conception Time" references="/2/@activity.2/@task.1">
+    <details key="begin" value="Detail Use-Case Scenarios"/>
+    <details key="end" value="Create Test Cases"/>
+  </ecore:EAnnotation>
+  <myModel:Process name="OpenUp Inception Phase">
+    <activity name="Initiate Project"/>
+    <activity name="Plan and Manage Iteration"/>
+    <activity name="Identify and Refine Requirements">
+      <task name="Identify and Outline Requirements"/>
+      <task name="Detail Use-Case Scenarios" input="metrica"/>
+      <task name="  Detail System-Wide Requirements "/>
+      <task name="Create Test Cases"/>
+    </activity>
+    <activity name="Agree on Technical Approach"/>
+  </myModel:Process>
+  <ecore:EAnnotation source="UseCase Conception Time" references="/4/@activity.2/@task.1">
+    <details key="begin" value="Detail Use-Case Scenarios"/>
+    <details key="end" value="Create Test Cases"/>
+  </ecore:EAnnotation>
+</xmi:XMI>

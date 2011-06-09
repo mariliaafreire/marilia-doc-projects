@@ -1,0 +1,78 @@
+modeltype PRO uses processModel('myModel');
+modeltype MT uses MetricModel('Metrica');
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+transformation processPlusmetric(in proIn: PRO, in mt:MT, out proOut:PRO);
+
+main() {
+    proIn.rootObjects()[PRO::Process]->map protopro(mt);
+	//proIn.rootObjects()[PRO::Atividade]->map proInModelToProOUtModel(mt);
+	
+	
+	
+
+}
+
+mapping PRO::Process::protopro(in metrica: MT): PRO::Process {
+	name := self.name;
+	activity := self.activity. map proInModelToProOUtModel(metrica)->asOrderedSet();
+}
+
+mapping PRO::Activity::proInModelToProOUtModel(in metrica: MT):PRO::Activity {
+	log('First Method Transformation: Atividade - > Atividade');
+	result.name := self.name;
+	
+	task := self.task.map proIntoProOutTarefas(metrica)->asOrderedSet();
+	//var metricas = self.tarefas.map aplicarMetricas(result)->asOrderedSet();
+}
+
+
+
+mapping PRO::Task::proIntoProOutTarefas(in met: MT):PRO::Task {	
+ log('Second Method Transformation: Tarefas');
+	result.name := self.name;
+    
+  var annotation : ecore::EAnnotation;
+  var entry: ecore::EMap;
+  
+ 
+  var metrics := met.objectsOfType(Metric); 	
+  var nomeInput: String;
+   
+   metrics->forEach(ele) 
+   { 		log(ele.begin + 'vs ' + self.name);
+   
+            if(ele.begin.equalsIgnoreCase(self.name)) then {
+   				result.input := 'metrica';
+   				//annotation:= 
+  			result.oclAsType(ecore::EClass).eAnnotations += Sequence{
+  			object ecore::EAnnotation{
+  					source := ele.name;
+  					//process.join += Sequence{join};
+  					details += Sequence{
+  					object ecore::EStringToStringMapEntry {
+   					key:='begin';
+   					value:=ele.begin;
+   				}};
+  					details+= Sequence{
+  					object ecore::EStringToStringMapEntry {
+   					key:='end';
+   					value:=ele.endd;
+   				}};
+   				 
+  				contents +=	Sequence{result.oclAsType(ecore::EObject)};
+  					_references += Sequence{result.oclAsType(ecore::EObject)};
+  				log('self: ' + self.name );
+  					
+  				 //self.allSubobjects(ecore::EAnnotation)	
+  			} 
+  			};
+  				
+   	
+   			} endif;
+   };
+
+	
+}
+

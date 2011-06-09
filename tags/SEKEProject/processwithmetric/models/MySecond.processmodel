@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<myModel:Atividade xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:myModel="myModel" nome="Especificar Caso de Uso">
+  <tarefas titulo="Detalhar Caso de Uso" input=""/>
+  <tarefas titulo="Criar Diagrama de Classes do Caso de Uso"/>
+  <tarefas titulo="Criar Diagrama de Sequencia do Caso de Uso"/>
+  <tarefas titulo="Criar protótipo das telas do Caso de Uso"/>
+</myModel:Atividade>

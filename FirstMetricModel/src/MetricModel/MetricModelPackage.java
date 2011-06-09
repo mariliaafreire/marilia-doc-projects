@@ -307,14 +307,14 @@ public interface MetricModelPackage extends EPackage {
 	int TASK_METRIC_FEATURE_COUNT = METRIC_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link MetricModel.impl.MetricModelPlanImpl <em>Plan</em>}' class.
+	 * The meta object id for the '{@link MetricModel.impl.MetricPlanModelImpl <em>Metric Plan Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see MetricModel.impl.MetricModelPlanImpl
-	 * @see MetricModel.impl.MetricModelPackageImpl#getMetricModelPlan()
+	 * @see MetricModel.impl.MetricPlanModelImpl
+	 * @see MetricModel.impl.MetricModelPackageImpl#getMetricPlanModel()
 	 * @generated
 	 */
-	int METRIC_MODEL_PLAN = 3;
+	int METRIC_PLAN_MODEL = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -323,7 +323,7 @@ public interface MetricModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRIC_MODEL_PLAN__NAME = 0;
+	int METRIC_PLAN_MODEL__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Metrics</b></em>' containment reference list.
@@ -332,16 +332,16 @@ public interface MetricModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METRIC_MODEL_PLAN__METRICS = 1;
+	int METRIC_PLAN_MODEL__METRICS = 1;
 
 	/**
-	 * The number of structural features of the '<em>Plan</em>' class.
+	 * The number of structural features of the '<em>Metric Plan Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METRIC_MODEL_PLAN_FEATURE_COUNT = 2;
+	int METRIC_PLAN_MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link MetricModel.MetricType <em>Metric Type</em>}' enum.
@@ -514,36 +514,36 @@ public interface MetricModelPackage extends EPackage {
 	EAttribute getTaskMetric_TasksBase();
 
 	/**
-	 * Returns the meta object for class '{@link MetricModel.MetricModelPlan <em>Plan</em>}'.
+	 * Returns the meta object for class '{@link MetricModel.MetricPlanModel <em>Metric Plan Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plan</em>'.
-	 * @see MetricModel.MetricModelPlan
+	 * @return the meta object for class '<em>Metric Plan Model</em>'.
+	 * @see MetricModel.MetricPlanModel
 	 * @generated
 	 */
-	EClass getMetricModelPlan();
+	EClass getMetricPlanModel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link MetricModel.MetricModelPlan#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link MetricModel.MetricPlanModel#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see MetricModel.MetricModelPlan#getName()
-	 * @see #getMetricModelPlan()
+	 * @see MetricModel.MetricPlanModel#getName()
+	 * @see #getMetricPlanModel()
 	 * @generated
 	 */
-	EAttribute getMetricModelPlan_Name();
+	EAttribute getMetricPlanModel_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link MetricModel.MetricModelPlan#getMetrics <em>Metrics</em>}'.
+	 * Returns the meta object for the containment reference list '{@link MetricModel.MetricPlanModel#getMetrics <em>Metrics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Metrics</em>'.
-	 * @see MetricModel.MetricModelPlan#getMetrics()
-	 * @see #getMetricModelPlan()
+	 * @see MetricModel.MetricPlanModel#getMetrics()
+	 * @see #getMetricPlanModel()
 	 * @generated
 	 */
-	EReference getMetricModelPlan_Metrics();
+	EReference getMetricPlanModel_Metrics();
 
 	/**
 	 * Returns the meta object for enum '{@link MetricModel.MetricType <em>Metric Type</em>}'.
@@ -710,14 +710,14 @@ public interface MetricModelPackage extends EPackage {
 		EAttribute TASK_METRIC__TASKS_BASE = eINSTANCE.getTaskMetric_TasksBase();
 
 		/**
-		 * The meta object literal for the '{@link MetricModel.impl.MetricModelPlanImpl <em>Plan</em>}' class.
+		 * The meta object literal for the '{@link MetricModel.impl.MetricPlanModelImpl <em>Metric Plan Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see MetricModel.impl.MetricModelPlanImpl
-		 * @see MetricModel.impl.MetricModelPackageImpl#getMetricModelPlan()
+		 * @see MetricModel.impl.MetricPlanModelImpl
+		 * @see MetricModel.impl.MetricModelPackageImpl#getMetricPlanModel()
 		 * @generated
 		 */
-		EClass METRIC_MODEL_PLAN = eINSTANCE.getMetricModelPlan();
+		EClass METRIC_PLAN_MODEL = eINSTANCE.getMetricPlanModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -725,7 +725,7 @@ public interface MetricModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute METRIC_MODEL_PLAN__NAME = eINSTANCE.getMetricModelPlan_Name();
+		EAttribute METRIC_PLAN_MODEL__NAME = eINSTANCE.getMetricPlanModel_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Metrics</b></em>' containment reference list feature.
@@ -733,7 +733,7 @@ public interface MetricModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METRIC_MODEL_PLAN__METRICS = eINSTANCE.getMetricModelPlan_Metrics();
+		EReference METRIC_PLAN_MODEL__METRICS = eINSTANCE.getMetricPlanModel_Metrics();
 
 		/**
 		 * The meta object literal for the '{@link MetricModel.MetricType <em>Metric Type</em>}' enum.

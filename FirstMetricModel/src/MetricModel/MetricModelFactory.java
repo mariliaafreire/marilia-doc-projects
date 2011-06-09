@@ -53,13 +53,13 @@ public interface MetricModelFactory extends EFactory {
 	TaskMetric createTaskMetric();
 
 	/**
-	 * Returns a new object of class '<em>Plan</em>'.
+	 * Returns a new object of class '<em>Metric Plan Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Plan</em>'.
+	 * @return a new object of class '<em>Metric Plan Model</em>'.
 	 * @generated
 	 */
-	MetricModelPlan createMetricModelPlan();
+	MetricPlanModel createMetricPlanModel();
 
 	/**
 	 * Returns the package supported by this factory.

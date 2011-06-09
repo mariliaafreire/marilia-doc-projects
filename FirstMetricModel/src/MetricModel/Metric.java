@@ -149,12 +149,12 @@ public interface Metric extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(int)
+	 * @see #setId(String)
 	 * @see MetricModel.MetricModelPackage#getMetric_Id()
 	 * @model
 	 * @generated
 	 */
-	int getId();
+	String getId();
 
 	/**
 	 * Sets the value of the '{@link MetricModel.Metric#getId <em>Id</em>}' attribute.
@@ -164,7 +164,7 @@ public interface Metric extends EObject {
 	 * @see #getId()
 	 * @generated
 	 */
-	void setId(int value);
+	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.

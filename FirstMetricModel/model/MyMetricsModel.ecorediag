@@ -151,11 +151,11 @@
     <children xmi:type="notation:Node" xmi:id="_gFzr8C-ZEeCid5KtRJqxqw" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_gFzr8S-ZEeCid5KtRJqxqw" type="5008">
       <children xmi:type="notation:Node" xmi:id="_lC3b0C-ZEeCid5KtRJqxqw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="MyMetricsModel.ecore#//MetricUnit/hours"/>
+        <element xmi:type="ecore:EEnumLiteral" href="MyMetricsModel.ecore#//MetricUnit/minutes"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_lC3b0S-ZEeCid5KtRJqxqw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_pxMWsC-aEeCid5KtRJqxqw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="MyMetricsModel.ecore#//MetricUnit/cdu"/>
+        <element xmi:type="ecore:EEnumLiteral" href="MyMetricsModel.ecore#//MetricUnit/uc"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_pxMWsS-aEeCid5KtRJqxqw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_gFzr8i-ZEeCid5KtRJqxqw"/>
@@ -170,7 +170,7 @@
     <children xmi:type="notation:Node" xmi:id="_NU6fIy-hEeCbxYKRP10lmA" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_NU6fJC-hEeCbxYKRP10lmA" type="5001">
       <children xmi:type="notation:Node" xmi:id="_RbGRYC-hEeCbxYKRP10lmA" type="2001">
-        <element xmi:type="ecore:EAttribute" href="MyMetricsModel.ecore#//MetricModelPlan/name"/>
+        <element xmi:type="ecore:EAttribute" href="MyMetricsModel.ecore#//MetricPlanModel/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_RbGRYS-hEeCbxYKRP10lmA"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_NU6fJS-hEeCbxYKRP10lmA"/>
@@ -183,7 +183,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_NU6fKy-hEeCbxYKRP10lmA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_NU6fIS-hEeCbxYKRP10lmA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="MyMetricsModel.ecore#//MetricModelPlan"/>
+    <element xmi:type="ecore:EClass" href="MyMetricsModel.ecore#//MetricPlanModel"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NU6fIi-hEeCbxYKRP10lmA" x="15" y="5"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_gLaXARjXEeCAi5tTuuK8sw"/>
@@ -211,7 +211,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_Zh4yUS-hEeCbxYKRP10lmA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Zh4yUi-hEeCbxYKRP10lmA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="MyMetricsModel.ecore#//MetricModelPlan/metrics"/>
+    <element xmi:type="ecore:EReference" href="MyMetricsModel.ecore#//MetricPlanModel/metrics"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Zh4yUy-hEeCbxYKRP10lmA" points="[15, 25, -17, -27]$[33, 51, 1, -1]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZiyKMC-hEeCbxYKRP10lmA" id="(0.2315270935960591,0.013986013986013986)"/>
   </edges>

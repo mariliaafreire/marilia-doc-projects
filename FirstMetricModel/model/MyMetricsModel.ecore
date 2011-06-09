@@ -8,7 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MetricType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="#//ColectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//MetricUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MetricType">
@@ -33,10 +33,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MetricUnit">
-    <eLiterals name="hours"/>
-    <eLiterals name="cdu" value="1"/>
+    <eLiterals name="minutes"/>
+    <eLiterals name="uc" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MetricModelPlan">
+  <eClassifiers xsi:type="ecore:EClass" name="MetricPlanModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metrics" upperBound="-1"
         eType="#//Metric" containment="true"/>

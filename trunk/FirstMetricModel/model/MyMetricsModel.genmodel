@@ -20,8 +20,8 @@
       <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//ColectType/intercalated"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyMetricsModel.ecore#//MetricUnit">
-      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricUnit/hours"/>
-      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricUnit/cdu"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricUnit/minutes"/>
+      <genEnumLiterals ecoreEnumLiteral="MyMetricsModel.ecore#//MetricUnit/uc"/>
     </genEnums>
     <genClasses ecoreClass="MyMetricsModel.ecore#//Metric">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/name"/>
@@ -32,15 +32,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//Metric/unit"/>
     </genClasses>
     <genClasses ecoreClass="MyMetricsModel.ecore#//ActivityMetric">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//ActivityMetric/activityBegin"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//ActivityMetric/activityBegin"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//ActivityMetric/activityEnd"/>
     </genClasses>
     <genClasses ecoreClass="MyMetricsModel.ecore#//TaskMetric">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//TaskMetric/tasksBase"/>
     </genClasses>
-    <genClasses ecoreClass="MyMetricsModel.ecore#//MetricModelPlan">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//MetricModelPlan/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMetricsModel.ecore#//MetricModelPlan/metrics"/>
+    <genClasses ecoreClass="MyMetricsModel.ecore#//MetricPlanModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyMetricsModel.ecore#//MetricPlanModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyMetricsModel.ecore#//MetricPlanModel/metrics"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

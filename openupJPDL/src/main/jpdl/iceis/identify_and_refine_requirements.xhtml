@@ -9,31 +9,34 @@
       xmlns:tf="http://jbpm.org/jsf/tf"
       xmlns:jbpm="http://jbpm.org/jsf">
 <ui:component>
-
 <jbpm:dataform>
-
   <f:facet name="header">
-    <h:outputText value=""/>
+    <h:outputText value="identify_and_refine_requirements"/>
   </f:facet>
-  
   <!-- TASKFORM ROWS -->
-  
   <jbpm:datacell>
-    <f:facet name="header">	  
-      <h:outputText value="Comentario"/>
-      
+      <f:facet name="header">	  
+      <h:outputText value="Comment"/>
     </f:facet>
-    <h:inputText value="#{var['comentario']}" />
-   
-    
+    <h:inputText value="#{var['comment']}" />
+  </jbpm:datacell> 
+  <jbpm:datacell>
+   <f:facet name="header">	  
+      <h:outputText value="Completed"/>
+    </f:facet>
+    <h:selectOneMenu id="completed" value="#var['completed']" >   
+		<f:selectItem id="it1" itemLabel="0%" itemValue="0" /> 
+		<f:selectItem id="it2" itemLabel="25%" itemValue="25" />  
+		<f:selectItem id="it3" itemLabel="50%" itemValue="50" />  
+		<f:selectItem id="it4" itemLabel="75%" itemValue="75" />
+		<f:selectItem id="it5" itemLabel="100%" itemValue="100" />        
+	</h:selectOneMenu>
   </jbpm:datacell>
-  
-  
   <jbpm:datacell>
     <!-- TASKFORM BUTTONS -->
+      <tf:saveButton value="Save"/>   
     	<tf:transitionButton value="joinEnd"/>
   </jbpm:datacell>
-
 </jbpm:dataform>
 </ui:component>
 </html>

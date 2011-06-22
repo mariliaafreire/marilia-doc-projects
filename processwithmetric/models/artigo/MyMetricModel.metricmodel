@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Metrica:MetricPlanModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Metrica="Metrica" name="Example Metric Model">
-  <metrics xsi:type="Metrica:ActivityMetric" name="uc requirements duration " description="Duration of UC requirements tasks" id="UCReq" activityBegin="identify_and_refine_requirements"/>
-  <metrics xsi:type="Metrica:ActivityMetric" name="uc develop duration" description="Duration of UC development tasks" id="UCDev" activityBegin="develop_solution" activityEnd="test_solution"/>
-</Metrica:MetricPlanModel>

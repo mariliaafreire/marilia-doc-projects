@@ -8,6 +8,7 @@ import org.jbpm.graph.exe.ExecutionContext;
 import org.jbpm.graph.exe.Token;
 import org.jbpm.graph.node.TaskNode;
 import org.jbpm.taskmgmt.def.Task;
+import org.jbpm.taskmgmt.exe.TaskInstance;
 import org.jbpm.taskmgmt.exe.TaskMgmtInstance;
 
 public class CreateTaskActionHandler implements ActionHandler {
@@ -26,8 +27,16 @@ public class CreateTaskActionHandler implements ActionHandler {
 		    Task requirements = taskNode.getTask("identify_and_refine_requirements");
 		    List<String> users = (List<String>)executionContext.getContextInstance().getVariable("cdus");
 		    // now, 2 task instances are created for the same task.
+		    int i=0;
 		    for(String cdu: users){
-		    	tmi.createTaskInstance(requirements, token).addComment(cdu);
+		       TaskInstance	tarefa = tmi.createTaskInstance(requirements, token);
+		       tarefa.addComment(cdu);
+		       
+		       if(i==0){
+		    	   tarefa.setActorId("user");
+		    	   i++;
+		       }
+		    	
 		    }
 		    
 		  }

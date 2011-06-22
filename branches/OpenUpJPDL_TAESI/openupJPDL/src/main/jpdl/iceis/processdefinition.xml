@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-definition name = "iceis">
+
+<swimlane name="manager">
+	<assignment actor-id="manager"/>
+</swimlane>
+
+
+	<start-state name="Starting">
+		<task name="Starting" swimlane="manager">
+			<controller>			
+				<variable  name="comment" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="fork1" name="start"></transition>
+		<event type="node-leave">
+			<action name="start" class="br.ufrn.dimap.ppgsc.InitiateVariablesActionHandler"/>
+		</event>
+	</start-state>
+	<task-node name="develop_architecture" >
+		 
+			<task name="develop_architecture" swimlane="manager">
+			  <controller>			
+				<variable  name="comment" access="read,write,required"/>
+			  </controller>				
+			</task>
+			<transition name="develop_architecturetransition" to="joinEnd"/>
+		
+	</task-node>
+	<task-node name="ongoing_tasks" >
+		 
+			<task name="ongoing_tasks" swimlane="manager">
+			  <controller>			
+				<variable  name="comment" access="read,write,required"/>
+			  </controller>				
+			</task>
+			<transition name="ongoing_taskstransition" to="joinEnd"/>
+		
+	</task-node>
+	<task-node name="develop_solution" >
+		 
+			<task name="develop_solution" swimlane="manager">
+			  <controller>			
+				<variable  name="comment" access="read,write,required"/>
+			  </controller>				
+			</task>
+			<transition name="develop_solutiontransition" to="joinEnd"/>
+		
+			<event type="task-end">
+					<action name="UCDevTime" class="br.ufrn.dimap.ppgsc.UCDevActionHandler">
+					</action>
+			</event>
+	</task-node>
+	<task-node name="test_solution" >
+		 
+			<task name="test_solution" swimlane="manager">
+			  <controller>			
+				<variable  name="comment" access="read,write,required"/>
+			  </controller>				
+			</task>
+			<transition name="test_solutiontransition" to="joinEnd"/>
+		
+			<event type="task-end">
+					<action name="UCDevTime" class="br.ufrn.dimap.ppgsc.UCDevActionHandler">
+					</action>
+			</event>
+	</task-node>
+	<task-node name="plan_manage_iteration" >
+		 
+			<task name="plan_manage_iteration" swimlane="manager">
+			  <controller>			
+				<variable  name="comment" access="read,write,required"/>
+			  </controller>				
+			</task>
+			<transition name="plan_manage_iterationtransition" to="joinEnd"/>
+		
+	</task-node>
+	<task-node name="identify_and_refine_requirements" create-tasks="false">
+		 
+			<task name="identify_and_refine_requirements" swimlane="manager">
+			  <controller>			
+				<variable  name="comment" access="read,write,required"/>
+			  </controller>				
+			</task>
+			<transition name="identify_and_refine_requirementstransition" to="joinEnd"/>
+		
+			<event type="task-end">
+					<action name="UCReqTime" class="br.ufrn.dimap.ppgsc.UCReqActionHandler">
+					</action>
+			</event>
+			
+			<event type="node-enter">
+					<action name="requirements" class="br.ufrn.dimap.ppgsc.CreateTaskActionHandler">
+					</action>
+			</event>
+	</task-node>
+	<join name="joinEnd">
+			<transition name="to_EndTransition" to="End"/>
+	</join>
+
+	<fork name="fork1">
+		<transition to="identify_and_refine_requirements" name="startidentify_and_refine_requirementstransition"></transition>
+		<transition to="develop_architecture" name="startdevelop_architecturetransition"></transition>
+		<transition to="develop_solution" name="startdevelop_solutiontransition"></transition>
+		<transition to="test_solution" name="starttest_solutiontransition"></transition>
+		<transition to="plan_manage_iteration" name="startplan_manage_iterationtransition"></transition>
+		<transition to="ongoing_tasks" name="startongoing_taskstransition"></transition>
+	</fork>
+	<end-state name="End"/>
+</process-definition>

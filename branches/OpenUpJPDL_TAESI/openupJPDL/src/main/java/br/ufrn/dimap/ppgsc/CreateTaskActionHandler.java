@@ -1,6 +1,5 @@
 package br.ufrn.dimap.ppgsc;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.jbpm.graph.def.ActionHandler;
@@ -22,22 +21,56 @@ public class CreateTaskActionHandler implements ActionHandler {
 			
 		    Token token = executionContext.getToken();
 		    TaskMgmtInstance tmi = executionContext.getTaskMgmtInstance();
-		      
 		    TaskNode taskNode = (TaskNode) executionContext.getNode();
+		    
+		    
 		    Task requirements = taskNode.getTask("identify_and_refine_requirements");
+		    Task desenv = taskNode.getTask("develop_solution");
+		    Task test = taskNode.getTask("test_solution");
+		    
 		    List<String> users = (List<String>)executionContext.getContextInstance().getVariable("cdus");
 		    // now, 2 task instances are created for the same task.
 		    int i=0;
+
+		    if (requirements != null){
 		    for(String cdu: users){
 		       TaskInstance	tarefa = tmi.createTaskInstance(requirements, token);
 		       tarefa.addComment(cdu);
 		       
 		       if(i==0){
-		    	   tarefa.setActorId("user");
+		    	   tarefa.setDescription(cdu);
+		    	  // tarefa.setActorId("user");
 		    	   i++;
 		       }
+		    }
+		    }
+		     if(desenv != null){  
+		       for(String cdu: users){
+			       TaskInstance	tarefa = tmi.createTaskInstance(desenv, token);
+			       tarefa.addComment(cdu);
+			       tarefa.setVariable("description", cdu);
+			       
+			       if(i==0){
+			    	   tarefa.setDescription(cdu);
+			    	  // tarefa.setActorId("user");
+			    	   i++;
+			       }
 		    	
 		    }
-		    
+		     }
+		     if(test != null){
+		      
+		       for(String cdu: users){
+			       TaskInstance	tarefa = tmi.createTaskInstance(test, token);
+			       tarefa.addComment(cdu);
+			       
+			       if(i==0){
+			    	   tarefa.setDescription(cdu);
+			    	   //tarefa.setActorId("user");
+			    	   i++;
+			       }
+		    	
+		    }
+		     }
 		  }
 		}

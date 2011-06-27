@@ -50,6 +50,10 @@
 					<action name="UCDevTime" class="br.ufrn.dimap.ppgsc.UCDevActionHandler">
 					</action>
 			</event>
+			<event type="node-enter">
+					<action name="requirements" class="br.ufrn.dimap.ppgsc.CreateTaskActionHandler">
+					</action>
+			</event>
 	</task-node>
 	<task-node name="test_solution" >
 		 
@@ -62,6 +66,10 @@
 		
 			<event type="task-end">
 					<action name="UCDevTime" class="br.ufrn.dimap.ppgsc.UCDevActionHandler">
+					</action>
+			</event>
+			<event type="node-enter">
+					<action name="requirements" class="br.ufrn.dimap.ppgsc.CreateTaskActionHandler">
 					</action>
 			</event>
 	</task-node>

@@ -47,8 +47,7 @@ public class CreateTaskActionHandler implements ActionHandler {
 		     if(desenv != null){  
 		       for(String cdu: users){
 			       TaskInstance	tarefa = tmi.createTaskInstance(desenv, token);
-			       tarefa.addComment(cdu);
-			       tarefa.setVariable("description", cdu);
+			       tarefa.setDescription(cdu);
 			       
 			       if(i==0){
 			    	   tarefa.setDescription(cdu);

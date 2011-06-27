@@ -6,5 +6,18 @@
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="JBPM/jboss JBPM"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/antlr.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/asm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/bsh.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/cglib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/dom4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/hibernate.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/jbpm-identity.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/jbpm-jpdl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/log4j.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

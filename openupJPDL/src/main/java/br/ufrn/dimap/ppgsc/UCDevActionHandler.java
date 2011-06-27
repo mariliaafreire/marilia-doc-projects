@@ -16,6 +16,7 @@ public class UCDevActionHandler implements ActionHandler {
 	 
 	public void execute(ExecutionContext context) throws Exception {
 		Double develop = (Double)context.getContextInstance().getVariable("UCDevTime");
+		
 		List<Double> dev = (ArrayList<Double>)context.getContextInstance().getVariable("ucDev");
 		List<Double> tes = (ArrayList<Double>)context.getContextInstance().getVariable("ucTest");
 		
@@ -27,9 +28,7 @@ public class UCDevActionHandler implements ActionHandler {
 		System.out.println("Time took for  UCDev " + timeTotal + " milliseconds");
 		
 		double hoursTime = timeTotal / (1000.0 * 60.0 );
-		System.out.println("\n\n\n"+context.getTaskInstance().getName());
-		System.out.println("\n\n\n"+context.getTaskInstance().getTask().getName()+"\n\n\n");
-		System.out.println("\n\n\n"+"description" + context.getTaskInstance().getDescription()+"\n\n\n");
+		
 		
 		if(context.getTaskInstance().getTask().getName().equalsIgnoreCase("test_solution")){
 			if(context.getTaskInstance().getDescription().equalsIgnoreCase("SIGA-CDU-22")){

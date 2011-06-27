@@ -11,9 +11,11 @@
 <ui:component>
 <jbpm:dataform>
   <f:facet name="header">
-    <h:outputText value="develop_solution"/>
+    <h:outputText value="develop_solution: #{var['description']}"/>
+    
   </f:facet>
   <!-- TASKFORM ROWS -->
+
   <jbpm:datacell>
       <f:facet name="header">	  
       <h:outputText value="Comment"/>
@@ -21,6 +23,7 @@
     <h:inputText value="#{var['comment']}" />
   </jbpm:datacell> 
   <jbpm:datacell>
+
    <f:facet name="header">	  
       <h:outputText value="Completed"/>
     </f:facet>
@@ -36,6 +39,9 @@
     <!-- TASKFORM BUTTONS -->
       <tf:saveButton value="Save"/>   
     	<tf:transitionButton value="joinEnd"/>
+    	
+  </jbpm:datacell>
+  <jbpm:datacell>
   </jbpm:datacell>
 </jbpm:dataform>
 </ui:component>

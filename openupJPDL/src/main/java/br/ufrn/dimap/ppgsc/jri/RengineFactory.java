@@ -1,9 +1,14 @@
 package br.ufrn.dimap.ppgsc.jri;
 
+import org.rosuda.JRI.REXP;
 import org.rosuda.JRI.Rengine;
 
 public class RengineFactory 
 {
+   //essa variavel devera sair, depois que implementarmos
+   //a captura dos dados da calibracao por fora.	
+   //public static REXP expression;
+   
    private static Rengine r_engine;	
 	
    public static Rengine getRengine()

@@ -6,6 +6,8 @@ import java.util.List;
 import org.jbpm.graph.def.ActionHandler;
 import org.jbpm.graph.exe.ExecutionContext;
 
+import br.ufrn.dimap.ppgsc.infra.Dados;
+
 public class InitiateVariablesActionHandler implements ActionHandler{
 	
 	private static final long serialVersionUID = 1L;
@@ -34,6 +36,8 @@ public class InitiateVariablesActionHandler implements ActionHandler{
 		ucReq.add(new Double(0));
 		ucReq.add(new Double(0));
 
+		//carregando o R
+		Dados.iniciarDados();
 		
 		System.out.println("\n\n Iniciando variaveis....\n\n");
 			context.getContextInstance().createVariable("UCDevTime", UCDevTime);

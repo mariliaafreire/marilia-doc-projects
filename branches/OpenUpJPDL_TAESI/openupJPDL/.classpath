@@ -19,5 +19,15 @@
 	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/jbpm-jpdl.jar"/>
 	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/junit.jar"/>
 	<classpathentry kind="lib" path="C:/Users/marilia/jbpm-3.2.6.GA/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/javaGD.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/JavaGD"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/JRI.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/JRI"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

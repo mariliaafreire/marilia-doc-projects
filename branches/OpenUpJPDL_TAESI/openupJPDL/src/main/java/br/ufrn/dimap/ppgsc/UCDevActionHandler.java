@@ -3,11 +3,15 @@ package br.ufrn.dimap.ppgsc;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jbpm.graph.def.ActionHandler;
 import org.jbpm.graph.exe.ExecutionContext;
+
+import br.ufrn.dimap.ppgsc.infra.Metricas;
+import br.ufrn.dimap.ppgsc.jri.Shewhart;
 
 public class UCDevActionHandler implements ActionHandler {
 
@@ -28,17 +32,32 @@ public class UCDevActionHandler implements ActionHandler {
 		System.out.println("Time took for  UCDev " + timeTotal + " milliseconds");
 		
 		double hoursTime = timeTotal / (1000.0 * 60.0 );
+		Map<String, Double> val = Shewhart.recuperarValoresLimites(Metricas.DESENVOLVIMENTO);
+		
 		
 		
 		if(context.getTaskInstance().getTask().getName().equalsIgnoreCase("test_solution")){
+			
 			if(context.getTaskInstance().getDescription().equalsIgnoreCase("SIGA-CDU-22")){
 				System.out.println(context.getTaskInstance().getDescription());
 				tes.set(0,new Double(hoursTime));
+				if((hoursTime + dev.get(0)) > val.get("UCL") || (hoursTime +dev.get(0)) < val.get("LDL")){
+					System.out.println("WARNING:: VALOR FORA DOS LIMITES");
+					Shewhart.gerarGraficoShewhart(hoursTime+dev.get(0),Metricas.DESENVOLVIMENTO);
+				}
 			}else if (context.getTaskInstance().getDescription().equalsIgnoreCase("SIGA-CDU-23")){
 				System.out.println(context.getTaskInstance().getDescription());
 				tes.set(1,new Double(hoursTime));
+				if((hoursTime + dev.get(1)) > val.get("UCL") || (hoursTime +dev.get(1)) < val.get("LDL")){
+					System.out.println("WARNING:: VALOR FORA DOS LIMITES");
+					Shewhart.gerarGraficoShewhart(hoursTime+dev.get(1),Metricas.DESENVOLVIMENTO);
+				}
 			}else {tes.set(2,new Double(hoursTime));
 			System.out.println(context.getTaskInstance().getDescription());
+			if((hoursTime + dev.get(2)) > val.get("UCL") || (hoursTime +dev.get(2)) < val.get("LDL")){
+				System.out.println("WARNING:: VALOR FORA DOS LIMITES");
+				Shewhart.gerarGraficoShewhart(hoursTime+dev.get(2),Metricas.DESENVOLVIMENTO);
+			}
 			}
 	
 		} else if(context.getTaskInstance().getTask().getName().equalsIgnoreCase("develop_solution")){
@@ -49,6 +68,7 @@ public class UCDevActionHandler implements ActionHandler {
 			}else dev.set(2,new Double(hoursTime));
 			
 		}
+		
 		
 		log.info(context.getTaskInstance().getName()+ " Updating   UCDev " + hoursTime + "h(s)");
 		

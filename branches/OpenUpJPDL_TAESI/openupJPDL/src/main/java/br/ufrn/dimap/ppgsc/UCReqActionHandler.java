@@ -3,11 +3,15 @@ package br.ufrn.dimap.ppgsc;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jbpm.graph.def.ActionHandler;
 import org.jbpm.graph.exe.ExecutionContext;
+
+import br.ufrn.dimap.ppgsc.infra.Metricas;
+import br.ufrn.dimap.ppgsc.jri.Shewhart;
 
 public class UCReqActionHandler implements ActionHandler {
 
@@ -27,6 +31,14 @@ public class UCReqActionHandler implements ActionHandler {
 		
 		double hoursTime = timeTotal / (1000.0 * 60.0 );
 		
+		Map<String, Double> val = Shewhart.recuperarValoresLimites(Metricas.REQUISITOS);
+
+		if(hoursTime  > val.get("UCL") || hoursTime  < val.get("LDL")){
+			System.out.println("WARNING:: VALOR FORA DOS LIMITES");
+			Shewhart.gerarGraficoShewhart(hoursTime,Metricas.REQUISITOS);
+		}	
+		
+		
 		if(context.getTaskInstance().getDescription().equalsIgnoreCase("SIGA-CDU-22")){
 			req.set(0, new Double(hoursTime));
 		}else if (context.getTaskInstance().getDescription().equalsIgnoreCase("SIGA-CDU-23")){
@@ -34,8 +46,7 @@ public class UCReqActionHandler implements ActionHandler {
 		}else req.set(2
 				, new Double(hoursTime));;
 
-	
-		
+			
 		log.info(context.getTaskInstance().getName()+ " Updating   UCReq " + hoursTime + "h(s)");
 		
 		context.getTaskInstance().setVariable("UCReqTime",new Double (Math.round(hoursTime + develop)));

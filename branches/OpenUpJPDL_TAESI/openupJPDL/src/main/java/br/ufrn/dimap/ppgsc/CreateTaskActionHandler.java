@@ -35,39 +35,45 @@ public class CreateTaskActionHandler implements ActionHandler {
 		    if (requirements != null){
 		    for(String cdu: users){
 		       TaskInstance	tarefa = tmi.createTaskInstance(requirements, token);
-		       tarefa.addComment(cdu);
-		       
+		       tarefa.setVariable("description",cdu);
+		       //tarefa.addComment(cdu);
+		       //tarefa.setDescription(cdu);
+		       /*
 		       if(i==0){
 		    	   tarefa.setDescription(cdu);
 		    	  // tarefa.setActorId("user");
 		    	   i++;
-		       }
+		       }*/
 		    }
 		    }
 		     if(desenv != null){  
 		       for(String cdu: users){
 			       TaskInstance	tarefa = tmi.createTaskInstance(desenv, token);
-			       tarefa.setDescription(cdu);
+			       tarefa.setVariable("description",cdu);
+			       //tarefa.setDescription(cdu);
 			       
-			       if(i==0){
+			       /*if(i==0){
 			    	   tarefa.setDescription(cdu);
 			    	  // tarefa.setActorId("user");
 			    	   i++;
 			       }
-		    	
+		    	*/
 		    }
 		     }
 		     if(test != null){
 		      
 		       for(String cdu: users){
 			       TaskInstance	tarefa = tmi.createTaskInstance(test, token);
-			       tarefa.addComment(cdu);
-			       
+			       tarefa.setVariable("description",cdu);
+			       //tarefa.addComment(cdu);
+			       //tarefa.setDescription(cdu);
+			       /*
 			       if(i==0){
 			    	   tarefa.setDescription(cdu);
 			    	   //tarefa.setActorId("user");
 			    	   i++;
 			       }
+			       */
 		    	
 		    }
 		     }

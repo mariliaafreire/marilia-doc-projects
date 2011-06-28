@@ -8,29 +8,45 @@ import java.util.Map;
 import org.rosuda.JRI.REXP;
 import org.rosuda.JRI.Rengine;
 
+import br.ufrn.dimap.ppgsc.infra.Dados;
+import br.ufrn.dimap.ppgsc.infra.Metricas;
+
 public class Shewhart
 {
    
-   public static void gerarGraficoShewhart()
+   public static void gerarGraficoShewhart(double valor, Metricas tipoMetrica)
    {
-     
-	  Rengine r = RengineFactory.getRengine();       
+	  REXP matrizNova = null; 
+	  REXP matrizBase = null;
+	  
+	  Rengine r = RengineFactory.getRengine();
+	  
       
-      //chamar as funcoes necessarias para gerar o grafico
-      r.eval("library(qcc)");
-      r.eval("data(pistonrings)");
-      r.eval("attach(pistonrings)");
+	  if(tipoMetrica == Metricas.DESENVOLVIMENTO)
+	  {
+		  matrizBase = Dados.matrizDesenvolvimento;  
+	  }
+	  else 
+	  {
+		  matrizBase = Dados.matrizRequisitos; 
+	  }
+	  
+	  Dados.valoresCapturados.add(valor);
+	  double[] valores = new double[Dados.valoresCapturados.size()];
+	  
+	  for(int x = 0; x < Dados.valoresCapturados.size(); x++)
+	  {
+	     valores[x] = Dados.valoresCapturados.get(x);
+	  }
+	  
+	  long xp_valores = r.rniPutDoubleArray(valores);
+	  r.rniAssign("valores", xp_valores, 0);
+	  
+	  //matriz <- $matriz
+	  long xp_matriz = matrizBase.xp;
+      r.rniAssign("matriz", xp_matriz, 0);
       
-      //recuperando o valor de qcc.groups e adicionando na variavel diameter
-      REXP expression = r.eval("qcc.groups(diameter,sample)");
-      long diameter = expression.xp;
-      
-      //diameter <- $diameter
-      r.rniAssign("diameter", diameter, 0);
-
-      //chamando a geracao do grafico
-      //r.eval("JavaGD(name='Grafico de Controle de Processo')");
-      r.eval("qcc(diameter[1:25,],\"xbar\")");
+      r.eval("qcc(matriz,\"xbar\",newdata=valores)");
 
       //TODO verificar como se converte um canvas para uma imagem
       Canvas canvas = (Canvas) CustomJavaGD.c;
@@ -38,19 +54,27 @@ public class Shewhart
       br.ufrn.dimap.ppgsc.infra.Utils.saveCanvasToImageFile(canvas);
    }
    
-   public static Map<String,Double> recuperarValoresLimites()
+   public static Map<String,Double> recuperarValoresLimites(Metricas tipoMetrica)
    {
+	  REXP expression = null;
+	  
+	  if(tipoMetrica == Metricas.DESENVOLVIMENTO)
+	  {
+         expression = Dados.qccDesenvolvimento;   	  
+	  }
+	  else
+	  {
+	     expression = Dados.qccRequisitos;	  
+	  }
+	  
 	  Map<String,Double> limites = new HashMap<String,Double>(); 
 	   
       Rengine r = RengineFactory.getRengine();
-      
-      //criando os dados que servirao para calibrar nossa base
-      r.eval("dados <- rnorm(400,12,2)");
-      r.eval("dadosInteiros <- as.integer(dados)");
-      r.eval("matriz <- matrix(dadosInteiros,ncol=4)");
-      r.eval("library(qcc)");
-      r.eval("object <- qcc(matriz[1:100,],\"xbar\")");
-      REXP expression = r.eval("object$limits");
+     
+      //recuperando os limites
+      long xp = expression.xp;
+      r.rniAssign("object", xp, 0);
+      expression = r.eval("object$limits");
       double[][] matrix = expression.asMatrix();
       double[] valores = matrix[0];
       
@@ -70,6 +94,6 @@ public class Shewhart
    
    public static void main(String[] a)
    {
-	   gerarGraficoShewhart();	   
+      Dados.iniciarDados();
    }
 }

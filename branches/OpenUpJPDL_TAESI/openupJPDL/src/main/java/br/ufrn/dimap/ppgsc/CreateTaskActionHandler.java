@@ -52,7 +52,7 @@ public class CreateTaskActionHandler implements ActionHandler {
 		       for(String cdu: users){
 			       TaskInstance	tarefa = tmi.createTaskInstance(desenv, token);
 			       tarefa.setVariable("description",cdu);
-			       //tarefa.setDescription(cdu);
+			       tarefa.setDescription(cdu);
 			       
 			       /*if(i==0){
 			    	   tarefa.setDescription(cdu);
@@ -68,7 +68,7 @@ public class CreateTaskActionHandler implements ActionHandler {
 			       TaskInstance	tarefa = tmi.createTaskInstance(test, token);
 			       tarefa.setVariable("description",cdu);
 			       //tarefa.addComment(cdu);
-			       //tarefa.setDescription(cdu);
+			       tarefa.setDescription(cdu);
 			       /*
 			       if(i==0){
 			    	   tarefa.setDescription(cdu);

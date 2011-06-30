@@ -1,5 +1,7 @@
 package br.ufrn.dimap.ppgsc;
 
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import org.jbpm.graph.def.ActionHandler;
 import org.jbpm.graph.exe.ExecutionContext;
 
 import br.ufrn.dimap.ppgsc.infra.Dados;
+import br.ufrn.dimap.ppgsc.jri.CustomJavaGD;
 
 public class InitiateVariablesActionHandler implements ActionHandler{
 	
@@ -37,7 +40,13 @@ public class InitiateVariablesActionHandler implements ActionHandler{
 		ucReq.add(new Double(0));
 
 		//carregando o R
+		System.out.println(Dados.class.getResource("Dados.class"));
+		System.out.println("Carregando o R...");
 		Dados.iniciarDados();
+		System.out.println("Carregou!");
+		
+		System.out.println(CustomJavaGD.class.getResource("CustomJavaGD.class"));
+		System.out.println(System.getProperty("java.class.path"));
 		
 		System.out.println("\n\n Iniciando variaveis....\n\n");
 			context.getContextInstance().createVariable("UCDevTime", UCDevTime);

@@ -69,12 +69,8 @@ public class UCDevActionHandler implements ActionHandler {
 			
 		}
 		
-		
+
 		log.info(context.getTaskInstance().getName()+ " Updating   UCDev " + hoursTime + "h(s)");
-		
-		
-		
-		
 		context.getTaskInstance().setVariable("UCDevTime", new Double(Math.round(hoursTime + develop)) );
 		context.getTaskInstance().setVariable("ucTest",tes );
 		context.getTaskInstance().setVariable("ucDev",dev );

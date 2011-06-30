@@ -10,7 +10,8 @@ import br.ufrn.dimap.ppgsc.jri.RengineFactory;
 
 public final class Dados 
 {
-   public static List<Double> valoresCapturados = new ArrayList<Double>();
+   public static List<Double> valoresCapturadosRequisitos = new ArrayList<Double>();
+   public static List<Double> valoresCapturadosDesenvolvimento = new ArrayList<Double>();
    	
    public static REXP matrizDesenvolvimento;	
    public static REXP qccDesenvolvimento;
@@ -32,7 +33,7 @@ public final class Dados
       
     //criando os dados que servirao para calibrar nossa base, depois deve-se mudar para 
     //pegar estes dados de uma base externa, como a aplicacao
-    r.eval("dados <- rnorm(400,12,2)");
+    r.eval("dados <- rnorm(400,16,2)");
     r.eval("dadosInteiros <- as.integer(dados)");
     matrizDesenvolvimento = r.eval("matrix(dadosInteiros,ncol=4)");
     
@@ -41,13 +42,16 @@ public final class Dados
     long xp_matrizDesenvolvimento = matrizDesenvolvimento.xp;
     r.rniAssign("matrizDesenvolvimento", xp_matrizDesenvolvimento, 0);
     r.eval("library(qcc)");
+    
     qccDesenvolvimento = r.eval("qcc(matrizDesenvolvimento[1:100,],\"xbar\")");
+    long qccDesenvolvimento_xp = qccDesenvolvimento.xp;
+    r.rniAssign("qccDesenvolvimento", qccDesenvolvimento_xp, 0);
     
     System.out.println("[qccDesenvolvimento]-> " + qccDesenvolvimento);
     
     //criando os dados que servirao para calibrar nossa base, depois deve-se mudar para 
     //pegar estes dados de uma base externa, como a aplicacao
-    r.eval("dados <- rnorm(400,12,2)");
+    r.eval("dados <- rnorm(400,10,2)");
     r.eval("dadosInteiros <- as.integer(dados)");
     matrizRequisitos = r.eval("matrix(dadosInteiros,ncol=4)");
     
@@ -55,8 +59,10 @@ public final class Dados
     
     long xp_matrizRequisitos = matrizRequisitos.xp;
     r.rniAssign("matrizRequisitos", xp_matrizRequisitos, 0);
-    r.eval("library(qcc)");
+    
     qccRequisitos = r.eval("qcc(matrizRequisitos[1:100,],\"xbar\")");
+    long qccRequisitos_xp = qccRequisitos.xp;
+    r.rniAssign("qccRequisitos", qccRequisitos_xp, 0);
       
     System.out.println("[qccRequisitos]-> " + qccRequisitos);
    }

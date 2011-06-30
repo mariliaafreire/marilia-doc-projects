@@ -27,57 +27,40 @@ public class CreateTaskActionHandler implements ActionHandler {
 		    Task requirements = taskNode.getTask("identify_and_refine_requirements");
 		    Task desenv = taskNode.getTask("develop_solution");
 		    Task test = taskNode.getTask("test_solution");
-		    
+
 		    List<String> users = (List<String>)executionContext.getContextInstance().getVariable("cdus");
-		    // now, 2 task instances are created for the same task.
-		    int i=0;
+
 
 		    if (requirements != null){
-		    for(String cdu: users){
-		       TaskInstance	tarefa = tmi.createTaskInstance(requirements, token);
-		       tarefa.setVariable("description",cdu);
-		       System.out.println(tarefa.getVariable("description"));
-		       
-		       //tarefa.addComment(cdu);
-		       tarefa.setDescription(cdu);
-		       /*
-		       if(i==0){
-		    	   tarefa.setDescription(cdu);
-		    	  // tarefa.setActorId("user");
-		    	   i++;
-		       }*/
+		    	//Criação das instâncias das atividades de requisitos para cada CDU
+		    	for(String cdu: users){
+		    		TaskInstance	tarefa = tmi.createTaskInstance(requirements, token);
+		    		
+		    		tarefa.setVariable("description",cdu);
+		    		tarefa.setDescription(cdu);		    	
+		    		System.out.println("Tarefa: " + tarefa.getDescription() + "  "+tarefa.getVariable("description"));
+		    	}
 		    }
+		    else if(desenv != null){  
+		    	//Criação das instâncias das atividades de codificação para cada CDU
+		    	for(String cdu: users){
+		    		TaskInstance	tarefa = tmi.createTaskInstance(desenv, token);
+		    		tarefa.setVariable("description",cdu);
+		    		tarefa.setDescription(cdu);
+		    		System.out.println("Tarefa: " + tarefa.getDescription() + "  "+tarefa.getVariable("description"));
+
+		    	}
 		    }
-		     if(desenv != null){  
-		       for(String cdu: users){
-			       TaskInstance	tarefa = tmi.createTaskInstance(desenv, token);
-			       tarefa.setVariable("description",cdu);
-			       tarefa.setDescription(cdu);
-			       
-			       /*if(i==0){
-			    	   tarefa.setDescription(cdu);
-			    	  // tarefa.setActorId("user");
-			    	   i++;
-			       }
-		    	*/
+		    else if(test != null){
+		    	//Criação das instâncias das atividades de testes para cada CDU
+		    	for(String cdu: users){
+		    		TaskInstance tarefa = tmi.createTaskInstance(test, token);
+		    		tarefa.setVariable("description",cdu);
+		    		tarefa.setDescription(cdu);
+		    		System.out.println("Tarefa: " + tarefa.getDescription() + "  "+tarefa.getVariable("description"));
+
+
+		    	}
 		    }
-		     }
-		     if(test != null){
-		      
-		       for(String cdu: users){
-			       TaskInstance	tarefa = tmi.createTaskInstance(test, token);
-			       tarefa.setVariable("description",cdu);
-			       //tarefa.addComment(cdu);
-			       tarefa.setDescription(cdu);
-			       /*
-			       if(i==0){
-			    	   tarefa.setDescription(cdu);
-			    	   //tarefa.setActorId("user");
-			    	   i++;
-			       }
-			       */
-		    	
-		    }
-		     }
-		  }
 		}
+}

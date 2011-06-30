@@ -43,8 +43,7 @@ public class UCReqActionHandler implements ActionHandler {
 			req.set(0, new Double(hoursTime));
 		}else if (context.getTaskInstance().getDescription().equalsIgnoreCase("SIGA-CDU-23")){
 			req.set(1, new Double(hoursTime));
-		}else req.set(2
-				, new Double(hoursTime));;
+		}else req.set(2, new Double(hoursTime));
 
 			
 		log.info(context.getTaskInstance().getName()+ " Updating   UCReq " + hoursTime + "h(s)");

@@ -49,9 +49,8 @@ public class Shewhart
       r.eval("qcc(matriz,\"xbar\",newdata=valores)");
 
       //TODO verificar como se converte um canvas para uma imagem
-      Canvas canvas = (Canvas) CustomJavaGD.c;
-      
-      br.ufrn.dimap.ppgsc.infra.Utils.saveCanvasToImageFile(canvas);
+      //Canvas canvas = (Canvas) CustomJavaGD.c;
+      //br.ufrn.dimap.ppgsc.infra.Utils.saveCanvasToImageFile(canvas);
    }
    
    public static Map<String,Double> recuperarValoresLimites(Metricas tipoMetrica)
@@ -94,6 +93,8 @@ public class Shewhart
    
    public static void main(String[] a)
    {
+      RengineFactory.getRengine();
       Dados.iniciarDados();
+      gerarGraficoShewhart(2.0, Metricas.DESENVOLVIMENTO);
    }
 }

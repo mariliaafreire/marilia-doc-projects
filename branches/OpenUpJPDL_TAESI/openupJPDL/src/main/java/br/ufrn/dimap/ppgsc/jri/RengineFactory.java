@@ -16,7 +16,7 @@ public class RengineFactory
       if(r_engine == null)
       {
     	  //1 - chamando o R
-    	  r_engine = new Rengine(new String[]{"--vanilla"}, false, new TextConsole());
+    	  r_engine = new Rengine(new String[]{"--vanilla"}, false, null);
         
           //A engine do R e criada em uma nova thread, portanto, deve-se esperar ate que ela
           //esteja preparada

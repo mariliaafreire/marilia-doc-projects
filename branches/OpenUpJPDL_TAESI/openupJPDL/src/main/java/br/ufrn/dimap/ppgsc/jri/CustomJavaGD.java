@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import org.rosuda.javaGD.GDInterface;
 
+
 public class CustomJavaGD extends GDInterface 
 {
    public static CustomGDCanvas c;
@@ -21,8 +22,8 @@ public class CustomJavaGD extends GDInterface
 	  
 	  /* o JFrame nao deve aparecer */
 	  
-	  //f.setVisible(true);
-	 // f.setTitle("Classe customizavel para Plotar");
-	  //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  f.setVisible(true);
+	  f.setTitle("Classe customizavel para Plotar");
+	  f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    }    
 }

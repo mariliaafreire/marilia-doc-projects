@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TesteQVTO Plug-in
+Bundle-SymbolicName: testeQVTO
+Bundle-Version: 1.0.0
+Bundle-Vendor: 

@@ -1,0 +1,73 @@
+Process
+
+"ESHOP"{
+	Activity P1 "Atv 1" P2 Role "Subject"
+	{
+		
+	}
+	Activity P2 "Atv 2" P1 Role "Subject"
+	{
+		Task "T1"
+		Task "T2"
+	}
+}
+
+"Byer Agente"{
+	Activity P1 "Atv 1" P2 Role "Subject"{
+		Task "T1"
+		Task "T2"
+	}
+	Activity P2 "Atv 2" P2 Role "Subject"{
+		Task "T1"
+		Task "T2"
+	}
+	Activity P3 "Atv 3" P1 Role "Subject"{
+		Task "T1"
+		Task "T2"
+	}	
+}
+
+"OLIS"{
+	Activity A1 "Atv 1" A2 Role "Subject"{
+		
+	}
+	Activity A2 "Atv 2" A3 Role "Subject"{
+		
+	}
+	Activity A3 "Atv 3" A4 Role "Subject"{
+		
+	}
+	Activity A4 "Atv 4" A5 Role "Subject"{
+		
+	}
+	Activity A1 "Atv 5" A1 Role "Subject"{
+		
+	}
+}
+
+metrics
+	Metric "Tempo Gasto" relates "ESHOP" "OLIS"{
+		description "Tempo para compeltar tarefa"
+		type hardData
+		form continuous
+		id "TIME"
+		activityBegin "Atv1"
+		activityEnd "Atv 2"
+	}
+end
+	
+
+end
+Experimental Plan 
+Design "QuadradoLatino" type LS – Latin Square {
+	Factor "Ferramenta"{
+		Level "GernArch"
+		Level "Pure::Variants"
+		Level "CIDE"
+	}	
+	Factor "LPS" {
+		Level "ESHOP"
+		Level "BYER AGENT"
+		Level "OLIS"
+	}
+}

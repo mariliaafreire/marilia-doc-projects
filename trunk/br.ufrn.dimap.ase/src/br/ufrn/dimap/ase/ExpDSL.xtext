@@ -1,0 +1,129 @@
+grammar org.xtext.project.ExpDSL with org.eclipse.xtext.common.Terminals
+
+generate expDSL "http://www.xtext.org/project/ExpDSL"
+
+Model:
+	(elements+=ExperimentElement)*;
+
+ExperimentElement:
+	('Process' process+=Process* 'end')
+	('Experimental Plan' experiments+=ExperimentalPlan*)?
+	('General Questions' question+=Question*)?;
+
+//WorkbreakdownStructure	
+//artefatos, métricas para artefatos	
+Process:
+	( name=STRING
+	'{'
+	  (activities+=Activity)*
+	'}')
+	('metrics' 
+		metrics+=Metrics*
+	  'end')?
+	('Specific Questions' 
+		question+=Question*
+	'end'	)?
+	;
+	
+Activity:
+	'Activity' id=ID
+	'in' artefacts+=Artefact*
+	'out' artefacts += Artefact*
+	name=STRING
+	(next+=ID*)?
+	(role+=Role)*
+	('{'
+	 tasks+=Task*
+	'}')?
+;
+Artefact:
+	name = STRING;
+
+Task: 'Task' name=STRING;
+
+Role: 'Role' name=STRING;
+
+//CRD – Completely Randomized Design
+//RCBD – Randomized Complete Block Design
+//LS – Latin Square
+
+ExperimentalPlan: 
+	'Design' name=STRING 'type' type=DesignType
+	'{'
+	    (factor+=Factor)*
+	'}';
+
+Factor: 
+	'Factor' name=STRING
+	'{'
+		(level+=Levels)*
+	'}';
+	
+Levels:
+	'Level' name=STRING
+;
+	
+Metrics:
+	ActivityMetric | TaskMetric;
+
+ActivityMetric:
+	'Metric' name=STRING 'relates' processName+=STRING*
+	'{'
+		('description' description=STRING)
+		('type' type=MetricType)
+		('form' form=ColectType)?
+		('id' id=STRING)
+		('unit' unit=MetricUnit)?
+		('activityBegin' activityBegin=STRING)
+		('activityEnd' activityEnd=STRING)
+    '}';
+
+TaskMetric:
+	'Metric' name=STRING 'relates' processName+=STRING*
+	'{'
+		('description' description=STRING)
+		('type' type=MetricType)
+		('form' form=ColectType)?
+		('id' id=STRING)
+		('unit' unit=MetricUnit)?
+		('activities' activities=STRING)
+		
+    '}';	
+
+Questions:
+	(question+=Question)*;
+
+Question:	
+	'Question' name=STRING
+	'{'
+		('description' description=STRING)
+		('type' type=AnswerType)
+		('id' id=ID)
+		('required' req=INT )?
+		(alternatives+=Alternatives)*
+		
+    '}';
+ 
+Alternatives:
+	description = STRING
+;
+
+
+//Experimental Design
+enum DesignType returns DesignType:
+	CDR = 'CRD – Completely Randomized Design' | RCDB = 'RCBD – Randomized Complete Block Design' | LS = 'LS – Latin Square';	
+
+//Questions
+enum AnswerType returns AnswerType:
+	ComboBox = 'ComboBox' | CheckBoxes = 'CheckBoxes' | OptionButtons = 'OptionButtons';
+
+
+// Metrica
+enum MetricType returns MetricType:
+	hardData = 'hardData' | softData = 'softData' | normalizedData = 'normalizedData';
+
+enum ColectType returns ColectType:
+	continuous = 'continuous' | intercalated = 'intercalated';
+
+enum MetricUnit returns MetricUnit:
+	minutes = 'minutes' | uc = 'uc';

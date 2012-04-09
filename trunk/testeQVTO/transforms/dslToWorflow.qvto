@@ -1,0 +1,137 @@
+modeltype DSL  uses expDSL('http://www.xtext.org/project/ExpDSL');
+modeltype JPDL uses jpdl31('urn:jbpm.org:jpdl-3.1');
+
+
+transformation dslToWorflow(in dsl : DSL, out outModel: JPDL);
+	
+main() {
+    log('starting...');
+	dsl.rootObjects()[DSL::Model]->map model2DSLModel();
+	
+	log('ending...');
+}
+
+mapping DSL::Model::model2DSLModel():JPDL::DocumentRoot	 {
+	
+	
+	// self.elements.allInstances(DSL::ExperimentElement)->map g()->flatten()->asOrderedSet();
+
+    log('model2ProcessDefinition');
+  
+    //result += object JPDL::DocumentRoot{
+  //  	processDefinition->map processToProcessDefinition();
+   // } ;
+  processDefinition := self.elements.allInstances(DSL::Process)->map processToProcessDefinition()->asOrderedSet();
+    //self.elements.allInstances(DSL::ExperimentElement)->map addExperimentElements();
+}
+	
+
+/*
+mapping DSL::ExperimentElement::g(): Sequence(ProcessDefinitionType)  {	   
+init {
+	result := self.process-> map processToProcessDefinition()->asOrderedSet();
+}
+	
+   
+}
+
+*/
+
+
+mapping DSL::Process::processToProcessDefinition() :JPDL::ProcessDefinitionType{
+ 
+  name := self.name;
+  
+  taskNode:= self.activities->map act2taskNode(self.metrics, self)->asOrderedSet();
+  //task := self.process->map u()->asOrderedSet(); 
+}
+
+
+/*
+mapping DSL::Process::experiment2process() :JPDL::ProcessDefinitionType {
+ log('t');
+  name := self.name;
+  //self.metrics
+  taskNode:= self.activities->map act2taskNode(self.metrics)->asOrderedSet();
+  //task := self.process->map u()->asOrderedSet(); 
+  
+}
+*/
+
+mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics),in epfSpec: DSL::Process): JPDL::TaskNodeType{
+	name := self.name;
+	self.next->forEach(i){
+		transition += object JPDL::TransitionType{
+			name := self.name+'_Transition';
+			to := i.oclAsType(Activity).name;
+		}//end_create_transactions
+	};//end forEach next
+	// var metrics := met.objectsOfType(DSL::ActivityMetric); 	
+   var nomeInput: String;
+   var i :=0;
+   log('INICIO PARA CADA ATIVIDADE');
+   metrics.oclAsType(ActivityMetric)->forEach(ele) 
+   { 		log(ele.activityBegin + ' vs ' + self.name);
+   			if(ele.form = 0)then{
+   				//result.blocking = true;
+   			}endif;
+   			//var flag := (ele.activityBegin.equalsIgnoreCase(self.name) or ele.activityEnd.equalsIgnoreCase(self.name))or (checkAncestral(self,ele.activityBegin,epfSpec) and not checkAncestral(self,ele.activityEnd,epfSpec));
+   			var part1:= ele.activityBegin.equalsIgnoreCase(self.name);
+   			var part2:= ele.activityEnd.equalsIgnoreCase(self.name);
+   			var part3:= checkAncestral(self,ele.activityBegin,epfSpec);
+   			var part4:= checkAncestral(self,ele.activityEnd,epfSpec);
+            log('Entrou: ' + part1.oclAsType(String) +' ' + part2.oclAsType(String)+' '+ part3.oclAsType(String)+' '+part4.oclAsType(String));
+            if((part1 or part2)or (part3 and not part4))then {
+   				result.event += Sequence {
+   					object JPDL::EventType{
+   					type:="task-end";
+   					
+   					action+=Sequence {
+   						object JPDL::ActionType{
+   						refName := ele.id;
+   						name := ele.id;
+   						_class := "br.ufrn.dimap.ppgsc.".concat(ele.id).concat("ActionHandler");
+   						}
+   					}
+   						
+   					}
+   				}
+   			} endif;
+   			i:=i+1;
+   };
+}
+
+mapping DSL::Process::u() :JPDL::TaskType {
+	name := self.name;
+}
+
+
+query checkAncestral(in atual: DSL::Activity, in metrica: String, in epfSpec : DSL::Process):Boolean{
+ var resultado := false;
+	if(atual.name.equalsIgnoreCase(metrica))then{
+	  // resultado := true;
+	   log('OK!');
+	    return true;
+	}
+	else{
+	/* multiplas predecessoras */
+	var p:=epfSpec.allInstances(DSL::Activity);
+	
+	/*
+		
+	p->forEach (i) {
+	     var anterior = getActivity(i. ,epfSpec);
+		log("Nome Atividade Anterior: " + next.name);
+	    resultado := (checkAncestral(i.next,metrica,epfSpec));
+	    if (resultado = true) then{
+	    	return true
+	    }endif;
+	};*/
+	}endif;
+	return resultado;
+	
+}
+//  self.process->forEach(i){
+//       result.taskNode += object JPDL::TaskNodeType {
+//		name := i.name;
+//	};

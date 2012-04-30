@@ -40,126 +40,132 @@ import org.xtext.project.expDSL.Questions;
 public class QuestionsImpl extends MinimalEObjectImpl.Container implements Questions
 {
   /**
-	 * The cached value of the '{@link #getQuestion() <em>Question</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getQuestion() <em>Question</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getQuestion()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getQuestion()
+   * @generated
+   * @ordered
+   */
   protected EList<Question> question;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected QuestionsImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return ExpDSLPackage.Literals.QUESTIONS;
-	}
+    return ExpDSLPackage.Literals.QUESTIONS;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<Question> getQuestion()
   {
-		if (question == null) {
-			question = new EObjectContainmentEList<Question>(Question.class, this, ExpDSLPackage.QUESTIONS__QUESTION);
-		}
-		return question;
-	}
+    if (question == null)
+    {
+      question = new EObjectContainmentEList<Question>(Question.class, this, ExpDSLPackage.QUESTIONS__QUESTION);
+    }
+    return question;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case ExpDSLPackage.QUESTIONS__QUESTION:
-				return ((InternalEList<?>)getQuestion()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.QUESTIONS__QUESTION:
+        return ((InternalEList<?>)getQuestion()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case ExpDSLPackage.QUESTIONS__QUESTION:
-				return getQuestion();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.QUESTIONS__QUESTION:
+        return getQuestion();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case ExpDSLPackage.QUESTIONS__QUESTION:
-				getQuestion().clear();
-				getQuestion().addAll((Collection<? extends Question>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.QUESTIONS__QUESTION:
+        getQuestion().clear();
+        getQuestion().addAll((Collection<? extends Question>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case ExpDSLPackage.QUESTIONS__QUESTION:
-				getQuestion().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.QUESTIONS__QUESTION:
+        getQuestion().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case ExpDSLPackage.QUESTIONS__QUESTION:
-				return question != null && !question.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.QUESTIONS__QUESTION:
+        return question != null && !question.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //QuestionsImpl

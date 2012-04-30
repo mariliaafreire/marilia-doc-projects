@@ -10,21 +10,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Task</b></em>'.
+ * A representation of the model object '<em><b>Artefact</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.project.expDSL.Task#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.Artefact#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.xtext.project.expDSL.ExpDSLPackage#getTask()
+ * @see org.xtext.project.expDSL.ExpDSLPackage#getArtefact()
  * @model
  * @generated
  */
-public interface Task extends EObject
+public interface Artefact extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -36,14 +36,14 @@ public interface Task extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.project.expDSL.ExpDSLPackage#getTask_Name()
+   * @see org.xtext.project.expDSL.ExpDSLPackage#getArtefact_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.project.expDSL.Task#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.project.expDSL.Artefact#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -52,4 +52,4 @@ public interface Task extends EObject
    */
   void setName(String value);
 
-} // Task
+} // Artefact

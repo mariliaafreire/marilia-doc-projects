@@ -27,6 +27,8 @@ public class InternalExpDSLLexer extends Lexer {
     public static final int EOF=-1;
     public static final int T__19=19;
     public static final int T__16=16;
+    public static final int T__51=51;
+    public static final int T__52=52;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -35,6 +37,7 @@ public class InternalExpDSLLexer extends Lexer {
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
+    public static final int T__50=50;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
@@ -78,10 +81,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:11:7: ( 'Process' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:11:9: 'Process'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:11:7: ( 'Experiment' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:11:9: 'Experiment'
             {
-            match("Process"); 
+            match("Experiment"); 
 
 
             }
@@ -99,10 +102,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:12:7: ( 'end' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:12:9: 'end'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:12:7: ( 'Experimental Plan' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:12:9: 'Experimental Plan'
             {
-            match("end"); 
+            match("Experimental Plan"); 
 
 
             }
@@ -120,10 +123,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:13:7: ( 'Experimental Plan' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:13:9: 'Experimental Plan'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:13:7: ( 'General Questions' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:13:9: 'General Questions'
             {
-            match("Experimental Plan"); 
+            match("General Questions"); 
 
 
             }
@@ -141,10 +144,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:14:7: ( 'General Questions' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:14:9: 'General Questions'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:14:7: ( 'Process' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:14:9: 'Process'
             {
-            match("General Questions"); 
+            match("Process"); 
 
 
             }
@@ -162,10 +165,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:15:7: ( '{' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:15:9: '{'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:15:7: ( ';' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:15:9: ';'
             {
-            match('{'); 
+            match(';'); 
 
             }
 
@@ -182,10 +185,11 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:16:7: ( '}' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:16:9: '}'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:16:7: ( 'Activity' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:16:9: 'Activity'
             {
-            match('}'); 
+            match("Activity"); 
+
 
             }
 
@@ -202,10 +206,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:17:7: ( 'metrics' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:17:9: 'metrics'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:17:7: ( 'in' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:17:9: 'in'
             {
-            match("metrics"); 
+            match("in"); 
 
 
             }
@@ -223,10 +227,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:18:7: ( 'Specific Questions' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:18:9: 'Specific Questions'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:18:7: ( 'out' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:18:9: 'out'
             {
-            match("Specific Questions"); 
+            match("out"); 
 
 
             }
@@ -244,11 +248,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:19:7: ( 'Activity' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:19:9: 'Activity'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:19:7: ( '{' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:19:9: '{'
             {
-            match("Activity"); 
-
+            match('{'); 
 
             }
 
@@ -265,11 +268,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:20:7: ( 'Task' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:20:9: 'Task'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:20:7: ( '}' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:20:9: '}'
             {
-            match("Task"); 
-
+            match('}'); 
 
             }
 
@@ -286,10 +288,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:21:7: ( 'Role' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:21:9: 'Role'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:21:7: ( 'Task' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:21:9: 'Task'
             {
-            match("Role"); 
+            match("Task"); 
 
 
             }
@@ -307,10 +309,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:22:7: ( 'Design' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:22:9: 'Design'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:22:7: ( 'Role' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:22:9: 'Role'
             {
-            match("Design"); 
+            match("Role"); 
 
 
             }
@@ -328,10 +330,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:23:7: ( 'type' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:23:9: 'type'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:23:7: ( 'Design' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:23:9: 'Design'
             {
-            match("type"); 
+            match("Design"); 
 
 
             }
@@ -349,10 +351,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:24:7: ( 'Factor' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:24:9: 'Factor'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:24:7: ( 'type' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:24:9: 'type'
             {
-            match("Factor"); 
+            match("type"); 
 
 
             }
@@ -370,10 +372,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:25:7: ( 'Level' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:25:9: 'Level'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:25:7: ( 'Factor' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:25:9: 'Factor'
             {
-            match("Level"); 
+            match("Factor"); 
 
 
             }
@@ -391,10 +393,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:26:7: ( 'Metric' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:26:9: 'Metric'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:26:7: ( 'Level' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:26:9: 'Level'
             {
-            match("Metric"); 
+            match("Level"); 
 
 
             }
@@ -412,11 +414,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:27:7: ( 'relates' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:27:9: 'relates'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:27:7: ( 'A' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:27:9: 'A'
             {
-            match("relates"); 
-
+            match('A'); 
 
             }
 
@@ -433,11 +434,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:28:7: ( 'description' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:28:9: 'description'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:28:7: ( 'T' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:28:9: 'T'
             {
-            match("description"); 
-
+            match('T'); 
 
             }
 
@@ -454,10 +454,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:29:7: ( 'form' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:29:9: 'form'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:29:7: ( 'Art' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:29:9: 'Art'
             {
-            match("form"); 
+            match("Art"); 
 
 
             }
@@ -475,10 +475,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:30:7: ( 'id' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:30:9: 'id'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:30:7: ( 'relates' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:30:9: 'relates'
             {
-            match("id"); 
+            match("relates"); 
 
 
             }
@@ -496,10 +496,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:31:7: ( 'unit' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:31:9: 'unit'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:31:7: ( 'description' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:31:9: 'description'
             {
-            match("unit"); 
+            match("description"); 
 
 
             }
@@ -517,10 +517,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:32:7: ( 'activityBegin' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:32:9: 'activityBegin'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:32:7: ( 'form' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:32:9: 'form'
             {
-            match("activityBegin"); 
+            match("form"); 
 
 
             }
@@ -538,10 +538,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:33:7: ( 'activityEnd' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:33:9: 'activityEnd'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:33:7: ( 'id' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:33:9: 'id'
             {
-            match("activityEnd"); 
+            match("id"); 
 
 
             }
@@ -559,10 +559,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:34:7: ( 'activities' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:34:9: 'activities'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:34:7: ( 'unit' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:34:9: 'unit'
             {
-            match("activities"); 
+            match("unit"); 
 
 
             }
@@ -580,10 +580,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:35:7: ( 'Question' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:35:9: 'Question'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:35:7: ( 'activityBegin' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:35:9: 'activityBegin'
             {
-            match("Question"); 
+            match("activityBegin"); 
 
 
             }
@@ -601,10 +601,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:36:7: ( 'required' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:36:9: 'required'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:36:7: ( 'activityEnd' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:36:9: 'activityEnd'
             {
-            match("required"); 
+            match("activityEnd"); 
 
 
             }
@@ -622,10 +622,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:37:7: ( 'CRD \\u2013 Completely Randomized Design' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:37:9: 'CRD \\u2013 Completely Randomized Design'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:37:7: ( 'activities' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:37:9: 'activities'
             {
-            match("CRD \u2013 Completely Randomized Design"); 
+            match("activities"); 
 
 
             }
@@ -643,10 +643,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:38:7: ( 'RCBD \\u2013 Randomized Complete Block Design' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:38:9: 'RCBD \\u2013 Randomized Complete Block Design'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:38:7: ( 'Q.' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:38:9: 'Q.'
             {
-            match("RCBD \u2013 Randomized Complete Block Design"); 
+            match("Q."); 
 
 
             }
@@ -664,10 +664,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:39:7: ( 'LS \\u2013 Latin Square' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:39:9: 'LS \\u2013 Latin Square'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:39:7: ( 'required' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:39:9: 'required'
             {
-            match("LS \u2013 Latin Square"); 
+            match("required"); 
 
 
             }
@@ -685,10 +685,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:40:7: ( 'ComboBox' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:40:9: 'ComboBox'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:40:7: ( 'CRD \\u2013 Completely Randomized Design' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:40:9: 'CRD \\u2013 Completely Randomized Design'
             {
-            match("ComboBox"); 
+            match("CRD \u2013 Completely Randomized Design"); 
 
 
             }
@@ -706,10 +706,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:41:7: ( 'CheckBoxes' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:41:9: 'CheckBoxes'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:41:7: ( 'RCBD \\u2013 Randomized Complete Block Design' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:41:9: 'RCBD \\u2013 Randomized Complete Block Design'
             {
-            match("CheckBoxes"); 
+            match("RCBD \u2013 Randomized Complete Block Design"); 
 
 
             }
@@ -727,10 +727,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:42:7: ( 'OptionButtons' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:42:9: 'OptionButtons'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:42:7: ( 'LS \\u2013 Latin Square' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:42:9: 'LS \\u2013 Latin Square'
             {
-            match("OptionButtons"); 
+            match("LS \u2013 Latin Square"); 
 
 
             }
@@ -748,10 +748,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:43:7: ( 'hardData' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:43:9: 'hardData'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:43:7: ( 'ComboBox' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:43:9: 'ComboBox'
             {
-            match("hardData"); 
+            match("ComboBox"); 
 
 
             }
@@ -769,10 +769,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:44:7: ( 'softData' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:44:9: 'softData'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:44:7: ( 'CheckBoxes' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:44:9: 'CheckBoxes'
             {
-            match("softData"); 
+            match("CheckBoxes"); 
 
 
             }
@@ -790,10 +790,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:45:7: ( 'normalizedData' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:45:9: 'normalizedData'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:45:7: ( 'OptionButtons' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:45:9: 'OptionButtons'
             {
-            match("normalizedData"); 
+            match("OptionButtons"); 
 
 
             }
@@ -811,10 +811,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:46:7: ( 'continuous' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:46:9: 'continuous'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:46:7: ( 'hardData' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:46:9: 'hardData'
             {
-            match("continuous"); 
+            match("hardData"); 
 
 
             }
@@ -832,10 +832,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:47:7: ( 'intercalated' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:47:9: 'intercalated'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:47:7: ( 'softData' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:47:9: 'softData'
             {
-            match("intercalated"); 
+            match("softData"); 
 
 
             }
@@ -853,10 +853,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:48:7: ( 'minutes' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:48:9: 'minutes'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:48:7: ( 'normalizedData' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:48:9: 'normalizedData'
             {
-            match("minutes"); 
+            match("normalizedData"); 
 
 
             }
@@ -874,10 +874,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:49:7: ( 'uc' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:49:9: 'uc'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:49:7: ( 'continuous' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:49:9: 'continuous'
             {
-            match("uc"); 
+            match("continuous"); 
 
 
             }
@@ -890,15 +890,78 @@ public class InternalExpDSLLexer extends Lexer {
     }
     // $ANTLR end "T__49"
 
+    // $ANTLR start "T__50"
+    public final void mT__50() throws RecognitionException {
+        try {
+            int _type = T__50;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:50:7: ( 'intercalated' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:50:9: 'intercalated'
+            {
+            match("intercalated"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__50"
+
+    // $ANTLR start "T__51"
+    public final void mT__51() throws RecognitionException {
+        try {
+            int _type = T__51;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:51:7: ( 'minutes' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:51:9: 'minutes'
+            {
+            match("minutes"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__51"
+
+    // $ANTLR start "T__52"
+    public final void mT__52() throws RecognitionException {
+        try {
+            int _type = T__52;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:52:7: ( 'uc' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:52:9: 'uc'
+            {
+            match("uc"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__52"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1509:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1509:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1741:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1741:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1509:11: ( '^' )?
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1741:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -907,7 +970,7 @@ public class InternalExpDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1509:11: '^'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1741:11: '^'
                     {
                     match('^'); 
 
@@ -925,7 +988,7 @@ public class InternalExpDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1509:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1741:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -974,10 +1037,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1511:10: ( ( '0' .. '9' )+ )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1511:12: ( '0' .. '9' )+
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1743:10: ( ( '0' .. '9' )+ )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1743:12: ( '0' .. '9' )+
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1511:12: ( '0' .. '9' )+
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1743:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -991,7 +1054,7 @@ public class InternalExpDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1511:13: '0' .. '9'
+            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1743:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1023,10 +1086,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1044,10 +1107,10 @@ public class InternalExpDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1063,7 +1126,7 @@ public class InternalExpDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1079,7 +1142,7 @@ public class InternalExpDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1104,10 +1167,10 @@ public class InternalExpDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1123,7 +1186,7 @@ public class InternalExpDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1139,7 +1202,7 @@ public class InternalExpDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1513:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1745:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1182,12 +1245,12 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1515:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1515:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1747:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1747:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1515:24: ( options {greedy=false; } : . )*
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1747:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1212,7 +1275,7 @@ public class InternalExpDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1515:52: .
+            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1747:52: .
             	    {
             	    matchAny(); 
 
@@ -1242,12 +1305,12 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1260,7 +1323,7 @@ public class InternalExpDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1280,7 +1343,7 @@ public class InternalExpDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:40: ( ( '\\r' )? '\\n' )?
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1289,9 +1352,9 @@ public class InternalExpDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:41: ( '\\r' )? '\\n'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:41: ( '\\r' )? '\\n'
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:41: ( '\\r' )?
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1300,7 +1363,7 @@ public class InternalExpDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1517:41: '\\r'
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1749:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1332,10 +1395,10 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1519:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1519:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1751:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1751:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1519:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1751:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1389,8 +1452,8 @@ public class InternalExpDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1521:16: ( . )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1521:18: .
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1753:16: ( . )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1753:18: .
             {
             matchAny(); 
 
@@ -1405,8 +1468,8 @@ public class InternalExpDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=46;
+        // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=49;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1683,49 +1746,70 @@ public class InternalExpDSLLexer extends Lexer {
                 }
                 break;
             case 40 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:244: RULE_ID
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:244: T__50
+                {
+                mT__50(); 
+
+                }
+                break;
+            case 41 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:250: T__51
+                {
+                mT__51(); 
+
+                }
+                break;
+            case 42 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:256: T__52
+                {
+                mT__52(); 
+
+                }
+                break;
+            case 43 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:262: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 41 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:252: RULE_INT
+            case 44 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:270: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 42 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:261: RULE_STRING
+            case 45 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:279: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 43 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:273: RULE_ML_COMMENT
+            case 46 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:291: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 44 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:289: RULE_SL_COMMENT
+            case 47 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:307: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 45 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:305: RULE_WS
+            case 48 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:323: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 46 :
-                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:313: RULE_ANY_OTHER
+            case 49 :
+                // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1:331: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1739,119 +1823,119 @@ public class InternalExpDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\4\47\2\uffff\27\47\1\45\2\uffff\3\45\2\uffff\1\47\1\uffff"+
-        "\3\47\2\uffff\20\47\1\145\2\47\1\150\12\47\5\uffff\1\47\1\164\15"+
-        "\47\1\uffff\5\47\1\uffff\2\47\1\uffff\13\47\1\uffff\6\47\1\u009a"+
-        "\1\u009b\2\47\1\u009e\6\47\1\u00a5\1\47\1\u00a7\2\47\1\uffff\16"+
-        "\47\3\uffff\1\47\1\uffff\1\47\1\u00ba\4\47\1\uffff\1\47\1\uffff"+
-        "\20\47\1\u00d0\1\u00d1\1\uffff\1\u00d2\15\47\1\u00e0\2\47\1\u00e3"+
-        "\1\u00e4\2\47\3\uffff\1\u00e7\14\47\1\uffff\1\47\3\uffff\1\47\1"+
-        "\u00f7\1\uffff\1\u00f8\4\47\1\u00fe\1\u00ff\2\47\1\u0102\1\u0103"+
-        "\3\47\3\uffff\5\47\2\uffff\2\47\2\uffff\7\47\1\u0115\1\u0116\2\47"+
-        "\1\u0119\1\47\1\u011b\2\47\1\u011e\2\uffff\2\47\1\uffff\1\47\1\uffff"+
-        "\1\u0122\1\47\1\uffff\2\47\2\uffff\1\u0126\1\u0127\1\47\2\uffff"+
-        "\1\u0129\1\uffff";
+        "\1\uffff\3\46\1\uffff\1\54\2\46\2\uffff\1\63\22\46\1\44\2\uffff"+
+        "\3\44\2\uffff\1\46\1\uffff\2\46\1\uffff\2\46\1\uffff\1\126\1\127"+
+        "\1\46\2\uffff\1\46\1\uffff\13\46\1\146\1\46\1\uffff\11\46\5\uffff"+
+        "\4\46\1\165\1\46\2\uffff\1\167\7\46\1\uffff\5\46\1\uffff\16\46\1"+
+        "\uffff\1\46\1\uffff\1\u0093\1\u0094\2\46\1\u0097\5\46\1\u009d\1"+
+        "\u009e\1\46\1\uffff\15\46\3\uffff\1\46\1\uffff\1\46\1\u00af\3\46"+
+        "\2\uffff\16\46\1\u00c1\1\u00c2\1\uffff\16\46\1\u00d1\2\46\2\uffff"+
+        "\1\u00d4\12\46\1\u00e0\1\46\2\uffff\1\u00e2\1\46\1\uffff\1\u00e4"+
+        "\3\46\1\u00e9\2\46\1\u00ec\1\u00ed\2\46\1\uffff\1\46\1\uffff\1\46"+
+        "\1\uffff\4\46\1\uffff\2\46\2\uffff\2\46\1\u00fb\4\46\1\u0100\1\u0101"+
+        "\2\46\1\u0104\1\46\1\uffff\1\46\1\u0107\1\46\1\u0109\2\uffff\2\46"+
+        "\1\uffff\1\46\1\u010d\1\uffff\1\46\1\uffff\2\46\2\uffff\1\u0111"+
+        "\1\u0112\1\46\2\uffff\1\u0114\1\uffff";
     static final String DFA12_eofS =
-        "\u012a\uffff";
+        "\u0115\uffff";
     static final String DFA12_minS =
-        "\1\0\1\162\1\156\1\170\1\145\2\uffff\1\145\1\160\1\143\1\141\1"+
-        "\103\1\145\1\171\1\141\1\123\3\145\1\157\1\144\2\143\1\165\1\122"+
-        "\1\160\1\141\3\157\1\101\2\uffff\2\0\1\52\2\uffff\1\157\1\uffff"+
-        "\1\144\1\160\1\156\2\uffff\1\164\1\156\1\145\1\164\1\163\1\154\1"+
-        "\102\1\163\1\160\1\143\1\166\1\40\1\164\1\154\1\163\1\162\1\60\1"+
-        "\164\1\151\1\60\1\164\1\145\1\104\1\155\1\145\1\164\1\162\1\146"+
-        "\1\162\1\156\5\uffff\1\143\1\60\2\145\1\162\1\165\1\143\1\151\1"+
-        "\153\1\145\1\104\1\151\1\145\1\164\1\145\1\uffff\1\162\1\141\1\165"+
-        "\1\143\1\155\1\uffff\1\145\1\164\1\uffff\1\151\1\163\1\40\1\142"+
-        "\1\143\1\151\1\144\1\164\1\155\1\164\1\145\1\uffff\2\162\1\151\1"+
-        "\164\1\151\1\166\2\60\1\40\1\147\1\60\1\157\1\154\1\151\1\164\1"+
-        "\151\1\162\1\60\1\162\1\60\1\166\1\164\1\uffff\1\157\1\153\1\157"+
-        "\2\104\1\141\1\151\1\163\1\151\1\141\1\143\1\145\1\146\1\151\3\uffff"+
-        "\1\156\1\uffff\1\162\1\60\1\143\1\145\1\162\1\151\1\uffff\1\143"+
-        "\1\uffff\2\151\2\102\1\156\2\141\1\154\1\156\1\163\1\155\1\154\2"+
-        "\163\1\151\1\164\2\60\1\uffff\1\60\1\163\1\145\1\160\1\141\1\164"+
-        "\3\157\1\102\2\164\1\151\1\165\1\60\1\145\1\40\2\60\1\143\1\171"+
-        "\3\uffff\1\60\1\144\1\164\1\154\1\151\1\156\2\170\1\165\2\141\1"+
-        "\172\1\157\1\uffff\1\156\3\uffff\1\40\1\60\1\uffff\1\60\1\151\1"+
-        "\141\1\102\1\145\2\60\1\145\1\164\2\60\1\145\1\165\1\164\3\uffff"+
-        "\1\157\1\164\1\145\1\156\1\163\2\uffff\1\163\1\164\2\uffff\1\144"+
-        "\1\163\1\141\1\156\1\145\1\147\1\144\2\60\1\157\1\104\1\60\1\154"+
-        "\1\60\1\144\1\151\1\60\2\uffff\1\156\1\141\1\uffff\1\40\1\uffff"+
-        "\1\60\1\156\1\uffff\1\163\1\164\2\uffff\2\60\1\141\2\uffff\1\60"+
-        "\1\uffff";
+        "\1\0\1\170\1\145\1\162\1\uffff\1\60\1\144\1\165\2\uffff\1\60\1"+
+        "\103\1\145\1\171\1\141\1\123\2\145\1\157\2\143\1\56\1\122\1\160"+
+        "\1\141\3\157\1\151\1\101\2\uffff\2\0\1\52\2\uffff\1\160\1\uffff"+
+        "\1\156\1\157\1\uffff\2\164\1\uffff\2\60\1\164\2\uffff\1\163\1\uffff"+
+        "\1\154\1\102\1\163\1\160\1\143\1\166\1\40\1\154\1\163\1\162\1\151"+
+        "\1\60\1\164\1\uffff\1\104\1\155\1\145\1\164\1\162\1\146\1\162\2"+
+        "\156\5\uffff\2\145\1\143\1\151\1\60\1\145\2\uffff\1\60\1\153\1\145"+
+        "\1\104\1\151\1\145\1\164\1\145\1\uffff\1\141\1\165\1\143\1\155\1"+
+        "\164\1\uffff\1\151\1\40\1\142\1\143\1\151\1\144\1\164\1\155\1\164"+
+        "\1\165\2\162\1\145\1\166\1\uffff\1\162\1\uffff\2\60\1\40\1\147\1"+
+        "\60\1\157\1\154\1\164\1\151\1\162\2\60\1\166\1\uffff\1\157\1\153"+
+        "\1\157\2\104\1\141\1\151\1\164\1\151\1\141\1\163\1\151\1\143\3\uffff"+
+        "\1\156\1\uffff\1\162\1\60\1\145\1\162\1\151\2\uffff\1\151\2\102"+
+        "\1\156\2\141\1\154\1\156\1\145\1\155\1\154\1\163\1\164\1\141\2\60"+
+        "\1\uffff\1\163\1\145\1\160\1\164\2\157\1\102\2\164\1\151\1\165\1"+
+        "\163\1\145\1\40\1\60\1\171\1\154\2\uffff\1\60\1\144\1\164\1\151"+
+        "\2\170\1\165\2\141\1\172\1\157\1\60\1\156\2\uffff\1\60\1\141\1\uffff"+
+        "\1\60\1\151\1\102\1\145\1\60\1\145\1\164\2\60\1\145\1\165\1\uffff"+
+        "\1\164\1\uffff\1\164\1\uffff\1\157\1\145\1\156\1\163\1\uffff\1\163"+
+        "\1\164\2\uffff\1\144\1\163\1\60\1\145\1\156\1\147\1\144\2\60\1\157"+
+        "\1\104\1\60\1\154\1\uffff\1\144\1\60\1\151\1\60\2\uffff\1\156\1"+
+        "\141\1\uffff\1\40\1\60\1\uffff\1\156\1\uffff\1\163\1\164\2\uffff"+
+        "\2\60\1\141\2\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\162\1\156\1\170\1\145\2\uffff\1\151\1\160\1\143\1\141"+
-        "\1\157\1\145\1\171\1\141\4\145\1\157\2\156\1\143\1\165\1\157\1\160"+
-        "\1\141\3\157\1\172\2\uffff\2\uffff\1\57\2\uffff\1\157\1\uffff\1"+
-        "\144\1\160\1\156\2\uffff\1\164\1\156\1\145\1\164\1\163\1\154\1\102"+
-        "\1\163\1\160\1\143\1\166\1\40\1\164\1\161\1\163\1\162\1\172\1\164"+
-        "\1\151\1\172\1\164\1\145\1\104\1\155\1\145\1\164\1\162\1\146\1\162"+
-        "\1\156\5\uffff\1\143\1\172\2\145\1\162\1\165\1\143\1\151\1\153\1"+
-        "\145\1\104\1\151\1\145\1\164\1\145\1\uffff\1\162\1\141\1\165\1\143"+
-        "\1\155\1\uffff\1\145\1\164\1\uffff\1\151\1\163\1\40\1\142\1\143"+
-        "\1\151\1\144\1\164\1\155\1\164\1\145\1\uffff\2\162\1\151\1\164\1"+
-        "\151\1\166\2\172\1\40\1\147\1\172\1\157\1\154\1\151\1\164\1\151"+
-        "\1\162\1\172\1\162\1\172\1\166\1\164\1\uffff\1\157\1\153\1\157\2"+
-        "\104\1\141\1\151\1\163\1\151\1\141\1\143\1\145\1\146\1\151\3\uffff"+
-        "\1\156\1\uffff\1\162\1\172\1\143\1\145\1\162\1\151\1\uffff\1\143"+
-        "\1\uffff\2\151\2\102\1\156\2\141\1\154\1\156\1\163\1\155\1\154\2"+
-        "\163\1\151\1\164\2\172\1\uffff\1\172\1\163\1\145\1\160\1\141\1\164"+
-        "\3\157\1\102\2\164\1\151\1\165\1\172\1\145\1\40\2\172\1\143\1\171"+
-        "\3\uffff\1\172\1\144\1\164\1\154\1\171\1\156\2\170\1\165\2\141\1"+
-        "\172\1\157\1\uffff\1\156\3\uffff\1\40\1\172\1\uffff\1\172\1\151"+
-        "\1\141\1\105\1\145\2\172\1\145\1\164\2\172\1\145\1\165\1\164\3\uffff"+
-        "\1\157\1\164\1\145\1\156\1\163\2\uffff\1\163\1\164\2\uffff\1\144"+
-        "\1\163\1\141\1\156\1\145\1\147\1\144\2\172\1\157\1\104\1\172\1\154"+
-        "\1\172\1\144\1\151\1\172\2\uffff\1\156\1\141\1\uffff\1\40\1\uffff"+
-        "\1\172\1\156\1\uffff\1\163\1\164\2\uffff\2\172\1\141\2\uffff\1\172"+
+        "\1\uffff\1\170\1\145\1\162\1\uffff\1\172\1\156\1\165\2\uffff\1"+
+        "\172\1\157\1\145\1\171\1\141\3\145\1\157\1\156\1\143\1\56\1\157"+
+        "\1\160\1\141\3\157\1\151\1\172\2\uffff\2\uffff\1\57\2\uffff\1\160"+
+        "\1\uffff\1\156\1\157\1\uffff\2\164\1\uffff\2\172\1\164\2\uffff\1"+
+        "\163\1\uffff\1\154\1\102\1\163\1\160\1\143\1\166\1\40\1\161\1\163"+
+        "\1\162\1\151\1\172\1\164\1\uffff\1\104\1\155\1\145\1\164\1\162\1"+
+        "\146\1\162\2\156\5\uffff\2\145\1\143\1\151\1\172\1\145\2\uffff\1"+
+        "\172\1\153\1\145\1\104\1\151\1\145\1\164\1\145\1\uffff\1\141\1\165"+
+        "\1\143\1\155\1\164\1\uffff\1\151\1\40\1\142\1\143\1\151\1\144\1"+
+        "\164\1\155\1\164\1\165\2\162\1\145\1\166\1\uffff\1\162\1\uffff\2"+
+        "\172\1\40\1\147\1\172\1\157\1\154\1\164\1\151\1\162\2\172\1\166"+
+        "\1\uffff\1\157\1\153\1\157\2\104\1\141\1\151\1\164\1\151\1\141\1"+
+        "\163\1\151\1\143\3\uffff\1\156\1\uffff\1\162\1\172\1\145\1\162\1"+
+        "\151\2\uffff\1\151\2\102\1\156\2\141\1\154\1\156\1\145\1\155\1\154"+
+        "\1\163\1\164\1\141\2\172\1\uffff\1\163\1\145\1\160\1\164\2\157\1"+
+        "\102\2\164\1\151\1\165\1\163\1\145\1\40\1\172\1\171\1\154\2\uffff"+
+        "\1\172\1\144\1\164\1\171\2\170\1\165\2\141\1\172\1\157\1\172\1\156"+
+        "\2\uffff\1\172\1\141\1\uffff\1\172\1\151\1\105\1\145\1\172\1\145"+
+        "\1\164\2\172\1\145\1\165\1\uffff\1\164\1\uffff\1\164\1\uffff\1\157"+
+        "\1\145\1\156\1\163\1\uffff\1\163\1\164\2\uffff\1\144\1\163\1\172"+
+        "\1\145\1\156\1\147\1\144\2\172\1\157\1\104\1\172\1\154\1\uffff\1"+
+        "\144\1\172\1\151\1\172\2\uffff\1\156\1\141\1\uffff\1\40\1\172\1"+
+        "\uffff\1\156\1\uffff\1\163\1\164\2\uffff\2\172\1\141\2\uffff\1\172"+
         "\1\uffff";
     static final String DFA12_acceptS =
-        "\5\uffff\1\5\1\6\30\uffff\1\50\1\51\3\uffff\1\55\1\56\1\uffff\1"+
-        "\50\3\uffff\1\5\1\6\36\uffff\1\51\1\52\1\53\1\54\1\55\17\uffff\1"+
-        "\35\5\uffff\1\24\2\uffff\1\47\13\uffff\1\2\26\uffff\1\33\16\uffff"+
-        "\1\12\1\13\1\34\1\uffff\1\15\6\uffff\1\23\1\uffff\1\25\22\uffff"+
-        "\1\17\25\uffff\1\14\1\16\1\20\15\uffff\1\1\1\uffff\1\4\1\7\1\46"+
-        "\2\uffff\1\21\16\uffff\1\10\1\11\1\32\5\uffff\1\31\1\36\2\uffff"+
-        "\1\41\1\42\21\uffff\1\30\1\37\2\uffff\1\44\1\uffff\1\22\2\uffff"+
-        "\1\27\2\uffff\1\3\1\45\3\uffff\1\26\1\40\1\uffff\1\43";
+        "\4\uffff\1\5\3\uffff\1\11\1\12\24\uffff\1\53\1\54\3\uffff\1\60"+
+        "\1\61\1\uffff\1\53\2\uffff\1\5\2\uffff\1\21\3\uffff\1\11\1\12\1"+
+        "\uffff\1\22\15\uffff\1\34\11\uffff\1\54\1\55\1\56\1\57\1\60\6\uffff"+
+        "\1\7\1\27\10\uffff\1\40\5\uffff\1\52\16\uffff\1\23\1\uffff\1\10"+
+        "\15\uffff\1\36\15\uffff\1\13\1\14\1\37\1\uffff\1\16\5\uffff\1\26"+
+        "\1\30\20\uffff\1\20\21\uffff\1\15\1\17\15\uffff\1\3\1\4\2\uffff"+
+        "\1\24\13\uffff\1\51\1\uffff\1\6\1\uffff\1\35\4\uffff\1\41\2\uffff"+
+        "\1\44\1\45\15\uffff\1\1\4\uffff\1\33\1\42\2\uffff\1\47\2\uffff\1"+
+        "\25\1\uffff\1\32\2\uffff\1\2\1\50\3\uffff\1\31\1\43\1\uffff\1\46";
     static final String DFA12_specialS =
-        "\1\2\40\uffff\1\1\1\0\u0107\uffff}>";
+        "\1\1\37\uffff\1\2\1\0\u00f3\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\45\2\44\2\45\1\44\22\45\1\44\1\45\1\41\4\45\1\42\7\45\1"+
-            "\43\12\40\7\45\1\11\1\37\1\30\1\14\1\3\1\16\1\4\4\37\1\17\1"+
-            "\20\1\37\1\31\1\1\1\27\1\13\1\10\1\12\6\37\3\45\1\36\1\37\1"+
-            "\45\1\26\1\37\1\35\1\22\1\2\1\23\1\37\1\32\1\24\3\37\1\7\1\34"+
-            "\3\37\1\21\1\33\1\15\1\25\5\37\1\5\1\45\1\6\uff82\45",
-            "\1\46",
+            "\11\44\2\43\2\44\1\43\22\44\1\43\1\44\1\40\4\44\1\41\7\44\1"+
+            "\42\12\37\1\44\1\4\5\44\1\5\1\36\1\26\1\14\1\1\1\16\1\2\4\36"+
+            "\1\17\2\36\1\27\1\3\1\25\1\13\1\36\1\12\6\36\3\44\1\35\1\36"+
+            "\1\44\1\24\1\36\1\33\1\21\1\36\1\22\1\36\1\30\1\6\3\36\1\34"+
+            "\1\32\1\7\2\36\1\20\1\31\1\15\1\23\5\36\1\10\1\44\1\11\uff82"+
+            "\44",
+            "\1\45",
+            "\1\47",
             "\1\50",
-            "\1\51",
-            "\1\52",
             "",
-            "",
-            "\1\55\3\uffff\1\56",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\2\46\1\52\16\46"+
+            "\1\53\10\46",
+            "\1\56\11\uffff\1\55",
             "\1\57",
-            "\1\60",
-            "\1\61",
-            "\1\63\53\uffff\1\62",
-            "\1\64",
-            "\1\65",
+            "",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\1\62\31\46",
+            "\1\65\53\uffff\1\64",
             "\1\66",
-            "\1\70\21\uffff\1\67",
-            "\1\71",
-            "\1\72",
+            "\1\67",
+            "\1\70",
+            "\1\72\21\uffff\1\71",
             "\1\73",
             "\1\74",
-            "\1\75\11\uffff\1\76",
-            "\1\100\12\uffff\1\77",
+            "\1\75",
+            "\1\77\12\uffff\1\76",
+            "\1\100",
             "\1\101",
-            "\1\102",
-            "\1\103\25\uffff\1\105\6\uffff\1\104",
+            "\1\102\25\uffff\1\104\6\uffff\1\103",
+            "\1\105",
             "\1\106",
             "\1\107",
             "\1\110",
             "\1\111",
             "\1\112",
-            "\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\32\46\4\uffff\1\46\1\uffff\32\46",
             "",
             "",
             "\0\114",
@@ -1863,15 +1947,17 @@ public class InternalExpDSLLexer extends Lexer {
             "",
             "\1\121",
             "\1\122",
+            "",
             "\1\123",
-            "",
-            "",
             "\1\124",
-            "\1\125",
-            "\1\126",
-            "\1\127",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\23\46\1\125\6\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\130",
+            "",
+            "",
             "\1\131",
+            "",
             "\1\132",
             "\1\133",
             "\1\134",
@@ -1882,10 +1968,11 @@ public class InternalExpDSLLexer extends Lexer {
             "\1\141\4\uffff\1\142",
             "\1\143",
             "\1\144",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\146",
+            "\1\145",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\147",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\150",
             "\1\151",
             "\1\152",
             "\1\153",
@@ -1894,18 +1981,20 @@ public class InternalExpDSLLexer extends Lexer {
             "\1\156",
             "\1\157",
             "\1\160",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\161",
             "\1\162",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\163",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\165",
+            "\1\164",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\166",
-            "\1\167",
+            "",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\170",
             "\1\171",
             "\1\172",
@@ -1913,19 +2002,18 @@ public class InternalExpDSLLexer extends Lexer {
             "\1\174",
             "\1\175",
             "\1\176",
+            "",
             "\1\177",
             "\1\u0080",
             "\1\u0081",
-            "",
             "\1\u0082",
             "\1\u0083",
+            "",
             "\1\u0084",
             "\1\u0085",
             "\1\u0086",
-            "",
             "\1\u0087",
             "\1\u0088",
-            "",
             "\1\u0089",
             "\1\u008a",
             "\1\u008b",
@@ -1935,63 +2023,65 @@ public class InternalExpDSLLexer extends Lexer {
             "\1\u008f",
             "\1\u0090",
             "\1\u0091",
-            "\1\u0092",
-            "\1\u0093",
             "",
-            "\1\u0094",
+            "\1\u0092",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u0095",
             "\1\u0096",
-            "\1\u0097",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u0098",
             "\1\u0099",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u009a",
+            "\1\u009b",
             "\1\u009c",
-            "\1\u009d",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u009f",
+            "",
             "\1\u00a0",
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00a5",
             "\1\u00a6",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00a7",
             "\1\u00a8",
             "\1\u00a9",
-            "",
             "\1\u00aa",
             "\1\u00ab",
             "\1\u00ac",
+            "",
+            "",
+            "",
             "\1\u00ad",
+            "",
             "\1\u00ae",
-            "\1\u00af",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
+            "",
+            "",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
             "\1\u00b6",
             "\1\u00b7",
-            "",
-            "",
-            "",
             "\1\u00b8",
-            "",
             "\1\u00b9",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
             "\1\u00bd",
             "\1\u00be",
-            "",
             "\1\u00bf",
-            "",
             "\1\u00c0",
-            "\1\u00c1",
-            "\1\u00c2",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "",
             "\1\u00c3",
             "\1\u00c4",
             "\1\u00c5",
@@ -2005,16 +2095,16 @@ public class InternalExpDSLLexer extends Lexer {
             "\1\u00cd",
             "\1\u00ce",
             "\1\u00cf",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00d0",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\1\u00d2",
             "\1\u00d3",
-            "\1\u00d4",
+            "",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u00d5",
             "\1\u00d6",
-            "\1\u00d7",
-            "\1\u00d8",
+            "\1\u00d8\17\uffff\1\u00d7",
             "\1\u00d9",
             "\1\u00da",
             "\1\u00db",
@@ -2022,102 +2112,76 @@ public class InternalExpDSLLexer extends Lexer {
             "\1\u00dd",
             "\1\u00de",
             "\1\u00df",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u00e1",
-            "\1\u00e2",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\1\u00e3",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u00e5",
-            "\1\u00e6",
-            "",
-            "",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00e6\2\uffff\1\u00e7",
             "\1\u00e8",
-            "\1\u00e9",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u00ea",
-            "\1\u00ec\17\uffff\1\u00eb",
-            "\1\u00ed",
+            "\1\u00eb",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u00ee",
             "\1\u00ef",
+            "",
             "\1\u00f0",
+            "",
             "\1\u00f1",
+            "",
             "\1\u00f2",
             "\1\u00f3",
             "\1\u00f4",
-            "",
             "\1\u00f5",
             "",
-            "",
-            "",
             "\1\u00f6",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\1\u00f7",
             "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "",
+            "\1\u00f8",
             "\1\u00f9",
-            "\1\u00fa",
-            "\1\u00fb\2\uffff\1\u00fc",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\1\u00fa\31\46",
+            "\1\u00fc",
             "\1\u00fd",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0100",
-            "\1\u0101",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0104",
+            "\1\u00fe",
+            "\1\u00ff",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\1\u0102",
+            "\1\u0103",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u0105",
+            "",
             "\1\u0106",
-            "",
-            "",
-            "",
-            "\1\u0107",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u0108",
-            "\1\u0109",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "",
+            "",
             "\1\u010a",
             "\1\u010b",
             "",
-            "",
             "\1\u010c",
-            "\1\u010d",
-            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "",
             "\1\u010e",
+            "",
             "\1\u010f",
             "\1\u0110",
-            "\1\u0111",
-            "\1\u0112",
+            "",
+            "",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             "\1\u0113",
-            "\1\u0114",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0117",
-            "\1\u0118",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u011a",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u011c",
-            "\1\u011d",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
             "",
             "",
-            "\1\u011f",
-            "\1\u0120",
-            "",
-            "\1\u0121",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0123",
-            "",
-            "\1\u0124",
-            "\1\u0125",
-            "",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
-            "\1\u0128",
-            "",
-            "",
-            "\12\47\7\uffff\32\47\4\uffff\1\47\1\uffff\32\47",
+            "\12\46\7\uffff\32\46\4\uffff\1\46\1\uffff\32\46",
             ""
     };
 
@@ -2151,53 +2215,43 @@ public class InternalExpDSLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_34 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_34>='\u0000' && LA12_34<='\uFFFF')) ) {s = 76;}
-
-                        else s = 37;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA12_33 = input.LA(1);
 
                         s = -1;
                         if ( ((LA12_33>='\u0000' && LA12_33<='\uFFFF')) ) {s = 76;}
 
-                        else s = 37;
+                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='P') ) {s = 1;}
+                        if ( (LA12_0=='E') ) {s = 1;}
 
-                        else if ( (LA12_0=='e') ) {s = 2;}
+                        else if ( (LA12_0=='G') ) {s = 2;}
 
-                        else if ( (LA12_0=='E') ) {s = 3;}
+                        else if ( (LA12_0=='P') ) {s = 3;}
 
-                        else if ( (LA12_0=='G') ) {s = 4;}
+                        else if ( (LA12_0==';') ) {s = 4;}
 
-                        else if ( (LA12_0=='{') ) {s = 5;}
+                        else if ( (LA12_0=='A') ) {s = 5;}
 
-                        else if ( (LA12_0=='}') ) {s = 6;}
+                        else if ( (LA12_0=='i') ) {s = 6;}
 
-                        else if ( (LA12_0=='m') ) {s = 7;}
+                        else if ( (LA12_0=='o') ) {s = 7;}
 
-                        else if ( (LA12_0=='S') ) {s = 8;}
+                        else if ( (LA12_0=='{') ) {s = 8;}
 
-                        else if ( (LA12_0=='A') ) {s = 9;}
+                        else if ( (LA12_0=='}') ) {s = 9;}
 
                         else if ( (LA12_0=='T') ) {s = 10;}
 
@@ -2211,49 +2265,57 @@ public class InternalExpDSLLexer extends Lexer {
 
                         else if ( (LA12_0=='L') ) {s = 15;}
 
-                        else if ( (LA12_0=='M') ) {s = 16;}
+                        else if ( (LA12_0=='r') ) {s = 16;}
 
-                        else if ( (LA12_0=='r') ) {s = 17;}
+                        else if ( (LA12_0=='d') ) {s = 17;}
 
-                        else if ( (LA12_0=='d') ) {s = 18;}
+                        else if ( (LA12_0=='f') ) {s = 18;}
 
-                        else if ( (LA12_0=='f') ) {s = 19;}
+                        else if ( (LA12_0=='u') ) {s = 19;}
 
-                        else if ( (LA12_0=='i') ) {s = 20;}
+                        else if ( (LA12_0=='a') ) {s = 20;}
 
-                        else if ( (LA12_0=='u') ) {s = 21;}
+                        else if ( (LA12_0=='Q') ) {s = 21;}
 
-                        else if ( (LA12_0=='a') ) {s = 22;}
+                        else if ( (LA12_0=='C') ) {s = 22;}
 
-                        else if ( (LA12_0=='Q') ) {s = 23;}
+                        else if ( (LA12_0=='O') ) {s = 23;}
 
-                        else if ( (LA12_0=='C') ) {s = 24;}
+                        else if ( (LA12_0=='h') ) {s = 24;}
 
-                        else if ( (LA12_0=='O') ) {s = 25;}
+                        else if ( (LA12_0=='s') ) {s = 25;}
 
-                        else if ( (LA12_0=='h') ) {s = 26;}
+                        else if ( (LA12_0=='n') ) {s = 26;}
 
-                        else if ( (LA12_0=='s') ) {s = 27;}
+                        else if ( (LA12_0=='c') ) {s = 27;}
 
-                        else if ( (LA12_0=='n') ) {s = 28;}
+                        else if ( (LA12_0=='m') ) {s = 28;}
 
-                        else if ( (LA12_0=='c') ) {s = 29;}
+                        else if ( (LA12_0=='^') ) {s = 29;}
 
-                        else if ( (LA12_0=='^') ) {s = 30;}
+                        else if ( (LA12_0=='B'||(LA12_0>='H' && LA12_0<='K')||(LA12_0>='M' && LA12_0<='N')||LA12_0=='S'||(LA12_0>='U' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='e'||LA12_0=='g'||(LA12_0>='j' && LA12_0<='l')||(LA12_0>='p' && LA12_0<='q')||(LA12_0>='v' && LA12_0<='z')) ) {s = 30;}
 
-                        else if ( (LA12_0=='B'||(LA12_0>='H' && LA12_0<='K')||LA12_0=='N'||(LA12_0>='U' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='g'||(LA12_0>='j' && LA12_0<='l')||(LA12_0>='o' && LA12_0<='q')||(LA12_0>='v' && LA12_0<='z')) ) {s = 31;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 31;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 32;}
+                        else if ( (LA12_0=='\"') ) {s = 32;}
 
-                        else if ( (LA12_0=='\"') ) {s = 33;}
+                        else if ( (LA12_0=='\'') ) {s = 33;}
 
-                        else if ( (LA12_0=='\'') ) {s = 34;}
+                        else if ( (LA12_0=='/') ) {s = 34;}
 
-                        else if ( (LA12_0=='/') ) {s = 35;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 35;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 36;}
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||LA12_0==':'||(LA12_0>='<' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 36;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 37;}
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_32 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_32>='\u0000' && LA12_32<='\uFFFF')) ) {s = 76;}
+
+                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;

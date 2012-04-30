@@ -35,22 +35,26 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Model/elements"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement/metrics"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement/experiments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement/question"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process/activities"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process/metrics"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process/question"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity/artefacts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity/next"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity/role"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity/tasks"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Artefact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Artefact/name"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Task">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Task/name"/>
@@ -71,20 +75,38 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Levels/name"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/processName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/form"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/activityMetric"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/taskMetric"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics/artefactMetric"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/relatesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/form"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/unit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/activityBegin"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric/activityEnd"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/relatesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/form"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/unit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric/activities"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric/relatesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric/unit"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Questions">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Questions/question"/>

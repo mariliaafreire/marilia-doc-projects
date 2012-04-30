@@ -45,251 +45,257 @@ import org.xtext.project.expDSL.Factor;
 public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implements ExperimentalPlan
 {
   /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
   protected static final DesignType TYPE_EDEFAULT = DesignType.CDR;
 
   /**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
   protected DesignType type = TYPE_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getFactor() <em>Factor</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getFactor() <em>Factor</em>}' containment reference list.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getFactor()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getFactor()
+   * @generated
+   * @ordered
+   */
   protected EList<Factor> factor;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected ExperimentalPlanImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return ExpDSLPackage.Literals.EXPERIMENTAL_PLAN;
-	}
+    return ExpDSLPackage.Literals.EXPERIMENTAL_PLAN;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getName()
   {
-		return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setName(String newName)
   {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.EXPERIMENTAL_PLAN__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.EXPERIMENTAL_PLAN__NAME, oldName, name));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public DesignType getType()
   {
-		return type;
-	}
+    return type;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setType(DesignType newType)
   {
-		DesignType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE, oldType, type));
-	}
+    DesignType oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE, oldType, type));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public EList<Factor> getFactor()
   {
-		if (factor == null) {
-			factor = new EObjectContainmentEList<Factor>(Factor.class, this, ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR);
-		}
-		return factor;
-	}
+    if (factor == null)
+    {
+      factor = new EObjectContainmentEList<Factor>(Factor.class, this, ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR);
+    }
+    return factor;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-		switch (featureID) {
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
-				return ((InternalEList<?>)getFactor()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
+        return ((InternalEList<?>)getFactor()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
-				return getName();
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
-				return getType();
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
-				return getFactor();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
+        return getName();
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
+        return getType();
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
+        return getFactor();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
-				setName((String)newValue);
-				return;
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
-				setType((DesignType)newValue);
-				return;
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
-				getFactor().clear();
-				getFactor().addAll((Collection<? extends Factor>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
+        setName((String)newValue);
+        return;
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
+        setType((DesignType)newValue);
+        return;
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
+        getFactor().clear();
+        getFactor().addAll((Collection<? extends Factor>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
-				getFactor().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
+        getFactor().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
-				return type != TYPE_EDEFAULT;
-			case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
-				return factor != null && !factor.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__TYPE:
+        return type != TYPE_EDEFAULT;
+      case ExpDSLPackage.EXPERIMENTAL_PLAN__FACTOR:
+        return factor != null && !factor.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", type: ");
-		result.append(type);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", type: ");
+    result.append(type);
+    result.append(')');
+    return result.toString();
+  }
 
 } //ExperimentalPlanImpl

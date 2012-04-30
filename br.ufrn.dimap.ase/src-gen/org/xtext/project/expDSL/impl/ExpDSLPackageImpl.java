@@ -32,7 +32,6 @@ import org.xtext.project.expDSL.MetricType;
 import org.xtext.project.expDSL.MetricUnit;
 import org.xtext.project.expDSL.Metrics;
 import org.xtext.project.expDSL.Model;
-import org.xtext.project.expDSL.Question;
 import org.xtext.project.expDSL.Questions;
 import org.xtext.project.expDSL.Role;
 import org.xtext.project.expDSL.Task;
@@ -150,13 +149,6 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * @generated
    */
   private EClass questionsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass questionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -608,9 +600,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMetrics_ActivityMetric()
+  public EAttribute getMetrics_Name()
   {
-    return (EReference)metricsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)metricsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -618,7 +610,7 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMetrics_TaskMetric()
+  public EReference getMetrics_RelatesTo()
   {
     return (EReference)metricsEClass.getEStructuralFeatures().get(1);
   }
@@ -628,9 +620,59 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMetrics_ArtefactMetric()
+  public EAttribute getMetrics_Description()
   {
-    return (EReference)metricsEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)metricsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMetrics_Type()
+  {
+    return (EAttribute)metricsEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMetrics_Form()
+  {
+    return (EAttribute)metricsEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMetrics_Id()
+  {
+    return (EAttribute)metricsEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMetrics_Unit()
+  {
+    return (EAttribute)metricsEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMetrics_Details()
+  {
+    return (EReference)metricsEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -648,7 +690,7 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActivityMetric_Name()
+  public EAttribute getActivityMetric_ActivityBegin()
   {
     return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(0);
   }
@@ -658,79 +700,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActivityMetric_RelatesTo()
-  {
-    return (EReference)activityMetricEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getActivityMetric_Description()
-  {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getActivityMetric_Type()
-  {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getActivityMetric_Form()
-  {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getActivityMetric_Id()
-  {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getActivityMetric_Unit()
-  {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getActivityMetric_ActivityBegin()
-  {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getActivityMetric_ActivityEnd()
   {
-    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)activityMetricEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -748,79 +720,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTaskMetric_Name()
-  {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTaskMetric_RelatesTo()
-  {
-    return (EReference)taskMetricEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskMetric_Description()
-  {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskMetric_Type()
-  {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskMetric_Form()
-  {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskMetric_Id()
-  {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskMetric_Unit()
-  {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getTaskMetric_Activities()
   {
-    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)taskMetricEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -838,59 +740,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getArtefactMetric_Name()
+  public EReference getArtefactMetric_Artefact()
   {
-    return (EAttribute)artefactMetricEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getArtefactMetric_RelatesTo()
-  {
-    return (EReference)artefactMetricEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getArtefactMetric_Description()
-  {
-    return (EAttribute)artefactMetricEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getArtefactMetric_Type()
-  {
-    return (EAttribute)artefactMetricEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getArtefactMetric_Id()
-  {
-    return (EAttribute)artefactMetricEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getArtefactMetric_Unit()
-  {
-    return (EAttribute)artefactMetricEClass.getEStructuralFeatures().get(5);
+    return (EReference)artefactMetricEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -908,9 +760,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQuestions_Question()
+  public EAttribute getQuestions_Name()
   {
-    return (EReference)questionsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)questionsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -918,9 +770,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getQuestion()
+  public EAttribute getQuestions_Description()
   {
-    return questionEClass;
+    return (EAttribute)questionsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -928,9 +780,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQuestion_Name()
+  public EAttribute getQuestions_Type()
   {
-    return (EAttribute)questionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)questionsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -938,9 +790,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQuestion_Description()
+  public EAttribute getQuestions_Id()
   {
-    return (EAttribute)questionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)questionsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -948,9 +800,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQuestion_Type()
+  public EAttribute getQuestions_Req()
   {
-    return (EAttribute)questionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)questionsEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -958,29 +810,9 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQuestion_Id()
+  public EReference getQuestions_Alternatives()
   {
-    return (EAttribute)questionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getQuestion_Req()
-  {
-    return (EAttribute)questionEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getQuestion_Alternatives()
-  {
-    return (EReference)questionEClass.getEStructuralFeatures().get(5);
+    return (EReference)questionsEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1127,49 +959,32 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
     createEAttribute(levelsEClass, LEVELS__NAME);
 
     metricsEClass = createEClass(METRICS);
-    createEReference(metricsEClass, METRICS__ACTIVITY_METRIC);
-    createEReference(metricsEClass, METRICS__TASK_METRIC);
-    createEReference(metricsEClass, METRICS__ARTEFACT_METRIC);
+    createEAttribute(metricsEClass, METRICS__NAME);
+    createEReference(metricsEClass, METRICS__RELATES_TO);
+    createEAttribute(metricsEClass, METRICS__DESCRIPTION);
+    createEAttribute(metricsEClass, METRICS__TYPE);
+    createEAttribute(metricsEClass, METRICS__FORM);
+    createEAttribute(metricsEClass, METRICS__ID);
+    createEAttribute(metricsEClass, METRICS__UNIT);
+    createEReference(metricsEClass, METRICS__DETAILS);
 
     activityMetricEClass = createEClass(ACTIVITY_METRIC);
-    createEAttribute(activityMetricEClass, ACTIVITY_METRIC__NAME);
-    createEReference(activityMetricEClass, ACTIVITY_METRIC__RELATES_TO);
-    createEAttribute(activityMetricEClass, ACTIVITY_METRIC__DESCRIPTION);
-    createEAttribute(activityMetricEClass, ACTIVITY_METRIC__TYPE);
-    createEAttribute(activityMetricEClass, ACTIVITY_METRIC__FORM);
-    createEAttribute(activityMetricEClass, ACTIVITY_METRIC__ID);
-    createEAttribute(activityMetricEClass, ACTIVITY_METRIC__UNIT);
     createEAttribute(activityMetricEClass, ACTIVITY_METRIC__ACTIVITY_BEGIN);
     createEAttribute(activityMetricEClass, ACTIVITY_METRIC__ACTIVITY_END);
 
     taskMetricEClass = createEClass(TASK_METRIC);
-    createEAttribute(taskMetricEClass, TASK_METRIC__NAME);
-    createEReference(taskMetricEClass, TASK_METRIC__RELATES_TO);
-    createEAttribute(taskMetricEClass, TASK_METRIC__DESCRIPTION);
-    createEAttribute(taskMetricEClass, TASK_METRIC__TYPE);
-    createEAttribute(taskMetricEClass, TASK_METRIC__FORM);
-    createEAttribute(taskMetricEClass, TASK_METRIC__ID);
-    createEAttribute(taskMetricEClass, TASK_METRIC__UNIT);
     createEAttribute(taskMetricEClass, TASK_METRIC__ACTIVITIES);
 
     artefactMetricEClass = createEClass(ARTEFACT_METRIC);
-    createEAttribute(artefactMetricEClass, ARTEFACT_METRIC__NAME);
-    createEReference(artefactMetricEClass, ARTEFACT_METRIC__RELATES_TO);
-    createEAttribute(artefactMetricEClass, ARTEFACT_METRIC__DESCRIPTION);
-    createEAttribute(artefactMetricEClass, ARTEFACT_METRIC__TYPE);
-    createEAttribute(artefactMetricEClass, ARTEFACT_METRIC__ID);
-    createEAttribute(artefactMetricEClass, ARTEFACT_METRIC__UNIT);
+    createEReference(artefactMetricEClass, ARTEFACT_METRIC__ARTEFACT);
 
     questionsEClass = createEClass(QUESTIONS);
-    createEReference(questionsEClass, QUESTIONS__QUESTION);
-
-    questionEClass = createEClass(QUESTION);
-    createEAttribute(questionEClass, QUESTION__NAME);
-    createEAttribute(questionEClass, QUESTION__DESCRIPTION);
-    createEAttribute(questionEClass, QUESTION__TYPE);
-    createEAttribute(questionEClass, QUESTION__ID);
-    createEAttribute(questionEClass, QUESTION__REQ);
-    createEReference(questionEClass, QUESTION__ALTERNATIVES);
+    createEAttribute(questionsEClass, QUESTIONS__NAME);
+    createEAttribute(questionsEClass, QUESTIONS__DESCRIPTION);
+    createEAttribute(questionsEClass, QUESTIONS__TYPE);
+    createEAttribute(questionsEClass, QUESTIONS__ID);
+    createEAttribute(questionsEClass, QUESTIONS__REQ);
+    createEReference(questionsEClass, QUESTIONS__ALTERNATIVES);
 
     alternativesEClass = createEClass(ALTERNATIVES);
     createEAttribute(alternativesEClass, ALTERNATIVES__DESCRIPTION);
@@ -1211,6 +1026,8 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    taskMetricEClass.getESuperTypes().add(this.getMetrics());
+    artefactMetricEClass.getESuperTypes().add(this.getMetrics());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1221,7 +1038,7 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
     initEReference(getExperimentElement_Process(), this.getProcess(), null, "process", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExperimentElement_Metrics(), this.getMetrics(), null, "metrics", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExperimentElement_Experiments(), this.getExperimentalPlan(), null, "experiments", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExperimentElement_Question(), this.getQuestion(), null, "question", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExperimentElement_Question(), this.getQuestions(), null, "question", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(processEClass, org.xtext.project.expDSL.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.project.expDSL.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1257,49 +1074,32 @@ public class ExpDSLPackageImpl extends EPackageImpl implements ExpDSLPackage
     initEAttribute(getLevels_Name(), ecorePackage.getEString(), "name", null, 0, 1, Levels.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(metricsEClass, Metrics.class, "Metrics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMetrics_ActivityMetric(), this.getActivityMetric(), null, "activityMetric", null, 0, -1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetrics_TaskMetric(), this.getTaskMetric(), null, "taskMetric", null, 0, -1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMetrics_ArtefactMetric(), this.getArtefactMetric(), null, "artefactMetric", null, 0, -1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetrics_Name(), ecorePackage.getEString(), "name", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetrics_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetrics_Description(), ecorePackage.getEString(), "description", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetrics_Type(), this.getMetricType(), "type", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetrics_Form(), this.getColectType(), "form", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetrics_Id(), ecorePackage.getEString(), "id", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMetrics_Unit(), this.getMetricUnit(), "unit", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMetrics_Details(), this.getActivityMetric(), null, "details", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityMetricEClass, ActivityMetric.class, "ActivityMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActivityMetric_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActivityMetric_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivityMetric_Description(), ecorePackage.getEString(), "description", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivityMetric_Type(), this.getMetricType(), "type", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivityMetric_Form(), this.getColectType(), "form", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivityMetric_Id(), ecorePackage.getEString(), "id", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivityMetric_Unit(), this.getMetricUnit(), "unit", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getActivityMetric_ActivityBegin(), ecorePackage.getEString(), "activityBegin", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getActivityMetric_ActivityEnd(), ecorePackage.getEString(), "activityEnd", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(taskMetricEClass, TaskMetric.class, "TaskMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTaskMetric_Name(), ecorePackage.getEString(), "name", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTaskMetric_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskMetric_Description(), ecorePackage.getEString(), "description", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskMetric_Type(), this.getMetricType(), "type", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskMetric_Form(), this.getColectType(), "form", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskMetric_Id(), ecorePackage.getEString(), "id", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskMetric_Unit(), this.getMetricUnit(), "unit", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTaskMetric_Activities(), ecorePackage.getEString(), "activities", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(artefactMetricEClass, ArtefactMetric.class, "ArtefactMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getArtefactMetric_Name(), ecorePackage.getEString(), "name", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArtefactMetric_RelatesTo(), this.getArtefact(), null, "relatesTo", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArtefactMetric_Description(), ecorePackage.getEString(), "description", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArtefactMetric_Type(), this.getMetricType(), "type", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArtefactMetric_Id(), ecorePackage.getEString(), "id", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArtefactMetric_Unit(), this.getMetricUnit(), "unit", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArtefactMetric_Artefact(), this.getArtefact(), null, "artefact", null, 0, 1, ArtefactMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(questionsEClass, Questions.class, "Questions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQuestions_Question(), this.getQuestion(), null, "question", null, 0, -1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getQuestion_Name(), ecorePackage.getEString(), "name", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getQuestion_Description(), ecorePackage.getEString(), "description", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getQuestion_Type(), this.getAnswerType(), "type", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getQuestion_Id(), ecorePackage.getEString(), "id", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getQuestion_Req(), ecorePackage.getEInt(), "req", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getQuestion_Alternatives(), this.getAlternatives(), null, "alternatives", null, 0, -1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuestions_Name(), ecorePackage.getEString(), "name", null, 0, 1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuestions_Description(), ecorePackage.getEString(), "description", null, 0, 1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuestions_Type(), this.getAnswerType(), "type", null, 0, 1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuestions_Id(), ecorePackage.getEString(), "id", null, 0, 1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuestions_Req(), ecorePackage.getEInt(), "req", null, 0, 1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQuestions_Alternatives(), this.getAlternatives(), null, "alternatives", null, 0, -1, Questions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(alternativesEClass, Alternatives.class, "Alternatives", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAlternatives_Description(), ecorePackage.getEString(), "description", null, 0, 1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

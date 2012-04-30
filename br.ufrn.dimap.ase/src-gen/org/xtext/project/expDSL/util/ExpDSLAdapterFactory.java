@@ -25,7 +25,6 @@ import org.xtext.project.expDSL.Factor;
 import org.xtext.project.expDSL.Levels;
 import org.xtext.project.expDSL.Metrics;
 import org.xtext.project.expDSL.Model;
-import org.xtext.project.expDSL.Question;
 import org.xtext.project.expDSL.Questions;
 import org.xtext.project.expDSL.Role;
 import org.xtext.project.expDSL.Task;
@@ -168,11 +167,6 @@ public class ExpDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseQuestions(Questions object)
       {
         return createQuestionsAdapter();
-      }
-      @Override
-      public Adapter caseQuestion(Question object)
-      {
-        return createQuestionAdapter();
       }
       @Override
       public Adapter caseAlternatives(Alternatives object)
@@ -422,21 +416,6 @@ public class ExpDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQuestionsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.project.expDSL.Question <em>Question</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.project.expDSL.Question
-   * @generated
-   */
-  public Adapter createQuestionAdapter()
   {
     return null;
   }

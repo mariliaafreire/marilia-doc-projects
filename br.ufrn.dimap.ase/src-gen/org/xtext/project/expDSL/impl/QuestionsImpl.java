@@ -8,6 +8,7 @@ package org.xtext.project.expDSL.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,13 +16,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.project.expDSL.Alternatives;
+import org.xtext.project.expDSL.AnswerType;
 import org.xtext.project.expDSL.ExpDSLPackage;
-import org.xtext.project.expDSL.Question;
 import org.xtext.project.expDSL.Questions;
 
 /**
@@ -31,7 +34,12 @@ import org.xtext.project.expDSL.Questions;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getQuestion <em>Question</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getReq <em>Req</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.QuestionsImpl#getAlternatives <em>Alternatives</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,14 +48,114 @@ import org.xtext.project.expDSL.Questions;
 public class QuestionsImpl extends MinimalEObjectImpl.Container implements Questions
 {
   /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestion()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<Question> question;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected static final AnswerType TYPE_EDEFAULT = AnswerType.COMBO_BOX;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected AnswerType type = TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected static final String ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getReq() <em>Req</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReq()
+   * @generated
+   * @ordered
+   */
+  protected static final int REQ_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getReq() <em>Req</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReq()
+   * @generated
+   * @ordered
+   */
+  protected int req = REQ_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAlternatives() <em>Alternatives</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlternatives()
+   * @generated
+   * @ordered
+   */
+  protected EList<Alternatives> alternatives;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,13 +183,128 @@ public class QuestionsImpl extends MinimalEObjectImpl.Container implements Quest
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Question> getQuestion()
+  public String getName()
   {
-    if (question == null)
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.QUESTIONS__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.QUESTIONS__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnswerType getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(AnswerType newType)
+  {
+    AnswerType oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.QUESTIONS__TYPE, oldType, type));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setId(String newId)
+  {
+    String oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.QUESTIONS__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getReq()
+  {
+    return req;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReq(int newReq)
+  {
+    int oldReq = req;
+    req = newReq;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.QUESTIONS__REQ, oldReq, req));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Alternatives> getAlternatives()
+  {
+    if (alternatives == null)
     {
-      question = new EObjectContainmentEList<Question>(Question.class, this, ExpDSLPackage.QUESTIONS__QUESTION);
+      alternatives = new EObjectContainmentEList<Alternatives>(Alternatives.class, this, ExpDSLPackage.QUESTIONS__ALTERNATIVES);
     }
-    return question;
+    return alternatives;
   }
 
   /**
@@ -94,8 +317,8 @@ public class QuestionsImpl extends MinimalEObjectImpl.Container implements Quest
   {
     switch (featureID)
     {
-      case ExpDSLPackage.QUESTIONS__QUESTION:
-        return ((InternalEList<?>)getQuestion()).basicRemove(otherEnd, msgs);
+      case ExpDSLPackage.QUESTIONS__ALTERNATIVES:
+        return ((InternalEList<?>)getAlternatives()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -110,8 +333,18 @@ public class QuestionsImpl extends MinimalEObjectImpl.Container implements Quest
   {
     switch (featureID)
     {
-      case ExpDSLPackage.QUESTIONS__QUESTION:
-        return getQuestion();
+      case ExpDSLPackage.QUESTIONS__NAME:
+        return getName();
+      case ExpDSLPackage.QUESTIONS__DESCRIPTION:
+        return getDescription();
+      case ExpDSLPackage.QUESTIONS__TYPE:
+        return getType();
+      case ExpDSLPackage.QUESTIONS__ID:
+        return getId();
+      case ExpDSLPackage.QUESTIONS__REQ:
+        return getReq();
+      case ExpDSLPackage.QUESTIONS__ALTERNATIVES:
+        return getAlternatives();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,9 +360,24 @@ public class QuestionsImpl extends MinimalEObjectImpl.Container implements Quest
   {
     switch (featureID)
     {
-      case ExpDSLPackage.QUESTIONS__QUESTION:
-        getQuestion().clear();
-        getQuestion().addAll((Collection<? extends Question>)newValue);
+      case ExpDSLPackage.QUESTIONS__NAME:
+        setName((String)newValue);
+        return;
+      case ExpDSLPackage.QUESTIONS__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+      case ExpDSLPackage.QUESTIONS__TYPE:
+        setType((AnswerType)newValue);
+        return;
+      case ExpDSLPackage.QUESTIONS__ID:
+        setId((String)newValue);
+        return;
+      case ExpDSLPackage.QUESTIONS__REQ:
+        setReq((Integer)newValue);
+        return;
+      case ExpDSLPackage.QUESTIONS__ALTERNATIVES:
+        getAlternatives().clear();
+        getAlternatives().addAll((Collection<? extends Alternatives>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -145,8 +393,23 @@ public class QuestionsImpl extends MinimalEObjectImpl.Container implements Quest
   {
     switch (featureID)
     {
-      case ExpDSLPackage.QUESTIONS__QUESTION:
-        getQuestion().clear();
+      case ExpDSLPackage.QUESTIONS__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case ExpDSLPackage.QUESTIONS__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+      case ExpDSLPackage.QUESTIONS__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
+      case ExpDSLPackage.QUESTIONS__ID:
+        setId(ID_EDEFAULT);
+        return;
+      case ExpDSLPackage.QUESTIONS__REQ:
+        setReq(REQ_EDEFAULT);
+        return;
+      case ExpDSLPackage.QUESTIONS__ALTERNATIVES:
+        getAlternatives().clear();
         return;
     }
     super.eUnset(featureID);
@@ -162,10 +425,45 @@ public class QuestionsImpl extends MinimalEObjectImpl.Container implements Quest
   {
     switch (featureID)
     {
-      case ExpDSLPackage.QUESTIONS__QUESTION:
-        return question != null && !question.isEmpty();
+      case ExpDSLPackage.QUESTIONS__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ExpDSLPackage.QUESTIONS__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case ExpDSLPackage.QUESTIONS__TYPE:
+        return type != TYPE_EDEFAULT;
+      case ExpDSLPackage.QUESTIONS__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case ExpDSLPackage.QUESTIONS__REQ:
+        return req != REQ_EDEFAULT;
+      case ExpDSLPackage.QUESTIONS__ALTERNATIVES:
+        return alternatives != null && !alternatives.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", description: ");
+    result.append(description);
+    result.append(", type: ");
+    result.append(type);
+    result.append(", id: ");
+    result.append(id);
+    result.append(", req: ");
+    result.append(req);
+    result.append(')');
+    return result.toString();
   }
 
 } //QuestionsImpl

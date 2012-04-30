@@ -50,15 +50,15 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cGeneralQuestionsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cQuestionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cQuestionQuestionParserRuleCall_5_1_0 = (RuleCall)cQuestionAssignment_5_1.eContents().get(0);
+		private final RuleCall cQuestionQuestionsParserRuleCall_5_1_0 = (RuleCall)cQuestionAssignment_5_1.eContents().get(0);
 		
 		//ExperimentElement:
 		//	"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)?
-		//	("General Questions" question+=Question*)?;
+		//	("General Questions" question+=Questions*)?;
 		public ParserRule getRule() { return rule; }
 
 		//"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)?
-		//("General Questions" question+=Question*)?
+		//("General Questions" question+=Questions*)?
 		public Group getGroup() { return cGroup; }
 
 		//"Experiment"
@@ -94,17 +94,17 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ExperimentalPlan
 		public RuleCall getExperimentsExperimentalPlanParserRuleCall_4_1_0() { return cExperimentsExperimentalPlanParserRuleCall_4_1_0; }
 
-		//("General Questions" question+=Question*)?
+		//("General Questions" question+=Questions*)?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"General Questions"
 		public Keyword getGeneralQuestionsKeyword_5_0() { return cGeneralQuestionsKeyword_5_0; }
 
-		//question+=Question*
+		//question+=Questions*
 		public Assignment getQuestionAssignment_5_1() { return cQuestionAssignment_5_1; }
 
-		//Question
-		public RuleCall getQuestionQuestionParserRuleCall_5_1_0() { return cQuestionQuestionParserRuleCall_5_1_0; }
+		//Questions
+		public RuleCall getQuestionQuestionsParserRuleCall_5_1_0() { return cQuestionQuestionsParserRuleCall_5_1_0; }
 	}
 
 	public class ProcessElements extends AbstractParserRuleElementFinder {
@@ -436,357 +436,210 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class MetricsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Metrics");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Keyword cAKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cActivityMetricAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cActivityMetricActivityMetricParserRuleCall_0_1_0 = (RuleCall)cActivityMetricAssignment_0_1.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cTKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cTaskMetricAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cTaskMetricTaskMetricParserRuleCall_1_1_0 = (RuleCall)cTaskMetricAssignment_1_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cArtKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cArtefactMetricAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cArtefactMetricArtefactMetricParserRuleCall_2_1_0 = (RuleCall)cArtefactMetricAssignment_2_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
+		private final Keyword cRelatesKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cRelatesToAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final CrossReference cRelatesToProcessCrossReference_0_2_0 = (CrossReference)cRelatesToAssignment_0_2.eContents().get(0);
+		private final RuleCall cRelatesToProcessSTRINGTerminalRuleCall_0_2_0_1 = (RuleCall)cRelatesToProcessCrossReference_0_2_0.eContents().get(1);
+		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
+		private final Keyword cDescriptionKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
+		private final Assignment cDescriptionAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
+		private final RuleCall cDescriptionSTRINGTerminalRuleCall_0_3_1_0 = (RuleCall)cDescriptionAssignment_0_3_1.eContents().get(0);
+		private final Group cGroup_0_4 = (Group)cGroup_0.eContents().get(4);
+		private final Keyword cTypeKeyword_0_4_0 = (Keyword)cGroup_0_4.eContents().get(0);
+		private final Assignment cTypeAssignment_0_4_1 = (Assignment)cGroup_0_4.eContents().get(1);
+		private final RuleCall cTypeMetricTypeEnumRuleCall_0_4_1_0 = (RuleCall)cTypeAssignment_0_4_1.eContents().get(0);
+		private final Group cGroup_0_5 = (Group)cGroup_0.eContents().get(5);
+		private final Keyword cFormKeyword_0_5_0 = (Keyword)cGroup_0_5.eContents().get(0);
+		private final Assignment cFormAssignment_0_5_1 = (Assignment)cGroup_0_5.eContents().get(1);
+		private final RuleCall cFormColectTypeEnumRuleCall_0_5_1_0 = (RuleCall)cFormAssignment_0_5_1.eContents().get(0);
+		private final Group cGroup_0_6 = (Group)cGroup_0.eContents().get(6);
+		private final Keyword cIdKeyword_0_6_0 = (Keyword)cGroup_0_6.eContents().get(0);
+		private final Assignment cIdAssignment_0_6_1 = (Assignment)cGroup_0_6.eContents().get(1);
+		private final RuleCall cIdSTRINGTerminalRuleCall_0_6_1_0 = (RuleCall)cIdAssignment_0_6_1.eContents().get(0);
+		private final Group cGroup_0_7 = (Group)cGroup_0.eContents().get(7);
+		private final Keyword cUnitKeyword_0_7_0 = (Keyword)cGroup_0_7.eContents().get(0);
+		private final Assignment cUnitAssignment_0_7_1 = (Assignment)cGroup_0_7.eContents().get(1);
+		private final RuleCall cUnitMetricUnitEnumRuleCall_0_7_1_0 = (RuleCall)cUnitAssignment_0_7_1.eContents().get(0);
+		private final Assignment cDetailsAssignment_0_8 = (Assignment)cGroup_0.eContents().get(8);
+		private final RuleCall cDetailsActivityMetricParserRuleCall_0_8_0 = (RuleCall)cDetailsAssignment_0_8.eContents().get(0);
+		private final RuleCall cTaskMetricParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cArtefactMetricParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		////Metric Definition	
 		//Metrics:
-		//	("A" activityMetric+=ActivityMetric*) ("T" taskMetric+=TaskMetric*)? ("Art" artefactMetric+=ArtefactMetric*)?;
+		//	name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
+		//	form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? details=ActivityMetric | TaskMetric | ArtefactMetric;
 		public ParserRule getRule() { return rule; }
 
-		//("A" activityMetric+=ActivityMetric*) ("T" taskMetric+=TaskMetric*)? ("Art" artefactMetric+=ArtefactMetric*)?
-		public Group getGroup() { return cGroup; }
+		//name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
+		//form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? details=ActivityMetric | TaskMetric | ArtefactMetric
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"A" activityMetric+=ActivityMetric*
+		//name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
+		//form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? details=ActivityMetric
 		public Group getGroup_0() { return cGroup_0; }
 
-		//"A"
-		public Keyword getAKeyword_0_0() { return cAKeyword_0_0; }
+		//name=STRING
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 
-		//activityMetric+=ActivityMetric*
-		public Assignment getActivityMetricAssignment_0_1() { return cActivityMetricAssignment_0_1; }
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0_0_0() { return cNameSTRINGTerminalRuleCall_0_0_0; }
+
+		//"relates"
+		public Keyword getRelatesKeyword_0_1() { return cRelatesKeyword_0_1; }
+
+		//relatesTo=[Process|STRING]
+		public Assignment getRelatesToAssignment_0_2() { return cRelatesToAssignment_0_2; }
+
+		//[Process|STRING]
+		public CrossReference getRelatesToProcessCrossReference_0_2_0() { return cRelatesToProcessCrossReference_0_2_0; }
+
+		//STRING
+		public RuleCall getRelatesToProcessSTRINGTerminalRuleCall_0_2_0_1() { return cRelatesToProcessSTRINGTerminalRuleCall_0_2_0_1; }
+
+		//"description" description=STRING
+		public Group getGroup_0_3() { return cGroup_0_3; }
+
+		//"description"
+		public Keyword getDescriptionKeyword_0_3_0() { return cDescriptionKeyword_0_3_0; }
+
+		//description=STRING
+		public Assignment getDescriptionAssignment_0_3_1() { return cDescriptionAssignment_0_3_1; }
+
+		//STRING
+		public RuleCall getDescriptionSTRINGTerminalRuleCall_0_3_1_0() { return cDescriptionSTRINGTerminalRuleCall_0_3_1_0; }
+
+		//"type" type=MetricType
+		public Group getGroup_0_4() { return cGroup_0_4; }
+
+		//"type"
+		public Keyword getTypeKeyword_0_4_0() { return cTypeKeyword_0_4_0; }
+
+		//type=MetricType
+		public Assignment getTypeAssignment_0_4_1() { return cTypeAssignment_0_4_1; }
+
+		//MetricType
+		public RuleCall getTypeMetricTypeEnumRuleCall_0_4_1_0() { return cTypeMetricTypeEnumRuleCall_0_4_1_0; }
+
+		//("form" form=ColectType)?
+		public Group getGroup_0_5() { return cGroup_0_5; }
+
+		//"form"
+		public Keyword getFormKeyword_0_5_0() { return cFormKeyword_0_5_0; }
+
+		//form=ColectType
+		public Assignment getFormAssignment_0_5_1() { return cFormAssignment_0_5_1; }
+
+		//ColectType
+		public RuleCall getFormColectTypeEnumRuleCall_0_5_1_0() { return cFormColectTypeEnumRuleCall_0_5_1_0; }
+
+		//"id" id=STRING
+		public Group getGroup_0_6() { return cGroup_0_6; }
+
+		//"id"
+		public Keyword getIdKeyword_0_6_0() { return cIdKeyword_0_6_0; }
+
+		//id=STRING
+		public Assignment getIdAssignment_0_6_1() { return cIdAssignment_0_6_1; }
+
+		//STRING
+		public RuleCall getIdSTRINGTerminalRuleCall_0_6_1_0() { return cIdSTRINGTerminalRuleCall_0_6_1_0; }
+
+		//("unit" unit=MetricUnit)?
+		public Group getGroup_0_7() { return cGroup_0_7; }
+
+		//"unit"
+		public Keyword getUnitKeyword_0_7_0() { return cUnitKeyword_0_7_0; }
+
+		//unit=MetricUnit
+		public Assignment getUnitAssignment_0_7_1() { return cUnitAssignment_0_7_1; }
+
+		//MetricUnit
+		public RuleCall getUnitMetricUnitEnumRuleCall_0_7_1_0() { return cUnitMetricUnitEnumRuleCall_0_7_1_0; }
+
+		//details=ActivityMetric
+		public Assignment getDetailsAssignment_0_8() { return cDetailsAssignment_0_8; }
 
 		//ActivityMetric
-		public RuleCall getActivityMetricActivityMetricParserRuleCall_0_1_0() { return cActivityMetricActivityMetricParserRuleCall_0_1_0; }
-
-		//("T" taskMetric+=TaskMetric*)?
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"T"
-		public Keyword getTKeyword_1_0() { return cTKeyword_1_0; }
-
-		//taskMetric+=TaskMetric*
-		public Assignment getTaskMetricAssignment_1_1() { return cTaskMetricAssignment_1_1; }
+		public RuleCall getDetailsActivityMetricParserRuleCall_0_8_0() { return cDetailsActivityMetricParserRuleCall_0_8_0; }
 
 		//TaskMetric
-		public RuleCall getTaskMetricTaskMetricParserRuleCall_1_1_0() { return cTaskMetricTaskMetricParserRuleCall_1_1_0; }
-
-		//("Art" artefactMetric+=ArtefactMetric*)?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"Art"
-		public Keyword getArtKeyword_2_0() { return cArtKeyword_2_0; }
-
-		//artefactMetric+=ArtefactMetric*
-		public Assignment getArtefactMetricAssignment_2_1() { return cArtefactMetricAssignment_2_1; }
+		public RuleCall getTaskMetricParserRuleCall_1() { return cTaskMetricParserRuleCall_1; }
 
 		//ArtefactMetric
-		public RuleCall getArtefactMetricArtefactMetricParserRuleCall_2_1_0() { return cArtefactMetricArtefactMetricParserRuleCall_2_1_0; }
+		public RuleCall getArtefactMetricParserRuleCall_2() { return cArtefactMetricParserRuleCall_2; }
 	}
 
 	public class ActivityMetricElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActivityMetric");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameSTRINGTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cRelatesKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRelatesToAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cRelatesToProcessCrossReference_2_0 = (CrossReference)cRelatesToAssignment_2.eContents().get(0);
-		private final RuleCall cRelatesToProcessSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cRelatesToProcessCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDescriptionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDescriptionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDescriptionAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTypeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTypeMetricTypeEnumRuleCall_4_1_0 = (RuleCall)cTypeAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cFormKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cFormAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cFormColectTypeEnumRuleCall_5_1_0 = (RuleCall)cFormAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cIdKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cIdAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cIdSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cIdAssignment_6_1.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cUnitKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cUnitAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cUnitMetricUnitEnumRuleCall_7_1_0 = (RuleCall)cUnitAssignment_7_1.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cActivityBeginKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cActivityBeginAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cActivityBeginSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cActivityBeginAssignment_8_1.eContents().get(0);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cActivityEndKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cActivityEndAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final RuleCall cActivityEndSTRINGTerminalRuleCall_9_1_0 = (RuleCall)cActivityEndAssignment_9_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cActivityBeginKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cActivityBeginAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cActivityBeginSTRINGTerminalRuleCall_0_1_0 = (RuleCall)cActivityBeginAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cActivityEndKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cActivityEndAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cActivityEndSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cActivityEndAssignment_1_1.eContents().get(0);
 		
 		//ActivityMetric:
-		//	name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
-		//	form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? ("activityBegin" activityBegin=STRING) ("activityEnd"
-		//	activityEnd=STRING) ";";
+		//	("activityBegin" activityBegin=STRING) ("activityEnd" activityEnd=STRING);
 		public ParserRule getRule() { return rule; }
 
-		//name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
-		//form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? ("activityBegin" activityBegin=STRING) ("activityEnd"
-		//activityEnd=STRING) ";"
+		//("activityBegin" activityBegin=STRING) ("activityEnd" activityEnd=STRING)
 		public Group getGroup() { return cGroup; }
 
-		//name=STRING
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_0_0() { return cNameSTRINGTerminalRuleCall_0_0; }
-
-		//"relates"
-		public Keyword getRelatesKeyword_1() { return cRelatesKeyword_1; }
-
-		//relatesTo=[Process|STRING]
-		public Assignment getRelatesToAssignment_2() { return cRelatesToAssignment_2; }
-
-		//[Process|STRING]
-		public CrossReference getRelatesToProcessCrossReference_2_0() { return cRelatesToProcessCrossReference_2_0; }
-
-		//STRING
-		public RuleCall getRelatesToProcessSTRINGTerminalRuleCall_2_0_1() { return cRelatesToProcessSTRINGTerminalRuleCall_2_0_1; }
-
-		//"description" description=STRING
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"description"
-		public Keyword getDescriptionKeyword_3_0() { return cDescriptionKeyword_3_0; }
-
-		//description=STRING
-		public Assignment getDescriptionAssignment_3_1() { return cDescriptionAssignment_3_1; }
-
-		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_1_0; }
-
-		//"type" type=MetricType
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"type"
-		public Keyword getTypeKeyword_4_0() { return cTypeKeyword_4_0; }
-
-		//type=MetricType
-		public Assignment getTypeAssignment_4_1() { return cTypeAssignment_4_1; }
-
-		//MetricType
-		public RuleCall getTypeMetricTypeEnumRuleCall_4_1_0() { return cTypeMetricTypeEnumRuleCall_4_1_0; }
-
-		//("form" form=ColectType)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"form"
-		public Keyword getFormKeyword_5_0() { return cFormKeyword_5_0; }
-
-		//form=ColectType
-		public Assignment getFormAssignment_5_1() { return cFormAssignment_5_1; }
-
-		//ColectType
-		public RuleCall getFormColectTypeEnumRuleCall_5_1_0() { return cFormColectTypeEnumRuleCall_5_1_0; }
-
-		//"id" id=STRING
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"id"
-		public Keyword getIdKeyword_6_0() { return cIdKeyword_6_0; }
-
-		//id=STRING
-		public Assignment getIdAssignment_6_1() { return cIdAssignment_6_1; }
-
-		//STRING
-		public RuleCall getIdSTRINGTerminalRuleCall_6_1_0() { return cIdSTRINGTerminalRuleCall_6_1_0; }
-
-		//("unit" unit=MetricUnit)?
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"unit"
-		public Keyword getUnitKeyword_7_0() { return cUnitKeyword_7_0; }
-
-		//unit=MetricUnit
-		public Assignment getUnitAssignment_7_1() { return cUnitAssignment_7_1; }
-
-		//MetricUnit
-		public RuleCall getUnitMetricUnitEnumRuleCall_7_1_0() { return cUnitMetricUnitEnumRuleCall_7_1_0; }
-
 		//"activityBegin" activityBegin=STRING
-		public Group getGroup_8() { return cGroup_8; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//"activityBegin"
-		public Keyword getActivityBeginKeyword_8_0() { return cActivityBeginKeyword_8_0; }
+		public Keyword getActivityBeginKeyword_0_0() { return cActivityBeginKeyword_0_0; }
 
 		//activityBegin=STRING
-		public Assignment getActivityBeginAssignment_8_1() { return cActivityBeginAssignment_8_1; }
+		public Assignment getActivityBeginAssignment_0_1() { return cActivityBeginAssignment_0_1; }
 
 		//STRING
-		public RuleCall getActivityBeginSTRINGTerminalRuleCall_8_1_0() { return cActivityBeginSTRINGTerminalRuleCall_8_1_0; }
+		public RuleCall getActivityBeginSTRINGTerminalRuleCall_0_1_0() { return cActivityBeginSTRINGTerminalRuleCall_0_1_0; }
 
 		//"activityEnd" activityEnd=STRING
-		public Group getGroup_9() { return cGroup_9; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//"activityEnd"
-		public Keyword getActivityEndKeyword_9_0() { return cActivityEndKeyword_9_0; }
+		public Keyword getActivityEndKeyword_1_0() { return cActivityEndKeyword_1_0; }
 
 		//activityEnd=STRING
-		public Assignment getActivityEndAssignment_9_1() { return cActivityEndAssignment_9_1; }
+		public Assignment getActivityEndAssignment_1_1() { return cActivityEndAssignment_1_1; }
 
 		//STRING
-		public RuleCall getActivityEndSTRINGTerminalRuleCall_9_1_0() { return cActivityEndSTRINGTerminalRuleCall_9_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_10() { return cSemicolonKeyword_10; }
+		public RuleCall getActivityEndSTRINGTerminalRuleCall_1_1_0() { return cActivityEndSTRINGTerminalRuleCall_1_1_0; }
 	}
 
 	public class TaskMetricElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TaskMetric");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameSTRINGTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cRelatesKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRelatesToAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cRelatesToProcessCrossReference_2_0 = (CrossReference)cRelatesToAssignment_2.eContents().get(0);
-		private final RuleCall cRelatesToProcessSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cRelatesToProcessCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDescriptionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDescriptionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDescriptionAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTypeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTypeMetricTypeEnumRuleCall_4_1_0 = (RuleCall)cTypeAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cFormKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cFormAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cFormColectTypeEnumRuleCall_5_1_0 = (RuleCall)cFormAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cIdKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cIdAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cIdSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cIdAssignment_6_1.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cUnitKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cUnitAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cUnitMetricUnitEnumRuleCall_7_1_0 = (RuleCall)cUnitAssignment_7_1.eContents().get(0);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cActivitiesKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cActivitiesAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cActivitiesSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cActivitiesAssignment_8_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cActivitiesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cActivitiesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActivitiesSTRINGTerminalRuleCall_1_0 = (RuleCall)cActivitiesAssignment_1.eContents().get(0);
 		
 		//TaskMetric:
-		//	name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
-		//	form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? ("activities" activities=STRING) ";";
+		//	"activities" activities=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
-		//form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? ("activities" activities=STRING) ";"
+		//"activities" activities=STRING
 		public Group getGroup() { return cGroup; }
 
-		//name=STRING
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_0_0() { return cNameSTRINGTerminalRuleCall_0_0; }
-
-		//"relates"
-		public Keyword getRelatesKeyword_1() { return cRelatesKeyword_1; }
-
-		//relatesTo=[Process|STRING]
-		public Assignment getRelatesToAssignment_2() { return cRelatesToAssignment_2; }
-
-		//[Process|STRING]
-		public CrossReference getRelatesToProcessCrossReference_2_0() { return cRelatesToProcessCrossReference_2_0; }
-
-		//STRING
-		public RuleCall getRelatesToProcessSTRINGTerminalRuleCall_2_0_1() { return cRelatesToProcessSTRINGTerminalRuleCall_2_0_1; }
-
-		//"description" description=STRING
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"description"
-		public Keyword getDescriptionKeyword_3_0() { return cDescriptionKeyword_3_0; }
-
-		//description=STRING
-		public Assignment getDescriptionAssignment_3_1() { return cDescriptionAssignment_3_1; }
-
-		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_1_0; }
-
-		//"type" type=MetricType
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"type"
-		public Keyword getTypeKeyword_4_0() { return cTypeKeyword_4_0; }
-
-		//type=MetricType
-		public Assignment getTypeAssignment_4_1() { return cTypeAssignment_4_1; }
-
-		//MetricType
-		public RuleCall getTypeMetricTypeEnumRuleCall_4_1_0() { return cTypeMetricTypeEnumRuleCall_4_1_0; }
-
-		//("form" form=ColectType)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"form"
-		public Keyword getFormKeyword_5_0() { return cFormKeyword_5_0; }
-
-		//form=ColectType
-		public Assignment getFormAssignment_5_1() { return cFormAssignment_5_1; }
-
-		//ColectType
-		public RuleCall getFormColectTypeEnumRuleCall_5_1_0() { return cFormColectTypeEnumRuleCall_5_1_0; }
-
-		//"id" id=STRING
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"id"
-		public Keyword getIdKeyword_6_0() { return cIdKeyword_6_0; }
-
-		//id=STRING
-		public Assignment getIdAssignment_6_1() { return cIdAssignment_6_1; }
-
-		//STRING
-		public RuleCall getIdSTRINGTerminalRuleCall_6_1_0() { return cIdSTRINGTerminalRuleCall_6_1_0; }
-
-		//("unit" unit=MetricUnit)?
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"unit"
-		public Keyword getUnitKeyword_7_0() { return cUnitKeyword_7_0; }
-
-		//unit=MetricUnit
-		public Assignment getUnitAssignment_7_1() { return cUnitAssignment_7_1; }
-
-		//MetricUnit
-		public RuleCall getUnitMetricUnitEnumRuleCall_7_1_0() { return cUnitMetricUnitEnumRuleCall_7_1_0; }
-
-		//"activities" activities=STRING
-		public Group getGroup_8() { return cGroup_8; }
-
 		//"activities"
-		public Keyword getActivitiesKeyword_8_0() { return cActivitiesKeyword_8_0; }
+		public Keyword getActivitiesKeyword_0() { return cActivitiesKeyword_0; }
 
 		//activities=STRING
-		public Assignment getActivitiesAssignment_8_1() { return cActivitiesAssignment_8_1; }
+		public Assignment getActivitiesAssignment_1() { return cActivitiesAssignment_1; }
 
 		//STRING
-		public RuleCall getActivitiesSTRINGTerminalRuleCall_8_1_0() { return cActivitiesSTRINGTerminalRuleCall_8_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_9() { return cSemicolonKeyword_9; }
+		public RuleCall getActivitiesSTRINGTerminalRuleCall_1_0() { return cActivitiesSTRINGTerminalRuleCall_1_0; }
 	}
 
 	public class ArtefactMetricElements extends AbstractParserRuleElementFinder {
@@ -794,34 +647,15 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameSTRINGTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cRelatesKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRelatesToAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cRelatesToArtefactCrossReference_2_0 = (CrossReference)cRelatesToAssignment_2.eContents().get(0);
-		private final RuleCall cRelatesToArtefactSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cRelatesToArtefactCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDescriptionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDescriptionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDescriptionAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTypeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTypeMetricTypeEnumRuleCall_4_1_0 = (RuleCall)cTypeAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cIdAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cIdSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cIdAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cUnitKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cUnitAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cUnitMetricUnitEnumRuleCall_6_1_0 = (RuleCall)cUnitAssignment_6_1.eContents().get(0);
+		private final Assignment cArtefactAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cArtefactArtefactCrossReference_1_0 = (CrossReference)cArtefactAssignment_1.eContents().get(0);
+		private final RuleCall cArtefactArtefactSTRINGTerminalRuleCall_1_0_1 = (RuleCall)cArtefactArtefactCrossReference_1_0.eContents().get(1);
 		
 		//ArtefactMetric:
-		//	name=STRING "relates" relatesTo=[Artefact|STRING] ("description" description=STRING) ("type" type=MetricType) ("id"
-		//	id=STRING) ("unit" unit=MetricUnit)?;
+		//	name=STRING artefact=[Artefact|STRING];
 		public ParserRule getRule() { return rule; }
 
-		//name=STRING "relates" relatesTo=[Artefact|STRING] ("description" description=STRING) ("type" type=MetricType) ("id"
-		//id=STRING) ("unit" unit=MetricUnit)?
+		//name=STRING artefact=[Artefact|STRING]
 		public Group getGroup() { return cGroup; }
 
 		//name=STRING
@@ -830,187 +664,116 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_0_0() { return cNameSTRINGTerminalRuleCall_0_0; }
 
-		//"relates"
-		public Keyword getRelatesKeyword_1() { return cRelatesKeyword_1; }
-
-		//relatesTo=[Artefact|STRING]
-		public Assignment getRelatesToAssignment_2() { return cRelatesToAssignment_2; }
+		//artefact=[Artefact|STRING]
+		public Assignment getArtefactAssignment_1() { return cArtefactAssignment_1; }
 
 		//[Artefact|STRING]
-		public CrossReference getRelatesToArtefactCrossReference_2_0() { return cRelatesToArtefactCrossReference_2_0; }
+		public CrossReference getArtefactArtefactCrossReference_1_0() { return cArtefactArtefactCrossReference_1_0; }
 
 		//STRING
-		public RuleCall getRelatesToArtefactSTRINGTerminalRuleCall_2_0_1() { return cRelatesToArtefactSTRINGTerminalRuleCall_2_0_1; }
-
-		//"description" description=STRING
-		public Group getGroup_3() { return cGroup_3; }
-
-		//"description"
-		public Keyword getDescriptionKeyword_3_0() { return cDescriptionKeyword_3_0; }
-
-		//description=STRING
-		public Assignment getDescriptionAssignment_3_1() { return cDescriptionAssignment_3_1; }
-
-		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_1_0; }
-
-		//"type" type=MetricType
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"type"
-		public Keyword getTypeKeyword_4_0() { return cTypeKeyword_4_0; }
-
-		//type=MetricType
-		public Assignment getTypeAssignment_4_1() { return cTypeAssignment_4_1; }
-
-		//MetricType
-		public RuleCall getTypeMetricTypeEnumRuleCall_4_1_0() { return cTypeMetricTypeEnumRuleCall_4_1_0; }
-
-		//"id" id=STRING
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"id"
-		public Keyword getIdKeyword_5_0() { return cIdKeyword_5_0; }
-
-		//id=STRING
-		public Assignment getIdAssignment_5_1() { return cIdAssignment_5_1; }
-
-		//STRING
-		public RuleCall getIdSTRINGTerminalRuleCall_5_1_0() { return cIdSTRINGTerminalRuleCall_5_1_0; }
-
-		//("unit" unit=MetricUnit)?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"unit"
-		public Keyword getUnitKeyword_6_0() { return cUnitKeyword_6_0; }
-
-		//unit=MetricUnit
-		public Assignment getUnitAssignment_6_1() { return cUnitAssignment_6_1; }
-
-		//MetricUnit
-		public RuleCall getUnitMetricUnitEnumRuleCall_6_1_0() { return cUnitMetricUnitEnumRuleCall_6_1_0; }
+		public RuleCall getArtefactArtefactSTRINGTerminalRuleCall_1_0_1() { return cArtefactArtefactSTRINGTerminalRuleCall_1_0_1; }
 	}
 
 	public class QuestionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Questions");
-		private final Assignment cQuestionAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cQuestionQuestionParserRuleCall_0 = (RuleCall)cQuestionAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cDescriptionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDescriptionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDescriptionAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTypeAnswerTypeEnumRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cIdKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cIdAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_4_1_0 = (RuleCall)cIdAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cRequiredKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cReqAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cReqINTTerminalRuleCall_5_1_0 = (RuleCall)cReqAssignment_5_1.eContents().get(0);
+		private final Assignment cAlternativesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAlternativesAlternativesParserRuleCall_6_0 = (RuleCall)cAlternativesAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Questions:
-		//	question+=Question*;
-		public ParserRule getRule() { return rule; }
-
-		//question+=Question*
-		public Assignment getQuestionAssignment() { return cQuestionAssignment; }
-
-		//Question
-		public RuleCall getQuestionQuestionParserRuleCall_0() { return cQuestionQuestionParserRuleCall_0; }
-	}
-
-	public class QuestionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Question");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cQKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDescriptionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDescriptionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDescriptionAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cTypeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTypeAnswerTypeEnumRuleCall_4_1_0 = (RuleCall)cTypeAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cIdAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_5_1_0 = (RuleCall)cIdAssignment_5_1.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cRequiredKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cReqAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cReqINTTerminalRuleCall_6_1_0 = (RuleCall)cReqAssignment_6_1.eContents().get(0);
-		private final Assignment cAlternativesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cAlternativesAlternativesParserRuleCall_7_0 = (RuleCall)cAlternativesAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		
-		//Question:
-		//	"Q." name=STRING "{" ("description" description=STRING) ("type" type=AnswerType) ("id" id=ID) ("required" req=INT)?
+		//	name=STRING "{" ("description" description=STRING) ("type" type=AnswerType) ("id" id=ID) ("required" req=INT)?
 		//	alternatives+=Alternatives* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Q." name=STRING "{" ("description" description=STRING) ("type" type=AnswerType) ("id" id=ID) ("required" req=INT)?
+		//name=STRING "{" ("description" description=STRING) ("type" type=AnswerType) ("id" id=ID) ("required" req=INT)?
 		//alternatives+=Alternatives* "}"
 		public Group getGroup() { return cGroup; }
 
-		//"Q."
-		public Keyword getQKeyword_0() { return cQKeyword_0; }
-
 		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_0_0() { return cNameSTRINGTerminalRuleCall_0_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
 		//"description" description=STRING
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//"description"
-		public Keyword getDescriptionKeyword_3_0() { return cDescriptionKeyword_3_0; }
+		public Keyword getDescriptionKeyword_2_0() { return cDescriptionKeyword_2_0; }
 
 		//description=STRING
-		public Assignment getDescriptionAssignment_3_1() { return cDescriptionAssignment_3_1; }
+		public Assignment getDescriptionAssignment_2_1() { return cDescriptionAssignment_2_1; }
 
 		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_1_0; }
+		public RuleCall getDescriptionSTRINGTerminalRuleCall_2_1_0() { return cDescriptionSTRINGTerminalRuleCall_2_1_0; }
 
 		//"type" type=AnswerType
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"type"
-		public Keyword getTypeKeyword_4_0() { return cTypeKeyword_4_0; }
+		public Keyword getTypeKeyword_3_0() { return cTypeKeyword_3_0; }
 
 		//type=AnswerType
-		public Assignment getTypeAssignment_4_1() { return cTypeAssignment_4_1; }
+		public Assignment getTypeAssignment_3_1() { return cTypeAssignment_3_1; }
 
 		//AnswerType
-		public RuleCall getTypeAnswerTypeEnumRuleCall_4_1_0() { return cTypeAnswerTypeEnumRuleCall_4_1_0; }
+		public RuleCall getTypeAnswerTypeEnumRuleCall_3_1_0() { return cTypeAnswerTypeEnumRuleCall_3_1_0; }
 
 		//"id" id=ID
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"id"
-		public Keyword getIdKeyword_5_0() { return cIdKeyword_5_0; }
+		public Keyword getIdKeyword_4_0() { return cIdKeyword_4_0; }
 
 		//id=ID
-		public Assignment getIdAssignment_5_1() { return cIdAssignment_5_1; }
+		public Assignment getIdAssignment_4_1() { return cIdAssignment_4_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_5_1_0() { return cIdIDTerminalRuleCall_5_1_0; }
+		public RuleCall getIdIDTerminalRuleCall_4_1_0() { return cIdIDTerminalRuleCall_4_1_0; }
 
 		//("required" req=INT)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_5() { return cGroup_5; }
 
 		//"required"
-		public Keyword getRequiredKeyword_6_0() { return cRequiredKeyword_6_0; }
+		public Keyword getRequiredKeyword_5_0() { return cRequiredKeyword_5_0; }
 
 		//req=INT
-		public Assignment getReqAssignment_6_1() { return cReqAssignment_6_1; }
+		public Assignment getReqAssignment_5_1() { return cReqAssignment_5_1; }
 
 		//INT
-		public RuleCall getReqINTTerminalRuleCall_6_1_0() { return cReqINTTerminalRuleCall_6_1_0; }
+		public RuleCall getReqINTTerminalRuleCall_5_1_0() { return cReqINTTerminalRuleCall_5_1_0; }
 
 		//alternatives+=Alternatives*
-		public Assignment getAlternativesAssignment_7() { return cAlternativesAssignment_7; }
+		public Assignment getAlternativesAssignment_6() { return cAlternativesAssignment_6; }
 
 		//Alternatives
-		public RuleCall getAlternativesAlternativesParserRuleCall_7_0() { return cAlternativesAlternativesParserRuleCall_7_0; }
+		public RuleCall getAlternativesAlternativesParserRuleCall_6_0() { return cAlternativesAlternativesParserRuleCall_6_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class AlternativesElements extends AbstractParserRuleElementFinder {
@@ -1212,7 +975,6 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private TaskMetricElements pTaskMetric;
 	private ArtefactMetricElements pArtefactMetric;
 	private QuestionsElements pQuestions;
-	private QuestionElements pQuestion;
 	private AlternativesElements pAlternatives;
 	private DesignTypeElements unknownRuleDesignType;
 	private AnswerTypeElements unknownRuleAnswerType;
@@ -1253,7 +1015,7 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ExperimentElement:
 	//	"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)?
-	//	("General Questions" question+=Question*)?;
+	//	("General Questions" question+=Questions*)?;
 	public ExperimentElementElements getExperimentElementAccess() {
 		return (pExperimentElement != null) ? pExperimentElement : (pExperimentElement = new ExperimentElementElements());
 	}
@@ -1350,7 +1112,8 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Metric Definition	
 	//Metrics:
-	//	("A" activityMetric+=ActivityMetric*) ("T" taskMetric+=TaskMetric*)? ("Art" artefactMetric+=ArtefactMetric*)?;
+	//	name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
+	//	form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? details=ActivityMetric | TaskMetric | ArtefactMetric;
 	public MetricsElements getMetricsAccess() {
 		return (pMetrics != null) ? pMetrics : (pMetrics = new MetricsElements());
 	}
@@ -1360,9 +1123,7 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActivityMetric:
-	//	name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
-	//	form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? ("activityBegin" activityBegin=STRING) ("activityEnd"
-	//	activityEnd=STRING) ";";
+	//	("activityBegin" activityBegin=STRING) ("activityEnd" activityEnd=STRING);
 	public ActivityMetricElements getActivityMetricAccess() {
 		return (pActivityMetric != null) ? pActivityMetric : (pActivityMetric = new ActivityMetricElements());
 	}
@@ -1372,8 +1133,7 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TaskMetric:
-	//	name=STRING "relates" relatesTo=[Process|STRING] ("description" description=STRING) ("type" type=MetricType) ("form"
-	//	form=ColectType)? ("id" id=STRING) ("unit" unit=MetricUnit)? ("activities" activities=STRING) ";";
+	//	"activities" activities=STRING;
 	public TaskMetricElements getTaskMetricAccess() {
 		return (pTaskMetric != null) ? pTaskMetric : (pTaskMetric = new TaskMetricElements());
 	}
@@ -1383,8 +1143,7 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ArtefactMetric:
-	//	name=STRING "relates" relatesTo=[Artefact|STRING] ("description" description=STRING) ("type" type=MetricType) ("id"
-	//	id=STRING) ("unit" unit=MetricUnit)?;
+	//	name=STRING artefact=[Artefact|STRING];
 	public ArtefactMetricElements getArtefactMetricAccess() {
 		return (pArtefactMetric != null) ? pArtefactMetric : (pArtefactMetric = new ArtefactMetricElements());
 	}
@@ -1394,24 +1153,14 @@ public class ExpDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Questions:
-	//	question+=Question*;
+	//	name=STRING "{" ("description" description=STRING) ("type" type=AnswerType) ("id" id=ID) ("required" req=INT)?
+	//	alternatives+=Alternatives* "}";
 	public QuestionsElements getQuestionsAccess() {
 		return (pQuestions != null) ? pQuestions : (pQuestions = new QuestionsElements());
 	}
 	
 	public ParserRule getQuestionsRule() {
 		return getQuestionsAccess().getRule();
-	}
-
-	//Question:
-	//	"Q." name=STRING "{" ("description" description=STRING) ("type" type=AnswerType) ("id" id=ID) ("required" req=INT)?
-	//	alternatives+=Alternatives* "}";
-	public QuestionElements getQuestionAccess() {
-		return (pQuestion != null) ? pQuestion : (pQuestion = new QuestionElements());
-	}
-	
-	public ParserRule getQuestionRule() {
-		return getQuestionAccess().getRule();
 	}
 
 	//Alternatives:

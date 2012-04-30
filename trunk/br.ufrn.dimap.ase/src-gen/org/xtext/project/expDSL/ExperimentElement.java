@@ -108,7 +108,7 @@ public interface ExperimentElement extends EObject
 
   /**
    * Returns the value of the '<em><b>Question</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.project.expDSL.Question}.
+   * The list contents are of type {@link org.xtext.project.expDSL.Questions}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Question</em>' containment reference list isn't clear,
@@ -120,6 +120,6 @@ public interface ExperimentElement extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Question> getQuestion();
+  EList<Questions> getQuestion();
 
 } // ExperimentElement

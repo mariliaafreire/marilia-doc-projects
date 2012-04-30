@@ -469,31 +469,76 @@ public interface ExpDSLPackage extends EPackage
   int METRICS = 10;
 
   /**
-   * The feature id for the '<em><b>Activity Metric</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METRICS__ACTIVITY_METRIC = 0;
+  int METRICS__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Task Metric</b></em>' containment reference list.
+   * The feature id for the '<em><b>Relates To</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METRICS__TASK_METRIC = 1;
+  int METRICS__RELATES_TO = 1;
 
   /**
-   * The feature id for the '<em><b>Artefact Metric</b></em>' containment reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METRICS__ARTEFACT_METRIC = 2;
+  int METRICS__DESCRIPTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METRICS__TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Form</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METRICS__FORM = 4;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METRICS__ID = 5;
+
+  /**
+   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METRICS__UNIT = 6;
+
+  /**
+   * The feature id for the '<em><b>Details</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METRICS__DETAILS = 7;
 
   /**
    * The number of structural features of the '<em>Metrics</em>' class.
@@ -502,7 +547,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METRICS_FEATURE_COUNT = 3;
+  int METRICS_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.impl.ActivityMetricImpl <em>Activity Metric</em>}' class.
@@ -515,76 +560,13 @@ public interface ExpDSLPackage extends EPackage
   int ACTIVITY_METRIC = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Relates To</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__RELATES_TO = 1;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__DESCRIPTION = 2;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__TYPE = 3;
-
-  /**
-   * The feature id for the '<em><b>Form</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__FORM = 4;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__ID = 5;
-
-  /**
-   * The feature id for the '<em><b>Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTIVITY_METRIC__UNIT = 6;
-
-  /**
    * The feature id for the '<em><b>Activity Begin</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTIVITY_METRIC__ACTIVITY_BEGIN = 7;
+  int ACTIVITY_METRIC__ACTIVITY_BEGIN = 0;
 
   /**
    * The feature id for the '<em><b>Activity End</b></em>' attribute.
@@ -593,7 +575,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTIVITY_METRIC__ACTIVITY_END = 8;
+  int ACTIVITY_METRIC__ACTIVITY_END = 1;
 
   /**
    * The number of structural features of the '<em>Activity Metric</em>' class.
@@ -602,7 +584,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTIVITY_METRIC_FEATURE_COUNT = 9;
+  int ACTIVITY_METRIC_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.impl.TaskMetricImpl <em>Task Metric</em>}' class.
@@ -621,7 +603,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__NAME = 0;
+  int TASK_METRIC__NAME = METRICS__NAME;
 
   /**
    * The feature id for the '<em><b>Relates To</b></em>' reference.
@@ -630,7 +612,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__RELATES_TO = 1;
+  int TASK_METRIC__RELATES_TO = METRICS__RELATES_TO;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -639,7 +621,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__DESCRIPTION = 2;
+  int TASK_METRIC__DESCRIPTION = METRICS__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -648,7 +630,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__TYPE = 3;
+  int TASK_METRIC__TYPE = METRICS__TYPE;
 
   /**
    * The feature id for the '<em><b>Form</b></em>' attribute.
@@ -657,7 +639,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__FORM = 4;
+  int TASK_METRIC__FORM = METRICS__FORM;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -666,7 +648,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__ID = 5;
+  int TASK_METRIC__ID = METRICS__ID;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -675,7 +657,16 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__UNIT = 6;
+  int TASK_METRIC__UNIT = METRICS__UNIT;
+
+  /**
+   * The feature id for the '<em><b>Details</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK_METRIC__DETAILS = METRICS__DETAILS;
 
   /**
    * The feature id for the '<em><b>Activities</b></em>' attribute.
@@ -684,7 +675,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC__ACTIVITIES = 7;
+  int TASK_METRIC__ACTIVITIES = METRICS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Task Metric</em>' class.
@@ -693,7 +684,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_METRIC_FEATURE_COUNT = 8;
+  int TASK_METRIC_FEATURE_COUNT = METRICS_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.impl.ArtefactMetricImpl <em>Artefact Metric</em>}' class.
@@ -712,7 +703,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC__NAME = 0;
+  int ARTEFACT_METRIC__NAME = METRICS__NAME;
 
   /**
    * The feature id for the '<em><b>Relates To</b></em>' reference.
@@ -721,7 +712,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC__RELATES_TO = 1;
+  int ARTEFACT_METRIC__RELATES_TO = METRICS__RELATES_TO;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -730,7 +721,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC__DESCRIPTION = 2;
+  int ARTEFACT_METRIC__DESCRIPTION = METRICS__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -739,7 +730,16 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC__TYPE = 3;
+  int ARTEFACT_METRIC__TYPE = METRICS__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Form</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTEFACT_METRIC__FORM = METRICS__FORM;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -748,7 +748,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC__ID = 4;
+  int ARTEFACT_METRIC__ID = METRICS__ID;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -757,7 +757,25 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC__UNIT = 5;
+  int ARTEFACT_METRIC__UNIT = METRICS__UNIT;
+
+  /**
+   * The feature id for the '<em><b>Details</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTEFACT_METRIC__DETAILS = METRICS__DETAILS;
+
+  /**
+   * The feature id for the '<em><b>Artefact</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTEFACT_METRIC__ARTEFACT = METRICS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Artefact Metric</em>' class.
@@ -766,7 +784,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTEFACT_METRIC_FEATURE_COUNT = 6;
+  int ARTEFACT_METRIC_FEATURE_COUNT = METRICS_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.impl.QuestionsImpl <em>Questions</em>}' class.
@@ -779,41 +797,13 @@ public interface ExpDSLPackage extends EPackage
   int QUESTIONS = 14;
 
   /**
-   * The feature id for the '<em><b>Question</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUESTIONS__QUESTION = 0;
-
-  /**
-   * The number of structural features of the '<em>Questions</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUESTIONS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.project.expDSL.impl.QuestionImpl <em>Question</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.project.expDSL.impl.QuestionImpl
-   * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getQuestion()
-   * @generated
-   */
-  int QUESTION = 15;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUESTION__NAME = 0;
+  int QUESTIONS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -822,7 +812,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUESTION__DESCRIPTION = 1;
+  int QUESTIONS__DESCRIPTION = 1;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -831,7 +821,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUESTION__TYPE = 2;
+  int QUESTIONS__TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -840,7 +830,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUESTION__ID = 3;
+  int QUESTIONS__ID = 3;
 
   /**
    * The feature id for the '<em><b>Req</b></em>' attribute.
@@ -849,7 +839,7 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUESTION__REQ = 4;
+  int QUESTIONS__REQ = 4;
 
   /**
    * The feature id for the '<em><b>Alternatives</b></em>' containment reference list.
@@ -858,16 +848,16 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUESTION__ALTERNATIVES = 5;
+  int QUESTIONS__ALTERNATIVES = 5;
 
   /**
-   * The number of structural features of the '<em>Question</em>' class.
+   * The number of structural features of the '<em>Questions</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUESTION_FEATURE_COUNT = 6;
+  int QUESTIONS_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.impl.AlternativesImpl <em>Alternatives</em>}' class.
@@ -877,7 +867,7 @@ public interface ExpDSLPackage extends EPackage
    * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getAlternatives()
    * @generated
    */
-  int ALTERNATIVES = 16;
+  int ALTERNATIVES = 15;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -905,7 +895,7 @@ public interface ExpDSLPackage extends EPackage
    * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getDesignType()
    * @generated
    */
-  int DESIGN_TYPE = 17;
+  int DESIGN_TYPE = 16;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.AnswerType <em>Answer Type</em>}' enum.
@@ -915,7 +905,7 @@ public interface ExpDSLPackage extends EPackage
    * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getAnswerType()
    * @generated
    */
-  int ANSWER_TYPE = 18;
+  int ANSWER_TYPE = 17;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.MetricType <em>Metric Type</em>}' enum.
@@ -925,7 +915,7 @@ public interface ExpDSLPackage extends EPackage
    * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getMetricType()
    * @generated
    */
-  int METRIC_TYPE = 19;
+  int METRIC_TYPE = 18;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.ColectType <em>Colect Type</em>}' enum.
@@ -935,7 +925,7 @@ public interface ExpDSLPackage extends EPackage
    * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getColectType()
    * @generated
    */
-  int COLECT_TYPE = 20;
+  int COLECT_TYPE = 19;
 
   /**
    * The meta object id for the '{@link org.xtext.project.expDSL.MetricUnit <em>Metric Unit</em>}' enum.
@@ -945,7 +935,7 @@ public interface ExpDSLPackage extends EPackage
    * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getMetricUnit()
    * @generated
    */
-  int METRIC_UNIT = 21;
+  int METRIC_UNIT = 20;
 
 
   /**
@@ -1312,37 +1302,92 @@ public interface ExpDSLPackage extends EPackage
   EClass getMetrics();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.expDSL.Metrics#getActivityMetric <em>Activity Metric</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Metrics#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Activity Metric</em>'.
-   * @see org.xtext.project.expDSL.Metrics#getActivityMetric()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getName()
    * @see #getMetrics()
    * @generated
    */
-  EReference getMetrics_ActivityMetric();
+  EAttribute getMetrics_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.expDSL.Metrics#getTaskMetric <em>Task Metric</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.project.expDSL.Metrics#getRelatesTo <em>Relates To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Task Metric</em>'.
-   * @see org.xtext.project.expDSL.Metrics#getTaskMetric()
+   * @return the meta object for the reference '<em>Relates To</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getRelatesTo()
    * @see #getMetrics()
    * @generated
    */
-  EReference getMetrics_TaskMetric();
+  EReference getMetrics_RelatesTo();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.expDSL.Metrics#getArtefactMetric <em>Artefact Metric</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Metrics#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Artefact Metric</em>'.
-   * @see org.xtext.project.expDSL.Metrics#getArtefactMetric()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getDescription()
    * @see #getMetrics()
    * @generated
    */
-  EReference getMetrics_ArtefactMetric();
+  EAttribute getMetrics_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Metrics#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getType()
+   * @see #getMetrics()
+   * @generated
+   */
+  EAttribute getMetrics_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Metrics#getForm <em>Form</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Form</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getForm()
+   * @see #getMetrics()
+   * @generated
+   */
+  EAttribute getMetrics_Form();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Metrics#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getId()
+   * @see #getMetrics()
+   * @generated
+   */
+  EAttribute getMetrics_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Metrics#getUnit <em>Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unit</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getUnit()
+   * @see #getMetrics()
+   * @generated
+   */
+  EAttribute getMetrics_Unit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.project.expDSL.Metrics#getDetails <em>Details</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Details</em>'.
+   * @see org.xtext.project.expDSL.Metrics#getDetails()
+   * @see #getMetrics()
+   * @generated
+   */
+  EReference getMetrics_Details();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project.expDSL.ActivityMetric <em>Activity Metric</em>}'.
@@ -1353,83 +1398,6 @@ public interface ExpDSLPackage extends EPackage
    * @generated
    */
   EClass getActivityMetric();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getName()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EAttribute getActivityMetric_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.project.expDSL.ActivityMetric#getRelatesTo <em>Relates To</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Relates To</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getRelatesTo()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EReference getActivityMetric_RelatesTo();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getDescription()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EAttribute getActivityMetric_Description();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getType()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EAttribute getActivityMetric_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getForm <em>Form</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Form</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getForm()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EAttribute getActivityMetric_Form();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getId()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EAttribute getActivityMetric_Id();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getUnit <em>Unit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unit</em>'.
-   * @see org.xtext.project.expDSL.ActivityMetric#getUnit()
-   * @see #getActivityMetric()
-   * @generated
-   */
-  EAttribute getActivityMetric_Unit();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ActivityMetric#getActivityBegin <em>Activity Begin</em>}'.
@@ -1464,83 +1432,6 @@ public interface ExpDSLPackage extends EPackage
   EClass getTaskMetric();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getName()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EAttribute getTaskMetric_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.project.expDSL.TaskMetric#getRelatesTo <em>Relates To</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Relates To</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getRelatesTo()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EReference getTaskMetric_RelatesTo();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getDescription()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EAttribute getTaskMetric_Description();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getType()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EAttribute getTaskMetric_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getForm <em>Form</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Form</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getForm()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EAttribute getTaskMetric_Form();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getId()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EAttribute getTaskMetric_Id();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getUnit <em>Unit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unit</em>'.
-   * @see org.xtext.project.expDSL.TaskMetric#getUnit()
-   * @see #getTaskMetric()
-   * @generated
-   */
-  EAttribute getTaskMetric_Unit();
-
-  /**
    * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.TaskMetric#getActivities <em>Activities</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1562,70 +1453,15 @@ public interface ExpDSLPackage extends EPackage
   EClass getArtefactMetric();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ArtefactMetric#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.project.expDSL.ArtefactMetric#getArtefact <em>Artefact</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.project.expDSL.ArtefactMetric#getName()
+   * @return the meta object for the reference '<em>Artefact</em>'.
+   * @see org.xtext.project.expDSL.ArtefactMetric#getArtefact()
    * @see #getArtefactMetric()
    * @generated
    */
-  EAttribute getArtefactMetric_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.project.expDSL.ArtefactMetric#getRelatesTo <em>Relates To</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Relates To</em>'.
-   * @see org.xtext.project.expDSL.ArtefactMetric#getRelatesTo()
-   * @see #getArtefactMetric()
-   * @generated
-   */
-  EReference getArtefactMetric_RelatesTo();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ArtefactMetric#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.project.expDSL.ArtefactMetric#getDescription()
-   * @see #getArtefactMetric()
-   * @generated
-   */
-  EAttribute getArtefactMetric_Description();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ArtefactMetric#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.project.expDSL.ArtefactMetric#getType()
-   * @see #getArtefactMetric()
-   * @generated
-   */
-  EAttribute getArtefactMetric_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ArtefactMetric#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.project.expDSL.ArtefactMetric#getId()
-   * @see #getArtefactMetric()
-   * @generated
-   */
-  EAttribute getArtefactMetric_Id();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.ArtefactMetric#getUnit <em>Unit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Unit</em>'.
-   * @see org.xtext.project.expDSL.ArtefactMetric#getUnit()
-   * @see #getArtefactMetric()
-   * @generated
-   */
-  EAttribute getArtefactMetric_Unit();
+  EReference getArtefactMetric_Artefact();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project.expDSL.Questions <em>Questions</em>}'.
@@ -1638,91 +1474,70 @@ public interface ExpDSLPackage extends EPackage
   EClass getQuestions();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.expDSL.Questions#getQuestion <em>Question</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Question</em>'.
-   * @see org.xtext.project.expDSL.Questions#getQuestion()
-   * @see #getQuestions()
-   * @generated
-   */
-  EReference getQuestions_Question();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.project.expDSL.Question <em>Question</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Question</em>'.
-   * @see org.xtext.project.expDSL.Question
-   * @generated
-   */
-  EClass getQuestion();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Question#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Questions#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.project.expDSL.Question#getName()
-   * @see #getQuestion()
+   * @see org.xtext.project.expDSL.Questions#getName()
+   * @see #getQuestions()
    * @generated
    */
-  EAttribute getQuestion_Name();
+  EAttribute getQuestions_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Question#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Questions#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.xtext.project.expDSL.Question#getDescription()
-   * @see #getQuestion()
+   * @see org.xtext.project.expDSL.Questions#getDescription()
+   * @see #getQuestions()
    * @generated
    */
-  EAttribute getQuestion_Description();
+  EAttribute getQuestions_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Question#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Questions#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.project.expDSL.Question#getType()
-   * @see #getQuestion()
+   * @see org.xtext.project.expDSL.Questions#getType()
+   * @see #getQuestions()
    * @generated
    */
-  EAttribute getQuestion_Type();
+  EAttribute getQuestions_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Question#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Questions#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.project.expDSL.Question#getId()
-   * @see #getQuestion()
+   * @see org.xtext.project.expDSL.Questions#getId()
+   * @see #getQuestions()
    * @generated
    */
-  EAttribute getQuestion_Id();
+  EAttribute getQuestions_Id();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Question#getReq <em>Req</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.project.expDSL.Questions#getReq <em>Req</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Req</em>'.
-   * @see org.xtext.project.expDSL.Question#getReq()
-   * @see #getQuestion()
+   * @see org.xtext.project.expDSL.Questions#getReq()
+   * @see #getQuestions()
    * @generated
    */
-  EAttribute getQuestion_Req();
+  EAttribute getQuestions_Req();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.project.expDSL.Question#getAlternatives <em>Alternatives</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.project.expDSL.Questions#getAlternatives <em>Alternatives</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Alternatives</em>'.
-   * @see org.xtext.project.expDSL.Question#getAlternatives()
-   * @see #getQuestion()
+   * @see org.xtext.project.expDSL.Questions#getAlternatives()
+   * @see #getQuestions()
    * @generated
    */
-  EReference getQuestion_Alternatives();
+  EReference getQuestions_Alternatives();
 
   /**
    * Returns the meta object for class '{@link org.xtext.project.expDSL.Alternatives <em>Alternatives</em>}'.
@@ -2113,28 +1928,68 @@ public interface ExpDSLPackage extends EPackage
     EClass METRICS = eINSTANCE.getMetrics();
 
     /**
-     * The meta object literal for the '<em><b>Activity Metric</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METRICS__ACTIVITY_METRIC = eINSTANCE.getMetrics_ActivityMetric();
+    EAttribute METRICS__NAME = eINSTANCE.getMetrics_Name();
 
     /**
-     * The meta object literal for the '<em><b>Task Metric</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Relates To</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METRICS__TASK_METRIC = eINSTANCE.getMetrics_TaskMetric();
+    EReference METRICS__RELATES_TO = eINSTANCE.getMetrics_RelatesTo();
 
     /**
-     * The meta object literal for the '<em><b>Artefact Metric</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METRICS__ARTEFACT_METRIC = eINSTANCE.getMetrics_ArtefactMetric();
+    EAttribute METRICS__DESCRIPTION = eINSTANCE.getMetrics_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METRICS__TYPE = eINSTANCE.getMetrics_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Form</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METRICS__FORM = eINSTANCE.getMetrics_Form();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METRICS__ID = eINSTANCE.getMetrics_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute METRICS__UNIT = eINSTANCE.getMetrics_Unit();
+
+    /**
+     * The meta object literal for the '<em><b>Details</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METRICS__DETAILS = eINSTANCE.getMetrics_Details();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.expDSL.impl.ActivityMetricImpl <em>Activity Metric</em>}' class.
@@ -2145,62 +2000,6 @@ public interface ExpDSLPackage extends EPackage
      * @generated
      */
     EClass ACTIVITY_METRIC = eINSTANCE.getActivityMetric();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTIVITY_METRIC__NAME = eINSTANCE.getActivityMetric_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Relates To</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTIVITY_METRIC__RELATES_TO = eINSTANCE.getActivityMetric_RelatesTo();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTIVITY_METRIC__DESCRIPTION = eINSTANCE.getActivityMetric_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTIVITY_METRIC__TYPE = eINSTANCE.getActivityMetric_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Form</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTIVITY_METRIC__FORM = eINSTANCE.getActivityMetric_Form();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTIVITY_METRIC__ID = eINSTANCE.getActivityMetric_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTIVITY_METRIC__UNIT = eINSTANCE.getActivityMetric_Unit();
 
     /**
      * The meta object literal for the '<em><b>Activity Begin</b></em>' attribute feature.
@@ -2229,62 +2028,6 @@ public interface ExpDSLPackage extends EPackage
     EClass TASK_METRIC = eINSTANCE.getTaskMetric();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_METRIC__NAME = eINSTANCE.getTaskMetric_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Relates To</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TASK_METRIC__RELATES_TO = eINSTANCE.getTaskMetric_RelatesTo();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_METRIC__DESCRIPTION = eINSTANCE.getTaskMetric_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_METRIC__TYPE = eINSTANCE.getTaskMetric_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Form</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_METRIC__FORM = eINSTANCE.getTaskMetric_Form();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_METRIC__ID = eINSTANCE.getTaskMetric_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK_METRIC__UNIT = eINSTANCE.getTaskMetric_Unit();
-
-    /**
      * The meta object literal for the '<em><b>Activities</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2303,52 +2046,12 @@ public interface ExpDSLPackage extends EPackage
     EClass ARTEFACT_METRIC = eINSTANCE.getArtefactMetric();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Artefact</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARTEFACT_METRIC__NAME = eINSTANCE.getArtefactMetric_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Relates To</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARTEFACT_METRIC__RELATES_TO = eINSTANCE.getArtefactMetric_RelatesTo();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARTEFACT_METRIC__DESCRIPTION = eINSTANCE.getArtefactMetric_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARTEFACT_METRIC__TYPE = eINSTANCE.getArtefactMetric_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARTEFACT_METRIC__ID = eINSTANCE.getArtefactMetric_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARTEFACT_METRIC__UNIT = eINSTANCE.getArtefactMetric_Unit();
+    EReference ARTEFACT_METRIC__ARTEFACT = eINSTANCE.getArtefactMetric_Artefact();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.expDSL.impl.QuestionsImpl <em>Questions</em>}' class.
@@ -2361,30 +2064,12 @@ public interface ExpDSLPackage extends EPackage
     EClass QUESTIONS = eINSTANCE.getQuestions();
 
     /**
-     * The meta object literal for the '<em><b>Question</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference QUESTIONS__QUESTION = eINSTANCE.getQuestions_Question();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.project.expDSL.impl.QuestionImpl <em>Question</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.project.expDSL.impl.QuestionImpl
-     * @see org.xtext.project.expDSL.impl.ExpDSLPackageImpl#getQuestion()
-     * @generated
-     */
-    EClass QUESTION = eINSTANCE.getQuestion();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUESTION__NAME = eINSTANCE.getQuestion_Name();
+    EAttribute QUESTIONS__NAME = eINSTANCE.getQuestions_Name();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -2392,7 +2077,7 @@ public interface ExpDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUESTION__DESCRIPTION = eINSTANCE.getQuestion_Description();
+    EAttribute QUESTIONS__DESCRIPTION = eINSTANCE.getQuestions_Description();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -2400,7 +2085,7 @@ public interface ExpDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUESTION__TYPE = eINSTANCE.getQuestion_Type();
+    EAttribute QUESTIONS__TYPE = eINSTANCE.getQuestions_Type();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -2408,7 +2093,7 @@ public interface ExpDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUESTION__ID = eINSTANCE.getQuestion_Id();
+    EAttribute QUESTIONS__ID = eINSTANCE.getQuestions_Id();
 
     /**
      * The meta object literal for the '<em><b>Req</b></em>' attribute feature.
@@ -2416,7 +2101,7 @@ public interface ExpDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUESTION__REQ = eINSTANCE.getQuestion_Req();
+    EAttribute QUESTIONS__REQ = eINSTANCE.getQuestions_Req();
 
     /**
      * The meta object literal for the '<em><b>Alternatives</b></em>' containment reference list feature.
@@ -2424,7 +2109,7 @@ public interface ExpDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference QUESTION__ALTERNATIVES = eINSTANCE.getQuestion_Alternatives();
+    EReference QUESTIONS__ALTERNATIVES = eINSTANCE.getQuestions_Alternatives();
 
     /**
      * The meta object literal for the '{@link org.xtext.project.expDSL.impl.AlternativesImpl <em>Alternatives</em>}' class.

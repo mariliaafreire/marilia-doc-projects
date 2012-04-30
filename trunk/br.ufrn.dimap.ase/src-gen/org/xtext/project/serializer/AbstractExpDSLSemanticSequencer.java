@@ -25,7 +25,6 @@ import org.xtext.project.expDSL.Factor;
 import org.xtext.project.expDSL.Levels;
 import org.xtext.project.expDSL.Metrics;
 import org.xtext.project.expDSL.Model;
-import org.xtext.project.expDSL.Question;
 import org.xtext.project.expDSL.Questions;
 import org.xtext.project.expDSL.Role;
 import org.xtext.project.expDSL.Task;
@@ -85,7 +84,8 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case ExpDSLPackage.ARTEFACT_METRIC:
-				if(context == grammarAccess.getArtefactMetricRule()) {
+				if(context == grammarAccess.getArtefactMetricRule() ||
+				   context == grammarAccess.getMetricsRule()) {
 					sequence_ArtefactMetric(context, (ArtefactMetric) semanticObject); 
 					return; 
 				}
@@ -132,12 +132,6 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case ExpDSLPackage.QUESTION:
-				if(context == grammarAccess.getQuestionRule()) {
-					sequence_Question(context, (Question) semanticObject); 
-					return; 
-				}
-				else break;
 			case ExpDSLPackage.QUESTIONS:
 				if(context == grammarAccess.getQuestionsRule()) {
 					sequence_Questions(context, (Questions) semanticObject); 
@@ -157,7 +151,8 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case ExpDSLPackage.TASK_METRIC:
-				if(context == grammarAccess.getTaskMetricRule()) {
+				if(context == grammarAccess.getMetricsRule() ||
+				   context == grammarAccess.getTaskMetricRule()) {
 					sequence_TaskMetric(context, (TaskMetric) semanticObject); 
 					return; 
 				}
@@ -168,31 +163,24 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=STRING 
-	 *         relatesTo=[Process|STRING] 
-	 *         description=STRING 
-	 *         type=MetricType 
-	 *         form=ColectType? 
-	 *         id=STRING 
-	 *         unit=MetricUnit? 
-	 *         activityBegin=STRING 
-	 *         activityEnd=STRING
-	 *     )
+	 *     (activityBegin=STRING activityEnd=STRING)
 	 *
 	 * Features:
-	 *    name[1, 1]
-	 *    relatesTo[1, 1]
-	 *    description[1, 1]
-	 *    type[1, 1]
-	 *    form[0, 1]
-	 *    id[1, 1]
-	 *    unit[0, 1]
 	 *    activityBegin[1, 1]
 	 *    activityEnd[1, 1]
 	 */
 	protected void sequence_ActivityMetric(EObject context, ActivityMetric semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_BEGIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_BEGIN));
+			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_END));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActivityMetricAccess().getActivityBeginSTRINGTerminalRuleCall_0_1_0(), semanticObject.getActivityBegin());
+		feeder.accept(grammarAccess.getActivityMetricAccess().getActivityEndSTRINGTerminalRuleCall_1_1_0(), semanticObject.getActivityEnd());
+		feeder.finish();
 	}
 	
 	
@@ -242,22 +230,11 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=STRING 
-	 *         relatesTo=[Artefact|STRING] 
-	 *         description=STRING 
-	 *         type=MetricType 
-	 *         id=STRING 
-	 *         unit=MetricUnit?
-	 *     )
+	 *     (name=STRING artefact=[Artefact|STRING])
 	 *
 	 * Features:
 	 *    name[1, 1]
-	 *    relatesTo[1, 1]
-	 *    description[1, 1]
-	 *    type[1, 1]
-	 *    id[1, 1]
-	 *    unit[0, 1]
+	 *    artefact[1, 1]
 	 */
 	protected void sequence_ArtefactMetric(EObject context, ArtefactMetric semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -285,7 +262,7 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING process+=Process* metrics+=Metrics* experiments+=ExperimentalPlan* question+=Question*)
+	 *     (name=STRING process+=Process* metrics+=Metrics* experiments+=ExperimentalPlan* question+=Questions*)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -347,12 +324,26 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (activityMetric+=ActivityMetric* taskMetric+=TaskMetric* artefactMetric+=ArtefactMetric*)
+	 *     (
+	 *         name=STRING 
+	 *         relatesTo=[Process|STRING] 
+	 *         description=STRING 
+	 *         type=MetricType 
+	 *         form=ColectType? 
+	 *         id=STRING 
+	 *         unit=MetricUnit? 
+	 *         details=ActivityMetric
+	 *     )
 	 *
 	 * Features:
-	 *    activityMetric[0, *]
-	 *    taskMetric[0, *]
-	 *    artefactMetric[0, *]
+	 *    name[1, 1]
+	 *    relatesTo[1, 1]
+	 *    description[1, 1]
+	 *    type[1, 1]
+	 *    form[0, 1]
+	 *    id[1, 1]
+	 *    unit[0, 1]
+	 *    details[1, 1]
 	 */
 	protected void sequence_Metrics(EObject context, Metrics semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -403,18 +394,6 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	 *    req[0, 1]
 	 *    alternatives[0, *]
 	 */
-	protected void sequence_Question(EObject context, Question semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     question+=Question*
-	 *
-	 * Features:
-	 *    question[0, *]
-	 */
 	protected void sequence_Questions(EObject context, Questions semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
@@ -441,25 +420,9 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=STRING 
-	 *         relatesTo=[Process|STRING] 
-	 *         description=STRING 
-	 *         type=MetricType 
-	 *         form=ColectType? 
-	 *         id=STRING 
-	 *         unit=MetricUnit? 
-	 *         activities=STRING
-	 *     )
+	 *     activities=STRING
 	 *
 	 * Features:
-	 *    name[1, 1]
-	 *    relatesTo[1, 1]
-	 *    description[1, 1]
-	 *    type[1, 1]
-	 *    form[0, 1]
-	 *    id[1, 1]
-	 *    unit[0, 1]
 	 *    activities[1, 1]
 	 */
 	protected void sequence_TaskMetric(EObject context, TaskMetric semanticObject) {

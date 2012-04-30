@@ -2,6 +2,8 @@ grammar org.xtext.project.ExpDSL with org.eclipse.xtext.common.Terminals
 
 generate expDSL "http://www.xtext.org/project/ExpDSL"
 
+
+
 Model:
 	(elements+=ExperimentElement)*;
 
@@ -10,15 +12,14 @@ ExperimentElement:
 	process+=Process*
 	metrics+=Metrics*
 	('Experimental Plan' experiments+=ExperimentalPlan*)?
-	('General Questions' question+=Question*)?;
+	('General Questions' question+=Questions*)?;
 
 //WorkbreakdownStructure	
 //artefatos, métricas para artefatos	
 Process:
-	( 'Process' name=STRING
-	
+	'Process' name=STRING
 	  (activities+=Activity)*
-	';')
+	';'
 	;
 	
 Activity:
@@ -59,47 +60,28 @@ Levels:
 
 //Metric Definition	
 Metrics:
-	('A' activityMetric+=ActivityMetric*)
-	('T' taskMetric+=TaskMetric*)?
-    ('Art' artefactMetric+=ArtefactMetric*)?;
-
-
-ActivityMetric:
 	name=STRING 'relates' relatesTo=[Process|STRING]
 		('description' description=STRING)
 		('type' type=MetricType)
 		('form' form=ColectType)?
 		('id' id=STRING)
 		('unit' unit=MetricUnit)?
+		details=ActivityMetric|TaskMetric|ArtefactMetric
+		;
+
+ActivityMetric:
 		('activityBegin' activityBegin=STRING)
 		('activityEnd' activityEnd=STRING)
-    ';'
-    ;
+       ;
 
 TaskMetric:
-	(name=STRING 'relates' relatesTo=[Process|STRING]
-		('description' description=STRING)
-		('type' type=MetricType)
-		('form' form=ColectType)?
-		('id' id=STRING)
-		('unit' unit=MetricUnit)?
-		('activities' activities=STRING)
-		
-    ';');
+	 'activities' activities=STRING;
     
  ArtefactMetric:
-   	 ( name=STRING 'relates' relatesTo=[Artefact|STRING]
-		('description' description=STRING)
-		('type' type=MetricType)
-		('id' id=STRING)
-		('unit' unit=MetricUnit)?
-   );
+   	 name=STRING  artefact=[Artefact|STRING];
 
 Questions:
-	(question+=Question)*;
-
-Question:	
-	'Q.' name=STRING
+	name=STRING
 	'{'
 		('description' description=STRING)
 		('type' type=AnswerType)
@@ -108,6 +90,7 @@ Question:
 		(alternatives+=Alternatives)*
 		
     '}';
+
  
 Alternatives:
 	description = STRING
@@ -132,3 +115,4 @@ enum ColectType returns ColectType:
 
 enum MetricUnit returns MetricUnit:
 	minutes = 'minutes' | uc = 'uc';
+

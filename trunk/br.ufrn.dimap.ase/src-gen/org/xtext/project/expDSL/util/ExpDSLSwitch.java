@@ -23,7 +23,6 @@ import org.xtext.project.expDSL.Factor;
 import org.xtext.project.expDSL.Levels;
 import org.xtext.project.expDSL.Metrics;
 import org.xtext.project.expDSL.Model;
-import org.xtext.project.expDSL.Question;
 import org.xtext.project.expDSL.Questions;
 import org.xtext.project.expDSL.Role;
 import org.xtext.project.expDSL.Task;
@@ -180,6 +179,7 @@ public class ExpDSLSwitch<T> extends Switch<T>
       {
         TaskMetric taskMetric = (TaskMetric)theEObject;
         T result = caseTaskMetric(taskMetric);
+        if (result == null) result = caseMetrics(taskMetric);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,6 +187,7 @@ public class ExpDSLSwitch<T> extends Switch<T>
       {
         ArtefactMetric artefactMetric = (ArtefactMetric)theEObject;
         T result = caseArtefactMetric(artefactMetric);
+        if (result == null) result = caseMetrics(artefactMetric);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -194,13 +195,6 @@ public class ExpDSLSwitch<T> extends Switch<T>
       {
         Questions questions = (Questions)theEObject;
         T result = caseQuestions(questions);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExpDSLPackage.QUESTION:
-      {
-        Question question = (Question)theEObject;
-        T result = caseQuestion(question);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -451,22 +445,6 @@ public class ExpDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseQuestions(Questions object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Question</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Question</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseQuestion(Question object)
   {
     return null;
   }

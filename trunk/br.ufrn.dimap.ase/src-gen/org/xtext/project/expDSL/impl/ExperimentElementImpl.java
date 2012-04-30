@@ -26,7 +26,7 @@ import org.xtext.project.expDSL.ExpDSLPackage;
 import org.xtext.project.expDSL.ExperimentElement;
 import org.xtext.project.expDSL.ExperimentalPlan;
 import org.xtext.project.expDSL.Metrics;
-import org.xtext.project.expDSL.Question;
+import org.xtext.project.expDSL.Questions;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,7 +105,7 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<Question> question;
+  protected EList<Questions> question;
 
   /**
    * <!-- begin-user-doc -->
@@ -198,11 +198,11 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Question> getQuestion()
+  public EList<Questions> getQuestion()
   {
     if (question == null)
     {
-      question = new EObjectContainmentEList<Question>(Question.class, this, ExpDSLPackage.EXPERIMENT_ELEMENT__QUESTION);
+      question = new EObjectContainmentEList<Questions>(Questions.class, this, ExpDSLPackage.EXPERIMENT_ELEMENT__QUESTION);
     }
     return question;
   }
@@ -281,7 +281,7 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
         return;
       case ExpDSLPackage.EXPERIMENT_ELEMENT__QUESTION:
         getQuestion().clear();
-        getQuestion().addAll((Collection<? extends Question>)newValue);
+        getQuestion().addAll((Collection<? extends Questions>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

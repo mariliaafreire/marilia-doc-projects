@@ -20,7 +20,7 @@
         eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentalPlan"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="question" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Question"
+        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Questions"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process">
@@ -69,51 +69,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metrics">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activityMetric" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="taskMetric" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//TaskMetric"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artefactMetric" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ArtefactMetric"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ColectType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="details" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityMetric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ColectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricUnit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityBegin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TaskMetric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ColectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskMetric" eSuperTypes="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="activities" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArtefactMetric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Artefact"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArtefactMetric" eSuperTypes="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artefact" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Artefact"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Questions">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="question" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Question"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Question">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//AnswerType"/>

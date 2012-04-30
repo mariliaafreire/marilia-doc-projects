@@ -162,15 +162,6 @@ public interface ExpDSLFactory extends EFactory
   Questions createQuestions();
 
   /**
-   * Returns a new object of class '<em>Question</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Question</em>'.
-   * @generated
-   */
-  Question createQuestion();
-
-  /**
    * Returns a new object of class '<em>Alternatives</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

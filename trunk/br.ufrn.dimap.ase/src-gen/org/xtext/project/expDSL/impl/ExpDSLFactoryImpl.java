@@ -33,7 +33,6 @@ import org.xtext.project.expDSL.MetricType;
 import org.xtext.project.expDSL.MetricUnit;
 import org.xtext.project.expDSL.Metrics;
 import org.xtext.project.expDSL.Model;
-import org.xtext.project.expDSL.Question;
 import org.xtext.project.expDSL.Questions;
 import org.xtext.project.expDSL.Role;
 import org.xtext.project.expDSL.Task;
@@ -106,7 +105,6 @@ public class ExpDSLFactoryImpl extends EFactoryImpl implements ExpDSLFactory
       case ExpDSLPackage.TASK_METRIC: return createTaskMetric();
       case ExpDSLPackage.ARTEFACT_METRIC: return createArtefactMetric();
       case ExpDSLPackage.QUESTIONS: return createQuestions();
-      case ExpDSLPackage.QUESTION: return createQuestion();
       case ExpDSLPackage.ALTERNATIVES: return createAlternatives();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -326,17 +324,6 @@ public class ExpDSLFactoryImpl extends EFactoryImpl implements ExpDSLFactory
   {
     QuestionsImpl questions = new QuestionsImpl();
     return questions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Question createQuestion()
-  {
-    QuestionImpl question = new QuestionImpl();
-    return question;
   }
 
   /**

@@ -23,8 +23,6 @@ public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q;
 	protected AbstractElementAlias match_ExperimentElement_ExperimentalPlanKeyword_4_0_q;
 	protected AbstractElementAlias match_ExperimentElement_GeneralQuestionsKeyword_5_0_q;
-	protected AbstractElementAlias match_Metrics_ArtKeyword_2_0_q;
-	protected AbstractElementAlias match_Metrics_TKeyword_1_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -34,8 +32,6 @@ public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		match_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_7_2()));
 		match_ExperimentElement_ExperimentalPlanKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getExperimentElementAccess().getExperimentalPlanKeyword_4_0());
 		match_ExperimentElement_GeneralQuestionsKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getExperimentElementAccess().getGeneralQuestionsKeyword_5_0());
-		match_Metrics_ArtKeyword_2_0_q = new TokenAlias(true, false, grammarAccess.getMetricsAccess().getArtKeyword_2_0());
-		match_Metrics_TKeyword_1_0_q = new TokenAlias(true, false, grammarAccess.getMetricsAccess().getTKeyword_1_0());
 	}
 	
 	@Override
@@ -60,10 +56,6 @@ public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer
 				emit_ExperimentElement_ExperimentalPlanKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ExperimentElement_GeneralQuestionsKeyword_5_0_q.equals(syntax))
 				emit_ExperimentElement_GeneralQuestionsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Metrics_ArtKeyword_2_0_q.equals(syntax))
-				emit_Metrics_ArtKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Metrics_TKeyword_1_0_q.equals(syntax))
-				emit_Metrics_TKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -105,22 +97,6 @@ public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     'General Questions'?
 	 */
 	protected void emit_ExperimentElement_GeneralQuestionsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'Art'?
-	 */
-	protected void emit_Metrics_ArtKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'T'?
-	 */
-	protected void emit_Metrics_TKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Experiment'", "'Experimental Plan'", "'General Questions'", "'Process'", "';'", "'Activity'", "'in'", "'out'", "'{'", "'}'", "'Task'", "'Role'", "'Design'", "'type'", "'Factor'", "'Level'", "'A'", "'T'", "'Art'", "'relates'", "'description'", "'form'", "'id'", "'unit'", "'activityBegin'", "'activityEnd'", "'activities'", "'Q.'", "'required'", "'CRD \\u2013 Completely Randomized Design'", "'RCBD \\u2013 Randomized Complete Block Design'", "'LS \\u2013 Latin Square'", "'ComboBox'", "'CheckBoxes'", "'OptionButtons'", "'hardData'", "'softData'", "'normalizedData'", "'continuous'", "'intercalated'", "'minutes'", "'uc'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Experiment'", "'Experimental Plan'", "'General Questions'", "'Process'", "';'", "'Activity'", "'in'", "'out'", "'{'", "'}'", "'Task'", "'Role'", "'Design'", "'type'", "'Factor'", "'Level'", "'relates'", "'description'", "'form'", "'id'", "'unit'", "'activityBegin'", "'activityEnd'", "'activities'", "'required'", "'CRD \\u2013 Completely Randomized Design'", "'RCBD \\u2013 Randomized Complete Block Design'", "'LS \\u2013 Latin Square'", "'ComboBox'", "'CheckBoxes'", "'OptionButtons'", "'hardData'", "'softData'", "'normalizedData'", "'continuous'", "'intercalated'", "'minutes'", "'uc'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -38,9 +38,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final int T__20=20;
     public static final int EOF=-1;
     public static final int T__19=19;
-    public static final int T__51=51;
     public static final int T__16=16;
-    public static final int T__52=52;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -49,7 +47,6 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
-    public static final int T__50=50;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
@@ -59,13 +56,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int T__48=48;
-    public static final int T__49=49;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_STRING=4;
     public static final int T__32=32;
+    public static final int RULE_STRING=4;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
@@ -266,7 +262,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExperimentElement"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:116:1: ruleExperimentElement returns [EObject current=null] : (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )* )? ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:116:1: ruleExperimentElement returns [EObject current=null] : (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )* )? ) ;
     public final EObject ruleExperimentElement() throws RecognitionException {
         EObject current = null;
 
@@ -286,11 +282,11 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:119:28: ( (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )* )? ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:120:1: (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )* )? )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:119:28: ( (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )* )? ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:120:1: (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )* )? )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:120:1: (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )* )? )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:120:3: otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )* )?
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:120:1: (otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )* )? )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:120:3: otherlv_0= 'Experiment' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_process_2_0= ruleProcess ) )* ( (lv_metrics_3_0= ruleMetrics ) )* (otherlv_4= 'Experimental Plan' ( (lv_experiments_5_0= ruleExperimentalPlan ) )* )? (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )* )?
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleExperimentElement213); 
 
@@ -377,7 +373,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==27) ) {
+                if ( (LA3_0==RULE_STRING||LA3_0==34) ) {
                     alt3=1;
                 }
 
@@ -490,7 +486,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:200:5: (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )* )?
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:200:5: (otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )* )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -499,35 +495,35 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:200:7: otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestion ) )*
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:200:7: otherlv_6= 'General Questions' ( (lv_question_7_0= ruleQuestions ) )*
                     {
                     otherlv_6=(Token)match(input,13,FOLLOW_13_in_ruleExperimentElement329); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getExperimentElementAccess().getGeneralQuestionsKeyword_5_0());
                         
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:204:1: ( (lv_question_7_0= ruleQuestion ) )*
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:204:1: ( (lv_question_7_0= ruleQuestions ) )*
                     loop6:
                     do {
                         int alt6=2;
                         int LA6_0 = input.LA(1);
 
-                        if ( (LA6_0==38) ) {
+                        if ( (LA6_0==RULE_STRING) ) {
                             alt6=1;
                         }
 
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:205:1: (lv_question_7_0= ruleQuestion )
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:205:1: (lv_question_7_0= ruleQuestions )
                     	    {
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:205:1: (lv_question_7_0= ruleQuestion )
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:206:3: lv_question_7_0= ruleQuestion
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:205:1: (lv_question_7_0= ruleQuestions )
+                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:206:3: lv_question_7_0= ruleQuestions
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getExperimentElementAccess().getQuestionQuestionParserRuleCall_5_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getExperimentElementAccess().getQuestionQuestionsParserRuleCall_5_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleQuestion_in_ruleExperimentElement350);
-                    	    lv_question_7_0=ruleQuestion();
+                    	    pushFollow(FOLLOW_ruleQuestions_in_ruleExperimentElement350);
+                    	    lv_question_7_0=ruleQuestions();
 
                     	    state._fsp--;
 
@@ -539,7 +535,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     	           			current, 
                     	           			"question",
                     	            		lv_question_7_0, 
-                    	            		"Question");
+                    	            		"Questions");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -2003,228 +1999,416 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetrics"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:803:1: ruleMetrics returns [EObject current=null] : ( (otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )* ) (otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )* )? (otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )* )? ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:803:1: ruleMetrics returns [EObject current=null] : ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) ) ) | this_TaskMetric_14= ruleTaskMetric | this_ArtefactMetric_15= ruleArtefactMetric ) ;
     public final EObject ruleMetrics() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
+        Token lv_name_0_0=null;
+        Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_4=null;
-        EObject lv_activityMetric_1_0 = null;
+        Token otherlv_3=null;
+        Token lv_description_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token lv_id_10_0=null;
+        Token otherlv_11=null;
+        Enumerator lv_type_6_0 = null;
 
-        EObject lv_taskMetric_3_0 = null;
+        Enumerator lv_form_8_0 = null;
 
-        EObject lv_artefactMetric_5_0 = null;
+        Enumerator lv_unit_12_0 = null;
+
+        EObject lv_details_13_0 = null;
+
+        EObject this_TaskMetric_14 = null;
+
+        EObject this_ArtefactMetric_15 = null;
 
 
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:806:28: ( ( (otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )* ) (otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )* )? (otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )* )? ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:1: ( (otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )* ) (otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )* )? (otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )* )? )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:806:28: ( ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) ) ) | this_TaskMetric_14= ruleTaskMetric | this_ArtefactMetric_15= ruleArtefactMetric ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:1: ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) ) ) | this_TaskMetric_14= ruleTaskMetric | this_ArtefactMetric_15= ruleArtefactMetric )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:1: ( (otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )* ) (otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )* )? (otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )* )? )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:2: (otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )* ) (otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )* )? (otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )* )?
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:2: (otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )* )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:4: otherlv_0= 'A' ( (lv_activityMetric_1_0= ruleActivityMetric ) )*
-            {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleMetrics1624); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getMetricsAccess().getAKeyword_0_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:811:1: ( (lv_activityMetric_1_0= ruleActivityMetric ) )*
-            loop19:
-            do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
-
-                if ( (LA19_0==RULE_STRING) ) {
-                    alt19=1;
-                }
-
-
-                switch (alt19) {
-            	case 1 :
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:812:1: (lv_activityMetric_1_0= ruleActivityMetric )
-            	    {
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:812:1: (lv_activityMetric_1_0= ruleActivityMetric )
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:813:3: lv_activityMetric_1_0= ruleActivityMetric
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getMetricsAccess().getActivityMetricActivityMetricParserRuleCall_0_1_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleActivityMetric_in_ruleMetrics1645);
-            	    lv_activityMetric_1_0=ruleActivityMetric();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMetricsRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"activityMetric",
-            	            		lv_activityMetric_1_0, 
-            	            		"ActivityMetric");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop19;
-                }
-            } while (true);
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:829:4: (otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )* )?
-            int alt21=2;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:1: ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) ) ) | this_TaskMetric_14= ruleTaskMetric | this_ArtefactMetric_15= ruleArtefactMetric )
+            int alt21=3;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==28) ) {
-                alt21=1;
+            if ( (LA21_0==RULE_STRING) ) {
+                int LA21_1 = input.LA(2);
+
+                if ( (LA21_1==RULE_STRING) ) {
+                    alt21=3;
+                }
+                else if ( (LA21_1==27) ) {
+                    alt21=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 21, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else if ( (LA21_0==34) ) {
+                alt21=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 21, 0, input);
+
+                throw nvae;
             }
             switch (alt21) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:829:6: otherlv_2= 'T' ( (lv_taskMetric_3_0= ruleTaskMetric ) )*
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:2: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) ) )
                     {
-                    otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleMetrics1660); 
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:2: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:3: ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? ( (lv_details_13_0= ruleActivityMetric ) )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:807:3: ( (lv_name_0_0= RULE_STRING ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:808:1: (lv_name_0_0= RULE_STRING )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:808:1: (lv_name_0_0= RULE_STRING )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:809:3: lv_name_0_0= RULE_STRING
+                    {
+                    lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMetrics1629); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getMetricsAccess().getTKeyword_1_0());
+                    			newLeafNode(lv_name_0_0, grammarAccess.getMetricsAccess().getNameSTRINGTerminalRuleCall_0_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMetricsRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"name",
+                            		lv_name_0_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_1=(Token)match(input,27,FOLLOW_27_in_ruleMetrics1646); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getMetricsAccess().getRelatesKeyword_0_1());
                         
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:833:1: ( (lv_taskMetric_3_0= ruleTaskMetric ) )*
-                    loop20:
-                    do {
-                        int alt20=2;
-                        int LA20_0 = input.LA(1);
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:829:1: ( (otherlv_2= RULE_STRING ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:830:1: (otherlv_2= RULE_STRING )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:830:1: (otherlv_2= RULE_STRING )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:831:3: otherlv_2= RULE_STRING
+                    {
 
-                        if ( (LA20_0==RULE_STRING) ) {
-                            alt20=1;
-                        }
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMetricsRule());
+                    	        }
+                            
+                    otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMetrics1666); 
 
+                    		newLeafNode(otherlv_2, grammarAccess.getMetricsAccess().getRelatesToProcessCrossReference_0_2_0()); 
+                    	
 
-                        switch (alt20) {
-                    	case 1 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:834:1: (lv_taskMetric_3_0= ruleTaskMetric )
-                    	    {
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:834:1: (lv_taskMetric_3_0= ruleTaskMetric )
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:835:3: lv_taskMetric_3_0= ruleTaskMetric
-                    	    {
-                    	     
-                    	    	        newCompositeNode(grammarAccess.getMetricsAccess().getTaskMetricTaskMetricParserRuleCall_1_1_0()); 
-                    	    	    
-                    	    pushFollow(FOLLOW_ruleTaskMetric_in_ruleMetrics1681);
-                    	    lv_taskMetric_3_0=ruleTaskMetric();
-
-                    	    state._fsp--;
+                    }
 
 
-                    	    	        if (current==null) {
-                    	    	            current = createModelElementForParent(grammarAccess.getMetricsRule());
-                    	    	        }
-                    	           		add(
-                    	           			current, 
-                    	           			"taskMetric",
-                    	            		lv_taskMetric_3_0, 
-                    	            		"TaskMetric");
-                    	    	        afterParserOrEnumRuleCall();
-                    	    	    
+                    }
 
-                    	    }
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:842:2: (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:842:4: otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) )
+                    {
+                    otherlv_3=(Token)match(input,28,FOLLOW_28_in_ruleMetrics1679); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getMetricsAccess().getDescriptionKeyword_0_3_0());
+                        
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:846:1: ( (lv_description_4_0= RULE_STRING ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:847:1: (lv_description_4_0= RULE_STRING )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:847:1: (lv_description_4_0= RULE_STRING )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:848:3: lv_description_4_0= RULE_STRING
+                    {
+                    lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMetrics1696); 
+
+                    			newLeafNode(lv_description_4_0, grammarAccess.getMetricsAccess().getDescriptionSTRINGTerminalRuleCall_0_3_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMetricsRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"description",
+                            		lv_description_4_0, 
+                            		"STRING");
+                    	    
+
+                    }
 
 
-                    	    }
-                    	    break;
+                    }
 
-                    	default :
-                    	    break loop20;
-                        }
-                    } while (true);
+
+                    }
+
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:864:3: (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:864:5: otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) )
+                    {
+                    otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleMetrics1715); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getMetricsAccess().getTypeKeyword_0_4_0());
+                        
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:868:1: ( (lv_type_6_0= ruleMetricType ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:869:1: (lv_type_6_0= ruleMetricType )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:869:1: (lv_type_6_0= ruleMetricType )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:870:3: lv_type_6_0= ruleMetricType
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getMetricsAccess().getTypeMetricTypeEnumRuleCall_0_4_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleMetricType_in_ruleMetrics1736);
+                    lv_type_6_0=ruleMetricType();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getMetricsRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"type",
+                            		lv_type_6_0, 
+                            		"MetricType");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:886:3: (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )?
+                    int alt19=2;
+                    int LA19_0 = input.LA(1);
+
+                    if ( (LA19_0==29) ) {
+                        alt19=1;
+                    }
+                    switch (alt19) {
+                        case 1 :
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:886:5: otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) )
+                            {
+                            otherlv_7=(Token)match(input,29,FOLLOW_29_in_ruleMetrics1750); 
+
+                                	newLeafNode(otherlv_7, grammarAccess.getMetricsAccess().getFormKeyword_0_5_0());
+                                
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:890:1: ( (lv_form_8_0= ruleColectType ) )
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:891:1: (lv_form_8_0= ruleColectType )
+                            {
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:891:1: (lv_form_8_0= ruleColectType )
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:892:3: lv_form_8_0= ruleColectType
+                            {
+                             
+                            	        newCompositeNode(grammarAccess.getMetricsAccess().getFormColectTypeEnumRuleCall_0_5_1_0()); 
+                            	    
+                            pushFollow(FOLLOW_ruleColectType_in_ruleMetrics1771);
+                            lv_form_8_0=ruleColectType();
+
+                            state._fsp--;
+
+
+                            	        if (current==null) {
+                            	            current = createModelElementForParent(grammarAccess.getMetricsRule());
+                            	        }
+                                   		set(
+                                   			current, 
+                                   			"form",
+                                    		lv_form_8_0, 
+                                    		"ColectType");
+                            	        afterParserOrEnumRuleCall();
+                            	    
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:908:4: (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:908:6: otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) )
+                    {
+                    otherlv_9=(Token)match(input,30,FOLLOW_30_in_ruleMetrics1786); 
+
+                        	newLeafNode(otherlv_9, grammarAccess.getMetricsAccess().getIdKeyword_0_6_0());
+                        
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:912:1: ( (lv_id_10_0= RULE_STRING ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:913:1: (lv_id_10_0= RULE_STRING )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:913:1: (lv_id_10_0= RULE_STRING )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:914:3: lv_id_10_0= RULE_STRING
+                    {
+                    lv_id_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMetrics1803); 
+
+                    			newLeafNode(lv_id_10_0, grammarAccess.getMetricsAccess().getIdSTRINGTerminalRuleCall_0_6_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMetricsRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"id",
+                            		lv_id_10_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:930:3: (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )?
+                    int alt20=2;
+                    int LA20_0 = input.LA(1);
+
+                    if ( (LA20_0==31) ) {
+                        alt20=1;
+                    }
+                    switch (alt20) {
+                        case 1 :
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:930:5: otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) )
+                            {
+                            otherlv_11=(Token)match(input,31,FOLLOW_31_in_ruleMetrics1822); 
+
+                                	newLeafNode(otherlv_11, grammarAccess.getMetricsAccess().getUnitKeyword_0_7_0());
+                                
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:934:1: ( (lv_unit_12_0= ruleMetricUnit ) )
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:935:1: (lv_unit_12_0= ruleMetricUnit )
+                            {
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:935:1: (lv_unit_12_0= ruleMetricUnit )
+                            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:936:3: lv_unit_12_0= ruleMetricUnit
+                            {
+                             
+                            	        newCompositeNode(grammarAccess.getMetricsAccess().getUnitMetricUnitEnumRuleCall_0_7_1_0()); 
+                            	    
+                            pushFollow(FOLLOW_ruleMetricUnit_in_ruleMetrics1843);
+                            lv_unit_12_0=ruleMetricUnit();
+
+                            state._fsp--;
+
+
+                            	        if (current==null) {
+                            	            current = createModelElementForParent(grammarAccess.getMetricsRule());
+                            	        }
+                                   		set(
+                                   			current, 
+                                   			"unit",
+                                    		lv_unit_12_0, 
+                                    		"MetricUnit");
+                            	        afterParserOrEnumRuleCall();
+                            	    
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:952:4: ( (lv_details_13_0= ruleActivityMetric ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:953:1: (lv_details_13_0= ruleActivityMetric )
+                    {
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:953:1: (lv_details_13_0= ruleActivityMetric )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:954:3: lv_details_13_0= ruleActivityMetric
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getMetricsAccess().getDetailsActivityMetricParserRuleCall_0_8_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleActivityMetric_in_ruleMetrics1866);
+                    lv_details_13_0=ruleActivityMetric();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getMetricsRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"details",
+                            		lv_details_13_0, 
+                            		"ActivityMetric");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
 
 
                     }
                     break;
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:851:5: (otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )* )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==29) ) {
-                alt23=1;
-            }
-            switch (alt23) {
-                case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:851:7: otherlv_4= 'Art' ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )*
+                case 2 :
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:972:5: this_TaskMetric_14= ruleTaskMetric
                     {
-                    otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleMetrics1697); 
-
-                        	newLeafNode(otherlv_4, grammarAccess.getMetricsAccess().getArtKeyword_2_0());
+                     
+                            newCompositeNode(grammarAccess.getMetricsAccess().getTaskMetricParserRuleCall_1()); 
                         
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:855:1: ( (lv_artefactMetric_5_0= ruleArtefactMetric ) )*
-                    loop22:
-                    do {
-                        int alt22=2;
-                        int LA22_0 = input.LA(1);
+                    pushFollow(FOLLOW_ruleTaskMetric_in_ruleMetrics1895);
+                    this_TaskMetric_14=ruleTaskMetric();
 
-                        if ( (LA22_0==RULE_STRING) ) {
-                            alt22=1;
-                        }
+                    state._fsp--;
 
-
-                        switch (alt22) {
-                    	case 1 :
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:856:1: (lv_artefactMetric_5_0= ruleArtefactMetric )
-                    	    {
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:856:1: (lv_artefactMetric_5_0= ruleArtefactMetric )
-                    	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:857:3: lv_artefactMetric_5_0= ruleArtefactMetric
-                    	    {
-                    	     
-                    	    	        newCompositeNode(grammarAccess.getMetricsAccess().getArtefactMetricArtefactMetricParserRuleCall_2_1_0()); 
-                    	    	    
-                    	    pushFollow(FOLLOW_ruleArtefactMetric_in_ruleMetrics1718);
-                    	    lv_artefactMetric_5_0=ruleArtefactMetric();
-
-                    	    state._fsp--;
-
-
-                    	    	        if (current==null) {
-                    	    	            current = createModelElementForParent(grammarAccess.getMetricsRule());
-                    	    	        }
-                    	           		add(
-                    	           			current, 
-                    	           			"artefactMetric",
-                    	            		lv_artefactMetric_5_0, 
-                    	            		"ArtefactMetric");
-                    	    	        afterParserOrEnumRuleCall();
-                    	    	    
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop22;
-                        }
-                    } while (true);
-
+                     
+                            current = this_TaskMetric_14; 
+                            afterParserOrEnumRuleCall();
+                        
 
                     }
                     break;
+                case 3 :
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:982:5: this_ArtefactMetric_15= ruleArtefactMetric
+                    {
+                     
+                            newCompositeNode(grammarAccess.getMetricsAccess().getArtefactMetricParserRuleCall_2()); 
+                        
+                    pushFollow(FOLLOW_ruleArtefactMetric_in_ruleMetrics1922);
+                    this_ArtefactMetric_15=ruleArtefactMetric();
 
-            }
+                    state._fsp--;
 
+                     
+                            current = this_ArtefactMetric_15; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
 
             }
 
@@ -2246,7 +2430,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActivityMetric"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:881:1: entryRuleActivityMetric returns [EObject current=null] : iv_ruleActivityMetric= ruleActivityMetric EOF ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:998:1: entryRuleActivityMetric returns [EObject current=null] : iv_ruleActivityMetric= ruleActivityMetric EOF ;
     public final EObject entryRuleActivityMetric() throws RecognitionException {
         EObject current = null;
 
@@ -2254,17 +2438,17 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:882:2: (iv_ruleActivityMetric= ruleActivityMetric EOF )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:883:2: iv_ruleActivityMetric= ruleActivityMetric EOF
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:999:2: (iv_ruleActivityMetric= ruleActivityMetric EOF )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1000:2: iv_ruleActivityMetric= ruleActivityMetric EOF
             {
              newCompositeNode(grammarAccess.getActivityMetricRule()); 
-            pushFollow(FOLLOW_ruleActivityMetric_in_entryRuleActivityMetric1757);
+            pushFollow(FOLLOW_ruleActivityMetric_in_entryRuleActivityMetric1957);
             iv_ruleActivityMetric=ruleActivityMetric();
 
             state._fsp--;
 
              current =iv_ruleActivityMetric; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActivityMetric1767); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActivityMetric1967); 
 
             }
 
@@ -2282,325 +2466,40 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActivityMetric"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:890:1: ruleActivityMetric returns [EObject current=null] : ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) ) ) (otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) ) ) otherlv_17= ';' ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1007:1: ruleActivityMetric returns [EObject current=null] : ( (otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) ) ) (otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) ) ) ) ;
     public final EObject ruleActivityMetric() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
-        Token otherlv_1=null;
+        Token otherlv_0=null;
+        Token lv_activityBegin_1_0=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_description_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token lv_id_10_0=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        Token lv_activityBegin_14_0=null;
-        Token otherlv_15=null;
-        Token lv_activityEnd_16_0=null;
-        Token otherlv_17=null;
-        Enumerator lv_type_6_0 = null;
-
-        Enumerator lv_form_8_0 = null;
-
-        Enumerator lv_unit_12_0 = null;
-
+        Token lv_activityEnd_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:893:28: ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) ) ) (otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) ) ) otherlv_17= ';' ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:894:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) ) ) (otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) ) ) otherlv_17= ';' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1010:28: ( ( (otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) ) ) (otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) ) ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1011:1: ( (otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) ) ) (otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) ) ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:894:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) ) ) (otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) ) ) otherlv_17= ';' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:894:2: ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) ) ) (otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) ) ) otherlv_17= ';'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1011:1: ( (otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) ) ) (otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1011:2: (otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) ) ) (otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:894:2: ( (lv_name_0_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:895:1: (lv_name_0_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1011:2: (otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1011:4: otherlv_0= 'activityBegin' ( (lv_activityBegin_1_0= RULE_STRING ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:895:1: (lv_name_0_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:896:3: lv_name_0_0= RULE_STRING
-            {
-            lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric1809); 
+            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleActivityMetric2005); 
 
-            			newLeafNode(lv_name_0_0, grammarAccess.getActivityMetricAccess().getNameSTRINGTerminalRuleCall_0_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getActivityMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_0_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleActivityMetric1826); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getActivityMetricAccess().getRelatesKeyword_1());
+                	newLeafNode(otherlv_0, grammarAccess.getActivityMetricAccess().getActivityBeginKeyword_0_0());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:916:1: ( (otherlv_2= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:917:1: (otherlv_2= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1015:1: ( (lv_activityBegin_1_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1016:1: (lv_activityBegin_1_0= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:917:1: (otherlv_2= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:918:3: otherlv_2= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1016:1: (lv_activityBegin_1_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1017:3: lv_activityBegin_1_0= RULE_STRING
             {
+            lv_activityBegin_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric2022); 
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getActivityMetricRule());
-            	        }
-                    
-            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric1846); 
-
-            		newLeafNode(otherlv_2, grammarAccess.getActivityMetricAccess().getRelatesToProcessCrossReference_2_0()); 
-            	
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:929:2: (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:929:4: otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) )
-            {
-            otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleActivityMetric1859); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getActivityMetricAccess().getDescriptionKeyword_3_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:933:1: ( (lv_description_4_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:934:1: (lv_description_4_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:934:1: (lv_description_4_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:935:3: lv_description_4_0= RULE_STRING
-            {
-            lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric1876); 
-
-            			newLeafNode(lv_description_4_0, grammarAccess.getActivityMetricAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getActivityMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"description",
-                    		lv_description_4_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:951:3: (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:951:5: otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) )
-            {
-            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleActivityMetric1895); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getActivityMetricAccess().getTypeKeyword_4_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:955:1: ( (lv_type_6_0= ruleMetricType ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:956:1: (lv_type_6_0= ruleMetricType )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:956:1: (lv_type_6_0= ruleMetricType )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:957:3: lv_type_6_0= ruleMetricType
-            {
-             
-            	        newCompositeNode(grammarAccess.getActivityMetricAccess().getTypeMetricTypeEnumRuleCall_4_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleMetricType_in_ruleActivityMetric1916);
-            lv_type_6_0=ruleMetricType();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getActivityMetricRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"type",
-                    		lv_type_6_0, 
-                    		"MetricType");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:973:3: (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( (LA24_0==32) ) {
-                alt24=1;
-            }
-            switch (alt24) {
-                case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:973:5: otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) )
-                    {
-                    otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleActivityMetric1930); 
-
-                        	newLeafNode(otherlv_7, grammarAccess.getActivityMetricAccess().getFormKeyword_5_0());
-                        
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:977:1: ( (lv_form_8_0= ruleColectType ) )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:978:1: (lv_form_8_0= ruleColectType )
-                    {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:978:1: (lv_form_8_0= ruleColectType )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:979:3: lv_form_8_0= ruleColectType
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getActivityMetricAccess().getFormColectTypeEnumRuleCall_5_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleColectType_in_ruleActivityMetric1951);
-                    lv_form_8_0=ruleColectType();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getActivityMetricRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"form",
-                            		lv_form_8_0, 
-                            		"ColectType");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:995:4: (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:995:6: otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) )
-            {
-            otherlv_9=(Token)match(input,33,FOLLOW_33_in_ruleActivityMetric1966); 
-
-                	newLeafNode(otherlv_9, grammarAccess.getActivityMetricAccess().getIdKeyword_6_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:999:1: ( (lv_id_10_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1000:1: (lv_id_10_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1000:1: (lv_id_10_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1001:3: lv_id_10_0= RULE_STRING
-            {
-            lv_id_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric1983); 
-
-            			newLeafNode(lv_id_10_0, grammarAccess.getActivityMetricAccess().getIdSTRINGTerminalRuleCall_6_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getActivityMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"id",
-                    		lv_id_10_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1017:3: (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0==34) ) {
-                alt25=1;
-            }
-            switch (alt25) {
-                case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1017:5: otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) )
-                    {
-                    otherlv_11=(Token)match(input,34,FOLLOW_34_in_ruleActivityMetric2002); 
-
-                        	newLeafNode(otherlv_11, grammarAccess.getActivityMetricAccess().getUnitKeyword_7_0());
-                        
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1021:1: ( (lv_unit_12_0= ruleMetricUnit ) )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1022:1: (lv_unit_12_0= ruleMetricUnit )
-                    {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1022:1: (lv_unit_12_0= ruleMetricUnit )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1023:3: lv_unit_12_0= ruleMetricUnit
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getActivityMetricAccess().getUnitMetricUnitEnumRuleCall_7_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleMetricUnit_in_ruleActivityMetric2023);
-                    lv_unit_12_0=ruleMetricUnit();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getActivityMetricRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"unit",
-                            		lv_unit_12_0, 
-                            		"MetricUnit");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1039:4: (otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1039:6: otherlv_13= 'activityBegin' ( (lv_activityBegin_14_0= RULE_STRING ) )
-            {
-            otherlv_13=(Token)match(input,35,FOLLOW_35_in_ruleActivityMetric2038); 
-
-                	newLeafNode(otherlv_13, grammarAccess.getActivityMetricAccess().getActivityBeginKeyword_8_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1043:1: ( (lv_activityBegin_14_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1044:1: (lv_activityBegin_14_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1044:1: (lv_activityBegin_14_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1045:3: lv_activityBegin_14_0= RULE_STRING
-            {
-            lv_activityBegin_14_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric2055); 
-
-            			newLeafNode(lv_activityBegin_14_0, grammarAccess.getActivityMetricAccess().getActivityBeginSTRINGTerminalRuleCall_8_1_0()); 
+            			newLeafNode(lv_activityBegin_1_0, grammarAccess.getActivityMetricAccess().getActivityBeginSTRINGTerminalRuleCall_0_1_0()); 
             		
 
             	        if (current==null) {
@@ -2609,7 +2508,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"activityBegin",
-                    		lv_activityBegin_14_0, 
+                    		lv_activityBegin_1_0, 
                     		"STRING");
             	    
 
@@ -2621,22 +2520,22 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1061:3: (otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1061:5: otherlv_15= 'activityEnd' ( (lv_activityEnd_16_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1033:3: (otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1033:5: otherlv_2= 'activityEnd' ( (lv_activityEnd_3_0= RULE_STRING ) )
             {
-            otherlv_15=(Token)match(input,36,FOLLOW_36_in_ruleActivityMetric2074); 
+            otherlv_2=(Token)match(input,33,FOLLOW_33_in_ruleActivityMetric2041); 
 
-                	newLeafNode(otherlv_15, grammarAccess.getActivityMetricAccess().getActivityEndKeyword_9_0());
+                	newLeafNode(otherlv_2, grammarAccess.getActivityMetricAccess().getActivityEndKeyword_1_0());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1065:1: ( (lv_activityEnd_16_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1066:1: (lv_activityEnd_16_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1037:1: ( (lv_activityEnd_3_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1038:1: (lv_activityEnd_3_0= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1066:1: (lv_activityEnd_16_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1067:3: lv_activityEnd_16_0= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1038:1: (lv_activityEnd_3_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1039:3: lv_activityEnd_3_0= RULE_STRING
             {
-            lv_activityEnd_16_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric2091); 
+            lv_activityEnd_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleActivityMetric2058); 
 
-            			newLeafNode(lv_activityEnd_16_0, grammarAccess.getActivityMetricAccess().getActivityEndSTRINGTerminalRuleCall_9_1_0()); 
+            			newLeafNode(lv_activityEnd_3_0, grammarAccess.getActivityMetricAccess().getActivityEndSTRINGTerminalRuleCall_1_1_0()); 
             		
 
             	        if (current==null) {
@@ -2645,7 +2544,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"activityEnd",
-                    		lv_activityEnd_16_0, 
+                    		lv_activityEnd_3_0, 
                     		"STRING");
             	    
 
@@ -2657,10 +2556,6 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_17=(Token)match(input,15,FOLLOW_15_in_ruleActivityMetric2109); 
-
-                	newLeafNode(otherlv_17, grammarAccess.getActivityMetricAccess().getSemicolonKeyword_10());
-                
 
             }
 
@@ -2682,7 +2577,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskMetric"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1095:1: entryRuleTaskMetric returns [EObject current=null] : iv_ruleTaskMetric= ruleTaskMetric EOF ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1063:1: entryRuleTaskMetric returns [EObject current=null] : iv_ruleTaskMetric= ruleTaskMetric EOF ;
     public final EObject entryRuleTaskMetric() throws RecognitionException {
         EObject current = null;
 
@@ -2690,17 +2585,17 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1096:2: (iv_ruleTaskMetric= ruleTaskMetric EOF )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1097:2: iv_ruleTaskMetric= ruleTaskMetric EOF
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1064:2: (iv_ruleTaskMetric= ruleTaskMetric EOF )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1065:2: iv_ruleTaskMetric= ruleTaskMetric EOF
             {
              newCompositeNode(grammarAccess.getTaskMetricRule()); 
-            pushFollow(FOLLOW_ruleTaskMetric_in_entryRuleTaskMetric2145);
+            pushFollow(FOLLOW_ruleTaskMetric_in_entryRuleTaskMetric2100);
             iv_ruleTaskMetric=ruleTaskMetric();
 
             state._fsp--;
 
              current =iv_ruleTaskMetric; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTaskMetric2155); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTaskMetric2110); 
 
             }
 
@@ -2718,323 +2613,35 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskMetric"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1104:1: ruleTaskMetric returns [EObject current=null] : ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) ) ) otherlv_15= ';' ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1072:1: ruleTaskMetric returns [EObject current=null] : (otherlv_0= 'activities' ( (lv_activities_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleTaskMetric() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_description_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token lv_id_10_0=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        Token lv_activities_14_0=null;
-        Token otherlv_15=null;
-        Enumerator lv_type_6_0 = null;
-
-        Enumerator lv_form_8_0 = null;
-
-        Enumerator lv_unit_12_0 = null;
-
+        Token otherlv_0=null;
+        Token lv_activities_1_0=null;
 
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1107:28: ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) ) ) otherlv_15= ';' ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1108:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) ) ) otherlv_15= ';' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1075:28: ( (otherlv_0= 'activities' ( (lv_activities_1_0= RULE_STRING ) ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1076:1: (otherlv_0= 'activities' ( (lv_activities_1_0= RULE_STRING ) ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1108:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) ) ) otherlv_15= ';' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1108:2: ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )? (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) ) (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )? (otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) ) ) otherlv_15= ';'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1076:1: (otherlv_0= 'activities' ( (lv_activities_1_0= RULE_STRING ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1076:3: otherlv_0= 'activities' ( (lv_activities_1_0= RULE_STRING ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1108:2: ( (lv_name_0_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1109:1: (lv_name_0_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1109:1: (lv_name_0_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1110:3: lv_name_0_0= RULE_STRING
-            {
-            lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskMetric2197); 
+            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleTaskMetric2147); 
 
-            			newLeafNode(lv_name_0_0, grammarAccess.getTaskMetricAccess().getNameSTRINGTerminalRuleCall_0_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTaskMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_0_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleTaskMetric2214); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getTaskMetricAccess().getRelatesKeyword_1());
+                	newLeafNode(otherlv_0, grammarAccess.getTaskMetricAccess().getActivitiesKeyword_0());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1130:1: ( (otherlv_2= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1131:1: (otherlv_2= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1080:1: ( (lv_activities_1_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1081:1: (lv_activities_1_0= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1131:1: (otherlv_2= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1132:3: otherlv_2= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1081:1: (lv_activities_1_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1082:3: lv_activities_1_0= RULE_STRING
             {
+            lv_activities_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskMetric2164); 
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getTaskMetricRule());
-            	        }
-                    
-            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskMetric2234); 
-
-            		newLeafNode(otherlv_2, grammarAccess.getTaskMetricAccess().getRelatesToProcessCrossReference_2_0()); 
-            	
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1143:2: (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1143:4: otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) )
-            {
-            otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleTaskMetric2247); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getTaskMetricAccess().getDescriptionKeyword_3_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1147:1: ( (lv_description_4_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1148:1: (lv_description_4_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1148:1: (lv_description_4_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1149:3: lv_description_4_0= RULE_STRING
-            {
-            lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskMetric2264); 
-
-            			newLeafNode(lv_description_4_0, grammarAccess.getTaskMetricAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTaskMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"description",
-                    		lv_description_4_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1165:3: (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1165:5: otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) )
-            {
-            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleTaskMetric2283); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getTaskMetricAccess().getTypeKeyword_4_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1169:1: ( (lv_type_6_0= ruleMetricType ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1170:1: (lv_type_6_0= ruleMetricType )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1170:1: (lv_type_6_0= ruleMetricType )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1171:3: lv_type_6_0= ruleMetricType
-            {
-             
-            	        newCompositeNode(grammarAccess.getTaskMetricAccess().getTypeMetricTypeEnumRuleCall_4_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleMetricType_in_ruleTaskMetric2304);
-            lv_type_6_0=ruleMetricType();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getTaskMetricRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"type",
-                    		lv_type_6_0, 
-                    		"MetricType");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1187:3: (otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
-
-            if ( (LA26_0==32) ) {
-                alt26=1;
-            }
-            switch (alt26) {
-                case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1187:5: otherlv_7= 'form' ( (lv_form_8_0= ruleColectType ) )
-                    {
-                    otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleTaskMetric2318); 
-
-                        	newLeafNode(otherlv_7, grammarAccess.getTaskMetricAccess().getFormKeyword_5_0());
-                        
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1191:1: ( (lv_form_8_0= ruleColectType ) )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1192:1: (lv_form_8_0= ruleColectType )
-                    {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1192:1: (lv_form_8_0= ruleColectType )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1193:3: lv_form_8_0= ruleColectType
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getTaskMetricAccess().getFormColectTypeEnumRuleCall_5_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleColectType_in_ruleTaskMetric2339);
-                    lv_form_8_0=ruleColectType();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getTaskMetricRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"form",
-                            		lv_form_8_0, 
-                            		"ColectType");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1209:4: (otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1209:6: otherlv_9= 'id' ( (lv_id_10_0= RULE_STRING ) )
-            {
-            otherlv_9=(Token)match(input,33,FOLLOW_33_in_ruleTaskMetric2354); 
-
-                	newLeafNode(otherlv_9, grammarAccess.getTaskMetricAccess().getIdKeyword_6_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1213:1: ( (lv_id_10_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1214:1: (lv_id_10_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1214:1: (lv_id_10_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1215:3: lv_id_10_0= RULE_STRING
-            {
-            lv_id_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskMetric2371); 
-
-            			newLeafNode(lv_id_10_0, grammarAccess.getTaskMetricAccess().getIdSTRINGTerminalRuleCall_6_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTaskMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"id",
-                    		lv_id_10_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1231:3: (otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
-
-            if ( (LA27_0==34) ) {
-                alt27=1;
-            }
-            switch (alt27) {
-                case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1231:5: otherlv_11= 'unit' ( (lv_unit_12_0= ruleMetricUnit ) )
-                    {
-                    otherlv_11=(Token)match(input,34,FOLLOW_34_in_ruleTaskMetric2390); 
-
-                        	newLeafNode(otherlv_11, grammarAccess.getTaskMetricAccess().getUnitKeyword_7_0());
-                        
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1235:1: ( (lv_unit_12_0= ruleMetricUnit ) )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1236:1: (lv_unit_12_0= ruleMetricUnit )
-                    {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1236:1: (lv_unit_12_0= ruleMetricUnit )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1237:3: lv_unit_12_0= ruleMetricUnit
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getTaskMetricAccess().getUnitMetricUnitEnumRuleCall_7_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleMetricUnit_in_ruleTaskMetric2411);
-                    lv_unit_12_0=ruleMetricUnit();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getTaskMetricRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"unit",
-                            		lv_unit_12_0, 
-                            		"MetricUnit");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1253:4: (otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1253:6: otherlv_13= 'activities' ( (lv_activities_14_0= RULE_STRING ) )
-            {
-            otherlv_13=(Token)match(input,37,FOLLOW_37_in_ruleTaskMetric2426); 
-
-                	newLeafNode(otherlv_13, grammarAccess.getTaskMetricAccess().getActivitiesKeyword_8_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1257:1: ( (lv_activities_14_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1258:1: (lv_activities_14_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1258:1: (lv_activities_14_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1259:3: lv_activities_14_0= RULE_STRING
-            {
-            lv_activities_14_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskMetric2443); 
-
-            			newLeafNode(lv_activities_14_0, grammarAccess.getTaskMetricAccess().getActivitiesSTRINGTerminalRuleCall_8_1_0()); 
+            			newLeafNode(lv_activities_1_0, grammarAccess.getTaskMetricAccess().getActivitiesSTRINGTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -3043,7 +2650,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"activities",
-                    		lv_activities_14_0, 
+                    		lv_activities_1_0, 
                     		"STRING");
             	    
 
@@ -3052,13 +2659,6 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-
-            }
-
-            otherlv_15=(Token)match(input,15,FOLLOW_15_in_ruleTaskMetric2461); 
-
-                	newLeafNode(otherlv_15, grammarAccess.getTaskMetricAccess().getSemicolonKeyword_9());
-                
 
             }
 
@@ -3080,7 +2680,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArtefactMetric"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1287:1: entryRuleArtefactMetric returns [EObject current=null] : iv_ruleArtefactMetric= ruleArtefactMetric EOF ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1106:1: entryRuleArtefactMetric returns [EObject current=null] : iv_ruleArtefactMetric= ruleArtefactMetric EOF ;
     public final EObject entryRuleArtefactMetric() throws RecognitionException {
         EObject current = null;
 
@@ -3088,17 +2688,17 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1288:2: (iv_ruleArtefactMetric= ruleArtefactMetric EOF )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1289:2: iv_ruleArtefactMetric= ruleArtefactMetric EOF
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1107:2: (iv_ruleArtefactMetric= ruleArtefactMetric EOF )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1108:2: iv_ruleArtefactMetric= ruleArtefactMetric EOF
             {
              newCompositeNode(grammarAccess.getArtefactMetricRule()); 
-            pushFollow(FOLLOW_ruleArtefactMetric_in_entryRuleArtefactMetric2497);
+            pushFollow(FOLLOW_ruleArtefactMetric_in_entryRuleArtefactMetric2205);
             iv_ruleArtefactMetric=ruleArtefactMetric();
 
             state._fsp--;
 
              current =iv_ruleArtefactMetric; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArtefactMetric2507); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArtefactMetric2215); 
 
             }
 
@@ -3116,40 +2716,29 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArtefactMetric"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1296:1: ruleArtefactMetric returns [EObject current=null] : ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) ) ) (otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) ) )? ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1115:1: ruleArtefactMetric returns [EObject current=null] : ( ( (lv_name_0_0= RULE_STRING ) ) ( (otherlv_1= RULE_STRING ) ) ) ;
     public final EObject ruleArtefactMetric() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_description_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token lv_id_8_0=null;
-        Token otherlv_9=null;
-        Enumerator lv_type_6_0 = null;
-
-        Enumerator lv_unit_10_0 = null;
-
 
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1299:28: ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) ) ) (otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) ) )? ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1300:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) ) ) (otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) ) )? )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1118:28: ( ( ( (lv_name_0_0= RULE_STRING ) ) ( (otherlv_1= RULE_STRING ) ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1119:1: ( ( (lv_name_0_0= RULE_STRING ) ) ( (otherlv_1= RULE_STRING ) ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1300:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) ) ) (otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) ) )? )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1300:2: ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= 'relates' ( (otherlv_2= RULE_STRING ) ) (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) ) ) (otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) ) )?
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1119:1: ( ( (lv_name_0_0= RULE_STRING ) ) ( (otherlv_1= RULE_STRING ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1119:2: ( (lv_name_0_0= RULE_STRING ) ) ( (otherlv_1= RULE_STRING ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1300:2: ( (lv_name_0_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1301:1: (lv_name_0_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1119:2: ( (lv_name_0_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1120:1: (lv_name_0_0= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1301:1: (lv_name_0_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1302:3: lv_name_0_0= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1120:1: (lv_name_0_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1121:3: lv_name_0_0= RULE_STRING
             {
-            lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArtefactMetric2549); 
+            lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArtefactMetric2257); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getArtefactMetricAccess().getNameSTRINGTerminalRuleCall_0_0()); 
             		
@@ -3169,193 +2758,24 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleArtefactMetric2566); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getArtefactMetricAccess().getRelatesKeyword_1());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1322:1: ( (otherlv_2= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1323:1: (otherlv_2= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1137:2: ( (otherlv_1= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1138:1: (otherlv_1= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1323:1: (otherlv_2= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1324:3: otherlv_2= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1138:1: (otherlv_1= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1139:3: otherlv_1= RULE_STRING
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getArtefactMetricRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArtefactMetric2586); 
+            otherlv_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArtefactMetric2282); 
 
-            		newLeafNode(otherlv_2, grammarAccess.getArtefactMetricAccess().getRelatesToArtefactCrossReference_2_0()); 
+            		newLeafNode(otherlv_1, grammarAccess.getArtefactMetricAccess().getArtefactArtefactCrossReference_1_0()); 
             	
 
             }
 
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1335:2: (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1335:4: otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) )
-            {
-            otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleArtefactMetric2599); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getArtefactMetricAccess().getDescriptionKeyword_3_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1339:1: ( (lv_description_4_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1340:1: (lv_description_4_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1340:1: (lv_description_4_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1341:3: lv_description_4_0= RULE_STRING
-            {
-            lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArtefactMetric2616); 
-
-            			newLeafNode(lv_description_4_0, grammarAccess.getArtefactMetricAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getArtefactMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"description",
-                    		lv_description_4_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1357:3: (otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1357:5: otherlv_5= 'type' ( (lv_type_6_0= ruleMetricType ) )
-            {
-            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleArtefactMetric2635); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getArtefactMetricAccess().getTypeKeyword_4_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1361:1: ( (lv_type_6_0= ruleMetricType ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1362:1: (lv_type_6_0= ruleMetricType )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1362:1: (lv_type_6_0= ruleMetricType )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1363:3: lv_type_6_0= ruleMetricType
-            {
-             
-            	        newCompositeNode(grammarAccess.getArtefactMetricAccess().getTypeMetricTypeEnumRuleCall_4_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleMetricType_in_ruleArtefactMetric2656);
-            lv_type_6_0=ruleMetricType();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getArtefactMetricRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"type",
-                    		lv_type_6_0, 
-                    		"MetricType");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1379:3: (otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1379:5: otherlv_7= 'id' ( (lv_id_8_0= RULE_STRING ) )
-            {
-            otherlv_7=(Token)match(input,33,FOLLOW_33_in_ruleArtefactMetric2670); 
-
-                	newLeafNode(otherlv_7, grammarAccess.getArtefactMetricAccess().getIdKeyword_5_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1383:1: ( (lv_id_8_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1384:1: (lv_id_8_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1384:1: (lv_id_8_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1385:3: lv_id_8_0= RULE_STRING
-            {
-            lv_id_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArtefactMetric2687); 
-
-            			newLeafNode(lv_id_8_0, grammarAccess.getArtefactMetricAccess().getIdSTRINGTerminalRuleCall_5_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getArtefactMetricRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"id",
-                    		lv_id_8_0, 
-                    		"STRING");
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1401:3: (otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) ) )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
-
-            if ( (LA28_0==34) ) {
-                alt28=1;
-            }
-            switch (alt28) {
-                case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1401:5: otherlv_9= 'unit' ( (lv_unit_10_0= ruleMetricUnit ) )
-                    {
-                    otherlv_9=(Token)match(input,34,FOLLOW_34_in_ruleArtefactMetric2706); 
-
-                        	newLeafNode(otherlv_9, grammarAccess.getArtefactMetricAccess().getUnitKeyword_6_0());
-                        
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1405:1: ( (lv_unit_10_0= ruleMetricUnit ) )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1406:1: (lv_unit_10_0= ruleMetricUnit )
-                    {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1406:1: (lv_unit_10_0= ruleMetricUnit )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1407:3: lv_unit_10_0= ruleMetricUnit
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getArtefactMetricAccess().getUnitMetricUnitEnumRuleCall_6_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleMetricUnit_in_ruleArtefactMetric2727);
-                    lv_unit_10_0=ruleMetricUnit();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getArtefactMetricRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"unit",
-                            		lv_unit_10_0, 
-                            		"MetricUnit");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -3379,26 +2799,26 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleArtefactMetric"
 
 
-    // $ANTLR start "entryRuleQuestion"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1433:1: entryRuleQuestion returns [EObject current=null] : iv_ruleQuestion= ruleQuestion EOF ;
-    public final EObject entryRuleQuestion() throws RecognitionException {
+    // $ANTLR start "entryRuleQuestions"
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1158:1: entryRuleQuestions returns [EObject current=null] : iv_ruleQuestions= ruleQuestions EOF ;
+    public final EObject entryRuleQuestions() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleQuestion = null;
+        EObject iv_ruleQuestions = null;
 
 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1434:2: (iv_ruleQuestion= ruleQuestion EOF )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1435:2: iv_ruleQuestion= ruleQuestion EOF
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1159:2: (iv_ruleQuestions= ruleQuestions EOF )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1160:2: iv_ruleQuestions= ruleQuestions EOF
             {
-             newCompositeNode(grammarAccess.getQuestionRule()); 
-            pushFollow(FOLLOW_ruleQuestion_in_entryRuleQuestion2767);
-            iv_ruleQuestion=ruleQuestion();
+             newCompositeNode(grammarAccess.getQuestionsRule()); 
+            pushFollow(FOLLOW_ruleQuestions_in_entryRuleQuestions2318);
+            iv_ruleQuestions=ruleQuestions();
 
             state._fsp--;
 
-             current =iv_ruleQuestion; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQuestion2777); 
+             current =iv_ruleQuestions; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQuestions2328); 
 
             }
 
@@ -3412,61 +2832,56 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleQuestion"
+    // $ANTLR end "entryRuleQuestions"
 
 
-    // $ANTLR start "ruleQuestion"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1442:1: ruleQuestion returns [EObject current=null] : (otherlv_0= 'Q.' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) ) ) (otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) ) )? ( (lv_alternatives_11_0= ruleAlternatives ) )* otherlv_12= '}' ) ;
-    public final EObject ruleQuestion() throws RecognitionException {
+    // $ANTLR start "ruleQuestions"
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1167:1: ruleQuestions returns [EObject current=null] : ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= '{' (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) ) (otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) ) ) (otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) ) ) (otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) ) )? ( (lv_alternatives_10_0= ruleAlternatives ) )* otherlv_11= '}' ) ;
+    public final EObject ruleQuestions() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_name_0_0=null;
+        Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_description_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token lv_id_8_0=null;
-        Token otherlv_9=null;
-        Token lv_req_10_0=null;
-        Token otherlv_12=null;
-        Enumerator lv_type_6_0 = null;
+        Token lv_description_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token lv_id_7_0=null;
+        Token otherlv_8=null;
+        Token lv_req_9_0=null;
+        Token otherlv_11=null;
+        Enumerator lv_type_5_0 = null;
 
-        EObject lv_alternatives_11_0 = null;
+        EObject lv_alternatives_10_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1445:28: ( (otherlv_0= 'Q.' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) ) ) (otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) ) )? ( (lv_alternatives_11_0= ruleAlternatives ) )* otherlv_12= '}' ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1446:1: (otherlv_0= 'Q.' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) ) ) (otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) ) )? ( (lv_alternatives_11_0= ruleAlternatives ) )* otherlv_12= '}' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1170:28: ( ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= '{' (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) ) (otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) ) ) (otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) ) ) (otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) ) )? ( (lv_alternatives_10_0= ruleAlternatives ) )* otherlv_11= '}' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1171:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= '{' (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) ) (otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) ) ) (otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) ) ) (otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) ) )? ( (lv_alternatives_10_0= ruleAlternatives ) )* otherlv_11= '}' )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1446:1: (otherlv_0= 'Q.' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) ) ) (otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) ) )? ( (lv_alternatives_11_0= ruleAlternatives ) )* otherlv_12= '}' )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1446:3: otherlv_0= 'Q.' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) ) (otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) ) ) (otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) ) ) (otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) ) )? ( (lv_alternatives_11_0= ruleAlternatives ) )* otherlv_12= '}'
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1171:1: ( ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= '{' (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) ) (otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) ) ) (otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) ) ) (otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) ) )? ( (lv_alternatives_10_0= ruleAlternatives ) )* otherlv_11= '}' )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1171:2: ( (lv_name_0_0= RULE_STRING ) ) otherlv_1= '{' (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) ) (otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) ) ) (otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) ) ) (otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) ) )? ( (lv_alternatives_10_0= ruleAlternatives ) )* otherlv_11= '}'
             {
-            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleQuestion2814); 
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1171:2: ( (lv_name_0_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1172:1: (lv_name_0_0= RULE_STRING )
+            {
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1172:1: (lv_name_0_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1173:3: lv_name_0_0= RULE_STRING
+            {
+            lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQuestions2370); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getQuestionAccess().getQKeyword_0());
-                
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1450:1: ( (lv_name_1_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1451:1: (lv_name_1_0= RULE_STRING )
-            {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1451:1: (lv_name_1_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1452:3: lv_name_1_0= RULE_STRING
-            {
-            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQuestion2831); 
-
-            			newLeafNode(lv_name_1_0, grammarAccess.getQuestionAccess().getNameSTRINGTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_name_0_0, grammarAccess.getQuestionsAccess().getNameSTRINGTerminalRuleCall_0_0()); 
             		
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getQuestionRule());
+            	            current = createModelElement(grammarAccess.getQuestionsRule());
             	        }
                    		setWithLastConsumed(
                    			current, 
                    			"name",
-                    		lv_name_1_0, 
+                    		lv_name_0_0, 
                     		"STRING");
             	    
 
@@ -3475,35 +2890,35 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleQuestion2848); 
+            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleQuestions2387); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getQuestionAccess().getLeftCurlyBracketKeyword_2());
+                	newLeafNode(otherlv_1, grammarAccess.getQuestionsAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1472:1: (otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1472:3: otherlv_3= 'description' ( (lv_description_4_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1193:1: (otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1193:3: otherlv_2= 'description' ( (lv_description_3_0= RULE_STRING ) )
             {
-            otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleQuestion2861); 
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleQuestions2400); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getQuestionAccess().getDescriptionKeyword_3_0());
+                	newLeafNode(otherlv_2, grammarAccess.getQuestionsAccess().getDescriptionKeyword_2_0());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1476:1: ( (lv_description_4_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1477:1: (lv_description_4_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1197:1: ( (lv_description_3_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1198:1: (lv_description_3_0= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1477:1: (lv_description_4_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1478:3: lv_description_4_0= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1198:1: (lv_description_3_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1199:3: lv_description_3_0= RULE_STRING
             {
-            lv_description_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQuestion2878); 
+            lv_description_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQuestions2417); 
 
-            			newLeafNode(lv_description_4_0, grammarAccess.getQuestionAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0()); 
+            			newLeafNode(lv_description_3_0, grammarAccess.getQuestionsAccess().getDescriptionSTRINGTerminalRuleCall_2_1_0()); 
             		
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getQuestionRule());
+            	            current = createModelElement(grammarAccess.getQuestionsRule());
             	        }
                    		setWithLastConsumed(
                    			current, 
                    			"description",
-                    		lv_description_4_0, 
+                    		lv_description_3_0, 
                     		"STRING");
             	    
 
@@ -3515,35 +2930,35 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1494:3: (otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1494:5: otherlv_5= 'type' ( (lv_type_6_0= ruleAnswerType ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1215:3: (otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1215:5: otherlv_4= 'type' ( (lv_type_5_0= ruleAnswerType ) )
             {
-            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleQuestion2897); 
+            otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleQuestions2436); 
 
-                	newLeafNode(otherlv_5, grammarAccess.getQuestionAccess().getTypeKeyword_4_0());
+                	newLeafNode(otherlv_4, grammarAccess.getQuestionsAccess().getTypeKeyword_3_0());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1498:1: ( (lv_type_6_0= ruleAnswerType ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1499:1: (lv_type_6_0= ruleAnswerType )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1219:1: ( (lv_type_5_0= ruleAnswerType ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1220:1: (lv_type_5_0= ruleAnswerType )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1499:1: (lv_type_6_0= ruleAnswerType )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1500:3: lv_type_6_0= ruleAnswerType
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1220:1: (lv_type_5_0= ruleAnswerType )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1221:3: lv_type_5_0= ruleAnswerType
             {
              
-            	        newCompositeNode(grammarAccess.getQuestionAccess().getTypeAnswerTypeEnumRuleCall_4_1_0()); 
+            	        newCompositeNode(grammarAccess.getQuestionsAccess().getTypeAnswerTypeEnumRuleCall_3_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleAnswerType_in_ruleQuestion2918);
-            lv_type_6_0=ruleAnswerType();
+            pushFollow(FOLLOW_ruleAnswerType_in_ruleQuestions2457);
+            lv_type_5_0=ruleAnswerType();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getQuestionRule());
+            	            current = createModelElementForParent(grammarAccess.getQuestionsRule());
             	        }
                    		set(
                    			current, 
                    			"type",
-                    		lv_type_6_0, 
+                    		lv_type_5_0, 
                     		"AnswerType");
             	        afterParserOrEnumRuleCall();
             	    
@@ -3556,31 +2971,31 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1516:3: (otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1516:5: otherlv_7= 'id' ( (lv_id_8_0= RULE_ID ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1237:3: (otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1237:5: otherlv_6= 'id' ( (lv_id_7_0= RULE_ID ) )
             {
-            otherlv_7=(Token)match(input,33,FOLLOW_33_in_ruleQuestion2932); 
+            otherlv_6=(Token)match(input,30,FOLLOW_30_in_ruleQuestions2471); 
 
-                	newLeafNode(otherlv_7, grammarAccess.getQuestionAccess().getIdKeyword_5_0());
+                	newLeafNode(otherlv_6, grammarAccess.getQuestionsAccess().getIdKeyword_4_0());
                 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1520:1: ( (lv_id_8_0= RULE_ID ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1521:1: (lv_id_8_0= RULE_ID )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1241:1: ( (lv_id_7_0= RULE_ID ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1242:1: (lv_id_7_0= RULE_ID )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1521:1: (lv_id_8_0= RULE_ID )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1522:3: lv_id_8_0= RULE_ID
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1242:1: (lv_id_7_0= RULE_ID )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1243:3: lv_id_7_0= RULE_ID
             {
-            lv_id_8_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQuestion2949); 
+            lv_id_7_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQuestions2488); 
 
-            			newLeafNode(lv_id_8_0, grammarAccess.getQuestionAccess().getIdIDTerminalRuleCall_5_1_0()); 
+            			newLeafNode(lv_id_7_0, grammarAccess.getQuestionsAccess().getIdIDTerminalRuleCall_4_1_0()); 
             		
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getQuestionRule());
+            	            current = createModelElement(grammarAccess.getQuestionsRule());
             	        }
                    		setWithLastConsumed(
                    			current, 
                    			"id",
-                    		lv_id_8_0, 
+                    		lv_id_7_0, 
                     		"ID");
             	    
 
@@ -3592,39 +3007,39 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1538:3: (otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) ) )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1259:3: (otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA29_0==39) ) {
-                alt29=1;
+            if ( (LA22_0==35) ) {
+                alt22=1;
             }
-            switch (alt29) {
+            switch (alt22) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1538:5: otherlv_9= 'required' ( (lv_req_10_0= RULE_INT ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1259:5: otherlv_8= 'required' ( (lv_req_9_0= RULE_INT ) )
                     {
-                    otherlv_9=(Token)match(input,39,FOLLOW_39_in_ruleQuestion2968); 
+                    otherlv_8=(Token)match(input,35,FOLLOW_35_in_ruleQuestions2507); 
 
-                        	newLeafNode(otherlv_9, grammarAccess.getQuestionAccess().getRequiredKeyword_6_0());
+                        	newLeafNode(otherlv_8, grammarAccess.getQuestionsAccess().getRequiredKeyword_5_0());
                         
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1542:1: ( (lv_req_10_0= RULE_INT ) )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1543:1: (lv_req_10_0= RULE_INT )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1263:1: ( (lv_req_9_0= RULE_INT ) )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1264:1: (lv_req_9_0= RULE_INT )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1543:1: (lv_req_10_0= RULE_INT )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1544:3: lv_req_10_0= RULE_INT
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1264:1: (lv_req_9_0= RULE_INT )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1265:3: lv_req_9_0= RULE_INT
                     {
-                    lv_req_10_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleQuestion2985); 
+                    lv_req_9_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleQuestions2524); 
 
-                    			newLeafNode(lv_req_10_0, grammarAccess.getQuestionAccess().getReqINTTerminalRuleCall_6_1_0()); 
+                    			newLeafNode(lv_req_9_0, grammarAccess.getQuestionsAccess().getReqINTTerminalRuleCall_5_1_0()); 
                     		
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getQuestionRule());
+                    	            current = createModelElement(grammarAccess.getQuestionsRule());
                     	        }
                            		setWithLastConsumed(
                            			current, 
                            			"req",
-                            		lv_req_10_0, 
+                            		lv_req_9_0, 
                             		"INT");
                     	    
 
@@ -3639,40 +3054,40 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1560:4: ( (lv_alternatives_11_0= ruleAlternatives ) )*
-            loop30:
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1281:4: ( (lv_alternatives_10_0= ruleAlternatives ) )*
+            loop23:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA30_0==RULE_STRING) ) {
-                    alt30=1;
+                if ( (LA23_0==RULE_STRING) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt23) {
             	case 1 :
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1561:1: (lv_alternatives_11_0= ruleAlternatives )
+            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1282:1: (lv_alternatives_10_0= ruleAlternatives )
             	    {
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1561:1: (lv_alternatives_11_0= ruleAlternatives )
-            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1562:3: lv_alternatives_11_0= ruleAlternatives
+            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1282:1: (lv_alternatives_10_0= ruleAlternatives )
+            	    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1283:3: lv_alternatives_10_0= ruleAlternatives
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getQuestionAccess().getAlternativesAlternativesParserRuleCall_7_0()); 
+            	    	        newCompositeNode(grammarAccess.getQuestionsAccess().getAlternativesAlternativesParserRuleCall_6_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAlternatives_in_ruleQuestion3013);
-            	    lv_alternatives_11_0=ruleAlternatives();
+            	    pushFollow(FOLLOW_ruleAlternatives_in_ruleQuestions2552);
+            	    lv_alternatives_10_0=ruleAlternatives();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getQuestionRule());
+            	    	            current = createModelElementForParent(grammarAccess.getQuestionsRule());
             	    	        }
             	           		add(
             	           			current, 
             	           			"alternatives",
-            	            		lv_alternatives_11_0, 
+            	            		lv_alternatives_10_0, 
             	            		"Alternatives");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -3684,13 +3099,13 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop23;
                 }
             } while (true);
 
-            otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleQuestion3026); 
+            otherlv_11=(Token)match(input,20,FOLLOW_20_in_ruleQuestions2565); 
 
-                	newLeafNode(otherlv_12, grammarAccess.getQuestionAccess().getRightCurlyBracketKeyword_8());
+                	newLeafNode(otherlv_11, grammarAccess.getQuestionsAccess().getRightCurlyBracketKeyword_7());
                 
 
             }
@@ -3709,11 +3124,11 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleQuestion"
+    // $ANTLR end "ruleQuestions"
 
 
     // $ANTLR start "entryRuleAlternatives"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1590:1: entryRuleAlternatives returns [EObject current=null] : iv_ruleAlternatives= ruleAlternatives EOF ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1311:1: entryRuleAlternatives returns [EObject current=null] : iv_ruleAlternatives= ruleAlternatives EOF ;
     public final EObject entryRuleAlternatives() throws RecognitionException {
         EObject current = null;
 
@@ -3721,17 +3136,17 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1591:2: (iv_ruleAlternatives= ruleAlternatives EOF )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1592:2: iv_ruleAlternatives= ruleAlternatives EOF
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1312:2: (iv_ruleAlternatives= ruleAlternatives EOF )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1313:2: iv_ruleAlternatives= ruleAlternatives EOF
             {
              newCompositeNode(grammarAccess.getAlternativesRule()); 
-            pushFollow(FOLLOW_ruleAlternatives_in_entryRuleAlternatives3062);
+            pushFollow(FOLLOW_ruleAlternatives_in_entryRuleAlternatives2601);
             iv_ruleAlternatives=ruleAlternatives();
 
             state._fsp--;
 
              current =iv_ruleAlternatives; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAlternatives3072); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAlternatives2611); 
 
             }
 
@@ -3749,7 +3164,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlternatives"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1599:1: ruleAlternatives returns [EObject current=null] : ( (lv_description_0_0= RULE_STRING ) ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1320:1: ruleAlternatives returns [EObject current=null] : ( (lv_description_0_0= RULE_STRING ) ) ;
     public final EObject ruleAlternatives() throws RecognitionException {
         EObject current = null;
 
@@ -3758,16 +3173,16 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1602:28: ( ( (lv_description_0_0= RULE_STRING ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1603:1: ( (lv_description_0_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1323:28: ( ( (lv_description_0_0= RULE_STRING ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1324:1: ( (lv_description_0_0= RULE_STRING ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1603:1: ( (lv_description_0_0= RULE_STRING ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1604:1: (lv_description_0_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1324:1: ( (lv_description_0_0= RULE_STRING ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1325:1: (lv_description_0_0= RULE_STRING )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1604:1: (lv_description_0_0= RULE_STRING )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1605:3: lv_description_0_0= RULE_STRING
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1325:1: (lv_description_0_0= RULE_STRING )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1326:3: lv_description_0_0= RULE_STRING
             {
-            lv_description_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAlternatives3113); 
+            lv_description_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAlternatives2652); 
 
             			newLeafNode(lv_description_0_0, grammarAccess.getAlternativesAccess().getDescriptionSTRINGTerminalRuleCall_0()); 
             		
@@ -3805,7 +3220,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDesignType"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1629:1: ruleDesignType returns [Enumerator current=null] : ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1350:1: ruleDesignType returns [Enumerator current=null] : ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) ) ;
     public final Enumerator ruleDesignType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3815,42 +3230,42 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1631:28: ( ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1632:1: ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1352:28: ( ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1353:1: ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1632:1: ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) )
-            int alt31=3;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1353:1: ( (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' ) | (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' ) | (enumLiteral_2= 'LS \\u2013 Latin Square' ) )
+            int alt24=3;
             switch ( input.LA(1) ) {
-            case 40:
+            case 36:
                 {
-                alt31=1;
+                alt24=1;
                 }
                 break;
-            case 41:
+            case 37:
                 {
-                alt31=2;
+                alt24=2;
                 }
                 break;
-            case 42:
+            case 38:
                 {
-                alt31=3;
+                alt24=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt31) {
+            switch (alt24) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1632:2: (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1353:2: (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1632:2: (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1632:4: enumLiteral_0= 'CRD \\u2013 Completely Randomized Design'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1353:2: (enumLiteral_0= 'CRD \\u2013 Completely Randomized Design' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1353:4: enumLiteral_0= 'CRD \\u2013 Completely Randomized Design'
                     {
-                    enumLiteral_0=(Token)match(input,40,FOLLOW_40_in_ruleDesignType3167); 
+                    enumLiteral_0=(Token)match(input,36,FOLLOW_36_in_ruleDesignType2706); 
 
                             current = grammarAccess.getDesignTypeAccess().getCDREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getDesignTypeAccess().getCDREnumLiteralDeclaration_0()); 
@@ -3862,12 +3277,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1638:6: (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1359:6: (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1638:6: (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1638:8: enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1359:6: (enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1359:8: enumLiteral_1= 'RCBD \\u2013 Randomized Complete Block Design'
                     {
-                    enumLiteral_1=(Token)match(input,41,FOLLOW_41_in_ruleDesignType3184); 
+                    enumLiteral_1=(Token)match(input,37,FOLLOW_37_in_ruleDesignType2723); 
 
                             current = grammarAccess.getDesignTypeAccess().getRCDBEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getDesignTypeAccess().getRCDBEnumLiteralDeclaration_1()); 
@@ -3879,12 +3294,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1644:6: (enumLiteral_2= 'LS \\u2013 Latin Square' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1365:6: (enumLiteral_2= 'LS \\u2013 Latin Square' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1644:6: (enumLiteral_2= 'LS \\u2013 Latin Square' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1644:8: enumLiteral_2= 'LS \\u2013 Latin Square'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1365:6: (enumLiteral_2= 'LS \\u2013 Latin Square' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1365:8: enumLiteral_2= 'LS \\u2013 Latin Square'
                     {
-                    enumLiteral_2=(Token)match(input,42,FOLLOW_42_in_ruleDesignType3201); 
+                    enumLiteral_2=(Token)match(input,38,FOLLOW_38_in_ruleDesignType2740); 
 
                             current = grammarAccess.getDesignTypeAccess().getLSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getDesignTypeAccess().getLSEnumLiteralDeclaration_2()); 
@@ -3916,7 +3331,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnswerType"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1654:1: ruleAnswerType returns [Enumerator current=null] : ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1375:1: ruleAnswerType returns [Enumerator current=null] : ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) ) ;
     public final Enumerator ruleAnswerType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3926,42 +3341,42 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1656:28: ( ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1657:1: ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1377:28: ( ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1378:1: ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1657:1: ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) )
-            int alt32=3;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1378:1: ( (enumLiteral_0= 'ComboBox' ) | (enumLiteral_1= 'CheckBoxes' ) | (enumLiteral_2= 'OptionButtons' ) )
+            int alt25=3;
             switch ( input.LA(1) ) {
-            case 43:
+            case 39:
                 {
-                alt32=1;
+                alt25=1;
                 }
                 break;
-            case 44:
+            case 40:
                 {
-                alt32=2;
+                alt25=2;
                 }
                 break;
-            case 45:
+            case 41:
                 {
-                alt32=3;
+                alt25=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt25) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1657:2: (enumLiteral_0= 'ComboBox' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1378:2: (enumLiteral_0= 'ComboBox' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1657:2: (enumLiteral_0= 'ComboBox' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1657:4: enumLiteral_0= 'ComboBox'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1378:2: (enumLiteral_0= 'ComboBox' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1378:4: enumLiteral_0= 'ComboBox'
                     {
-                    enumLiteral_0=(Token)match(input,43,FOLLOW_43_in_ruleAnswerType3246); 
+                    enumLiteral_0=(Token)match(input,39,FOLLOW_39_in_ruleAnswerType2785); 
 
                             current = grammarAccess.getAnswerTypeAccess().getComboBoxEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAnswerTypeAccess().getComboBoxEnumLiteralDeclaration_0()); 
@@ -3973,12 +3388,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1663:6: (enumLiteral_1= 'CheckBoxes' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1384:6: (enumLiteral_1= 'CheckBoxes' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1663:6: (enumLiteral_1= 'CheckBoxes' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1663:8: enumLiteral_1= 'CheckBoxes'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1384:6: (enumLiteral_1= 'CheckBoxes' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1384:8: enumLiteral_1= 'CheckBoxes'
                     {
-                    enumLiteral_1=(Token)match(input,44,FOLLOW_44_in_ruleAnswerType3263); 
+                    enumLiteral_1=(Token)match(input,40,FOLLOW_40_in_ruleAnswerType2802); 
 
                             current = grammarAccess.getAnswerTypeAccess().getCheckBoxesEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAnswerTypeAccess().getCheckBoxesEnumLiteralDeclaration_1()); 
@@ -3990,12 +3405,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1669:6: (enumLiteral_2= 'OptionButtons' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1390:6: (enumLiteral_2= 'OptionButtons' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1669:6: (enumLiteral_2= 'OptionButtons' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1669:8: enumLiteral_2= 'OptionButtons'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1390:6: (enumLiteral_2= 'OptionButtons' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1390:8: enumLiteral_2= 'OptionButtons'
                     {
-                    enumLiteral_2=(Token)match(input,45,FOLLOW_45_in_ruleAnswerType3280); 
+                    enumLiteral_2=(Token)match(input,41,FOLLOW_41_in_ruleAnswerType2819); 
 
                             current = grammarAccess.getAnswerTypeAccess().getOptionButtonsEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getAnswerTypeAccess().getOptionButtonsEnumLiteralDeclaration_2()); 
@@ -4027,7 +3442,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetricType"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1679:1: ruleMetricType returns [Enumerator current=null] : ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1400:1: ruleMetricType returns [Enumerator current=null] : ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) ) ;
     public final Enumerator ruleMetricType() throws RecognitionException {
         Enumerator current = null;
 
@@ -4037,42 +3452,42 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1681:28: ( ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1682:1: ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1402:28: ( ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1403:1: ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1682:1: ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) )
-            int alt33=3;
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1403:1: ( (enumLiteral_0= 'hardData' ) | (enumLiteral_1= 'softData' ) | (enumLiteral_2= 'normalizedData' ) )
+            int alt26=3;
             switch ( input.LA(1) ) {
-            case 46:
+            case 42:
                 {
-                alt33=1;
+                alt26=1;
                 }
                 break;
-            case 47:
+            case 43:
                 {
-                alt33=2;
+                alt26=2;
                 }
                 break;
-            case 48:
+            case 44:
                 {
-                alt33=3;
+                alt26=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt33) {
+            switch (alt26) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1682:2: (enumLiteral_0= 'hardData' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1403:2: (enumLiteral_0= 'hardData' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1682:2: (enumLiteral_0= 'hardData' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1682:4: enumLiteral_0= 'hardData'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1403:2: (enumLiteral_0= 'hardData' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1403:4: enumLiteral_0= 'hardData'
                     {
-                    enumLiteral_0=(Token)match(input,46,FOLLOW_46_in_ruleMetricType3325); 
+                    enumLiteral_0=(Token)match(input,42,FOLLOW_42_in_ruleMetricType2864); 
 
                             current = grammarAccess.getMetricTypeAccess().getHardDataEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getMetricTypeAccess().getHardDataEnumLiteralDeclaration_0()); 
@@ -4084,12 +3499,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1688:6: (enumLiteral_1= 'softData' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1409:6: (enumLiteral_1= 'softData' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1688:6: (enumLiteral_1= 'softData' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1688:8: enumLiteral_1= 'softData'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1409:6: (enumLiteral_1= 'softData' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1409:8: enumLiteral_1= 'softData'
                     {
-                    enumLiteral_1=(Token)match(input,47,FOLLOW_47_in_ruleMetricType3342); 
+                    enumLiteral_1=(Token)match(input,43,FOLLOW_43_in_ruleMetricType2881); 
 
                             current = grammarAccess.getMetricTypeAccess().getSoftDataEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getMetricTypeAccess().getSoftDataEnumLiteralDeclaration_1()); 
@@ -4101,12 +3516,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1694:6: (enumLiteral_2= 'normalizedData' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1415:6: (enumLiteral_2= 'normalizedData' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1694:6: (enumLiteral_2= 'normalizedData' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1694:8: enumLiteral_2= 'normalizedData'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1415:6: (enumLiteral_2= 'normalizedData' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1415:8: enumLiteral_2= 'normalizedData'
                     {
-                    enumLiteral_2=(Token)match(input,48,FOLLOW_48_in_ruleMetricType3359); 
+                    enumLiteral_2=(Token)match(input,44,FOLLOW_44_in_ruleMetricType2898); 
 
                             current = grammarAccess.getMetricTypeAccess().getNormalizedDataEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getMetricTypeAccess().getNormalizedDataEnumLiteralDeclaration_2()); 
@@ -4138,7 +3553,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColectType"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1704:1: ruleColectType returns [Enumerator current=null] : ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1425:1: ruleColectType returns [Enumerator current=null] : ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) ) ;
     public final Enumerator ruleColectType() throws RecognitionException {
         Enumerator current = null;
 
@@ -4147,33 +3562,33 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1706:28: ( ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1707:1: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1427:28: ( ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1428:1: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1707:1: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1428:1: ( (enumLiteral_0= 'continuous' ) | (enumLiteral_1= 'intercalated' ) )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA34_0==49) ) {
-                alt34=1;
+            if ( (LA27_0==45) ) {
+                alt27=1;
             }
-            else if ( (LA34_0==50) ) {
-                alt34=2;
+            else if ( (LA27_0==46) ) {
+                alt27=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt27) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1707:2: (enumLiteral_0= 'continuous' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1428:2: (enumLiteral_0= 'continuous' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1707:2: (enumLiteral_0= 'continuous' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1707:4: enumLiteral_0= 'continuous'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1428:2: (enumLiteral_0= 'continuous' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1428:4: enumLiteral_0= 'continuous'
                     {
-                    enumLiteral_0=(Token)match(input,49,FOLLOW_49_in_ruleColectType3404); 
+                    enumLiteral_0=(Token)match(input,45,FOLLOW_45_in_ruleColectType2943); 
 
                             current = grammarAccess.getColectTypeAccess().getContinuousEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getColectTypeAccess().getContinuousEnumLiteralDeclaration_0()); 
@@ -4185,12 +3600,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1713:6: (enumLiteral_1= 'intercalated' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1434:6: (enumLiteral_1= 'intercalated' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1713:6: (enumLiteral_1= 'intercalated' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1713:8: enumLiteral_1= 'intercalated'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1434:6: (enumLiteral_1= 'intercalated' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1434:8: enumLiteral_1= 'intercalated'
                     {
-                    enumLiteral_1=(Token)match(input,50,FOLLOW_50_in_ruleColectType3421); 
+                    enumLiteral_1=(Token)match(input,46,FOLLOW_46_in_ruleColectType2960); 
 
                             current = grammarAccess.getColectTypeAccess().getIntercalatedEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getColectTypeAccess().getIntercalatedEnumLiteralDeclaration_1()); 
@@ -4222,7 +3637,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMetricUnit"
-    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1723:1: ruleMetricUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) ) ;
+    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1444:1: ruleMetricUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) ) ;
     public final Enumerator ruleMetricUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -4231,33 +3646,33 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1725:28: ( ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) ) )
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1726:1: ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1446:28: ( ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) ) )
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1447:1: ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) )
             {
-            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1726:1: ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) )
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1447:1: ( (enumLiteral_0= 'minutes' ) | (enumLiteral_1= 'uc' ) )
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA35_0==51) ) {
-                alt35=1;
+            if ( (LA28_0==47) ) {
+                alt28=1;
             }
-            else if ( (LA35_0==52) ) {
-                alt35=2;
+            else if ( (LA28_0==48) ) {
+                alt28=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
-            switch (alt35) {
+            switch (alt28) {
                 case 1 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1726:2: (enumLiteral_0= 'minutes' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1447:2: (enumLiteral_0= 'minutes' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1726:2: (enumLiteral_0= 'minutes' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1726:4: enumLiteral_0= 'minutes'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1447:2: (enumLiteral_0= 'minutes' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1447:4: enumLiteral_0= 'minutes'
                     {
-                    enumLiteral_0=(Token)match(input,51,FOLLOW_51_in_ruleMetricUnit3466); 
+                    enumLiteral_0=(Token)match(input,47,FOLLOW_47_in_ruleMetricUnit3005); 
 
                             current = grammarAccess.getMetricUnitAccess().getMinutesEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getMetricUnitAccess().getMinutesEnumLiteralDeclaration_0()); 
@@ -4269,12 +3684,12 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1732:6: (enumLiteral_1= 'uc' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1453:6: (enumLiteral_1= 'uc' )
                     {
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1732:6: (enumLiteral_1= 'uc' )
-                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1732:8: enumLiteral_1= 'uc'
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1453:6: (enumLiteral_1= 'uc' )
+                    // ../br.ufrn.dimap.ase/src-gen/org/xtext/project/parser/antlr/internal/InternalExpDSL.g:1453:8: enumLiteral_1= 'uc'
                     {
-                    enumLiteral_1=(Token)match(input,52,FOLLOW_52_in_ruleMetricUnit3483); 
+                    enumLiteral_1=(Token)match(input,48,FOLLOW_48_in_ruleMetricUnit3022); 
 
                             current = grammarAccess.getMetricUnitAccess().getUcEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getMetricUnitAccess().getUcEnumLiteralDeclaration_1()); 
@@ -4315,13 +3730,13 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleExperimentElement_in_entryRuleExperimentElement166 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExperimentElement176 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_ruleExperimentElement213 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleExperimentElement230 = new BitSet(new long[]{0x0000000008007002L});
-    public static final BitSet FOLLOW_ruleProcess_in_ruleExperimentElement256 = new BitSet(new long[]{0x0000000008007002L});
-    public static final BitSet FOLLOW_ruleMetrics_in_ruleExperimentElement278 = new BitSet(new long[]{0x0000000008003002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleExperimentElement230 = new BitSet(new long[]{0x0000000400007012L});
+    public static final BitSet FOLLOW_ruleProcess_in_ruleExperimentElement256 = new BitSet(new long[]{0x0000000400007012L});
+    public static final BitSet FOLLOW_ruleMetrics_in_ruleExperimentElement278 = new BitSet(new long[]{0x0000000400003012L});
     public static final BitSet FOLLOW_12_in_ruleExperimentElement292 = new BitSet(new long[]{0x0000000000802002L});
     public static final BitSet FOLLOW_ruleExperimentalPlan_in_ruleExperimentElement313 = new BitSet(new long[]{0x0000000000802002L});
-    public static final BitSet FOLLOW_13_in_ruleExperimentElement329 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_ruleQuestion_in_ruleExperimentElement350 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_13_in_ruleExperimentElement329 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleQuestions_in_ruleExperimentElement350 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_ruleProcess_in_entryRuleProcess389 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProcess399 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_14_in_ruleProcess436 = new BitSet(new long[]{0x0000000000000010L});
@@ -4359,7 +3774,7 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleExperimentalPlan1158 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_ruleExperimentalPlan1195 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleExperimentalPlan1212 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleExperimentalPlan1229 = new BitSet(new long[]{0x0000070000000000L});
+    public static final BitSet FOLLOW_24_in_ruleExperimentalPlan1229 = new BitSet(new long[]{0x0000007000000000L});
     public static final BitSet FOLLOW_ruleDesignType_in_ruleExperimentalPlan1250 = new BitSet(new long[]{0x0000000002008000L});
     public static final BitSet FOLLOW_ruleFactor_in_ruleExperimentalPlan1271 = new BitSet(new long[]{0x0000000002008000L});
     public static final BitSet FOLLOW_15_in_ruleExperimentalPlan1284 = new BitSet(new long[]{0x0000000000000002L});
@@ -4376,93 +3791,65 @@ public class InternalExpDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_15_in_ruleLevels1540 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMetrics_in_entryRuleMetrics1576 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMetrics1586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleMetrics1624 = new BitSet(new long[]{0x0000000030000012L});
-    public static final BitSet FOLLOW_ruleActivityMetric_in_ruleMetrics1645 = new BitSet(new long[]{0x0000000030000012L});
-    public static final BitSet FOLLOW_28_in_ruleMetrics1660 = new BitSet(new long[]{0x0000000020000012L});
-    public static final BitSet FOLLOW_ruleTaskMetric_in_ruleMetrics1681 = new BitSet(new long[]{0x0000000020000012L});
-    public static final BitSet FOLLOW_29_in_ruleMetrics1697 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleArtefactMetric_in_ruleMetrics1718 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleActivityMetric_in_entryRuleActivityMetric1757 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActivityMetric1767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric1809 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleActivityMetric1826 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric1846 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleActivityMetric1859 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric1876 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleActivityMetric1895 = new BitSet(new long[]{0x0001C00000000000L});
-    public static final BitSet FOLLOW_ruleMetricType_in_ruleActivityMetric1916 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_32_in_ruleActivityMetric1930 = new BitSet(new long[]{0x0006000000000000L});
-    public static final BitSet FOLLOW_ruleColectType_in_ruleActivityMetric1951 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleActivityMetric1966 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric1983 = new BitSet(new long[]{0x0000000C00000000L});
-    public static final BitSet FOLLOW_34_in_ruleActivityMetric2002 = new BitSet(new long[]{0x0018000000000000L});
-    public static final BitSet FOLLOW_ruleMetricUnit_in_ruleActivityMetric2023 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleActivityMetric2038 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric2055 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleActivityMetric2074 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric2091 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleActivityMetric2109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTaskMetric_in_entryRuleTaskMetric2145 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTaskMetric2155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskMetric2197 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleTaskMetric2214 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskMetric2234 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleTaskMetric2247 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskMetric2264 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleTaskMetric2283 = new BitSet(new long[]{0x0001C00000000000L});
-    public static final BitSet FOLLOW_ruleMetricType_in_ruleTaskMetric2304 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_32_in_ruleTaskMetric2318 = new BitSet(new long[]{0x0006000000000000L});
-    public static final BitSet FOLLOW_ruleColectType_in_ruleTaskMetric2339 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleTaskMetric2354 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskMetric2371 = new BitSet(new long[]{0x0000002400000000L});
-    public static final BitSet FOLLOW_34_in_ruleTaskMetric2390 = new BitSet(new long[]{0x0018000000000000L});
-    public static final BitSet FOLLOW_ruleMetricUnit_in_ruleTaskMetric2411 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleTaskMetric2426 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskMetric2443 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleTaskMetric2461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArtefactMetric_in_entryRuleArtefactMetric2497 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArtefactMetric2507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleArtefactMetric2549 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleArtefactMetric2566 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleArtefactMetric2586 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleArtefactMetric2599 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleArtefactMetric2616 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleArtefactMetric2635 = new BitSet(new long[]{0x0001C00000000000L});
-    public static final BitSet FOLLOW_ruleMetricType_in_ruleArtefactMetric2656 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleArtefactMetric2670 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleArtefactMetric2687 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_34_in_ruleArtefactMetric2706 = new BitSet(new long[]{0x0018000000000000L});
-    public static final BitSet FOLLOW_ruleMetricUnit_in_ruleArtefactMetric2727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuestion_in_entryRuleQuestion2767 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQuestion2777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleQuestion2814 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleQuestion2831 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleQuestion2848 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleQuestion2861 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleQuestion2878 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleQuestion2897 = new BitSet(new long[]{0x0000380000000000L});
-    public static final BitSet FOLLOW_ruleAnswerType_in_ruleQuestion2918 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleQuestion2932 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQuestion2949 = new BitSet(new long[]{0x0000008000100010L});
-    public static final BitSet FOLLOW_39_in_ruleQuestion2968 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleQuestion2985 = new BitSet(new long[]{0x0000000000100010L});
-    public static final BitSet FOLLOW_ruleAlternatives_in_ruleQuestion3013 = new BitSet(new long[]{0x0000000000100010L});
-    public static final BitSet FOLLOW_20_in_ruleQuestion3026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAlternatives_in_entryRuleAlternatives3062 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAlternatives3072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAlternatives3113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleDesignType3167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleDesignType3184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleDesignType3201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleAnswerType3246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleAnswerType3263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleAnswerType3280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleMetricType3325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_ruleMetricType3342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleMetricType3359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleColectType3404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleColectType3421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleMetricUnit3466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleMetricUnit3483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMetrics1629 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleMetrics1646 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMetrics1666 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleMetrics1679 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMetrics1696 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleMetrics1715 = new BitSet(new long[]{0x00001C0000000000L});
+    public static final BitSet FOLLOW_ruleMetricType_in_ruleMetrics1736 = new BitSet(new long[]{0x0000000060000000L});
+    public static final BitSet FOLLOW_29_in_ruleMetrics1750 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_ruleColectType_in_ruleMetrics1771 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleMetrics1786 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleMetrics1803 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_31_in_ruleMetrics1822 = new BitSet(new long[]{0x0001800000000000L});
+    public static final BitSet FOLLOW_ruleMetricUnit_in_ruleMetrics1843 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleActivityMetric_in_ruleMetrics1866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTaskMetric_in_ruleMetrics1895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArtefactMetric_in_ruleMetrics1922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivityMetric_in_entryRuleActivityMetric1957 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActivityMetric1967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleActivityMetric2005 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric2022 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33_in_ruleActivityMetric2041 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleActivityMetric2058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTaskMetric_in_entryRuleTaskMetric2100 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTaskMetric2110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleTaskMetric2147 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskMetric2164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArtefactMetric_in_entryRuleArtefactMetric2205 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArtefactMetric2215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleArtefactMetric2257 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleArtefactMetric2282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuestions_in_entryRuleQuestions2318 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQuestions2328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleQuestions2370 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleQuestions2387 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleQuestions2400 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleQuestions2417 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleQuestions2436 = new BitSet(new long[]{0x0000038000000000L});
+    public static final BitSet FOLLOW_ruleAnswerType_in_ruleQuestions2457 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleQuestions2471 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQuestions2488 = new BitSet(new long[]{0x0000000800100010L});
+    public static final BitSet FOLLOW_35_in_ruleQuestions2507 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleQuestions2524 = new BitSet(new long[]{0x0000000000100010L});
+    public static final BitSet FOLLOW_ruleAlternatives_in_ruleQuestions2552 = new BitSet(new long[]{0x0000000000100010L});
+    public static final BitSet FOLLOW_20_in_ruleQuestions2565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAlternatives_in_entryRuleAlternatives2601 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAlternatives2611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleAlternatives2652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleDesignType2706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleDesignType2723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleDesignType2740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleAnswerType2785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleAnswerType2802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleAnswerType2819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleMetricType2864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleMetricType2881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleMetricType2898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleColectType2943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleColectType2960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleMetricUnit3005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleMetricUnit3022 = new BitSet(new long[]{0x0000000000000002L});
 
 }

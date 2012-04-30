@@ -1,0 +1,22 @@
+Experiment "GenArchElder"
+P{
+	Process "EShop"
+	Activity P1 in "classX.java" out "resp.txt" "Atv P1"  P2 Role "Subject";
+	Activity P2 in "classY.java" out "resp.txt" "Atv P2" Role "Subject";
+	;
+	Process "Byer"
+	Activity B1 "Act 1" B2 Role "Subject";
+	Activity B2 "Act 2" Role"Subject";
+	;
+}
+M{
+	A "TEXEC" relates "EShop"
+	description "Calcutale spent time for some activities"
+	type hardData
+	form continuous
+	id "ST_Development"
+	activityBegin "Atv P1"
+	activityEnd "Atv P2"
+	;
+	
+}

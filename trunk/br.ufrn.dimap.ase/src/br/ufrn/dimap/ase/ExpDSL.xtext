@@ -6,29 +6,25 @@ Model:
 	(elements+=ExperimentElement)*;
 
 ExperimentElement:
-	('Process' process+=Process* 'end')
+	'Experiment' name=STRING
+	process+=Process*
+	metrics+=Metrics*
 	('Experimental Plan' experiments+=ExperimentalPlan*)?
 	('General Questions' question+=Question*)?;
 
 //WorkbreakdownStructure	
 //artefatos, métricas para artefatos	
 Process:
-	( name=STRING
-	'{'
+	( 'Process' name=STRING
+	
 	  (activities+=Activity)*
-	'}')
-	('metrics' 
-		metrics+=Metrics*
-	  'end')?
-	('Specific Questions' 
-		question+=Question*
-	'end'	)?
+	';')
 	;
 	
 Activity:
 	'Activity' id=ID
-	'in' artefacts+=Artefact*
-	'out' artefacts += Artefact*
+	('in' artefacts+=Artefact*)?
+	('out' artefacts += Artefact*)?
 	name=STRING
 	(next+=ID*)?
 	(role+=Role)*
@@ -39,9 +35,9 @@ Activity:
 Artefact:
 	name = STRING;
 
-Task: 'Task' name=STRING;
+Task: 'Task' name=STRING';';
 
-Role: 'Role' name=STRING;
+Role: 'Role' name=STRING';';
 
 //CRD – Completely Randomized Design
 //RCBD – Randomized Complete Block Design
@@ -49,26 +45,27 @@ Role: 'Role' name=STRING;
 
 ExperimentalPlan: 
 	'Design' name=STRING 'type' type=DesignType
-	'{'
 	    (factor+=Factor)*
-	'}';
+	';';
 
 Factor: 
 	'Factor' name=STRING
-	'{'
 		(level+=Levels)*
-	'}';
+	';';
 	
 Levels:
-	'Level' name=STRING
+	'Level' name=STRING ';'
 ;
-	
+
+//Metric Definition	
 Metrics:
-	ActivityMetric | TaskMetric;
+	('A' activityMetric+=ActivityMetric*)
+	('T' taskMetric+=TaskMetric*)?
+    ('Art' artefactMetric+=ArtefactMetric*)?;
+
 
 ActivityMetric:
-	'Metric' name=STRING 'relates' processName+=STRING*
-	'{'
+	name=STRING 'relates' relatesTo=[Process|STRING]
 		('description' description=STRING)
 		('type' type=MetricType)
 		('form' form=ColectType)?
@@ -76,11 +73,11 @@ ActivityMetric:
 		('unit' unit=MetricUnit)?
 		('activityBegin' activityBegin=STRING)
 		('activityEnd' activityEnd=STRING)
-    '}';
+    ';'
+    ;
 
 TaskMetric:
-	'Metric' name=STRING 'relates' processName+=STRING*
-	'{'
+	(name=STRING 'relates' relatesTo=[Process|STRING]
 		('description' description=STRING)
 		('type' type=MetricType)
 		('form' form=ColectType)?
@@ -88,13 +85,21 @@ TaskMetric:
 		('unit' unit=MetricUnit)?
 		('activities' activities=STRING)
 		
-    '}';	
+    ';');
+    
+ ArtefactMetric:
+   	 ( name=STRING 'relates' relatesTo=[Artefact|STRING]
+		('description' description=STRING)
+		('type' type=MetricType)
+		('id' id=STRING)
+		('unit' unit=MetricUnit)?
+   );
 
 Questions:
 	(question+=Question)*;
 
 Question:	
-	'Question' name=STRING
+	'Q.' name=STRING
 	'{'
 		('description' description=STRING)
 		('type' type=AnswerType)

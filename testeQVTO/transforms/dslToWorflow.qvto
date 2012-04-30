@@ -5,45 +5,45 @@ modeltype JPDL uses jpdl31('urn:jbpm.org:jpdl-3.1');
 transformation dslToWorflow(in dsl : DSL, out outModel: JPDL);
 	
 main() {
-    log('starting...');
-	dsl.rootObjects()[DSL::Model]->map model2DSLModel();
 	
+//TODO INICIO DA CADEIA DE TRANSF. APÓS ALTERAÇÕES
+    log('starting...');
+    dsl.rootObjects()[DSL::ExperimentElement]->map model2DSLModel();
 	log('ending...');
 }
 
-mapping DSL::Model::model2DSLModel():JPDL::DocumentRoot	 {
+mapping DSL::ExperimentElement::model2DSLModel():JPDL::DocumentRoot	 {
+   log('Starts Model2Model');
+  //Gerar o Workflow pra cada Processo do experimento
+  processDefinition := self.process->map processToProcessDefinition(self.metrics)->asOrderedSet();
+  log('Finished Model2Model');
+}
 	
-	
-	// self.elements.allInstances(DSL::ExperimentElement)->map g()->flatten()->asOrderedSet();
 
-    log('model2ProcessDefinition');
+mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics)) :JPDL::ProcessDefinitionType{
+ // var metrics : OrderedSet(DSL::ActivityMetric);
+  var amet:OrderedSet(DSL::ActivityMetric);
+  var tmet:OrderedSet(DSL::TaskMetric);
+  //TODO: ARTEFACT METRIC
   
-    //result += object JPDL::DocumentRoot{
-  //  	processDefinition->map processToProcessDefinition();
-   // } ;
-  processDefinition := self.elements.allInstances(DSL::Process)->map processToProcessDefinition()->asOrderedSet();
-    //self.elements.allInstances(DSL::ExperimentElement)->map addExperimentElements();
-}
-	
-
-/*
-mapping DSL::ExperimentElement::g(): Sequence(ProcessDefinitionType)  {	   
-init {
-	result := self.process-> map processToProcessDefinition()->asOrderedSet();
-}
-	
-   
-}
-
-*/
-
-
-mapping DSL::Process::processToProcessDefinition() :JPDL::ProcessDefinitionType{
- 
   name := self.name;
   
-  taskNode:= self.activities->map act2taskNode(self.metrics, self)->asOrderedSet();
-  //task := self.process->map u()->asOrderedSet(); 
+  mets->forEach(i){
+	  if(i.oclIsKindOf(ActivityMetric))then{
+	    var exp := self.name.equalsIgnoreCase(i.oclAsType(ActivityMetric).relatesTo.name);
+	  	if(exp)then {
+	  		amet+=i.oclAsType(ActivityMetric);
+	  	}endif;
+	  }endif;
+	  if(i.oclIsKindOf(TaskMetric))then{
+	    var exp := self.name.equalsIgnoreCase(i.oclAsType(TaskMetric).relatesTo.name);
+	  	if(exp)then {
+	  		tmet+=i.oclAsType(TaskMetric);
+	  	}endif;
+	  }endif;
+  };
+  taskNode := self.activities->map act2taskNode(amet,tmet,self)->asOrderedSet();
+
 }
 
 
@@ -58,15 +58,16 @@ mapping DSL::Process::experiment2process() :JPDL::ProcessDefinitionType {
 }
 */
 
-mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics),in epfSpec: DSL::Process): JPDL::TaskNodeType{
+mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::ActivityMetric),in tmets:OrderedSet(DSL::TaskMetric), in pro:DSL::Process): JPDL::TaskNodeType{
 	name := self.name;
+	// tratar última atividade
+	//TODO
 	self.next->forEach(i){
 		transition += object JPDL::TransitionType{
 			name := self.name+'_Transition';
 			to := i.oclAsType(Activity).name;
 		}//end_create_transactions
 	};//end forEach next
-	// var metrics := met.objectsOfType(DSL::ActivityMetric); 	
    var nomeInput: String;
    var i :=0;
    log('INICIO PARA CADA ATIVIDADE');
@@ -75,13 +76,11 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics),in epfSp
    			if(ele.form = 0)then{
    				//result.blocking = true;
    			}endif;
-   			//var flag := (ele.activityBegin.equalsIgnoreCase(self.name) or ele.activityEnd.equalsIgnoreCase(self.name))or (checkAncestral(self,ele.activityBegin,epfSpec) and not checkAncestral(self,ele.activityEnd,epfSpec));
    			var part1:= ele.activityBegin.equalsIgnoreCase(self.name);
    			var part2:= ele.activityEnd.equalsIgnoreCase(self.name);
-   			var part3:= checkAncestral(self,ele.activityBegin,epfSpec);
-   			var part4:= checkAncestral(self,ele.activityEnd,epfSpec);
-            log('Entrou: ' + part1.oclAsType(String) +' ' + part2.oclAsType(String)+' '+ part3.oclAsType(String)+' '+part4.oclAsType(String));
-            if((part1 or part2)or (part3 and not part4))then {
+   			var part3:= checkBetween(ele.activityBegin,ele.activityEnd,self.name, pro);
+            log('Entrou: ' + part1.oclAsType(String) +' ' + part2.oclAsType(String)+' '+ part3.oclAsType(String)+' ');
+            if((part1 or part2 or part3)) then {// and not part4))then {
    				result.event += Sequence {
    					object JPDL::EventType{
    					type:="task-end";
@@ -99,23 +98,36 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics),in epfSp
    			} endif;
    			i:=i+1;
    };
+   //TODO => FALTA PASSAR TODAS AS MÉTRICAS NO MÉTODO ACIMA E FILTRAR PARA ENVIAR PARA ESSE MÉTODO SÓ AS TASKMETRICS
+   task := self.tasks->map task2task(tmets)->asOrderedSet();
 }
 
-mapping DSL::Process::u() :JPDL::TaskType {
+mapping DSL::Task::task2task(in mets:OrderedSet(DSL::TaskMetric)):JPDL::TaskType{
 	name := self.name;
+	mets->forEach(i){
+		if(i.name.equalsIgnoreCase(self.name))then{
+			//TODO TAREFA A SER MONITORADA
+		}endif;
+	}
 }
+	
 
 
-query checkAncestral(in atual: DSL::Activity, in metrica: String, in epfSpec : DSL::Process):Boolean{
+//check if activity is between begin and end
+
+query checkBetween(in begin: String, in end_: String, in atual :String, in pro:DSL::Process):Boolean{
  var resultado := false;
-	if(atual.name.equalsIgnoreCase(metrica))then{
+	if(atual.equalsIgnoreCase(begin) or atual.equalsIgnoreCase(end_))then{
 	  // resultado := true;
 	   log('OK!');
 	    return true;
 	}
 	else{
 	/* multiplas predecessoras */
-	var p:=epfSpec.allInstances(DSL::Activity);
+	var atividadeAtual := getActivity(atual,pro);
+	atividadeAtual.next->forEach(act){
+      checkBetween(begin,end_,act.oclAsType(Activity).name,pro);
+     }
 	
 	/*
 		
@@ -131,7 +143,18 @@ query checkAncestral(in atual: DSL::Activity, in metrica: String, in epfSpec : D
 	return resultado;
 	
 }
-//  self.process->forEach(i){
-//       result.taskNode += object JPDL::TaskNodeType {
-//		name := i.name;
-//	};
+
+//MÉTODO QUE RETORNA A ATIVIDADE A PARTIR DO NOME
+query getActivity(in name: String, in pro:DSL::Process):DSL::Activity {
+	var activities : Set(DSL::Activity);
+	activities := pro.allInstances(Activity);
+	 activities->forEach(i){
+ 			
+ 		var exp := name.equalsIgnoreCase(i.name);
+  		if (exp) then {
+  			log('sim');
+  			return i;
+ 		 }endif;
+  };
+}
+

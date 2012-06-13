@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jpdl31:process-definition_._type xmlns:jpdl31="urn:jbpm.org:jpdl-3.1" name="Gerencia de Projeto">
-  <jpdl31:start-state name="Inicio">
-    <jpdl31:transition name="Transition_Inicio" to="Plan Project"/>
-  </jpdl31:start-state>
-  <jpdl31:end-state name="End"/>
-  <jpdl31:task-node name="Project Management"/>
-  <jpdl31:task-node name="Plan Project"/>
-</jpdl31:process-definition_._type>

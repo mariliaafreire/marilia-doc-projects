@@ -37,12 +37,36 @@ mapping DSL::ExperimentElement::model2DSLModel():JPDL::DocumentRoot	 {
 	
 
 mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics),in num: Integer) :JPDL::ProcessDefinitionType{
- 
   
+  	//cria o nó inicial e final do processo
+	
+  result.startState := object JPDL::StartStateType { 
+				name := 'Starting'; 
+				
+  };
+  	result.endState := object JPDL::EndStateType { 
+				name := 'End'; 
+				
+  };
+  
+  // cria swimlane com o papel determinado para a primeira atividade, caso exista.
+  	result.swimlane := object JPDL::SwimlaneType { 
+  		
+  		if((self.activities != null) and (self.activities.role != null)) then {
+				name := self.activities->at(0).role->at(0).name; 
+		}else {
+			name := "unknown"; // papel não especificado
+		}
+		endif;
+		
+  };
   name := self.name;
   quantity := num;
   taskNode := self.activities->map act2taskNode(mets,self)->asOrderedSet();
-
+  
+  //links
+    self.allInstances(DSL::Activity)-> map ligarAoNoFinal(result)->asOrderedSet();
+	//self.allInstances(DSL::Activity)-> map ligarAosJoinsAndStart(result)->asOrderedSet(); 
 }
 
 
@@ -65,8 +89,8 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:
 	//TODO
 	self.next->forEach(i){
 		transition += object JPDL::TransitionType{
-			name := self.name+'_Transition';
-			to := i;
+			name := self.description+'_Transition';
+			to := i.name;
 		}//end_create_transactions
 	};//end forEach next
 	
@@ -171,6 +195,101 @@ mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
 }
 
 
+
+
+//Create links to ENDNODE
+mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType){
+
+		// cria transições para o fim...
+		log('Linking to endNode');
+		var i := getTransitionToFim(process);
+		
+		if(i>1)then{
+		
+		var join := object JPDL::JoinType {
+				name := 'joinEnd';
+				transition := object JPDL::TransitionType{
+					name := 'to_EndTransition';
+					to:= 'End';
+				};
+			};
+			process.join += Sequence{join};
+			process.allInstances(JPDL::TaskNodeType)->forEach(task) {
+			if(task.transition->isEmpty())then{
+				var trst := object JPDL::TransitionType {
+				name := task.name + 'transition';
+				to := 'joinEnd';
+			};
+			task.transition += trst;
+			}endif;
+		};
+			
+		}else {
+		
+		process.allInstances(JPDL::TaskNodeType)->forEach(task) {
+			if(task.transition->isEmpty())then{
+				var trst := object JPDL::TransitionType {
+				name := task.name + 'transition';
+				to := 'End';
+			};
+			task.transition += trst;
+			}endif;
+		};
+		}endif;
+	
+}
+
+
+/*
+mapping DSL::Activity::ligarAosJoinsAndStart(inout process: JPDL::ProcessDefinitionType){
+		
+		
+		// CRIA TRANSIÇÕES FROM STARTSTATE
+		if (self.linkToPredecessor->isEmpty())then {
+		   log('startTransition');
+			var i := 1;
+			process.allInstances(JPDL::StartStateType)->forEach(ativ){
+			log('estado inicial');
+			var trst := object JPDL::TransitionType {
+				name := 'start' + self.name + 'transition';
+				to := self.name;
+			};
+			ativ.transition += trst;
+			}
+		}endif;
+		
+		// For last... create transitions to node END...
+		
+		process.allInstances(JPDL::TaskNodeType)->forEach(task) {
+			if(task.transition->size() > 1)then{
+				var trst := object JPDL::TransitionType {
+				name := task.name + 'transition';
+				to := 'End';
+			};
+			task.transition += trst;
+			}endif;
+		};
+	
+}
+
+*/
+/************
+ *  QUERYS  *
+ ************/
+
+
+ query getTransitionToFim(in process: JPDL::ProcessDefinitionType): Integer{
+    var i := 0;
+    process.allInstances(JPDL::TaskNodeType)->forEach(task) {
+			if(task.transition->isEmpty())then{
+				i:= i +1;
+		
+			}endif;
+		};
+    return i;
+ 	
+ }
+
 //check if activity is between begin and end
 
 query checkBetween(in begin: String, in end_: String, in atual :String, in pro:DSL::Process):Boolean{
@@ -179,13 +298,12 @@ query checkBetween(in begin: String, in end_: String, in atual :String, in pro:D
  	return true;
  }else {
  	var atividadeAtual : Activity;
- 	atividadeAtual = getActivity(atual,pro);
-	//pegar o conjunto de todas as atividades do processo...
+ 	//pegar o conjunto de todas as atividades do processo...
 	//pega a primeira e vai andando pra ver se é o begin, se sim, até chegar na end pega
 	atividadeAtual = getActivity(atual,pro);
 	if(atividadeAtual.next != null) then{
 	   atividadeAtual.next->forEach(act){ 
-           checkBetween(begin,end_,act,pro);
+           checkBetween(begin,end_,act.name,pro);
      };
      }endif;
 	    

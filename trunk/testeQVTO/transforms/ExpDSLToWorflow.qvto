@@ -7,9 +7,9 @@ transformation dslToWorflow(in dsl : DSL, out outModel: JPDL);
 main() {
 	
 //TODO INICIO DA CADEIA DE TRANSF. APÓS ALTERAÇÕES
-    log('starting...');
+    log('starting transformation...');
     dsl.rootObjects()[DSL::Model]->map model2model();
-	log('ending...');
+	log('ending transformation...');
 }
 
 mapping DSL::Model::model2model():JPDL::Model{
@@ -24,7 +24,7 @@ mapping DSL::ExperimentElement::model2DSLModel():JPDL::DocumentRoot	 {
    log('Design name ' + self.experiments->at(1).name);
    var number: Integer;
    number := workNumber(plan.oclAsType(ExperimentalPlan).factor);
-  log(number.toString());
+
   //Gerar o Workflow pra cada Processo do experimento
   var i: Integer;
   i:=0;
@@ -43,21 +43,39 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
   result.startState := object JPDL::StartStateType { 
 				name := 'Starting'; 
 				
+				var act: Set(Activity);
+				act := self.allInstances(DSL::Activity);
+				
+				act->forEach(a) {
+					var comp := a.repr();
+					var res := isSuccessor(comp, self.activities); //if the activity has no other refering to her as next, it is a first activity...
+						if(res.repr().equalsIgnoreCase('false')) then {
+						//create a transition from start to this activity...	
+						var start_t := object JPDL::TransitionType{
+							name := 'startTransition'+a.name;
+							to := a.name;
+						};
+						
+			       	  transition += Sequence{start_t}
+					
+					}endif;
+				
+				}
+				
   };
-  	result.endState := object JPDL::EndStateType { 
+  
+  	
+  result.endState := object JPDL::EndStateType { 
 				name := 'End'; 
 				
   };
   
   // cria swimlane com o papel determinado para a primeira atividade, caso exista.
   	result.swimlane := object JPDL::SwimlaneType { 
-  		
-  		if((self.activities != null) and (self.activities.role != null)) then {
-				name := self.activities->at(0).role->at(0).name; 
-		}else {
-			name := "unknown"; // papel não especificado
-		}
-		endif;
+        
+  		assignment := object JPDL::AssignmentType {
+			actorId := getProcessRole(self);
+		};
 		
   };
   name := self.name;
@@ -84,7 +102,7 @@ mapping DSL::Process::experiment2process() :JPDL::ProcessDefinitionType {
 mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL::Process): JPDL::TaskNodeType{
 	name := self.name;
 	description := self.description;
-	artefacts_ := self.artefacts->map artefact2artefact()->asOrderedSet();
+	artefacts := self.artefacts->map artefact2artefact()->asOrderedSet();
 	// tratar última atividade
 	//TODO
 	self.next->forEach(i){
@@ -96,7 +114,6 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:
 	
    var nomeInput: String;
    var i :=0;
-   log('INICIO PARA CADA ATIVIDADE');
    metrics->forEach(ele) {
    	
     	
@@ -176,22 +193,20 @@ mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
    description := self.description;
  
 	if(self.type = DSL::ArtefactType::in_) then {
-	    log("1___");
-		result.artType := JPDL::ArtefactType::input.repr();
+		result.Type := JPDL::ArtefactType::input.repr();
 		
 	}endif;
 		
 	if (self.type = DSL::ArtefactType::out_)then {
-		 log("2___");
-	
-		result.artType:= JPDL::ArtefactType::input.repr();
+
+		result.Type:= JPDL::ArtefactType::input.repr();
 	}endif;
 		
 	if (self.type = DSL::ArtefactType::inout_)then {
-		 log("3___");
-		result.artType:= JPDL::ArtefactType::inoutput.repr();
+
+		result.Type:= JPDL::ArtefactType::inoutput.repr();
 	}endif;
-	  log("Resultado: " + artType.repr());
+	
 }
 
 
@@ -201,9 +216,9 @@ mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
 mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType){
 
 		// cria transições para o fim...
-		log('Linking to endNode');
 		var i := getTransitionToFim(process);
 		
+		//It have not been used yet... for while
 		if(i>1)then{
 		
 		var join := object JPDL::JoinType {
@@ -361,11 +376,7 @@ query workNumber(in factors: OrderedSet(DSL::Factor)): Integer{
    var max: Integer;
    max := -1;
    factors->forEach(f){
-   	
-   		log(f._main);
    		if(f._main.equalsIgnoreCase('False'))then{
-   			
-   			log('OK');
    			f.level->forEach (l) {
    			 	total:= total +1;
    			};
@@ -374,8 +385,43 @@ query workNumber(in factors: OrderedSet(DSL::Factor)): Integer{
    			}endif;
    		}endif;
   	 };
-  	log(max.toString());
     return max;
 	
 }
 
+query getProcessRole(in pro: DSL::Process): String {
+	//alwasy return the role from the first process activity or task ...
+	var act := pro.activities;
+	var role:= 'unknown';
+	if (act->notEmpty())then {
+		var roles := act.role;
+		if (roles->notEmpty()) then {
+			role := roles->at(1).name;
+		}else  { // case role has not been specified to activity, it can be specified to tasks.
+			if(act.tasks->notEmpty())then{
+				var role2 := act.tasks.role;
+				role := role2->at(1).name;
+			}endif;
+		}endif;
+	}endif;
+	return role;
+}
+
+//It verify if a task is setted as next for any other task, else it activity is the one of the firsts and returns false...
+query isSuccessor(in rep: String,in act: Set(Activity)): Boolean {
+	
+	var x:=0;
+	act->forEach(i){
+	    i.next->forEach(j){
+			if(j.repr().equalsIgnoreCase(rep))then{
+			x:= x +1;
+		}endif;
+	}
+	};
+	if(x>0)then{
+		return true;
+	} else {
+		return false;
+	}endif;
+	
+}

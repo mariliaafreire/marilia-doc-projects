@@ -18,20 +18,22 @@ import org.xtext.project.services.ExpDSLGrammarAccess;
 public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ExpDSLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Activity_InKeyword_2_0_q;
-	protected AbstractElementAlias match_Activity_OutKeyword_3_0_q;
-	protected AbstractElementAlias match_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q;
+	protected AbstractElementAlias match_Activity___LeftCurlyBracketKeyword_6_0_RightCurlyBracketKeyword_6_2__q;
 	protected AbstractElementAlias match_ExperimentElement_ExperimentalPlanKeyword_4_0_q;
-	protected AbstractElementAlias match_ExperimentElement_GeneralQuestionsKeyword_5_0_q;
+	protected AbstractElementAlias match_ExperimentElement_QuestionnairesKeyword_5_0_q;
+	protected AbstractElementAlias match_Question_AlternativesKeyword_5_0_q;
+	protected AbstractElementAlias match_Questionnaire_RelatesKeyword_2_0_q;
+	protected AbstractElementAlias match_Task_ArtefactsKeyword_4_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ExpDSLGrammarAccess) access;
-		match_Activity_InKeyword_2_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getInKeyword_2_0());
-		match_Activity_OutKeyword_3_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getOutKeyword_3_0());
-		match_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_7_2()));
+		match_Activity___LeftCurlyBracketKeyword_6_0_RightCurlyBracketKeyword_6_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_6_2()));
 		match_ExperimentElement_ExperimentalPlanKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getExperimentElementAccess().getExperimentalPlanKeyword_4_0());
-		match_ExperimentElement_GeneralQuestionsKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getExperimentElementAccess().getGeneralQuestionsKeyword_5_0());
+		match_ExperimentElement_QuestionnairesKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getExperimentElementAccess().getQuestionnairesKeyword_5_0());
+		match_Question_AlternativesKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getQuestionAccess().getAlternativesKeyword_5_0());
+		match_Questionnaire_RelatesKeyword_2_0_q = new TokenAlias(true, false, grammarAccess.getQuestionnaireAccess().getRelatesKeyword_2_0());
+		match_Task_ArtefactsKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getArtefactsKeyword_4_0());
 	}
 	
 	@Override
@@ -46,41 +48,27 @@ public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Activity_InKeyword_2_0_q.equals(syntax))
-				emit_Activity_InKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity_OutKeyword_3_0_q.equals(syntax))
-				emit_Activity_OutKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q.equals(syntax))
-				emit_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Activity___LeftCurlyBracketKeyword_6_0_RightCurlyBracketKeyword_6_2__q.equals(syntax))
+				emit_Activity___LeftCurlyBracketKeyword_6_0_RightCurlyBracketKeyword_6_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ExperimentElement_ExperimentalPlanKeyword_4_0_q.equals(syntax))
 				emit_ExperimentElement_ExperimentalPlanKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ExperimentElement_GeneralQuestionsKeyword_5_0_q.equals(syntax))
-				emit_ExperimentElement_GeneralQuestionsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ExperimentElement_QuestionnairesKeyword_5_0_q.equals(syntax))
+				emit_ExperimentElement_QuestionnairesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Question_AlternativesKeyword_5_0_q.equals(syntax))
+				emit_Question_AlternativesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Questionnaire_RelatesKeyword_2_0_q.equals(syntax))
+				emit_Questionnaire_RelatesKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Task_ArtefactsKeyword_4_0_q.equals(syntax))
+				emit_Task_ArtefactsKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Syntax:
-	 *     'in'?
-	 */
-	protected void emit_Activity_InKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'out'?
-	 */
-	protected void emit_Activity_OutKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
 	 *     ('{' '}')?
 	 */
-	protected void emit_Activity___LeftCurlyBracketKeyword_7_0_RightCurlyBracketKeyword_7_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Activity___LeftCurlyBracketKeyword_6_0_RightCurlyBracketKeyword_6_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -94,9 +82,33 @@ public class AbstractExpDSLSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     'General Questions'?
+	 *     'Questionnaires'?
 	 */
-	protected void emit_ExperimentElement_GeneralQuestionsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ExperimentElement_QuestionnairesKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'Alternatives'?
+	 */
+	protected void emit_Question_AlternativesKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'relates'?
+	 */
+	protected void emit_Questionnaire_RelatesKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'artefacts'?
+	 */
+	protected void emit_Task_ArtefactsKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -1,0 +1,96 @@
+Experiment "Comparison of Java and C++" 
+   Process "ComparisonProcess"{
+    Activity "UseCaseProject" "Create the project class diagram based on the use case specification and in the project architecture" 
+    		"ImplementUseCase" {
+    	Task "DesignClassDiagram" description "Design Class Diagram" 
+    	 	artefacts artefact "UseCaseSpecfication" description "Description of Use Case" type input;
+					  artefact "ClassDiagram" description "Class Diagram" type output; Role "Subject";;
+		Task "DesignScreens" description "Design of Screens" 
+			artefacts  artefact "UseCaseSpecfication" description "Description of Use Case" type input;
+					   artefact "PrototypeInterface" description "Prototype of interface" type output; Role "Subject";;
+	}
+	Activity "ImplementUseCase" "Implementation of Use Case" "UseCaseTest"{
+		 Task "CodifyUseCase"description "Create the UseCase code"artefacts artefact "ClassDiagram" description "Class Diagram" type input;
+    	      		artefact "PrototypeInterface" description "Prototype of interface" type input; 
+    	      		artefact "UseCaseCode" description "Implementation of Use Case" type output; Role "Subject";;
+	}
+	Activity "UseCaseTest" "Perform Test of Use Case"	{
+		Task "CreateTestCases" description "Develop the test cases and test data for the requirements to be tested" 
+				artefacts  artefact "UseCaseSpecfication" description "Description of Use Case" type input;
+						   artefact "TestCase" description "Specification of a set of test"  type output; Role "Subject";;
+		Task "RunTests" description "Run the appropriate test cases, analyze results" 
+				artefacts artefact "TestCase" description "Specification of a set of test"  type input; 
+						artefact "UseCaseCode" description "Implementation of Use Case" type input;
+					   artefact "TestLog" description "Report that is captured during a run of tests" type output; Role "Subject";;
+	}
+}
+	
+//Experiment metrics	
+ Metric "ProjectTime" relates "ComparisonProcess" { 
+ 	description "Calculate the duration of tasks related to project the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "ComparisonProcess.UseCaseProject"
+ 	}
+ Metric "CodeTime" relates "ComparisonProcess" {
+ 	description "Calculate the duration of tasks related to implement the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "ComparisonProcess.ImplementUseCase"
+ }
+ Metric "TestTime" relates "ComparisonProcess" {
+ 	description "Calculate the duration of tasks related to test the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "ComparisonProcess.UseCaseTest"
+ }
+ Metric "CodeDefect" relates "ComparisonProcess" {
+ 	description "Calculate the number of defects found in the UseCase code"
+ 	artefacts "UseCaseCode"
+ }
+ //Experiment details
+ 
+ 
+ 
+ Experimental Plan Design "ComparisonPlanning" 
+        type RCBD – Randomized Complete Block Design {
+     	   Factor "ProgammingLanguage" isDesiredVariation True 
+        		Level "Java";
+           		Level "C++";
+        ;  
+        Factor "Sytem" isDesiredVariation False
+        	Level "Phonebook";
+            Level "EventManagement";                             
+        ;                           
+        Factor "Subject" isDesiredVariation False;
+ }
+ 
+ Questionnaire "Experience Questionnaire"  type Pre
+ 
+				"Question1" {
+					description "Qual sua experiência no desenvolvimento de software?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Question2" {
+					description "Qual o seu tempo de experiência com Java?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}           	
+				
+				"Question 4" {
+					description "Qual o tempo de experiêcia com CPP?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}
+				
+ 

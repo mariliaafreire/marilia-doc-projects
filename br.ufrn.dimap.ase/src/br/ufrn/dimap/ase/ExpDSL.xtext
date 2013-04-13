@@ -2,117 +2,136 @@ grammar org.xtext.project.ExpDSL with org.eclipse.xtext.common.Terminals
 
 generate expDSL "http://www.xtext.org/project/ExpDSL"
 
-
-
 Model:
 	(elements+=ExperimentElement)*;
 
 ExperimentElement:
 	'Experiment' name=STRING
-	process+=Process*
-	metrics+=Metrics*
+	 process+=Process*
+	 metrics+=Metrics*
 	('Experimental Plan' experiments+=ExperimentalPlan*)?
-	('General Questions' question+=Questions*)?;
+	('Questionnaires' questionnaire+=Questionnaire*)?; 
 
 //WorkbreakdownStructure	
-//artefatos, métricas para artefatos	
 Process:
-	'Process' name=STRING
+	'Process' name=STRING '{'
 	  (activities+=Activity)*
-	';'
-	;
+	'}';
 	
 Activity:
-	'Activity' id=ID
-	('in' artefacts+=Artefact*)?
-	('out' artefacts += Artefact*)?
+	'Activity'
 	name=STRING
-	(next+=ID*)?
-	(role+=Role)*
+	description=STRING
+	(next+=[Activity|STRING]*)?	
+	(artefacts += Artefact*)?
+	(role += Role*)?
 	('{'
 	 tasks+=Task*
-	'}')?
-;
-Artefact:
-	name = STRING;
-
-Task: 'Task' name=STRING';';
+	'}')?;
+ 
+Task: 'Task' name=STRING 'description' description=STRING
+      ('artefacts' artefacts += Artefact*)?
+	  (role+=Role*)?';';
 
 Role: 'Role' name=STRING';';
 
-//CRD – Completely Randomized Design
-//RCBD – Randomized Complete Block Design
-//LS – Latin Square
-
-ExperimentalPlan: 
-	'Design' name=STRING 'type' type=DesignType
-	    (factor+=Factor)*
-	';';
-
-Factor: 
-	'Factor' name=STRING
-		(level+=Levels)*
-	';';
+Artefact:
+	'artefact' name = STRING 'description' description=STRING 'type' type=ArtefactType';';
 	
-Levels:
-	'Level' name=STRING ';'
-;
+	
+enum ArtefactType returns ArtefactType:
+	in_ = 'input' | out_ = 'output' | inout_ = 'inoutput';
+
 
 //Metric Definition	
 Metrics:
-	name=STRING 'relates' relatesTo=[Process|STRING]
+	'Metric' name=STRING 'relates' relatesTo=[Process|STRING] '{'
 		('description' description=STRING)
-		('type' type=MetricType)
 		('form' form=ColectType)?
-		('id' id=STRING)
 		('unit' unit=MetricUnit)?
-		details=ActivityMetric|TaskMetric|ArtefactMetric
-		;
-
+		detail+=Detail
+		'}';
+		
+Detail:
+	(ActivityMetric|TaskMetric|ArtefactMetric);
+	
 ActivityMetric:
-		('activityBegin' activityBegin=STRING)
-		('activityEnd' activityEnd=STRING)
+		('activityBegin' activityBegin=[Activity|STRING])
+		('activityEnd' activityEnd=[Activity|STRING])?//opcional
        ;
 
 TaskMetric:
-	 'activities' activities=STRING;
+	 'tasks' tasks+=[Task|STRING]*;
     
  ArtefactMetric:
-   	 name=STRING  artefact=[Artefact|STRING];
-
-Questions:
-	name=STRING
-	'{'
-		('description' description=STRING)
-		('type' type=AnswerType)
-		('id' id=ID)
-		('required' req=INT )?
-		(alternatives+=Alternatives)*
-		
-    '}';
-
- 
-Alternatives:
-	description = STRING
-;
-
-
-//Experimental Design
-enum DesignType returns DesignType:
-	CDR = 'CRD – Completely Randomized Design' | RCDB = 'RCBD – Randomized Complete Block Design' | LS = 'LS – Latin Square';	
-
-//Questions
-enum AnswerType returns AnswerType:
-	ComboBox = 'ComboBox' | CheckBoxes = 'CheckBoxes' | OptionButtons = 'OptionButtons';
-
-
-// Metrica
-enum MetricType returns MetricType:
-	hardData = 'hardData' | softData = 'softData' | normalizedData = 'normalizedData';
+   	 'artefacts' name=STRING  artefacts=[Artefact|STRING]*;
 
 enum ColectType returns ColectType:
 	continuous = 'continuous' | intercalated = 'intercalated';
 
 enum MetricUnit returns MetricUnit:
 	minutes = 'minutes' | uc = 'uc';
+	
+	
+//CRD ï¿½ Completely Randomized Design
+//RCBD ï¿½ Randomized Complete Block Design
+//LS ï¿½ Latin Square
 
+
+ExperimentalPlan: 
+'Design' name=STRING 'type' type=DesignType '{'
+		(parameter+=Parameter)*
+	    (factor+=Factor)*
+	    'Internal Replication ' internalReplication=INT
+	    (link+=Link)*
+	'}';
+
+Parameter:
+	'Parameter' variable=STRING '=' value=STRING;
+
+Factor: 
+	'Factor' name=STRING 'isDesiredVariation' isDesiredVariation=('True'|'False') 
+		(level+=Levels)* ';';
+Levels:
+	'Level' name=STRING ';';
+	
+Link: 'Link' procedure+=[Process|STRING] 'to' treatment+=[Levels|STRING]*;
+
+enum DesignType returns DesignType:
+	CDR = 'CRD - Completely Randomized Design' | 
+	RCBD = 'RCBD - Randomized Complete Block Design' | 
+	LS = 'LS - Latin Square';	
+
+ 
+Questionnaire: 'Questionnaire' name=STRING ( 'relates' relatesTo+=[Process|STRING]*)? 
+			   'type' (questionnaireType=QuestionnaireType) '{'
+				
+					(question+=Question)*
+				
+				'};';
+
+enum QuestionnaireType returns QuestionnaireType:
+	pre = 'Pre' | pos = 'Pos';
+	
+Question:
+	name=STRING '{'
+	    ('description' description=STRING)
+		('type' type=AnswerType)
+		('required' req=INT )?
+		('Alternatives' alternatives+=Alternatives*)?  
+	'}';
+
+Alternatives:
+	'Option' description = STRING;
+	
+enum AnswerType returns AnswerType:
+	Text='Text' | ParagraphText = 'Paragraph Text' | MultipleChoice = 'Multiple Choice' 
+	| ComboBox = 'ComboBox' | CheckBoxes = 'CheckBoxes' | Scale = 'Scale' | Grid = 'Grid';
+
+//Experimental Design
+
+
+// Metrica
+
+
+	

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDSL:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDSL="http://www.xtext.org/project/ExpDSL">
+  <elements name="Test_RCBD">
+    <process name="ST_F1">
+      <activities name="SP1_F1_1" description="Insert a new member - Product 1" next="//@elements.0/@process.0/@activities.1">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP1_F1_1" description="Execute the test case SP1_F1_1">
+          <artefacts name="Teste case SP1_F1_1" description="Test case details SP1_F1_1"/>
+        </tasks>
+        <tasks name="Report CR SP1_F1_1" description="Describe TC SP1_F1_1 results">
+          <artefacts name="CR SP1_F1_1" description="Reporting the CR for Test Case SP1_F1_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F1_2" description="Insert a new conference paper  - Product 1" next="//@elements.0/@process.0/@activities.2">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP1_F1_2" description="Execute the test case SP1_F1_2">
+          <artefacts name="Test case SP1_F1_2" description="Test case details SP1_F1_2"/>
+        </tasks>
+        <tasks name="Report CR SP1_F1_2" description="Describe  the test case TC SP1_F1_2 results">
+          <artefacts name="CR SP1_F1_2" description="Reporting the CR for Test Case SP1_F1_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F1_3" description="Insert a doctoral thesis - Product 1" next="//@elements.0/@process.0/@activities.3">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP1_F1_3" description="Execute the test case  SP1_F1_3">
+          <artefacts name="Test case SP1_F1_3" description="Test case details SP1_F1_3"/>
+        </tasks>
+        <tasks name="Report CR SP1_F1_3" description="Describe  the test case TC SP1_F1_3 ">
+          <artefacts name="CR SP1_F1_3" description="Reporting the CR for Test Case  SP1_F1_3e" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F1_4" description="Generate Report of Publications  - Product 1" next="//@elements.0/@process.0/@activities.4">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP1_F1_4" description="Execute the test case  SP1_F1_4">
+          <artefacts name="Test case SP1_F1_4" description="Test case details SP1_F1_4"/>
+        </tasks>
+        <tasks name="Report CR SP1_F1_4" description="Describe  the test case TC SP1_F1_4">
+          <artefacts name="CR SP1_F1_4" description="Reporting the CR for Test Case  SP1_F1_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F1_5" description="Generate Report of Publications   - Product 1" next="//@elements.0/@process.0/@activities.5">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP1_F1_5" description="Execute the test case  SP1_F1_5">
+          <artefacts name="Caso de Teste SP1_F1_5" description="Test case details SP1_F1_5"/>
+        </tasks>
+        <tasks name="Report CR SP1_F1_5" description="Describe  the test case TC SP1_F1_5">
+          <artefacts name="CR SP1_F1_5" description="Reporting the CR for Test Case  SP1_F1_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F1_6" description="Check the format of the generated reports - Product 1" next="//@elements.0/@process.0/@activities.6">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP1_F1_6" description="Execute the test case  SP1_F1_6">
+          <artefacts name="Caso de Teste SP1_F1_6" description="Test case details SP1_F1_6"/>
+        </tasks>
+        <tasks name="Reporte CR SP1_F1_6" description="Describe  the test case TC SP1_F1_6">
+          <artefacts name="CRSP1_F1_6" description="Reporting the CR for Test Case  SP1_F1_6" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F1_1" description="Insert a new member  - Product 2" next="//@elements.0/@process.0/@activities.7">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP2_F1_1" description="Execute the test case  SP2_F1_1">
+          <artefacts name="Caso de Teste SP2_F1_1" description="Test case details SP2_F1_1"/>
+        </tasks>
+        <tasks name="Report CR SP2_F1_1" description="Describe  the test case TC SP2_F1_1">
+          <artefacts name="CR SP2_F1_1" description="Reporting the CR for Test Case  SP2_F1_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F1_2" description="Insert a new conference paper  - Product 2" next="//@elements.0/@process.0/@activities.8">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP2_F1_2" description="Execute the test case  SP2_F1_2">
+          <artefacts name="Caso de Teste SP2_F1_2" description="Test case details SP2_F1_2"/>
+        </tasks>
+        <tasks name="Report CR SP2_F1_2" description="Describe  the test case TC SP2_F1_2">
+          <artefacts name="CR SP2_F1_2" description="Reporting the CR for Test Case  SP2_F1_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F1_3" description="Insert a doctoral thesis   - Product 2" next="//@elements.0/@process.0/@activities.9">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP2_F1_3" description="Execute the test case  SP2_F1_3">
+          <artefacts name="Caso de Teste SP2_F1_3" description="Test case details SP2_F1_3"/>
+        </tasks>
+        <tasks name="Report CR SP2_F1_3" description="Describe  the test case TC SP2_F1_3">
+          <artefacts name="CR SP2_F1_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F1_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F1_4" description="Generate Report of Publications  - Product 2" next="//@elements.0/@process.0/@activities.10">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP2_F1_4" description="Execute the test case  SP2_F1_4">
+          <artefacts name="Caso de Teste SP2_F1_4" description="Test case details SP2_F1_4"/>
+        </tasks>
+        <tasks name="Report CR SP2_F1_4" description="Describe  the test case TC SP2_F1_4">
+          <artefacts name="CR SP2_F1_4" description="Reporting the CR for Test Case  SP2_F1_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F1_5" description="Generate Report of Publications  - Product 2" next="//@elements.0/@process.0/@activities.11">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP2_F1_5" description="Execute the test case SP2_F1_5">
+          <artefacts name="Caso de Teste SP2_F1_5" description="Test case details SP2_F1_5"/>
+        </tasks>
+        <tasks name="Report CR SP2_F1_5" description="Describe  the test case TC SP2_F1_5">
+          <artefacts name="CR SP2_F1_5" description="Reporting the CR for Test Case  SP2_F1_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F1_6" description="Check the format of the generated reports  - Product 2">
+        <role name="Subject"/>
+        <tasks name="Execute TC SP2_F1_6" description="Execute the test case  SP2_F1_6">
+          <artefacts name="Caso de Teste SP2_F1_6" description="Test case details SP2_F1_6"/>
+        </tasks>
+        <tasks name="Report CR SP2_F1_6" description="Describe  the test case TC SP2_F1_6">
+          <artefacts name="CR SP2_F1_6" description="Reporting the CR for Test Case  SP2_F1_6" type="output"/>
+        </tasks>
+      </activities>
+    </process>
+    <process name="ST_F2">
+      <activities name="SP1_F2_1" description="Inserir uma nova Linha de Pesquisa - Product 1" next="//@elements.0/@process.1/@activities.0">
+        <role name="Subject"/>
+        <tasks name="Execute CT SP1_F2_1" description="Execute o Procedimento do Teste SP1_F2_1">
+          <artefacts name="Caso de Teste SP1_F2_1" description="Detalhes do caso de teste SP1_F2_1"/>
+        </tasks>
+        <tasks name="Reportar CR SP1_F2_1" description="Descrever o resultado do CT SP1_F2_1">
+          <artefacts name="CR SP1_F2_1" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP1_F2_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F2_2" description="Associar um Membro a Linha de Pesquisa - Product 1" next="//@elements.0/@process.1/@activities.2">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP1_F2_2" description="Executar o Procedimento do Teste SP1_F2_2">
+          <artefacts name="Caso de Teste SP1_F2_2" description="Detalhes do caso de teste SP1_F2_2"/>
+        </tasks>
+        <tasks name="Reportar CR SP1_F2_2" description="Descrever o resultado do CT SP1_F2_2">
+          <artefacts name="CR SP1_F2_2" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP1_F2_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F2_3" description="Remover uma Linha de Pesquisa - Product 1" next="//@elements.0/@process.1/@activities.3">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP1_F2_3" description="Executar o Procedimento do Teste SP1_F2_3">
+          <artefacts name="Caso de Teste SP1_F2_3" description="Detalhes do cos de teste SP1_F2_3"/>
+        </tasks>
+        <tasks name="Reportar CR SP1_F2_3" description="Descrever o resultado do CT SP1_F2_3">
+          <artefacts name="CR SP1_F2_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP1_F2_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F2_4" description="Inserir uma nova linha de pesquisa - Product 1" next="//@elements.0/@process.1/@activities.4">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP1_F2_4" description="Executar o Procedimento do Teste SP1_F2_4">
+          <artefacts name="Caso de Teste SP1_F2_4" description="Detalhes do caso de teste SP1_F2_4"/>
+        </tasks>
+        <tasks name="Reportar CR SP1_F2_4" description="Descrever o resultado do CT SP1_F2_4">
+          <artefacts name="CR SP1_F2_4" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP1_F2_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F2_5" description="Associar uma Publica&#xe7;&#xe3;o a uma linha - Product 1" next="//@elements.0/@process.1/@activities.5">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP1_F2_5" description="Executar o Procedimento do Teste SP1_F2_5">
+          <artefacts name="Caso de Teste SP1_F2_5" description="Detalhes do caso de testes SP1_F2_5"/>
+        </tasks>
+        <tasks name="Reportar CR SP1_F2_5" description="Descrever o resultado do CT SP1_F2_5">
+          <artefacts name="CR SP1_F2_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP1_F2_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP1_F2_6" description="Editar uma Linha de Pesquisa - Product 1" next="//@elements.0/@process.1/@activities.6">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP1_F2_6" description="Executar o Procedimento do Teste SP1_F2_6">
+          <artefacts name="Caso de Teste SP1_F2_6" description="Detalhes do caso de teste SP1_F2_6"/>
+        </tasks>
+        <tasks name="Reportar CR SP1_F2_6" description="Descrever o resultado do CT SP1_F2_6">
+          <artefacts name="CR SP1_F2_6" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP1_F2_6" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F2_1" description="Inserir uma nova Linha de Pesquisa - Product 2" next="//@elements.0/@process.1/@activities.6">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP2_F2_1" description="Executar o Procedimento do Teste SP2_F2_1">
+          <artefacts name="Caso de Teste SP2_F2_1" description="Detalhes do caso de teste SP2_F2_1"/>
+        </tasks>
+        <tasks name="Reportar CR SP2_F2_1" description="Descrever o resultado do CT SP2_F2_1">
+          <artefacts name="CR SP2_F2_1" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F2_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F2_2" description="Associar um Membro a Linha de Pesquisa - Product 2" next="//@elements.0/@process.1/@activities.8">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP2_F2_2" description="Executar o Procedimento do Teste SP2_F2_2">
+          <artefacts name="Caso de Teste SP2_F2_2" description="Detalhes do caso de teste SP2_F2_2"/>
+        </tasks>
+        <tasks name="Reportar CR SP2_F2_2" description="Descrever o resultado da CR SP2_F2_2">
+          <artefacts name="CR SP2_F2_2" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F2_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F2_3" description="Remover uma Linha de Pesquisa - Product 2" next="//@elements.0/@process.1/@activities.9">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP2_F2_3" description="Executar o Procedimento do Teste SP2_F2_3">
+          <artefacts name="Caso de Teste SP2_F2_3" description="Suite de testes SP2_F2_3"/>
+        </tasks>
+        <tasks name="Reportar CR SP2_F2_3" description="Descrever o resultado do CT SP2_F2_3">
+          <artefacts name="CR SP2_F2_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F2_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F2_4" description="Inserir uma nova linha de pesquisa - Product 2" next="//@elements.0/@process.1/@activities.10">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP2_F2_4" description="Executar o Procedimento do Teste SP2_F2_4">
+          <artefacts name="Caso de Teste SP2_F2_4" description="Detalhes do caso de teste SP2_F2_4"/>
+        </tasks>
+        <tasks name="Reportar CR SP2_F2_4" description="Descrever o resultado do CT SP2_F2_4">
+          <artefacts name="CR SP2_F2_4" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F2_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F2_5" description="Associar uma Publica&#xe7;&#xe3;o a uma linha - Product 2" next="//@elements.0/@process.1/@activities.11">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP2_F2_5" description="Executar o Procedimento do Teste SP2_F2_5">
+          <artefacts name="Caso de Teste SP2_F2_5" description="Detalhes do caso de teste SP2_F2_5"/>
+        </tasks>
+        <tasks name="Reportar CR SP2_F2_5" description="Descrever o resultado do CT SP2_F2_5">
+          <artefacts name="CR SP2_F2_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F2_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SP2_F2_6" description="Editar uma Linha de Pesquisa - Product 2">
+        <role name="Subject"/>
+        <tasks name="Executar CT SP2_F2_6" description="Executar o Procedimento do Teste SP2_F2_6">
+          <artefacts name="Caso de Teste SP2_F2_6" description="Detalhes do caso de teste SP2_F2_6"/>
+        </tasks>
+        <tasks name="Reportar CR SP2_F2_6" description="Descrever o resultado do CT SP2_F2_6">
+          <artefacts name="CR SP2_F2_6" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SP2_F2_6" type="output"/>
+        </tasks>
+      </activities>
+    </process>
+    <process name="GT_F1">
+      <activities name="SG-P1_F1_1" description="Inserir um novo membro - Product 1" next="//@elements.0/@process.2/@activities.1">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F1_1" description="Executar o Procedimento do Teste SG-P1_F1_1">
+          <artefacts name="Caso de teste SG_F1_1" description="Detalhes do caso de teste SG_F1_1"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F1_1" description="Descrever o resultado do CT SG-P1_F1_1">
+          <artefacts name="CR SG-P1_F1_1" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F1_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F1_2" description="Inserir um novo Artigo de Confer&#xea;ncia - Product 1" next="//@elements.0/@process.2/@activities.2">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F1_2" description="Executar o Procedimento do Teste SG-P1_F1_2">
+          <artefacts name="Caso de Teste SG_F1_2" description="Detalhes do caso de teste SG_F1_2"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F1_2" description="Descrever o resultado do CT SG-P1_F1_2">
+          <artefacts name="CR SG-P1_F1_2" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F1_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F1_3" description="Inserir uma tese de doutorado - Product 1" next="//@elements.0/@process.2/@activities.3">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F1_3" description="Executar o Procedimento do Teste SG-P1_F1_3">
+          <artefacts name="Caso de Teste SG_F1_3" description="Detalhes do caso de testes SG_F1_3"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F1_3" description="Descrever o resultado do CT SG-P1_F1_3">
+          <artefacts name="CR SG-P1_F1_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F1_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F1_4" description="Gerar Relat&#xf3;rio de Publica&#xe7;&#xe3;o - Product 1" next="//@elements.0/@process.2/@activities.4">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F1_4" description="Executar o Procedimento do Teste SG-P1_F1_4">
+          <artefacts name="Caso de Teste SG_F1_4" description="Detalhes do caso de teste SG_F1_4"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F1_4" description="Descrever o resultado do CT SG-P1_F1_4">
+          <artefacts name="CR SG-P1_F1_4" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F1_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F1_5" description="Gerar Relat&#xf3;rio de Publica&#xe7;&#xe3;o - Product 1" next="//@elements.0/@process.2/@activities.5">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F1_5" description="Executar o Procedimento do Teste SG-P1_F1_5">
+          <artefacts name="Caso de Teste SG_F1_5" description="Detalhes do caso de teste SG_F1_5"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F1_5" description="Descrever o resultado do CT SG-P1_F1_5">
+          <artefacts name="CR SG-P1_F1_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F1_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F1_6" description="Veri&#xfb01;car Formatos de Gera&#xe7;&#xe3;o de Relat&#xf3;rios - Product 1" next="//@elements.0/@process.2/@activities.6">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F1_6" description="Executar o Procedimento do Teste SG-P1_F1_6">
+          <artefacts name="Caso de Teste SG_F1_6" description="Detalhes do caso de teste SG_F1_6"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F1_6" description="Descrever o resultado do CT SG-P1_F1_6">
+          <artefacts name="CR SG-P1_F1_6" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F1_6" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F1_1" description="Inserir um novo membro - Product 2" next="//@elements.0/@process.2/@activities.7">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F1_1" description="Executar o Procedimento do Teste SG-P2_F1_1">
+          <artefacts name="Caso de Teste SG_F1_1" description="Detalhes do caso de teste SG_F1_1"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F1_1" description="Descrever o resultado do CT SG-P2_F1_1">
+          <artefacts name="CR SG-P2_F1_1" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F1_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F1_2" description="Inserir um novo Artigo de Confer&#xea;ncia - Product 2" next="//@elements.0/@process.2/@activities.8">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F1_2" description="Executar o Procedimento do Teste SG-P2_F1_2">
+          <artefacts name="Caso de Teste SG_F1_2" description="Detalhes do caso de teste SG_F1_2"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F1_2" description="Descrever o resultado do CT SG-P2_F1_2">
+          <artefacts name="CR SG-P2_F1_2" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F1_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F1_3" description="Inserir uma tese de doutorado - Product 2" next="//@elements.0/@process.2/@activities.9">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F1_3" description="Executar o Procedimento do Teste SG-P2_F1_3">
+          <artefacts name="Caso de Teste SG_F1_3" description="Detalhes do caso de teste SG_F1_3"/>
+        </tasks>
+        <tasks name="Reportar CR G-P2_F1_3" description="Descrever o resultado do CT G-P2_F1_3">
+          <artefacts name="CR G-P2_F1_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste G-P2_F1_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F1_4" description="Gerar Relat&#xf3;rio de Publica&#xe7;&#xe3;o - Product 2" next="//@elements.0/@process.2/@activities.10">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F1_4" description="Executar o Procedimento do Teste  G-P2_F1_4">
+          <artefacts name="Caso de Teste SG_F1_4" description="Detalhes do caso de teste SG_F1_4"/>
+        </tasks>
+        <tasks name="Reportar CR G-P2_F1_4" description="Descrever o resultado do CT G-P2_F1_4">
+          <artefacts name="CR G-P2_F1_4" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste G-P2_F1_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F1_5" description="Gerar Relat&#xf3;rio de Publica&#xe7;&#xe3;o - Product 2" next="//@elements.0/@process.2/@activities.11">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F1_5" description="Executar o Procedimento do Teste SG-P2_F1_5">
+          <artefacts name="Caso de Teste SG_F1_5" description="Suite de testes SG_F1_5"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F1_5" description="Descrever o resultado do CT SG-P2_F1_5">
+          <artefacts name="CR SG-P2_F1_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F1_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F1_6" description="Veri&#xfb01;car Formatos de Gera&#xe7;&#xe3;o de Relat&#xf3;rios - Product 2">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F1_6" description="Executar o Procedimento do Teste SG-P2_F1_6">
+          <artefacts name="Caso de Teste SG_F1_6" description="Detalhes do caso de teste SG_F1_6"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F1_6" description="Descrever o resultado do CT SG-P2_F1_6">
+          <artefacts name="CR SG-P2_F1_6" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F1_6" type="output"/>
+        </tasks>
+      </activities>
+    </process>
+    <process name="GT-F2">
+      <activities name="SG-P1_F2_1" description="Inserir uma nova Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.1">
+        <role name="Subject"/>
+        <tasks name="Executar o CT SG-P1_F2_1" description="Executar o Procedimento do Teste SG-P1_F2_1">
+          <artefacts name="Caso de Teste SG_F2_1" description="Detalhes do caso de teste SG_F2_1"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F2_1" description="Descrever o resultado do CT SG-P1_F2_1">
+          <artefacts name="CR SG-P1_F2_1" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F2_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F2_2" description="Associar um Membro a Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.2">
+        <role name="Subject"/>
+        <tasks name="Execute CT SG-P1_F2_2" description="Executar o Procedimento do Teste SG-P1_F2_2">
+          <artefacts name="Caso de Teste SG_F2_2" description="Detalhes do caso de teste SG_F2_2"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F2_2" description="Descrever o resultado do CT SG-P1_F2_2">
+          <artefacts name="CR SG-P1_F2_2" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F2_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F2_3" description="Remover uma Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.3">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F2_3" description="Executar o Procedimento do Teste SG-P1_F2_3">
+          <artefacts name="Caso de Teste SG_F2_3" description="Detalhes do caso de teste SG_F2_3"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F2_3" description="Descrever o resultado da CR SG-P1_F2_3">
+          <artefacts name="CR SG-P1_F2_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F2_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F2_4" description="Inserir uma nova linha de pesquisa - Product 1" next="//@elements.0/@process.3/@activities.4">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F2_4" description="Executar o Procedimento do Teste SG-P1_F2_4">
+          <artefacts name="Caso de Teste SG_F2_4" description="Detalhes do caso de teste SG_F2_4"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F2_4" description="Descrever o resultado do CT SG-P1_F2_4">
+          <artefacts name="CR SG-P1_F2_4" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F2_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F2_5" description="Associar uma Publica&#xe7;&#xe3;o a uma linha - Product 1" next="//@elements.0/@process.3/@activities.5">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F2_5" description="Executar o Procedimento do Teste SG-P1_F2_5">
+          <artefacts name="Caso de Teste SG_F2_5" description="Detalhes do caso de testes SG_F2_5"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F2_5" description="Descrever o resultado do CT SG-P1_F2_5">
+          <artefacts name="CR SG-P1_F2_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F2_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P1_F2_6" description="Editar uma Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.6">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P1_F2_6" description="Executar o Procedimento do Teste SG-P1_F2_6">
+          <artefacts name="Caso de Teste SG_F2_6" description="Detalhes do caso de teste SG_F2_6"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P1_F2_6" description="Descrever o resultado do CT SG-P1_F2_6">
+          <artefacts name="CR SG-P1_F2_6" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P1_F2_6" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F2_1" description="Inserir uma nova Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.7">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F2_1" description="Executar o Procedimento do Teste SG-P2_F2_1">
+          <artefacts name="Caso de Teste SG_F2_1" description="Detalhes do caso de teste SG_F2_1"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F2_1" description="Descrever o resultado do CT SG-P2_F2_1">
+          <artefacts name="CR SG-P2_F2_1" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F2_1" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F2_2" description="Associar um Membro a Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.8">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F2_2" description="Executar o Procedimento do Teste SG-P2_F2_2">
+          <artefacts name="Caso de Teste SG_F2_2" description="Detalhes do caso de teste SG_F2_2"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F2_2" description="Descrever o resultado da CR SG-P2_F2_2">
+          <artefacts name="CR SG-P2_F2_2" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F2_2" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F2_3" description="Remover uma Linha de Pesquisa - Product 1" next="//@elements.0/@process.3/@activities.9">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F2_3" description="Executar o Procedimento do Teste SG-P2_F2_3">
+          <artefacts name="Caso de Teste SG_F2_3" description="Detalhes do caso de teste SG_F2_3"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F2_3" description="Descrever o resultado da CR SG-P2_F2_3">
+          <artefacts name="CR SG-P2_F2_3" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F2_3" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F2_4" description="Inserir uma nova linha de pesquisa - Product 1" next="//@elements.0/@process.3/@activities.10">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F2_4" description="Executar o Procedimento do Teste SG-P2_F2_4">
+          <artefacts name="Caso de Teste SG_F2_4" description="Detalhes do caso de teste SG_F2_4"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F2_4" description="Descrever o resultado do CT SG-P2_F2_4">
+          <artefacts name="CR SG-P2_F2_4" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F2_4" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F2_5" description="Associar uma Publica&#xe7;&#xe3;o a uma linha - Product 1" next="//@elements.0/@process.3/@activities.11">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F2_5" description="Executar o Procedimento do Teste SG-P2_F2_5">
+          <artefacts name="Caso de Teste SG_F2_5" description="Detalhes do caso de teste SG_F2_5"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F2_5" description="Descrever o resultado do CT SG-P2_F2_5">
+          <artefacts name="CR SG-P2_F2_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F2_5" type="output"/>
+        </tasks>
+      </activities>
+      <activities name="SG-P2_F2_6" description="Editar uma Linha de Pesquisa - Product 1">
+        <role name="Subject"/>
+        <tasks name="Executar CT SG-P2_F2_5" description="Executar o Procedimento do Teste SG-P2_F2_5">
+          <artefacts name="Caso de Teste SG_F2_6" description="Detalhes do caso de teste SG_F2_6"/>
+        </tasks>
+        <tasks name="Reportar CR SG-P2_F2_5" description="Descrever o resultado do CT SG-P2_F2_5">
+          <artefacts name="CR SG-P2_F2_5" description="Resultado da Execu&#xe7;&#xe3;o do Caso de Teste SG-P2_F2_5" type="output"/>
+        </tasks>
+      </activities>
+    </process>
+    <metrics name="TimeTesting-ST-F1-Product1" relatesTo="//@elements.0/@process.0" description="Tempo de execu&#xe7;&#xe3;o dos casos de Testes da F1 no P1">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.0" activityEnd="//@elements.0/@process.0/@activities.5"/>
+    </metrics>
+    <metrics name="TimeTesting-ST-F1-Product2" relatesTo="//@elements.0/@process.0" description="Tempo de execu&#xe7;&#xe3;o dos casos de Testes da F1 no P1">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.6" activityEnd="//@elements.0/@process.0/@activities.11"/>
+    </metrics>
+    <metrics name="TimeExecutingTest_ST-F1-Product1" relatesTo="//@elements.0/@process.0" description="Test case execution time - F1 in P1">
+      <detail xsi:type="expDSL:TaskMetric" tasks="//@elements.0/@process.0/@activities.0/@tasks.0 //@elements.0/@process.0/@activities.1/@tasks.0 //@elements.0/@process.0/@activities.2/@tasks.0 //@elements.0/@process.0/@activities.3/@tasks.0 //@elements.0/@process.0/@activities.4/@tasks.0 //@elements.0/@process.0/@activities.5/@tasks.0"/>
+    </metrics>
+    <metrics name="TimeReportingCR_ST-F1-Product1" relatesTo="//@elements.0/@process.0" description="Reporting CR time - F1 in P1">
+      <detail xsi:type="expDSL:TaskMetric" tasks="//@elements.0/@process.0/@activities.0/@tasks.1 //@elements.0/@process.0/@activities.1/@tasks.1 //@elements.0/@process.0/@activities.2/@tasks.1 //@elements.0/@process.0/@activities.9/@tasks.1 //@elements.0/@process.0/@activities.10/@tasks.1 //@elements.0/@process.0/@activities.11/@tasks.1"/>
+    </metrics>
+    <metrics name="TimeExecutingTest_ST-F2-Product2" relatesTo="//@elements.0/@process.1" description="Tempo de execu&#xe7;&#xe3;o dos casos de teste da F2 no P2">
+      <detail xsi:type="expDSL:TaskMetric" tasks="//@elements.0/@process.1/@activities.6/@tasks.0 //@elements.0/@process.1/@activities.7/@tasks.0 //@elements.0/@process.1/@activities.8/@tasks.0 //@elements.0/@process.1/@activities.9/@tasks.0 //@elements.0/@process.1/@activities.10/@tasks.0 //@elements.0/@process.1/@activities.11/@tasks.0"/>
+    </metrics>
+    <metrics name="TimeReportingTest_ST-F2-Product2" relatesTo="//@elements.0/@process.1" description="Tempo de execu&#xe7;&#xe3;o dos casos de teste da F2 no P2">
+      <detail xsi:type="expDSL:TaskMetric" tasks="//@elements.0/@process.1/@activities.6/@tasks.1 //@elements.0/@process.1/@activities.7/@tasks.1 //@elements.0/@process.1/@activities.8/@tasks.1 //@elements.0/@process.1/@activities.9/@tasks.1 //@elements.0/@process.1/@activities.10/@tasks.1 //@elements.0/@process.1/@activities.11/@tasks.1"/>
+    </metrics>
+    <experiments name="TestDesignRCBD" type="RCBD - Randomized Complete Block Design" internalReplication="4">
+      <parameter name="Participants have to pause time for asking questions"/>
+      <parameter name="The LPS complexity is low"/>
+      <parameter name="Artefacts are written in the participant source language"/>
+      <parameter name="Participants are undergraduating students"/>
+      <factor name="TestTechnique" isDesiredVariation="True">
+        <level name="Generic"/>
+        <level name="Specific"/>
+      </factor>
+      <factor name="Feature" isDesiredVariation="False">
+        <level name="F1"/>
+        <level name="F2"/>
+      </factor>
+      <link procedure="//@elements.0/@process.0" treatment="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.1/@level.0"/>
+      <link procedure="//@elements.0/@process.1" treatment="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.1/@level.1"/>
+      <link procedure="//@elements.0/@process.2" treatment="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.1/@level.0"/>
+      <link procedure="//@elements.0/@process.3" treatment="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.1/@level.1"/>
+    </experiments>
+    <questionnaire name="Experiment Feedback" questionnaireType="Pos">
+      <question name="Q1 - Scholling" description="What is your scholling:" type="ComboBox">
+        <alternatives description="Undergraduate student"/>
+        <alternatives description="Graduate"/>
+        <alternatives description="Graduate student"/>
+        <alternatives description="Master"/>
+      </question>
+      <question name="Q2 - Research theme" description="What is your research theme?"/>
+      <question name="Q3 - ExperienceTest" description="Have you ever worked as a software tester?" type="ComboBox" req="1">
+        <alternatives description="Yes"/>
+        <alternatives description="No"/>
+      </question>
+      <question name="Q4 - ExperienceBlackBoxTests" description="If yes, have you already worked with black-box tests &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(based on use case specifications)?" type="ComboBox">
+        <alternatives description="Yes"/>
+        <alternatives description="No"/>
+      </question>
+      <question name="Q5 - TestExperienceDetails" description="Describe your previous experience working with tests:" type="Paragraph Text"/>
+    </questionnaire>
+    <questionnaire name="Scholling">
+      <question name="Nome" description="Qual seu nome:"/>
+      <question name="Grau de Escolaridade" description="Qual o grau de escolaridade:" type="ComboBox">
+        <alternatives description="Gradua&#xe7;&#xe3;o Em Andamento"/>
+        <alternatives description="Gradua&#xe7;&#xe3;o Completa"/>
+        <alternatives description="Mestrado Incompleto"/>
+        <alternatives description="Mestrado Completo"/>
+      </question>
+      <question name="Q1.ExperienciaTestes" description="J&#xe1; trabalhou ou teve experi&#xea;ncia com testes de software?" type="ComboBox" req="1">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+      <question name="Q2.DetalhesExperienciaTestes" description="Se sim, relate brevemente sua experi&#xea;ncia?" type="ComboBox">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+      <question name="Q3.DisciplinaLPS" description="J&#xe1; pagou a disciplina de Linhas de Product de Software com Paulo Borba?" type="ComboBox">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+      <question name="Q4.FamiliaridadeRGMS" description="Se sim, &#xe9; familiarizado com a linha RGMS e suas funcionalidades?" type="Paragraph Text"/>
+      <question name="Q5.ComentariosExtra" description="Participou do experimento passado?" type="ComboBox">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+    </questionnaire>
+  </elements>
+</expDSL:Model>

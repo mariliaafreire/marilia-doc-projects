@@ -9,10 +9,11 @@ package org.xtext.project.expDSL.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.project.expDSL.Activity;
 import org.xtext.project.expDSL.ActivityMetric;
 import org.xtext.project.expDSL.ExpDSLPackage;
 
@@ -30,208 +31,203 @@ import org.xtext.project.expDSL.ExpDSLPackage;
  *
  * @generated
  */
-public class ActivityMetricImpl extends MinimalEObjectImpl.Container implements ActivityMetric
+public class ActivityMetricImpl extends DetailImpl implements ActivityMetric
 {
   /**
-   * The default value of the '{@link #getActivityBegin() <em>Activity Begin</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getActivityBegin() <em>Activity Begin</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActivityBegin()
-   * @generated
-   * @ordered
-   */
-  protected static final String ACTIVITY_BEGIN_EDEFAULT = null;
+	 * @see #getActivityBegin()
+	 * @generated
+	 * @ordered
+	 */
+  protected Activity activityBegin;
 
   /**
-   * The cached value of the '{@link #getActivityBegin() <em>Activity Begin</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getActivityEnd() <em>Activity End</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActivityBegin()
-   * @generated
-   * @ordered
-   */
-  protected String activityBegin = ACTIVITY_BEGIN_EDEFAULT;
+	 * @see #getActivityEnd()
+	 * @generated
+	 * @ordered
+	 */
+  protected Activity activityEnd;
 
   /**
-   * The default value of the '{@link #getActivityEnd() <em>Activity End</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActivityEnd()
-   * @generated
-   * @ordered
-   */
-  protected static final String ACTIVITY_END_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getActivityEnd() <em>Activity End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getActivityEnd()
-   * @generated
-   * @ordered
-   */
-  protected String activityEnd = ACTIVITY_END_EDEFAULT;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ActivityMetricImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return ExpDSLPackage.Literals.ACTIVITY_METRIC;
-  }
+		return ExpDSLPackage.Literals.ACTIVITY_METRIC;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getActivityBegin()
+	 * @generated
+	 */
+  public Activity getActivityBegin()
   {
-    return activityBegin;
-  }
+		if (activityBegin != null && activityBegin.eIsProxy()) {
+			InternalEObject oldActivityBegin = (InternalEObject)activityBegin;
+			activityBegin = (Activity)eResolveProxy(oldActivityBegin);
+			if (activityBegin != oldActivityBegin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN, oldActivityBegin, activityBegin));
+			}
+		}
+		return activityBegin;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setActivityBegin(String newActivityBegin)
+	 * @generated
+	 */
+  public Activity basicGetActivityBegin()
   {
-    String oldActivityBegin = activityBegin;
-    activityBegin = newActivityBegin;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN, oldActivityBegin, activityBegin));
-  }
+		return activityBegin;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getActivityEnd()
+	 * @generated
+	 */
+  public void setActivityBegin(Activity newActivityBegin)
   {
-    return activityEnd;
-  }
+		Activity oldActivityBegin = activityBegin;
+		activityBegin = newActivityBegin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN, oldActivityBegin, activityBegin));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setActivityEnd(String newActivityEnd)
+	 * @generated
+	 */
+  public Activity getActivityEnd()
   {
-    String oldActivityEnd = activityEnd;
-    activityEnd = newActivityEnd;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END, oldActivityEnd, activityEnd));
-  }
+		if (activityEnd != null && activityEnd.eIsProxy()) {
+			InternalEObject oldActivityEnd = (InternalEObject)activityEnd;
+			activityEnd = (Activity)eResolveProxy(oldActivityEnd);
+			if (activityEnd != oldActivityEnd) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END, oldActivityEnd, activityEnd));
+			}
+		}
+		return activityEnd;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
+  public Activity basicGetActivityEnd()
+  {
+		return activityEnd;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setActivityEnd(Activity newActivityEnd)
+  {
+		Activity oldActivityEnd = activityEnd;
+		activityEnd = newActivityEnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END, oldActivityEnd, activityEnd));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
-        return getActivityBegin();
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
-        return getActivityEnd();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
+				if (resolve) return getActivityBegin();
+				return basicGetActivityBegin();
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
+				if (resolve) return getActivityEnd();
+				return basicGetActivityEnd();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
-        setActivityBegin((String)newValue);
-        return;
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
-        setActivityEnd((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
+				setActivityBegin((Activity)newValue);
+				return;
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
+				setActivityEnd((Activity)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
-        setActivityBegin(ACTIVITY_BEGIN_EDEFAULT);
-        return;
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
-        setActivityEnd(ACTIVITY_END_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
+				setActivityBegin((Activity)null);
+				return;
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
+				setActivityEnd((Activity)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
-        return ACTIVITY_BEGIN_EDEFAULT == null ? activityBegin != null : !ACTIVITY_BEGIN_EDEFAULT.equals(activityBegin);
-      case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
-        return ACTIVITY_END_EDEFAULT == null ? activityEnd != null : !ACTIVITY_END_EDEFAULT.equals(activityEnd);
-    }
-    return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (activityBegin: ");
-    result.append(activityBegin);
-    result.append(", activityEnd: ");
-    result.append(activityEnd);
-    result.append(')');
-    return result.toString();
-  }
+		switch (featureID) {
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_BEGIN:
+				return activityBegin != null;
+			case ExpDSLPackage.ACTIVITY_METRIC__ACTIVITY_END:
+				return activityEnd != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ActivityMetricImpl

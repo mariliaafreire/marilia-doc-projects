@@ -1,0 +1,256 @@
+Experiment "2 º Comparison of Java and C++" 
+
+    Process "RCBD_ComparisonProcessJava-PhoneBook"{
+   	
+    Activity "PhoneBook_UseCaseProject" "Create the project class diagram based on the use case specification and in the project architecture" 
+    		"PhoneBook_ImplementUseCase" {
+    	Task "DesignClassDiagram" description "Design Class Diagram" 
+    	 	artefacts artefact "PhoneBook_UseCaseSpecfication" description "Description of Use Case" type input;
+					  artefact "PhoneBook_ClassDiagram" description "Class Diagram" type output; Role "Subject";;
+		Task "DesignScreens" description "Design of Screens" 
+			artefacts  artefact "PhoneBook_UseCaseSpecfication" description "Description of Use Case" type input;
+					   artefact "PhoneBook_PrototypeInterface" description "Prototype of interface" type output; Role "Subject";;
+	}
+	Activity "PhoneBook_ImplementUseCase" "Implementation of Use Case" "UseCaseTest"{
+		 Task "CodifyJavaPhoneBook_UseCase"description "Create the PhoneBook UseCase Java code"
+		 artefacts artefact "ClassDiagram" description "Class Diagram" type input;
+    	      		artefact "PhoneBook_PrototypeInterface" description "Prototype of interface" type input; 
+    	      		artefact "PhoneBook_JavaUseCaseCode" description "Implementation of Java Use Case" type output; Role "Subject";;
+	}
+	Activity "UseCaseTest" "Perform Test of Use Case"	{
+		Task "CreateJavaPhoneBookTestCases" description "Develop the test cases and test data for the requirements to be tested" 
+				artefacts  artefact "PhoneBook_JavaUseCaseSpecfication" description "Description of Use Case" type input;
+						   artefact "PhoneBook_JavaTestCase" description "Specification of a set of test"  type output; Role "Subject";;
+		Task "PhoneBook_RunTests" description "Run the appropriate test cases, analyze results" 
+				artefacts artefact "JavaTestCase" description "Specification of a set of test"  type input; 
+						artefact "PhoneBook_JavaUseCaseCode" description "Implementation of Java Use Case" type input;
+					   artefact "PhoneBook_TestLog" description "Report that is captured during a run of tests" type output; Role "Subject";;
+	}
+	
+	}
+
+Process "RCBD_ComparisonProcessCPP-PhoneBook"{
+   	
+    Activity "PhoneBook_UseCaseProject" "Create the project class diagram based on the use case specification and in the project architecture" 
+    		"PhoneBook_ImplementUseCase" {
+    	Task "DesignClassDiagram" description "Design Class Diagram" 
+    	 	artefacts artefact "PhoneBook_UseCaseSpecfication" description "Description of Use Case" type input;
+					  artefact "PhoneBook_ClassDiagram" description "Class Diagram" type output; Role "Subject";;
+		Task "DesignScreens" description "Design of Screens" 
+			artefacts  artefact "PhoneBook_UseCaseSpecfication" description "Description of Use Case" type input;
+					   artefact "PhoneBook_PrototypeInterface" description "Prototype of interface" type output; Role "Subject";;
+	}
+	Activity "PhoneBook_ImplementUseCase" "Implementation of Use Case" "UseCaseTest"{
+		 Task "CodifyCPPPhoneBook_UseCase"description "Create the PhoneBook UseCase  CPP code"artefacts artefact "ClassDiagram" description "Class Diagram" type input;
+    	      		artefact "PhoneBook_PrototypeInterface" description "Prototype of interface" type input; 
+    	      		artefact "PhoneBook_ CPPUseCaseCode" description "Implementation of  CPP Use Case" type output; Role "Subject";;
+	}
+	Activity "UseCaseTest" "Perform Test of Use Case"	{
+		Task "CreatePhoneBookTestCases" description "Develop the test cases and test data for the requirements to be tested" 
+				artefacts  artefact "PhoneBook_UseCaseSpecfication" description "Description of Use Case" type input;
+						   artefact "PhoneBook_ CPPTestCase" description "Specification of a set of  CPP test"  type output; Role "Subject";;
+		Task "PhoneBook_RunTests" description "Run the appropriate test cases, analyze results" 
+				artefacts artefact " CPPTestCase" description "Specification of a set of  CPP test"  type input; 
+						artefact "PhoneBook_ CPPUseCaseCode" description "Implementation of  CPP Use Case" type input;
+					   artefact "PhoneBook_TestLog" description "Report that is captured during a run of tests" type output; Role "Subject";;
+	}
+	
+	}
+
+ Process "RCBD_ComparisonProcessJava-EventManagement"{
+   	
+    Activity "EventManagement_UseCaseProject" "Create the project class diagram based on the use case specification and in the project architecture" 
+    		"EventManagement_ImplementUseCase" {
+    	Task "DesignClassDiagram" description "Design Class Diagram" 
+    	 	artefacts artefact "EventManagement_UseCaseSpecfication" description "Description of Use Case" type input;
+					  artefact "EventManagement_ClassDiagram" description "Class Diagram" type output; Role "Subject";;
+		Task "DesignScreens" description "Design of Screens" 
+			artefacts  artefact "EventManagement_UseCaseSpecfication" description "Description of Use Case" type input;
+					   artefact "EventManagement_PrototypeInterface" description "Prototype of interface" type output; Role "Subject";;
+	}
+	Activity "EventManagement_ImplementUseCase" "Implementation of Use Case" "UseCaseTest"{
+		 Task "CodifyJavaEventManagement_UseCase"description "Create the EventManagement UseCase Java code"artefacts artefact "ClassDiagram" description "Class Diagram" type input;
+    	      		artefact "EventManagement_PrototypeInterface" description "Prototype of interface" type input; 
+    	      		artefact "EventManagement_JavaUseCaseCode" description "Implementation of Java Use Case" type output; Role "Subject";;
+	}
+	Activity "UseCaseTest" "Perform Test of Use Case"	{
+		Task "CreateJavaEventManagementTestCases" description "Develop the test cases and test data for the requirements to be tested" 
+				artefacts  artefact "EventManagement_JavaUseCaseSpecfication" description "Description of Use Case" type input;
+						   artefact "EventManagement_JavaTestCase" description "Specification of a set of test"  type output; Role "Subject";;
+		Task "EventManagement_RunTests" description "Run the appropriate test cases, analyze results" 
+				artefacts artefact "JavaTestCase" description "Specification of a set of test"  type input; 
+						artefact "EventManagement_JavaUseCaseCode" description "Implementation of Java Use Case" type input;
+					   artefact "EventManagement_TestLog" description "Report that is captured during a run of tests" type output; Role "Subject";;
+	}
+	
+	}
+
+Process "RCBD_ComparisonProcessCPP-EventManagement"{
+   	
+    Activity "EventManagement_UseCaseProject" "Create the project class diagram based on the use case specification and in the project architecture" 
+    		"EventManagement_ImplementUseCase" {
+    	Task "DesignClassDiagram" description "Design Class Diagram" 
+    	 	artefacts artefact "EventManagement_UseCaseSpecfication" description "Description of Use Case" type input;
+					  artefact "EventManagement_ClassDiagram" description "Class Diagram" type output; Role "Subject";;
+		Task "DesignScreens" description "Design of Screens" 
+			artefacts  artefact "EventManagement_UseCaseSpecfication" description "Description of Use Case" type input;
+					   artefact "EventManagement_PrototypeInterface" description "Prototype of interface" type output; Role "Subject";;
+	}
+	Activity "EventManagement_ImplementUseCase" "Implementation of Use Case" "UseCaseTest"{
+		 Task "CodifyCPPEventManagement_UseCase"description "Create the EventManagement UseCase  CPP code"artefacts artefact "ClassDiagram" description "Class Diagram" type input;
+    	      		artefact "EventManagement_PrototypeInterface" description "Prototype of interface" type input; 
+    	      		artefact "EventManagement_ CPPUseCaseCode" description "Implementation of  CPP Use Case" type output; Role "Subject";;
+	}
+	Activity "UseCaseTest" "Perform Test of Use Case"	{
+		Task "CreateEventManagementTestCases" description "Develop the test cases and test data for the requirements to be tested" 
+				artefacts  artefact "EventManagement_UseCaseSpecfication" description "Description of Use Case" type input;
+						   artefact "EventManagement_ CPPTestCase" description "Specification of a set of  CPP test"  type output; Role "Subject";;
+		Task "EventManagement_RunTests" description "Run the appropriate test cases, analyze results" 
+				artefacts artefact " CPPTestCase" description "Specification of a set of  CPP test"  type input; 
+						artefact "EventManagement_ CPPUseCaseCode" description "Implementation of  CPP Use Case" type input;
+					   artefact "EventManagement_TestLog" description "Report that is captured during a run of tests" type output; Role "Subject";;
+	}	
+	}
+	
+	
+	
+//Experiment metrics	
+ Metric "ProjectTime"  relates "RCBD_ComparisonProcessJava-PhoneBook"{ 
+ 	description "Calculate the duration of tasks related to project the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessJava-PhoneBook.PhoneBook_UseCaseProject"
+ 	}
+ Metric "CodeTime" relates "RCBD_ComparisonProcessJava-PhoneBook" {
+ 	description "Calculate the duration of tasks related to implement the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessJava-PhoneBook.PhoneBook_ImplementUseCase"
+ }
+ Metric "TestTime" relates "RCBD_ComparisonProcessJava-PhoneBook" {
+ 	description "Calculate the duration of tasks related to test the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessJava-PhoneBook.UseCaseTest"
+ }
+ Metric "CodeDefect" relates "RCBD_ComparisonProcessJava-PhoneBook" {
+ 	description "Calculate the number of defects found in the UseCase code"
+ 	artefacts "PhoneBook_JavaUseCaseCode"
+ }
+ //
+ Metric "ProjectTime2"  relates "RCBD_ComparisonProcessCPP-PhoneBook"{ 
+ 	description "Calculate the duration of tasks related to project the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessCPP-PhoneBook.PhoneBook_UseCaseProject"
+ 	}
+ Metric "CodeTime2" relates "RCBD_ComparisonProcessCPP-PhoneBook" {
+ 	description "Calculate the duration of tasks related to implement the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessCPP-PhoneBook.PhoneBook_ImplementUseCase"
+ }
+ Metric "TestTime2" relates "RCBD_ComparisonProcessCPP-PhoneBook" {
+ 	description "Calculate the duration of tasks related to test the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessCPP-PhoneBook.UseCaseTest"
+ }
+ Metric "CodeDefect2" relates "RCBD_ComparisonProcessCPP-PhoneBook" {
+ 	description "Calculate the number of defects found in the UseCase code"
+ 	artefacts "PhoneBook_CPPUseCaseCode"
+ }
+ //
+  Metric "ProjectTime3"  relates "RCBD_ComparisonProcessJava-EventManagement"{ 
+ 	description "Calculate the duration of tasks related to project the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessJava-EventManagement.EventManagement_UseCaseProject"
+ 	}
+ Metric "CodeTime3" relates "RCBD_ComparisonProcessJava-EventManagement" {
+ 	description "Calculate the duration of tasks related to implement the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessJava-EventManagement.EventManagement_ImplementUseCase"
+ }
+ Metric "TestTime3" relates "RCBD_ComparisonProcessJava-EventManagement" {
+ 	description "Calculate the duration of tasks related to test the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessJava-EventManagement.UseCaseTest"
+ }
+ Metric "CodeDefect3" relates "RCBD_ComparisonProcessJava-EventManagement" {
+ 	description "Calculate the number of defects found in the UseCase code"
+ 	artefacts "EventManagement_JavaUseCaseCode"
+ }
+ //
+  Metric "ProjectTime4"  relates "RCBD_ComparisonProcessCPP-EventManagement"{ 
+ 	description "Calculate the duration of tasks related to project the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessCPP-EventManagement.EventManagement_UseCaseProject"
+ 	}
+ Metric "CodeTime4" relates "RCBD_ComparisonProcessCPP-EventManagement" {
+ 	description "Calculate the duration of tasks related to implement the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessCPP-EventManagement.EventManagement_ImplementUseCase"
+ }
+ Metric "TestTime4" relates "RCBD_ComparisonProcessCPP-EventManagement" {
+ 	description "Calculate the duration of tasks related to test the useCase"
+ 	form continuous
+ 	unit minutes
+ 	activityBegin "RCBD_ComparisonProcessCPP-EventManagement.UseCaseTest"
+ }
+ Metric "CodeDefect4" relates "RCBD_ComparisonProcessCPP-EventManagement" {
+ 	description "Calculate the number of defects found in the UseCase code"
+ 	artefacts "EventManagement_CPPUseCaseCode"
+ }
+ 
+ //Experiment details
+ 
+ Experimental Plan Design "RCBD_ComparisonPlanning" 
+        type RCBD - Randomized Complete Block Design {
+     	   Factor "ProgammingLanguage" isDesiredVariation True 
+        		Level "Java";
+           		Level "C++";
+        ;  
+        Factor "System" isDesiredVariation False
+        	Level "Phonebook";
+            Level "EventManagement";                             
+        ;                           
+ }
+  
+Questionnaires 
+ Questionnaire "Experience Questionnaire"  type Pre {
+ 
+				"Question1" {
+					description "Qual sua experiência no desenvolvimento de software?"
+					type ComboBox
+					required 1	
+					Alternatives
+					Option	"Iniciante"
+					Option	"Profissional"
+					Option	"Especialista"																								
+				}           			
+				"Question2" {
+					description "Qual o seu tempo de experiência com Java?"
+					type ComboBox
+					required 1
+					Alternatives
+					Option	"Menos de 1 ano"
+					Option "Entre 1 e 3"
+					Option	"Mais de 3 anos"																								
+				}           	
+				
+				"Question 4" {
+					description "Qual o tempo de experiêcia com CPP?"
+					type ComboBox
+					required 1
+					Alternatives
+					Option	"Menos de 1 ano"
+					Option	"Entre 1 e 3"
+					Option	"Mais de 3 anos"																								
+				}
+			};
+				

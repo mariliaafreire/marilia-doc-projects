@@ -5,117 +5,78 @@
     nsURI="http://www.xtext.org/project/ExpDSL" nsPrefix="expDSL">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentElement"
-        containment="true"/>
+        eType="#//ExperimentElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExperimentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="process" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process"
-        containment="true"/>
+        eType="#//Process" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="metrics" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics"
-        containment="true"/>
+        eType="#//Metrics" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="experiments" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ExperimentalPlan"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="question" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Questions"
-        containment="true"/>
+        eType="#//ExperimentalPlan" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionnaire" upperBound="-1"
+        eType="#//Questionnaire" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Activity"
-        containment="true"/>
+        eType="#//Activity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Activity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Artefact"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="next" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Role"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" unique="false" upperBound="-1"
+        eType="#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" upperBound="-1"
+        eType="#//Artefact" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//Role"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Task"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Artefact">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//Task" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" upperBound="-1"
+        eType="#//Artefact" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//Role"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Role">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExperimentalPlan">
+  <eClassifiers xsi:type="ecore:EClass" name="Artefact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//DesignType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="factor" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Factor"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ArtefactType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Factor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="level" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Levels"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Levels">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArtefactType">
+    <eLiterals name="in_" literal="input"/>
+    <eLiterals name="out_" value="1" literal="output"/>
+    <eLiterals name="inout_" value="2" literal="inoutput"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metrics">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" eType="#//Process"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ColectType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//MetricUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="details" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//ActivityMetric"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="#//ColectType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//MetricUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="detail" upperBound="-1"
+        eType="#//Detail" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActivityMetric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityBegin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Detail"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityMetric" eSuperTypes="#//Detail">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityBegin" eType="#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityEnd" eType="#//Activity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TaskMetric" eSuperTypes="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activities" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskMetric" eSuperTypes="#//Detail">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" unique="false" upperBound="-1"
+        eType="#//Task"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArtefactMetric" eSuperTypes="platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Metrics">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artefact" eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Artefact"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Questions">
+  <eClassifiers xsi:type="ecore:EClass" name="ArtefactMetric" eSuperTypes="#//Detail">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//AnswerType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="req" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
-        eType="ecore:EClass platform:/resource/br.ufrn.dimap.ase/src-gen/org/xtext/project/ExpDSL.ecore#//Alternatives"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Alternatives">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DesignType">
-    <eLiterals name="CDR" literal="CRD – Completely Randomized Design"/>
-    <eLiterals name="RCDB" value="1" literal="RCBD – Randomized Complete Block Design"/>
-    <eLiterals name="LS" value="2" literal="LS – Latin Square"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AnswerType">
-    <eLiterals name="ComboBox" literal="ComboBox"/>
-    <eLiterals name="CheckBoxes" value="1" literal="CheckBoxes"/>
-    <eLiterals name="OptionButtons" value="2" literal="OptionButtons"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MetricType">
-    <eLiterals name="hardData" literal="hardData"/>
-    <eLiterals name="softData" value="1" literal="softData"/>
-    <eLiterals name="normalizedData" value="2" literal="normalizedData"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" eType="#//Artefact"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ColectType">
     <eLiterals name="continuous" literal="continuous"/>
@@ -124,5 +85,72 @@
   <eClassifiers xsi:type="ecore:EEnum" name="MetricUnit">
     <eLiterals name="minutes" literal="minutes"/>
     <eLiterals name="uc" value="1" literal="uc"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExperimentalPlan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DesignType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factor" upperBound="-1"
+        eType="#//Factor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalReplication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Factor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDesiredVariation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="level" upperBound="-1"
+        eType="#//Levels" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Levels">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="procedure" unique="false"
+        upperBound="-1" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" unique="false"
+        upperBound="-1" eType="#//Levels"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DesignType">
+    <eLiterals name="CDR" literal="CRD - Completely Randomized Design"/>
+    <eLiterals name="RCBD" value="1" literal="RCBD - Randomized Complete Block Design"/>
+    <eLiterals name="LS" value="2" literal="LS - Latin Square"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Questionnaire">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" unique="false"
+        upperBound="-1" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="questionnaireType" eType="#//QuestionnaireType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="question" upperBound="-1"
+        eType="#//Question" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QuestionnaireType">
+    <eLiterals name="pre" literal="Pre"/>
+    <eLiterals name="pos" value="1" literal="Pos"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Question">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AnswerType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="req" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
+        eType="#//Alternatives" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alternatives">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AnswerType">
+    <eLiterals name="Text" literal="Text"/>
+    <eLiterals name="ParagraphText" value="1" literal="Paragraph Text"/>
+    <eLiterals name="MultipleChoice" value="2" literal="Multiple Choice"/>
+    <eLiterals name="ComboBox" value="3" literal="ComboBox"/>
+    <eLiterals name="CheckBoxes" value="4" literal="CheckBoxes"/>
+    <eLiterals name="Scale" value="5" literal="Scale"/>
+    <eLiterals name="Grid" value="6" literal="Grid"/>
   </eClassifiers>
 </ecore:EPackage>

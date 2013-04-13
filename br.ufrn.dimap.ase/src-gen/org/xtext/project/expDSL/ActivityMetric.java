@@ -6,7 +6,6 @@
  */
 package org.xtext.project.expDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,58 +24,58 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ActivityMetric extends EObject
+public interface ActivityMetric extends Detail
 {
   /**
-   * Returns the value of the '<em><b>Activity Begin</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Activity Begin</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Activity Begin</em>' attribute isn't clear,
+   * If the meaning of the '<em>Activity Begin</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Activity Begin</em>' attribute.
-   * @see #setActivityBegin(String)
-   * @see org.xtext.project.expDSL.ExpDSLPackage#getActivityMetric_ActivityBegin()
-   * @model
-   * @generated
-   */
-  String getActivityBegin();
+	 * @return the value of the '<em>Activity Begin</em>' reference.
+	 * @see #setActivityBegin(Activity)
+	 * @see org.xtext.project.expDSL.ExpDSLPackage#getActivityMetric_ActivityBegin()
+	 * @model
+	 * @generated
+	 */
+  Activity getActivityBegin();
 
   /**
-   * Sets the value of the '{@link org.xtext.project.expDSL.ActivityMetric#getActivityBegin <em>Activity Begin</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.project.expDSL.ActivityMetric#getActivityBegin <em>Activity Begin</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Activity Begin</em>' attribute.
-   * @see #getActivityBegin()
-   * @generated
-   */
-  void setActivityBegin(String value);
+	 * @param value the new value of the '<em>Activity Begin</em>' reference.
+	 * @see #getActivityBegin()
+	 * @generated
+	 */
+  void setActivityBegin(Activity value);
 
   /**
-   * Returns the value of the '<em><b>Activity End</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Activity End</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Activity End</em>' attribute isn't clear,
+   * If the meaning of the '<em>Activity End</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Activity End</em>' attribute.
-   * @see #setActivityEnd(String)
-   * @see org.xtext.project.expDSL.ExpDSLPackage#getActivityMetric_ActivityEnd()
-   * @model
-   * @generated
-   */
-  String getActivityEnd();
+	 * @return the value of the '<em>Activity End</em>' reference.
+	 * @see #setActivityEnd(Activity)
+	 * @see org.xtext.project.expDSL.ExpDSLPackage#getActivityMetric_ActivityEnd()
+	 * @model
+	 * @generated
+	 */
+  Activity getActivityEnd();
 
   /**
-   * Sets the value of the '{@link org.xtext.project.expDSL.ActivityMetric#getActivityEnd <em>Activity End</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.project.expDSL.ActivityMetric#getActivityEnd <em>Activity End</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Activity End</em>' attribute.
-   * @see #getActivityEnd()
-   * @generated
-   */
-  void setActivityEnd(String value);
+	 * @param value the new value of the '<em>Activity End</em>' reference.
+	 * @see #getActivityEnd()
+	 * @generated
+	 */
+  void setActivityEnd(Activity value);
 
 } // ActivityMetric

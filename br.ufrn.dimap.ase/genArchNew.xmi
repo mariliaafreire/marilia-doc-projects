@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDSL:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDSL="http://www.xtext.org/project/ExpDSL">
+  <elements name="GenArchElder">
+    <process name="EShop">
+      <activities id="P1" name="Atv P1" description="Atividade A1">
+        <next>P2</next>
+      </activities>
+      <activities id="P2" name="Atv P2" description="Atividade A2"/>
+    </process>
+    <process name="Byer">
+      <activities id="B1" name="Atv 1" description="Atividade B1">
+        <next>B2</next>
+        <tasks name="T1" description="Tarefa 1 da atividade B1">
+          <artefacts name="classX.java" description="teste1"/>
+          <artefacts name="resp.txt" type="out" description="teste2"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="T2" description="Tarefa 2 da atividade B1">
+          <artefacts name="classY.java" description="resp.txt"/>
+          <artefacts name="resp2.txt" type="out" description="teste3"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities id="B2" name="Act 2" description="Atividade B2 description"/>
+    </process>
+    <metrics name="TEXEC" relatesTo="//@elements.0/@process.0" description="Calcutale spent time for some activities" id="ST_Development">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.0" activityEnd="//@elements.0/@process.0/@activities.1"/>
+    </metrics>
+    <metrics name="ABC" relatesTo="//@elements.0/@process.1" description="asdasdasd" id="ABCD">
+      <detail xsi:type="expDSL:TaskMetric" tasks="//@elements.0/@process.1/@activities.0/@tasks.0 //@elements.0/@process.1/@activities.0/@tasks.1"/>
+    </metrics>
+    <metrics name="ART" relatesTo="//@elements.0/@process.0" description="adasd" id="Id">
+      <detail xsi:type="expDSL:TaskMetric" tasks="//@elements.0/@process.1/@activities.0/@tasks.1"/>
+    </metrics>
+    <experiments name="QuadradoLatino" type="LS &#x2013; Latin Square">
+      <factor name="Tool" main="True">
+        <level name="GenArch+"/>
+        <level name="Pure::Variants"/>
+        <level name="CIDE"/>
+      </factor>
+      <factor name="Subject" main="True"/>
+      <factor name="LPS" main="False">
+        <level name="EShop"/>
+        <level name="Byer"/>
+        <level name="Other"/>
+      </factor>
+    </experiments>
+  </elements>
+</expDSL:Model>

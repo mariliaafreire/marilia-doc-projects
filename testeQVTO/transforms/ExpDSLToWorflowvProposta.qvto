@@ -4,10 +4,8 @@ modeltype JPDL uses jpdl31('urn:jbpm.org:jpdl-3.1');
 
 
 transformation dslToWorflow(in dsl : DSL, out outModel: JPDL);
-	
 main() {
 	
-//TODO INICIO DA CADEIA DE TRANSF. APÓS ALTERAÇÕES
     log('starting transformation...');
     dsl.rootObjects()[DSL::Model]->map model2model();
 	log('ending transformation...');
@@ -17,30 +15,12 @@ mapping DSL::Model::model2model():JPDL::Model{
 	elements := self.elements->map model2DSLModel();
 }
 mapping DSL::ExperimentElement::model2DSLModel():JPDL::DocumentRoot	 {
-   var plan : DSL::ExperimentalPlan;
-   
-   plan := self.experiments->at(1);
-   var number: Integer;
-    /*
-   if(self.experiments->at(1).type = DSL::DesignType::LS)then {
-      	number := workNumber(plan.oclAsType(ExperimentalPlan).factor,1);   	
-	}else { if(self.experiments->at(1).type = DSL::DesignType::RCDB)then {
-		number := workNumber(plan.oclAsType(ExperimentalPlan).factor,2);
-	} else { if(self.experiments->at(1).type = DSL::DesignType::CDR) then {
-		number:= plan.oclAsType(ExperimentalPlan).internalReplication * workNumber(plan.oclAsType(ExperimentalPlan).factor,3);
-		}endif;
-	}endif;
-  }endif;*/
-  var design := self.experiments->at(1).type;
-  //number:= workNumber(plan);
-  processDefinition := self.process->map processToProcessDefinition(self.metrics,number);
+  processDefinition := self.process->map processToProcessDefinition(self.metrics,self.experiments->at(1).internalReplication);
 }
 	
-
 mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics),in num: Real) :JPDL::ProcessDefinitionType{
   
   	//cria o nó inicial e final do processo
-	
   result.startState := object JPDL::StartStateType { 
 				name := 'Starting'; 
 				
@@ -59,16 +39,12 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
 						
 			       	  transition += Sequence{start_t}
 					
-					}endif;
-				
-				}
-				
+					}endif;			
+				}				
   };
-  
   	
   result.endState := object JPDL::EndStateType { 
-				name := 'End'; 
-				
+				name := 'End'; 			
   };
   
   // cria swimlane com o papel determinado para a primeira atividade, caso exista.
@@ -85,27 +61,13 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
   
   //links
     self.allInstances(DSL::Activity)-> map ligarAoNoFinal(result)->asOrderedSet();
-	//self.allInstances(DSL::Activity)-> map ligarAosJoinsAndStart(result)->asOrderedSet(); 
 }
-
-
-/*
-mapping DSL::Process::experiment2process() :JPDL::ProcessDefinitionType {
- log('t');
-  name := self.name;
-  //self.metrics
-  taskNode:= self.activities->map act2taskNode(self.metrics)->asOrderedSet();
-  //task := self.process->map u()->asOrderedSet(); 
-  
-}
-*/
 
 mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL::Process): JPDL::TaskNodeType{
 	name := self.name;
 	description := self.description;
 	artefacts := self.artefacts->map artefact2artefact()->asOrderedSet();
 	// tratar última atividade
-	//TODO
 	self.next->forEach(i){
 		transition += object JPDL::TransitionType{
 			name := self.name+'_Transition';
@@ -115,9 +77,7 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:
 	
    var nomeInput: String;
    var i :=0;
-   metrics->forEach(ele) {
-   	
-    	
+   metrics->forEach(ele) {    	
    	if(ele.relatesTo.name.equalsIgnoreCase(pro.name)) then { // check if the metric is set to this process
    	  ele.detail->forEach(j){ 
    	  	if(j.metaClassName().equalsIgnoreCase("ActivityMetric")) then {
@@ -138,17 +98,14 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:
    				
    						}
    					}
-   						
-   					}
    				}
-   			} endif;
-   	  	}endif;
+   			}
+   		} endif;
+   	  }endif;
    	 	
-   	  };
-   	  
-   	  }endif;    
+   	 };  
+   }endif;    
   };
-   //TODO => FALTA PASSAR TODAS AS MÉTRICAS NO MÉTODO ACIMA E FILTRAR PARA ENVIAR PARA ESSE MÉTODO SÓ AS TASKMETRICS
    task := self.tasks->map task2task(metrics)->asOrderedSet();
 }
 
@@ -173,19 +130,17 @@ mapping DSL::Task::task2task(in mets:OrderedSet(DSL::Metrics)):JPDL::TaskType{
    						refName := t.name;
    						name := t.name;
    						_class := "br.ufrn.dimap.ppgsc.".concat(t.name).concat("ActionHandler");
-   				//INSERIR UM ID EM TASK
+   
    						}
    					}
-   						
-   					}
+				  }
    				}
    	  	 	}endif;
    	  	 };
    	  		
    	  	}endif;
-   	  	
-   	  };
-   	  };
+     };
+   };
 }
 	
 mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
@@ -210,17 +165,13 @@ mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
 	
 }
 
-
-
-
 //Create links to ENDNODE
 mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType){
 
 		// cria transições para o fim...
 		var i := getTransitionToFim(process);
 		
-		//It have not been used yet... for while
-		if(i>1)then{
+	   if(i>1)then{
 		
 		var join := object JPDL::JoinType {
 				name := 'joinEnd';
@@ -255,12 +206,9 @@ mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType
 	
 }
 
-
 /************
  *  QUERYS  *
  ************/
-
-
  query getTransitionToFim(in process: JPDL::ProcessDefinitionType): Integer{
     var i := 0;
     process.allInstances(JPDL::TaskNodeType)->forEach(task) {
@@ -274,7 +222,6 @@ mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType
  }
 
 //check if activity is between begin and end
-
 query checkBetween(in begin: String, in end_: String, in atual :String, in pro:DSL::Process):Boolean{
 	
  if( atual.equalsIgnoreCase(begin) or atual.equalsIgnoreCase(end_))then {
@@ -291,40 +238,10 @@ query checkBetween(in begin: String, in end_: String, in atual :String, in pro:D
      }endif;
 	    
  }endif;
- 
-/* var resultado := false;
-  log("ATIVIDADE Atual>> "+ atual + " primeira: " + begin + " ultima "+end_);
-	if(atual.equalsIgnoreCase(begin) or atual.equalsIgnoreCase(end_))then{
-		
-	   log("Sim!");
-	   return true;
-	}
-	else{
-	// multiplas predecessoras 
-	var atividadeAtual : Activity;
-	atividadeAtual = getActivity(atual,pro);
-	var nextAct := atividadeAtual.next->at(0).oclAsType(Activity).name;
-	atividadeAtual.next->forEach(act){ 
-      checkBetween(begin,end_,act,pro);
-     }
-	
-	
-		
-	p->forEach (i) {
-	     var anterior = getActivity(i. ,epfSpec);
-		log("Nome Atividade Anterior: " + next.name);
-	    resultado := (checkAncestral(i.next,metrica,epfSpec));
-	    if (resultado = true) then{
-	    	return true
-	    }endif;
-	};
-	}endif;
-	return resultado;
-*/	
 return false;
 }
 
-//MÉTODO QUE RETORNA A ATIVIDADE A PARTIR DO NOME
+//QUERY QUE RETORNA A ATIVIDADE A PARTIR DO NOME
 query getActivity(in name: String, in pro:DSL::Process):DSL::Activity {
 	var activities : Set(DSL::Activity);
 	activities := pro.allInstances(Activity);
@@ -336,8 +253,6 @@ query getActivity(in name: String, in pro:DSL::Process):DSL::Activity {
  		 }endif;
   };
 }
-
-
 
 query getProcessRole(in pro: DSL::Process): String {
 	//alwasy return the role from the first process activity or task ...
@@ -376,42 +291,3 @@ query isSuccessor(in rep: String,in act: Set(Activity)): Boolean {
 	
 }
 
-/**
-query montarOrganizacao(in exp: DSL::ExperimentalPlan): String {
-	var raw: Integer;
-	var col:Integer;
-	var org: Tuple(i:Integer, j: Integer, factor:String);
-	var mat: OrderedSet(String);
-	var lenght : Integer;
-	var i: Integer;
-	
-	lenght := 3;
-	
-		
-	if(exp.type = DesignType::LS) then {
-		exp.factor->forEach(l){
-			i:=1;
-			if(l._main = true) then {
-			
-			   l.level->forEach(c){
-				mat->at(i).concat(c.name);
-				i := i +1;
-			};
-		}endif;
-	};
-	while(raw<lenght){
-		while(col<lenght){
-			org(i:=raw,j:=col,factor:=mat->at(raw));
-		}
-	};
-	var res:String;
-	i:=1;
-	mat->forEach(k){
-		res := res.concat(mat->at(i));
-		i:= i +1;
-	};
-	}endif;
-	//log(res.toUpper());
-	return res;
-}
-*/

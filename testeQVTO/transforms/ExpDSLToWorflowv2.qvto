@@ -17,23 +17,7 @@ mapping DSL::Model::model2model():JPDL::Model{
 	elements := self.elements->map model2DSLModel();
 }
 mapping DSL::ExperimentElement::model2DSLModel():JPDL::DocumentRoot	 {
-   var plan : DSL::ExperimentalPlan;
-   
-   plan := self.experiments->at(1);
-   var number: Integer;
-    /*
-   if(self.experiments->at(1).type = DSL::DesignType::LS)then {
-      	number := workNumber(plan.oclAsType(ExperimentalPlan).factor,1);   	
-	}else { if(self.experiments->at(1).type = DSL::DesignType::RCDB)then {
-		number := workNumber(plan.oclAsType(ExperimentalPlan).factor,2);
-	} else { if(self.experiments->at(1).type = DSL::DesignType::CDR) then {
-		number:= plan.oclAsType(ExperimentalPlan).internalReplication * workNumber(plan.oclAsType(ExperimentalPlan).factor,3);
-		}endif;
-	}endif;
-  }endif;*/
-  var design := self.experiments->at(1).type;
-  //number:= workNumber(plan);
-  processDefinition := self.process->map processToProcessDefinition(self.metrics,number);
+  processDefinition := self.process->map processToProcessDefinition(self.metrics,self.experiments->at(1).internalReplication);
 }
 	
 
@@ -256,6 +240,39 @@ mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType
 }
 
 
+/*
+mapping DSL::Activity::ligarAosJoinsAndStart(inout process: JPDL::ProcessDefinitionType){
+		
+		
+		// CRIA TRANSIÇÕES FROM STARTSTATE
+		if (self.linkToPredecessor->isEmpty())then {
+		   log('startTransition');
+			var i := 1;
+			process.allInstances(JPDL::StartStateType)->forEach(ativ){
+			log('estado inicial');
+			var trst := object JPDL::TransitionType {
+				name := 'start' + self.name + 'transition';
+				to := self.name;
+			};
+			ativ.transition += trst;
+			}
+		}endif;
+		
+		// For last... create transitions to node END...
+		
+		process.allInstances(JPDL::TaskNodeType)->forEach(task) {
+			if(task.transition->size() > 1)then{
+				var trst := object JPDL::TransitionType {
+				name := task.name + 'transition';
+				to := 'End';
+			};
+			task.transition += trst;
+			}endif;
+		};
+	
+}
+
+*/
 /************
  *  QUERYS  *
  ************/
@@ -337,7 +354,57 @@ query getActivity(in name: String, in pro:DSL::Process):DSL::Activity {
   };
 }
 
-
+//query workNumber(in factors: OrderedSet(DSL::Factor), in tp: Integer): Integer{
+query workNumber(in plan: DSL::ExperimentalPlan): Integer {
+   var total: Integer;
+   total:=0;
+   var max: Integer;
+   max := -1;
+   if(plan.type = DesignType::LS)then{
+  		plan.factor->forEach(f){
+   			if(f.isDesiredVariation.equalsIgnoreCase('False'))then{
+   				f.level->forEach (l) {
+   					total:= total +1;
+   				};
+   			if(total>max)then{
+   				max:=total;
+   				
+   			}endif;
+   		}endif;
+   		log("1 - max =", max)
+  	 }
+  	 } else { if(plan.type = DesignType::RCDB)then {
+  	 		var block :=0;
+  			 plan.factor->forEach(f){
+   				if(f.isDesiredVariation.equalsIgnoreCase('True'))then{
+   					f.level->forEach (l) {
+   						total:= total +1; log("total...", total)
+   					};
+   				}endif;
+   				if(f.isDesiredVariation.equalsIgnoreCase('False'))then{
+   					f.level->forEach (k) {
+   						block:= block +1;log("block...", block)
+   					};
+   				}endif;
+   			};
+  	 	max := total * block;
+  	 	log("2 - max =", max)
+  	 } else { if(plan.type = DesignType::LS)then {
+  	 		plan.factor->forEach(f){
+   				if(f.isDesiredVariation.equalsIgnoreCase('True'))then{
+   					f.level->forEach (l) {
+   						total:= total +1; 
+   					};
+   				}endif;
+   			};
+  	 	max := total*plan.internalReplication;
+  	 }endif;
+  	 }endif;
+  	 }endif;
+  	 log("Max " , max);
+    return max;
+	
+}
 
 query getProcessRole(in pro: DSL::Process): String {
 	//alwasy return the role from the first process activity or task ...

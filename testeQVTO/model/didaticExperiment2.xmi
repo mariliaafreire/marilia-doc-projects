@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDSL:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDSL="http://www.xtext.org/project/ExpDSL">
+  <elements name="2 &#xba; Comparison of Java and C++">
+    <process name="RCBD_ComparisonProcessJava-PhoneBook">
+      <activities name="PhoneBook_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture" next="//@elements.0/@process.0/@activities.1">
+        <tasks name="DesignClassDiagram" description="Design Class Diagram">
+          <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_ClassDiagram" description="Class Diagram" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="DesignScreens" description="Design of Screens">
+          <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="PhoneBook_ImplementUseCase" description="Implementation of Use Case" next="//@elements.0/@process.0/@activities.2">
+        <tasks name="CodifyJavaPhoneBook_UseCase" description="Create the PhoneBook UseCase Java code">
+          <artefacts name="ClassDiagram" description="Class Diagram"/>
+          <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface"/>
+          <artefacts name="PhoneBook_JavaUseCaseCode" description="Implementation of Java Use Case" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="UseCaseTest" description="Perform Test of Use Case">
+        <tasks name="CreateJavaPhoneBookTestCases" description="Develop the test cases and test data for the requirements to be tested">
+          <artefacts name="PhoneBook_JavaUseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_JavaTestCase" description="Specification of a set of test" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="PhoneBook_RunTests" description="Run the appropriate test cases, analyze results">
+          <artefacts name="JavaTestCase" description="Specification of a set of test"/>
+          <artefacts name="PhoneBook_JavaUseCaseCode" description="Implementation of Java Use Case"/>
+          <artefacts name="PhoneBook_TestLog" description="Report that is captured during a run of tests" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+    </process>
+    <process name="RCBD_ComparisonProcessCPP-PhoneBook">
+      <activities name="PhoneBook_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture" next="//@elements.0/@process.1/@activities.1">
+        <tasks name="DesignClassDiagram" description="Design Class Diagram">
+          <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_ClassDiagram" description="Class Diagram" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="DesignScreens" description="Design of Screens">
+          <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="PhoneBook_ImplementUseCase" description="Implementation of Use Case" next="//@elements.0/@process.1/@activities.2">
+        <tasks name="CodifyCPPPhoneBook_UseCase" description="Create the PhoneBook UseCase  CPP code">
+          <artefacts name="ClassDiagram" description="Class Diagram"/>
+          <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface"/>
+          <artefacts name="PhoneBook_ CPPUseCaseCode" description="Implementation of  CPP Use Case" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="UseCaseTest" description="Perform Test of Use Case">
+        <tasks name="CreatePhoneBookTestCases" description="Develop the test cases and test data for the requirements to be tested">
+          <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_ CPPTestCase" description="Specification of a set of  CPP test" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="PhoneBook_RunTests" description="Run the appropriate test cases, analyze results">
+          <artefacts name=" CPPTestCase" description="Specification of a set of  CPP test"/>
+          <artefacts name="PhoneBook_ CPPUseCaseCode" description="Implementation of  CPP Use Case"/>
+          <artefacts name="PhoneBook_TestLog" description="Report that is captured during a run of tests" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+    </process>
+    <process name="RCBD_ComparisonProcessJava-EventManagement">
+      <activities name="EventManagement_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture" next="//@elements.0/@process.2/@activities.1">
+        <tasks name="DesignClassDiagram" description="Design Class Diagram">
+          <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="EventManagement_ClassDiagram" description="Class Diagram" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="DesignScreens" description="Design of Screens">
+          <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="EventManagement_ImplementUseCase" description="Implementation of Use Case" next="//@elements.0/@process.2/@activities.2">
+        <tasks name="CodifyJavaEventManagement_UseCase" description="Create the EventManagement UseCase Java code">
+          <artefacts name="ClassDiagram" description="Class Diagram"/>
+          <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface"/>
+          <artefacts name="EventManagement_JavaUseCaseCode" description="Implementation of Java Use Case" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="UseCaseTest" description="Perform Test of Use Case">
+        <tasks name="CreateJavaEventManagementTestCases" description="Develop the test cases and test data for the requirements to be tested">
+          <artefacts name="EventManagement_JavaUseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="EventManagement_JavaTestCase" description="Specification of a set of test" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="EventManagement_RunTests" description="Run the appropriate test cases, analyze results">
+          <artefacts name="JavaTestCase" description="Specification of a set of test"/>
+          <artefacts name="EventManagement_JavaUseCaseCode" description="Implementation of Java Use Case"/>
+          <artefacts name="EventManagement_TestLog" description="Report that is captured during a run of tests" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+    </process>
+    <process name="RCBD_ComparisonProcessCPP-EventManagement">
+      <activities name="EventManagement_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture" next="//@elements.0/@process.3/@activities.1">
+        <tasks name="DesignClassDiagram" description="Design Class Diagram">
+          <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="EventManagement_ClassDiagram" description="Class Diagram" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="DesignScreens" description="Design of Screens">
+          <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="EventManagement_ImplementUseCase" description="Implementation of Use Case" next="//@elements.0/@process.3/@activities.2">
+        <tasks name="CodifyCPPEventManagement_UseCase" description="Create the EventManagement UseCase  CPP code">
+          <artefacts name="ClassDiagram" description="Class Diagram"/>
+          <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface"/>
+          <artefacts name="EventManagement_ CPPUseCaseCode" description="Implementation of  CPP Use Case" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="UseCaseTest" description="Perform Test of Use Case">
+        <tasks name="CreateEventManagementTestCases" description="Develop the test cases and test data for the requirements to be tested">
+          <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="EventManagement_ CPPTestCase" description="Specification of a set of  CPP test" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="EventManagement_RunTests" description="Run the appropriate test cases, analyze results">
+          <artefacts name=" CPPTestCase" description="Specification of a set of  CPP test"/>
+          <artefacts name="EventManagement_ CPPUseCaseCode" description="Implementation of  CPP Use Case"/>
+          <artefacts name="EventManagement_TestLog" description="Report that is captured during a run of tests" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+    </process>
+    <metrics name="ProjectTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.0"/>
+    </metrics>
+    <metrics name="CodeTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.1"/>
+    </metrics>
+    <metrics name="TestTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.2"/>
+    </metrics>
+    <metrics name="CodeDefect" relatesTo="//@elements.0/@process.0" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDSL:ArtefactMetric" name="PhoneBook_JavaUseCaseCode"/>
+    </metrics>
+    <metrics name="ProjectTime2" relatesTo="//@elements.0/@process.1" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.1/@activities.0"/>
+    </metrics>
+    <metrics name="CodeTime2" relatesTo="//@elements.0/@process.1" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.1/@activities.1"/>
+    </metrics>
+    <metrics name="TestTime2" relatesTo="//@elements.0/@process.1" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.1/@activities.2"/>
+    </metrics>
+    <metrics name="CodeDefect2" relatesTo="//@elements.0/@process.1" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDSL:ArtefactMetric" name="PhoneBook_CPPUseCaseCode"/>
+    </metrics>
+    <metrics name="ProjectTime3" relatesTo="//@elements.0/@process.2" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.2/@activities.0"/>
+    </metrics>
+    <metrics name="CodeTime3" relatesTo="//@elements.0/@process.2" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.2/@activities.1"/>
+    </metrics>
+    <metrics name="TestTime3" relatesTo="//@elements.0/@process.2" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.2/@activities.2"/>
+    </metrics>
+    <metrics name="CodeDefect3" relatesTo="//@elements.0/@process.2" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDSL:ArtefactMetric" name="EventManagement_JavaUseCaseCode"/>
+    </metrics>
+    <metrics name="ProjectTime4" relatesTo="//@elements.0/@process.3" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.3/@activities.0"/>
+    </metrics>
+    <metrics name="CodeTime4" relatesTo="//@elements.0/@process.3" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.3/@activities.1"/>
+    </metrics>
+    <metrics name="TestTime4" relatesTo="//@elements.0/@process.3" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.3/@activities.2"/>
+    </metrics>
+    <metrics name="CodeDefect4" relatesTo="//@elements.0/@process.3" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDSL:ArtefactMetric" name="EventManagement_CPPUseCaseCode"/>
+    </metrics>
+    <experiments name="RCBD_ComparisonPlanning" type="RCBD - Randomized Complete Block Design">
+      <factor name="ProgammingLanguage" isDesiredVariation="True">
+        <level name="Java"/>
+        <level name="C++"/>
+      </factor>
+      <factor name="System" isDesiredVariation="False">
+        <level name="Phonebook"/>
+        <level name="EventManagement"/>
+      </factor>
+    </experiments>
+    <questionnaire name="Experience Questionnaire">
+      <question name="Question1" description="Qual sua experi&#xea;ncia no desenvolvimento de software?" type="ComboBox" req="1">
+        <alternatives description="Iniciante"/>
+        <alternatives description="Profissional"/>
+        <alternatives description="Especialista"/>
+      </question>
+      <question name="Question2" description="Qual o seu tempo de experi&#xea;ncia com Java?" type="ComboBox" req="1">
+        <alternatives description="Menos de 1 ano"/>
+        <alternatives description="Entre 1 e 3"/>
+        <alternatives description="Mais de 3 anos"/>
+      </question>
+      <question name="Question 4" description="Qual o tempo de experi&#xea;cia com CPP?" type="ComboBox" req="1">
+        <alternatives description="Menos de 1 ano"/>
+        <alternatives description="Entre 1 e 3"/>
+        <alternatives description="Mais de 3 anos"/>
+      </question>
+    </questionnaire>
+  </elements>
+</expDSL:Model>

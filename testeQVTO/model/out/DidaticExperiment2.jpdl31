@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expl:Model xmlns:expl="urn:jbpm.org:jpdl-3.1">
+  <elements><expl:process-definition name="RCBD_ComparisonProcessJava-PhoneBook" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionPhoneBook_UseCaseProject" to="PhoneBook_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment name="Subject" actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="PhoneBook_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture">
+        <expl:transition name="PhoneBook_UseCaseProject_Transition" to="PhoneBook_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTimeActionHandler" name="ProjectTime" ref-name="ProjectTime"/>
+        </expl:event>
+        <expl:task description="Design Class Diagram" name="DesignClassDiagram">
+          <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_ClassDiagram" type="output" description="Class Diagram"/>
+        </expl:task>
+        <expl:task description="Design of Screens" name="DesignScreens">
+          <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_PrototypeInterface" type="output" description="Prototype of interface"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="PhoneBook_ImplementUseCase" description="Implementation of Use Case">
+        <expl:transition name="PhoneBook_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTimeActionHandler" name="CodeTime" ref-name="CodeTime"/>
+        </expl:event>
+        <expl:task description="Create the PhoneBook UseCase Java code" name="CodifyJavaPhoneBook_UseCase">
+          <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+          <artefacts name="PhoneBook_PrototypeInterface" type="input" description="Prototype of interface"/>
+          <artefacts name="PhoneBook_JavaUseCaseCode" type="output" description="Implementation of Java Use Case"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTimeActionHandler" name="TestTime" ref-name="TestTime"/>
+        </expl:event>
+        <expl:task description="Develop the test cases and test data for the requirements to be tested" name="CreateJavaPhoneBookTestCases">
+          <artefacts name="PhoneBook_JavaUseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_JavaTestCase" type="output" description="Specification of a set of test"/>
+        </expl:task>
+        <expl:task description="Run the appropriate test cases, analyze results" name="PhoneBook_RunTests">
+          <artefacts name="JavaTestCase" type="input" description="Specification of a set of test"/>
+          <artefacts name="PhoneBook_JavaUseCaseCode" type="input" description="Implementation of Java Use Case"/>
+          <artefacts name="PhoneBook_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        </expl:task>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="RCBD_ComparisonProcessCPP-PhoneBook" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionPhoneBook_UseCaseProject" to="PhoneBook_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="PhoneBook_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture">
+        <expl:transition name="PhoneBook_UseCaseProject_Transition" to="PhoneBook_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTime2ActionHandler" name="ProjectTime2" ref-name="ProjectTime2"/>
+        </expl:event>
+        <expl:task description="Design Class Diagram" name="DesignClassDiagram">
+          <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_ClassDiagram" type="output" description="Class Diagram"/>
+        </expl:task>
+        <expl:task description="Design of Screens" name="DesignScreens">
+          <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_PrototypeInterface" type="output" description="Prototype of interface"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="PhoneBook_ImplementUseCase" description="Implementation of Use Case">
+        <expl:transition name="PhoneBook_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTime2ActionHandler" name="CodeTime2" ref-name="CodeTime2"/>
+        </expl:event>
+        <expl:task description="Create the PhoneBook UseCase  CPP code" name="CodifyCPPPhoneBook_UseCase">
+          <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+          <artefacts name="PhoneBook_PrototypeInterface" type="input" description="Prototype of interface"/>
+          <artefacts name="PhoneBook_ CPPUseCaseCode" type="output" description="Implementation of  CPP Use Case"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTime2ActionHandler" name="TestTime2" ref-name="TestTime2"/>
+        </expl:event>
+        <expl:task description="Develop the test cases and test data for the requirements to be tested" name="CreatePhoneBookTestCases">
+          <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="PhoneBook_ CPPTestCase" type="output" description="Specification of a set of  CPP test"/>
+        </expl:task>
+        <expl:task description="Run the appropriate test cases, analyze results" name="PhoneBook_RunTests">
+          <artefacts name=" CPPTestCase" type="input" description="Specification of a set of  CPP test"/>
+          <artefacts name="PhoneBook_ CPPUseCaseCode" type="input" description="Implementation of  CPP Use Case"/>
+          <artefacts name="PhoneBook_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        </expl:task>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="RCBD_ComparisonProcessJava-EventManagement" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionEventManagement_UseCaseProject" to="EventManagement_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="EventManagement_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture">
+        <expl:transition name="EventManagement_UseCaseProject_Transition" to="EventManagement_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTime3ActionHandler" name="ProjectTime3" ref-name="ProjectTime3"/>
+        </expl:event>
+        <expl:task description="Design Class Diagram" name="DesignClassDiagram">
+          <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="EventManagement_ClassDiagram" type="output" description="Class Diagram"/>
+        </expl:task>
+        <expl:task description="Design of Screens" name="DesignScreens">
+          <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="EventManagement_PrototypeInterface" type="output" description="Prototype of interface"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="EventManagement_ImplementUseCase" description="Implementation of Use Case">
+        <expl:transition name="EventManagement_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTime3ActionHandler" name="CodeTime3" ref-name="CodeTime3"/>
+        </expl:event>
+        <expl:task description="Create the EventManagement UseCase Java code" name="CodifyJavaEventManagement_UseCase">
+          <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+          <artefacts name="EventManagement_PrototypeInterface" type="input" description="Prototype of interface"/>
+          <artefacts name="EventManagement_JavaUseCaseCode" type="output" description="Implementation of Java Use Case"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTime3ActionHandler" name="TestTime3" ref-name="TestTime3"/>
+        </expl:event>
+        <expl:task description="Develop the test cases and test data for the requirements to be tested" name="CreateJavaEventManagementTestCases">
+          <artefacts name="EventManagement_JavaUseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="EventManagement_JavaTestCase" type="output" description="Specification of a set of test"/>
+        </expl:task>
+        <expl:task description="Run the appropriate test cases, analyze results" name="EventManagement_RunTests">
+          <artefacts name="JavaTestCase" type="input" description="Specification of a set of test"/>
+          <artefacts name="EventManagement_JavaUseCaseCode" type="input" description="Implementation of Java Use Case"/>
+          <artefacts name="EventManagement_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        </expl:task>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="RCBD_ComparisonProcessCPP-EventManagement" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionEventManagement_UseCaseProject" to="EventManagement_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="EventManagement_UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture">
+        <expl:transition name="EventManagement_UseCaseProject_Transition" to="EventManagement_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTime4ActionHandler" name="ProjectTime4" ref-name="ProjectTime4"/>
+        </expl:event>
+        <expl:task description="Design Class Diagram" name="DesignClassDiagram">
+          <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="EventManagement_ClassDiagram" type="output" description="Class Diagram"/>
+        </expl:task>
+        <expl:task description="Design of Screens" name="DesignScreens">
+          <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="EventManagement_PrototypeInterface" type="output" description="Prototype of interface"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="EventManagement_ImplementUseCase" description="Implementation of Use Case">
+        <expl:transition name="EventManagement_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTime4ActionHandler" name="CodeTime4" ref-name="CodeTime4"/>
+        </expl:event>
+        <expl:task description="Create the EventManagement UseCase  CPP code" name="CodifyCPPEventManagement_UseCase">
+          <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+          <artefacts name="EventManagement_PrototypeInterface" type="input" description="Prototype of interface"/>
+          <artefacts name="EventManagement_ CPPUseCaseCode" type="output" description="Implementation of  CPP Use Case"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTime4ActionHandler" name="TestTime4" ref-name="TestTime4"/>
+        </expl:event>
+        <expl:task description="Develop the test cases and test data for the requirements to be tested" name="CreateEventManagementTestCases">
+          <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Case"/>
+          <artefacts name="EventManagement_ CPPTestCase" type="output" description="Specification of a set of  CPP test"/>
+        </expl:task>
+        <expl:task description="Run the appropriate test cases, analyze results" name="EventManagement_RunTests">
+          <artefacts name=" CPPTestCase" type="input" description="Specification of a set of  CPP test"/>
+          <artefacts name="EventManagement_ CPPUseCaseCode" type="input" description="Implementation of  CPP Use Case"/>
+          <artefacts name="EventManagement_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        </expl:task>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition></elements>
+</expl:Model>

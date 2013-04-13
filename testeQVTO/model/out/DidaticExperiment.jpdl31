@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expl:Model xmlns:expl="urn:jbpm.org:jpdl-3.1">
+  <elements><expl:process-definition name="ComparisonProcess" quantity="4">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionUseCaseProject" to="UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture">
+        <expl:transition name="UseCaseProject_Transition" to="ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTimeActionHandler" name="ProjectTime" ref-name="ProjectTime"/>
+        </expl:event>
+        <expl:task description="Design Class Diagram" name="DesignClassDiagram">
+          <artefacts name="UseCaseSpecfication" Type="input" description="Description of Use Case"/>
+          <artefacts name="ClassDiagram" Type="output" description="Class Diagram"/>
+        </expl:task>
+        <expl:task description="Design of Screens" name="DesignScreens">
+          <artefacts name="UseCaseSpecfication" Type="input" description="Description of Use Case"/>
+          <artefacts name="PrototypeInterface" Type="output" description="Prototype of interface"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="ImplementUseCase" description="Implementation of Use Case">
+        <expl:transition name="ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTimeActionHandler" name="CodeTime" ref-name="CodeTime"/>
+        </expl:event>
+        <expl:task description="Create the UseCase code" name="CodifyUseCase">
+          <artefacts name="ClassDiagram" Type="input" description="Class Diagram"/>
+          <artefacts name="PrototypeInterface" Type="input" description="Prototype of interface"/>
+          <artefacts name="UseCaseCode" Type="output" description="Implementation of Use Case"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTimeActionHandler" name="TestTime" ref-name="TestTime"/>
+        </expl:event>
+        <expl:task description="Develop the test cases and test data for the requirements to be tested" name="CreateTestCases">
+          <artefacts name="UseCaseSpecfication" Type="input" description="Description of Use Case"/>
+          <artefacts name="TestCase" Type="output" description="Specification of a set of test"/>
+        </expl:task>
+        <expl:task description="Run the appropriate test cases, analyze results" name="RunTests">
+          <artefacts name="TestCase" Type="input" description="Specification of a set of test"/>
+          <artefacts name="UseCaseCode" Type="input" description="Implementation of Use Case"/>
+          <artefacts name="TestLog" Type="output" description="Report that is captured during a run of tests"/>
+        </expl:task>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition></elements>
+</expl:Model>

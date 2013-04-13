@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jpdl:Model xmlns:jpdl="urn:jbpm.org:jpdl-3.1">
+  <elements><jpdl:process-definition name="EShop">
+      <jpdl:task-node name="Atv P1" description="Atividade A1">
+        <jpdl:transition name="Atv P1_Transition" to="P2"/>
+        <jpdl:event type="task-end">
+          <jpdl:action class="br.ufrn.dimap.ppgsc.ST_DevelopmentActionHandler" name="ST_Development" ref-name="ST_Development"/>
+        </jpdl:event>
+      </jpdl:task-node>
+      <jpdl:task-node name="Atv P2" description="Atividade A2">
+        <jpdl:event type="task-end">
+          <jpdl:action class="br.ufrn.dimap.ppgsc.ST_DevelopmentActionHandler" name="ST_Development" ref-name="ST_Development"/>
+        </jpdl:event>
+      </jpdl:task-node>
+    </jpdl:process-definition><jpdl:process-definition name="Byer">
+      <jpdl:task-node name="Atv 1" description="Atividade B1">
+        <jpdl:transition name="Atv 1_Transition" to="B2"/>
+        <jpdl:task description="Tarefa 1 da atividade B1" name="T1">
+          <artefacts name="classX.java" type="in"/>
+          <artefacts name="resp.txt" type="out"/>
+          <jpdl:event type="task-end">
+            <jpdl:action class="br.ufrn.dimap.ppgsc.T1ActionHandler" name="T1" ref-name="T1"/>
+          </jpdl:event>
+        </jpdl:task>
+        <jpdl:task description="Tarefa 2 da atividade B1" name="T2">
+          <artefacts name="classY.java" type="in"/>
+          <artefacts name="resp2.txt" type="out"/>
+          <jpdl:event type="task-end">
+            <jpdl:action class="br.ufrn.dimap.ppgsc.T2ActionHandler" name="T2" ref-name="T2"/>
+          </jpdl:event>
+          <jpdl:event type="task-end">
+            <jpdl:action class="br.ufrn.dimap.ppgsc.T2ActionHandler" name="T2" ref-name="T2"/>
+          </jpdl:event>
+        </jpdl:task>
+      </jpdl:task-node>
+      <jpdl:task-node name="Act 2" description="Atividade B2 description"/>
+    </jpdl:process-definition></elements>
+</jpdl:Model>

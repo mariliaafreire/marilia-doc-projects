@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expl:Model xmlns:expl="urn:jbpm.org:jpdl-3.1">
+  <elements><expl:process-definition name="ByerAgenti">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+    </expl:process-definition>
+    
+    <expl:process-definition name="OLISi">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+    </expl:process-definition><expl:process-definition name="EShopi">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+        <expl:transition name="startTransitionQuestion2" to="Question2"/>
+        <expl:transition name="startTransitionQuestion3" to="Question3"/>
+        <expl:transition name="startTransitionQuestion4" to="Question4"/>
+        <expl:transition name="startTransitionQuestion5" to="Question5"/>
+        <expl:transition name="startTransitionQuestion6" to="Question6"/>
+        <expl:transition name="startTransitionQuestion7" to="Question7"/>
+        <expl:transition name="startTransitionQuestion8" to="Question8"/>
+        <expl:transition name="startTransitionQuestion9" to="Question9"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+    </expl:process-definition><expl:process-definition name="ByerAgenti" quantity="1">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+    </expl:process-definition><expl:process-definition name="OLISi" quantity="1">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+    </expl:process-definition><expl:process-definition name="EShopi" quantity="1">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+        <expl:transition name="startTransitionQuestion2" to="Question2"/>
+        <expl:transition name="startTransitionQuestion3" to="Question3"/>
+        <expl:transition name="startTransitionQuestion4" to="Question4"/>
+        <expl:transition name="startTransitionQuestion5" to="Question5"/>
+        <expl:transition name="startTransitionQuestion6" to="Question6"/>
+        <expl:transition name="startTransitionQuestion7" to="Question7"/>
+        <expl:transition name="startTransitionQuestion8" to="Question8"/>
+        <expl:transition name="startTransitionQuestion9" to="Question9"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+    </expl:process-definition><expl:process-definition name="ByerAgenti" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="Question1" description="To which feature(s) the goal CheckStoreStock is related?">
+        <expl:transition name="To which feature(s) the goal CheckStoreStock is related?_Transition" to="Question2"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TimeMetricByerActionHandler" name="TimeMetricByer" ref-name="TimeMetricByer"/>
+        </expl:event>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL Code" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question2" description="How many plans are mapped to the “Pick up at Store” feature?">
+        <expl:transition name="How many plans are mapped to the “Pick up at Store” feature?_Transition" to="Question3"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL Code" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question3" description="Which variability granularities are found in the Buyer Agent SPL?">
+        <expl:transition name="Which variability granularities are found in the Buyer Agent SPL?_Transition" to="Question4"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question4" description="Which implementation asset(s) is related to the Buy capability?">
+        <expl:transition name="Which implementation asset(s) is related to the Buy capability?_Transition" to="Question5"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question5" description="Which plan(s) has its(their) behavior changed because of the “Credit Card” feature?">
+        <expl:transition name="Which plan(s) has its(their) behavior changed because of the “Credit Card” feature?_Transition" to="Question6"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question6" description="To which belief(s), goal(s) and plan(s) is the SearchStore capability related?">
+        <expl:transition name="To which belief(s), goal(s) and plan(s) is the SearchStore capability related?_Transition" to="Question7"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question7" description="On which capability(ies) the “Store Selection Strategy” feature impact?">
+        <expl:transition name="On which capability(ies) the “Store Selection Strategy” feature impact?_Transition" to="Question8"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question8" description="Which plan(s) related to the “Pick Up At Store” feature is part of the SearchStores capability?">
+        <expl:transition name="Which plan(s) related to the “Pick Up At Store” feature is part of the SearchStores capability?_Transition" to="Question9"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question9" description="If the pay goal were optional, which plan(s) would also be optional?">
+        <expl:transition name="If the pay goal were optional, which plan(s) would also be optional?_Transition" to="Question10"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question10" description="If the payment process becomes optional in the next version of the SPL, which implementation &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;asset(s) must be changed (if any)?">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TimeMetricByerActionHandler" name="TimeMetricByer" ref-name="TimeMetricByer"/>
+        </expl:event>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - ByerAgent"/>
+        </expl:task>
+        <expl:transition name="Question10transition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="OLISi" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="Question1" description="On which agent(s) and/or capability(ies) the “Event Type” feature impact, (i.e. agent(s), &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;capability(ies) that are related to this feature or whose internal elements are related to it)?">
+        <expl:transition name="On which agent(s) and/or capability(ies) the “Event Type” feature impact, (i.e. agent(s), &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;capability(ies) that are related to this feature or whose internal elements are related to it)?_Transition" to="Question2"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TimeMetricOLISActionHandler" name="TimeMetricOLIS" ref-name="TimeMetricOLIS"/>
+        </expl:event>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question2" description="How many code assets is the “Configure User Preferences” feature related to (either complete &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;files or fragments, do not count packages)?">
+        <expl:transition name="How many code assets is the “Configure User Preferences” feature related to (either complete &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;files or fragments, do not count packages)?_Transition" to="Question3"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question3" description="How many code assets is the “Event Scheduler” feature related to (either complete files or &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;fragments, do not count packages)?">
+        <expl:transition name="How many code assets is the “Event Scheduler” feature related to (either complete files or &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;fragments, do not count packages)?_Transition" to="Question4"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question4" description="Which plan(s) is related to the EventScheduler capability?">
+        <expl:transition name="Which plan(s) is related to the EventScheduler capability?_Transition" to="Question5"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question5" description="Which Spring bean(s) is related to the “Travel” feature (id of the bean not its &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;implementation)?">
+        <expl:transition name="Which Spring bean(s) is related to the “Travel” feature (id of the bean not its &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;implementation)?_Transition" to="Question6"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question6" description="If the “Configure User Preferences” is not selected, which is the implementation &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;used for the UserPreferencesAbstractFactory bean?">
+        <expl:transition name="If the “Configure User Preferences” is not selected, which is the implementation &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;used for the UserPreferencesAbstractFactory bean?_Transition" to="Question7"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question7" description="In which code asset(s) is the information that the Weather agent must be started?">
+        <expl:transition name="In which code asset(s) is the information that the Weather agent must be started?_Transition" to="Question8"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question8" description="In which code asset(s) is the information of the ontologies used in the derived product?">
+        <expl:transition name="In which code asset(s) is the information of the ontologies used in the derived product?_Transition" to="Question9"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question9" description="Which domain entity(ies) is related to the “Academic” feature?">
+        <expl:transition name="Which domain entity(ies) is related to the “Academic” feature?_Transition" to="Question10"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question10" description="If the WeatherOptionsAction, functionality that allows to configure the WeatherService,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;were related to an optional subfeature of the “Weather” feature, which existing code &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;asset(s) (either complete files or fragments, do not count packages) would be mapped to&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;this new optional subfeature?">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TimeMetricOLISActionHandler" name="TimeMetricOLIS" ref-name="TimeMetricOLIS"/>
+        </expl:event>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - OLIS"/>
+        </expl:task>
+        <expl:transition name="Question10transition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="EShopi" quantity="2">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionQuestion1" to="Question1"/>
+        <expl:transition name="startTransitionQuestion2" to="Question2"/>
+        <expl:transition name="startTransitionQuestion3" to="Question3"/>
+        <expl:transition name="startTransitionQuestion4" to="Question4"/>
+        <expl:transition name="startTransitionQuestion5" to="Question5"/>
+        <expl:transition name="startTransitionQuestion6" to="Question6"/>
+        <expl:transition name="startTransitionQuestion7" to="Question7"/>
+        <expl:transition name="startTransitionQuestion8" to="Question8"/>
+        <expl:transition name="startTransitionQuestion9" to="Question9"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment actor-id="Subject"/>
+      </expl:swimlane>
+      <expl:task-node name="Question1" description="Which Spring Bean implements the “Email” feature?">
+        <expl:transition name="Which Spring Bean implements the “Email” feature?_Transition" to="Question2"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TimeMetricEShopActionHandler" name="TimeMetricEShop" ref-name="TimeMetricEShop"/>
+        </expl:event>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question2" description="Which Bundles are related to the “Browsing” feature?">
+        <expl:transition name="Which Bundles are related to the “Browsing” feature?_Transition" to="Question3"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question3" description="Which Entities implements the “List Orders” feature?">
+        <expl:transition name="Which Entities implements the “List Orders” feature?_Transition" to="Question4"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question4" description="How many reusable assets (including files and code fragments) implements the “Product Navigation” Feature?">
+        <expl:transition name="How many reusable assets (including files and code fragments) implements the “Product Navigation” Feature?_Transition" to="Question5"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question5" description="To which View and Business (Spring MVC and Spring, respectively) elements the “Edit” Feature is related to?">
+        <expl:transition name="To which View and Business (Spring MVC and Spring, respectively) elements the “Edit” Feature is related to?_Transition" to="Question6"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question6" description="In which elements the “My List” feature impact?">
+        <expl:transition name="In which elements the “My List” feature impact?_Transition" to="Question7"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question7" description="If the shipAddress2 attribute related with “Different Address” feature were removed, how many reusable assets (code fragments) must be removed?">
+        <expl:transition name="If the shipAddress2 attribute related with “Different Address” feature were removed, how many reusable assets (code fragments) must be removed?_Transition" to="Question8"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question8" description="How many code assets is the “Edit” feature related to (files and code fragments)?">
+        <expl:transition name="How many code assets is the “Edit” feature related to (files and code fragments)?_Transition" to="Question9"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question9" description="How may reusable assets is the “Different Address” feature related to (files and code fragments)?">
+        <expl:transition name="How may reusable assets is the “Different Address” feature related to (files and code fragments)?_Transition" to="Question10"/>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+      </expl:task-node>
+      <expl:task-node name="Question10" description="How may reusable assets is the “List Order” feature related to (files)?">
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TimeMetricEShopActionHandler" name="TimeMetricEShop" ref-name="TimeMetricEShop"/>
+        </expl:event>
+        <expl:task description="Reply Question" name="ReplyQuestion">
+          <artefacts name="SPL" Type="input" description="SPL - EShop"/>
+        </expl:task>
+        <expl:transition name="Question10transition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition></elements>
+</expl:Model>

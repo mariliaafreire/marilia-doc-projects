@@ -30,13 +30,13 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
   
   mets->forEach(i){
 	  if(i.oclIsKindOf(ActivityMetric))then{
-	    var exp := self.name.equalsIgnoreCase(i.oclAsType(ActivityMetric).relatesTo.name);
+	    var exp := self.name.equalsIgnoreCase(i.relatesTo.name);
 	  	if(exp)then {
 	  		amet+=i.oclAsType(ActivityMetric);
 	  	}endif;
 	  }endif;
 	  if(i.oclIsKindOf(TaskMetric))then{
-	    var exp := self.name.equalsIgnoreCase(i.oclAsType(TaskMetric).relatesTo.name);
+	    var exp := self.name.equalsIgnoreCase(i.relatesTo.name);
 	  	if(exp)then {
 	  		tmet+=i.oclAsType(TaskMetric);
 	  	}endif;
@@ -60,6 +60,7 @@ mapping DSL::Process::experiment2process() :JPDL::ProcessDefinitionType {
 
 mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::ActivityMetric),in tmets:OrderedSet(DSL::TaskMetric), in pro:DSL::Process): JPDL::TaskNodeType{
 	name := self.name;
+	description := self.description;
 	// tratar última atividade
 	//TODO
 	self.next->forEach(i){
@@ -72,13 +73,14 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::ActivityMetric),i
    var i :=0;
    log('INICIO PARA CADA ATIVIDADE');
    metrics.oclAsType(ActivityMetric)->forEach(ele) 
-   { 		log(ele.activityBegin + ' vs ' + self.name);
-   			if(ele.form = 0)then{
+   { 		
+   			log(ele.activityBegin.name + ' vs ' + self.name);
+   		//	if(ele.form = 0)then{
    				//result.blocking = true;
-   			}endif;
-   			var part1:= ele.activityBegin.equalsIgnoreCase(self.name);
-   			var part2:= ele.activityEnd.equalsIgnoreCase(self.name);
-   			var part3:= checkBetween(ele.activityBegin,ele.activityEnd,self.name, pro);
+   		//	}endif;
+   			var part1:= ele.activityBegin.name.equalsIgnoreCase(self.name);
+   			var part2:= ele.activityEnd.name.equalsIgnoreCase(self.name);
+   			var part3:= checkBetween(ele.activityBegin.name,ele.activityEnd.name,self.name, pro);
             log('Entrou: ' + part1.oclAsType(String) +' ' + part2.oclAsType(String)+' '+ part3.oclAsType(String)+' ');
             if((part1 or part2 or part3)) then {// and not part4))then {
    				result.event += Sequence {
@@ -87,9 +89,10 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::ActivityMetric),i
    					
    					action+=Sequence {
    						object JPDL::ActionType{
-   						refName := ele.id;
-   						name := ele.id;
-   						_class := "br.ufrn.dimap.ppgsc.".concat(ele.id).concat("ActionHandler");
+   						//refName := ele.id;
+   						//name := ele.id;
+   						//_class := "br.ufrn.dimap.ppgsc.".concat(ele.id).concat("ActionHandler");
+   						_class := "br.ufrn.dimap.ppgsc.".concat("ActionHandler");
    						}
    					}
    						
@@ -104,12 +107,12 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::ActivityMetric),i
 
 mapping DSL::Task::task2task(in mets:OrderedSet(DSL::TaskMetric)):JPDL::TaskType{
 	name := self.name;
-	mets->forEach(i){
+/*	mets->forEach(i){
 		if(i.name.equalsIgnoreCase(self.name))then{
 			//TODO TAREFA A SER MONITORADA
 		}endif;
 	}
-}
+*/}
 	
 
 

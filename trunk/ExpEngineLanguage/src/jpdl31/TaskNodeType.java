@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link jpdl31.TaskNodeType#getName <em>Name</em>}</li>
  *   <li>{@link jpdl31.TaskNodeType#getSignal <em>Signal</em>}</li>
  *   <li>{@link jpdl31.TaskNodeType#getDescription <em>Description</em>}</li>
- *   <li>{@link jpdl31.TaskNodeType#getArtefacts_ <em>Artefacts </em>}</li>
+ *   <li>{@link jpdl31.TaskNodeType#getArtefacts <em>Artefacts</em>}</li>
  * </ul>
  * </p>
  *
@@ -426,19 +426,19 @@ public interface TaskNodeType extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Artefacts </b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Artefacts</b></em>' containment reference list.
 	 * The list contents are of type {@link jpdl31.Artefact}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Artefacts </em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Artefacts</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Artefacts </em>' containment reference list.
-	 * @see jpdl31.Jpdl31Package#getTaskNodeType_Artefacts_()
+	 * @return the value of the '<em>Artefacts</em>' containment reference list.
+	 * @see jpdl31.Jpdl31Package#getTaskNodeType_Artefacts()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Artefact> getArtefacts_();
+	EList<Artefact> getArtefacts();
 
 } // TaskNodeType

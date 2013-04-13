@@ -51,7 +51,7 @@ public interface Jpdl31Package extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "exp";
+	String eNS_PREFIX = "expl";
 
 	/**
 	 * The singleton instance of the package.
@@ -2164,13 +2164,13 @@ public interface Jpdl31Package extends EPackage {
 	int TASK_NODE_TYPE__DESCRIPTION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Artefacts </b></em>' containment reference list.
+	 * The feature id for the '<em><b>Artefacts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_NODE_TYPE__ARTEFACTS_ = 12;
+	int TASK_NODE_TYPE__ARTEFACTS = 12;
 
 	/**
 	 * The number of structural features of the '<em>Task Node Type</em>' class.
@@ -2656,13 +2656,13 @@ public interface Jpdl31Package extends EPackage {
 	int ARTEFACT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Art Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTEFACT__ART_TYPE = 1;
+	int ARTEFACT__TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -5143,15 +5143,15 @@ public interface Jpdl31Package extends EPackage {
 	EAttribute getTaskNodeType_Description();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link jpdl31.TaskNodeType#getArtefacts_ <em>Artefacts </em>}'.
+	 * Returns the meta object for the containment reference list '{@link jpdl31.TaskNodeType#getArtefacts <em>Artefacts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Artefacts </em>'.
-	 * @see jpdl31.TaskNodeType#getArtefacts_()
+	 * @return the meta object for the containment reference list '<em>Artefacts</em>'.
+	 * @see jpdl31.TaskNodeType#getArtefacts()
 	 * @see #getTaskNodeType()
 	 * @generated
 	 */
-	EReference getTaskNodeType_Artefacts_();
+	EReference getTaskNodeType_Artefacts();
 
 	/**
 	 * Returns the meta object for class '{@link jpdl31.TaskType <em>Task Type</em>}'.
@@ -5665,15 +5665,15 @@ public interface Jpdl31Package extends EPackage {
 	EAttribute getArtefact_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jpdl31.Artefact#getArtType <em>Art Type</em>}'.
+	 * Returns the meta object for the attribute '{@link jpdl31.Artefact#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Art Type</em>'.
-	 * @see jpdl31.Artefact#getArtType()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see jpdl31.Artefact#getType()
 	 * @see #getArtefact()
 	 * @generated
 	 */
-	EAttribute getArtefact_ArtType();
+	EAttribute getArtefact_Type();
 
 	/**
 	 * Returns the meta object for the attribute '{@link jpdl31.Artefact#getDescription <em>Description</em>}'.
@@ -7639,12 +7639,12 @@ public interface Jpdl31Package extends EPackage {
 		EAttribute TASK_NODE_TYPE__DESCRIPTION = eINSTANCE.getTaskNodeType_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Artefacts </b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Artefacts</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TASK_NODE_TYPE__ARTEFACTS_ = eINSTANCE.getTaskNodeType_Artefacts_();
+		EReference TASK_NODE_TYPE__ARTEFACTS = eINSTANCE.getTaskNodeType_Artefacts();
 
 		/**
 		 * The meta object literal for the '{@link jpdl31.impl.TaskTypeImpl <em>Task Type</em>}' class.
@@ -8035,12 +8035,12 @@ public interface Jpdl31Package extends EPackage {
 		EAttribute ARTEFACT__NAME = eINSTANCE.getArtefact_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Art Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTEFACT__ART_TYPE = eINSTANCE.getArtefact_ArtType();
+		EAttribute ARTEFACT__TYPE = eINSTANCE.getArtefact_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

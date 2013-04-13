@@ -2341,7 +2341,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTaskNodeType_Artefacts_() {
+	public EReference getTaskNodeType_Artefacts() {
 		return (EReference)taskNodeTypeEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -2773,7 +2773,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArtefact_ArtType() {
+	public EAttribute getArtefact_Type() {
 		return (EAttribute)artefactEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3239,7 +3239,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		createEAttribute(taskNodeTypeEClass, TASK_NODE_TYPE__NAME);
 		createEAttribute(taskNodeTypeEClass, TASK_NODE_TYPE__SIGNAL);
 		createEAttribute(taskNodeTypeEClass, TASK_NODE_TYPE__DESCRIPTION);
-		createEReference(taskNodeTypeEClass, TASK_NODE_TYPE__ARTEFACTS_);
+		createEReference(taskNodeTypeEClass, TASK_NODE_TYPE__ARTEFACTS);
 
 		taskTypeEClass = createEClass(TASK_TYPE);
 		createEAttribute(taskTypeEClass, TASK_TYPE__GROUP);
@@ -3293,7 +3293,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 
 		artefactEClass = createEClass(ARTEFACT);
 		createEAttribute(artefactEClass, ARTEFACT__NAME);
-		createEAttribute(artefactEClass, ARTEFACT__ART_TYPE);
+		createEAttribute(artefactEClass, ARTEFACT__TYPE);
 		createEAttribute(artefactEClass, ARTEFACT__DESCRIPTION);
 
 		modelEClass = createEClass(MODEL);
@@ -3585,7 +3585,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		initEAttribute(getTaskNodeType_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, TaskNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskNodeType_Signal(), this.getSignalType(), "signal", "last", 0, 1, TaskNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskNodeType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, TaskNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTaskNodeType_Artefacts_(), this.getArtefact(), null, "artefacts_", null, 0, -1, TaskNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTaskNodeType_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, TaskNodeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskTypeEClass, TaskType.class, "TaskType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTaskType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, TaskType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3639,7 +3639,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 
 		initEClass(artefactEClass, Artefact.class, "Artefact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtefact_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArtefact_ArtType(), theXMLTypePackage.getString(), "artType", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArtefact_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArtefact_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

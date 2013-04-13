@@ -54,7 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getSignal <em>Signal</em>}</li>
  *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getArtefacts_ <em>Artefacts </em>}</li>
+ *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getArtefacts <em>Artefacts</em>}</li>
  * </ul>
  * </p>
  *
@@ -228,14 +228,14 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getArtefacts_() <em>Artefacts </em>}' containment reference list.
+	 * The cached value of the '{@link #getArtefacts() <em>Artefacts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArtefacts_()
+	 * @see #getArtefacts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Artefact> artefacts_;
+	protected EList<Artefact> artefacts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -544,11 +544,11 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Artefact> getArtefacts_() {
-		if (artefacts_ == null) {
-			artefacts_ = new EObjectContainmentEList<Artefact>(Artefact.class, this, Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS_);
+	public EList<Artefact> getArtefacts() {
+		if (artefacts == null) {
+			artefacts = new EObjectContainmentEList<Artefact>(Artefact.class, this, Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS);
 		}
-		return artefacts_;
+		return artefacts;
 	}
 
 	/**
@@ -571,8 +571,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				return ((InternalEList<?>)getTransition()).basicRemove(otherEnd, msgs);
 			case Jpdl31Package.TASK_NODE_TYPE__GROUP:
 				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS_:
-				return ((InternalEList<?>)getArtefacts_()).basicRemove(otherEnd, msgs);
+			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
+				return ((InternalEList<?>)getArtefacts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -610,8 +610,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				return getSignal();
 			case Jpdl31Package.TASK_NODE_TYPE__DESCRIPTION:
 				return getDescription();
-			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS_:
-				return getArtefacts_();
+			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
+				return getArtefacts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -666,9 +666,9 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 			case Jpdl31Package.TASK_NODE_TYPE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS_:
-				getArtefacts_().clear();
-				getArtefacts_().addAll((Collection<? extends Artefact>)newValue);
+			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
+				getArtefacts().clear();
+				getArtefacts().addAll((Collection<? extends Artefact>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -718,8 +718,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 			case Jpdl31Package.TASK_NODE_TYPE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS_:
-				getArtefacts_().clear();
+			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
+				getArtefacts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -757,8 +757,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				return isSetSignal();
 			case Jpdl31Package.TASK_NODE_TYPE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS_:
-				return artefacts_ != null && !artefacts_.isEmpty();
+			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
+				return artefacts != null && !artefacts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

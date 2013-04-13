@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link jpdl31.impl.ArtefactImpl#getName <em>Name</em>}</li>
- *   <li>{@link jpdl31.impl.ArtefactImpl#getArtType <em>Art Type</em>}</li>
+ *   <li>{@link jpdl31.impl.ArtefactImpl#getType <em>Type</em>}</li>
  *   <li>{@link jpdl31.impl.ArtefactImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -54,24 +54,24 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getArtType() <em>Art Type</em>}' attribute.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArtType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ART_TYPE_EDEFAULT = null;
+	protected static final String TYPE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getArtType() <em>Art Type</em>}' attribute.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArtType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected String artType = ART_TYPE_EDEFAULT;
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -138,8 +138,8 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getArtType() {
-		return artType;
+	public String getType() {
+		return type;
 	}
 
 	/**
@@ -147,11 +147,11 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setArtType(String newArtType) {
-		String oldArtType = artType;
-		artType = newArtType;
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Jpdl31Package.ARTEFACT__ART_TYPE, oldArtType, artType));
+			eNotify(new ENotificationImpl(this, Notification.SET, Jpdl31Package.ARTEFACT__TYPE, oldType, type));
 	}
 
 	/**
@@ -185,8 +185,8 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 		switch (featureID) {
 			case Jpdl31Package.ARTEFACT__NAME:
 				return getName();
-			case Jpdl31Package.ARTEFACT__ART_TYPE:
-				return getArtType();
+			case Jpdl31Package.ARTEFACT__TYPE:
+				return getType();
 			case Jpdl31Package.ARTEFACT__DESCRIPTION:
 				return getDescription();
 		}
@@ -204,8 +204,8 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 			case Jpdl31Package.ARTEFACT__NAME:
 				setName((String)newValue);
 				return;
-			case Jpdl31Package.ARTEFACT__ART_TYPE:
-				setArtType((String)newValue);
+			case Jpdl31Package.ARTEFACT__TYPE:
+				setType((String)newValue);
 				return;
 			case Jpdl31Package.ARTEFACT__DESCRIPTION:
 				setDescription((String)newValue);
@@ -225,8 +225,8 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 			case Jpdl31Package.ARTEFACT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case Jpdl31Package.ARTEFACT__ART_TYPE:
-				setArtType(ART_TYPE_EDEFAULT);
+			case Jpdl31Package.ARTEFACT__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 			case Jpdl31Package.ARTEFACT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -245,8 +245,8 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 		switch (featureID) {
 			case Jpdl31Package.ARTEFACT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Jpdl31Package.ARTEFACT__ART_TYPE:
-				return ART_TYPE_EDEFAULT == null ? artType != null : !ART_TYPE_EDEFAULT.equals(artType);
+			case Jpdl31Package.ARTEFACT__TYPE:
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case Jpdl31Package.ARTEFACT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
@@ -265,8 +265,8 @@ public class ArtefactImpl extends EObjectImpl implements Artefact {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", artType: ");
-		result.append(artType);
+		result.append(", type: ");
+		result.append(type);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

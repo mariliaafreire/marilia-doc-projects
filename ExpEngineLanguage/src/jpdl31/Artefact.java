@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link jpdl31.Artefact#getName <em>Name</em>}</li>
- *   <li>{@link jpdl31.Artefact#getArtType <em>Art Type</em>}</li>
+ *   <li>{@link jpdl31.Artefact#getType <em>Type</em>}</li>
  *   <li>{@link jpdl31.Artefact#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -54,30 +54,30 @@ public interface Artefact extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Art Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Art Type</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Art Type</em>' attribute.
-	 * @see #setArtType(String)
-	 * @see jpdl31.Jpdl31Package#getArtefact_ArtType()
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see jpdl31.Jpdl31Package#getArtefact_Type()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
-	String getArtType();
+	String getType();
 
 	/**
-	 * Sets the value of the '{@link jpdl31.Artefact#getArtType <em>Art Type</em>}' attribute.
+	 * Sets the value of the '{@link jpdl31.Artefact#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Art Type</em>' attribute.
-	 * @see #getArtType()
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
 	 * @generated
 	 */
-	void setArtType(String value);
+	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

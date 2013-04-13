@@ -23,9 +23,12 @@ import org.xtext.project.expDSL.ExperimentElement;
 import org.xtext.project.expDSL.ExperimentalPlan;
 import org.xtext.project.expDSL.Factor;
 import org.xtext.project.expDSL.Levels;
+import org.xtext.project.expDSL.Link;
 import org.xtext.project.expDSL.Metrics;
 import org.xtext.project.expDSL.Model;
-import org.xtext.project.expDSL.Questions;
+import org.xtext.project.expDSL.Parameter;
+import org.xtext.project.expDSL.Question;
+import org.xtext.project.expDSL.Questionnaire;
 import org.xtext.project.expDSL.Role;
 import org.xtext.project.expDSL.Task;
 import org.xtext.project.expDSL.TaskMetric;
@@ -66,7 +69,8 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case ExpDSLPackage.ACTIVITY_METRIC:
-				if(context == grammarAccess.getActivityMetricRule()) {
+				if(context == grammarAccess.getActivityMetricRule() ||
+				   context == grammarAccess.getDetailRule()) {
 					sequence_ActivityMetric(context, (ActivityMetric) semanticObject); 
 					return; 
 				}
@@ -85,7 +89,7 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 				else break;
 			case ExpDSLPackage.ARTEFACT_METRIC:
 				if(context == grammarAccess.getArtefactMetricRule() ||
-				   context == grammarAccess.getMetricsRule()) {
+				   context == grammarAccess.getDetailRule()) {
 					sequence_ArtefactMetric(context, (ArtefactMetric) semanticObject); 
 					return; 
 				}
@@ -114,6 +118,12 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case ExpDSLPackage.LINK:
+				if(context == grammarAccess.getLinkRule()) {
+					sequence_Link(context, (Link) semanticObject); 
+					return; 
+				}
+				else break;
 			case ExpDSLPackage.METRICS:
 				if(context == grammarAccess.getMetricsRule()) {
 					sequence_Metrics(context, (Metrics) semanticObject); 
@@ -126,15 +136,27 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case ExpDSLPackage.PARAMETER:
+				if(context == grammarAccess.getParameterRule()) {
+					sequence_Parameter(context, (Parameter) semanticObject); 
+					return; 
+				}
+				else break;
 			case ExpDSLPackage.PROCESS:
 				if(context == grammarAccess.getProcessRule()) {
 					sequence_Process(context, (org.xtext.project.expDSL.Process) semanticObject); 
 					return; 
 				}
 				else break;
-			case ExpDSLPackage.QUESTIONS:
-				if(context == grammarAccess.getQuestionsRule()) {
-					sequence_Questions(context, (Questions) semanticObject); 
+			case ExpDSLPackage.QUESTION:
+				if(context == grammarAccess.getQuestionRule()) {
+					sequence_Question(context, (Question) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExpDSLPackage.QUESTIONNAIRE:
+				if(context == grammarAccess.getQuestionnaireRule()) {
+					sequence_Questionnaire(context, (Questionnaire) semanticObject); 
 					return; 
 				}
 				else break;
@@ -151,7 +173,7 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case ExpDSLPackage.TASK_METRIC:
-				if(context == grammarAccess.getMetricsRule() ||
+				if(context == grammarAccess.getDetailRule() ||
 				   context == grammarAccess.getTaskMetricRule()) {
 					sequence_TaskMetric(context, (TaskMetric) semanticObject); 
 					return; 
@@ -163,45 +185,34 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (activityBegin=STRING activityEnd=STRING)
+	 *     (activityBegin=[Activity|STRING] activityEnd=[Activity|STRING]?)
 	 *
 	 * Features:
 	 *    activityBegin[1, 1]
-	 *    activityEnd[1, 1]
+	 *    activityEnd[0, 1]
 	 */
 	protected void sequence_ActivityMetric(EObject context, ActivityMetric semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_BEGIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_BEGIN));
-			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_END) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ACTIVITY_METRIC__ACTIVITY_END));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActivityMetricAccess().getActivityBeginSTRINGTerminalRuleCall_0_1_0(), semanticObject.getActivityBegin());
-		feeder.accept(grammarAccess.getActivityMetricAccess().getActivityEndSTRINGTerminalRuleCall_1_1_0(), semanticObject.getActivityEnd());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
 	 *     (
-	 *         id=ID 
-	 *         artefacts+=Artefact* 
-	 *         artefacts+=Artefact* 
 	 *         name=STRING 
-	 *         next+=ID? 
-	 *         role+=Role* 
+	 *         description=STRING 
+	 *         next+=[Activity|STRING]? 
+	 *         artefacts+=Artefact? 
+	 *         role+=Role? 
 	 *         tasks+=Task*
 	 *     )
 	 *
 	 * Features:
-	 *    id[1, 1]
-	 *    artefacts[0, *]
 	 *    name[1, 1]
+	 *    description[1, 1]
 	 *    next[0, 1]
-	 *    role[0, *]
+	 *    artefacts[0, 1]
+	 *    role[0, 1]
 	 *    tasks[0, *]
 	 */
 	protected void sequence_Activity(EObject context, Activity semanticObject) {
@@ -223,18 +234,18 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAlternativesAccess().getDescriptionSTRINGTerminalRuleCall_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getAlternativesAccess().getDescriptionSTRINGTerminalRuleCall_1_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING artefact=[Artefact|STRING])
+	 *     (name=STRING artefacts=[Artefact|STRING]*)
 	 *
 	 * Features:
 	 *    name[1, 1]
-	 *    artefact[1, 1]
+	 *    artefacts[0, *]
 	 */
 	protected void sequence_ArtefactMetric(EObject context, ArtefactMetric semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -243,33 +254,41 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     name=STRING
+	 *     (name=STRING description=STRING type=ArtefactType)
 	 *
 	 * Features:
 	 *    name[1, 1]
+	 *    description[1, 1]
+	 *    type[1, 1]
 	 */
 	protected void sequence_Artefact(EObject context, Artefact semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ARTEFACT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ARTEFACT__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ARTEFACT__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ARTEFACT__DESCRIPTION));
+			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.ARTEFACT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.ARTEFACT__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getArtefactAccess().getNameSTRINGTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getArtefactAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getArtefactAccess().getDescriptionSTRINGTerminalRuleCall_3_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getArtefactAccess().getTypeArtefactTypeEnumRuleCall_5_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING process+=Process* metrics+=Metrics* experiments+=ExperimentalPlan* question+=Questions*)
+	 *     (name=STRING process+=Process* metrics+=Metrics* experiments+=ExperimentalPlan* questionnaire+=Questionnaire*)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    process[0, *]
 	 *    metrics[0, *]
 	 *    experiments[0, *]
-	 *    question[0, *]
+	 *    questionnaire[0, *]
 	 */
 	protected void sequence_ExperimentElement(EObject context, ExperimentElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -278,12 +297,22 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING type=DesignType factor+=Factor*)
+	 *     (
+	 *         name=STRING 
+	 *         type=DesignType 
+	 *         parameter+=Parameter* 
+	 *         factor+=Factor* 
+	 *         internalReplication=INT 
+	 *         link+=Link*
+	 *     )
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    type[1, 1]
+	 *    parameter[0, *]
 	 *    factor[0, *]
+	 *    internalReplication[1, 1]
+	 *    link[0, *]
 	 */
 	protected void sequence_ExperimentalPlan(EObject context, ExperimentalPlan semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -292,10 +321,11 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING level+=Levels*)
+	 *     (name=STRING (isDesiredVariation='True' | isDesiredVariation='False') level+=Levels*)
 	 *
 	 * Features:
 	 *    name[1, 1]
+	 *    isDesiredVariation[0, 2]
 	 *    level[0, *]
 	 */
 	protected void sequence_Factor(EObject context, Factor semanticObject) {
@@ -324,26 +354,35 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (procedure+=[Process|STRING] treatment+=[Levels|STRING]*)
+	 *
+	 * Features:
+	 *    procedure[1, 1]
+	 *    treatment[0, *]
+	 */
+	protected void sequence_Link(EObject context, Link semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         name=STRING 
 	 *         relatesTo=[Process|STRING] 
 	 *         description=STRING 
-	 *         type=MetricType 
 	 *         form=ColectType? 
-	 *         id=STRING 
 	 *         unit=MetricUnit? 
-	 *         details=ActivityMetric
+	 *         detail+=Detail
 	 *     )
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    relatesTo[1, 1]
 	 *    description[1, 1]
-	 *    type[1, 1]
 	 *    form[0, 1]
-	 *    id[1, 1]
 	 *    unit[0, 1]
-	 *    details[1, 1]
+	 *    detail[1, 1]
 	 */
 	protected void sequence_Metrics(EObject context, Metrics semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -364,6 +403,29 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (variable=STRING value=STRING)
+	 *
+	 * Features:
+	 *    variable[1, 1]
+	 *    value[1, 1]
+	 */
+	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.PARAMETER__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.PARAMETER__VARIABLE));
+			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.PARAMETER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.PARAMETER__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getParameterAccess().getVariableSTRINGTerminalRuleCall_1_0(), semanticObject.getVariable());
+		feeder.accept(grammarAccess.getParameterAccess().getValueSTRINGTerminalRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=STRING activities+=Activity*)
 	 *
 	 * Features:
@@ -377,24 +439,31 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=STRING 
-	 *         description=STRING 
-	 *         type=AnswerType 
-	 *         id=ID 
-	 *         req=INT? 
-	 *         alternatives+=Alternatives*
-	 *     )
+	 *     (name=STRING description=STRING type=AnswerType req=INT? alternatives+=Alternatives*)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    description[1, 1]
 	 *    type[1, 1]
-	 *    id[1, 1]
 	 *    req[0, 1]
 	 *    alternatives[0, *]
 	 */
-	protected void sequence_Questions(EObject context, Questions semanticObject) {
+	protected void sequence_Question(EObject context, Question semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=STRING relatesTo+=[Process|STRING]* questionnaireType=QuestionnaireType question+=Question*)
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 *    relatesTo[0, *]
+	 *    questionnaireType[1, 1]
+	 *    question[0, *]
+	 */
+	protected void sequence_Questionnaire(EObject context, Questionnaire semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -420,10 +489,10 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     activities=STRING
+	 *     tasks+=[Task|STRING]+
 	 *
 	 * Features:
-	 *    activities[1, 1]
+	 *    tasks[1, *]
 	 */
 	protected void sequence_TaskMetric(EObject context, TaskMetric semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -432,19 +501,15 @@ public class AbstractExpDSLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     name=STRING
+	 *     (name=STRING description=STRING artefacts+=Artefact* role+=Role?)
 	 *
 	 * Features:
 	 *    name[1, 1]
+	 *    description[1, 1]
+	 *    artefacts[0, *]
+	 *    role[0, 1]
 	 */
 	protected void sequence_Task(EObject context, Task semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ExpDSLPackage.Literals.TASK__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDSLPackage.Literals.TASK__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTaskAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

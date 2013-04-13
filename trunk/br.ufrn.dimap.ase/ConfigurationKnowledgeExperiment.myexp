@@ -1,0 +1,319 @@
+Experiment "Configuration Knowledge Experiment" 
+
+ Process "ByerAgent" {
+		Activity "Question1" "To which feature(s) the goal CheckStoreStock is related?" "Question2" artefact "SPL Code" description "SPL - ByerAgent" type input ; Role "Subject";{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+		Activity "Question2" "How many plans are mapped to the “Pick up at Store” feature?" "Question3" artefact "SPL Code" description "SPL - ByerAgent" type input ; Role "Subject";{
+
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+		Activity "Question3" "Which variability granularities are found in the Buyer Agent SPL?" "Question4" artefact "SPL" description "SPL - ByerAgent" type input; Role "Subject"; {
+			Task "ReplyQuestion" description "Reply Question";
+		}
+		Activity "Question4" "Which implementation asset(s) is related to the Buy capability?" "Question5"  artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+		{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+		Activity "Question5" "Which plan(s) has its(their) behavior changed because of the “Credit Card” feature?" "Question6" artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+		{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+		Activity "Question6" "To which belief(s), goal(s) and plan(s) is the SearchStore capability related?" "Question7" artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+		{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+		Activity "Question7" "On which capability(ies) the “Store Selection Strategy” feature impact?" "Question8" artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+		{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+		Activity "Question8" "Which plan(s) related to the “Pick Up At Store” feature is part of the SearchStores capability?" "Question9" artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+		{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+		Activity "Question9" "If the pay goal were optional, which plan(s) would also be optional?" "Question10" artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+		{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+		Activity "Question10" "If the payment process becomes optional in the next version of the SPL, which implementation 
+						asset(s) must be changed (if any)?" artefact "SPL" description "SPL - ByerAgent"  type input; Role "Subject";
+						{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+		
+		}
+Process "OLIS" {
+	Activity "Question1" "On which agent(s) and/or capability(ies) the “Event Type” feature impact, (i.e. agent(s), 
+						capability(ies) that are related to this feature or whose internal elements are related to it)?" "Question2" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+						{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+	Activity "Question2" "How many code assets is the “Configure User Preferences” feature related to (either complete 
+						files or fragments, do not count packages)?" "Question3" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+						{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question3" "How many code assets is the “Event Scheduler” feature related to (either complete files or 
+						fragments, do not count packages)?" "Question4"  artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+						{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+	Activity "Question4" "Which plan(s) is related to the EventScheduler capability?" "Question5" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+	Activity "Question5" "Which Spring bean(s) is related to the “Travel” feature (id of the bean not its 
+						implementation)?" "Question6" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+						{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question6" "If the “Configure User Preferences” is not selected, which is the implementation 
+						used for the UserPreferencesAbstractFactory bean?" "Question7" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}					
+	Activity "Question7" "In which code asset(s) is the information that the Weather agent must be started?" "Question8" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question8" "In which code asset(s) is the information of the ontologies used in the derived product?" "Question8" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question9" "Which domain entity(ies) is related to the “Academic” feature?" "Question10" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question10" "If the WeatherOptionsAction, functionality that allows to configure the WeatherService,
+						were related to an optional subfeature of the “Weather” feature, which existing code 
+						asset(s) (either complete files or fragments, do not count packages) would be mapped to
+						this new optional subfeature?" artefact "SPL" description "SPL - OLIS"  type input; Role "Subject";
+						{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+		
+		}
+Process "EShop" {
+	Activity "Question1" "Which Spring Bean implements the “Email” feature?" "Question2" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+	Activity "Question2" "Which Bundles are related to the “Browsing” feature?" "Question3" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+	Activity "Question3" "Which Entities implements the “List Orders” feature?" "Question4" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question4" "How many reusable assets (including files and code fragments) implements the “Product Navigation” Feature?" "Question5" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question5" "To which View and Business (Spring MVC and Spring, respectively) elements the “Edit” Feature is related to?" "Question6" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question6" "In which elements the “My List” feature impact?" "Question7" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}									
+	Activity "Question7" "If the shipAddress2 attribute related with “Different Address” feature were removed, how many reusable assets (code fragments) must be removed?" "Question8" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question8" "How many code assets is the “Edit” feature related to (files and code fragments)?" "Question9" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question9" "How may reusable assets is the “Different Address” feature related to (files and code fragments)?" "Question10" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question" ;
+		}
+	Activity "Question10" "How may reusable assets is the “List Order” feature related to (files)?" artefact "SPL" description "SPL - EShop"  type input; Role "Subject";
+	{
+			Task "ReplyQuestion" description "Reply Question";
+		}
+		
+	}						
+
+	Metric "TimeMetricOLIS" relates "OLIS" {
+				 description "Time taken to answer a question correctly"
+				 form continuous
+				 unit minutes
+				 activityBegin "OLIS.Question1" activityEnd "OLIS.Question10" }
+     Metric "TimeMetricByer" relates "ByerAgent" {
+				 description "Time taken to answer a question correctly"
+				 form continuous
+				 unit minutes
+				 activityBegin "ByerAgent.Question1" activityEnd "ByerAgent.Question10" }
+      Metric "TimeMetricEShop" relates "EShop" {
+				 description "Time taken to answer a question correctly"
+				 form continuous
+				 unit minutes
+				 activityBegin "EShop.Question1" activityEnd "EShop.Question10"	 
+     }
+     
+Experimental Plan Design "NameDesign" 
+                             type LS – Latin Square  {
+                             Factor "Tool" isDesiredVariation True 
+                                    Level "GenArch+";
+                                    Level "pure::variants";
+                                    Level "CIDE";
+                            ;
+                             Factor "SPL" isDesiredVariation False 
+                                    Level "OLIS" use "OLIS";
+                                    Level "Buyer Agent" use "ByerAgent";
+                                    Level "eShop" use "EShop";
+                             ;
+                             Factor "Subject" isDesiredVariation True;                           
+           }
+           
+ Questionnaire "General Questions"  type Pre
+ 
+				"Q1-ByerJadex" {
+					description "Qual sua experiência na utilização do framework Jadex?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q2-ByerJadex" {
+					description "Qual o tempo de experiência com Jadex?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}           	
+				
+				"Q1-OLISJadex" {
+					description "Qual sua experiência na utilização do framework Jadex?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q2-OLISJadex" {
+					description "Qual o tempo de experiência com Jadex?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}
+				"Q3-OLISSpring" {
+					description "Qual sua experiência na utilização do framework Spring?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q4-OLISSpring" {
+					description "Qual o tempo de experiência com Spring?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}
+				"Q5-OLISStruts" {
+					description "Qual sua experiência na utilização do framework Struts?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q6-OLISStruts" {
+					description "Qual o tempo de experiência com Struts?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}	
+				"Q7-OLISHibernate" {
+					description "Qual sua experiência na utilização do framework Hibernate?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q8-OLISHibernate" {
+					description "Qual o tempo de experiência com Hibernate?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}				
+							
+				"Q1-EShopSpring" {
+					description "Qual sua experiência na utilização do framework Spring?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q2-EShopSpring" {
+					description "Qual o tempo de experiência com Spring?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}							
+				"Q3-EShopSpringMVC" {
+					description "Qual sua experiência na utilização do framework SpringMVC?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q4-EShopSpringMVC" {
+					description "Qual o tempo de experiência com SpringMVC?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}			
+				"Q5-EShopSpringOSGi" {
+					description "Qual sua experiência na utilização do framework SpringOSGi?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q6-EShopSpringOSGi" {
+					description "Qual o tempo de experiência com SpringOSGi?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}			
+				"Q7-EShopiBatis" {
+					description "Qual sua experiência na utilização do framework iBatis?"
+					type ComboBox
+					required 1					
+						"Iniciante"
+						"Profissional"
+						"Especialista"																								
+				}           			
+				"Q8-EShopiBatis" {
+					description "Qual o tempo de experiência com iBatis?"
+					type ComboBox
+					required 1					
+						"Menos de 1 ano"
+						"Entre 1 e 3"
+						"Mais de 3 anos"																								
+				}				 

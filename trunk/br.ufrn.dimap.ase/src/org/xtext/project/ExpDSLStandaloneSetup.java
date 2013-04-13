@@ -25,13 +25,13 @@ public class ExpDSLStandaloneSetup extends ExpDSLStandaloneSetupGenerated{
 		
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		
-		URI uri = URI.createURI("genArch.myexp");
+		URI uri = URI.createURI("SPLTestingStrategiesLS_PT.myexp");
 		// Resource xtextResource = resourceSet.createResource(uri);
 		Resource xtextResource = resourceSet.getResource(uri, true);
 		
 		EcoreUtil.resolveAll(xtextResource);
 		
-		Resource xmiResource = resourceSet.createResource(URI.createURI("genArch.xmi"));
+		Resource xmiResource = resourceSet.createResource(URI.createURI("SPLTestingStrategiesLS_PT.xmi"));
 		xmiResource.getContents().add(xtextResource.getContents().get(0));
 		try {
 			xmiResource.save(null);

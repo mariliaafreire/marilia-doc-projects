@@ -6,6 +6,7 @@
  */
 package org.xtext.project.expDSL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +16,7 @@ package org.xtext.project.expDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.project.expDSL.TaskMetric#getActivities <em>Activities</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.TaskMetric#getTasks <em>Tasks</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,32 +24,22 @@ package org.xtext.project.expDSL;
  * @model
  * @generated
  */
-public interface TaskMetric extends Metrics
+public interface TaskMetric extends Detail
 {
   /**
-   * Returns the value of the '<em><b>Activities</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Tasks</b></em>' reference list.
+	 * The list contents are of type {@link org.xtext.project.expDSL.Task}.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Activities</em>' attribute isn't clear,
+   * If the meaning of the '<em>Tasks</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Activities</em>' attribute.
-   * @see #setActivities(String)
-   * @see org.xtext.project.expDSL.ExpDSLPackage#getTaskMetric_Activities()
-   * @model
-   * @generated
-   */
-  String getActivities();
-
-  /**
-   * Sets the value of the '{@link org.xtext.project.expDSL.TaskMetric#getActivities <em>Activities</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Activities</em>' attribute.
-   * @see #getActivities()
-   * @generated
-   */
-  void setActivities(String value);
+	 * @return the value of the '<em>Tasks</em>' reference list.
+	 * @see org.xtext.project.expDSL.ExpDSLPackage#getTaskMetric_Tasks()
+	 * @model
+	 * @generated
+	 */
+  EList<Task> getTasks();
 
 } // TaskMetric

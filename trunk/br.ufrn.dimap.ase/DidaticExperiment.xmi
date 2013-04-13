@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDSL:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDSL="http://www.xtext.org/project/ExpDSL">
+  <elements name="Comparison of Java and C++">
+    <process name="ComparisonProcess">
+      <activities name="UseCaseProject" description="Create the project class diagram based on the use case specification and in the project architecture" next="//@elements.0/@process.0/@activities.1">
+        <tasks name="DesignClassDiagram" description="Design Class Diagram">
+          <artefacts name="UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="ClassDiagram" description="Class Diagram" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="DesignScreens" description="Design of Screens">
+          <artefacts name="UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="PrototypeInterface" description="Prototype of interface" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="ImplementUseCase" description="Implementation of Use Case" next="//@elements.0/@process.0/@activities.2">
+        <tasks name="CodifyUseCase" description="Create the UseCase code">
+          <artefacts name="ClassDiagram" description="Class Diagram"/>
+          <artefacts name="PrototypeInterface" description="Prototype of interface"/>
+          <artefacts name="UseCaseCode" description="Implementation of Use Case" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+      <activities name="UseCaseTest" description="Perform Test of Use Case">
+        <tasks name="CreateTestCases" description="Develop the test cases and test data for the requirements to be tested">
+          <artefacts name="UseCaseSpecfication" description="Description of Use Case"/>
+          <artefacts name="TestCase" description="Specification of a set of test" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+        <tasks name="RunTests" description="Run the appropriate test cases, analyze results">
+          <artefacts name="TestCase" description="Specification of a set of test"/>
+          <artefacts name="UseCaseCode" description="Implementation of Use Case"/>
+          <artefacts name="TestLog" description="Report that is captured during a run of tests" type="output"/>
+          <role name="Subject"/>
+        </tasks>
+      </activities>
+    </process>
+    <metrics name="ProjectTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.0"/>
+    </metrics>
+    <metrics name="CodeTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.1"/>
+    </metrics>
+    <metrics name="TestTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDSL:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.2"/>
+    </metrics>
+    <metrics name="CodeDefect" relatesTo="//@elements.0/@process.0" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDSL:ArtefactMetric" name="UseCaseCode"/>
+    </metrics>
+    <experiments name="ComparisonPlanning" type="RCBD &#x2013; Randomized Complete Block Design">
+      <factor name="ProgammingLanguage" main="True">
+        <level name="Java"/>
+        <level name="C++"/>
+      </factor>
+      <factor name="Sytem" main="False">
+        <level name="Phonebook"/>
+        <level name="EventManagement"/>
+      </factor>
+      <factor name="Subject" main="False"/>
+    </experiments>
+    <questionnaire name="Experience Questionnaire">
+      <question name="Question1" description="Qual sua experi&#xea;ncia no desenvolvimento de software?" type="ComboBox" req="1">
+        <alternatives description="Iniciante"/>
+        <alternatives description="Profissional"/>
+        <alternatives description="Especialista"/>
+      </question>
+      <question name="Question2" description="Qual o seu tempo de experi&#xea;ncia com Java?" type="ComboBox" req="1">
+        <alternatives description="Menos de 1 ano"/>
+        <alternatives description="Entre 1 e 3"/>
+        <alternatives description="Mais de 3 anos"/>
+      </question>
+      <question name="Question 4" description="Qual o tempo de experi&#xea;cia com CPP?" type="ComboBox" req="1">
+        <alternatives description="Menos de 1 ano"/>
+        <alternatives description="Entre 1 e 3"/>
+        <alternatives description="Mais de 3 anos"/>
+      </question>
+    </questionnaire>
+  </elements>
+</expDSL:Model>

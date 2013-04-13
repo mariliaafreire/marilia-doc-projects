@@ -24,231 +24,225 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum DesignType implements Enumerator
 {
   /**
-   * The '<em><b>CDR</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>CDR</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #CDR_VALUE
-   * @generated
-   * @ordered
-   */
-  CDR(0, "CDR", "CRD \u2013 Completely Randomized Design"),
+	 * @see #CDR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+  CDR(0, "CDR", "CRD - Completely Randomized Design"),
 
   /**
-   * The '<em><b>RCDB</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>RCBD</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #RCDB_VALUE
-   * @generated
-   * @ordered
-   */
-  RCDB(1, "RCDB", "RCBD \u2013 Randomized Complete Block Design"),
+	 * @see #RCBD_VALUE
+	 * @generated
+	 * @ordered
+	 */
+  RCBD(1, "RCBD", "RCBD - Randomized Complete Block Design"),
 
   /**
-   * The '<em><b>LS</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>LS</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #LS_VALUE
-   * @generated
-   * @ordered
-   */
-  LS(2, "LS", "LS \u2013 Latin Square");
+	 * @see #LS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+  LS(2, "LS", "LS - Latin Square");
 
   /**
-   * The '<em><b>CDR</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>CDR</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>CDR</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #CDR
-   * @model literal="CRD \u2013 Completely Randomized Design"
-   * @generated
-   * @ordered
-   */
+	 * @see #CDR
+	 * @model literal="CRD - Completely Randomized Design"
+	 * @generated
+	 * @ordered
+	 */
   public static final int CDR_VALUE = 0;
 
   /**
-   * The '<em><b>RCDB</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>RCBD</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>RCDB</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>RCBD</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #RCDB
-   * @model literal="RCBD \u2013 Randomized Complete Block Design"
-   * @generated
-   * @ordered
-   */
-  public static final int RCDB_VALUE = 1;
+	 * @see #RCBD
+	 * @model literal="RCBD - Randomized Complete Block Design"
+	 * @generated
+	 * @ordered
+	 */
+  public static final int RCBD_VALUE = 1;
 
   /**
-   * The '<em><b>LS</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>LS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>LS</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #LS
-   * @model literal="LS \u2013 Latin Square"
-   * @generated
-   * @ordered
-   */
+	 * @see #LS
+	 * @model literal="LS - Latin Square"
+	 * @generated
+	 * @ordered
+	 */
   public static final int LS_VALUE = 2;
 
   /**
-   * An array of all the '<em><b>Design Type</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Design Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static final DesignType[] VALUES_ARRAY =
-    new DesignType[]
-    {
-      CDR,
-      RCDB,
-      LS,
-    };
+    new DesignType[] {
+			CDR,
+			RCBD,
+			LS,
+		};
 
   /**
-   * A public read-only list of all the '<em><b>Design Type</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Design Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static final List<DesignType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Design Type</b></em>' literal with the specified literal value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Design Type</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static DesignType get(String literal)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      DesignType result = VALUES_ARRAY[i];
-      if (result.toString().equals(literal))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			DesignType result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Design Type</b></em>' literal with the specified name.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Design Type</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static DesignType getByName(String name)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      DesignType result = VALUES_ARRAY[i];
-      if (result.getName().equals(name))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			DesignType result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Design Type</b></em>' literal with the specified integer value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Design Type</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static DesignType get(int value)
   {
-    switch (value)
-    {
-      case CDR_VALUE: return CDR;
-      case RCDB_VALUE: return RCDB;
-      case LS_VALUE: return LS;
-    }
-    return null;
-  }
+		switch (value) {
+			case CDR_VALUE: return CDR;
+			case RCBD_VALUE: return RCBD;
+			case LS_VALUE: return LS;
+		}
+		return null;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final int value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String name;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String literal;
 
   /**
-   * Only this class can construct instances.
-   * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private DesignType(int value, String name, String literal)
   {
-    this.value = value;
-    this.name = name;
-    this.literal = literal;
-  }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getValue()
   {
-    return value;
-  }
+	  return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+	  return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLiteral()
   {
-    return literal;
-  }
+	  return literal;
+	}
 
   /**
-   * Returns the literal value of the enumerator, which is its string representation.
-   * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    return literal;
-  }
+		return literal;
+	}
   
 } //DesignType

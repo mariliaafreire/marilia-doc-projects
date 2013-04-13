@@ -6,13 +6,16 @@
  */
 package org.xtext.project.expDSL.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.project.expDSL.ExpDSLPackage;
+import org.xtext.project.expDSL.Task;
 import org.xtext.project.expDSL.TaskMetric;
 
 /**
@@ -22,159 +25,120 @@ import org.xtext.project.expDSL.TaskMetric;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.project.expDSL.impl.TaskMetricImpl#getActivities <em>Activities</em>}</li>
+ *   <li>{@link org.xtext.project.expDSL.impl.TaskMetricImpl#getTasks <em>Tasks</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TaskMetricImpl extends MetricsImpl implements TaskMetric
+public class TaskMetricImpl extends DetailImpl implements TaskMetric
 {
   /**
-   * The default value of the '{@link #getActivities() <em>Activities</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTasks() <em>Tasks</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActivities()
-   * @generated
-   * @ordered
-   */
-  protected static final String ACTIVITIES_EDEFAULT = null;
+	 * @see #getTasks()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<Task> tasks;
 
   /**
-   * The cached value of the '{@link #getActivities() <em>Activities</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActivities()
-   * @generated
-   * @ordered
-   */
-  protected String activities = ACTIVITIES_EDEFAULT;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TaskMetricImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return ExpDSLPackage.Literals.TASK_METRIC;
-  }
+		return ExpDSLPackage.Literals.TASK_METRIC;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getActivities()
+	 * @generated
+	 */
+  public EList<Task> getTasks()
   {
-    return activities;
-  }
+		if (tasks == null) {
+			tasks = new EObjectResolvingEList<Task>(Task.class, this, ExpDSLPackage.TASK_METRIC__TASKS);
+		}
+		return tasks;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setActivities(String newActivities)
-  {
-    String oldActivities = activities;
-    activities = newActivities;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpDSLPackage.TASK_METRIC__ACTIVITIES, oldActivities, activities));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.TASK_METRIC__ACTIVITIES:
-        return getActivities();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ExpDSLPackage.TASK_METRIC__TASKS:
+				return getTasks();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.TASK_METRIC__ACTIVITIES:
-        setActivities((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ExpDSLPackage.TASK_METRIC__TASKS:
+				getTasks().clear();
+				getTasks().addAll((Collection<? extends Task>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.TASK_METRIC__ACTIVITIES:
-        setActivities(ACTIVITIES_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ExpDSLPackage.TASK_METRIC__TASKS:
+				getTasks().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case ExpDSLPackage.TASK_METRIC__ACTIVITIES:
-        return ACTIVITIES_EDEFAULT == null ? activities != null : !ACTIVITIES_EDEFAULT.equals(activities);
-    }
-    return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (activities: ");
-    result.append(activities);
-    result.append(')');
-    return result.toString();
-  }
+		switch (featureID) {
+			case ExpDSLPackage.TASK_METRIC__TASKS:
+				return tasks != null && !tasks.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //TaskMetricImpl

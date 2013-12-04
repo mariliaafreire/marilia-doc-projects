@@ -79,12 +79,21 @@ enum MetricUnit returns MetricUnit:
 
 
 ExperimentalPlan: 
+'Goals' '{'(goal+=Goal)*'}'
+'Hypotheses' '{'(hypotheses+=Hypotheses)* '}'
 'Design' name=STRING 'type' type=DesignType '{'
 		(parameter+=Parameter)*
 	    (factor+=Factor)*
 	    'Internal Replication ' internalReplication=INT
 	    (link+=Link)*
 	'}';
+
+Goal:  name=STRING description=STRING';';
+
+Hypotheses: name=STRING description=STRING type=HypothesisType 'from' fromGoal=[Goal|STRING]';'
+ ('{'subhypotheses+=Subhypotheses*'}' )?;
+
+Subhypotheses: name=STRING description=STRING 'decomposed from' fromHypothese=[Hypotheses|STRING]';' ;
 
 Parameter:
 	'Parameter' variable=STRING '=' value=STRING;
@@ -97,6 +106,10 @@ Levels:
 	
 Link: 'Link' procedure+=[Process|STRING] 'to' treatment+=[Levels|STRING]*;
 
+
+enum HypothesisType returns HypothesisType:
+	null = 'null' | alternative = 'alternative';
+	
 enum DesignType returns DesignType:
 	CDR = 'CRD - Completely Randomized Design' | 
 	RCBD = 'RCBD - Randomized Complete Block Design' | 

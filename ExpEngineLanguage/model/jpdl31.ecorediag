@@ -1176,10 +1176,6 @@
         <element xmi:type="ecore:EAttribute" href="jpdl31.ecore#//Artefact/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_M23ZVYjIEeK8ps4_hHfAFQ"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_M23ZVojIEeK8ps4_hHfAFQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="jpdl31.ecore#//Artefact/Type"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_M23ZV4jIEeK8ps4_hHfAFQ"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_M23ZWIjIEeK8ps4_hHfAFQ" type="2001">
         <element xmi:type="ecore:EAttribute" href="jpdl31.ecore#//Artefact/description"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_M23ZWYjIEeK8ps4_hHfAFQ"/>

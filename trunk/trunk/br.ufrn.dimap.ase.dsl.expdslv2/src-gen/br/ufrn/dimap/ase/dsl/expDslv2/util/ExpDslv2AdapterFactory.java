@@ -21,13 +21,11 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Factor;
 import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
-import br.ufrn.dimap.ase.dsl.expDslv2.Link;
 import br.ufrn.dimap.ase.dsl.expDslv2.Metrics;
 import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
 import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
 import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
@@ -120,10 +118,6 @@ public class ExpDslv2AdapterFactory extends AdapterFactoryImpl
 				return createTaskAdapter();
 			}
 			@Override
-			public Adapter caseRole(Role object) {
-				return createRoleAdapter();
-			}
-			@Override
 			public Adapter caseArtefact(Artefact object) {
 				return createArtefactAdapter();
 			}
@@ -186,10 +180,6 @@ public class ExpDslv2AdapterFactory extends AdapterFactoryImpl
 			@Override
 			public Adapter caseLevels(Levels object) {
 				return createLevelsAdapter();
-			}
-			@Override
-			public Adapter caseLink(Link object) {
-				return createLinkAdapter();
 			}
 			@Override
 			public Adapter caseQuestionnaire(Questionnaire object) {
@@ -295,21 +285,6 @@ public class ExpDslv2AdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createTaskAdapter()
-  {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Role <em>Role</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Role
-	 * @generated
-	 */
-  public Adapter createRoleAdapter()
   {
 		return null;
 	}
@@ -550,21 +525,6 @@ public class ExpDslv2AdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
   public Adapter createLevelsAdapter()
-  {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Link <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Link
-	 * @generated
-	 */
-  public Adapter createLinkAdapter()
   {
 		return null;
 	}

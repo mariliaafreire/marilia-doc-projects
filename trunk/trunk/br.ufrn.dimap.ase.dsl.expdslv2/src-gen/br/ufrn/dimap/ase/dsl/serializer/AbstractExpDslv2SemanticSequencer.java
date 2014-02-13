@@ -14,13 +14,11 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Factor;
 import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
-import br.ufrn.dimap.ase.dsl.expDslv2.Link;
 import br.ufrn.dimap.ase.dsl.expDslv2.Metrics;
 import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
 import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
 import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
@@ -148,12 +146,6 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
-			case ExpDslv2Package.LINK:
-				if(context == grammarAccess.getLinkRule()) {
-					sequence_Link(context, (Link) semanticObject); 
-					return; 
-				}
-				else break;
 			case ExpDslv2Package.METRICS:
 				if(context == grammarAccess.getMetricsRule()) {
 					sequence_Metrics(context, (Metrics) semanticObject); 
@@ -187,12 +179,6 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 			case ExpDslv2Package.QUESTIONNAIRE:
 				if(context == grammarAccess.getQuestionnaireRule()) {
 					sequence_Questionnaire(context, (Questionnaire) semanticObject); 
-					return; 
-				}
-				else break;
-			case ExpDslv2Package.ROLE:
-				if(context == grammarAccess.getRoleRule()) {
-					sequence_Role(context, (Role) semanticObject); 
 					return; 
 				}
 				else break;
@@ -239,7 +225,7 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 *         name=ID 
 	 *         description=STRING 
 	 *         next+=[Activity|QualifiedName]* 
-	 *         role+=Role? 
+	 *         role+=RoleType* 
 	 *         collectData+=[CollectedData|QualifiedName]* 
 	 *         artefacts+=Artefact* 
 	 *         questionnaire+=[Questionnaire|QualifiedName]* 
@@ -250,7 +236,7 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 *    name[1, 1]
 	 *    description[1, 1]
 	 *    next[0, *]
-	 *    role[0, 1]
+	 *    role[0, *]
 	 *    collectData[0, *]
 	 *    artefacts[0, *]
 	 *    questionnaire[0, *]
@@ -382,9 +368,8 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 *         parameter+=Parameter* 
 	 *         dependentVariable+=DependentVariable* 
 	 *         factor+=Factor* 
-	 *         Technique+=AnalysisTechiqueType* 
-	 *         internalReplication=INT 
-	 *         link+=Link*
+	 *         (tosubhypotheses+=[Subhypotheses|QualifiedName]* Technique+=AnalysisTechiqueType*)* 
+	 *         internalReplication=INT
 	 *     )
 	 *
 	 * Features:
@@ -394,9 +379,9 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 *    parameter[0, *]
 	 *    dependentVariable[0, *]
 	 *    factor[0, *]
+	 *    tosubhypotheses[0, *]
 	 *    Technique[0, *]
 	 *    internalReplication[1, 1]
-	 *    link[0, *]
 	 */
 	protected void sequence_ExperimentalPlan(EObject context, ExperimentalPlan semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -470,21 +455,8 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getLevelsAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLevelsAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (procedure+=[Process|ID] treatment+=[Levels|QualifiedName]*)
-	 *
-	 * Features:
-	 *    procedure[1, 1]
-	 *    treatment[0, *]
-	 */
-	protected void sequence_Link(EObject context, Link semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -540,11 +512,12 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID role+=Role? activities+=Activity*)
+	 *     (name=ID treatment+=[Levels|QualifiedName]* role+=RoleType* activities+=Activity*)
 	 *
 	 * Features:
 	 *    name[1, 1]
-	 *    role[0, 1]
+	 *    treatment[0, *]
+	 *    role[0, *]
 	 *    activities[0, *]
 	 */
 	protected void sequence_Process(EObject context, br.ufrn.dimap.ase.dsl.expDslv2.Process semanticObject) {
@@ -580,25 +553,6 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 */
 	protected void sequence_Questionnaire(EObject context, Questionnaire semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=STRING
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 */
-	protected void sequence_Role(EObject context, Role semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.ROLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.ROLE__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRoleAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

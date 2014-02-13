@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getName <em>Name</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getTreatment <em>Treatment</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getRole <em>Role</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getActivities <em>Activities</em>}</li>
  * </ul>
@@ -57,20 +58,38 @@ public interface Process extends EObject
   void setName(String value);
 
   /**
-	 * Returns the value of the '<em><b>Role</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Role}.
+	 * Returns the value of the '<em><b>Treatment</b></em>' reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Levels}.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Role</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Treatment</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role</em>' containment reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getProcess_Role()
-	 * @model containment="true"
+	 * @return the value of the '<em>Treatment</em>' reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getProcess_Treatment()
+	 * @model
 	 * @generated
 	 */
-  EList<Role> getRole();
+  EList<Levels> getTreatment();
+
+  /**
+	 * Returns the value of the '<em><b>Role</b></em>' attribute list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType}.
+	 * The literals are from the enumeration {@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Role</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role</em>' attribute list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.RoleType
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getProcess_Role()
+	 * @model unique="false"
+	 * @generated
+	 */
+  EList<RoleType> getRole();
 
   /**
 	 * Returns the value of the '<em><b>Activities</b></em>' containment reference list.

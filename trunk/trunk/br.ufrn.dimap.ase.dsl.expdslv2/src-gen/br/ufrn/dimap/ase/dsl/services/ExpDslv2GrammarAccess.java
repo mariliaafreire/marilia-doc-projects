@@ -53,11 +53,11 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cQuestionnaireQuestionnaireParserRuleCall_5_1_0 = (RuleCall)cQuestionnaireAssignment_5_1.eContents().get(0);
 		
 		//ExperimentElement:
-		//	"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)?
+		//	"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)
 		//	("Questionnaires" questionnaire+=Questionnaire*)?;
 		public ParserRule getRule() { return rule; }
 
-		//"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)?
+		//"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)
 		//("Questionnaires" questionnaire+=Questionnaire*)?
 		public Group getGroup() { return cGroup; }
 
@@ -82,7 +82,7 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		//Metrics
 		public RuleCall getMetricsMetricsParserRuleCall_3_0() { return cMetricsMetricsParserRuleCall_3_0; }
 
-		//("Experimental Plan" experiments+=ExperimentalPlan*)?
+		//"Experimental Plan" experiments+=ExperimentalPlan*
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"Experimental Plan"
@@ -113,19 +113,26 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cProcessKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRoleAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cRoleRoleParserRuleCall_3_0 = (RuleCall)cRoleAssignment_3.eContents().get(0);
-		private final Assignment cActivitiesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cActivitiesActivityParserRuleCall_4_0 = (RuleCall)cActivitiesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cToKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTreatmentAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cTreatmentLevelsCrossReference_2_1_0 = (CrossReference)cTreatmentAssignment_2_1.eContents().get(0);
+		private final RuleCall cTreatmentLevelsQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cTreatmentLevelsCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cRoleKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cRoleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cRoleRoleTypeEnumRuleCall_4_1_0 = (RuleCall)cRoleAssignment_4_1.eContents().get(0);
+		private final Assignment cActivitiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cActivitiesActivityParserRuleCall_5_0 = (RuleCall)cActivitiesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		////WorkbreakdownStructure	
 		//Process:
-		//	"Process" name=ID "{" role+=Role? activities+=Activity* "}";
+		//	"Process" name=ID ("to" treatment+=[Levels|QualifiedName]*)? "{" ("Role" role+=RoleType*)? activities+=Activity* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"Process" name=ID "{" role+=Role? activities+=Activity* "}"
+		//"Process" name=ID ("to" treatment+=[Levels|QualifiedName]*)? "{" ("Role" role+=RoleType*)? activities+=Activity* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Process"
@@ -137,51 +144,44 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
+		//("to" treatment+=[Levels|QualifiedName]*)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"to"
+		public Keyword getToKeyword_2_0() { return cToKeyword_2_0; }
+
+		//treatment+=[Levels|QualifiedName]*
+		public Assignment getTreatmentAssignment_2_1() { return cTreatmentAssignment_2_1; }
+
+		//[Levels|QualifiedName]
+		public CrossReference getTreatmentLevelsCrossReference_2_1_0() { return cTreatmentLevelsCrossReference_2_1_0; }
+
+		//QualifiedName
+		public RuleCall getTreatmentLevelsQualifiedNameParserRuleCall_2_1_0_1() { return cTreatmentLevelsQualifiedNameParserRuleCall_2_1_0_1; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//role+=Role?
-		public Assignment getRoleAssignment_3() { return cRoleAssignment_3; }
+		//("Role" role+=RoleType*)?
+		public Group getGroup_4() { return cGroup_4; }
 
-		//Role
-		public RuleCall getRoleRoleParserRuleCall_3_0() { return cRoleRoleParserRuleCall_3_0; }
+		//"Role"
+		public Keyword getRoleKeyword_4_0() { return cRoleKeyword_4_0; }
+
+		//role+=RoleType*
+		public Assignment getRoleAssignment_4_1() { return cRoleAssignment_4_1; }
+
+		//RoleType
+		public RuleCall getRoleRoleTypeEnumRuleCall_4_1_0() { return cRoleRoleTypeEnumRuleCall_4_1_0; }
 
 		//activities+=Activity*
-		public Assignment getActivitiesAssignment_4() { return cActivitiesAssignment_4; }
+		public Assignment getActivitiesAssignment_5() { return cActivitiesAssignment_5; }
 
 		//Activity
-		public RuleCall getActivitiesActivityParserRuleCall_4_0() { return cActivitiesActivityParserRuleCall_4_0; }
+		public RuleCall getActivitiesActivityParserRuleCall_5_0() { return cActivitiesActivityParserRuleCall_5_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		
-		//QualifiedName:
-		//	ID ("." ID)*;
-		public ParserRule getRule() { return rule; }
-
-		//ID ("." ID)*
-		public Group getGroup() { return cGroup; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
-		//("." ID)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class ActivityElements extends AbstractParserRuleElementFinder {
@@ -198,8 +198,10 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNextAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final CrossReference cNextActivityCrossReference_4_1_0 = (CrossReference)cNextAssignment_4_1.eContents().get(0);
 		private final RuleCall cNextActivityQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cNextActivityCrossReference_4_1_0.eContents().get(1);
-		private final Assignment cRoleAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cRoleRoleParserRuleCall_5_0 = (RuleCall)cRoleAssignment_5.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cRoleKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cRoleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cRoleRoleTypeEnumRuleCall_5_1_0 = (RuleCall)cRoleAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cVarKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cCollectDataAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
@@ -221,13 +223,13 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_9_2 = (Keyword)cGroup_9.eContents().get(2);
 		
 		//Activity:
-		//	"Activity" name=ID "description" description=STRING ("to" next+=[Activity|QualifiedName]*)? role+=Role? ("var"
-		//	collectData+=[CollectedData|QualifiedName]*)? ("artefacts" artefacts+=Artefact*)? ("quest"
+		//	"Activity" name=ID "description" description=STRING ("to" next+=[Activity|QualifiedName]*)? ("Role" role+=RoleType*)?
+		//	("var" collectData+=[CollectedData|QualifiedName]*)? ("artefacts" artefacts+=Artefact*)? ("quest"
 		//	questionnaire+=[Questionnaire|QualifiedName]*)? ("{" tasks+=Task* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"Activity" name=ID "description" description=STRING ("to" next+=[Activity|QualifiedName]*)? role+=Role? ("var"
-		//collectData+=[CollectedData|QualifiedName]*)? ("artefacts" artefacts+=Artefact*)? ("quest"
+		//"Activity" name=ID "description" description=STRING ("to" next+=[Activity|QualifiedName]*)? ("Role" role+=RoleType*)?
+		//("var" collectData+=[CollectedData|QualifiedName]*)? ("artefacts" artefacts+=Artefact*)? ("quest"
 		//questionnaire+=[Questionnaire|QualifiedName]*)? ("{" tasks+=Task* "}")?
 		public Group getGroup() { return cGroup; }
 
@@ -264,11 +266,17 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNextActivityQualifiedNameParserRuleCall_4_1_0_1() { return cNextActivityQualifiedNameParserRuleCall_4_1_0_1; }
 
-		//role+=Role?
-		public Assignment getRoleAssignment_5() { return cRoleAssignment_5; }
+		//("Role" role+=RoleType*)?
+		public Group getGroup_5() { return cGroup_5; }
 
-		//Role
-		public RuleCall getRoleRoleParserRuleCall_5_0() { return cRoleRoleParserRuleCall_5_0; }
+		//"Role"
+		public Keyword getRoleKeyword_5_0() { return cRoleKeyword_5_0; }
+
+		//role+=RoleType*
+		public Assignment getRoleAssignment_5_1() { return cRoleAssignment_5_1; }
+
+		//RoleType
+		public RuleCall getRoleRoleTypeEnumRuleCall_5_1_0() { return cRoleRoleTypeEnumRuleCall_5_1_0; }
 
 		//("var" collectData+=[CollectedData|QualifiedName]*)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -422,30 +430,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getQuestionnaireQuestionnaireQualifiedNameParserRuleCall_6_1_0_1() { return cQuestionnaireQuestionnaireQualifiedNameParserRuleCall_6_1_0_1; }
 	}
 
-	public class RoleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Role");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRoleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//Role:
-		//	"Role" name=STRING;
-		public ParserRule getRule() { return rule; }
-
-		//"Role" name=STRING
-		public Group getGroup() { return cGroup; }
-
-		//"Role"
-		public Keyword getRoleKeyword_0() { return cRoleKeyword_0; }
-
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
-	}
-
 	public class ArtefactElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Artefact");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -488,6 +472,34 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 
 		//ArtefactType
 		public RuleCall getTypeArtefactTypeEnumRuleCall_4_0() { return cTypeArtefactTypeEnumRuleCall_4_0; }
+	}
+
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//	ID ("." ID)*;
+		public ParserRule getRule() { return rule; }
+
+		//ID ("." ID)*
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//("." ID)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 
 	public class MetricsElements extends AbstractParserRuleElementFinder {
@@ -819,26 +831,30 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDependentVariableDependentVariableParserRuleCall_13_0 = (RuleCall)cDependentVariableAssignment_13.eContents().get(0);
 		private final Assignment cFactorAssignment_14 = (Assignment)cGroup.eContents().get(14);
 		private final RuleCall cFactorFactorParserRuleCall_14_0 = (RuleCall)cFactorAssignment_14.eContents().get(0);
-		private final Keyword cStatisticalAnalysisAnalysisKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Keyword cEqualsSignKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Assignment cTechniqueAssignment_17 = (Assignment)cGroup.eContents().get(17);
-		private final RuleCall cTechniqueAnalysisTechiqueTypeEnumRuleCall_17_0 = (RuleCall)cTechniqueAssignment_17.eContents().get(0);
-		private final Keyword cInternalReplicationKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Assignment cInternalReplicationAssignment_19 = (Assignment)cGroup.eContents().get(19);
-		private final RuleCall cInternalReplicationINTTerminalRuleCall_19_0 = (RuleCall)cInternalReplicationAssignment_19.eContents().get(0);
-		private final Assignment cLinkAssignment_20 = (Assignment)cGroup.eContents().get(20);
-		private final RuleCall cLinkLinkParserRuleCall_20_0 = (RuleCall)cLinkAssignment_20.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Keyword cStatisticalAnalysisTechniqueKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
+		private final Assignment cTosubhypothesesAssignment_16_0 = (Assignment)cGroup_16.eContents().get(0);
+		private final CrossReference cTosubhypothesesSubhypothesesCrossReference_16_0_0 = (CrossReference)cTosubhypothesesAssignment_16_0.eContents().get(0);
+		private final RuleCall cTosubhypothesesSubhypothesesQualifiedNameParserRuleCall_16_0_0_1 = (RuleCall)cTosubhypothesesSubhypothesesCrossReference_16_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
+		private final Assignment cTechniqueAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
+		private final RuleCall cTechniqueAnalysisTechiqueTypeEnumRuleCall_16_2_0 = (RuleCall)cTechniqueAssignment_16_2.eContents().get(0);
+		private final Keyword cInternalReplicationKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cInternalReplicationAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cInternalReplicationINTTerminalRuleCall_18_0 = (RuleCall)cInternalReplicationAssignment_18.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//ExperimentalPlan:
 		//	"Goals" "{" goal+=Goal* "}" "Hypotheses" "{" hypotheses+=Hypotheses* "}" "DesignOfExperiment" "=" type=DesignType "{"
-		//	parameter+=Parameter* dependentVariable+=DependentVariable* factor+=Factor* "Statistical Analysis analysis" "="
-		//	Technique+=AnalysisTechiqueType* "Internal Replication " internalReplication=INT link+=Link* "}";
+		//	parameter+=Parameter* dependentVariable+=DependentVariable* factor+=Factor* "Statistical Analysis Technique"
+		//	(tosubhypotheses+=[Subhypotheses|QualifiedName]* ":" Technique+=AnalysisTechiqueType*)* "Internal Replication "
+		//	internalReplication=INT "}";
 		public ParserRule getRule() { return rule; }
 
 		//"Goals" "{" goal+=Goal* "}" "Hypotheses" "{" hypotheses+=Hypotheses* "}" "DesignOfExperiment" "=" type=DesignType "{"
-		//parameter+=Parameter* dependentVariable+=DependentVariable* factor+=Factor* "Statistical Analysis analysis" "="
-		//Technique+=AnalysisTechiqueType* "Internal Replication " internalReplication=INT link+=Link* "}"
+		//parameter+=Parameter* dependentVariable+=DependentVariable* factor+=Factor* "Statistical Analysis Technique"
+		//(tosubhypotheses+=[Subhypotheses|QualifiedName]* ":" Technique+=AnalysisTechiqueType*)* "Internal Replication "
+		//internalReplication=INT "}"
 		public Group getGroup() { return cGroup; }
 
 		//"Goals"
@@ -904,35 +920,41 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		//Factor
 		public RuleCall getFactorFactorParserRuleCall_14_0() { return cFactorFactorParserRuleCall_14_0; }
 
-		//"Statistical Analysis analysis"
-		public Keyword getStatisticalAnalysisAnalysisKeyword_15() { return cStatisticalAnalysisAnalysisKeyword_15; }
+		//"Statistical Analysis Technique"
+		public Keyword getStatisticalAnalysisTechniqueKeyword_15() { return cStatisticalAnalysisTechniqueKeyword_15; }
 
-		//"="
-		public Keyword getEqualsSignKeyword_16() { return cEqualsSignKeyword_16; }
+		//(tosubhypotheses+=[Subhypotheses|QualifiedName]* ":" Technique+=AnalysisTechiqueType*)*
+		public Group getGroup_16() { return cGroup_16; }
+
+		//tosubhypotheses+=[Subhypotheses|QualifiedName]*
+		public Assignment getTosubhypothesesAssignment_16_0() { return cTosubhypothesesAssignment_16_0; }
+
+		//[Subhypotheses|QualifiedName]
+		public CrossReference getTosubhypothesesSubhypothesesCrossReference_16_0_0() { return cTosubhypothesesSubhypothesesCrossReference_16_0_0; }
+
+		//QualifiedName
+		public RuleCall getTosubhypothesesSubhypothesesQualifiedNameParserRuleCall_16_0_0_1() { return cTosubhypothesesSubhypothesesQualifiedNameParserRuleCall_16_0_0_1; }
+
+		//":"
+		public Keyword getColonKeyword_16_1() { return cColonKeyword_16_1; }
 
 		//Technique+=AnalysisTechiqueType*
-		public Assignment getTechniqueAssignment_17() { return cTechniqueAssignment_17; }
+		public Assignment getTechniqueAssignment_16_2() { return cTechniqueAssignment_16_2; }
 
 		//AnalysisTechiqueType
-		public RuleCall getTechniqueAnalysisTechiqueTypeEnumRuleCall_17_0() { return cTechniqueAnalysisTechiqueTypeEnumRuleCall_17_0; }
+		public RuleCall getTechniqueAnalysisTechiqueTypeEnumRuleCall_16_2_0() { return cTechniqueAnalysisTechiqueTypeEnumRuleCall_16_2_0; }
 
 		//"Internal Replication "
-		public Keyword getInternalReplicationKeyword_18() { return cInternalReplicationKeyword_18; }
+		public Keyword getInternalReplicationKeyword_17() { return cInternalReplicationKeyword_17; }
 
 		//internalReplication=INT
-		public Assignment getInternalReplicationAssignment_19() { return cInternalReplicationAssignment_19; }
+		public Assignment getInternalReplicationAssignment_18() { return cInternalReplicationAssignment_18; }
 
 		//INT
-		public RuleCall getInternalReplicationINTTerminalRuleCall_19_0() { return cInternalReplicationINTTerminalRuleCall_19_0; }
-
-		//link+=Link*
-		public Assignment getLinkAssignment_20() { return cLinkAssignment_20; }
-
-		//Link
-		public RuleCall getLinkLinkParserRuleCall_20_0() { return cLinkLinkParserRuleCall_20_0; }
+		public RuleCall getInternalReplicationINTTerminalRuleCall_18_0() { return cInternalReplicationINTTerminalRuleCall_18_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_21() { return cRightCurlyBracketKeyword_21; }
+		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
 	}
 
 	public class GoalElements extends AbstractParserRuleElementFinder {
@@ -1075,7 +1097,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFactorFactorQualifiedNameParserRuleCall_1_4_0_1 = (RuleCall)cFactorFactorCrossReference_1_4_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
-		////
 		//Subhypotheses:
 		//	name=ID dependentVariable+=[DependentVariable|QualifiedName] "(" levels+=[Levels|QualifiedName]* ")"
 		//	operator=OperatorType dependentVariable+=[DependentVariable|QualifiedName] "(" levels+=[Levels|QualifiedName]* ")" |
@@ -1242,7 +1263,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cMetricsMetricsCrossReference_3_0 = (CrossReference)cMetricsAssignment_3.eContents().get(0);
 		private final RuleCall cMetricsMetricsQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cMetricsMetricsCrossReference_3_0.eContents().get(1);
 		
-		////New element
 		//DependentVariable:
 		//	"Dependent Variable" name=ID description=STRING metrics+=[Metrics|QualifiedName]*;
 		public ParserRule getRule() { return rule; }
@@ -1341,70 +1361,19 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 
 	public class LevelsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Levels");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLevelKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
+		//// ****
 		//Levels:
-		//	"Level" name=ID;
+		//	name=ID;
 		public ParserRule getRule() { return rule; }
-
-		//"Level" name=ID
-		public Group getGroup() { return cGroup; }
-
-		//"Level"
-		public Keyword getLevelKeyword_0() { return cLevelKeyword_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment() { return cNameAssignment; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-
-	public class LinkElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Link");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLinkKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cProcedureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cProcedureProcessCrossReference_1_0 = (CrossReference)cProcedureAssignment_1.eContents().get(0);
-		private final RuleCall cProcedureProcessIDTerminalRuleCall_1_0_1 = (RuleCall)cProcedureProcessCrossReference_1_0.eContents().get(1);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTreatmentAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTreatmentLevelsCrossReference_3_0 = (CrossReference)cTreatmentAssignment_3.eContents().get(0);
-		private final RuleCall cTreatmentLevelsQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cTreatmentLevelsCrossReference_3_0.eContents().get(1);
-		
-		//Link:
-		//	"Link" procedure+=[Process] "to" treatment+=[Levels|QualifiedName]*;
-		public ParserRule getRule() { return rule; }
-
-		//"Link" procedure+=[Process] "to" treatment+=[Levels|QualifiedName]*
-		public Group getGroup() { return cGroup; }
-
-		//"Link"
-		public Keyword getLinkKeyword_0() { return cLinkKeyword_0; }
-
-		//procedure+=[Process]
-		public Assignment getProcedureAssignment_1() { return cProcedureAssignment_1; }
-
-		//[Process]
-		public CrossReference getProcedureProcessCrossReference_1_0() { return cProcedureProcessCrossReference_1_0; }
-
-		//ID
-		public RuleCall getProcedureProcessIDTerminalRuleCall_1_0_1() { return cProcedureProcessIDTerminalRuleCall_1_0_1; }
-
-		//"to"
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-
-		//treatment+=[Levels|QualifiedName]*
-		public Assignment getTreatmentAssignment_3() { return cTreatmentAssignment_3; }
-
-		//[Levels|QualifiedName]
-		public CrossReference getTreatmentLevelsCrossReference_3_0() { return cTreatmentLevelsCrossReference_3_0; }
-
-		//QualifiedName
-		public RuleCall getTreatmentLevelsQualifiedNameParserRuleCall_3_0_1() { return cTreatmentLevelsQualifiedNameParserRuleCall_3_0_1; }
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
 
 	public class QuestionnaireElements extends AbstractParserRuleElementFinder {
@@ -1604,6 +1573,34 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public class RoleTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "RoleType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cParticipantEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cParticipantParticipantKeyword_0_0 = (Keyword)cParticipantEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cResearcherEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cResearcherResearcherKeyword_1_0 = (Keyword)cResearcherEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum RoleType:
+		//	participant="Participant" | researcher="Researcher";
+		public EnumRule getRule() { return rule; }
+
+		//participant="Participant" | researcher="Researcher"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//participant="Participant"
+		public EnumLiteralDeclaration getParticipantEnumLiteralDeclaration_0() { return cParticipantEnumLiteralDeclaration_0; }
+
+		//"Participant"
+		public Keyword getParticipantParticipantKeyword_0_0() { return cParticipantParticipantKeyword_0_0; }
+
+		//researcher="Researcher"
+		public EnumLiteralDeclaration getResearcherEnumLiteralDeclaration_1() { return cResearcherEnumLiteralDeclaration_1; }
+
+		//"Researcher"
+		public Keyword getResearcherResearcherKeyword_1_0() { return cResearcherResearcherKeyword_1_0; }
+	}
+
 	public class ArtefactTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ArtefactType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1796,7 +1793,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cOtherEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
 		private final Keyword cOtherOtherKeyword_3_0 = (Keyword)cOtherEnumLiteralDeclaration_3.eContents().get(0);
 		
-		////New option 	
 		//enum DesignType:
 		//	CDR="CRD - Completely Randomized Design" | RCBD="RCBD - Randomized Complete Block Design" | LS="LS - Latin Square" |
 		//	other="Other";
@@ -1842,30 +1838,32 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTTestTTestKeyword_2_0 = (Keyword)cTTestEnumLiteralDeclaration_2.eContents().get(0);
 		private final EnumLiteralDeclaration cFTestEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
 		private final Keyword cFTestFTestKeyword_3_0 = (Keyword)cFTestEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cMannWhitneyEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cMannWhitneyMannWhitneyKeyword_4_0 = (Keyword)cMannWhitneyEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cPairedEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cPairedPairedTTestKeyword_5_0 = (Keyword)cPairedEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cWilcoxonEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cWilcoxonWilcoxonKeyword_6_0 = (Keyword)cWilcoxonEnumLiteralDeclaration_6.eContents().get(0);
-		private final EnumLiteralDeclaration cSignTestEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cSignTestSignTestKeyword_7_0 = (Keyword)cSignTestEnumLiteralDeclaration_7.eContents().get(0);
-		private final EnumLiteralDeclaration cAnovaEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
-		private final Keyword cAnovaANOVAKeyword_8_0 = (Keyword)cAnovaEnumLiteralDeclaration_8.eContents().get(0);
-		private final EnumLiteralDeclaration cKruskalWallisEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
-		private final Keyword cKruskalWallisKruskalWallisKeyword_9_0 = (Keyword)cKruskalWallisEnumLiteralDeclaration_9.eContents().get(0);
-		private final EnumLiteralDeclaration cOthersEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
-		private final Keyword cOthersOthersKeyword_10_0 = (Keyword)cOthersEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cMcNemarTestEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cMcNemarTestMcNemarTestKeyword_4_0 = (Keyword)cMcNemarTestEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cMannWhitneyEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cMannWhitneyMannWhitneyKeyword_5_0 = (Keyword)cMannWhitneyEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cPairedEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cPairedPairedTTestKeyword_6_0 = (Keyword)cPairedEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cWilcoxonEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cWilcoxonWilcoxonKeyword_7_0 = (Keyword)cWilcoxonEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cSignTestEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cSignTestSignTestKeyword_8_0 = (Keyword)cSignTestEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cAnovaEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cAnovaANOVAKeyword_9_0 = (Keyword)cAnovaEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cKruskalWallisEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cKruskalWallisKruskalWallisKeyword_10_0 = (Keyword)cKruskalWallisEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cOthersEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cOthersOthersKeyword_11_0 = (Keyword)cOthersEnumLiteralDeclaration_11.eContents().get(0);
 		
 		//enum AnalysisTechiqueType:
-		//	chi2="Chi-2" | binomialTest="Binomial Test" | tTest="t-test" | fTest="F-test" | MannWhitney="Mann-Whitney" |
-		//	paired="Paired t-test" | wilcoxon="Wilcoxon" | signTest="Sign test" | anova="ANOVA" | kruskalWallis="Kruskal-Wallis" |
-		//	others="Others";
+		//	chi2="Chi-2" | binomialTest="Binomial Test" | tTest="t-test" | fTest="F-test" | McNemarTest="McNemar Test" |
+		//	MannWhitney="Mann-Whitney" | paired="Paired t-test" | wilcoxon="Wilcoxon" | signTest="Sign test" | anova="ANOVA" |
+		//	kruskalWallis="Kruskal-Wallis" | others="Others";
 		public EnumRule getRule() { return rule; }
 
-		//chi2="Chi-2" | binomialTest="Binomial Test" | tTest="t-test" | fTest="F-test" | MannWhitney="Mann-Whitney" |
-		//paired="Paired t-test" | wilcoxon="Wilcoxon" | signTest="Sign test" | anova="ANOVA" | kruskalWallis="Kruskal-Wallis" |
-		//others="Others"
+		//chi2="Chi-2" | binomialTest="Binomial Test" | tTest="t-test" | fTest="F-test" | McNemarTest="McNemar Test" |
+		//MannWhitney="Mann-Whitney" | paired="Paired t-test" | wilcoxon="Wilcoxon" | signTest="Sign test" | anova="ANOVA" |
+		//kruskalWallis="Kruskal-Wallis" | others="Others"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//chi2="Chi-2"
@@ -1892,47 +1890,53 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		//"F-test"
 		public Keyword getFTestFTestKeyword_3_0() { return cFTestFTestKeyword_3_0; }
 
+		//McNemarTest="McNemar Test"
+		public EnumLiteralDeclaration getMcNemarTestEnumLiteralDeclaration_4() { return cMcNemarTestEnumLiteralDeclaration_4; }
+
+		//"McNemar Test"
+		public Keyword getMcNemarTestMcNemarTestKeyword_4_0() { return cMcNemarTestMcNemarTestKeyword_4_0; }
+
 		//MannWhitney="Mann-Whitney"
-		public EnumLiteralDeclaration getMannWhitneyEnumLiteralDeclaration_4() { return cMannWhitneyEnumLiteralDeclaration_4; }
+		public EnumLiteralDeclaration getMannWhitneyEnumLiteralDeclaration_5() { return cMannWhitneyEnumLiteralDeclaration_5; }
 
 		//"Mann-Whitney"
-		public Keyword getMannWhitneyMannWhitneyKeyword_4_0() { return cMannWhitneyMannWhitneyKeyword_4_0; }
+		public Keyword getMannWhitneyMannWhitneyKeyword_5_0() { return cMannWhitneyMannWhitneyKeyword_5_0; }
 
 		//paired="Paired t-test"
-		public EnumLiteralDeclaration getPairedEnumLiteralDeclaration_5() { return cPairedEnumLiteralDeclaration_5; }
+		public EnumLiteralDeclaration getPairedEnumLiteralDeclaration_6() { return cPairedEnumLiteralDeclaration_6; }
 
 		//"Paired t-test"
-		public Keyword getPairedPairedTTestKeyword_5_0() { return cPairedPairedTTestKeyword_5_0; }
+		public Keyword getPairedPairedTTestKeyword_6_0() { return cPairedPairedTTestKeyword_6_0; }
 
 		//wilcoxon="Wilcoxon"
-		public EnumLiteralDeclaration getWilcoxonEnumLiteralDeclaration_6() { return cWilcoxonEnumLiteralDeclaration_6; }
+		public EnumLiteralDeclaration getWilcoxonEnumLiteralDeclaration_7() { return cWilcoxonEnumLiteralDeclaration_7; }
 
 		//"Wilcoxon"
-		public Keyword getWilcoxonWilcoxonKeyword_6_0() { return cWilcoxonWilcoxonKeyword_6_0; }
+		public Keyword getWilcoxonWilcoxonKeyword_7_0() { return cWilcoxonWilcoxonKeyword_7_0; }
 
 		//signTest="Sign test"
-		public EnumLiteralDeclaration getSignTestEnumLiteralDeclaration_7() { return cSignTestEnumLiteralDeclaration_7; }
+		public EnumLiteralDeclaration getSignTestEnumLiteralDeclaration_8() { return cSignTestEnumLiteralDeclaration_8; }
 
 		//"Sign test"
-		public Keyword getSignTestSignTestKeyword_7_0() { return cSignTestSignTestKeyword_7_0; }
+		public Keyword getSignTestSignTestKeyword_8_0() { return cSignTestSignTestKeyword_8_0; }
 
 		//anova="ANOVA"
-		public EnumLiteralDeclaration getAnovaEnumLiteralDeclaration_8() { return cAnovaEnumLiteralDeclaration_8; }
+		public EnumLiteralDeclaration getAnovaEnumLiteralDeclaration_9() { return cAnovaEnumLiteralDeclaration_9; }
 
 		//"ANOVA"
-		public Keyword getAnovaANOVAKeyword_8_0() { return cAnovaANOVAKeyword_8_0; }
+		public Keyword getAnovaANOVAKeyword_9_0() { return cAnovaANOVAKeyword_9_0; }
 
 		//kruskalWallis="Kruskal-Wallis"
-		public EnumLiteralDeclaration getKruskalWallisEnumLiteralDeclaration_9() { return cKruskalWallisEnumLiteralDeclaration_9; }
+		public EnumLiteralDeclaration getKruskalWallisEnumLiteralDeclaration_10() { return cKruskalWallisEnumLiteralDeclaration_10; }
 
 		//"Kruskal-Wallis"
-		public Keyword getKruskalWallisKruskalWallisKeyword_9_0() { return cKruskalWallisKruskalWallisKeyword_9_0; }
+		public Keyword getKruskalWallisKruskalWallisKeyword_10_0() { return cKruskalWallisKruskalWallisKeyword_10_0; }
 
 		//others="Others"
-		public EnumLiteralDeclaration getOthersEnumLiteralDeclaration_10() { return cOthersEnumLiteralDeclaration_10; }
+		public EnumLiteralDeclaration getOthersEnumLiteralDeclaration_11() { return cOthersEnumLiteralDeclaration_11; }
 
 		//"Others"
-		public Keyword getOthersOthersKeyword_10_0() { return cOthersOthersKeyword_10_0; }
+		public Keyword getOthersOthersKeyword_11_0() { return cOthersOthersKeyword_11_0; }
 	}
 
 	public class QuestionnaireTypeElements extends AbstractEnumRuleElementFinder {
@@ -1940,14 +1944,14 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cPreEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cPrePreKeyword_0_0 = (Keyword)cPreEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cPosEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cPosPosKeyword_1_0 = (Keyword)cPosEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cPostEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPostPostKeyword_1_0 = (Keyword)cPostEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum QuestionnaireType:
-		//	pre="Pre" | pos="Pos";
+		//	pre="Pre" | post="Post";
 		public EnumRule getRule() { return rule; }
 
-		//pre="Pre" | pos="Pos"
+		//pre="Pre" | post="Post"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//pre="Pre"
@@ -1956,11 +1960,11 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		//"Pre"
 		public Keyword getPrePreKeyword_0_0() { return cPrePreKeyword_0_0; }
 
-		//pos="Pos"
-		public EnumLiteralDeclaration getPosEnumLiteralDeclaration_1() { return cPosEnumLiteralDeclaration_1; }
+		//post="Post"
+		public EnumLiteralDeclaration getPostEnumLiteralDeclaration_1() { return cPostEnumLiteralDeclaration_1; }
 
-		//"Pos"
-		public Keyword getPosPosKeyword_1_0() { return cPosPosKeyword_1_0; }
+		//"Post"
+		public Keyword getPostPostKeyword_1_0() { return cPostPostKeyword_1_0; }
 	}
 
 	public class AnswerTypeElements extends AbstractEnumRuleElementFinder {
@@ -2034,12 +2038,12 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	private ModelElements pModel;
 	private ExperimentElementElements pExperimentElement;
 	private ProcessElements pProcess;
-	private QualifiedNameElements pQualifiedName;
 	private ActivityElements pActivity;
 	private TaskElements pTask;
-	private RoleElements pRole;
+	private RoleTypeElements unknownRuleRoleType;
 	private ArtefactElements pArtefact;
 	private ArtefactTypeElements unknownRuleArtefactType;
+	private QualifiedNameElements pQualifiedName;
 	private MetricsElements pMetrics;
 	private DetailElements pDetail;
 	private TimeMetricElements pTimeMetric;
@@ -2058,7 +2062,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	private DependentVariableElements pDependentVariable;
 	private FactorElements pFactor;
 	private LevelsElements pLevels;
-	private LinkElements pLink;
 	private HypothesisTypeElements unknownRuleHypothesisType;
 	private DesignTypeElements unknownRuleDesignType;
 	private AnalysisTechiqueTypeElements unknownRuleAnalysisTechiqueType;
@@ -2100,7 +2103,7 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ExperimentElement:
-	//	"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)?
+	//	"Experiment" name=STRING process+=Process* metrics+=Metrics* ("Experimental Plan" experiments+=ExperimentalPlan*)
 	//	("Questionnaires" questionnaire+=Questionnaire*)?;
 	public ExperimentElementElements getExperimentElementAccess() {
 		return (pExperimentElement != null) ? pExperimentElement : (pExperimentElement = new ExperimentElementElements());
@@ -2112,7 +2115,7 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 
 	////WorkbreakdownStructure	
 	//Process:
-	//	"Process" name=ID "{" role+=Role? activities+=Activity* "}";
+	//	"Process" name=ID ("to" treatment+=[Levels|QualifiedName]*)? "{" ("Role" role+=RoleType*)? activities+=Activity* "}";
 	public ProcessElements getProcessAccess() {
 		return (pProcess != null) ? pProcess : (pProcess = new ProcessElements());
 	}
@@ -2121,19 +2124,9 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		return getProcessAccess().getRule();
 	}
 
-	//QualifiedName:
-	//	ID ("." ID)*;
-	public QualifiedNameElements getQualifiedNameAccess() {
-		return (pQualifiedName != null) ? pQualifiedName : (pQualifiedName = new QualifiedNameElements());
-	}
-	
-	public ParserRule getQualifiedNameRule() {
-		return getQualifiedNameAccess().getRule();
-	}
-
 	//Activity:
-	//	"Activity" name=ID "description" description=STRING ("to" next+=[Activity|QualifiedName]*)? role+=Role? ("var"
-	//	collectData+=[CollectedData|QualifiedName]*)? ("artefacts" artefacts+=Artefact*)? ("quest"
+	//	"Activity" name=ID "description" description=STRING ("to" next+=[Activity|QualifiedName]*)? ("Role" role+=RoleType*)?
+	//	("var" collectData+=[CollectedData|QualifiedName]*)? ("artefacts" artefacts+=Artefact*)? ("quest"
 	//	questionnaire+=[Questionnaire|QualifiedName]*)? ("{" tasks+=Task* "}")?;
 	public ActivityElements getActivityAccess() {
 		return (pActivity != null) ? pActivity : (pActivity = new ActivityElements());
@@ -2154,14 +2147,14 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		return getTaskAccess().getRule();
 	}
 
-	//Role:
-	//	"Role" name=STRING;
-	public RoleElements getRoleAccess() {
-		return (pRole != null) ? pRole : (pRole = new RoleElements());
+	//enum RoleType:
+	//	participant="Participant" | researcher="Researcher";
+	public RoleTypeElements getRoleTypeAccess() {
+		return (unknownRuleRoleType != null) ? unknownRuleRoleType : (unknownRuleRoleType = new RoleTypeElements());
 	}
 	
-	public ParserRule getRoleRule() {
-		return getRoleAccess().getRule();
+	public EnumRule getRoleTypeRule() {
+		return getRoleTypeAccess().getRule();
 	}
 
 	//Artefact:
@@ -2182,6 +2175,16 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getArtefactTypeRule() {
 		return getArtefactTypeAccess().getRule();
+	}
+
+	//QualifiedName:
+	//	ID ("." ID)*;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return (pQualifiedName != null) ? pQualifiedName : (pQualifiedName = new QualifiedNameElements());
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
 	}
 
 	////Metric Definition	
@@ -2269,8 +2272,9 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 
 	//ExperimentalPlan:
 	//	"Goals" "{" goal+=Goal* "}" "Hypotheses" "{" hypotheses+=Hypotheses* "}" "DesignOfExperiment" "=" type=DesignType "{"
-	//	parameter+=Parameter* dependentVariable+=DependentVariable* factor+=Factor* "Statistical Analysis analysis" "="
-	//	Technique+=AnalysisTechiqueType* "Internal Replication " internalReplication=INT link+=Link* "}";
+	//	parameter+=Parameter* dependentVariable+=DependentVariable* factor+=Factor* "Statistical Analysis Technique"
+	//	(tosubhypotheses+=[Subhypotheses|QualifiedName]* ":" Technique+=AnalysisTechiqueType*)* "Internal Replication "
+	//	internalReplication=INT "}";
 	public ExperimentalPlanElements getExperimentalPlanAccess() {
 		return (pExperimentalPlan != null) ? pExperimentalPlan : (pExperimentalPlan = new ExperimentalPlanElements());
 	}
@@ -2300,7 +2304,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		return getHypothesesAccess().getRule();
 	}
 
-	////
 	//Subhypotheses:
 	//	name=ID dependentVariable+=[DependentVariable|QualifiedName] "(" levels+=[Levels|QualifiedName]* ")"
 	//	operator=OperatorType dependentVariable+=[DependentVariable|QualifiedName] "(" levels+=[Levels|QualifiedName]* ")" |
@@ -2344,7 +2347,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		return getParameterAccess().getRule();
 	}
 
-	////New element
 	//DependentVariable:
 	//	"Dependent Variable" name=ID description=STRING metrics+=[Metrics|QualifiedName]*;
 	public DependentVariableElements getDependentVariableAccess() {
@@ -2365,24 +2367,15 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		return getFactorAccess().getRule();
 	}
 
+	//// ****
 	//Levels:
-	//	"Level" name=ID;
+	//	name=ID;
 	public LevelsElements getLevelsAccess() {
 		return (pLevels != null) ? pLevels : (pLevels = new LevelsElements());
 	}
 	
 	public ParserRule getLevelsRule() {
 		return getLevelsAccess().getRule();
-	}
-
-	//Link:
-	//	"Link" procedure+=[Process] "to" treatment+=[Levels|QualifiedName]*;
-	public LinkElements getLinkAccess() {
-		return (pLink != null) ? pLink : (pLink = new LinkElements());
-	}
-	
-	public ParserRule getLinkRule() {
-		return getLinkAccess().getRule();
 	}
 
 	//enum HypothesisType:
@@ -2395,7 +2388,6 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 		return getHypothesisTypeAccess().getRule();
 	}
 
-	////New option 	
 	//enum DesignType:
 	//	CDR="CRD - Completely Randomized Design" | RCBD="RCBD - Randomized Complete Block Design" | LS="LS - Latin Square" |
 	//	other="Other";
@@ -2408,9 +2400,9 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum AnalysisTechiqueType:
-	//	chi2="Chi-2" | binomialTest="Binomial Test" | tTest="t-test" | fTest="F-test" | MannWhitney="Mann-Whitney" |
-	//	paired="Paired t-test" | wilcoxon="Wilcoxon" | signTest="Sign test" | anova="ANOVA" | kruskalWallis="Kruskal-Wallis" |
-	//	others="Others";
+	//	chi2="Chi-2" | binomialTest="Binomial Test" | tTest="t-test" | fTest="F-test" | McNemarTest="McNemar Test" |
+	//	MannWhitney="Mann-Whitney" | paired="Paired t-test" | wilcoxon="Wilcoxon" | signTest="Sign test" | anova="ANOVA" |
+	//	kruskalWallis="Kruskal-Wallis" | others="Others";
 	public AnalysisTechiqueTypeElements getAnalysisTechiqueTypeAccess() {
 		return (unknownRuleAnalysisTechiqueType != null) ? unknownRuleAnalysisTechiqueType : (unknownRuleAnalysisTechiqueType = new AnalysisTechiqueTypeElements());
 	}
@@ -2431,7 +2423,7 @@ public class ExpDslv2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum QuestionnaireType:
-	//	pre="Pre" | pos="Pos";
+	//	pre="Pre" | post="Post";
 	public QuestionnaireTypeElements getQuestionnaireTypeAccess() {
 		return (unknownRuleQuestionnaireType != null) ? unknownRuleQuestionnaireType : (unknownRuleQuestionnaireType = new QuestionnaireTypeElements());
 	}

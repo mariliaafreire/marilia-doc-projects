@@ -28,7 +28,6 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.HypothesisType;
 import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
-import br.ufrn.dimap.ase.dsl.expDslv2.Link;
 import br.ufrn.dimap.ase.dsl.expDslv2.Metrics;
 import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.OperatorType;
@@ -37,7 +36,7 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
 import br.ufrn.dimap.ase.dsl.expDslv2.QuestionnaireType;
 import br.ufrn.dimap.ase.dsl.expDslv2.RelationType;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
+import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
 import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
@@ -93,13 +92,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 * @generated
 	 */
   private EClass taskEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass roleEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -218,13 +210,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private EClass linkEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   private EClass questionnaireEClass = null;
 
   /**
@@ -240,6 +225,13 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 * @generated
 	 */
   private EClass alternativesEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EEnum roleTypeEEnum = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -472,7 +464,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getProcess_Role()
+  public EReference getProcess_Treatment()
   {
 		return (EReference)processEClass.getEStructuralFeatures().get(1);
 	}
@@ -482,9 +474,19 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EAttribute getProcess_Role()
+  {
+		return (EAttribute)processEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EReference getProcess_Activities()
   {
-		return (EReference)processEClass.getEStructuralFeatures().get(2);
+		return (EReference)processEClass.getEStructuralFeatures().get(3);
 	}
 
   /**
@@ -532,9 +534,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getActivity_Role()
+  public EAttribute getActivity_Role()
   {
-		return (EReference)activityEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(3);
 	}
 
   /**
@@ -635,26 +637,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
   public EReference getTask_Questionnaire()
   {
 		return (EReference)taskEClass.getEStructuralFeatures().get(4);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getRole()
-  {
-		return roleEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getRole_Name()
-  {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(0);
 	}
 
   /**
@@ -962,9 +944,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getExperimentalPlan_Technique()
+  public EReference getExperimentalPlan_Tosubhypotheses()
   {
-		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(6);
+		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(6);
 	}
 
   /**
@@ -972,7 +954,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getExperimentalPlan_InternalReplication()
+  public EAttribute getExperimentalPlan_Technique()
   {
 		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(7);
 	}
@@ -982,9 +964,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getExperimentalPlan_Link()
+  public EAttribute getExperimentalPlan_InternalReplication()
   {
-		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(8);
 	}
 
   /**
@@ -1282,36 +1264,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EClass getLink()
-  {
-		return linkEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getLink_Procedure()
-  {
-		return (EReference)linkEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getLink_Treatment()
-  {
-		return (EReference)linkEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EClass getQuestionnaire()
   {
 		return questionnaireEClass;
@@ -1435,6 +1387,16 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
   public EAttribute getAlternatives_Description()
   {
 		return (EAttribute)alternativesEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EEnum getRoleType()
+  {
+		return roleTypeEEnum;
 	}
 
   /**
@@ -1569,14 +1531,15 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 
 		processEClass = createEClass(PROCESS);
 		createEAttribute(processEClass, PROCESS__NAME);
-		createEReference(processEClass, PROCESS__ROLE);
+		createEReference(processEClass, PROCESS__TREATMENT);
+		createEAttribute(processEClass, PROCESS__ROLE);
 		createEReference(processEClass, PROCESS__ACTIVITIES);
 
 		activityEClass = createEClass(ACTIVITY);
 		createEAttribute(activityEClass, ACTIVITY__NAME);
 		createEAttribute(activityEClass, ACTIVITY__DESCRIPTION);
 		createEReference(activityEClass, ACTIVITY__NEXT);
-		createEReference(activityEClass, ACTIVITY__ROLE);
+		createEAttribute(activityEClass, ACTIVITY__ROLE);
 		createEReference(activityEClass, ACTIVITY__COLLECT_DATA);
 		createEReference(activityEClass, ACTIVITY__ARTEFACTS);
 		createEReference(activityEClass, ACTIVITY__QUESTIONNAIRE);
@@ -1588,9 +1551,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		createEReference(taskEClass, TASK__VAR);
 		createEReference(taskEClass, TASK__ARTEFACTS);
 		createEReference(taskEClass, TASK__QUESTIONNAIRE);
-
-		roleEClass = createEClass(ROLE);
-		createEAttribute(roleEClass, ROLE__NAME);
 
 		artefactEClass = createEClass(ARTEFACT);
 		createEAttribute(artefactEClass, ARTEFACT__NAME);
@@ -1630,9 +1590,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__PARAMETER);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__DEPENDENT_VARIABLE);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__FACTOR);
+		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__TOSUBHYPOTHESES);
 		createEAttribute(experimentalPlanEClass, EXPERIMENTAL_PLAN__TECHNIQUE);
 		createEAttribute(experimentalPlanEClass, EXPERIMENTAL_PLAN__INTERNAL_REPLICATION);
-		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__LINK);
 
 		goalEClass = createEClass(GOAL);
 		createEAttribute(goalEClass, GOAL__NAME);
@@ -1670,10 +1630,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		levelsEClass = createEClass(LEVELS);
 		createEAttribute(levelsEClass, LEVELS__NAME);
 
-		linkEClass = createEClass(LINK);
-		createEReference(linkEClass, LINK__PROCEDURE);
-		createEReference(linkEClass, LINK__TREATMENT);
-
 		questionnaireEClass = createEClass(QUESTIONNAIRE);
 		createEAttribute(questionnaireEClass, QUESTIONNAIRE__NAME);
 		createEReference(questionnaireEClass, QUESTIONNAIRE__RELATES_TO);
@@ -1691,6 +1647,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		createEAttribute(alternativesEClass, ALTERNATIVES__DESCRIPTION);
 
 		// Create enums
+		roleTypeEEnum = createEEnum(ROLE_TYPE);
 		artefactTypeEEnum = createEEnum(ARTEFACT_TYPE);
 		dataTypeEEnum = createEEnum(DATA_TYPE);
 		relationTypeEEnum = createEEnum(RELATION_TYPE);
@@ -1749,14 +1706,15 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 
 		initEClass(processEClass, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProcess_Role(), this.getRole(), null, "role", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Treatment(), this.getLevels(), null, "treatment", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_Role(), this.getRoleType(), "role", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcess_Activities(), this.getActivity(), null, "activities", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_Description(), ecorePackage.getEString(), "description", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Next(), this.getActivity(), null, "next", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Role(), this.getRole(), null, "role", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivity_Role(), this.getRoleType(), "role", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_CollectData(), this.getCollectedData(), null, "collectData", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Questionnaire(), this.getQuestionnaire(), null, "questionnaire", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1768,9 +1726,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		initEReference(getTask_Var(), this.getCollectedData(), null, "var", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Questionnaire(), this.getQuestionnaire(), null, "questionnaire", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artefactEClass, Artefact.class, "Artefact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtefact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1810,9 +1765,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		initEReference(getExperimentalPlan_Parameter(), this.getParameter(), null, "parameter", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentalPlan_DependentVariable(), this.getDependentVariable(), null, "dependentVariable", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentalPlan_Factor(), this.getFactor(), null, "factor", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExperimentalPlan_Tosubhypotheses(), this.getSubhypotheses(), null, "tosubhypotheses", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExperimentalPlan_Technique(), this.getAnalysisTechiqueType(), "Technique", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExperimentalPlan_InternalReplication(), ecorePackage.getEInt(), "internalReplication", null, 0, 1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExperimentalPlan_Link(), this.getLink(), null, "link", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1850,10 +1805,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		initEClass(levelsEClass, Levels.class, "Levels", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLevels_Name(), ecorePackage.getEString(), "name", null, 0, 1, Levels.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLink_Procedure(), this.getProcess(), null, "procedure", null, 0, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLink_Treatment(), this.getLevels(), null, "treatment", null, 0, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(questionnaireEClass, Questionnaire.class, "Questionnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuestionnaire_Name(), ecorePackage.getEString(), "name", null, 0, 1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuestionnaire_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, -1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1871,6 +1822,10 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		initEAttribute(getAlternatives_Description(), ecorePackage.getEString(), "description", null, 0, 1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(roleTypeEEnum, RoleType.class, "RoleType");
+		addEEnumLiteral(roleTypeEEnum, RoleType.PARTICIPANT);
+		addEEnumLiteral(roleTypeEEnum, RoleType.RESEARCHER);
+
 		initEEnum(artefactTypeEEnum, ArtefactType.class, "ArtefactType");
 		addEEnumLiteral(artefactTypeEEnum, ArtefactType.IN_);
 		addEEnumLiteral(artefactTypeEEnum, ArtefactType.OUT_);
@@ -1907,6 +1862,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.BINOMIAL_TEST);
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.TTEST);
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.FTEST);
+		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.MC_NEMAR_TEST);
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.MANN_WHITNEY);
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.PAIRED);
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.WILCOXON);
@@ -1917,7 +1873,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 
 		initEEnum(questionnaireTypeEEnum, QuestionnaireType.class, "QuestionnaireType");
 		addEEnumLiteral(questionnaireTypeEEnum, QuestionnaireType.PRE);
-		addEEnumLiteral(questionnaireTypeEEnum, QuestionnaireType.POS);
+		addEEnumLiteral(questionnaireTypeEEnum, QuestionnaireType.POST);
 
 		initEEnum(answerTypeEEnum, AnswerType.class, "AnswerType");
 		addEEnumLiteral(answerTypeEEnum, AnswerType.TEXT);

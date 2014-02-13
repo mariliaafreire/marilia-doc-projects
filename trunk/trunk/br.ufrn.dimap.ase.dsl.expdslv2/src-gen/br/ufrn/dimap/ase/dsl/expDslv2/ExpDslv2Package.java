@@ -173,13 +173,22 @@ public interface ExpDslv2Package extends EPackage
   int PROCESS__NAME = 0;
 
   /**
-	 * The feature id for the '<em><b>Role</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Treatment</b></em>' reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int PROCESS__ROLE = 1;
+  int PROCESS__TREATMENT = 1;
+
+  /**
+	 * The feature id for the '<em><b>Role</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int PROCESS__ROLE = 2;
 
   /**
 	 * The feature id for the '<em><b>Activities</b></em>' containment reference list.
@@ -188,7 +197,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int PROCESS__ACTIVITIES = 2;
+  int PROCESS__ACTIVITIES = 3;
 
   /**
 	 * The number of structural features of the '<em>Process</em>' class.
@@ -197,7 +206,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int PROCESS_FEATURE_COUNT = 3;
+  int PROCESS_FEATURE_COUNT = 4;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ActivityImpl <em>Activity</em>}' class.
@@ -237,7 +246,7 @@ public interface ExpDslv2Package extends EPackage
   int ACTIVITY__NEXT = 2;
 
   /**
-	 * The feature id for the '<em><b>Role</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Role</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -355,34 +364,6 @@ public interface ExpDslv2Package extends EPackage
   int TASK_FEATURE_COUNT = 5;
 
   /**
-	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.RoleImpl <em>Role</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.RoleImpl
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getRole()
-	 * @generated
-	 */
-  int ROLE = 5;
-
-  /**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ROLE__NAME = 0;
-
-  /**
-	 * The number of structural features of the '<em>Role</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int ROLE_FEATURE_COUNT = 1;
-
-  /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ArtefactImpl <em>Artefact</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -390,7 +371,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getArtefact()
 	 * @generated
 	 */
-  int ARTEFACT = 6;
+  int ARTEFACT = 5;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -436,7 +417,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getMetrics()
 	 * @generated
 	 */
-  int METRICS = 7;
+  int METRICS = 6;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -491,7 +472,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getDetail()
 	 * @generated
 	 */
-  int DETAIL = 8;
+  int DETAIL = 7;
 
   /**
 	 * The number of structural features of the '<em>Detail</em>' class.
@@ -510,7 +491,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getTimeMetric()
 	 * @generated
 	 */
-  int TIME_METRIC = 9;
+  int TIME_METRIC = 8;
 
   /**
 	 * The number of structural features of the '<em>Time Metric</em>' class.
@@ -529,7 +510,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getActivityMetric()
 	 * @generated
 	 */
-  int ACTIVITY_METRIC = 10;
+  int ACTIVITY_METRIC = 9;
 
   /**
 	 * The feature id for the '<em><b>Activity Begin</b></em>' reference.
@@ -566,7 +547,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getTaskMetric()
 	 * @generated
 	 */
-  int TASK_METRIC = 11;
+  int TASK_METRIC = 10;
 
   /**
 	 * The feature id for the '<em><b>Tasks</b></em>' reference list.
@@ -594,7 +575,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getDataMetric()
 	 * @generated
 	 */
-  int DATA_METRIC = 12;
+  int DATA_METRIC = 11;
 
   /**
 	 * The feature id for the '<em><b>Collected Data</b></em>' containment reference list.
@@ -649,7 +630,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getCollectedData()
 	 * @generated
 	 */
-  int COLLECTED_DATA = 13;
+  int COLLECTED_DATA = 12;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -677,7 +658,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getExperimentalPlan()
 	 * @generated
 	 */
-  int EXPERIMENTAL_PLAN = 14;
+  int EXPERIMENTAL_PLAN = 13;
 
   /**
 	 * The feature id for the '<em><b>Goal</b></em>' containment reference list.
@@ -734,13 +715,22 @@ public interface ExpDslv2Package extends EPackage
   int EXPERIMENTAL_PLAN__FACTOR = 5;
 
   /**
+	 * The feature id for the '<em><b>Tosubhypotheses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+  int EXPERIMENTAL_PLAN__TOSUBHYPOTHESES = 6;
+
+  /**
 	 * The feature id for the '<em><b>Technique</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EXPERIMENTAL_PLAN__TECHNIQUE = 6;
+  int EXPERIMENTAL_PLAN__TECHNIQUE = 7;
 
   /**
 	 * The feature id for the '<em><b>Internal Replication</b></em>' attribute.
@@ -749,16 +739,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int EXPERIMENTAL_PLAN__INTERNAL_REPLICATION = 7;
-
-  /**
-	 * The feature id for the '<em><b>Link</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int EXPERIMENTAL_PLAN__LINK = 8;
+  int EXPERIMENTAL_PLAN__INTERNAL_REPLICATION = 8;
 
   /**
 	 * The number of structural features of the '<em>Experimental Plan</em>' class.
@@ -777,7 +758,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getGoal()
 	 * @generated
 	 */
-  int GOAL = 15;
+  int GOAL = 14;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -814,7 +795,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getHypotheses()
 	 * @generated
 	 */
-  int HYPOTHESES = 16;
+  int HYPOTHESES = 15;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -878,7 +859,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getSubhypotheses()
 	 * @generated
 	 */
-  int SUBHYPOTHESES = 17;
+  int SUBHYPOTHESES = 16;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -951,7 +932,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getParameter()
 	 * @generated
 	 */
-  int PARAMETER = 18;
+  int PARAMETER = 17;
 
   /**
 	 * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -988,7 +969,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getDependentVariable()
 	 * @generated
 	 */
-  int DEPENDENT_VARIABLE = 19;
+  int DEPENDENT_VARIABLE = 18;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1034,7 +1015,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getFactor()
 	 * @generated
 	 */
-  int FACTOR = 20;
+  int FACTOR = 19;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1080,7 +1061,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getLevels()
 	 * @generated
 	 */
-  int LEVELS = 21;
+  int LEVELS = 20;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1101,43 +1082,6 @@ public interface ExpDslv2Package extends EPackage
   int LEVELS_FEATURE_COUNT = 1;
 
   /**
-	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.LinkImpl <em>Link</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.LinkImpl
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getLink()
-	 * @generated
-	 */
-  int LINK = 22;
-
-  /**
-	 * The feature id for the '<em><b>Procedure</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int LINK__PROCEDURE = 0;
-
-  /**
-	 * The feature id for the '<em><b>Treatment</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int LINK__TREATMENT = 1;
-
-  /**
-	 * The number of structural features of the '<em>Link</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int LINK_FEATURE_COUNT = 2;
-
-  /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.QuestionnaireImpl <em>Questionnaire</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1145,7 +1089,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getQuestionnaire()
 	 * @generated
 	 */
-  int QUESTIONNAIRE = 23;
+  int QUESTIONNAIRE = 21;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1200,7 +1144,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getQuestion()
 	 * @generated
 	 */
-  int QUESTION = 24;
+  int QUESTION = 22;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1264,7 +1208,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getAlternatives()
 	 * @generated
 	 */
-  int ALTERNATIVES = 25;
+  int ALTERNATIVES = 23;
 
   /**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1285,6 +1229,16 @@ public interface ExpDslv2Package extends EPackage
   int ALTERNATIVES_FEATURE_COUNT = 1;
 
   /**
+	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType <em>Role Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.RoleType
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getRoleType()
+	 * @generated
+	 */
+  int ROLE_TYPE = 24;
+
+  /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.ArtefactType <em>Artefact Type</em>}' enum.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1292,7 +1246,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getArtefactType()
 	 * @generated
 	 */
-  int ARTEFACT_TYPE = 26;
+  int ARTEFACT_TYPE = 25;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.DataType <em>Data Type</em>}' enum.
@@ -1302,7 +1256,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getDataType()
 	 * @generated
 	 */
-  int DATA_TYPE = 27;
+  int DATA_TYPE = 26;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.RelationType <em>Relation Type</em>}' enum.
@@ -1312,7 +1266,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getRelationType()
 	 * @generated
 	 */
-  int RELATION_TYPE = 28;
+  int RELATION_TYPE = 27;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.OperatorType <em>Operator Type</em>}' enum.
@@ -1322,7 +1276,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getOperatorType()
 	 * @generated
 	 */
-  int OPERATOR_TYPE = 29;
+  int OPERATOR_TYPE = 28;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.HypothesisType <em>Hypothesis Type</em>}' enum.
@@ -1332,7 +1286,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getHypothesisType()
 	 * @generated
 	 */
-  int HYPOTHESIS_TYPE = 30;
+  int HYPOTHESIS_TYPE = 29;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.DesignType <em>Design Type</em>}' enum.
@@ -1342,7 +1296,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getDesignType()
 	 * @generated
 	 */
-  int DESIGN_TYPE = 31;
+  int DESIGN_TYPE = 30;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.AnalysisTechiqueType <em>Analysis Techique Type</em>}' enum.
@@ -1352,7 +1306,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getAnalysisTechiqueType()
 	 * @generated
 	 */
-  int ANALYSIS_TECHIQUE_TYPE = 32;
+  int ANALYSIS_TECHIQUE_TYPE = 31;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.QuestionnaireType <em>Questionnaire Type</em>}' enum.
@@ -1362,7 +1316,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getQuestionnaireType()
 	 * @generated
 	 */
-  int QUESTIONNAIRE_TYPE = 33;
+  int QUESTIONNAIRE_TYPE = 32;
 
   /**
 	 * The meta object id for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.AnswerType <em>Answer Type</em>}' enum.
@@ -1372,7 +1326,7 @@ public interface ExpDslv2Package extends EPackage
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getAnswerType()
 	 * @generated
 	 */
-  int ANSWER_TYPE = 34;
+  int ANSWER_TYPE = 33;
 
 
   /**
@@ -1483,15 +1437,26 @@ public interface ExpDslv2Package extends EPackage
   EAttribute getProcess_Name();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getRole <em>Role</em>}'.
+	 * Returns the meta object for the reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getTreatment <em>Treatment</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Role</em>'.
+	 * @return the meta object for the reference list '<em>Treatment</em>'.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Process#getTreatment()
+	 * @see #getProcess()
+	 * @generated
+	 */
+  EReference getProcess_Treatment();
+
+  /**
+	 * Returns the meta object for the attribute list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Role</em>'.
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Process#getRole()
 	 * @see #getProcess()
 	 * @generated
 	 */
-  EReference getProcess_Role();
+  EAttribute getProcess_Role();
 
   /**
 	 * Returns the meta object for the containment reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getActivities <em>Activities</em>}'.
@@ -1548,15 +1513,15 @@ public interface ExpDslv2Package extends EPackage
   EReference getActivity_Next();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Activity#getRole <em>Role</em>}'.
+	 * Returns the meta object for the attribute list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Activity#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Role</em>'.
+	 * @return the meta object for the attribute list '<em>Role</em>'.
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Activity#getRole()
 	 * @see #getActivity()
 	 * @generated
 	 */
-  EReference getActivity_Role();
+  EAttribute getActivity_Role();
 
   /**
 	 * Returns the meta object for the reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Activity#getCollectData <em>Collect Data</em>}'.
@@ -1666,27 +1631,6 @@ public interface ExpDslv2Package extends EPackage
 	 * @generated
 	 */
   EReference getTask_Questionnaire();
-
-  /**
-	 * Returns the meta object for class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Role <em>Role</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Role</em>'.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Role
-	 * @generated
-	 */
-  EClass getRole();
-
-  /**
-	 * Returns the meta object for the attribute '{@link br.ufrn.dimap.ase.dsl.expDslv2.Role#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Role#getName()
-	 * @see #getRole()
-	 * @generated
-	 */
-  EAttribute getRole_Name();
 
   /**
 	 * Returns the meta object for class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Artefact <em>Artefact</em>}'.
@@ -2010,6 +1954,17 @@ public interface ExpDslv2Package extends EPackage
   EReference getExperimentalPlan_Factor();
 
   /**
+	 * Returns the meta object for the reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTosubhypotheses <em>Tosubhypotheses</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tosubhypotheses</em>'.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTosubhypotheses()
+	 * @see #getExperimentalPlan()
+	 * @generated
+	 */
+  EReference getExperimentalPlan_Tosubhypotheses();
+
+  /**
 	 * Returns the meta object for the attribute list '{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTechnique <em>Technique</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2030,17 +1985,6 @@ public interface ExpDslv2Package extends EPackage
 	 * @generated
 	 */
   EAttribute getExperimentalPlan_InternalReplication();
-
-  /**
-	 * Returns the meta object for the containment reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getLink <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Link</em>'.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getLink()
-	 * @see #getExperimentalPlan()
-	 * @generated
-	 */
-  EReference getExperimentalPlan_Link();
 
   /**
 	 * Returns the meta object for class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Goal <em>Goal</em>}'.
@@ -2355,38 +2299,6 @@ public interface ExpDslv2Package extends EPackage
   EAttribute getLevels_Name();
 
   /**
-	 * Returns the meta object for class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Link <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Link</em>'.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Link
-	 * @generated
-	 */
-  EClass getLink();
-
-  /**
-	 * Returns the meta object for the reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Link#getProcedure <em>Procedure</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Procedure</em>'.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Link#getProcedure()
-	 * @see #getLink()
-	 * @generated
-	 */
-  EReference getLink_Procedure();
-
-  /**
-	 * Returns the meta object for the reference list '{@link br.ufrn.dimap.ase.dsl.expDslv2.Link#getTreatment <em>Treatment</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Treatment</em>'.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.Link#getTreatment()
-	 * @see #getLink()
-	 * @generated
-	 */
-  EReference getLink_Treatment();
-
-  /**
 	 * Returns the meta object for class '{@link br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire <em>Questionnaire</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2525,6 +2437,16 @@ public interface ExpDslv2Package extends EPackage
 	 * @generated
 	 */
   EAttribute getAlternatives_Description();
+
+  /**
+	 * Returns the meta object for enum '{@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType <em>Role Type</em>}'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Role Type</em>'.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.RoleType
+	 * @generated
+	 */
+  EEnum getRoleType();
 
   /**
 	 * Returns the meta object for enum '{@link br.ufrn.dimap.ase.dsl.expDslv2.ArtefactType <em>Artefact Type</em>}'.
@@ -2726,12 +2648,20 @@ public interface ExpDslv2Package extends EPackage
     EAttribute PROCESS__NAME = eINSTANCE.getProcess_Name();
 
     /**
-		 * The meta object literal for the '<em><b>Role</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Treatment</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
-    EReference PROCESS__ROLE = eINSTANCE.getProcess_Role();
+    EReference PROCESS__TREATMENT = eINSTANCE.getProcess_Treatment();
+
+    /**
+		 * The meta object literal for the '<em><b>Role</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EAttribute PROCESS__ROLE = eINSTANCE.getProcess_Role();
 
     /**
 		 * The meta object literal for the '<em><b>Activities</b></em>' containment reference list feature.
@@ -2776,12 +2706,12 @@ public interface ExpDslv2Package extends EPackage
     EReference ACTIVITY__NEXT = eINSTANCE.getActivity_Next();
 
     /**
-		 * The meta object literal for the '<em><b>Role</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Role</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated
 		 */
-    EReference ACTIVITY__ROLE = eINSTANCE.getActivity_Role();
+    EAttribute ACTIVITY__ROLE = eINSTANCE.getActivity_Role();
 
     /**
 		 * The meta object literal for the '<em><b>Collect Data</b></em>' reference list feature.
@@ -2864,24 +2794,6 @@ public interface ExpDslv2Package extends EPackage
 		 * @generated
 		 */
     EReference TASK__QUESTIONNAIRE = eINSTANCE.getTask_Questionnaire();
-
-    /**
-		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.RoleImpl <em>Role</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.RoleImpl
-		 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getRole()
-		 * @generated
-		 */
-    EClass ROLE = eINSTANCE.getRole();
-
-    /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
     /**
 		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ArtefactImpl <em>Artefact</em>}' class.
@@ -3142,6 +3054,14 @@ public interface ExpDslv2Package extends EPackage
     EReference EXPERIMENTAL_PLAN__FACTOR = eINSTANCE.getExperimentalPlan_Factor();
 
     /**
+		 * The meta object literal for the '<em><b>Tosubhypotheses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @generated
+		 */
+    EReference EXPERIMENTAL_PLAN__TOSUBHYPOTHESES = eINSTANCE.getExperimentalPlan_Tosubhypotheses();
+
+    /**
 		 * The meta object literal for the '<em><b>Technique</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3156,14 +3076,6 @@ public interface ExpDslv2Package extends EPackage
 		 * @generated
 		 */
     EAttribute EXPERIMENTAL_PLAN__INTERNAL_REPLICATION = eINSTANCE.getExperimentalPlan_InternalReplication();
-
-    /**
-		 * The meta object literal for the '<em><b>Link</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference EXPERIMENTAL_PLAN__LINK = eINSTANCE.getExperimentalPlan_Link();
 
     /**
 		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.GoalImpl <em>Goal</em>}' class.
@@ -3412,32 +3324,6 @@ public interface ExpDslv2Package extends EPackage
     EAttribute LEVELS__NAME = eINSTANCE.getLevels_Name();
 
     /**
-		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.LinkImpl <em>Link</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.LinkImpl
-		 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getLink()
-		 * @generated
-		 */
-    EClass LINK = eINSTANCE.getLink();
-
-    /**
-		 * The meta object literal for the '<em><b>Procedure</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference LINK__PROCEDURE = eINSTANCE.getLink_Procedure();
-
-    /**
-		 * The meta object literal for the '<em><b>Treatment</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference LINK__TREATMENT = eINSTANCE.getLink_Treatment();
-
-    /**
 		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.QuestionnaireImpl <em>Questionnaire</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3546,6 +3432,16 @@ public interface ExpDslv2Package extends EPackage
 		 * @generated
 		 */
     EAttribute ALTERNATIVES__DESCRIPTION = eINSTANCE.getAlternatives_Description();
+
+    /**
+		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType <em>Role Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+		 * @see br.ufrn.dimap.ase.dsl.expDslv2.RoleType
+		 * @see br.ufrn.dimap.ase.dsl.expDslv2.impl.ExpDslv2PackageImpl#getRoleType()
+		 * @generated
+		 */
+    EEnum ROLE_TYPE = eINSTANCE.getRoleType();
 
     /**
 		 * The meta object literal for the '{@link br.ufrn.dimap.ase.dsl.expDslv2.ArtefactType <em>Artefact Type</em>}' enum.

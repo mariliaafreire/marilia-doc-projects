@@ -1,0 +1,609 @@
+Experiment "SPL Testing Strategies V2"
+
+Process STTestingF1 to TestTechnique.Specific Feature.F1{
+	
+	Role Participant
+	
+	//Product 1
+	Activity SP1_F1_1 description "Insert a new member - Product 1" to SP1_F1_2 
+	{
+		Task ExecuteTCSP1_F1_1 description "Execute the test case SP1_F1_1" 
+		artefacts TCSP1_F1_1 description "Teste Case SP1 Feature 1" type input
+		Task ReportCRSP1_F1_1 description "Report CR to test case SP1-F1_1"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP1_F1_2 description "Insert a new conference paper  - Product 1" to SP1_F1_3 
+	{
+		Task ExecuteTCSP1_F1_2 description "Execute the test case SP1_F1_2" 
+		artefacts TCSP1_F1_2 description "Teste Case SP1 Feature 1" type input
+		Task ReportCRSP1_F1_2 description "Report CR to test case SP1-F1_2"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP1_F1_3 description "Insert a doctoral thesis - Product 1" to SP1_F1_4 
+	{
+		Task ExecuteTCSP1_F1_3 description "Execute the test case SP1_F1_3" 
+		artefacts TCSP1_F1_3 description "Teste Case SP1 Feature 1" type input
+		Task ReportCRSP1_F1_3 description "Report CR to test case SP1F1_3"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP1_F1_4 description "Generate Report of Publications - Product 1" to SP1_F1_5 
+	{
+		Task ExecuteTCSP1_F1_4 description "Execute the test case SP1_F1_4" 
+		artefacts TCSP1_F1_4 description "Teste Case SP1 Feature 1" type input
+		Task ReportCRSP1_F1_4 description "Report CR to test case SP1F1_4"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP1_F1_5 description "Generate Report of Publications - Product 1" to SP1_F1_6 
+	{
+		Task ExecuteTCSP1_F1_5 description "Execute the test case SP1_F1_5" 
+		artefacts TCSP1_F1_5 description "Teste Case SP1 Feature 1" type input
+		Task ReportCRSP1_F1_5 description "Report CR to test case SP1F1_5"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP1_F1_6 description "Check the format of the generated reports - Product 1" to SP2_F1_1 
+	{
+		Task ExecuteTCSP1_F1_6 description "Execute the test case SP1_F1_6" 
+		artefacts TCSP1_F1_6 description "Teste Case SP1 Feature 1" type input
+		Task ReportCRSP1_F1_6 description "Report CR to test case SP1F1_6"
+		var ReportedCR1.CR
+	}
+	//Product 2
+	Activity SP2_F1_1 description "Insert a new member - Product 2" to SP2_F1_2 
+	{
+		Task ExecuteTCSP2_F1_1 description "Execute the test case SP2_F1_1" 
+		artefacts TCSP2_F1_1 description "Teste Case 1 SP2 Feature 1" type input
+		Task ReportCRSP2_F1_1 description "Report CR to test case 1 SP2F1_1"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP2_F1_2 description "Insert a new conference paper  - Product 2" to SP2_F1_3 
+	{
+		Task ExecuteTCSP2_F1_2 description "Execute the test case SP2_F1_2" 
+		artefacts TCSP2_F1_2 description "Teste Case 2 SP2 Feature 1" type input
+		Task ReportCRSP2_F1_2 description "Report CR to test case 2 SP2F1_2"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP2_F1_3 description "Insert a doctoral thesis - Product 2" to SP2_F1_4 
+	{
+		Task ExecuteTCSP2_F1_3 description "Execute the test case SP2_F1_3" 
+		artefacts TCSP2_F1_3 description "Teste Case 3 SP2 Feature 1" type input
+		Task ReportCRSP2_F1_3 description "Report CR to test case 3 SP2F1_3"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP2_F1_4 description "Generate Report of Publications - Product 2" to SP2_F1_5 
+	{
+		Task ExecuteTCSP2_F1_4 description "Execute the test case SP2_F1_4" 
+		artefacts TCSP2_F1_4 description "Teste Case 4 SP2 Feature 1" type input
+		Task ReportCRSP2_F1_4 description "Report CR to test case 4 SP2F1_4"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP2_F1_5 description "Generate Report of Publications - Product 2" to SP2_F1_6 
+	{
+		Task ExecuteTCSP2_F1_5 description "Execute the test case SP2_F1_5" 
+		artefacts TCSP2_F1_5 description "Teste Case 5 SP2 Feature 1" type input
+		Task ReportCRSP2_F1_5 description "Report CR to test case SP2F1_5"
+		var ReportedCR1.CR
+	}
+	
+	Activity SP2_F1_6 description "Check the format of the generated reports - Product 2" 
+	{
+		Task ExecuteTCSP2_F1_6 description "Execute the test case SP2_F1_6" 
+		artefacts TCSP2_F1_6 description "Teste Case 6 SP2 Feature 1" type input
+		Task ReportCRSP2_F1_6 description "Report CR to test case SPF1_6"
+		var ReportedCR1.CR
+	}
+}
+
+//Specific Technique - Feature 2
+
+Process STTestingF2 to TestTechnique.Specific Feature.F2 {
+	
+	Role Participant
+	
+	//Product 1
+	Activity SP1_F2_1 description "Insert a new research line - Product 1" to SP1_F2_2 
+	{
+		Task ExecuteTCSP1_F2_1 description "Execute the test case SP1_F2_1" 
+		artefacts TCSP1_F2_1 description "Teste Case SP1 Feature 2" type input
+		Task ReportCRSP1_F2_1 description "Report CR to test case SP1F2_1"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP1_F2_2 description "Associate a member to the research line  - Product 1" to SP1_F2_3 
+	{
+		Task ExecuteTCSP1_F2_2 description "Execute the test case SP1_F2_2" 
+		artefacts TCSP1_F2_2 description "Teste Case SP1 Feature 2" type input
+		Task ReportCRSP1_F2_2 description "Report CR to test case SP1F2_2"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP1_F2_3 description "Remove a research line - Product 1" to SP1_F2_4 
+	{
+		Task ExecuteTCSP1_F2_3 description "Execute the test case SP1_F2_3" 
+		artefacts TCSP1_F2_3 description "Teste Case SP1 Feature 2" type input
+		Task ReportCRSP1_F2_3 description "Report CR to test case SP1F2_3"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP1_F2_4 description "Insert a new research line - Product 1" to SP1_F2_5 
+	{
+		Task ExecuteTCSP1_F2_4 description "Execute the test case SP1_F2_4" 
+		artefacts TCSP1_F2_4 description "Teste Case SP1 Feature 2" type input
+		Task ReportCRSP1_F2_4 description "Report CR to test case SP1F2_4"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP1_F2_5 description "Associate a publication to a research line - Product 1" to SP1_F2_6 
+	{
+		Task ExecuteTCSP1_F2_5 description "Execute the test case SP1_F2_5" 
+		artefacts TCSP1_F2_5 description "Teste Case SP1 Feature 2" type input
+		Task ReportCRSP1_F2_5 description "Report CR to test case SP1F2_5"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP1_F2_6 description "Edit a research line" to SP2_F2_1 
+	{
+		Task ExecuteTCSP1_F2_6 description "Execute the test case SP1_F2_6" 
+		artefacts TCSP1_F2_6 description "Teste Case SP1 Feature 2" type input
+		Task ReportCRSP1_F2_6 description "Report CR to test case SP1F2_6"
+		var ReportedCR2.CR
+	}
+	//Product 2
+		Activity SP2_F2_1 description "Insert a new research line - Product 2" to SP2_F2_2 
+	{
+		Task ExecuteTCSP2_F2_1 description "Execute the test case SP2_F2_1" 
+		artefacts TCSP2_F2_1 description "Teste Case 1 SP2 Feature 2" type input
+		Task ReportCRSP2_F2_1 description "Report CR to test case 1 SP2F2_1"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP2_F2_2 description "Associate a member to the research line  - Product 2" to SP2_F2_3 
+	{
+		Task ExecuteTCSP2_F2_2 description "Execute the test case SP2_F2_2" 
+		artefacts TCSP2_F2_2 description "Teste Case 2 SP2 Feature 2" type input
+		Task ReportCRSP2_F2_2 description "Report CR to test case 2 SP2F2_2"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP2_F2_3 description "Remove a research line - Product 2" to SP2_F2_4 
+	{
+		Task ExecuteTCSP2_F2_3 description "Execute the test case SP2_F2_3" 
+		artefacts TCSP2_F2_3 description "Teste Case 3 SP2 Feature 2" type input
+		Task ReportCRSP2_F2_3 description "Report CR to test case 3 SP2F2_3"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP2_F2_4 description "Insert a new research line - Product 2" to SP2_F2_5 
+	{
+		Task ExecuteTCSP2_F2_4 description "Execute the test case SP2_F2_4" 
+		artefacts TCSP2_F2_4 description "Teste Case 4 SP2 Feature 2" type input
+		Task ReportCRSP2_F2_4 description "Report CR to test case 4 SP2F2_4"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP2_F2_5 description "Associate a publication to a research line - Product 2" to SP2_F2_6 
+	{
+		Task ExecuteTCSP2_F2_5 description "Execute the test case SP2_F2_5" 
+		artefacts TCSP2_F2_5 description "Teste Case 5 SP2 Feature 2" type input
+		Task ReportCRSP2_F2_5 description "Report CR to test case SP2F2_5"
+		var ReportedCR2.CR
+	}
+	
+	Activity SP2_F2_6 description "Edit a research line - Product 2" 
+	{
+		Task ExecuteTCSP2_F2_6 description "Execute the test case SP2_F2_6" 
+		artefacts TCSP2_F2_6 description "Teste Case 6 SP2 Feature 2" type input
+		Task ReportCRSP2_F2_6 description "Report CR to test case SPF2_6"
+		var ReportedCR2.CR
+	}
+}
+// Generich Technique - Feature 1
+Process GTTestingF1 to TestTechnique.Generic Feature.F1 {
+	
+	Role Participant
+	
+	//Product 1
+	Activity SG1_F1_1 description "Insert a new member - Product 1" to SG1_F1_2 
+	{
+		Task ExecuteTCSG1_F1_1 description "Execute the test case SG1_F1_1" 
+		artefacts TCSG1_F1_1 description "Teste Case SG1 Feature 1" type input
+		Task ReportCRSG1_F1_1 description "Report CR to test case SG1F1_1"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG1_F1_2 description "Insert a new conference paper  - Product 1" to SG1_F1_3 
+	{
+		Task ExecuteTCSG1_F1_2  description "Execute the test case SG1_F1_2" 
+		artefacts TCSG1_F1_2 description "Teste Case SG1 Feature 1" type input
+		Task ReportCRSG1_F1_2 description "Report CR to test case SG1F1_2"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG1_F1_3 description "Insert a doctoral thesis - Product 1" to SG1_F1_4 
+	{
+		Task ExecuteTCSG1_F1_3 description "Execute the test case SG1_F1_3" 
+		artefacts TCSG1_F1_3 description "Teste Case SG1 Feature 1" type input
+		Task ReportCRSG1_F1_3 description "Report CR to test case SG1F1_3"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG1_F1_4 description "Generate Report of Publications - Product 1" to SG1_F1_5 
+	{
+		Task ExecuteTCSG1_F1_4 description "Execute the test case SG1_F1_4" 
+		artefacts TCSG1_F1_4 description "Teste Case SG1 Feature 1" type input
+		Task ReportCRSG1_F1_4 description "Report CR to test case SG1F1_4"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG1_F1_5 description "Generate Report of Publications - Product 1" to SG1_F1_6 
+	{
+		Task ExecuteTCSG1_F1_5 description "Execute the test case SG1_F1_5" 
+		artefacts TCSG1_F1_5 description "Teste Case SG1 Feature 1" type input
+		Task ReportCRSG1_F1_5 description "Report CR to test case SG1F1_5"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG1_F1_6 description "Check the format of the generated reports - Product 1" to SG2_F1_1 
+	{
+		Task ExecuteTCSG1_F1_6 description "Execute the test case SG1_F1_6" 
+		artefacts TCSG1_F1_6 description "Teste Case SG1 Feature 1" type input
+		Task ReportCRSG1_F1_6 description "Report CR to test case SG1F1_6"
+		var ReportedCR3.CR
+	}
+	//Product 2
+		Activity SG2_F1_1 description "Insert a new member - Product 2" to SG2_F1_2 
+	{
+		Task ExecuteTCSG2_F1_1 description "Execute the test case SG2_F1_1" 
+		artefacts TCSG2_F1_1 description "Teste Case 1 SG2 Feature 1" type input
+		Task ReportCRSG2_F1_1 description "Report CR to test case 1 SG2F1_1"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG2_F1_2 description "Insert a new conference paper  - Product 2" to SG2_F1_3 
+	{
+		Task ExecuteTCSG2_F1_2 description "Execute the test case SG2_F1_2" 
+		artefacts TCSG2_F1_2 description "Teste Case 2 SG2 Feature 1" type input
+		Task ReportCRSG2_F1_2 description "Report CR to test case 2 SG2F1_2"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG2_F1_3 description "Insert a doctoral thesis - Product 2" to SG2_F1_4 
+	{
+		Task ExecuteTCSG2_F1_3 description "Execute the test case SG2_F1_3" 
+		artefacts TCSG2_F1_3 description "Teste Case 3 SG2 Feature 1" type input
+		Task ReportCRSG2_F1_3 description "Report CR to test case 3 SG2F1_3"
+		var ReportedCR3.CR
+			}
+	
+	Activity SG2_F1_4 description "Generate Report of Publications - Product 2" to SG2_F1_5 
+	{
+		Task ExecuteTCSG2_F1_4 description "Execute the test case SG2_F1_4" 
+		artefacts TCSG2_F1_4 description "Teste Case 4 SG2 Feature 1" type input
+		Task ReportCRSG2_F1_4 description "Report CR to test case 4 SG2F1_4"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG2_F1_5 description "Generate Report of Publications - Product 2" to SG2_F1_6 
+	{
+		Task ExecuteTCSG2_F1_5 description "Execute the test case SG2_F1_5" 
+		artefacts TCSG2_F1_5 description "Teste Case 5 SG2 Feature 1" type input
+		Task ReportCRSG2_F1_5 description "Report CR to test case SG2F1_5"
+		var ReportedCR3.CR
+	}
+	
+	Activity SG2_F1_6 description "Check the format of the generated reports - Product 2" 
+	{
+		Task ExecuteTCSG2_F1_6 description "Execute the test case SG2_F1_6" 
+		artefacts TCSG2_F1_6 description "Teste Case 6 SG2 Feature 1" type input
+		Task ReportCRSG2_F1_6 description "Report CR to test case SGF1_6"
+		var ReportedCR3.CR
+	}
+}
+
+//Generich Technique - Feature 2
+
+Process GTTestingF2 to TestTechnique.Generic Feature.F2 {
+	
+	Role Participant
+	
+	//Product 1
+	Activity SG1_F2_1 description "Insert a new research line - Product 1" to SG1_F2_2 
+	{
+		Task ExecuteTCSG1_F2_1 description "Execute the test case SG1_F2_1" 
+		artefacts TCSG1_F2_1 description "Teste Case SG1 Feature 2" type input
+		Task ReportCRSG1_F2_1 description"Report CR to test case SG1F2_1"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG1_F2_2 description "Associate a member to the research line  - Product 1" to SG1_F2_3 
+	{
+		Task ExecuteTCSG1_F2_2 description "Execute the test case SG1_F2_2" 
+		artefacts TCSG1_F2_2 description "Teste Case SG1 Feature 2" type input
+		Task ReportCRSG1_F2_2 description "Report CR to test case SG1F2_2"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG1_F2_3 description "Remove a research line - Product 1" to SG1_F2_4 
+	{
+		Task ExecuteTCSG1_F2_3 description "Execute the test case SG1_F2_3" 
+		artefacts TCSG1_F2_3 description "Teste Case SG1 Feature 2" type input
+		Task ReportCRSG1_F2_3 description "Report CR to test case SG1F2_3"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG1_F2_4 description "Insert a new research line - Product 1" to SG1_F2_5 
+	{
+		Task ExecuteTCSG1_F2_4 description "Execute the test case SG1_F2_4" 
+		artefacts TCSG1_F2_4 description "Teste Case SG1 Feature 2" type input
+		Task ReportCRSG1_F2_4 description "Report CR to test case SG1F2_4"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG1_F2_5 description "Associate a publication to a research line - Product 1" to SG1_F2_6 
+	{
+		Task ExecuteTCSG1_F2_5  description "Execute the test case SG1_F2_5" 
+		artefacts TCSG1_F2_5 description "Teste Case SG1 Feature 2" type input
+		Task ReportCRSG1_F2_5 description "Report CR to test case SG1F2_5"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG1_F2_6 description "Edit a research line" to SG2_F2_1 
+	{
+		Task ExecuteTCSG1_F2_6 description "Execute the test case SG1_F2_6" 
+		artefacts TCSG1_F2_6 description "Teste Case SG1 Feature 2" type input
+		Task ReportCRSG1_F2_6 description "Report CR to test case SG1F2_6"
+		var ReportedCR4.CR
+	}
+	//Product 2
+		Activity SG2_F2_1 description "Insert a new research line - Product 2" to SG2_F2_2 
+	{
+		Task ExecuteTCSG2_F2_1 description "Execute the test case SG2_F2_1" 
+		artefacts TCSG2_F2_1 description "Teste Case 1 SG2 Feature 2" type input
+		Task ReportCRSG2_F2_1 description "Report CR to test case 1 SG2F2_1"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG2_F2_2 description "Associate a member to the research line  - Product 2" to SG2_F2_3 
+	{
+		Task ExecuteTCSG2_F2_2 description "Execute the test case SG2_F2_2" 
+		artefacts TCSG2_F2_2 description "Teste Case 2 SG2 Feature 2" type input
+		Task ReportCRSG2_F2_2 description "Report CR to test case 2 SG2-F2_2"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG2_F2_3 description "Remove a research line - Product 2" to SG2_F2_4 
+	{
+		Task ExecuteTCSG2_F2_3 description "Execute the test case SG2_F2_3" 
+		artefacts TCSG2_F2_3 description "Teste Case 3 SG2 Feature 2" type input
+		Task ReportCRSG2_F2_3 description "Report CR to test case 3 SG2F2_3"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG2_F2_4 description "Insert a new research line - Product 2" to SG2_F2_5 
+	{
+		Task ExecuteTCSG2_F2_4 description "Execute the test case SG2_F2_4" 
+		artefacts TCSG2_F2_4 description "Teste Case 4 SG2 Feature 2" type input
+		Task ReportCRSG2_F2_4 description "Report CR to test case 4 SG2F2_4"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG2_F2_5 description "Associate a publication to a research line - Product 2" to SG2_F2_6 
+	{
+		Task ExecuteTCSG2_F2_5 description "Execute the test case SG2_F2_5" 
+		artefacts TCSG2_F2_5 description "Teste Case 5 SG2 Feature 2" type input
+		Task ReportCRSG2_F2_5 description "Report CR to test case SG2F2_5"
+		var ReportedCR4.CR
+	}
+	
+	Activity SG2_F2_6 description "Edit a research line - Product 2" 
+	{
+		Task ExecuteTCSG2_F2_6 description "Execute the test case SG2_F2_6" 
+		artefacts TCSG2_F2_6 description "Teste Case 6 SG2 Feature 2" type input
+		Task ReportCRSG2_F2_6 description "Report CR to test case SGF2_6"
+		var ReportedCR4.CR
+	}
+	
+	
+}
+
+Metric ReportedCR1 relates STTestingF1 
+{
+	description "CR Reported during test execution for Specific Technique - Feature 1" 
+	collectedData CR: text
+}
+
+Metric ReportedCR2 relates STTestingF2
+{
+	description "CR Reported during test execution" 
+	collectedData CR : text
+}
+
+Metric ReportedCR3 relates GTTestingF1
+{
+	description "CR Reported during test execution" 
+	collectedData CR : text
+}
+
+Metric ReportedCR4 relates GTTestingF2
+{
+	description "CR Reported during test execution" 
+	collectedData CR : text
+}
+
+Metric TimeExecution1 relates STTestingF1 
+{
+	description "Time To Execute Testing - Specific Technique - F1"
+	tasks STTestingF1.SP1_F1_1.ExecuteTCSP1_F1_1 STTestingF1.SP1_F1_2.ExecuteTCSP1_F1_2 STTestingF1.SP1_F1_3.ExecuteTCSP1_F1_3 STTestingF1.SP1_F1_4.ExecuteTCSP1_F1_4
+	STTestingF1.SP1_F1_5.ExecuteTCSP1_F1_5 STTestingF1.SP1_F1_6.ExecuteTCSP1_F1_6 STTestingF1.SP2_F1_1.ExecuteTCSP2_F1_1  STTestingF1.SP2_F1_3.ExecuteTCSP2_F1_3 STTestingF1.SP2_F1_4.ExecuteTCSP2_F1_4
+	STTestingF1.SP2_F1_5.ExecuteTCSP2_F1_5 STTestingF1.SP2_F1_6.ExecuteTCSP2_F1_6
+	}  
+
+Metric TimeExecution2 relates STTestingF2 
+{
+	description "Time To Execute Testing - Specific Technique - F2"
+	tasks STTestingF2.SP1_F2_1.ExecuteTCSP1_F2_1 STTestingF2.SP1_F2_2.ExecuteTCSP1_F2_2 STTestingF2.SP1_F2_3.ExecuteTCSP1_F2_3 STTestingF2.SP1_F2_4.ExecuteTCSP1_F2_4  STTestingF2.SP1_F2_5.ExecuteTCSP1_F2_5 STTestingF2.SP1_F2_6.ExecuteTCSP1_F2_6
+	      STTestingF2.SP2_F2_1.ExecuteTCSP2_F2_1 STTestingF2.SP2_F2_2.ExecuteTCSP2_F2_2 STTestingF2.SP2_F2_3.ExecuteTCSP2_F2_3 STTestingF2.SP2_F2_4.ExecuteTCSP2_F2_4 STTestingF2.SP2_F2_5.ExecuteTCSP2_F2_5 STTestingF2.SP2_F2_6.ExecuteTCSP2_F2_6 
+}
+
+Metric TimeExecution3 relates GTTestingF1 
+{
+	description "Time To Execute Testing - Generic Technique - F1"
+	tasks GTTestingF1.SG1_F1_1.ExecuteTCSG1_F1_1 GTTestingF1.SG1_F1_2.ExecuteTCSG1_F1_2 GTTestingF1.SG1_F1_3.ExecuteTCSG1_F1_3 GTTestingF1.SG1_F1_4.ExecuteTCSG1_F1_4 GTTestingF1.SG1_F1_5.ExecuteTCSG1_F1_5 GTTestingF1.SG1_F1_6.ExecuteTCSG1_F1_6
+	      GTTestingF1.SG2_F1_1.ExecuteTCSG2_F1_1 GTTestingF1.SG2_F1_2.ExecuteTCSG2_F1_2 GTTestingF1.SG2_F1_3.ExecuteTCSG2_F1_3 GTTestingF1.SG2_F1_4.ExecuteTCSG2_F1_4 GTTestingF1.SG2_F1_5.ExecuteTCSG2_F1_5 GTTestingF1.SG2_F1_6.ExecuteTCSG2_F1_6 
+}
+
+Metric TimeExecution4 relates GTTestingF2 
+{
+	description "Time To Execute Testing - Generic Technique - F2"
+	tasks GTTestingF2.SG1_F2_1.ExecuteTCSG1_F2_1 GTTestingF2.SG1_F2_2.ExecuteTCSG1_F2_2 GTTestingF2.SG1_F2_3.ExecuteTCSG1_F2_3 GTTestingF2.SG1_F2_4.ExecuteTCSG1_F2_4 GTTestingF2.SG1_F2_5.ExecuteTCSG1_F2_5 GTTestingF2.SG1_F2_6.ExecuteTCSG1_F2_6
+	      GTTestingF2.SG2_F2_1.ExecuteTCSG2_F2_1 GTTestingF2.SG2_F2_2.ExecuteTCSG2_F2_2 GTTestingF2.SG2_F2_3.ExecuteTCSG2_F2_3 GTTestingF2.SG2_F2_4.ExecuteTCSG2_F2_4 GTTestingF2.SG2_F2_5.ExecuteTCSG2_F2_5 GTTestingF2.SG2_F2_6.ExecuteTCSG2_F2_6 
+}
+
+Experimental Plan 
+Goals {
+	G1 "Analyze the test execution process, for the purpose of evaluating two different SPL test case design techniques (GT vs. ST), with respect to their efficiency regarding
+          time to execute the test suites as well as the number of terminated CRs reported during the test execution process. Using the point of view of test engineers and 
+          software engineering researchers in the context of controlled experiments done with graduate and undergraduate students."
+}
+Hypotheses {
+	H10 "The test execution effort using ST is the same compared with the GT " null from G1 {
+		H101 TestExecutionTime( TestTechnique.Specific) = TestExecutionTime ( TestTechnique.Generic)
+	}
+	H11 "The test execution effort using ST is better than using the GT " alternative from G1 {
+	H111 TestExecutionTime( TestTechnique.Specific) <= TestExecutionTime ( TestTechnique.Generic)
+	}
+	H20 "The number of terminated CRs using ST is the same compared with the GT" null from G1{
+		H201 NumberofCR (TestTechnique.Specific) = NumberofCR ( TestTechnique.Generic)
+	}
+	H21 "The number of terminated CRs using ST is the same compared with the GT" alternative from G1 {
+		H211 NumberofCR ( TestTechnique.Specific) >= NumberofCR ( TestTechnique.Generic)
+	}
+}
+
+DesignOfExperiment = LS - Latin Square {
+	
+	
+	Parameter SPLComplexity = "low"
+    Parameter ParticipantLevel = "Undergraduating Students"
+    
+    Dependent Variable TestExecutionTime "Test execution time for each test in the Test Suite" TimeExecution1 TimeExecution2 TimeExecution3 TimeExecution4 
+    Dependent Variable NumberofCR "Number of terminated CR" ReportedCR1 ReportedCR2 ReportedCR3 ReportedCR4
+    
+    Factor TestTechnique isDesiredVariation True {
+                Generic
+                Specific
+        }
+    Factor Feature isDesiredVariation False { 
+                F1
+                F2
+         }
+    Factor Participants isDesiredVariation False {
+         		Participant1
+         		Participant2
+         }
+   
+   Statistical Analysis Technique H10.H101 H11.H111 : ANOVA
+   								 H20.H201 H21.H211 : Others
+   
+   Internal Replication  4
+   
+}
+
+Questionnaires 
+
+Questionnaire  ExperimentFeedback type Post {
+ Q1_Scholling {
+	description "What is your scholling:"
+	type ComboBox
+	Alternatives
+	Option "Undergraduate student"
+	Option "Graduate"
+	Option "Graduate student"
+	Option "Master" 
+}
+	
+Q2Researchtheme{
+	description "What is your research theme?"
+	type Text }
+	
+Q3ExperienceTest {
+	description "Have you ever worked as a software tester?"
+	type ComboBox
+	required 1
+	Alternatives
+	Option "Yes"	
+	Option "No" 
+}
+Q4ExperienceBlackBoxTests {
+	description "If yes, have you already worked with black-box tests 
+				(based on use case specifications)?"
+	type ComboBox
+	Alternatives
+	Option"Yes"
+	Option "No" }
+	
+Q5TestExperienceDetails {
+	description "Describe your previous experience working with tests:"
+	type ParagraphText
+}
+};
+
+Questionnaire  Scholling type Pre {
+Nome {
+	description "Qual seu nome:"
+	type Text
+	}
+GraudeEscolaridade {
+	description "Qual o grau de escolaridade:"
+	type ComboBox
+	Alternatives
+	Option "Graduação Em Andamento"
+	Option "Graduação Completa"
+	Option "Mestrado Incompleto"
+	Option "Mestrado Completo"	}
+	
+Q1ExperienciaTestes {
+	description "Já trabalhou ou teve experiência com testes de software?"
+	type ComboBox
+	required 1
+	Alternatives
+	Option "Sim"
+	Option 	"Não"
+	} 
+Q2DetalhesExperienciaTestes {
+	description "Se sim, relate brevemente sua experiência?"
+	type ComboBox
+	Alternatives
+	Option "Sim"
+	Option "Não" 
+}
+	
+Q3DisciplinaLPS {
+	description "Já pagou a disciplina de Linhas de Product de Software com Paulo Borba?"
+	type ComboBox
+	Alternatives
+	Option "Sim"
+	Option "Não"
+	}
+	
+Q4FamiliaridadeRGMS {
+	description "Se sim, é familiarizado com a linha RGMS e suas funcionalidades?"
+	type ParagraphText }
+	
+Q5ComentariosExtra {
+	description "Participou do experimento passado?"
+	type ComboBox 
+	Alternatives 
+	Option "Sim"
+	Option "Não" 
+	}
+};
+

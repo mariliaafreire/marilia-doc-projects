@@ -104,20 +104,22 @@ public interface Activity extends EObject
   EList<Activity> getNext();
 
   /**
-	 * Returns the value of the '<em><b>Role</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Role}.
+	 * Returns the value of the '<em><b>Role</b></em>' attribute list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType}.
+	 * The literals are from the enumeration {@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType}.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Role</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Role</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role</em>' containment reference list.
+	 * @return the value of the '<em>Role</em>' attribute list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.RoleType
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getActivity_Role()
-	 * @model containment="true"
+	 * @model unique="false"
 	 * @generated
 	 */
-  EList<Role> getRole();
+  EList<RoleType> getRole();
 
   /**
 	 * Returns the value of the '<em><b>Collect Data</b></em>' reference list.

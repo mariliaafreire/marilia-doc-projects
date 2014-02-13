@@ -64,6 +64,16 @@ public enum AnalysisTechiqueType implements Enumerator
   FTEST(3, "fTest", "F-test"),
 
   /**
+	 * The '<em><b>Mc Nemar Test</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #MC_NEMAR_TEST_VALUE
+	 * @generated
+	 * @ordered
+	 */
+  MC_NEMAR_TEST(4, "McNemarTest", "McNemar Test"),
+
+  /**
 	 * The '<em><b>Mann Whitney</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -71,7 +81,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  MANN_WHITNEY(4, "MannWhitney", "Mann-Whitney"),
+  MANN_WHITNEY(5, "MannWhitney", "Mann-Whitney"),
 
   /**
 	 * The '<em><b>Paired</b></em>' literal object.
@@ -81,7 +91,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  PAIRED(5, "paired", "Paired t-test"),
+  PAIRED(6, "paired", "Paired t-test"),
 
   /**
 	 * The '<em><b>Wilcoxon</b></em>' literal object.
@@ -91,7 +101,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  WILCOXON(6, "wilcoxon", "Wilcoxon"),
+  WILCOXON(7, "wilcoxon", "Wilcoxon"),
 
   /**
 	 * The '<em><b>Sign Test</b></em>' literal object.
@@ -101,7 +111,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  SIGN_TEST(7, "signTest", "Sign test"),
+  SIGN_TEST(8, "signTest", "Sign test"),
 
   /**
 	 * The '<em><b>Anova</b></em>' literal object.
@@ -111,7 +121,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  ANOVA(8, "anova", "ANOVA"),
+  ANOVA(9, "anova", "ANOVA"),
 
   /**
 	 * The '<em><b>Kruskal Wallis</b></em>' literal object.
@@ -121,7 +131,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  KRUSKAL_WALLIS(9, "kruskalWallis", "Kruskal-Wallis"),
+  KRUSKAL_WALLIS(10, "kruskalWallis", "Kruskal-Wallis"),
 
   /**
 	 * The '<em><b>Others</b></em>' literal object.
@@ -131,7 +141,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  OTHERS(10, "others", "Others");
+  OTHERS(11, "others", "Others");
 
   /**
 	 * The '<em><b>Chi2</b></em>' literal value.
@@ -194,6 +204,21 @@ public enum AnalysisTechiqueType implements Enumerator
   public static final int FTEST_VALUE = 3;
 
   /**
+	 * The '<em><b>Mc Nemar Test</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Mc Nemar Test</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @see #MC_NEMAR_TEST
+	 * @model name="McNemarTest" literal="McNemar Test"
+	 * @generated
+	 * @ordered
+	 */
+  public static final int MC_NEMAR_TEST_VALUE = 4;
+
+  /**
 	 * The '<em><b>Mann Whitney</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <p>
@@ -206,7 +231,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int MANN_WHITNEY_VALUE = 4;
+  public static final int MANN_WHITNEY_VALUE = 5;
 
   /**
 	 * The '<em><b>Paired</b></em>' literal value.
@@ -221,7 +246,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int PAIRED_VALUE = 5;
+  public static final int PAIRED_VALUE = 6;
 
   /**
 	 * The '<em><b>Wilcoxon</b></em>' literal value.
@@ -236,7 +261,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int WILCOXON_VALUE = 6;
+  public static final int WILCOXON_VALUE = 7;
 
   /**
 	 * The '<em><b>Sign Test</b></em>' literal value.
@@ -251,7 +276,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int SIGN_TEST_VALUE = 7;
+  public static final int SIGN_TEST_VALUE = 8;
 
   /**
 	 * The '<em><b>Anova</b></em>' literal value.
@@ -266,7 +291,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int ANOVA_VALUE = 8;
+  public static final int ANOVA_VALUE = 9;
 
   /**
 	 * The '<em><b>Kruskal Wallis</b></em>' literal value.
@@ -281,7 +306,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int KRUSKAL_WALLIS_VALUE = 9;
+  public static final int KRUSKAL_WALLIS_VALUE = 10;
 
   /**
 	 * The '<em><b>Others</b></em>' literal value.
@@ -296,7 +321,7 @@ public enum AnalysisTechiqueType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int OTHERS_VALUE = 10;
+  public static final int OTHERS_VALUE = 11;
 
   /**
 	 * An array of all the '<em><b>Analysis Techique Type</b></em>' enumerators.
@@ -310,6 +335,7 @@ public enum AnalysisTechiqueType implements Enumerator
 			BINOMIAL_TEST,
 			TTEST,
 			FTEST,
+			MC_NEMAR_TEST,
 			MANN_WHITNEY,
 			PAIRED,
 			WILCOXON,
@@ -374,6 +400,7 @@ public enum AnalysisTechiqueType implements Enumerator
 			case BINOMIAL_TEST_VALUE: return BINOMIAL_TEST;
 			case TTEST_VALUE: return TTEST;
 			case FTEST_VALUE: return FTEST;
+			case MC_NEMAR_TEST_VALUE: return MC_NEMAR_TEST;
 			case MANN_WHITNEY_VALUE: return MANN_WHITNEY;
 			case PAIRED_VALUE: return PAIRED;
 			case WILCOXON_VALUE: return WILCOXON;

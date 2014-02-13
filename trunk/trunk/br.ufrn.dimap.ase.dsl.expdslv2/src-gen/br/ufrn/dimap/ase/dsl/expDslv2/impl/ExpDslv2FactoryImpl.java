@@ -28,7 +28,6 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.HypothesisType;
 import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
-import br.ufrn.dimap.ase.dsl.expDslv2.Link;
 import br.ufrn.dimap.ase.dsl.expDslv2.Metrics;
 import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.OperatorType;
@@ -37,7 +36,7 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
 import br.ufrn.dimap.ase.dsl.expDslv2.QuestionnaireType;
 import br.ufrn.dimap.ase.dsl.expDslv2.RelationType;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
+import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
 import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
@@ -105,7 +104,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
 			case ExpDslv2Package.PROCESS: return createProcess();
 			case ExpDslv2Package.ACTIVITY: return createActivity();
 			case ExpDslv2Package.TASK: return createTask();
-			case ExpDslv2Package.ROLE: return createRole();
 			case ExpDslv2Package.ARTEFACT: return createArtefact();
 			case ExpDslv2Package.METRICS: return createMetrics();
 			case ExpDslv2Package.DETAIL: return createDetail();
@@ -122,7 +120,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
 			case ExpDslv2Package.DEPENDENT_VARIABLE: return createDependentVariable();
 			case ExpDslv2Package.FACTOR: return createFactor();
 			case ExpDslv2Package.LEVELS: return createLevels();
-			case ExpDslv2Package.LINK: return createLink();
 			case ExpDslv2Package.QUESTIONNAIRE: return createQuestionnaire();
 			case ExpDslv2Package.QUESTION: return createQuestion();
 			case ExpDslv2Package.ALTERNATIVES: return createAlternatives();
@@ -140,6 +137,8 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   public Object createFromString(EDataType eDataType, String initialValue)
   {
 		switch (eDataType.getClassifierID()) {
+			case ExpDslv2Package.ROLE_TYPE:
+				return createRoleTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.ARTEFACT_TYPE:
 				return createArtefactTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.DATA_TYPE:
@@ -172,6 +171,8 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
 		switch (eDataType.getClassifierID()) {
+			case ExpDslv2Package.ROLE_TYPE:
+				return convertRoleTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.ARTEFACT_TYPE:
 				return convertArtefactTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.DATA_TYPE:
@@ -248,17 +249,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   {
 		TaskImpl task = new TaskImpl();
 		return task;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Role createRole()
-  {
-		RoleImpl role = new RoleImpl();
-		return role;
 	}
 
   /**
@@ -442,17 +432,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Link createLink()
-  {
-		LinkImpl link = new LinkImpl();
-		return link;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public Questionnaire createQuestionnaire()
   {
 		QuestionnaireImpl questionnaire = new QuestionnaireImpl();
@@ -479,6 +458,28 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   {
 		AlternativesImpl alternatives = new AlternativesImpl();
 		return alternatives;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public RoleType createRoleTypeFromString(EDataType eDataType, String initialValue)
+  {
+		RoleType result = RoleType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertRoleTypeToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
   /**

@@ -72,15 +72,6 @@ public interface ExpDslv2Factory extends EFactory
   Task createTask();
 
   /**
-	 * Returns a new object of class '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Role</em>'.
-	 * @generated
-	 */
-  Role createRole();
-
-  /**
 	 * Returns a new object of class '<em>Artefact</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -223,15 +214,6 @@ public interface ExpDslv2Factory extends EFactory
 	 * @generated
 	 */
   Levels createLevels();
-
-  /**
-	 * Returns a new object of class '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Link</em>'.
-	 * @generated
-	 */
-  Link createLink();
 
   /**
 	 * Returns a new object of class '<em>Questionnaire</em>'.

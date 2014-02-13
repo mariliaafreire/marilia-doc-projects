@@ -24,9 +24,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getParameter <em>Parameter</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getDependentVariable <em>Dependent Variable</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getFactor <em>Factor</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTosubhypotheses <em>Tosubhypotheses</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTechnique <em>Technique</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getInternalReplication <em>Internal Replication</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getLink <em>Link</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,6 +146,22 @@ public interface ExperimentalPlan extends EObject
   EList<Factor> getFactor();
 
   /**
+	 * Returns the value of the '<em><b>Tosubhypotheses</b></em>' reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Tosubhypotheses</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tosubhypotheses</em>' reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentalPlan_Tosubhypotheses()
+	 * @model
+	 * @generated
+	 */
+  EList<Subhypotheses> getTosubhypotheses();
+
+  /**
 	 * Returns the value of the '<em><b>Technique</b></em>' attribute list.
 	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.AnalysisTechiqueType}.
 	 * The literals are from the enumeration {@link br.ufrn.dimap.ase.dsl.expDslv2.AnalysisTechiqueType}.
@@ -188,21 +204,5 @@ public interface ExperimentalPlan extends EObject
 	 * @generated
 	 */
   void setInternalReplication(int value);
-
-  /**
-	 * Returns the value of the '<em><b>Link</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Link}.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Link</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Link</em>' containment reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentalPlan_Link()
-	 * @model containment="true"
-	 * @generated
-	 */
-  EList<Link> getLink();
 
 } // ExperimentalPlan

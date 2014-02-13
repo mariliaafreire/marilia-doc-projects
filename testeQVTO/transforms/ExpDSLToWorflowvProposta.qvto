@@ -149,18 +149,18 @@ mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
    description := self.description;
  
 	if(self.type = DSL::ArtefactType::in_) then {
-		result.Type := JPDL::ArtefactType::input.repr();
+		result.type := JPDL::ArtefactType::input.repr();
 		
 	}endif;
 		
 	if (self.type = DSL::ArtefactType::out_)then {
 
-		result.Type:= JPDL::ArtefactType::output.repr();
+		result.type:= JPDL::ArtefactType::output.repr();
 	}endif;
 		
 	if (self.type = DSL::ArtefactType::inout_)then {
 
-		result.Type:= JPDL::ArtefactType::inoutput.repr();
+		result.type:= JPDL::ArtefactType::inoutput.repr();
 	}endif;
 	
 }

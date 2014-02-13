@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDslv2:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDslv2="http://www.ufrn.br/dimap/ase/dsl/ExpDslv2">
+  <elements name="CRD_Exemplo">
+    <process name="TechniqueA" treatment="//@elements.0/@experiments.0/@factor.0/@level.0">
+      <role>Participant</role>
+      <activities name="executeTestA1" description="Execute Test 1" next="//@elements.0/@process.0/@activities.1" collectData="//@elements.0/@metrics.2/@detail.0/@collectedData.0" questionnaire="//@elements.0/@questionnaire.0">
+        <artefacts name="testA1" description="Test Case 1"/>
+      </activities>
+      <activities name="executeTestA2" description="Execute Test 2" collectData="//@elements.0/@metrics.2/@detail.0/@collectedData.0" questionnaire="//@elements.0/@questionnaire.0">
+        <artefacts name="testA2" description="Test Case 1"/>
+      </activities>
+    </process>
+    <process name="TechniqueB" treatment="//@elements.0/@experiments.0/@factor.0/@level.1">
+      <role>Participant</role>
+      <activities name="executeTestB1" description="Execute Test 1" next="//@elements.0/@process.1/@activities.1" collectData="//@elements.0/@metrics.3/@detail.0/@collectedData.0" questionnaire="//@elements.0/@questionnaire.0">
+        <artefacts name="testB1" description="Test Case 1"/>
+      </activities>
+      <activities name="executeTestB2" description="Execute Test 2" collectData="//@elements.0/@metrics.3/@detail.0/@collectedData.0" questionnaire="//@elements.0/@questionnaire.0">
+        <artefacts name="testB2" description="Test Case 1"/>
+      </activities>
+    </process>
+    <metrics name="TimeToTestA" relatesTo="//@elements.0/@process.0" description="Time to test using Technique A">
+      <detail xsi:type="expDslv2:ActivityMetric" activityBegin="//@elements.0/@process.0/@activities.0" activityEnd="//@elements.0/@process.0/@activities.1"/>
+    </metrics>
+    <metrics name="TimeToTestB" relatesTo="//@elements.0/@process.0" description="Time to test using Technique B">
+      <detail xsi:type="expDslv2:ActivityMetric" activityBegin="//@elements.0/@process.1/@activities.0" activityEnd="//@elements.0/@process.1/@activities.1"/>
+    </metrics>
+    <metrics name="numberDefectA" relatesTo="//@elements.0/@process.0" description="Number of defect using technique A">
+      <detail xsi:type="expDslv2:DataMetric">
+        <collectedData name="numberDefect"/>
+        <dataType>number</dataType>
+      </detail>
+    </metrics>
+    <metrics name="numberDefectB" relatesTo="//@elements.0/@process.1" description="Number of defect using technique B">
+      <detail xsi:type="expDslv2:DataMetric">
+        <collectedData name="numberDefect"/>
+        <dataType>number</dataType>
+      </detail>
+    </metrics>
+    <metrics name="SatisfactionA" relatesTo="//@elements.0/@process.0" description="Tester satisfaction using technique A">
+      <detail xsi:type="expDslv2:DataMetric"/>
+    </metrics>
+    <metrics name="SatisfactionB" relatesTo="//@elements.0/@process.1" description="Tester satisfaction using technique B">
+      <detail xsi:type="expDslv2:DataMetric"/>
+    </metrics>
+    <experiments tosubhypotheses="//@elements.0/@experiments.0/@hypotheses.0/@subhypotheses.0 //@elements.0/@experiments.0/@hypotheses.1/@subhypotheses.0 //@elements.0/@experiments.0/@hypotheses.4/@subhypotheses.0 //@elements.0/@experiments.0/@hypotheses.5/@subhypotheses.0" internalReplication="6">
+      <goal name="G1" description="To compare the time spent to test technique A and B"/>
+      <goal name="G2" description="To compare the efficience of test technique A and B"/>
+      <goal name="G3" description="To compare the tester satisfaction using technique A and B"/>
+      <hypotheses name="H10" description="The time to test using test techinque A is the same that using technique B" fromGoal="//@elements.0/@experiments.0/@goal.0">
+        <subhypotheses name="H100" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.0 //@elements.0/@experiments.0/@dependentVariable.0" levels="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.0/@level.1"/>
+      </hypotheses>
+      <hypotheses name="H11" description="The time to test using test techinque A is better then using technique B" type="alternative" fromGoal="//@elements.0/@experiments.0/@goal.0">
+        <subhypotheses name="H111" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.0 //@elements.0/@experiments.0/@dependentVariable.0" levels="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.0/@level.1" operator="&lt;"/>
+      </hypotheses>
+      <hypotheses name="H20" description="The efficience using technique A and B is the same" fromGoal="//@elements.0/@experiments.0/@goal.1"/>
+      <hypotheses name="H21" description="The efficience using technique A is better than using B" type="alternative" fromGoal="//@elements.0/@experiments.0/@goal.1"/>
+      <hypotheses name="H30" description="The tester satisfaction using technique A and B is the same" fromGoal="//@elements.0/@experiments.0/@goal.2">
+        <subhypotheses name="H301" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.2 //@elements.0/@experiments.0/@dependentVariable.2" levels="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.0/@level.1"/>
+      </hypotheses>
+      <hypotheses name="H31" description="The Tester satisfaction using technique A is better than using B" type="alternative" fromGoal="//@elements.0/@experiments.0/@goal.2">
+        <subhypotheses name="H311" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.2 //@elements.0/@experiments.0/@dependentVariable.2" levels="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.0/@level.1" operator=">"/>
+      </hypotheses>
+      <parameter variable="Variable" value="Value"/>
+      <parameter variable="Variable" value="Value"/>
+      <dependentVariable name="testingTime" description="Spent time to test" metrics="//@elements.0/@metrics.0 //@elements.0/@metrics.1"/>
+      <dependentVariable name="numberDefectFound" description="Number of defect found testing" metrics="//@elements.0/@metrics.2 //@elements.0/@metrics.3"/>
+      <dependentVariable name="testerSatisfaction" description="The test satisfaction usint technique A and B" metrics="//@elements.0/@metrics.4 //@elements.0/@metrics.5"/>
+      <factor name="Technique" isDesiredVariation="True">
+        <level name="A"/>
+        <level name="B"/>
+      </factor>
+      <Technique>t-test</Technique>
+      <Technique>ANOVA</Technique>
+      <Technique>t-test</Technique>
+      <Technique>Others</Technique>
+    </experiments>
+    <questionnaire name="Satisfaction">
+      <question name="Q1" description="The technique is easy to use" type="CheckBoxes">
+        <alternatives description="strongly disagree"/>
+        <alternatives description="disagree"/>
+        <alternatives description="neither agree nor disagree"/>
+        <alternatives description="agree"/>
+        <alternatives description="strongly agree"/>
+      </question>
+      <question name="Q2" description="The technique is well documented" type="CheckBoxes">
+        <alternatives description="strongly disagree"/>
+        <alternatives description="disagree"/>
+        <alternatives description="neither agree nor disagree"/>
+        <alternatives description="agree"/>
+        <alternatives description="strongly agree"/>
+      </question>
+      <question name="Q3" description="The technique is efficient" type="CheckBoxes">
+        <alternatives description="strongly disagree"/>
+        <alternatives description="disagree"/>
+        <alternatives description="neither agree nor disagree"/>
+        <alternatives description="agree"/>
+        <alternatives description="strongly agree"/>
+      </question>
+    </questionnaire>
+  </elements>
+</expDslv2:Model>

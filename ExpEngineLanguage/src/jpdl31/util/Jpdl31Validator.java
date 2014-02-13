@@ -162,6 +162,36 @@ public class Jpdl31Validator extends EObjectValidator {
 				return validateArtefact((Artefact)value, diagnostics, context);
 			case Jpdl31Package.MODEL:
 				return validateModel((Model)value, diagnostics, context);
+			case Jpdl31Package.METRIC_INFO:
+				return validateMetricInfo((MetricInfo)value, diagnostics, context);
+			case Jpdl31Package.HYPHOTESES:
+				return validateHyphoteses((Hyphoteses)value, diagnostics, context);
+			case Jpdl31Package.SUBHYPOTHESES:
+				return validateSubhypotheses((Subhypotheses)value, diagnostics, context);
+			case Jpdl31Package.DEPENDENT_VARIABLE:
+				return validateDependentVariable((DependentVariable)value, diagnostics, context);
+			case Jpdl31Package.FACTOR:
+				return validateFactor((Factor)value, diagnostics, context);
+			case Jpdl31Package.LEVEL:
+				return validateLevel((Level)value, diagnostics, context);
+			case Jpdl31Package.METRIC:
+				return validateMetric((Metric)value, diagnostics, context);
+			case Jpdl31Package.QUESTIONNAIRE:
+				return validateQuestionnaire((Questionnaire)value, diagnostics, context);
+			case Jpdl31Package.QUESTION:
+				return validateQuestion((Question)value, diagnostics, context);
+			case Jpdl31Package.ALTERNATIVE:
+				return validateAlternative((Alternative)value, diagnostics, context);
+			case Jpdl31Package.GOAL:
+				return validateGoal((Goal)value, diagnostics, context);
+			case Jpdl31Package.EXPERIMENTAL_PLAN:
+				return validateExperimentalPlan((ExperimentalPlan)value, diagnostics, context);
+			case Jpdl31Package.DESIGN:
+				return validateDesign((Design)value, diagnostics, context);
+			case Jpdl31Package.PARAMETER:
+				return validateParameter((Parameter)value, diagnostics, context);
+			case Jpdl31Package.STATISTICAL_TEST:
+				return validateStatisticalTest((StatisticalTest)value, diagnostics, context);
 			case Jpdl31Package.BOOLEAN_TYPE:
 				return validateBooleanType((BooleanType)value, diagnostics, context);
 			case Jpdl31Package.CONFIG_TYPE:
@@ -178,6 +208,18 @@ public class Jpdl31Validator extends EObjectValidator {
 				return validateTypeTypeMember1((TypeTypeMember1)value, diagnostics, context);
 			case Jpdl31Package.ARTEFACT_TYPE:
 				return validateArtefactType((ArtefactType)value, diagnostics, context);
+			case Jpdl31Package.METRIC_TYPE:
+				return validateMetricType((MetricType)value, diagnostics, context);
+			case Jpdl31Package.RELATION_OPERATOR:
+				return validateRelationOperator((RelationOperator)value, diagnostics, context);
+			case Jpdl31Package.ANSWER_TYPE:
+				return validateAnswerType((AnswerType)value, diagnostics, context);
+			case Jpdl31Package.DO_ETYPE:
+				return validateDoEType((DoEType)value, diagnostics, context);
+			case Jpdl31Package.HYPOTHESIS_TYPE:
+				return validateHypothesisType((HypothesisType)value, diagnostics, context);
+			case Jpdl31Package.QUESTIONNAIRE_TYPE:
+				return validateQuestionnaireType((QuestionnaireType)value, diagnostics, context);
 			case Jpdl31Package.BOOLEAN_TYPE_OBJECT:
 				return validateBooleanTypeObject((BooleanType)value, diagnostics, context);
 			case Jpdl31Package.CONFIG_TYPE_OBJECT:
@@ -482,6 +524,141 @@ public class Jpdl31Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateMetricInfo(MetricInfo metricInfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(metricInfo, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHyphoteses(Hyphoteses hyphoteses, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(hyphoteses, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubhypotheses(Subhypotheses subhypotheses, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(subhypotheses, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDependentVariable(DependentVariable dependentVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(dependentVariable, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFactor(Factor factor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(factor, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLevel(Level level, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(level, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMetric(Metric metric, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(metric, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateQuestionnaire(Questionnaire questionnaire, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(questionnaire, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateQuestion(Question question, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(question, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAlternative(Alternative alternative, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(alternative, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGoal(Goal goal, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(goal, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExperimentalPlan(ExperimentalPlan experimentalPlan, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(experimentalPlan, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDesign(Design design, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(design, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameter(Parameter parameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStatisticalTest(StatisticalTest statisticalTest, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(statisticalTest, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateBooleanType(BooleanType booleanType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
@@ -546,6 +723,60 @@ public class Jpdl31Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateArtefactType(ArtefactType artefactType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMetricType(MetricType metricType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRelationOperator(RelationOperator relationOperator, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAnswerType(AnswerType answerType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDoEType(DoEType doEType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHypothesisType(HypothesisType hypothesisType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateQuestionnaireType(QuestionnaireType questionnaireType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

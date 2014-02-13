@@ -17,12 +17,15 @@ import jpdl31.DocumentRoot;
 import jpdl31.EndStateType;
 import jpdl31.EventType;
 import jpdl31.ExceptionHandlerType;
+import jpdl31.ExperimentalPlan;
 import jpdl31.ForkType;
 import jpdl31.JoinType;
 import jpdl31.Jpdl31Package;
+import jpdl31.Metric;
 import jpdl31.NodeType;
 import jpdl31.ProcessDefinitionType;
 import jpdl31.ProcessStateType;
+import jpdl31.Questionnaire;
 import jpdl31.ScriptType;
 import jpdl31.StartStateType;
 import jpdl31.StateType;
@@ -34,6 +37,7 @@ import jpdl31.TimerType;
 import jpdl31.TransitionType;
 import jpdl31.VariableType;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -44,10 +48,12 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -86,6 +92,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jpdl31.impl.DocumentRootImpl#getTimer <em>Timer</em>}</li>
  *   <li>{@link jpdl31.impl.DocumentRootImpl#getTransition <em>Transition</em>}</li>
  *   <li>{@link jpdl31.impl.DocumentRootImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link jpdl31.impl.DocumentRootImpl#getQuestionnaires <em>Questionnaires</em>}</li>
+ *   <li>{@link jpdl31.impl.DocumentRootImpl#getPlan <em>Plan</em>}</li>
+ *   <li>{@link jpdl31.impl.DocumentRootImpl#getMetrics <em>Metrics</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,6 +130,36 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @ordered
 	 */
 	protected EMap<String, String> xSISchemaLocation;
+
+	/**
+	 * The cached value of the '{@link #getQuestionnaires() <em>Questionnaires</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuestionnaires()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Questionnaire> questionnaires;
+
+	/**
+	 * The cached value of the '{@link #getPlan() <em>Plan</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlan()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ExperimentalPlan> plan;
+
+	/**
+	 * The cached value of the '{@link #getMetrics() <em>Metrics</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMetrics()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Metric> metrics;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -812,6 +851,42 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Questionnaire> getQuestionnaires() {
+		if (questionnaires == null) {
+			questionnaires = new EObjectContainmentEList<Questionnaire>(Questionnaire.class, this, Jpdl31Package.DOCUMENT_ROOT__QUESTIONNAIRES);
+		}
+		return questionnaires;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ExperimentalPlan> getPlan() {
+		if (plan == null) {
+			plan = new EObjectContainmentEList<ExperimentalPlan>(ExperimentalPlan.class, this, Jpdl31Package.DOCUMENT_ROOT__PLAN);
+		}
+		return plan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Metric> getMetrics() {
+		if (metrics == null) {
+			metrics = new EObjectContainmentEList<Metric>(Metric.class, this, Jpdl31Package.DOCUMENT_ROOT__METRICS);
+		}
+		return metrics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -869,6 +944,12 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 				return basicSetTransition(null, msgs);
 			case Jpdl31Package.DOCUMENT_ROOT__VARIABLE:
 				return basicSetVariable(null, msgs);
+			case Jpdl31Package.DOCUMENT_ROOT__QUESTIONNAIRES:
+				return ((InternalEList<?>)getQuestionnaires()).basicRemove(otherEnd, msgs);
+			case Jpdl31Package.DOCUMENT_ROOT__PLAN:
+				return ((InternalEList<?>)getPlan()).basicRemove(otherEnd, msgs);
+			case Jpdl31Package.DOCUMENT_ROOT__METRICS:
+				return ((InternalEList<?>)getMetrics()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -938,6 +1019,12 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 				return getTransition();
 			case Jpdl31Package.DOCUMENT_ROOT__VARIABLE:
 				return getVariable();
+			case Jpdl31Package.DOCUMENT_ROOT__QUESTIONNAIRES:
+				return getQuestionnaires();
+			case Jpdl31Package.DOCUMENT_ROOT__PLAN:
+				return getPlan();
+			case Jpdl31Package.DOCUMENT_ROOT__METRICS:
+				return getMetrics();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1033,6 +1120,18 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 			case Jpdl31Package.DOCUMENT_ROOT__VARIABLE:
 				setVariable((VariableType)newValue);
 				return;
+			case Jpdl31Package.DOCUMENT_ROOT__QUESTIONNAIRES:
+				getQuestionnaires().clear();
+				getQuestionnaires().addAll((Collection<? extends Questionnaire>)newValue);
+				return;
+			case Jpdl31Package.DOCUMENT_ROOT__PLAN:
+				getPlan().clear();
+				getPlan().addAll((Collection<? extends ExperimentalPlan>)newValue);
+				return;
+			case Jpdl31Package.DOCUMENT_ROOT__METRICS:
+				getMetrics().clear();
+				getMetrics().addAll((Collection<? extends Metric>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1126,6 +1225,15 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 			case Jpdl31Package.DOCUMENT_ROOT__VARIABLE:
 				setVariable((VariableType)null);
 				return;
+			case Jpdl31Package.DOCUMENT_ROOT__QUESTIONNAIRES:
+				getQuestionnaires().clear();
+				return;
+			case Jpdl31Package.DOCUMENT_ROOT__PLAN:
+				getPlan().clear();
+				return;
+			case Jpdl31Package.DOCUMENT_ROOT__METRICS:
+				getMetrics().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1192,6 +1300,12 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 				return getTransition() != null;
 			case Jpdl31Package.DOCUMENT_ROOT__VARIABLE:
 				return getVariable() != null;
+			case Jpdl31Package.DOCUMENT_ROOT__QUESTIONNAIRES:
+				return questionnaires != null && !questionnaires.isEmpty();
+			case Jpdl31Package.DOCUMENT_ROOT__PLAN:
+				return plan != null && !plan.isEmpty();
+			case Jpdl31Package.DOCUMENT_ROOT__METRICS:
+				return metrics != null && !metrics.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

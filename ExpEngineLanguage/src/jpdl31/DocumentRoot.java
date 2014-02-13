@@ -48,6 +48,9 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link jpdl31.DocumentRoot#getTimer <em>Timer</em>}</li>
  *   <li>{@link jpdl31.DocumentRoot#getTransition <em>Transition</em>}</li>
  *   <li>{@link jpdl31.DocumentRoot#getVariable <em>Variable</em>}</li>
+ *   <li>{@link jpdl31.DocumentRoot#getQuestionnaires <em>Questionnaires</em>}</li>
+ *   <li>{@link jpdl31.DocumentRoot#getPlan <em>Plan</em>}</li>
+ *   <li>{@link jpdl31.DocumentRoot#getMetrics <em>Metrics</em>}</li>
  * </ul>
  * </p>
  *
@@ -746,5 +749,53 @@ public interface DocumentRoot extends EObject {
 	 * @generated
 	 */
 	void setVariable(VariableType value);
+
+	/**
+	 * Returns the value of the '<em><b>Questionnaires</b></em>' containment reference list.
+	 * The list contents are of type {@link jpdl31.Questionnaire}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Questionnaires</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Questionnaires</em>' containment reference list.
+	 * @see jpdl31.Jpdl31Package#getDocumentRoot_Questionnaires()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Questionnaire> getQuestionnaires();
+
+	/**
+	 * Returns the value of the '<em><b>Plan</b></em>' containment reference list.
+	 * The list contents are of type {@link jpdl31.ExperimentalPlan}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Plan</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Plan</em>' containment reference list.
+	 * @see jpdl31.Jpdl31Package#getDocumentRoot_Plan()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<ExperimentalPlan> getPlan();
+
+	/**
+	 * Returns the value of the '<em><b>Metrics</b></em>' containment reference list.
+	 * The list contents are of type {@link jpdl31.Metric}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Metrics</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Metrics</em>' containment reference list.
+	 * @see jpdl31.Jpdl31Package#getDocumentRoot_Metrics()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Metric> getMetrics();
 
 } // DocumentRoot

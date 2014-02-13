@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link jpdl31.TaskNodeType#getSignal <em>Signal</em>}</li>
  *   <li>{@link jpdl31.TaskNodeType#getDescription <em>Description</em>}</li>
  *   <li>{@link jpdl31.TaskNodeType#getArtefacts <em>Artefacts</em>}</li>
+ *   <li>{@link jpdl31.TaskNodeType#getMetrics <em>Metrics</em>}</li>
  * </ul>
  * </p>
  *
@@ -440,5 +441,21 @@ public interface TaskNodeType extends EObject {
 	 * @generated
 	 */
 	EList<Artefact> getArtefacts();
+
+	/**
+	 * Returns the value of the '<em><b>Metrics</b></em>' containment reference list.
+	 * The list contents are of type {@link jpdl31.MetricInfo}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Metrics</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Metrics</em>' containment reference list.
+	 * @see jpdl31.Jpdl31Package#getTaskNodeType_Metrics()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MetricInfo> getMetrics();
 
 } // TaskNodeType

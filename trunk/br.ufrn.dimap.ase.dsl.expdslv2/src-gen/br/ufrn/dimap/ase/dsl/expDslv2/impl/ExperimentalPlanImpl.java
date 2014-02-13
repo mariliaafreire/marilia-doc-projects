@@ -14,8 +14,8 @@ import br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan;
 import br.ufrn.dimap.ase.dsl.expDslv2.Factor;
 import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
-import br.ufrn.dimap.ase.dsl.expDslv2.Link;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
+import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 
 import java.util.Collection;
 
@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -47,9 +48,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getDependentVariable <em>Dependent Variable</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getFactor <em>Factor</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getTosubhypotheses <em>Tosubhypotheses</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getTechnique <em>Technique</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getInternalReplication <em>Internal Replication</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getLink <em>Link</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,6 +129,16 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
   protected EList<Factor> factor;
 
   /**
+	 * The cached value of the '{@link #getTosubhypotheses() <em>Tosubhypotheses</em>}' reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getTosubhypotheses()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<Subhypotheses> tosubhypotheses;
+
+  /**
 	 * The cached value of the '{@link #getTechnique() <em>Technique</em>}' attribute list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -156,16 +167,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
   protected int internalReplication = INTERNAL_REPLICATION_EDEFAULT;
-
-  /**
-	 * The cached value of the '{@link #getLink() <em>Link</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getLink()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<Link> link;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -281,6 +282,19 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EList<Subhypotheses> getTosubhypotheses()
+  {
+		if (tosubhypotheses == null) {
+			tosubhypotheses = new EObjectResolvingEList<Subhypotheses>(Subhypotheses.class, this, ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES);
+		}
+		return tosubhypotheses;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EList<AnalysisTechiqueType> getTechnique()
   {
 		if (technique == null) {
@@ -317,19 +331,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Link> getLink()
-  {
-		if (link == null) {
-			link = new EObjectContainmentEList<Link>(Link.class, this, ExpDslv2Package.EXPERIMENTAL_PLAN__LINK);
-		}
-		return link;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -344,8 +345,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				return ((InternalEList<?>)getDependentVariable()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				return ((InternalEList<?>)getFactor()).basicRemove(otherEnd, msgs);
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__LINK:
-				return ((InternalEList<?>)getLink()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -371,12 +370,12 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				return getDependentVariable();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				return getFactor();
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
+				return getTosubhypotheses();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				return getTechnique();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__INTERNAL_REPLICATION:
 				return getInternalReplication();
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__LINK:
-				return getLink();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -414,16 +413,16 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				getFactor().clear();
 				getFactor().addAll((Collection<? extends Factor>)newValue);
 				return;
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
+				getTosubhypotheses().clear();
+				getTosubhypotheses().addAll((Collection<? extends Subhypotheses>)newValue);
+				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				getTechnique().clear();
 				getTechnique().addAll((Collection<? extends AnalysisTechiqueType>)newValue);
 				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__INTERNAL_REPLICATION:
 				setInternalReplication((Integer)newValue);
-				return;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__LINK:
-				getLink().clear();
-				getLink().addAll((Collection<? extends Link>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -456,14 +455,14 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				getFactor().clear();
 				return;
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
+				getTosubhypotheses().clear();
+				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				getTechnique().clear();
 				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__INTERNAL_REPLICATION:
 				setInternalReplication(INTERNAL_REPLICATION_EDEFAULT);
-				return;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__LINK:
-				getLink().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -490,12 +489,12 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				return dependentVariable != null && !dependentVariable.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				return factor != null && !factor.isEmpty();
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
+				return tosubhypotheses != null && !tosubhypotheses.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				return technique != null && !technique.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__INTERNAL_REPLICATION:
 				return internalReplication != INTERNAL_REPLICATION_EDEFAULT;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__LINK:
-				return link != null && !link.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

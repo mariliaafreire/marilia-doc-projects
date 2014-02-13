@@ -8,7 +8,8 @@ package br.ufrn.dimap.ase.dsl.expDslv2.impl;
 
 import br.ufrn.dimap.ase.dsl.expDslv2.Activity;
 import br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
+import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
+import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
 
 import java.util.Collection;
 
@@ -23,7 +24,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getName <em>Name</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getTreatment <em>Treatment</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getRole <em>Role</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getActivities <em>Activities</em>}</li>
  * </ul>
@@ -64,14 +68,24 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
   protected String name = NAME_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getRole() <em>Role</em>}' containment reference list.
+	 * The cached value of the '{@link #getTreatment() <em>Treatment</em>}' reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getTreatment()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<Levels> treatment;
+
+  /**
+	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Role> role;
+  protected EList<RoleType> role;
 
   /**
 	 * The cached value of the '{@link #getActivities() <em>Activities</em>}' containment reference list.
@@ -132,10 +146,23 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Role> getRole()
+  public EList<Levels> getTreatment()
+  {
+		if (treatment == null) {
+			treatment = new EObjectResolvingEList<Levels>(Levels.class, this, ExpDslv2Package.PROCESS__TREATMENT);
+		}
+		return treatment;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EList<RoleType> getRole()
   {
 		if (role == null) {
-			role = new EObjectContainmentEList<Role>(Role.class, this, ExpDslv2Package.PROCESS__ROLE);
+			role = new EDataTypeEList<RoleType>(RoleType.class, this, ExpDslv2Package.PROCESS__ROLE);
 		}
 		return role;
 	}
@@ -162,8 +189,6 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
-			case ExpDslv2Package.PROCESS__ROLE:
-				return ((InternalEList<?>)getRole()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.PROCESS__ACTIVITIES:
 				return ((InternalEList<?>)getActivities()).basicRemove(otherEnd, msgs);
 		}
@@ -181,6 +206,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 		switch (featureID) {
 			case ExpDslv2Package.PROCESS__NAME:
 				return getName();
+			case ExpDslv2Package.PROCESS__TREATMENT:
+				return getTreatment();
 			case ExpDslv2Package.PROCESS__ROLE:
 				return getRole();
 			case ExpDslv2Package.PROCESS__ACTIVITIES:
@@ -202,9 +229,13 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 			case ExpDslv2Package.PROCESS__NAME:
 				setName((String)newValue);
 				return;
+			case ExpDslv2Package.PROCESS__TREATMENT:
+				getTreatment().clear();
+				getTreatment().addAll((Collection<? extends Levels>)newValue);
+				return;
 			case ExpDslv2Package.PROCESS__ROLE:
 				getRole().clear();
-				getRole().addAll((Collection<? extends Role>)newValue);
+				getRole().addAll((Collection<? extends RoleType>)newValue);
 				return;
 			case ExpDslv2Package.PROCESS__ACTIVITIES:
 				getActivities().clear();
@@ -225,6 +256,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 		switch (featureID) {
 			case ExpDslv2Package.PROCESS__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case ExpDslv2Package.PROCESS__TREATMENT:
+				getTreatment().clear();
 				return;
 			case ExpDslv2Package.PROCESS__ROLE:
 				getRole().clear();
@@ -247,6 +281,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 		switch (featureID) {
 			case ExpDslv2Package.PROCESS__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ExpDslv2Package.PROCESS__TREATMENT:
+				return treatment != null && !treatment.isEmpty();
 			case ExpDslv2Package.PROCESS__ROLE:
 				return role != null && !role.isEmpty();
 			case ExpDslv2Package.PROCESS__ACTIVITIES:
@@ -268,6 +304,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", role: ");
+		result.append(role);
 		result.append(')');
 		return result.toString();
 	}

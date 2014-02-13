@@ -1,0 +1,173 @@
+Experiment "CRD_Exemplo"
+Process TechniqueA to Technique.A{
+	Role Participant
+	Activity executeTestA1 description "Execute Test 1" to executeTestA2
+	var numberDefectA.numberDefect
+	artefacts testA1 description "Test Case 1" type input
+	quest Satisfaction
+	
+	
+	Activity executeTestA2 description "Execute Test 2" 
+	var numberDefectA.numberDefect
+	artefacts testA2 description "Test Case 1" type input
+	quest Satisfaction
+}
+
+Process TechniqueB to Technique.B{
+	Role Participant
+	Activity executeTestB1 description "Execute Test 1" to executeTestB2
+	var numberDefectB.numberDefect
+	artefacts testB1 description "Test Case 1" type input
+	quest Satisfaction
+	
+	Activity executeTestB2 description "Execute Test 2" 
+	var numberDefectB.numberDefect
+	artefacts testB2 description "Test Case 1" type input
+	quest Satisfaction
+}
+
+Metric TimeToTestA  relates TechniqueA {
+	description "Time to test using Technique A" 
+	activityBegin TechniqueA.executeTestA1
+	activityEnd TechniqueA.executeTestA2
+}
+
+Metric TimeToTestB  relates TechniqueA {
+	description "Time to test using Technique B" 
+	activityBegin TechniqueB.executeTestB1
+	activityEnd TechniqueB.executeTestB2
+}
+
+Metric numberDefectA relates TechniqueA {
+	description "Number of defect using technique A"
+	collectedData numberDefect : number
+}
+
+Metric numberDefectB relates TechniqueB{
+	description "Number of defect using technique B" 
+	collectedData numberDefect : number
+}
+
+Metric SatisfactionA relates TechniqueA {
+	description "Tester satisfaction using technique A"
+	quest
+}
+
+Metric SatisfactionB relates TechniqueB {
+	description "Tester satisfaction using technique B"
+	quest
+}
+
+Experimental Plan 
+
+Goals {
+	G1 "To compare the time spent to test technique A and B"
+	G2 "To compare the efficience of test technique A and B"
+	G3 "To compare the tester satisfaction using technique A and B"
+}
+
+Hypotheses {
+	H10 "The time to test using test techinque A is the same that using technique B" null from G1 {
+		H100 testingTime ( Technique.A) = testingTime ( Technique.B  )
+	}
+	H11 "The time to test using test techinque A is better then using technique B" alternative from G1 {
+		H111 testingTime ( Technique.A) < testingTime ( Technique.B  )
+	}
+	H20 "The efficience using technique A and B is the same" null from G2
+	H21 "The efficience using technique A is better than using B" alternative from G2
+	H30 "The tester satisfaction using technique A and B is the same" null from G3 {
+		H301 testerSatisfaction (Technique.A) = testerSatisfaction ( Technique.B )
+	}
+	H31 "The Tester satisfaction using technique A is better than using B" alternative from G3 {
+		H311 testerSatisfaction (Technique.A) > testerSatisfaction ( Technique.B )
+	}
+	
+}
+DesignOfExperiment = CRD - Completely Randomized Design {
+	
+	Parameter Variable1= "Value1"
+	Parameter Variable2= "Value2"
+	
+	Dependent Variable testingTime "Spent time to test" TimeToTestA TimeToTestB
+	Dependent Variable numberDefectFound "Number of defect found testing" numberDefectA numberDefectB
+	Dependent Variable testerSatisfaction "The test satisfaction usint technique A and B" SatisfactionA SatisfactionB
+	 
+	Factor Technique isDesiredVariation True {
+		A
+		B
+	}
+	
+	Statistical Analysis Technique H10.H100 H11.H111 : t-test ANOVA
+								   H30.H301 H31.H311 : t-test Others
+							
+	Internal Replication  6
+	}
+	
+	Questionnaires 
+	Questionnaire Satisfaction {
+		Q1 {
+			description "The technique is easy to use" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q2 {
+			description "The technique is well documented" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q3 {
+			description "The technique is efficient" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q4 {
+			description "The technique is good" 
+			type ComboBox 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q5 {
+			description "Your Name:" 
+			type Text
+			 
+		}
+		Q6 {
+			description "Comment:" 
+			type ParagraphText
+			 
+		}
+		
+	};
+	Questionnaire Scholling relates TechniqueA type Post {
+		Q1 {
+			description "The technique is easy to use" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q2 {
+			description "The technique is well documented" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q3 {
+			description "The technique is efficient" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+	};
+	Questionnaire PreQuest type Pre {
+		Q1 {
+			description "The technique is easy to use" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q2 {
+			description "The technique is well documented" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+		Q3 {
+			description "The technique is efficient" 
+			type CheckBoxes 
+			Alternatives Option "strongly disagree" Option "disagree" Option "neither agree nor disagree" Option "agree" Option "strongly agree" 
+		}
+	};

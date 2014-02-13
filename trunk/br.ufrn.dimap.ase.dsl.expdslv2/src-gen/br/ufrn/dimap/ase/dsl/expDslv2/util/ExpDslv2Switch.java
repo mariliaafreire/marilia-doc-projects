@@ -21,13 +21,11 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Factor;
 import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
-import br.ufrn.dimap.ase.dsl.expDslv2.Link;
 import br.ufrn.dimap.ase.dsl.expDslv2.Metrics;
 import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
 import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
 import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
@@ -126,12 +124,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 			case ExpDslv2Package.TASK: {
 				Task task = (Task)theEObject;
 				T result = caseTask(task);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.ROLE: {
-				Role role = (Role)theEObject;
-				T result = caseRole(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,12 +229,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpDslv2Package.LINK: {
-				Link link = (Link)theEObject;
-				T result = caseLink(link);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExpDslv2Package.QUESTIONNAIRE: {
 				Questionnaire questionnaire = (Questionnaire)theEObject;
 				T result = caseQuestionnaire(questionnaire);
@@ -341,22 +327,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseTask(Task object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseRole(Role object)
   {
 		return null;
 	}
@@ -613,22 +583,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseLevels(Levels object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseLink(Link object)
   {
 		return null;
 	}

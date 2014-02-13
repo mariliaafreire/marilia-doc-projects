@@ -11,7 +11,7 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Artefact;
 import br.ufrn.dimap.ase.dsl.expDslv2.CollectedData;
 import br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
-import br.ufrn.dimap.ase.dsl.expDslv2.Role;
+import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 
 import java.util.Collection;
@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -104,14 +105,14 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
   protected EList<Activity> next;
 
   /**
-	 * The cached value of the '{@link #getRole() <em>Role</em>}' containment reference list.
+	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getRole()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Role> role;
+  protected EList<RoleType> role;
 
   /**
 	 * The cached value of the '{@link #getCollectData() <em>Collect Data</em>}' reference list.
@@ -238,10 +239,10 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Role> getRole()
+  public EList<RoleType> getRole()
   {
 		if (role == null) {
-			role = new EObjectContainmentEList<Role>(Role.class, this, ExpDslv2Package.ACTIVITY__ROLE);
+			role = new EDataTypeEList<RoleType>(RoleType.class, this, ExpDslv2Package.ACTIVITY__ROLE);
 		}
 		return role;
 	}
@@ -307,8 +308,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
-			case ExpDslv2Package.ACTIVITY__ROLE:
-				return ((InternalEList<?>)getRole()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.ACTIVITY__ARTEFACTS:
 				return ((InternalEList<?>)getArtefacts()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.ACTIVITY__TASKS:
@@ -368,7 +367,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				return;
 			case ExpDslv2Package.ACTIVITY__ROLE:
 				getRole().clear();
-				getRole().addAll((Collection<? extends Role>)newValue);
+				getRole().addAll((Collection<? extends RoleType>)newValue);
 				return;
 			case ExpDslv2Package.ACTIVITY__COLLECT_DATA:
 				getCollectData().clear();
@@ -471,6 +470,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		result.append(name);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", role: ");
+		result.append(role);
 		result.append(')');
 		return result.toString();
 	}

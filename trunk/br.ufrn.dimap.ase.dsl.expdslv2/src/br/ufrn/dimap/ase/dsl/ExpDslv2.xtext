@@ -8,25 +8,22 @@ Model:
 ExperimentElement:
 	'Experiment' name=STRING
 	 process+=Process*
-	  metrics+=Metrics*
-	('Experimental Plan' experiments+=ExperimentalPlan*)?
+	 metrics+=Metrics*
+	('Experimental Plan' experiments+=ExperimentalPlan*)
     ('Questionnaires' questionnaire+=Questionnaire*)?
 	 ;
 	//WorkbreakdownStructure	
 Process:
-	'Process' name=ID '{'
-	  (role += Role*)?
+	'Process' name=ID ('to' treatment+=[Levels|QualifiedName]*)?'{'
+	  ('Role' role += RoleType*)?
 	 (activities+=Activity)*
 	'}';
 
-QualifiedName:
-    ID ('.' ID)*;
-    
 Activity:
 	'Activity'
 	name=ID 'description' description=STRING
 	('to' next+=[Activity|QualifiedName]*)?	
-	(role += Role*)?
+	('Role' role += RoleType*)?
 	('var' collectData+=[CollectedData|QualifiedName]*)?
 	('artefacts' (artefacts+=Artefact)*)?
 	('quest' questionnaire+=[Questionnaire|QualifiedName]*)?
@@ -34,7 +31,6 @@ Activity:
 	 tasks+=Task*
 	'}')?;
  
-  
 Task: 'Task' name=ID 'description' description=STRING
 	  ('var' var+=[CollectedData|QualifiedName
 	  ]*)?
@@ -42,43 +38,36 @@ Task: 'Task' name=ID 'description' description=STRING
       ('quest' questionnaire+=[Questionnaire|QualifiedName]*)?
 	  ;
 
-
-
-Role: 'Role' name=STRING;
-
+enum RoleType returns RoleType:
+	participant = 'Participant'| researcher = 'Researcher'
+;
 Artefact:
 	name = ID 'description' description=STRING 'type' type=ArtefactType;
-	
-enum ArtefactType returns ArtefactType:
+	enum ArtefactType returns ArtefactType:
 	in_ = 'input' | out_ = 'output' | inout_ = 'inoutput';
 
-	
+QualifiedName:
+    ID ('.' ID)*;
+
 //Metric Definition	
 Metrics:
 	'Metric' name=ID 'relates' relatesTo=[Process] '{'
 		('description' description=STRING)
 		detail+=Detail
-		'}';
-		
+	'}';
 Detail:
 	(TimeMetric|DataMetric);
-
 TimeMetric:
-	ActivityMetric|TaskMetric;
-	
-ActivityMetric:
-	    {ActivityMetric}('activityBegin' activityBegin=[Activity|QualifiedName])
-		('activityEnd' activityEnd=[Activity|QualifiedName])?
-       ;
-
-TaskMetric:
-	 {TaskMetric} 'tasks' tasks+=[Task|QualifiedName]*;
-    
-DataMetric:
-	{DataMetric} ('collectedData' collectedData+=CollectedData* ':' dataType+=DataType)? 
-	             ('artefact' artefacts+=[Artefact|QualifiedName]*)?
-	             ('quest' questionnaires+=[Questionnaire|QualifiedName]*)?;
-
+	ActivityMetric|TaskMetric;	
+ActivityMetric: {ActivityMetric}
+	('activityBegin' activityBegin=[Activity|QualifiedName])
+	('activityEnd' activityEnd=[Activity|QualifiedName])?;
+TaskMetric: {TaskMetric} 
+	'tasks' tasks+=[Task|QualifiedName]*;    
+DataMetric:	{DataMetric} 
+	('collectedData' collectedData+=CollectedData* ':' dataType+=DataType)? 
+	('artefact' artefacts+=[Artefact|QualifiedName]*)?
+	('quest' questionnaires+=[Questionnaire|QualifiedName]*)?;
 CollectedData: name = ID;
 
 enum DataType returns DataType:
@@ -92,81 +81,56 @@ ExperimentalPlan:
 		(parameter+=Parameter)*
 		(dependentVariable+=DependentVariable)*
 	    (factor+=Factor)*
-  'Statistical Analysis analysis' '=' Technique+=AnalysisTechiqueType*
-
- 'Internal Replication ' internalReplication=INT
-	    (link+=Link)*
-	'}';
-
+'Statistical Analysis Technique' 
+((tosubhypotheses+=[Subhypotheses|QualifiedName]* ':' Technique+=AnalysisTechiqueType*))*                               
+'Internal Replication ' internalReplication=INT
+'}';
 
 Goal:  name=ID description=STRING;
-
 Hypotheses: name=ID description=STRING type=HypothesisType 'from' fromGoal=[Goal|QualifiedName]
 			 ('{'subhypotheses+=Subhypotheses*'}' )?;
-
-
-//
 Subhypotheses: 
-	 (name=ID dependentVariable+=[DependentVariable|QualifiedName] '(' (levels+=[Levels|QualifiedName])*')' operator=OperatorType dependentVariable+=[DependentVariable|QualifiedName] '(' (levels+=[Levels|QualifiedName])*')')|
-	 (name=ID '(' dependentVariable+=[DependentVariable|QualifiedName] relation=RelationType factor+=[Factor|QualifiedName]*')');
-
+(name=ID dependentVariable+=[DependentVariable|QualifiedName] '(' (levels+=[Levels|QualifiedName])*')' 
+	operator=OperatorType 
+	dependentVariable+=[DependentVariable|QualifiedName] '(' (levels+=[Levels|QualifiedName])*')')|
+(name=ID '(' dependentVariable+=[DependentVariable|QualifiedName] 
+	relation=RelationType 
+	factor+=[Factor|QualifiedName]*')'
+);
 enum RelationType returns RelationType:
-	isRelated = '=='| isNotRelated = '<>'
-;
-
+	isRelated = '=='| isNotRelated = '<>';
 enum OperatorType returns OperatorType:
 	equal = '='| different = '!='| more = '>' | less = '<' | moreEqual ='>=' | lessEqual = '<=';
-
 Parameter:
 	'Parameter' variable=ID '=' value=STRING;
-
-//New element
 DependentVariable:
-	'Dependent Variable' name=ID description=STRING metrics+=[Metrics|QualifiedName]*
-;
+	'Dependent Variable' name=ID description=STRING metrics+=[Metrics|QualifiedName]*;
 Factor: 
 	'Factor' name=ID 'isDesiredVariation' isDesiredVariation=('True'|'False') 
-	('{'
-		(level+=Levels)* 
-	'}')?;
+	('{' (level+=Levels)* '}')?;
+//****
 Levels:
-	'Level' name=ID;
-	
-Link: 'Link' procedure+=[Process] 'to' treatment+=[Levels|QualifiedName]*;
-
-
+	name=ID;
 enum HypothesisType returns HypothesisType:
 	null = 'null' | alternative = 'alternative';
-
-//New option 	
 enum DesignType returns DesignType:
 	CDR = 'CRD - Completely Randomized Design' | 
 	RCBD = 'RCBD - Randomized Complete Block Design' | 
 	LS = 'LS - Latin Square' |
 	other = 'Other';	
-
+	
 enum AnalysisTechiqueType returns AnalysisTechiqueType:
-	chi2 = 'Chi-2' |
-	binomialTest = 'Binomial Test'|
-	tTest = 't-test' |
-	fTest = 'F-test' |
-	MannWhitney = 'Mann-Whitney' |
-	paired = 'Paired t-test' |
-	wilcoxon = 'Wilcoxon' |
-	signTest = 'Sign test' |
-	anova = 'ANOVA' |
-	kruskalWallis = 'Kruskal-Wallis'|
-	others = 'Others'	
+	chi2 = 'Chi-2' | binomialTest = 'Binomial Test'| tTest = 't-test' |	fTest = 'F-test' | McNemarTest = 'McNemar Test'|
+	MannWhitney = 'Mann-Whitney' |	paired = 'Paired t-test' |	wilcoxon = 'Wilcoxon' |	signTest = 'Sign test' |
+	anova = 'ANOVA' | kruskalWallis = 'Kruskal-Wallis'| others = 'Others'	
 ;
+
 Questionnaire: 'Questionnaire' name=ID ( 'relates' relatesTo+=[Process]*)? 
 			   ('type' questionnaireType=QuestionnaireType)? '{'
+				(question+=Question)*'};';
 				
-					(question+=Question)*
-				
-				'};';
-
 enum QuestionnaireType returns QuestionnaireType:
-	pre = 'Pre' | pos = 'Pos';
+	pre = 'Pre' | post = 'Post';
 	
 Question:
 	name=ID '{'

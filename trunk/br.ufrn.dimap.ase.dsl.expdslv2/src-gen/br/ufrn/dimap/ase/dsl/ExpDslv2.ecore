@@ -20,8 +20,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//Role"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" unique="false"
+        upperBound="-1" eType="#//Levels"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" unique="false" upperBound="-1"
+        eType="#//RoleType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
         eType="#//Activity" containment="true"/>
   </eClassifiers>
@@ -30,8 +32,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" unique="false" upperBound="-1"
         eType="#//Activity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//Role"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" unique="false" upperBound="-1"
+        eType="#//RoleType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="collectData" unique="false"
         upperBound="-1" eType="#//CollectedData"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" upperBound="-1"
@@ -51,8 +53,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="questionnaire" unique="false"
         upperBound="-1" eType="#//Questionnaire"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Role">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoleType">
+    <eLiterals name="participant" literal="Participant"/>
+    <eLiterals name="researcher" value="1" literal="Researcher"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artefact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -110,11 +113,11 @@
         eType="#//DependentVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="factor" upperBound="-1"
         eType="#//Factor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tosubhypotheses" unique="false"
+        upperBound="-1" eType="#//Subhypotheses"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Technique" unique="false"
         upperBound="-1" eType="#//AnalysisTechiqueType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalReplication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Goal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -170,12 +173,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Levels">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Link">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="procedure" unique="false"
-        upperBound="-1" eType="#//Process"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" unique="false"
-        upperBound="-1" eType="#//Levels"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="HypothesisType">
     <eLiterals name="null" literal="null"/>
     <eLiterals name="alternative" value="1" literal="alternative"/>
@@ -191,13 +188,14 @@
     <eLiterals name="binomialTest" value="1" literal="Binomial Test"/>
     <eLiterals name="tTest" value="2" literal="t-test"/>
     <eLiterals name="fTest" value="3" literal="F-test"/>
-    <eLiterals name="MannWhitney" value="4" literal="Mann-Whitney"/>
-    <eLiterals name="paired" value="5" literal="Paired t-test"/>
-    <eLiterals name="wilcoxon" value="6" literal="Wilcoxon"/>
-    <eLiterals name="signTest" value="7" literal="Sign test"/>
-    <eLiterals name="anova" value="8" literal="ANOVA"/>
-    <eLiterals name="kruskalWallis" value="9" literal="Kruskal-Wallis"/>
-    <eLiterals name="others" value="10" literal="Others"/>
+    <eLiterals name="McNemarTest" value="4" literal="McNemar Test"/>
+    <eLiterals name="MannWhitney" value="5" literal="Mann-Whitney"/>
+    <eLiterals name="paired" value="6" literal="Paired t-test"/>
+    <eLiterals name="wilcoxon" value="7" literal="Wilcoxon"/>
+    <eLiterals name="signTest" value="8" literal="Sign test"/>
+    <eLiterals name="anova" value="9" literal="ANOVA"/>
+    <eLiterals name="kruskalWallis" value="10" literal="Kruskal-Wallis"/>
+    <eLiterals name="others" value="11" literal="Others"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Questionnaire">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -209,13 +207,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QuestionnaireType">
     <eLiterals name="pre" literal="Pre"/>
-    <eLiterals name="pos" value="1" literal="Pos"/>
+    <eLiterals name="post" value="1" literal="Post"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Question">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AnswerType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="req" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="req" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
         eType="#//Alternatives" containment="true"/>
   </eClassifiers>

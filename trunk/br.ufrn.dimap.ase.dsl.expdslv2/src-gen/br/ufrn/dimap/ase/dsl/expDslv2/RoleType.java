@@ -14,95 +14,95 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Questionnaire Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Role Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getQuestionnaireType()
+ * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getRoleType()
  * @model
  * @generated
  */
-public enum QuestionnaireType implements Enumerator
+public enum RoleType implements Enumerator
 {
   /**
-	 * The '<em><b>Pre</b></em>' literal object.
+	 * The '<em><b>Participant</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #PRE_VALUE
+	 * @see #PARTICIPANT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  PRE(0, "pre", "Pre"),
+  PARTICIPANT(0, "participant", "Participant"),
 
   /**
-	 * The '<em><b>Post</b></em>' literal object.
+	 * The '<em><b>Researcher</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #POST_VALUE
+	 * @see #RESEARCHER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  POST(1, "post", "Post");
+  RESEARCHER(1, "researcher", "Researcher");
 
   /**
-	 * The '<em><b>Pre</b></em>' literal value.
+	 * The '<em><b>Participant</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Pre</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>Participant</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #PRE
-	 * @model name="pre" literal="Pre"
+	 * @see #PARTICIPANT
+	 * @model name="participant" literal="Participant"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int PRE_VALUE = 0;
+  public static final int PARTICIPANT_VALUE = 0;
 
   /**
-	 * The '<em><b>Post</b></em>' literal value.
+	 * The '<em><b>Researcher</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Post</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>Researcher</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #POST
-	 * @model name="post" literal="Post"
+	 * @see #RESEARCHER
+	 * @model name="researcher" literal="Researcher"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int POST_VALUE = 1;
+  public static final int RESEARCHER_VALUE = 1;
 
   /**
-	 * An array of all the '<em><b>Questionnaire Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Role Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private static final QuestionnaireType[] VALUES_ARRAY =
-    new QuestionnaireType[] {
-			PRE,
-			POST,
+  private static final RoleType[] VALUES_ARRAY =
+    new RoleType[] {
+			PARTICIPANT,
+			RESEARCHER,
 		};
 
   /**
-	 * A public read-only list of all the '<em><b>Questionnaire Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Role Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static final List<QuestionnaireType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<RoleType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-	 * Returns the '<em><b>Questionnaire Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Role Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static QuestionnaireType get(String literal)
+  public static RoleType get(String literal)
   {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			QuestionnaireType result = VALUES_ARRAY[i];
+			RoleType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -111,15 +111,15 @@ public enum QuestionnaireType implements Enumerator
 	}
 
   /**
-	 * Returns the '<em><b>Questionnaire Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Role Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static QuestionnaireType getByName(String name)
+  public static RoleType getByName(String name)
   {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			QuestionnaireType result = VALUES_ARRAY[i];
+			RoleType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -128,16 +128,16 @@ public enum QuestionnaireType implements Enumerator
 	}
 
   /**
-	 * Returns the '<em><b>Questionnaire Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Role Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static QuestionnaireType get(int value)
+  public static RoleType get(int value)
   {
 		switch (value) {
-			case PRE_VALUE: return PRE;
-			case POST_VALUE: return POST;
+			case PARTICIPANT_VALUE: return PARTICIPANT;
+			case RESEARCHER_VALUE: return RESEARCHER;
 		}
 		return null;
 	}
@@ -169,7 +169,7 @@ public enum QuestionnaireType implements Enumerator
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private QuestionnaireType(int value, String name, String literal)
+  private RoleType(int value, String name, String literal)
   {
 		this.value = value;
 		this.name = name;
@@ -218,4 +218,4 @@ public enum QuestionnaireType implements Enumerator
 		return literal;
 	}
   
-} //QuestionnaireType
+} //RoleType

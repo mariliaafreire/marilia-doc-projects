@@ -13,6 +13,8 @@ import jpdl31.BooleanType;
 import jpdl31.EventType;
 import jpdl31.ExceptionHandlerType;
 import jpdl31.Jpdl31Package;
+import jpdl31.MetricInfo;
+import jpdl31.MetricType;
 import jpdl31.SignalType;
 import jpdl31.TaskNodeType;
 import jpdl31.TaskType;
@@ -55,6 +57,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getSignal <em>Signal</em>}</li>
  *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getArtefacts <em>Artefacts</em>}</li>
+ *   <li>{@link jpdl31.impl.TaskNodeTypeImpl#getMetrics <em>Metrics</em>}</li>
  * </ul>
  * </p>
  *
@@ -236,6 +239,16 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 	 * @ordered
 	 */
 	protected EList<Artefact> artefacts;
+
+	/**
+	 * The cached value of the '{@link #getMetrics() <em>Metrics</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMetrics()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MetricInfo> metrics;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -556,6 +569,18 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<MetricInfo> getMetrics() {
+		if (metrics == null) {
+			metrics = new EObjectContainmentEList<MetricInfo>(MetricInfo.class, this, Jpdl31Package.TASK_NODE_TYPE__METRICS);
+		}
+		return metrics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -573,6 +598,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
 			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
 				return ((InternalEList<?>)getArtefacts()).basicRemove(otherEnd, msgs);
+			case Jpdl31Package.TASK_NODE_TYPE__METRICS:
+				return ((InternalEList<?>)getMetrics()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -612,6 +639,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				return getDescription();
 			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
 				return getArtefacts();
+			case Jpdl31Package.TASK_NODE_TYPE__METRICS:
+				return getMetrics();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -670,6 +699,10 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				getArtefacts().clear();
 				getArtefacts().addAll((Collection<? extends Artefact>)newValue);
 				return;
+			case Jpdl31Package.TASK_NODE_TYPE__METRICS:
+				getMetrics().clear();
+				getMetrics().addAll((Collection<? extends MetricInfo>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -721,6 +754,9 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
 				getArtefacts().clear();
 				return;
+			case Jpdl31Package.TASK_NODE_TYPE__METRICS:
+				getMetrics().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -759,6 +795,8 @@ public class TaskNodeTypeImpl extends EObjectImpl implements TaskNodeType {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case Jpdl31Package.TASK_NODE_TYPE__ARTEFACTS:
 				return artefacts != null && !artefacts.isEmpty();
+			case Jpdl31Package.TASK_NODE_TYPE__METRICS:
+				return metrics != null && !metrics.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

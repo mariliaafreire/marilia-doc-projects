@@ -192,6 +192,66 @@ public class Jpdl31AdapterFactory extends AdapterFactoryImpl {
 				return createModelAdapter();
 			}
 			@Override
+			public Adapter caseMetricInfo(MetricInfo object) {
+				return createMetricInfoAdapter();
+			}
+			@Override
+			public Adapter caseHyphoteses(Hyphoteses object) {
+				return createHyphotesesAdapter();
+			}
+			@Override
+			public Adapter caseSubhypotheses(Subhypotheses object) {
+				return createSubhypothesesAdapter();
+			}
+			@Override
+			public Adapter caseDependentVariable(DependentVariable object) {
+				return createDependentVariableAdapter();
+			}
+			@Override
+			public Adapter caseFactor(Factor object) {
+				return createFactorAdapter();
+			}
+			@Override
+			public Adapter caseLevel(Level object) {
+				return createLevelAdapter();
+			}
+			@Override
+			public Adapter caseMetric(Metric object) {
+				return createMetricAdapter();
+			}
+			@Override
+			public Adapter caseQuestionnaire(Questionnaire object) {
+				return createQuestionnaireAdapter();
+			}
+			@Override
+			public Adapter caseQuestion(Question object) {
+				return createQuestionAdapter();
+			}
+			@Override
+			public Adapter caseAlternative(Alternative object) {
+				return createAlternativeAdapter();
+			}
+			@Override
+			public Adapter caseGoal(Goal object) {
+				return createGoalAdapter();
+			}
+			@Override
+			public Adapter caseExperimentalPlan(ExperimentalPlan object) {
+				return createExperimentalPlanAdapter();
+			}
+			@Override
+			public Adapter caseDesign(Design object) {
+				return createDesignAdapter();
+			}
+			@Override
+			public Adapter caseParameter(Parameter object) {
+				return createParameterAdapter();
+			}
+			@Override
+			public Adapter caseStatisticalTest(StatisticalTest object) {
+				return createStatisticalTestAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -628,6 +688,216 @@ public class Jpdl31AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.MetricInfo <em>Metric Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.MetricInfo
+	 * @generated
+	 */
+	public Adapter createMetricInfoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Hyphoteses <em>Hyphoteses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Hyphoteses
+	 * @generated
+	 */
+	public Adapter createHyphotesesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Subhypotheses <em>Subhypotheses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Subhypotheses
+	 * @generated
+	 */
+	public Adapter createSubhypothesesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.DependentVariable <em>Dependent Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.DependentVariable
+	 * @generated
+	 */
+	public Adapter createDependentVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Factor <em>Factor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Factor
+	 * @generated
+	 */
+	public Adapter createFactorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Level <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Level
+	 * @generated
+	 */
+	public Adapter createLevelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Metric <em>Metric</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Metric
+	 * @generated
+	 */
+	public Adapter createMetricAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Questionnaire <em>Questionnaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Questionnaire
+	 * @generated
+	 */
+	public Adapter createQuestionnaireAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Question <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Question
+	 * @generated
+	 */
+	public Adapter createQuestionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Alternative <em>Alternative</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Alternative
+	 * @generated
+	 */
+	public Adapter createAlternativeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Goal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Goal
+	 * @generated
+	 */
+	public Adapter createGoalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.ExperimentalPlan <em>Experimental Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.ExperimentalPlan
+	 * @generated
+	 */
+	public Adapter createExperimentalPlanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Design <em>Design</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Design
+	 * @generated
+	 */
+	public Adapter createDesignAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jpdl31.StatisticalTest <em>Statistical Test</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jpdl31.StatisticalTest
+	 * @generated
+	 */
+	public Adapter createStatisticalTestAdapter() {
 		return null;
 	}
 

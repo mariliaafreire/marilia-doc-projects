@@ -296,6 +296,141 @@ public interface Jpdl31Factory extends EFactory {
 	Model createModel();
 
 	/**
+	 * Returns a new object of class '<em>Metric Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Metric Info</em>'.
+	 * @generated
+	 */
+	MetricInfo createMetricInfo();
+
+	/**
+	 * Returns a new object of class '<em>Hyphoteses</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hyphoteses</em>'.
+	 * @generated
+	 */
+	Hyphoteses createHyphoteses();
+
+	/**
+	 * Returns a new object of class '<em>Subhypotheses</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Subhypotheses</em>'.
+	 * @generated
+	 */
+	Subhypotheses createSubhypotheses();
+
+	/**
+	 * Returns a new object of class '<em>Dependent Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dependent Variable</em>'.
+	 * @generated
+	 */
+	DependentVariable createDependentVariable();
+
+	/**
+	 * Returns a new object of class '<em>Factor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Factor</em>'.
+	 * @generated
+	 */
+	Factor createFactor();
+
+	/**
+	 * Returns a new object of class '<em>Level</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Level</em>'.
+	 * @generated
+	 */
+	Level createLevel();
+
+	/**
+	 * Returns a new object of class '<em>Metric</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Metric</em>'.
+	 * @generated
+	 */
+	Metric createMetric();
+
+	/**
+	 * Returns a new object of class '<em>Questionnaire</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Questionnaire</em>'.
+	 * @generated
+	 */
+	Questionnaire createQuestionnaire();
+
+	/**
+	 * Returns a new object of class '<em>Question</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Question</em>'.
+	 * @generated
+	 */
+	Question createQuestion();
+
+	/**
+	 * Returns a new object of class '<em>Alternative</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Alternative</em>'.
+	 * @generated
+	 */
+	Alternative createAlternative();
+
+	/**
+	 * Returns a new object of class '<em>Goal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Goal</em>'.
+	 * @generated
+	 */
+	Goal createGoal();
+
+	/**
+	 * Returns a new object of class '<em>Experimental Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Experimental Plan</em>'.
+	 * @generated
+	 */
+	ExperimentalPlan createExperimentalPlan();
+
+	/**
+	 * Returns a new object of class '<em>Design</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Design</em>'.
+	 * @generated
+	 */
+	Design createDesign();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
+
+	/**
+	 * Returns a new object of class '<em>Statistical Test</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Statistical Test</em>'.
+	 * @generated
+	 */
+	StatisticalTest createStatisticalTest();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

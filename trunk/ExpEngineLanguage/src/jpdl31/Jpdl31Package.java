@@ -799,13 +799,40 @@ public interface Jpdl31Package extends EPackage {
 	int DOCUMENT_ROOT__VARIABLE = 26;
 
 	/**
+	 * The feature id for the '<em><b>Questionnaires</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__QUESTIONNAIRES = 27;
+
+	/**
+	 * The feature id for the '<em><b>Plan</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__PLAN = 28;
+
+	/**
+	 * The feature id for the '<em><b>Metrics</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_ROOT__METRICS = 29;
+
+	/**
 	 * The number of structural features of the '<em>Document Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_ROOT_FEATURE_COUNT = 27;
+	int DOCUMENT_ROOT_FEATURE_COUNT = 30;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.impl.EndStateTypeImpl <em>End State Type</em>}' class.
@@ -2173,13 +2200,22 @@ public interface Jpdl31Package extends EPackage {
 	int TASK_NODE_TYPE__ARTEFACTS = 12;
 
 	/**
+	 * The feature id for the '<em><b>Metrics</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_NODE_TYPE__METRICS = 13;
+
+	/**
 	 * The number of structural features of the '<em>Task Node Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_NODE_TYPE_FEATURE_COUNT = 13;
+	int TASK_NODE_TYPE_FEATURE_COUNT = 14;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.impl.TaskTypeImpl <em>Task Type</em>}' class.
@@ -2309,13 +2345,22 @@ public interface Jpdl31Package extends EPackage {
 	int TASK_TYPE__ARTEFACTS = 12;
 
 	/**
+	 * The feature id for the '<em><b>Metrics Info</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_TYPE__METRICS_INFO = 13;
+
+	/**
 	 * The number of structural features of the '<em>Task Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_TYPE_FEATURE_COUNT = 13;
+	int TASK_TYPE_FEATURE_COUNT = 14;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.impl.TimerTypeImpl <em>Timer Type</em>}' class.
@@ -2711,6 +2756,687 @@ public interface Jpdl31Package extends EPackage {
 	int MODEL_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link jpdl31.impl.MetricInfoImpl <em>Metric Info</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.MetricInfoImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getMetricInfo()
+	 * @generated
+	 */
+	int METRIC_INFO = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC_INFO__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ref Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC_INFO__REF_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Metric Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC_INFO__METRIC_TYPE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Metric Info</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC_INFO_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.HyphotesesImpl <em>Hyphoteses</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.HyphotesesImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getHyphoteses()
+	 * @generated
+	 */
+	int HYPHOTESES = 31;
+
+	/**
+	 * The feature id for the '<em><b>Formalizes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPHOTESES__FORMALIZES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPHOTESES__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>From Goal</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPHOTESES__FROM_GOAL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPHOTESES__TYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPHOTESES__ID = 4;
+
+	/**
+	 * The number of structural features of the '<em>Hyphoteses</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPHOTESES_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.SubhypothesesImpl <em>Subhypotheses</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.SubhypothesesImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getSubhypotheses()
+	 * @generated
+	 */
+	int SUBHYPOTHESES = 32;
+
+	/**
+	 * The feature id for the '<em><b>Relation Op</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBHYPOTHESES__RELATION_OP = 0;
+
+	/**
+	 * The feature id for the '<em><b>Treatment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBHYPOTHESES__TREATMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Dependent Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBHYPOTHESES__DEPENDENT_VARIABLE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Subhypotheses</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBHYPOTHESES_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.DependentVariableImpl <em>Dependent Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.DependentVariableImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getDependentVariable()
+	 * @generated
+	 */
+	int DEPENDENT_VARIABLE = 33;
+
+	/**
+	 * The feature id for the '<em><b>Measure By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENT_VARIABLE__MEASURE_BY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENT_VARIABLE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENT_VARIABLE__DESCRIPTION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Dependent Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENT_VARIABLE_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.FactorImpl <em>Factor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.FactorImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getFactor()
+	 * @generated
+	 */
+	int FACTOR = 34;
+
+	/**
+	 * The feature id for the '<em><b>Levels</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACTOR__LEVELS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACTOR__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Treament</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACTOR__IS_TREAMENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Factor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACTOR_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.LevelImpl <em>Level</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.LevelImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getLevel()
+	 * @generated
+	 */
+	int LEVEL = 35;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEVEL__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Level</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEVEL_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.MetricImpl <em>Metric</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.MetricImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getMetric()
+	 * @generated
+	 */
+	int METRIC = 36;
+
+	/**
+	 * The feature id for the '<em><b>Nome</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC__NOME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Relates To</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC__RELATES_TO = 3;
+
+	/**
+	 * The number of structural features of the '<em>Metric</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METRIC_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.QuestionnaireImpl <em>Questionnaire</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.QuestionnaireImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getQuestionnaire()
+	 * @generated
+	 */
+	int QUESTIONNAIRE = 37;
+
+	/**
+	 * The feature id for the '<em><b>Question</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE__QUESTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE__TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Process</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE__PROCESS = 3;
+
+	/**
+	 * The number of structural features of the '<em>Questionnaire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTIONNAIRE_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.QuestionImpl <em>Question</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.QuestionImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getQuestion()
+	 * @generated
+	 */
+	int QUESTION = 38;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__DESCRIPTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__REQUIRED = 2;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__OPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>EReference0</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__EREFERENCE0 = 4;
+
+	/**
+	 * The number of structural features of the '<em>Question</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.AlternativeImpl <em>Alternative</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.AlternativeImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getAlternative()
+	 * @generated
+	 */
+	int ALTERNATIVE = 39;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALTERNATIVE__DESCRIPTION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Alternative</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALTERNATIVE_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.GoalImpl <em>Goal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.GoalImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getGoal()
+	 * @generated
+	 */
+	int GOAL = 40;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__DESCRIPTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Goal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.ExperimentalPlanImpl <em>Experimental Plan</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.ExperimentalPlanImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getExperimentalPlan()
+	 * @generated
+	 */
+	int EXPERIMENTAL_PLAN = 41;
+
+	/**
+	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENTAL_PLAN__GOALS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Hypothesis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENTAL_PLAN__HYPOTHESIS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Design</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENTAL_PLAN__DESIGN = 2;
+
+	/**
+	 * The number of structural features of the '<em>Experimental Plan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPERIMENTAL_PLAN_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.DesignImpl <em>Design</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.DesignImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getDesign()
+	 * @generated
+	 */
+	int DESIGN = 42;
+
+	/**
+	 * The feature id for the '<em><b>Factors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN__FACTORS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Do E</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN__DO_E = 1;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN__PARAMETERS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Test</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN__TEST = 3;
+
+	/**
+	 * The feature id for the '<em><b>Dep Variable</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN__DEP_VARIABLE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Design</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.ParameterImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 43;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.impl.StatisticalTestImpl <em>Statistical Test</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.impl.StatisticalTestImpl
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getStatisticalTest()
+	 * @generated
+	 */
+	int STATISTICAL_TEST = 44;
+
+	/**
+	 * The number of structural features of the '<em>Statistical Test</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATISTICAL_TEST_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link jpdl31.BooleanType <em>Boolean Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2718,7 +3444,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getBooleanType()
 	 * @generated
 	 */
-	int BOOLEAN_TYPE = 30;
+	int BOOLEAN_TYPE = 45;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.ConfigType <em>Config Type</em>}' enum.
@@ -2728,7 +3454,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getConfigType()
 	 * @generated
 	 */
-	int CONFIG_TYPE = 31;
+	int CONFIG_TYPE = 46;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.ConfigTypeType <em>Config Type Type</em>}' enum.
@@ -2738,7 +3464,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getConfigTypeType()
 	 * @generated
 	 */
-	int CONFIG_TYPE_TYPE = 32;
+	int CONFIG_TYPE_TYPE = 47;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.ConfigTypeType1 <em>Config Type Type1</em>}' enum.
@@ -2748,7 +3474,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getConfigTypeType1()
 	 * @generated
 	 */
-	int CONFIG_TYPE_TYPE1 = 33;
+	int CONFIG_TYPE_TYPE1 = 48;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.PriorityTypeMember0 <em>Priority Type Member0</em>}' enum.
@@ -2758,7 +3484,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getPriorityTypeMember0()
 	 * @generated
 	 */
-	int PRIORITY_TYPE_MEMBER0 = 34;
+	int PRIORITY_TYPE_MEMBER0 = 49;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.SignalType <em>Signal Type</em>}' enum.
@@ -2768,7 +3494,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getSignalType()
 	 * @generated
 	 */
-	int SIGNAL_TYPE = 35;
+	int SIGNAL_TYPE = 50;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.TypeTypeMember1 <em>Type Type Member1</em>}' enum.
@@ -2778,7 +3504,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getTypeTypeMember1()
 	 * @generated
 	 */
-	int TYPE_TYPE_MEMBER1 = 36;
+	int TYPE_TYPE_MEMBER1 = 51;
 
 	/**
 	 * The meta object id for the '{@link jpdl31.ArtefactType <em>Artefact Type</em>}' enum.
@@ -2788,7 +3514,67 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getArtefactType()
 	 * @generated
 	 */
-	int ARTEFACT_TYPE = 37;
+	int ARTEFACT_TYPE = 52;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.MetricType <em>Metric Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.MetricType
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getMetricType()
+	 * @generated
+	 */
+	int METRIC_TYPE = 53;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.RelationOperator <em>Relation Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.RelationOperator
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getRelationOperator()
+	 * @generated
+	 */
+	int RELATION_OPERATOR = 54;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.AnswerType <em>Answer Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.AnswerType
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getAnswerType()
+	 * @generated
+	 */
+	int ANSWER_TYPE = 55;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.DoEType <em>Do EType</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.DoEType
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getDoEType()
+	 * @generated
+	 */
+	int DO_ETYPE = 56;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.HypothesisType <em>Hypothesis Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.HypothesisType
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getHypothesisType()
+	 * @generated
+	 */
+	int HYPOTHESIS_TYPE = 57;
+
+	/**
+	 * The meta object id for the '{@link jpdl31.QuestionnaireType <em>Questionnaire Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see jpdl31.QuestionnaireType
+	 * @see jpdl31.impl.Jpdl31PackageImpl#getQuestionnaireType()
+	 * @generated
+	 */
+	int QUESTIONNAIRE_TYPE = 58;
 
 	/**
 	 * The meta object id for the '<em>Boolean Type Object</em>' data type.
@@ -2798,7 +3584,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getBooleanTypeObject()
 	 * @generated
 	 */
-	int BOOLEAN_TYPE_OBJECT = 38;
+	int BOOLEAN_TYPE_OBJECT = 59;
 
 	/**
 	 * The meta object id for the '<em>Config Type Object</em>' data type.
@@ -2808,7 +3594,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getConfigTypeObject()
 	 * @generated
 	 */
-	int CONFIG_TYPE_OBJECT = 39;
+	int CONFIG_TYPE_OBJECT = 60;
 
 	/**
 	 * The meta object id for the '<em>Config Type Type Object</em>' data type.
@@ -2818,7 +3604,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getConfigTypeTypeObject()
 	 * @generated
 	 */
-	int CONFIG_TYPE_TYPE_OBJECT = 40;
+	int CONFIG_TYPE_TYPE_OBJECT = 61;
 
 	/**
 	 * The meta object id for the '<em>Config Type Type Object1</em>' data type.
@@ -2828,7 +3614,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getConfigTypeTypeObject1()
 	 * @generated
 	 */
-	int CONFIG_TYPE_TYPE_OBJECT1 = 41;
+	int CONFIG_TYPE_TYPE_OBJECT1 = 62;
 
 	/**
 	 * The meta object id for the '<em>Priority Type</em>' data type.
@@ -2838,7 +3624,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getPriorityType()
 	 * @generated
 	 */
-	int PRIORITY_TYPE = 42;
+	int PRIORITY_TYPE = 63;
 
 	/**
 	 * The meta object id for the '<em>Priority Type Member0 Object</em>' data type.
@@ -2848,7 +3634,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getPriorityTypeMember0Object()
 	 * @generated
 	 */
-	int PRIORITY_TYPE_MEMBER0_OBJECT = 43;
+	int PRIORITY_TYPE_MEMBER0_OBJECT = 64;
 
 	/**
 	 * The meta object id for the '<em>Priority Type Member1</em>' data type.
@@ -2857,7 +3643,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getPriorityTypeMember1()
 	 * @generated
 	 */
-	int PRIORITY_TYPE_MEMBER1 = 44;
+	int PRIORITY_TYPE_MEMBER1 = 65;
 
 	/**
 	 * The meta object id for the '<em>Priority Type Member1 Object</em>' data type.
@@ -2867,7 +3653,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getPriorityTypeMember1Object()
 	 * @generated
 	 */
-	int PRIORITY_TYPE_MEMBER1_OBJECT = 45;
+	int PRIORITY_TYPE_MEMBER1_OBJECT = 66;
 
 	/**
 	 * The meta object id for the '<em>Signal Type Object</em>' data type.
@@ -2877,7 +3663,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getSignalTypeObject()
 	 * @generated
 	 */
-	int SIGNAL_TYPE_OBJECT = 46;
+	int SIGNAL_TYPE_OBJECT = 67;
 
 	/**
 	 * The meta object id for the '<em>Type Type</em>' data type.
@@ -2887,7 +3673,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getTypeType()
 	 * @generated
 	 */
-	int TYPE_TYPE = 47;
+	int TYPE_TYPE = 68;
 
 	/**
 	 * The meta object id for the '<em>Type Type Member0</em>' data type.
@@ -2897,7 +3683,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getTypeTypeMember0()
 	 * @generated
 	 */
-	int TYPE_TYPE_MEMBER0 = 48;
+	int TYPE_TYPE_MEMBER0 = 69;
 
 	/**
 	 * The meta object id for the '<em>Type Type Member1 Object</em>' data type.
@@ -2907,7 +3693,7 @@ public interface Jpdl31Package extends EPackage {
 	 * @see jpdl31.impl.Jpdl31PackageImpl#getTypeTypeMember1Object()
 	 * @generated
 	 */
-	int TYPE_TYPE_MEMBER1_OBJECT = 49;
+	int TYPE_TYPE_MEMBER1_OBJECT = 70;
 
 
 	/**
@@ -3671,6 +4457,39 @@ public interface Jpdl31Package extends EPackage {
 	 * @generated
 	 */
 	EReference getDocumentRoot_Variable();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.DocumentRoot#getQuestionnaires <em>Questionnaires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Questionnaires</em>'.
+	 * @see jpdl31.DocumentRoot#getQuestionnaires()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Questionnaires();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.DocumentRoot#getPlan <em>Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Plan</em>'.
+	 * @see jpdl31.DocumentRoot#getPlan()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Plan();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.DocumentRoot#getMetrics <em>Metrics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Metrics</em>'.
+	 * @see jpdl31.DocumentRoot#getMetrics()
+	 * @see #getDocumentRoot()
+	 * @generated
+	 */
+	EReference getDocumentRoot_Metrics();
 
 	/**
 	 * Returns the meta object for class '{@link jpdl31.EndStateType <em>End State Type</em>}'.
@@ -5154,6 +5973,17 @@ public interface Jpdl31Package extends EPackage {
 	EReference getTaskNodeType_Artefacts();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.TaskNodeType#getMetrics <em>Metrics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Metrics</em>'.
+	 * @see jpdl31.TaskNodeType#getMetrics()
+	 * @see #getTaskNodeType()
+	 * @generated
+	 */
+	EReference getTaskNodeType_Metrics();
+
+	/**
 	 * Returns the meta object for class '{@link jpdl31.TaskType <em>Task Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5305,6 +6135,17 @@ public interface Jpdl31Package extends EPackage {
 	 * @generated
 	 */
 	EReference getTaskType_Artefacts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.TaskType#getMetricsInfo <em>Metrics Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Metrics Info</em>'.
+	 * @see jpdl31.TaskType#getMetricsInfo()
+	 * @see #getTaskType()
+	 * @generated
+	 */
+	EReference getTaskType_MetricsInfo();
 
 	/**
 	 * Returns the meta object for class '{@link jpdl31.TimerType <em>Timer Type</em>}'.
@@ -5708,6 +6549,640 @@ public interface Jpdl31Package extends EPackage {
 	EReference getModel_Elements();
 
 	/**
+	 * Returns the meta object for class '{@link jpdl31.MetricInfo <em>Metric Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Metric Info</em>'.
+	 * @see jpdl31.MetricInfo
+	 * @generated
+	 */
+	EClass getMetricInfo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.MetricInfo#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see jpdl31.MetricInfo#getName()
+	 * @see #getMetricInfo()
+	 * @generated
+	 */
+	EAttribute getMetricInfo_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.MetricInfo#getRefName <em>Ref Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref Name</em>'.
+	 * @see jpdl31.MetricInfo#getRefName()
+	 * @see #getMetricInfo()
+	 * @generated
+	 */
+	EAttribute getMetricInfo_RefName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.MetricInfo#getMetricType <em>Metric Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Metric Type</em>'.
+	 * @see jpdl31.MetricInfo#getMetricType()
+	 * @see #getMetricInfo()
+	 * @generated
+	 */
+	EAttribute getMetricInfo_MetricType();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Hyphoteses <em>Hyphoteses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hyphoteses</em>'.
+	 * @see jpdl31.Hyphoteses
+	 * @generated
+	 */
+	EClass getHyphoteses();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Hyphoteses#getFormalizes <em>Formalizes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Formalizes</em>'.
+	 * @see jpdl31.Hyphoteses#getFormalizes()
+	 * @see #getHyphoteses()
+	 * @generated
+	 */
+	EReference getHyphoteses_Formalizes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Hyphoteses#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see jpdl31.Hyphoteses#getDescription()
+	 * @see #getHyphoteses()
+	 * @generated
+	 */
+	EAttribute getHyphoteses_Description();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpdl31.Hyphoteses#getFromGoal <em>From Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From Goal</em>'.
+	 * @see jpdl31.Hyphoteses#getFromGoal()
+	 * @see #getHyphoteses()
+	 * @generated
+	 */
+	EReference getHyphoteses_FromGoal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Hyphoteses#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see jpdl31.Hyphoteses#getType()
+	 * @see #getHyphoteses()
+	 * @generated
+	 */
+	EAttribute getHyphoteses_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Hyphoteses#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see jpdl31.Hyphoteses#getId()
+	 * @see #getHyphoteses()
+	 * @generated
+	 */
+	EAttribute getHyphoteses_Id();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Subhypotheses <em>Subhypotheses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Subhypotheses</em>'.
+	 * @see jpdl31.Subhypotheses
+	 * @generated
+	 */
+	EClass getSubhypotheses();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Subhypotheses#getRelationOp <em>Relation Op</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relation Op</em>'.
+	 * @see jpdl31.Subhypotheses#getRelationOp()
+	 * @see #getSubhypotheses()
+	 * @generated
+	 */
+	EAttribute getSubhypotheses_RelationOp();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpdl31.Subhypotheses#getTreatment <em>Treatment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Treatment</em>'.
+	 * @see jpdl31.Subhypotheses#getTreatment()
+	 * @see #getSubhypotheses()
+	 * @generated
+	 */
+	EReference getSubhypotheses_Treatment();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpdl31.Subhypotheses#getDependentVariable <em>Dependent Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Dependent Variable</em>'.
+	 * @see jpdl31.Subhypotheses#getDependentVariable()
+	 * @see #getSubhypotheses()
+	 * @generated
+	 */
+	EReference getSubhypotheses_DependentVariable();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.DependentVariable <em>Dependent Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Dependent Variable</em>'.
+	 * @see jpdl31.DependentVariable
+	 * @generated
+	 */
+	EClass getDependentVariable();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpdl31.DependentVariable#getMeasureBy <em>Measure By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Measure By</em>'.
+	 * @see jpdl31.DependentVariable#getMeasureBy()
+	 * @see #getDependentVariable()
+	 * @generated
+	 */
+	EReference getDependentVariable_MeasureBy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.DependentVariable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see jpdl31.DependentVariable#getName()
+	 * @see #getDependentVariable()
+	 * @generated
+	 */
+	EAttribute getDependentVariable_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.DependentVariable#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see jpdl31.DependentVariable#getDescription()
+	 * @see #getDependentVariable()
+	 * @generated
+	 */
+	EAttribute getDependentVariable_Description();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Factor <em>Factor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Factor</em>'.
+	 * @see jpdl31.Factor
+	 * @generated
+	 */
+	EClass getFactor();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Factor#getLevels <em>Levels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Levels</em>'.
+	 * @see jpdl31.Factor#getLevels()
+	 * @see #getFactor()
+	 * @generated
+	 */
+	EReference getFactor_Levels();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Factor#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see jpdl31.Factor#getName()
+	 * @see #getFactor()
+	 * @generated
+	 */
+	EAttribute getFactor_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Factor#getIsTreament <em>Is Treament</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Treament</em>'.
+	 * @see jpdl31.Factor#getIsTreament()
+	 * @see #getFactor()
+	 * @generated
+	 */
+	EAttribute getFactor_IsTreament();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Level <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Level</em>'.
+	 * @see jpdl31.Level
+	 * @generated
+	 */
+	EClass getLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Level#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see jpdl31.Level#getName()
+	 * @see #getLevel()
+	 * @generated
+	 */
+	EAttribute getLevel_Name();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Metric <em>Metric</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Metric</em>'.
+	 * @see jpdl31.Metric
+	 * @generated
+	 */
+	EClass getMetric();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Metric#getNome <em>Nome</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nome</em>'.
+	 * @see jpdl31.Metric#getNome()
+	 * @see #getMetric()
+	 * @generated
+	 */
+	EAttribute getMetric_Nome();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Metric#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see jpdl31.Metric#getDescription()
+	 * @see #getMetric()
+	 * @generated
+	 */
+	EAttribute getMetric_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Metric#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see jpdl31.Metric#getType()
+	 * @see #getMetric()
+	 * @generated
+	 */
+	EAttribute getMetric_Type();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpdl31.Metric#getRelatesTo <em>Relates To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Relates To</em>'.
+	 * @see jpdl31.Metric#getRelatesTo()
+	 * @see #getMetric()
+	 * @generated
+	 */
+	EReference getMetric_RelatesTo();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Questionnaire <em>Questionnaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Questionnaire</em>'.
+	 * @see jpdl31.Questionnaire
+	 * @generated
+	 */
+	EClass getQuestionnaire();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Questionnaire#getQuestion <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Question</em>'.
+	 * @see jpdl31.Questionnaire#getQuestion()
+	 * @see #getQuestionnaire()
+	 * @generated
+	 */
+	EReference getQuestionnaire_Question();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Questionnaire#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see jpdl31.Questionnaire#getName()
+	 * @see #getQuestionnaire()
+	 * @generated
+	 */
+	EAttribute getQuestionnaire_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Questionnaire#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see jpdl31.Questionnaire#getType()
+	 * @see #getQuestionnaire()
+	 * @generated
+	 */
+	EAttribute getQuestionnaire_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpdl31.Questionnaire#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Process</em>'.
+	 * @see jpdl31.Questionnaire#getProcess()
+	 * @see #getQuestionnaire()
+	 * @generated
+	 */
+	EReference getQuestionnaire_Process();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Question <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Question</em>'.
+	 * @see jpdl31.Question
+	 * @generated
+	 */
+	EClass getQuestion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Question#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see jpdl31.Question#getDescription()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EAttribute getQuestion_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Question#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see jpdl31.Question#getType()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EAttribute getQuestion_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Question#getRequired <em>Required</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required</em>'.
+	 * @see jpdl31.Question#getRequired()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EAttribute getQuestion_Required();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Question#getOption <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Option</em>'.
+	 * @see jpdl31.Question#getOption()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EReference getQuestion_Option();
+
+	/**
+	 * Returns the meta object for the reference '{@link jpdl31.Question#getEReference0 <em>EReference0</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>EReference0</em>'.
+	 * @see jpdl31.Question#getEReference0()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EReference getQuestion_EReference0();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Alternative <em>Alternative</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Alternative</em>'.
+	 * @see jpdl31.Alternative
+	 * @generated
+	 */
+	EClass getAlternative();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Alternative#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see jpdl31.Alternative#getDescription()
+	 * @see #getAlternative()
+	 * @generated
+	 */
+	EAttribute getAlternative_Description();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Goal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Goal</em>'.
+	 * @see jpdl31.Goal
+	 * @generated
+	 */
+	EClass getGoal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Goal#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see jpdl31.Goal#getId()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EAttribute getGoal_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Goal#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see jpdl31.Goal#getDescription()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EAttribute getGoal_Description();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.ExperimentalPlan <em>Experimental Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Experimental Plan</em>'.
+	 * @see jpdl31.ExperimentalPlan
+	 * @generated
+	 */
+	EClass getExperimentalPlan();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.ExperimentalPlan#getGoals <em>Goals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Goals</em>'.
+	 * @see jpdl31.ExperimentalPlan#getGoals()
+	 * @see #getExperimentalPlan()
+	 * @generated
+	 */
+	EReference getExperimentalPlan_Goals();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.ExperimentalPlan#getHypothesis <em>Hypothesis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Hypothesis</em>'.
+	 * @see jpdl31.ExperimentalPlan#getHypothesis()
+	 * @see #getExperimentalPlan()
+	 * @generated
+	 */
+	EReference getExperimentalPlan_Hypothesis();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link jpdl31.ExperimentalPlan#getDesign <em>Design</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Design</em>'.
+	 * @see jpdl31.ExperimentalPlan#getDesign()
+	 * @see #getExperimentalPlan()
+	 * @generated
+	 */
+	EReference getExperimentalPlan_Design();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Design <em>Design</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Design</em>'.
+	 * @see jpdl31.Design
+	 * @generated
+	 */
+	EClass getDesign();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Design#getFactors <em>Factors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Factors</em>'.
+	 * @see jpdl31.Design#getFactors()
+	 * @see #getDesign()
+	 * @generated
+	 */
+	EReference getDesign_Factors();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Design#getDoE <em>Do E</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Do E</em>'.
+	 * @see jpdl31.Design#getDoE()
+	 * @see #getDesign()
+	 * @generated
+	 */
+	EAttribute getDesign_DoE();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Design#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see jpdl31.Design#getParameters()
+	 * @see #getDesign()
+	 * @generated
+	 */
+	EReference getDesign_Parameters();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jpdl31.Design#getTest <em>Test</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Test</em>'.
+	 * @see jpdl31.Design#getTest()
+	 * @see #getDesign()
+	 * @generated
+	 */
+	EReference getDesign_Test();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jpdl31.Design#getDepVariable <em>Dep Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Dep Variable</em>'.
+	 * @see jpdl31.Design#getDepVariable()
+	 * @see #getDesign()
+	 * @generated
+	 */
+	EReference getDesign_DepVariable();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see jpdl31.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Parameter#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see jpdl31.Parameter#getKey()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jpdl31.Parameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see jpdl31.Parameter#getValue()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Value();
+
+	/**
+	 * Returns the meta object for class '{@link jpdl31.StatisticalTest <em>Statistical Test</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Statistical Test</em>'.
+	 * @see jpdl31.StatisticalTest
+	 * @generated
+	 */
+	EClass getStatisticalTest();
+
+	/**
 	 * Returns the meta object for enum '{@link jpdl31.BooleanType <em>Boolean Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5786,6 +7261,66 @@ public interface Jpdl31Package extends EPackage {
 	 * @generated
 	 */
 	EEnum getArtefactType();
+
+	/**
+	 * Returns the meta object for enum '{@link jpdl31.MetricType <em>Metric Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Metric Type</em>'.
+	 * @see jpdl31.MetricType
+	 * @generated
+	 */
+	EEnum getMetricType();
+
+	/**
+	 * Returns the meta object for enum '{@link jpdl31.RelationOperator <em>Relation Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Relation Operator</em>'.
+	 * @see jpdl31.RelationOperator
+	 * @generated
+	 */
+	EEnum getRelationOperator();
+
+	/**
+	 * Returns the meta object for enum '{@link jpdl31.AnswerType <em>Answer Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Answer Type</em>'.
+	 * @see jpdl31.AnswerType
+	 * @generated
+	 */
+	EEnum getAnswerType();
+
+	/**
+	 * Returns the meta object for enum '{@link jpdl31.DoEType <em>Do EType</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Do EType</em>'.
+	 * @see jpdl31.DoEType
+	 * @generated
+	 */
+	EEnum getDoEType();
+
+	/**
+	 * Returns the meta object for enum '{@link jpdl31.HypothesisType <em>Hypothesis Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Hypothesis Type</em>'.
+	 * @see jpdl31.HypothesisType
+	 * @generated
+	 */
+	EEnum getHypothesisType();
+
+	/**
+	 * Returns the meta object for enum '{@link jpdl31.QuestionnaireType <em>Questionnaire Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Questionnaire Type</em>'.
+	 * @see jpdl31.QuestionnaireType
+	 * @generated
+	 */
+	EEnum getQuestionnaireType();
 
 	/**
 	 * Returns the meta object for data type '{@link jpdl31.BooleanType <em>Boolean Type Object</em>}'.
@@ -6527,6 +8062,30 @@ public interface Jpdl31Package extends EPackage {
 		 * @generated
 		 */
 		EReference DOCUMENT_ROOT__VARIABLE = eINSTANCE.getDocumentRoot_Variable();
+
+		/**
+		 * The meta object literal for the '<em><b>Questionnaires</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__QUESTIONNAIRES = eINSTANCE.getDocumentRoot_Questionnaires();
+
+		/**
+		 * The meta object literal for the '<em><b>Plan</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__PLAN = eINSTANCE.getDocumentRoot_Plan();
+
+		/**
+		 * The meta object literal for the '<em><b>Metrics</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOCUMENT_ROOT__METRICS = eINSTANCE.getDocumentRoot_Metrics();
 
 		/**
 		 * The meta object literal for the '{@link jpdl31.impl.EndStateTypeImpl <em>End State Type</em>}' class.
@@ -7647,6 +9206,14 @@ public interface Jpdl31Package extends EPackage {
 		EReference TASK_NODE_TYPE__ARTEFACTS = eINSTANCE.getTaskNodeType_Artefacts();
 
 		/**
+		 * The meta object literal for the '<em><b>Metrics</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK_NODE_TYPE__METRICS = eINSTANCE.getTaskNodeType_Metrics();
+
+		/**
 		 * The meta object literal for the '{@link jpdl31.impl.TaskTypeImpl <em>Task Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7759,6 +9326,14 @@ public interface Jpdl31Package extends EPackage {
 		 * @generated
 		 */
 		EReference TASK_TYPE__ARTEFACTS = eINSTANCE.getTaskType_Artefacts();
+
+		/**
+		 * The meta object literal for the '<em><b>Metrics Info</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK_TYPE__METRICS_INFO = eINSTANCE.getTaskType_MetricsInfo();
 
 		/**
 		 * The meta object literal for the '{@link jpdl31.impl.TimerTypeImpl <em>Timer Type</em>}' class.
@@ -8069,6 +9644,508 @@ public interface Jpdl31Package extends EPackage {
 		EReference MODEL__ELEMENTS = eINSTANCE.getModel_Elements();
 
 		/**
+		 * The meta object literal for the '{@link jpdl31.impl.MetricInfoImpl <em>Metric Info</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.MetricInfoImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getMetricInfo()
+		 * @generated
+		 */
+		EClass METRIC_INFO = eINSTANCE.getMetricInfo();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRIC_INFO__NAME = eINSTANCE.getMetricInfo_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRIC_INFO__REF_NAME = eINSTANCE.getMetricInfo_RefName();
+
+		/**
+		 * The meta object literal for the '<em><b>Metric Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRIC_INFO__METRIC_TYPE = eINSTANCE.getMetricInfo_MetricType();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.HyphotesesImpl <em>Hyphoteses</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.HyphotesesImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getHyphoteses()
+		 * @generated
+		 */
+		EClass HYPHOTESES = eINSTANCE.getHyphoteses();
+
+		/**
+		 * The meta object literal for the '<em><b>Formalizes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYPHOTESES__FORMALIZES = eINSTANCE.getHyphoteses_Formalizes();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPHOTESES__DESCRIPTION = eINSTANCE.getHyphoteses_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>From Goal</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYPHOTESES__FROM_GOAL = eINSTANCE.getHyphoteses_FromGoal();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPHOTESES__TYPE = eINSTANCE.getHyphoteses_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPHOTESES__ID = eINSTANCE.getHyphoteses_Id();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.SubhypothesesImpl <em>Subhypotheses</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.SubhypothesesImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getSubhypotheses()
+		 * @generated
+		 */
+		EClass SUBHYPOTHESES = eINSTANCE.getSubhypotheses();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation Op</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUBHYPOTHESES__RELATION_OP = eINSTANCE.getSubhypotheses_RelationOp();
+
+		/**
+		 * The meta object literal for the '<em><b>Treatment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBHYPOTHESES__TREATMENT = eINSTANCE.getSubhypotheses_Treatment();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependent Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBHYPOTHESES__DEPENDENT_VARIABLE = eINSTANCE.getSubhypotheses_DependentVariable();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.DependentVariableImpl <em>Dependent Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.DependentVariableImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getDependentVariable()
+		 * @generated
+		 */
+		EClass DEPENDENT_VARIABLE = eINSTANCE.getDependentVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Measure By</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPENDENT_VARIABLE__MEASURE_BY = eINSTANCE.getDependentVariable_MeasureBy();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPENDENT_VARIABLE__NAME = eINSTANCE.getDependentVariable_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEPENDENT_VARIABLE__DESCRIPTION = eINSTANCE.getDependentVariable_Description();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.FactorImpl <em>Factor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.FactorImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getFactor()
+		 * @generated
+		 */
+		EClass FACTOR = eINSTANCE.getFactor();
+
+		/**
+		 * The meta object literal for the '<em><b>Levels</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FACTOR__LEVELS = eINSTANCE.getFactor_Levels();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACTOR__NAME = eINSTANCE.getFactor_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Treament</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FACTOR__IS_TREAMENT = eINSTANCE.getFactor_IsTreament();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.LevelImpl <em>Level</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.LevelImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getLevel()
+		 * @generated
+		 */
+		EClass LEVEL = eINSTANCE.getLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LEVEL__NAME = eINSTANCE.getLevel_Name();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.MetricImpl <em>Metric</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.MetricImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getMetric()
+		 * @generated
+		 */
+		EClass METRIC = eINSTANCE.getMetric();
+
+		/**
+		 * The meta object literal for the '<em><b>Nome</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRIC__NOME = eINSTANCE.getMetric_Nome();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRIC__DESCRIPTION = eINSTANCE.getMetric_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METRIC__TYPE = eINSTANCE.getMetric_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Relates To</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METRIC__RELATES_TO = eINSTANCE.getMetric_RelatesTo();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.QuestionnaireImpl <em>Questionnaire</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.QuestionnaireImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getQuestionnaire()
+		 * @generated
+		 */
+		EClass QUESTIONNAIRE = eINSTANCE.getQuestionnaire();
+
+		/**
+		 * The meta object literal for the '<em><b>Question</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTIONNAIRE__QUESTION = eINSTANCE.getQuestionnaire_Question();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTIONNAIRE__NAME = eINSTANCE.getQuestionnaire_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTIONNAIRE__TYPE = eINSTANCE.getQuestionnaire_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Process</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTIONNAIRE__PROCESS = eINSTANCE.getQuestionnaire_Process();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.QuestionImpl <em>Question</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.QuestionImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getQuestion()
+		 * @generated
+		 */
+		EClass QUESTION = eINSTANCE.getQuestion();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTION__DESCRIPTION = eINSTANCE.getQuestion_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTION__TYPE = eINSTANCE.getQuestion_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTION__REQUIRED = eINSTANCE.getQuestion_Required();
+
+		/**
+		 * The meta object literal for the '<em><b>Option</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION__OPTION = eINSTANCE.getQuestion_Option();
+
+		/**
+		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION__EREFERENCE0 = eINSTANCE.getQuestion_EReference0();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.AlternativeImpl <em>Alternative</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.AlternativeImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getAlternative()
+		 * @generated
+		 */
+		EClass ALTERNATIVE = eINSTANCE.getAlternative();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ALTERNATIVE__DESCRIPTION = eINSTANCE.getAlternative_Description();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.GoalImpl <em>Goal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.GoalImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getGoal()
+		 * @generated
+		 */
+		EClass GOAL = eINSTANCE.getGoal();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GOAL__ID = eINSTANCE.getGoal_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GOAL__DESCRIPTION = eINSTANCE.getGoal_Description();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.ExperimentalPlanImpl <em>Experimental Plan</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.ExperimentalPlanImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getExperimentalPlan()
+		 * @generated
+		 */
+		EClass EXPERIMENTAL_PLAN = eINSTANCE.getExperimentalPlan();
+
+		/**
+		 * The meta object literal for the '<em><b>Goals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPERIMENTAL_PLAN__GOALS = eINSTANCE.getExperimentalPlan_Goals();
+
+		/**
+		 * The meta object literal for the '<em><b>Hypothesis</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPERIMENTAL_PLAN__HYPOTHESIS = eINSTANCE.getExperimentalPlan_Hypothesis();
+
+		/**
+		 * The meta object literal for the '<em><b>Design</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPERIMENTAL_PLAN__DESIGN = eINSTANCE.getExperimentalPlan_Design();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.DesignImpl <em>Design</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.DesignImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getDesign()
+		 * @generated
+		 */
+		EClass DESIGN = eINSTANCE.getDesign();
+
+		/**
+		 * The meta object literal for the '<em><b>Factors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN__FACTORS = eINSTANCE.getDesign_Factors();
+
+		/**
+		 * The meta object literal for the '<em><b>Do E</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DESIGN__DO_E = eINSTANCE.getDesign_DoE();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN__PARAMETERS = eINSTANCE.getDesign_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Test</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN__TEST = eINSTANCE.getDesign_Test();
+
+		/**
+		 * The meta object literal for the '<em><b>Dep Variable</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN__DEP_VARIABLE = eINSTANCE.getDesign_DepVariable();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.ParameterImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__KEY = eINSTANCE.getParameter_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.impl.StatisticalTestImpl <em>Statistical Test</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.impl.StatisticalTestImpl
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getStatisticalTest()
+		 * @generated
+		 */
+		EClass STATISTICAL_TEST = eINSTANCE.getStatisticalTest();
+
+		/**
 		 * The meta object literal for the '{@link jpdl31.BooleanType <em>Boolean Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8147,6 +10224,66 @@ public interface Jpdl31Package extends EPackage {
 		 * @generated
 		 */
 		EEnum ARTEFACT_TYPE = eINSTANCE.getArtefactType();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.MetricType <em>Metric Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.MetricType
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getMetricType()
+		 * @generated
+		 */
+		EEnum METRIC_TYPE = eINSTANCE.getMetricType();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.RelationOperator <em>Relation Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.RelationOperator
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getRelationOperator()
+		 * @generated
+		 */
+		EEnum RELATION_OPERATOR = eINSTANCE.getRelationOperator();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.AnswerType <em>Answer Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.AnswerType
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getAnswerType()
+		 * @generated
+		 */
+		EEnum ANSWER_TYPE = eINSTANCE.getAnswerType();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.DoEType <em>Do EType</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.DoEType
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getDoEType()
+		 * @generated
+		 */
+		EEnum DO_ETYPE = eINSTANCE.getDoEType();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.HypothesisType <em>Hypothesis Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.HypothesisType
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getHypothesisType()
+		 * @generated
+		 */
+		EEnum HYPOTHESIS_TYPE = eINSTANCE.getHypothesisType();
+
+		/**
+		 * The meta object literal for the '{@link jpdl31.QuestionnaireType <em>Questionnaire Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see jpdl31.QuestionnaireType
+		 * @see jpdl31.impl.Jpdl31PackageImpl#getQuestionnaireType()
+		 * @generated
+		 */
+		EEnum QUESTIONNAIRE_TYPE = eINSTANCE.getQuestionnaireType();
 
 		/**
 		 * The meta object literal for the '<em>Boolean Type Object</em>' data type.

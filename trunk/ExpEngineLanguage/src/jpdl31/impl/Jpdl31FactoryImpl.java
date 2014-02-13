@@ -96,6 +96,21 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 			case Jpdl31Package.VARIABLE_TYPE: return createVariableType();
 			case Jpdl31Package.ARTEFACT: return createArtefact();
 			case Jpdl31Package.MODEL: return createModel();
+			case Jpdl31Package.METRIC_INFO: return createMetricInfo();
+			case Jpdl31Package.HYPHOTESES: return createHyphoteses();
+			case Jpdl31Package.SUBHYPOTHESES: return createSubhypotheses();
+			case Jpdl31Package.DEPENDENT_VARIABLE: return createDependentVariable();
+			case Jpdl31Package.FACTOR: return createFactor();
+			case Jpdl31Package.LEVEL: return createLevel();
+			case Jpdl31Package.METRIC: return createMetric();
+			case Jpdl31Package.QUESTIONNAIRE: return createQuestionnaire();
+			case Jpdl31Package.QUESTION: return createQuestion();
+			case Jpdl31Package.ALTERNATIVE: return createAlternative();
+			case Jpdl31Package.GOAL: return createGoal();
+			case Jpdl31Package.EXPERIMENTAL_PLAN: return createExperimentalPlan();
+			case Jpdl31Package.DESIGN: return createDesign();
+			case Jpdl31Package.PARAMETER: return createParameter();
+			case Jpdl31Package.STATISTICAL_TEST: return createStatisticalTest();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +140,18 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 				return createTypeTypeMember1FromString(eDataType, initialValue);
 			case Jpdl31Package.ARTEFACT_TYPE:
 				return createArtefactTypeFromString(eDataType, initialValue);
+			case Jpdl31Package.METRIC_TYPE:
+				return createMetricTypeFromString(eDataType, initialValue);
+			case Jpdl31Package.RELATION_OPERATOR:
+				return createRelationOperatorFromString(eDataType, initialValue);
+			case Jpdl31Package.ANSWER_TYPE:
+				return createAnswerTypeFromString(eDataType, initialValue);
+			case Jpdl31Package.DO_ETYPE:
+				return createDoETypeFromString(eDataType, initialValue);
+			case Jpdl31Package.HYPOTHESIS_TYPE:
+				return createHypothesisTypeFromString(eDataType, initialValue);
+			case Jpdl31Package.QUESTIONNAIRE_TYPE:
+				return createQuestionnaireTypeFromString(eDataType, initialValue);
 			case Jpdl31Package.BOOLEAN_TYPE_OBJECT:
 				return createBooleanTypeObjectFromString(eDataType, initialValue);
 			case Jpdl31Package.CONFIG_TYPE_OBJECT:
@@ -178,6 +205,18 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 				return convertTypeTypeMember1ToString(eDataType, instanceValue);
 			case Jpdl31Package.ARTEFACT_TYPE:
 				return convertArtefactTypeToString(eDataType, instanceValue);
+			case Jpdl31Package.METRIC_TYPE:
+				return convertMetricTypeToString(eDataType, instanceValue);
+			case Jpdl31Package.RELATION_OPERATOR:
+				return convertRelationOperatorToString(eDataType, instanceValue);
+			case Jpdl31Package.ANSWER_TYPE:
+				return convertAnswerTypeToString(eDataType, instanceValue);
+			case Jpdl31Package.DO_ETYPE:
+				return convertDoETypeToString(eDataType, instanceValue);
+			case Jpdl31Package.HYPOTHESIS_TYPE:
+				return convertHypothesisTypeToString(eDataType, instanceValue);
+			case Jpdl31Package.QUESTIONNAIRE_TYPE:
+				return convertQuestionnaireTypeToString(eDataType, instanceValue);
 			case Jpdl31Package.BOOLEAN_TYPE_OBJECT:
 				return convertBooleanTypeObjectToString(eDataType, instanceValue);
 			case Jpdl31Package.CONFIG_TYPE_OBJECT:
@@ -512,6 +551,156 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MetricInfo createMetricInfo() {
+		MetricInfoImpl metricInfo = new MetricInfoImpl();
+		return metricInfo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hyphoteses createHyphoteses() {
+		HyphotesesImpl hyphoteses = new HyphotesesImpl();
+		return hyphoteses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Subhypotheses createSubhypotheses() {
+		SubhypothesesImpl subhypotheses = new SubhypothesesImpl();
+		return subhypotheses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DependentVariable createDependentVariable() {
+		DependentVariableImpl dependentVariable = new DependentVariableImpl();
+		return dependentVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Factor createFactor() {
+		FactorImpl factor = new FactorImpl();
+		return factor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Level createLevel() {
+		LevelImpl level = new LevelImpl();
+		return level;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Metric createMetric() {
+		MetricImpl metric = new MetricImpl();
+		return metric;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Questionnaire createQuestionnaire() {
+		QuestionnaireImpl questionnaire = new QuestionnaireImpl();
+		return questionnaire;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Question createQuestion() {
+		QuestionImpl question = new QuestionImpl();
+		return question;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Alternative createAlternative() {
+		AlternativeImpl alternative = new AlternativeImpl();
+		return alternative;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Goal createGoal() {
+		GoalImpl goal = new GoalImpl();
+		return goal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExperimentalPlan createExperimentalPlan() {
+		ExperimentalPlanImpl experimentalPlan = new ExperimentalPlanImpl();
+		return experimentalPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Design createDesign() {
+		DesignImpl design = new DesignImpl();
+		return design;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StatisticalTest createStatisticalTest() {
+		StatisticalTestImpl statisticalTest = new StatisticalTestImpl();
+		return statisticalTest;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BooleanType createBooleanTypeFromString(EDataType eDataType, String initialValue) {
 		BooleanType result = BooleanType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -664,6 +853,126 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 	 * @generated
 	 */
 	public String convertArtefactTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MetricType createMetricTypeFromString(EDataType eDataType, String initialValue) {
+		MetricType result = MetricType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMetricTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationOperator createRelationOperatorFromString(EDataType eDataType, String initialValue) {
+		RelationOperator result = RelationOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRelationOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AnswerType createAnswerTypeFromString(EDataType eDataType, String initialValue) {
+		AnswerType result = AnswerType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAnswerTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoEType createDoETypeFromString(EDataType eDataType, String initialValue) {
+		DoEType result = DoEType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDoETypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HypothesisType createHypothesisTypeFromString(EDataType eDataType, String initialValue) {
+		HypothesisType result = HypothesisType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHypothesisTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QuestionnaireType createQuestionnaireTypeFromString(EDataType eDataType, String initialValue) {
+		QuestionnaireType result = QuestionnaireType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertQuestionnaireTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

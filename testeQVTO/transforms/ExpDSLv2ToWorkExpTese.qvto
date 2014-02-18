@@ -47,14 +47,13 @@ mapping DSL::ExperimentalPlan::experimentalPlanToPlan(in res: JPDL::DocumentRoot
 			depVariable := self.dependentVariable -> map depVarToDepVar(res);
 		};
 	
-	goals := self.goal->map goalsToGoal();
-	hypothesis := self.hypotheses->map hypothesisToHypothesis(goals);
+	goals := self.goal->map goalsToGoal(result.design);
+	
 }
 
 mapping DSL::DependentVariable::depVarToDepVar(in pro: JPDL::DocumentRoot): JPDL::DependentVariable {
 	name := self.name;
 	description := self.description;
-	
 	measureBy := self.metrics -> map metricToMetric(pro)->asOrderedSet();	
 }
 
@@ -88,22 +87,41 @@ mapping DSL::Parameter::parameterToParameter():JPDL::Parameter {
 }
 
 	
-mapping DSL::Goal::goalsToGoal():JPDL::Goal {
+mapping DSL::Goal::goalsToGoal(in des: JPDL::Design):JPDL::Goal {
 	id := self.name;
 	description := self.description;
+	hypotheses := self.hypotheses ->map hypothesisToHypothesis(des)->asOrderedSet();
 }
 
-mapping DSL::Hypotheses::hypothesisToHypothesis(inout goals: Set(JPDL::Goal)):JPDL::Hyphoteses {
-	
-	goals->forEach(g) {
-		if(g.id.equalsIgnoreCase(self.fromGoal.name))then {
-			result.fromGoal := g;	
-		}endif;
-	};
+mapping DSL::Hypotheses::hypothesisToHypothesis(in des: JPDL::Design):JPDL::Hyphotesis {
 	description := self.description;
 	id := self.name;
 	type := getHypType(self.type);
-	//formalizes
+	relationOp :=  relationMapping(self.operator);
+	//link to dep variable
+	var deps : Set(JPDL::DependentVariable);
+	deps:= des.depVariable;
+	deps->forEach(d){
+		if(self.dependentVariable->at(1).name.equalsIgnoreCase(d.oclAsType(JPDL::DependentVariable).name))then{
+			result.dependentVariable := d.oclAsType(JPDL::DependentVariable);
+		}endif;
+	};
+	//link to tretaments
+	self.levels->forEach(l){
+	   des.allSubobjectsOfType(JPDL::Level)->forEach(le){
+	   		if(le.oclAsType(JPDL::Level).name.equalsIgnoreCase(l.name))then{
+	   				result.treatment +=Sequence{le.oclAsType(JPDL::Level)};
+	   		}endif;
+	   };
+	};
+}	
+
+mapping DSL::DependentVariable::getDepVar(): JPDL::DependentVariable {
+	name := self.name;
+}
+mapping DSL::Levels::levelToTreatments():JPDL::Level{
+	name := self.name;
+	
 }
 
 mapping DSL::Questionnaire::questToQuestionnaire(): JPDL::Questionnaire {
@@ -141,12 +159,12 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
   result.startState := object JPDL::StartStateType { 
 				name := 'Starting'; 
 				
-				var act: Set(Activity);
-				act := self.allInstances(DSL::Activity);
+				var act: Set(Task);
+				act := self.allInstances(DSL::Task);
 				
 				act->forEach(a) {
 					var comp := a.repr();
-					var res := isSuccessor(comp, self.activities); //if the activity has no other refering to her as next, it is a first activity...
+					var res := isSuccessor(comp, self.task); //if the activity has no other refering to her as next, it is a first activity...
 						if(res.repr().equalsIgnoreCase('false')) then {
 						//create a transition from start to this activity...	
 						var start_t := object JPDL::TransitionType{
@@ -174,13 +192,13 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
   };
   name := self.name;
   quantity := num.round();
-  taskNode := self.activities->map act2taskNode(mets,self)->asOrderedSet();
+  taskNode := self.task->map act2taskNode(mets,self)->asOrderedSet();
   
   //links
-    self.allInstances(DSL::Activity)-> map ligarAoNoFinal(result)->asOrderedSet();
+    self.allInstances(DSL::Task)-> map ligarAoNoFinal(result)->asOrderedSet();
 }
 
-mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL::Process): JPDL::TaskNodeType{
+mapping DSL::Task::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL::Process): JPDL::TaskNodeType{
 	name := self.name;
 	description := self.description;
 	
@@ -242,7 +260,7 @@ mapping DSL::Activity::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:
    	 };  
    }endif;    
   };
-   task := self.tasks->map task2task(metrics)->asOrderedSet();
+   
 }
 
 mapping DSL::Questionnaire::questToMetricInfo():JPDL::MetricInfo {
@@ -251,40 +269,6 @@ mapping DSL::Questionnaire::questToMetricInfo():JPDL::MetricInfo {
 	name := self.name;
 	metricType := MetricType::quest;
 	
-}
-
-mapping DSL::Task::task2task(in mets:OrderedSet(DSL::Metrics)):JPDL::TaskType{
-	name := self.name;
-	description := self.description;
-	artefacts := self.artefacts->map artefact2artefact()->asOrderedSet();
-	mets->forEach(ele) 
-   { 		
-   	  ele.detail->forEach(j){
-   	  	if(j.metaClassName().equalsIgnoreCase("TaskMetric")) then {
-   	  		
-   	  	 var tasksNames := j.oclAsType(TaskMetric).tasks;
-   	  	 j.oclAsType(TaskMetric).tasks->forEach(t){
-   	  	 	if(t.name.equalsIgnoreCase(self.name)) then{
-   	  	 		result.event += Sequence {
-   					object JPDL::EventType{
-   					type:="task-end";
-   					
-   					action+=Sequence {
-   						object JPDL::ActionType{
-   						refName := t.name;
-   						name := t.name;
-   						_class := "br.ufrn.dimap.ppgsc.".concat(t.name).concat("ActionHandler");
-   
-   						}
-   					}
-				  }
-   				}
-   	  	 	}endif;
-   	  	 };
-   	  		
-   	  	}endif;
-     };
-   };
 }
 	
 mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
@@ -310,7 +294,7 @@ mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
 }
 
 //Create links to ENDNODE
-mapping DSL::Activity::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType){
+mapping DSL::Task::ligarAoNoFinal(inout process: JPDL::ProcessDefinitionType){
 
 		// cria transições para o fim...
 		var i := getTransitionToFim(process);
@@ -371,7 +355,7 @@ query checkBetween(in begin: String, in end_: String, in atual :String, in pro:D
  if( atual.equalsIgnoreCase(begin) or atual.equalsIgnoreCase(end_))then {
  	return true;
  }else {
- 	var atividadeAtual : Activity;
+ 	var atividadeAtual : Task;
  	//pegar o conjunto de todas as atividades do processo...
 	//pega a primeira e vai andando pra ver se é o begin, se sim, até chegar na end pega
 	atividadeAtual = getActivity(atual,pro);
@@ -386,12 +370,12 @@ return false;
 }
 
 //QUERY QUE RETORNA A ATIVIDADE A PARTIR DO NOME
-query getActivity(in name: String, in pro:DSL::Process):DSL::Activity {
-	var activities : Set(DSL::Activity);
-	activities := pro.allInstances(Activity);
+query getActivity(in name: String, in pro:DSL::Process):DSL::Task {
+	var activities : Set(DSL::Task);
+	activities := pro.allInstances(Task);
 	 activities->forEach(i){
  			
- 		var exp := name.equalsIgnoreCase(i.oclAsType(Activity).name);
+ 		var exp := name.equalsIgnoreCase(i.oclAsType(Task).name);
   		if (exp) then {
   			return i;
  		 }endif;
@@ -400,7 +384,7 @@ query getActivity(in name: String, in pro:DSL::Process):DSL::Activity {
 
 query getProcessRole(in pro: DSL::Process): String {
 	//alwasy return the role from the first process activity or task ...
-	var act := pro.activities;
+	var act := pro.task;
 	var role:= 'unknown';
 	/*
 		
@@ -420,7 +404,7 @@ query getProcessRole(in pro: DSL::Process): String {
 }
 
 //It verify if a task is setted as next for any other task, else it activity is the one of the firsts and returns false...
-query isSuccessor(in rep: String,in act: Set(Activity)): Boolean {
+query isSuccessor(in rep: String,in act: Set(Task)): Boolean {
 	
 	var x:=0;
 	act->forEach(i){
@@ -525,9 +509,34 @@ query getHypType(in type: DSL::HypothesisType): JPDL::HypothesisType {
 		if(type = HypothesisType::alternative)then {
 			return JPDL::HypothesisType::alternative;
 		} else {
-			//return JPDL::HypothesisType::null_;
+			return JPDL::HypothesisType::null_;
 			
 		}endif;
 	
 
+}
+query relationMapping(in type: DSL::OperatorType):JPDL::RelationOperator {
+	if (type = OperatorType::equal) then {
+		return JPDL::RelationOperator::equal;
+	}else { 
+	if (type = OperatorType::different) then {
+		return JPDL::RelationOperator::morethan;	
+	} else {
+		
+	if (type = OperatorType::more) then {
+		return JPDL::RelationOperator::morethan;
+	} else {
+		if (type = OperatorType::less) then {
+		return JPDL::RelationOperator::lessthan;
+	} else {
+		if (type = OperatorType::moreEqual) then {
+		return JPDL::RelationOperator::moreequalthan;
+	} else {
+		return JPDL::RelationOperator::lessequalthan;
+	}endif;
+	}endif;
+	}endif;
+	}endif;
+	}endif;
+	return null;
 }

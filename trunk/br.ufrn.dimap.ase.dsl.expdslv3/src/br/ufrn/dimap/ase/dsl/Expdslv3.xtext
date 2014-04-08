@@ -1,0 +1,123 @@
+grammar br.ufrn.dimap.ase.dsl.Expdslv3 with org.eclipse.xtext.common.Terminals
+
+generate expdslv3 "http://www.ufrn.br/dimap/ase/dsl/Expdslv3"
+
+Model:
+	elements+=ExperimentElement;
+ExperimentElement:
+	'Experiment' name=ID description=STRING
+	'Experimental Design' experiments=ExperimentalDesign
+	 process+=Process*
+	('Questionnaires' questionnaire+=Questionnaire*)?;
+QualifiedName:
+    ID ('.' ID)*;
+ExperimentalDesign: 
+('Autorship' '{' author+=Author* '}')?
+('Abstract' '{'abstract=Abstract '}')?
+('Keywords' keyword+=Keyword*)?
+('Goals' '{'(goal+=Goal)*'}')
+('Research Questions' '{' researchQuestion+=ResearchQuestion*'}')?
+('Research Hypotheses' '{' researchHypothesis+=ResearchHypothesis* '}')?
+('Variables' '{' variable+=Variable* '}')?
+('Dependent Variables' '{' depVar+=DepVariable*'}')
+('Factors' '{' factor+=Factor* '}')
+('DoE' '=' type=DesignType '(' (doe=DOE)')')
+('Context' (parameter+=Parameter)*)?
+		
+;
+Author: identifier=ID name=STRING;
+
+Abstract: (SimpleAbstract|StructuredAbstract);
+ 
+SimpleAbstract : description=STRING;
+StructuredAbstract: {StructuredAbstract}
+	('Background' background=STRING)?
+	('Objective' objective=STRING)?
+	('Methods' methods=STRING)?
+	('Results' results=STRING)?
+	('Limitations' limitations=STRING)?
+	('Conclusions' conclusions=STRING)?
+;
+
+Keyword: description=STRING;
+
+Goal:  name=ID description=STRING;
+ResearchQuestion: name=ID description=STRING 'relates to' goal=[Goal|QualifiedName] ;
+
+
+ResearchHypothesis:name=ID description=STRING 'relates to' goal=[Goal|QualifiedName];
+
+Variable: name=ID description=STRING ('Scale' scaleType=ScaleType)? ('Range' '{'range+=Range*'}')?;
+Range: name=ID;
+enum ScaleType returns ScaleType:
+	Numericial = 'Numerical'| Ordinal = 'Ordinal'| Nominal = 'Nominal';
+
+DepVariable : variable=[Variable|QualifiedName] 'relates to' 
+	('question' rq=[ResearchQuestion|QualifiedName]|'hypothesis' rh=[ResearchHypothesis|QualifiedName])
+;
+
+Factor: 
+	variable=[Variable|QualifiedName]
+	('(' (level+=Level)* ')')?;
+Level: lev=[Range|QualifiedName];
+DOE: LS|RCBD|CRB;
+LS: {LS} 'column =' col=[Factor|QualifiedName]',' 'row =' row=[Factor|QualifiedName] ',' 'treatment =' treatment=[Factor|QualifiedName];
+RCBD: {RCBD} 'treatment =' treatment=[Factor|QualifiedName] ',' 'blockVariable =' blockVariable=[Factor|QualifiedName];
+CRB: {CRB} 'treatment =' treatment=[Factor|QualifiedName];	
+Parameter:
+	'Parameter' variable=ID '=' value=STRING;
+
+enum DesignType returns DesignType:
+	CDR = 'CRD - Completely Randomized Design' | 
+	RCBD = 'RCBD - Randomized Complete Block Design' | 
+	LS = 'LS - Latin Square' |
+	other = 'Other';	
+
+//Data procedure definitions
+Process:
+	'Process' name=ID //('to' treatment+=[Level|QualifiedName]*)?'{'
+	  ('Role' role += RoleType*)?
+	 (task+=Task)*
+	'}';
+
+Task:
+	'Task'
+	name=ID 'description' description=STRING
+	('to' next+=[Task|QualifiedName]*)?	
+	('Role' role += RoleType*)? '{'
+	('artefacts' (artefacts+=Artefact)*)?
+	//('metric' metric+=[DepVariable|QualifiedName] ('as' metricName=ID)?)?
+	// e se uma métrica for um questionário ou artefato de saída
+	//('quest' questionnaire+=[Questionnaire|QualifiedName]*)?
+ '}';
+
+enum RoleType returns RoleType:
+	participant = 'Participant'| researcher = 'Researcher'
+;
+Artefact:
+	name = ID 'description' description=STRING 'type' type=ArtefactType;
+	enum ArtefactType returns ArtefactType:
+	in_ = 'input' | out_ = 'output' | inout_ = 'inoutput';
+
+//Questionnaire definitions
+Questionnaire: 'Questionnaire' name=ID ( 'relates' relatesTo+=[Process]*)? 
+			   ('type' questionnaireType=QuestionnaireType)? '{'
+				(question+=Question)*'};';
+				
+enum QuestionnaireType returns QuestionnaireType:
+	pre = 'Pre' | post = 'Post';
+	
+Question:
+	name=ID '{'
+	    ('description' description=STRING)
+		('type' type=AnswerType)
+		('required' req=INT )?
+		('Alternatives' alternatives+=Alternatives*)?  
+	'}';
+
+Alternatives:
+	'Option' description = STRING;
+	
+enum AnswerType returns AnswerType:
+	Text='Text' | ParagraphText = 'ParagraphText' | MultipleChoice = 'MultipleChoice' 
+	| SingleChoice = 'SingleChoice' | Scale = 'Scale' | Grid = 'Grid';

@@ -1,0 +1,77 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.ufrn.br/dimap/ase/dsl/ExpDslv2')]
+
+
+[template public generateElement(exp: ExperimentElement)]
+
+[comment @main/]
+[file (exp.name.concat('.conf').toLower().trim(),true,'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<experimental_plan type="[(exp.experiments.type)/]" internalReplication="[(exp.experiments.internalReplication)/]">
+
+
+[let maxValue : Integer = exp.experiments.internalReplication->at(1)]
+
+[if (exp.experiments->at(1).type = DesignType::CDR)]
+[for (p: Process| exp.process)]
+	[for (t: Levels| p.treatment )]
+		[for (counter : Integer | Sequence{1..maxValue})]
+			[let selectedSubject : Integer = randomRange(1, maxValue*p.treatment->size())]
+	<process name="[p.name/]" subject="[selectedSubject/]" />
+			[/let]
+		[/for]
+	[/for]
+[/for]
+[elseif (exp.experiments->at(1).type=DesignType::RCBD)]
+[for (p: Process| exp.process)]
+	[for (it : Levels| p.treatment )]
+		[for (counter : Integer | Sequence{1..maxValue})]
+			[let selectedSubject : Integer = randomRange(1, (maxValue*p.treatment->size()))]
+					[if it.eContainer(Factor).isDesiredVariation = 'False']
+							[let block : String = it.name]
+	<process name="[p.name/]" subject="[selectedSubject/]" block="[ block /]" />
+							[/let]
+					[/if]
+			[/let]
+		[/for]
+	[/for]
+[/for]
+[elseif (exp.experiments->at(1).type = DesignType::LS)]
+ 	[for (f: Factor|exp.experiments->at(1).factor)]
+		 [for (level: Levels|f.level)]
+			<factor  name="[f.name/]" level="[level.name/]" isDesiredVariation="[level.eContainer(Factor).isDesiredVariation /]" />
+		 [/for]
+	[/for]
+    
+     	
+ 	[for (t1: Levels|exp.experiments->at(1).factor->at(2).level)]
+		
+			[for (t2:Levels| exp.experiments->at(1).factor->at(3).level)]
+				
+				[for (t3:Levels|exp.experiments->at(1).factor->at(1).level)]
+					<([t1.name/],[t2.name/],[t3.name/])>
+				[/for]
+			[/for]
+	[/for]
+	[for (p: Process| exp.process)]
+		[for (it : Levels| p.treatment )]
+			<link name="[p.name/]"
+				treatment="[it.eContainer(Factor).name/].[it.name/]," />
+		[/for]
+	[/for]
+
+
+[/if]
+[/let]	
+
+</experimental_plan>
+
+[/file]
+[/template]
+
+[query public randomRange(initialValue :Integer, maxValue :Integer) : Integer 
+= invoke('AcceleoExpDSL.main.RandomSubject','randomize(java.lang.Integer, java.lang.Integer)', Sequence{initialValue, maxValue}) /]
+

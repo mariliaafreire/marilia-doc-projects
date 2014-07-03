@@ -1,0 +1,55 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.xtext.org/project/ExpDSL')]
+
+
+[template public generateElement(e :ExperimentalPlan)]
+
+[comment @main/]
+[file (e.type.toString().concat('.conf').toLower().trim(),true,'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<experimental_plan type="[(e.type)/]" internalReplication="[(e.internalReplication)/]">
+
+[if (e.type = DesignType::CDR)]
+	[for (it : Link| e.link )]
+		[for (counter : Integer | Sequence{1..(e.internalReplication)})]
+			[let selectedSubject : Integer = randomRange(1, (e.internalReplication*e.link->size()))]
+	<process name="[it.procedure.name/]" subject="[selectedSubject/]" />
+			[/let]
+		[/for]
+	[/for]
+[elseif (e.type=DesignType::RCBD)]
+	[for (it : Link| e.link )]
+		[for (counter : Integer | Sequence{1..(e.internalReplication)})]
+			[let selectedSubject : Integer = randomRange(1, (e.internalReplication*e.link->size()))]
+					[for (level : Levels| it.treatment )]
+						[if level.eContainer(Factor).isDesiredVariation = 'False']
+							[let block : String = level.name]
+	<process name="[it.procedure.name/]" subject="[selectedSubject/]" block="[ block /]" />
+							[/let]
+						[/if]
+					[/for]
+			[/let]
+		[/for]
+	[/for]
+[elseif (e.type=DesignType::LS)]
+	[for (f: Factor|e.factor)]
+		 [for (level: Levels|f.level)]
+			<factor  name="[f.name/]" level="[level.name/]" isDesiredVariation="[level.eContainer(Factor).isDesiredVariation /]" />
+		 [/for]
+	[/for]
+	[for (it : Link| e.link )]
+			<link name="[it.procedure.name/]"
+				treatment="[for (l : Levels| it.treatment)][l.eContainer(Factor).name/].[l.name/],[/for]" />
+	[/for]
+[/if]	
+</experimental_plan>
+
+[/file]
+[/template]
+
+[query public randomRange(initialValue :Integer, maxValue :Integer) : Integer 
+= invoke('AcceleoExpDSL.main.RandomSubject','randomize(java.lang.Integer, java.lang.Integer)', Sequence{initialValue, maxValue}) /]
+

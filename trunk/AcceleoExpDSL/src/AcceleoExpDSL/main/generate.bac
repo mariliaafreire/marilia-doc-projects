@@ -1,0 +1,46 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.xtext.org/project/ExpDSL')]
+
+
+[template public generateElement(e :ExperimentalPlan)]
+
+[comment @main/]
+[file (e.name.concat('.conf').toLower().trim(),true,'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<experimental_plan>
+[if (e.type = DesignType::CDR)]
+	[for (it : Link| e.link )]
+		[for (counter : Integer | Sequence{1..(e.internalReplication)})]
+			[let selectedSubject : Integer = randomRange(1, (e.internalReplication*e.link->size()))]
+	<process name="[it.procedure.name/]" subject="[selectedSubject/]" />
+			[/let]
+		[/for]
+	[/for]
+[elseif (e.type=DesignType::RCDB)]
+	[for (factor: Factor| e.factor)]
+		[if (factor.isDesiredVariation = 'False')]
+			[for (level: Levels| factor.level)]
+				[let countLink : Integer = i]
+				[for (it : Link| e.link )]
+						[for (counter : Integer | Sequence{1..(e.internalReplication)})]
+							[let selectedSubject : Integer = (randomRange((e.internalReplication*e.link->size()*(countLink-1)+1), (e.internalReplication*e.link->size()*countLink)))]
+		<process name="[it.procedure.name/]" subject="[selectedSubject/]" block="[factor.name/] - [level.name/]"/>
+							[/let]
+						[/for]
+				[/for]
+				[/let]
+			[/for]
+		[/if]
+	[/for]
+[/if]	
+</experimental_plan>
+
+[/file]
+[/template]
+
+[query public randomRange(initialValue :Integer, maxValue :Integer) : Integer 
+= invoke('AcceleoExpDSL.services.RandomSubject','randomize(java.lang.Integer, java.lang.Integer)', Sequence{initialValue, maxValue}) /]
+

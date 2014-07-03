@@ -38,272 +38,262 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DepVariableImpl extends MinimalEObjectImpl.Container implements DepVariable
 {
   /**
-   * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariable()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariable()
+	 * @generated
+	 * @ordered
+	 */
   protected Variable variable;
 
   /**
-   * The cached value of the '{@link #getRq() <em>Rq</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRq() <em>Rq</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRq()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRq()
+	 * @generated
+	 * @ordered
+	 */
   protected ResearchQuestion rq;
 
   /**
-   * The cached value of the '{@link #getRh() <em>Rh</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRh() <em>Rh</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRh()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRh()
+	 * @generated
+	 * @ordered
+	 */
   protected ResearchHypothesis rh;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DepVariableImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.DEP_VARIABLE;
-  }
+		return Expdslv3Package.Literals.DEP_VARIABLE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Variable getVariable()
   {
-    if (variable != null && variable.eIsProxy())
-    {
-      InternalEObject oldVariable = (InternalEObject)variable;
-      variable = (Variable)eResolveProxy(oldVariable);
-      if (variable != oldVariable)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DEP_VARIABLE__VARIABLE, oldVariable, variable));
-      }
-    }
-    return variable;
-  }
+		if (variable != null && variable.eIsProxy()) {
+			InternalEObject oldVariable = (InternalEObject)variable;
+			variable = (Variable)eResolveProxy(oldVariable);
+			if (variable != oldVariable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DEP_VARIABLE__VARIABLE, oldVariable, variable));
+			}
+		}
+		return variable;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Variable basicGetVariable()
   {
-    return variable;
-  }
+		return variable;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVariable(Variable newVariable)
   {
-    Variable oldVariable = variable;
-    variable = newVariable;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DEP_VARIABLE__VARIABLE, oldVariable, variable));
-  }
+		Variable oldVariable = variable;
+		variable = newVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DEP_VARIABLE__VARIABLE, oldVariable, variable));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ResearchQuestion getRq()
   {
-    if (rq != null && rq.eIsProxy())
-    {
-      InternalEObject oldRq = (InternalEObject)rq;
-      rq = (ResearchQuestion)eResolveProxy(oldRq);
-      if (rq != oldRq)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DEP_VARIABLE__RQ, oldRq, rq));
-      }
-    }
-    return rq;
-  }
+		if (rq != null && rq.eIsProxy()) {
+			InternalEObject oldRq = (InternalEObject)rq;
+			rq = (ResearchQuestion)eResolveProxy(oldRq);
+			if (rq != oldRq) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DEP_VARIABLE__RQ, oldRq, rq));
+			}
+		}
+		return rq;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ResearchQuestion basicGetRq()
   {
-    return rq;
-  }
+		return rq;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRq(ResearchQuestion newRq)
   {
-    ResearchQuestion oldRq = rq;
-    rq = newRq;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DEP_VARIABLE__RQ, oldRq, rq));
-  }
+		ResearchQuestion oldRq = rq;
+		rq = newRq;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DEP_VARIABLE__RQ, oldRq, rq));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ResearchHypothesis getRh()
   {
-    if (rh != null && rh.eIsProxy())
-    {
-      InternalEObject oldRh = (InternalEObject)rh;
-      rh = (ResearchHypothesis)eResolveProxy(oldRh);
-      if (rh != oldRh)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DEP_VARIABLE__RH, oldRh, rh));
-      }
-    }
-    return rh;
-  }
+		if (rh != null && rh.eIsProxy()) {
+			InternalEObject oldRh = (InternalEObject)rh;
+			rh = (ResearchHypothesis)eResolveProxy(oldRh);
+			if (rh != oldRh) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DEP_VARIABLE__RH, oldRh, rh));
+			}
+		}
+		return rh;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ResearchHypothesis basicGetRh()
   {
-    return rh;
-  }
+		return rh;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRh(ResearchHypothesis newRh)
   {
-    ResearchHypothesis oldRh = rh;
-    rh = newRh;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DEP_VARIABLE__RH, oldRh, rh));
-  }
+		ResearchHypothesis oldRh = rh;
+		rh = newRh;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DEP_VARIABLE__RH, oldRh, rh));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DEP_VARIABLE__VARIABLE:
-        if (resolve) return getVariable();
-        return basicGetVariable();
-      case Expdslv3Package.DEP_VARIABLE__RQ:
-        if (resolve) return getRq();
-        return basicGetRq();
-      case Expdslv3Package.DEP_VARIABLE__RH:
-        if (resolve) return getRh();
-        return basicGetRh();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DEP_VARIABLE__VARIABLE:
+				if (resolve) return getVariable();
+				return basicGetVariable();
+			case Expdslv3Package.DEP_VARIABLE__RQ:
+				if (resolve) return getRq();
+				return basicGetRq();
+			case Expdslv3Package.DEP_VARIABLE__RH:
+				if (resolve) return getRh();
+				return basicGetRh();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DEP_VARIABLE__VARIABLE:
-        setVariable((Variable)newValue);
-        return;
-      case Expdslv3Package.DEP_VARIABLE__RQ:
-        setRq((ResearchQuestion)newValue);
-        return;
-      case Expdslv3Package.DEP_VARIABLE__RH:
-        setRh((ResearchHypothesis)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DEP_VARIABLE__VARIABLE:
+				setVariable((Variable)newValue);
+				return;
+			case Expdslv3Package.DEP_VARIABLE__RQ:
+				setRq((ResearchQuestion)newValue);
+				return;
+			case Expdslv3Package.DEP_VARIABLE__RH:
+				setRh((ResearchHypothesis)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DEP_VARIABLE__VARIABLE:
-        setVariable((Variable)null);
-        return;
-      case Expdslv3Package.DEP_VARIABLE__RQ:
-        setRq((ResearchQuestion)null);
-        return;
-      case Expdslv3Package.DEP_VARIABLE__RH:
-        setRh((ResearchHypothesis)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DEP_VARIABLE__VARIABLE:
+				setVariable((Variable)null);
+				return;
+			case Expdslv3Package.DEP_VARIABLE__RQ:
+				setRq((ResearchQuestion)null);
+				return;
+			case Expdslv3Package.DEP_VARIABLE__RH:
+				setRh((ResearchHypothesis)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DEP_VARIABLE__VARIABLE:
-        return variable != null;
-      case Expdslv3Package.DEP_VARIABLE__RQ:
-        return rq != null;
-      case Expdslv3Package.DEP_VARIABLE__RH:
-        return rh != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DEP_VARIABLE__VARIABLE:
+				return variable != null;
+			case Expdslv3Package.DEP_VARIABLE__RQ:
+				return rq != null;
+			case Expdslv3Package.DEP_VARIABLE__RH:
+				return rh != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //DepVariableImpl

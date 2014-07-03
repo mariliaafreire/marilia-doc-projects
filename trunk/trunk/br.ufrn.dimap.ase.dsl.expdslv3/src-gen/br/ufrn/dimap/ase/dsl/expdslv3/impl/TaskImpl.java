@@ -8,6 +8,7 @@ package br.ufrn.dimap.ase.dsl.expdslv3.impl;
 
 import br.ufrn.dimap.ase.dsl.expdslv3.Artefact;
 import br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package;
+import br.ufrn.dimap.ase.dsl.expdslv3.Metric;
 import br.ufrn.dimap.ase.dsl.expdslv3.RoleType;
 import br.ufrn.dimap.ase.dsl.expdslv3.Task;
 
@@ -41,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.ufrn.dimap.ase.dsl.expdslv3.impl.TaskImpl#getNext <em>Next</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expdslv3.impl.TaskImpl#getRole <em>Role</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expdslv3.impl.TaskImpl#getArtefacts <em>Artefacts</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expdslv3.impl.TaskImpl#getMetric <em>Metric</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,329 +51,357 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class TaskImpl extends MinimalEObjectImpl.Container implements Task
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getNext() <em>Next</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNext()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNext()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Task> next;
 
   /**
-   * The cached value of the '{@link #getRole() <em>Role</em>}' attribute list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRole()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRole()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<RoleType> role;
 
   /**
-   * The cached value of the '{@link #getArtefacts() <em>Artefacts</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getArtefacts() <em>Artefacts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArtefacts()
-   * @generated
-   * @ordered
-   */
+	 * @see #getArtefacts()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Artefact> artefacts;
 
   /**
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMetric() <em>Metric</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  protected TaskImpl()
-  {
-    super();
-  }
+	 * @see #getMetric()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<Metric> metric;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
+  protected TaskImpl()
+  {
+		super();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.TASK;
-  }
+		return Expdslv3Package.Literals.TASK;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.TASK__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.TASK__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getDescription()
   {
-    return description;
-  }
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setDescription(String newDescription)
   {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.TASK__DESCRIPTION, oldDescription, description));
-  }
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.TASK__DESCRIPTION, oldDescription, description));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Task> getNext()
   {
-    if (next == null)
-    {
-      next = new EObjectResolvingEList<Task>(Task.class, this, Expdslv3Package.TASK__NEXT);
-    }
-    return next;
-  }
+		if (next == null) {
+			next = new EObjectResolvingEList<Task>(Task.class, this, Expdslv3Package.TASK__NEXT);
+		}
+		return next;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<RoleType> getRole()
   {
-    if (role == null)
-    {
-      role = new EDataTypeEList<RoleType>(RoleType.class, this, Expdslv3Package.TASK__ROLE);
-    }
-    return role;
-  }
+		if (role == null) {
+			role = new EDataTypeEList<RoleType>(RoleType.class, this, Expdslv3Package.TASK__ROLE);
+		}
+		return role;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Artefact> getArtefacts()
   {
-    if (artefacts == null)
-    {
-      artefacts = new EObjectContainmentEList<Artefact>(Artefact.class, this, Expdslv3Package.TASK__ARTEFACTS);
-    }
-    return artefacts;
-  }
+		if (artefacts == null) {
+			artefacts = new EObjectContainmentEList<Artefact>(Artefact.class, this, Expdslv3Package.TASK__ARTEFACTS);
+		}
+		return artefacts;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
+  public EList<Metric> getMetric()
+  {
+		if (metric == null) {
+			metric = new EObjectContainmentEList<Metric>(Metric.class, this, Expdslv3Package.TASK__METRIC);
+		}
+		return metric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.TASK__ARTEFACTS:
-        return ((InternalEList<?>)getArtefacts()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case Expdslv3Package.TASK__ARTEFACTS:
+				return ((InternalEList<?>)getArtefacts()).basicRemove(otherEnd, msgs);
+			case Expdslv3Package.TASK__METRIC:
+				return ((InternalEList<?>)getMetric()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.TASK__NAME:
-        return getName();
-      case Expdslv3Package.TASK__DESCRIPTION:
-        return getDescription();
-      case Expdslv3Package.TASK__NEXT:
-        return getNext();
-      case Expdslv3Package.TASK__ROLE:
-        return getRole();
-      case Expdslv3Package.TASK__ARTEFACTS:
-        return getArtefacts();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.TASK__NAME:
+				return getName();
+			case Expdslv3Package.TASK__DESCRIPTION:
+				return getDescription();
+			case Expdslv3Package.TASK__NEXT:
+				return getNext();
+			case Expdslv3Package.TASK__ROLE:
+				return getRole();
+			case Expdslv3Package.TASK__ARTEFACTS:
+				return getArtefacts();
+			case Expdslv3Package.TASK__METRIC:
+				return getMetric();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.TASK__NAME:
-        setName((String)newValue);
-        return;
-      case Expdslv3Package.TASK__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
-      case Expdslv3Package.TASK__NEXT:
-        getNext().clear();
-        getNext().addAll((Collection<? extends Task>)newValue);
-        return;
-      case Expdslv3Package.TASK__ROLE:
-        getRole().clear();
-        getRole().addAll((Collection<? extends RoleType>)newValue);
-        return;
-      case Expdslv3Package.TASK__ARTEFACTS:
-        getArtefacts().clear();
-        getArtefacts().addAll((Collection<? extends Artefact>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.TASK__NAME:
+				setName((String)newValue);
+				return;
+			case Expdslv3Package.TASK__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case Expdslv3Package.TASK__NEXT:
+				getNext().clear();
+				getNext().addAll((Collection<? extends Task>)newValue);
+				return;
+			case Expdslv3Package.TASK__ROLE:
+				getRole().clear();
+				getRole().addAll((Collection<? extends RoleType>)newValue);
+				return;
+			case Expdslv3Package.TASK__ARTEFACTS:
+				getArtefacts().clear();
+				getArtefacts().addAll((Collection<? extends Artefact>)newValue);
+				return;
+			case Expdslv3Package.TASK__METRIC:
+				getMetric().clear();
+				getMetric().addAll((Collection<? extends Metric>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.TASK__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case Expdslv3Package.TASK__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
-      case Expdslv3Package.TASK__NEXT:
-        getNext().clear();
-        return;
-      case Expdslv3Package.TASK__ROLE:
-        getRole().clear();
-        return;
-      case Expdslv3Package.TASK__ARTEFACTS:
-        getArtefacts().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.TASK__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Expdslv3Package.TASK__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case Expdslv3Package.TASK__NEXT:
+				getNext().clear();
+				return;
+			case Expdslv3Package.TASK__ROLE:
+				getRole().clear();
+				return;
+			case Expdslv3Package.TASK__ARTEFACTS:
+				getArtefacts().clear();
+				return;
+			case Expdslv3Package.TASK__METRIC:
+				getMetric().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.TASK__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Expdslv3Package.TASK__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case Expdslv3Package.TASK__NEXT:
-        return next != null && !next.isEmpty();
-      case Expdslv3Package.TASK__ROLE:
-        return role != null && !role.isEmpty();
-      case Expdslv3Package.TASK__ARTEFACTS:
-        return artefacts != null && !artefacts.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.TASK__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Expdslv3Package.TASK__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case Expdslv3Package.TASK__NEXT:
+				return next != null && !next.isEmpty();
+			case Expdslv3Package.TASK__ROLE:
+				return role != null && !role.isEmpty();
+			case Expdslv3Package.TASK__ARTEFACTS:
+				return artefacts != null && !artefacts.isEmpty();
+			case Expdslv3Package.TASK__METRIC:
+				return metric != null && !metric.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(", role: ");
-    result.append(role);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", description: ");
+		result.append(description);
+		result.append(", role: ");
+		result.append(role);
+		result.append(')');
+		return result.toString();
+	}
 
 } //TaskImpl

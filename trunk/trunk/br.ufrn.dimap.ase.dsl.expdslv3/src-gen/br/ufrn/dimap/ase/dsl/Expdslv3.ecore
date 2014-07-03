@@ -40,6 +40,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="doe" eType="#//DOE" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
         eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Author">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -60,9 +61,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="Keyword">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Goal">
+  <eClassifiers xsi:type="ecore:EClass" name="Goal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleGoal" eSuperTypes="#//Goal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredGoal" eSuperTypes="#//Goal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="object" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="technique" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ptView" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResearchQuestion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -86,8 +95,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ScaleType">
     <eLiterals name="Numericial" literal="Numerical"/>
-    <eLiterals name="Ordinal" value="1" literal="Ordinal"/>
-    <eLiterals name="Nominal" value="2" literal="Nominal"/>
+    <eLiterals name="Ratio" value="1" literal="Ratio"/>
+    <eLiterals name="Ordinal" value="2" literal="Ordinal"/>
+    <eLiterals name="Nominal" value="3" literal="Nominal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DepVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
@@ -95,27 +105,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rh" eType="#//ResearchHypothesis"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Factor">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="level" upperBound="-1"
-        eType="#//Level" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Level">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lev" eType="#//Range"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DOE">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" eType="#//Factor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LS" eSuperTypes="#//DOE">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="col" eType="#//Factor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="row" eType="#//Factor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="col" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="row" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RCBD" eSuperTypes="#//DOE">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="blockVariable" eType="#//Factor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blockVariable" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CRB" eSuperTypes="#//DOE"/>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DesignType">
     <eLiterals name="CDR" literal="CRD - Completely Randomized Design"/>
@@ -125,6 +129,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" unique="false"
+        upperBound="-1" eType="#//Range"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" unique="false" upperBound="-1"
         eType="#//RoleType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="task" upperBound="-1" eType="#//Task"
@@ -139,6 +145,8 @@
         eType="#//RoleType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" upperBound="-1"
         eType="#//Artefact" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" upperBound="-1"
+        eType="#//Metric" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoleType">
     <eLiterals name="participant" literal="Participant"/>
@@ -153,6 +161,14 @@
     <eLiterals name="in_" literal="input"/>
     <eLiterals name="out_" value="1" literal="output"/>
     <eLiterals name="inout_" value="2" literal="inoutput"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metric">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MetricType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MetricType">
+    <eLiterals name="autotime" literal="auto-time"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Questionnaire">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

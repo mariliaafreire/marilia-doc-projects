@@ -27,29 +27,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface DOE extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Treatment</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Treatment</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Treatment</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Treatment</em>' reference.
-   * @see #setTreatment(Factor)
-   * @see br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package#getDOE_Treatment()
-   * @model
-   * @generated
-   */
-  Factor getTreatment();
+	 * @return the value of the '<em>Treatment</em>' reference.
+	 * @see #setTreatment(Variable)
+	 * @see br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package#getDOE_Treatment()
+	 * @model
+	 * @generated
+	 */
+  Variable getTreatment();
 
   /**
-   * Sets the value of the '{@link br.ufrn.dimap.ase.dsl.expdslv3.DOE#getTreatment <em>Treatment</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link br.ufrn.dimap.ase.dsl.expdslv3.DOE#getTreatment <em>Treatment</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Treatment</em>' reference.
-   * @see #getTreatment()
-   * @generated
-   */
-  void setTreatment(Factor value);
+	 * @param value the new value of the '<em>Treatment</em>' reference.
+	 * @see #getTreatment()
+	 * @generated
+	 */
+  void setTreatment(Variable value);
 
 } // DOE

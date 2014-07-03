@@ -12,9 +12,9 @@ ExperimentElement:
 QualifiedName:
     ID ('.' ID)*;
 ExperimentalDesign: 
-('Autorship' '{' author+=Author* '}')?
+('Authorship' '{' author+=Author* '}')?
 ('Abstract' '{'abstract=Abstract '}')?
-('Keywords' keyword+=Keyword*)?
+('Keywords' '{' keyword+=Keyword* '}')?
 ('Goals' '{'(goal+=Goal)*'}')
 ('Research Questions' '{' researchQuestion+=ResearchQuestion*'}')?
 ('Research Hypotheses' '{' researchHypothesis+=ResearchHypothesis* '}')?
@@ -22,7 +22,8 @@ ExperimentalDesign:
 ('Dependent Variables' '{' depVar+=DepVariable*'}')
 ('Factors' '{' factor+=Factor* '}')
 ('DoE' '=' type=DesignType '(' (doe=DOE)')')
-('Context' (parameter+=Parameter)*)?
+('Context'  '{'(parameter+=Parameter)*'}')?
+('Internal Replication' replication=INT)?
 		
 ;
 Author: identifier=ID name=STRING;
@@ -41,7 +42,9 @@ StructuredAbstract: {StructuredAbstract}
 
 Keyword: description=STRING;
 
-Goal:  name=ID description=STRING;
+Goal: StructuredGoal|SimpleGoal;
+SimpleGoal:name=ID (description=STRING)?;
+StructuredGoal: 'Analyze' object=STRING  'for the purpose of' technique=STRING 'with respect to their' quality=STRING 'the point of view of the' ptView=STRING 'in the context of' contextOf=STRING;
 ResearchQuestion: name=ID description=STRING 'relates to' goal=[Goal|QualifiedName] ;
 
 
@@ -50,22 +53,18 @@ ResearchHypothesis:name=ID description=STRING 'relates to' goal=[Goal|QualifiedN
 Variable: name=ID description=STRING ('Scale' scaleType=ScaleType)? ('Range' '{'range+=Range*'}')?;
 Range: name=ID;
 enum ScaleType returns ScaleType:
-	Numericial = 'Numerical'| Ordinal = 'Ordinal'| Nominal = 'Nominal';
-
+	Numericial = 'Numerical'| Ratio = 'Ratio' | Ordinal = 'Ordinal'| Nominal = 'Nominal';
 DepVariable : variable=[Variable|QualifiedName] 'relates to' 
-	('question' rq=[ResearchQuestion|QualifiedName]|'hypothesis' rh=[ResearchHypothesis|QualifiedName])
+	('RQ' rq=[ResearchQuestion|QualifiedName]|'RH' rh=[ResearchHypothesis|QualifiedName])
 ;
 
-Factor: 
-	variable=[Variable|QualifiedName]
-	('(' (level+=Level)* ')')?;
-Level: lev=[Range|QualifiedName];
+Factor: name=[Variable|QualifiedName];
 DOE: LS|RCBD|CRB;
-LS: {LS} 'column =' col=[Factor|QualifiedName]',' 'row =' row=[Factor|QualifiedName] ',' 'treatment =' treatment=[Factor|QualifiedName];
-RCBD: {RCBD} 'treatment =' treatment=[Factor|QualifiedName] ',' 'blockVariable =' blockVariable=[Factor|QualifiedName];
-CRB: {CRB} 'treatment =' treatment=[Factor|QualifiedName];	
+LS: {LS} 'column =' col=[Variable|QualifiedName]',' 'row =' row=[Variable|QualifiedName] ',' 'treatment =' treatment=[Variable|QualifiedName];
+RCBD: {RCBD}  'blockVariable =' blockVariable=[Variable|QualifiedName] ',' 'treatment =' treatment=[Variable|QualifiedName];
+CRB: {CRB} 'treatment =' treatment=[Variable|QualifiedName];	
 Parameter:
-	'Parameter' variable=ID '=' value=STRING;
+	variable=[Variable|QualifiedName];
 
 enum DesignType returns DesignType:
 	CDR = 'CRD - Completely Randomized Design' | 
@@ -75,7 +74,7 @@ enum DesignType returns DesignType:
 
 //Data procedure definitions
 Process:
-	'Process' name=ID //('to' treatment+=[Level|QualifiedName]*)?'{'
+	'Process' name=ID ('to' treatment+=[Range|QualifiedName]*)?'{'
 	  ('Role' role += RoleType*)?
 	 (task+=Task)*
 	'}';
@@ -86,7 +85,7 @@ Task:
 	('to' next+=[Task|QualifiedName]*)?	
 	('Role' role += RoleType*)? '{'
 	('artefacts' (artefacts+=Artefact)*)?
-	//('metric' metric+=[DepVariable|QualifiedName] ('as' metricName=ID)?)?
+	('metrics' metric+=Metric*)?
 	// e se uma métrica for um questionário ou artefato de saída
 	//('quest' questionnaire+=[Questionnaire|QualifiedName]*)?
  '}';
@@ -98,7 +97,12 @@ Artefact:
 	name = ID 'description' description=STRING 'type' type=ArtefactType;
 	enum ArtefactType returns ArtefactType:
 	in_ = 'input' | out_ = 'output' | inout_ = 'inoutput';
+	
+Metric: name=[Variable|QualifiedName] (type = MetricType)? ('as' varname=ID)?;
 
+enum MetricType returns MetricType:
+	autotime = 'auto-time'
+;
 //Questionnaire definitions
 Questionnaire: 'Questionnaire' name=ID ( 'relates' relatesTo+=[Process]*)? 
 			   ('type' questionnaireType=QuestionnaireType)? '{'

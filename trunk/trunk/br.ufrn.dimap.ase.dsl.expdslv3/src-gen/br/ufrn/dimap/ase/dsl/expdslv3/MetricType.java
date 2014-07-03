@@ -14,95 +14,69 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Role Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Metric Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package#getRoleType()
+ * @see br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package#getMetricType()
  * @model
  * @generated
  */
-public enum RoleType implements Enumerator
+public enum MetricType implements Enumerator
 {
   /**
-	 * The '<em><b>Participant</b></em>' literal object.
+	 * The '<em><b>Autotime</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #PARTICIPANT_VALUE
+	 * @see #AUTOTIME_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  PARTICIPANT(0, "participant", "Participant"),
+  AUTOTIME(0, "autotime", "auto-time");
 
   /**
-	 * The '<em><b>Researcher</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #RESEARCHER_VALUE
-	 * @generated
-	 * @ordered
-	 */
-  RESEARCHER(1, "researcher", "Researcher");
-
-  /**
-	 * The '<em><b>Participant</b></em>' literal value.
+	 * The '<em><b>Autotime</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Participant</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>Autotime</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #PARTICIPANT
-	 * @model name="participant" literal="Participant"
+	 * @see #AUTOTIME
+	 * @model name="autotime" literal="auto-time"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int PARTICIPANT_VALUE = 0;
+  public static final int AUTOTIME_VALUE = 0;
 
   /**
-	 * The '<em><b>Researcher</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>Researcher</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @see #RESEARCHER
-	 * @model name="researcher" literal="Researcher"
-	 * @generated
-	 * @ordered
-	 */
-  public static final int RESEARCHER_VALUE = 1;
-
-  /**
-	 * An array of all the '<em><b>Role Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Metric Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private static final RoleType[] VALUES_ARRAY =
-    new RoleType[] {
-			PARTICIPANT,
-			RESEARCHER,
+  private static final MetricType[] VALUES_ARRAY =
+    new MetricType[] {
+			AUTOTIME,
 		};
 
   /**
-	 * A public read-only list of all the '<em><b>Role Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Metric Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static final List<RoleType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<MetricType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-	 * Returns the '<em><b>Role Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Metric Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static RoleType get(String literal)
+  public static MetricType get(String literal)
   {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			RoleType result = VALUES_ARRAY[i];
+			MetricType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -111,15 +85,15 @@ public enum RoleType implements Enumerator
 	}
 
   /**
-	 * Returns the '<em><b>Role Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Metric Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static RoleType getByName(String name)
+  public static MetricType getByName(String name)
   {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			RoleType result = VALUES_ARRAY[i];
+			MetricType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -128,16 +102,15 @@ public enum RoleType implements Enumerator
 	}
 
   /**
-	 * Returns the '<em><b>Role Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Metric Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static RoleType get(int value)
+  public static MetricType get(int value)
   {
 		switch (value) {
-			case PARTICIPANT_VALUE: return PARTICIPANT;
-			case RESEARCHER_VALUE: return RESEARCHER;
+			case AUTOTIME_VALUE: return AUTOTIME;
 		}
 		return null;
 	}
@@ -169,7 +142,7 @@ public enum RoleType implements Enumerator
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private RoleType(int value, String name, String literal)
+  private MetricType(int value, String name, String literal)
   {
 		this.value = value;
 		this.name = name;
@@ -218,4 +191,4 @@ public enum RoleType implements Enumerator
 		return literal;
 	}
   
-} //RoleType
+} //MetricType

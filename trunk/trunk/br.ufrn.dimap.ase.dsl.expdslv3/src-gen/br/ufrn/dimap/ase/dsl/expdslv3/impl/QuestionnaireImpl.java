@@ -47,292 +47,285 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Questionnaire
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRelatesTo() <em>Relates To</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRelatesTo() <em>Relates To</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRelatesTo()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRelatesTo()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<br.ufrn.dimap.ase.dsl.expdslv3.Process> relatesTo;
 
   /**
-   * The default value of the '{@link #getQuestionnaireType() <em>Questionnaire Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getQuestionnaireType() <em>Questionnaire Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestionnaireType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuestionnaireType()
+	 * @generated
+	 * @ordered
+	 */
   protected static final QuestionnaireType QUESTIONNAIRE_TYPE_EDEFAULT = QuestionnaireType.PRE;
 
   /**
-   * The cached value of the '{@link #getQuestionnaireType() <em>Questionnaire Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQuestionnaireType() <em>Questionnaire Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestionnaireType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuestionnaireType()
+	 * @generated
+	 * @ordered
+	 */
   protected QuestionnaireType questionnaireType = QUESTIONNAIRE_TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQuestion() <em>Question</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestion()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuestion()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Question> question;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected QuestionnaireImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.QUESTIONNAIRE;
-  }
+		return Expdslv3Package.Literals.QUESTIONNAIRE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTIONNAIRE__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTIONNAIRE__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<br.ufrn.dimap.ase.dsl.expdslv3.Process> getRelatesTo()
   {
-    if (relatesTo == null)
-    {
-      relatesTo = new EObjectResolvingEList<br.ufrn.dimap.ase.dsl.expdslv3.Process>(br.ufrn.dimap.ase.dsl.expdslv3.Process.class, this, Expdslv3Package.QUESTIONNAIRE__RELATES_TO);
-    }
-    return relatesTo;
-  }
+		if (relatesTo == null) {
+			relatesTo = new EObjectResolvingEList<br.ufrn.dimap.ase.dsl.expdslv3.Process>(br.ufrn.dimap.ase.dsl.expdslv3.Process.class, this, Expdslv3Package.QUESTIONNAIRE__RELATES_TO);
+		}
+		return relatesTo;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public QuestionnaireType getQuestionnaireType()
   {
-    return questionnaireType;
-  }
+		return questionnaireType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setQuestionnaireType(QuestionnaireType newQuestionnaireType)
   {
-    QuestionnaireType oldQuestionnaireType = questionnaireType;
-    questionnaireType = newQuestionnaireType == null ? QUESTIONNAIRE_TYPE_EDEFAULT : newQuestionnaireType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE, oldQuestionnaireType, questionnaireType));
-  }
+		QuestionnaireType oldQuestionnaireType = questionnaireType;
+		questionnaireType = newQuestionnaireType == null ? QUESTIONNAIRE_TYPE_EDEFAULT : newQuestionnaireType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE, oldQuestionnaireType, questionnaireType));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Question> getQuestion()
   {
-    if (question == null)
-    {
-      question = new EObjectContainmentEList<Question>(Question.class, this, Expdslv3Package.QUESTIONNAIRE__QUESTION);
-    }
-    return question;
-  }
+		if (question == null) {
+			question = new EObjectContainmentEList<Question>(Question.class, this, Expdslv3Package.QUESTIONNAIRE__QUESTION);
+		}
+		return question;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTIONNAIRE__QUESTION:
-        return ((InternalEList<?>)getQuestion()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTIONNAIRE__QUESTION:
+				return ((InternalEList<?>)getQuestion()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTIONNAIRE__NAME:
-        return getName();
-      case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
-        return getRelatesTo();
-      case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
-        return getQuestionnaireType();
-      case Expdslv3Package.QUESTIONNAIRE__QUESTION:
-        return getQuestion();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTIONNAIRE__NAME:
+				return getName();
+			case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
+				return getRelatesTo();
+			case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
+				return getQuestionnaireType();
+			case Expdslv3Package.QUESTIONNAIRE__QUESTION:
+				return getQuestion();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTIONNAIRE__NAME:
-        setName((String)newValue);
-        return;
-      case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
-        getRelatesTo().clear();
-        getRelatesTo().addAll((Collection<? extends br.ufrn.dimap.ase.dsl.expdslv3.Process>)newValue);
-        return;
-      case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
-        setQuestionnaireType((QuestionnaireType)newValue);
-        return;
-      case Expdslv3Package.QUESTIONNAIRE__QUESTION:
-        getQuestion().clear();
-        getQuestion().addAll((Collection<? extends Question>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTIONNAIRE__NAME:
+				setName((String)newValue);
+				return;
+			case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
+				getRelatesTo().clear();
+				getRelatesTo().addAll((Collection<? extends br.ufrn.dimap.ase.dsl.expdslv3.Process>)newValue);
+				return;
+			case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
+				setQuestionnaireType((QuestionnaireType)newValue);
+				return;
+			case Expdslv3Package.QUESTIONNAIRE__QUESTION:
+				getQuestion().clear();
+				getQuestion().addAll((Collection<? extends Question>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTIONNAIRE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
-        getRelatesTo().clear();
-        return;
-      case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
-        setQuestionnaireType(QUESTIONNAIRE_TYPE_EDEFAULT);
-        return;
-      case Expdslv3Package.QUESTIONNAIRE__QUESTION:
-        getQuestion().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTIONNAIRE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
+				getRelatesTo().clear();
+				return;
+			case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
+				setQuestionnaireType(QUESTIONNAIRE_TYPE_EDEFAULT);
+				return;
+			case Expdslv3Package.QUESTIONNAIRE__QUESTION:
+				getQuestion().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTIONNAIRE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
-        return relatesTo != null && !relatesTo.isEmpty();
-      case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
-        return questionnaireType != QUESTIONNAIRE_TYPE_EDEFAULT;
-      case Expdslv3Package.QUESTIONNAIRE__QUESTION:
-        return question != null && !question.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTIONNAIRE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Expdslv3Package.QUESTIONNAIRE__RELATES_TO:
+				return relatesTo != null && !relatesTo.isEmpty();
+			case Expdslv3Package.QUESTIONNAIRE__QUESTIONNAIRE_TYPE:
+				return questionnaireType != QUESTIONNAIRE_TYPE_EDEFAULT;
+			case Expdslv3Package.QUESTIONNAIRE__QUESTION:
+				return question != null && !question.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", questionnaireType: ");
-    result.append(questionnaireType);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", questionnaireType: ");
+		result.append(questionnaireType);
+		result.append(')');
+		return result.toString();
+	}
 
 } //QuestionnaireImpl

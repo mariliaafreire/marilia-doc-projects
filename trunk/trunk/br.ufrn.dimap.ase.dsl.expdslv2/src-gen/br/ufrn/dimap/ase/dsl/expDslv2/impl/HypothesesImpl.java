@@ -6,27 +6,27 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2.impl;
 
+import br.ufrn.dimap.ase.dsl.expDslv2.DependentVariable;
 import br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package;
-import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
+import br.ufrn.dimap.ase.dsl.expDslv2.Factor;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.HypothesisType;
-import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
+import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
+import br.ufrn.dimap.ase.dsl.expDslv2.OperatorType;
+import br.ufrn.dimap.ase.dsl.expDslv2.RelationType;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,8 +38,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getType <em>Type</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getFromGoal <em>From Goal</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getSubhypotheses <em>Subhypotheses</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getDependentVariable <em>Dependent Variable</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getLevels <em>Levels</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getRelation <em>Relation</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.HypothesesImpl#getFactor <em>Factor</em>}</li>
  * </ul>
  * </p>
  *
@@ -95,7 +98,7 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
 	 * @generated
 	 * @ordered
 	 */
-  protected static final HypothesisType TYPE_EDEFAULT = HypothesisType.NULL;
+  protected static final HypothesisType TYPE_EDEFAULT = HypothesisType.NULL_;
 
   /**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -108,24 +111,74 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
   protected HypothesisType type = TYPE_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getFromGoal() <em>From Goal</em>}' reference.
+	 * The cached value of the '{@link #getDependentVariable() <em>Dependent Variable</em>}' reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getFromGoal()
+	 * @see #getDependentVariable()
 	 * @generated
 	 * @ordered
 	 */
-  protected Goal fromGoal;
+  protected EList<DependentVariable> dependentVariable;
 
   /**
-	 * The cached value of the '{@link #getSubhypotheses() <em>Subhypotheses</em>}' containment reference list.
+	 * The cached value of the '{@link #getLevels() <em>Levels</em>}' reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getSubhypotheses()
+	 * @see #getLevels()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Subhypotheses> subhypotheses;
+  protected EList<Levels> levels;
+
+  /**
+	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final OperatorType OPERATOR_EDEFAULT = OperatorType.EQUAL;
+
+  /**
+	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
+  protected OperatorType operator = OPERATOR_EDEFAULT;
+
+  /**
+	 * The default value of the '{@link #getRelation() <em>Relation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getRelation()
+	 * @generated
+	 * @ordered
+	 */
+  protected static final RelationType RELATION_EDEFAULT = RelationType.IS_RELATED;
+
+  /**
+	 * The cached value of the '{@link #getRelation() <em>Relation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getRelation()
+	 * @generated
+	 * @ordered
+	 */
+  protected RelationType relation = RELATION_EDEFAULT;
+
+  /**
+	 * The cached value of the '{@link #getFactor() <em>Factor</em>}' reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getFactor()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<Factor> factor;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -222,17 +275,12 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Goal getFromGoal()
+  public EList<DependentVariable> getDependentVariable()
   {
-		if (fromGoal != null && fromGoal.eIsProxy()) {
-			InternalEObject oldFromGoal = (InternalEObject)fromGoal;
-			fromGoal = (Goal)eResolveProxy(oldFromGoal);
-			if (fromGoal != oldFromGoal) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpDslv2Package.HYPOTHESES__FROM_GOAL, oldFromGoal, fromGoal));
-			}
+		if (dependentVariable == null) {
+			dependentVariable = new EObjectResolvingEList<DependentVariable>(DependentVariable.class, this, ExpDslv2Package.HYPOTHESES__DEPENDENT_VARIABLE);
 		}
-		return fromGoal;
+		return dependentVariable;
 	}
 
   /**
@@ -240,9 +288,12 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Goal basicGetFromGoal()
+  public EList<Levels> getLevels()
   {
-		return fromGoal;
+		if (levels == null) {
+			levels = new EObjectResolvingEList<Levels>(Levels.class, this, ExpDslv2Package.HYPOTHESES__LEVELS);
+		}
+		return levels;
 	}
 
   /**
@@ -250,12 +301,22 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setFromGoal(Goal newFromGoal)
+  public OperatorType getOperator()
   {
-		Goal oldFromGoal = fromGoal;
-		fromGoal = newFromGoal;
+		return operator;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setOperator(OperatorType newOperator)
+  {
+		OperatorType oldOperator = operator;
+		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpDslv2Package.HYPOTHESES__FROM_GOAL, oldFromGoal, fromGoal));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDslv2Package.HYPOTHESES__OPERATOR, oldOperator, operator));
 	}
 
   /**
@@ -263,12 +324,9 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Subhypotheses> getSubhypotheses()
+  public RelationType getRelation()
   {
-		if (subhypotheses == null) {
-			subhypotheses = new EObjectContainmentEList<Subhypotheses>(Subhypotheses.class, this, ExpDslv2Package.HYPOTHESES__SUBHYPOTHESES);
-		}
-		return subhypotheses;
+		return relation;
 	}
 
   /**
@@ -276,14 +334,25 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setRelation(RelationType newRelation)
   {
-		switch (featureID) {
-			case ExpDslv2Package.HYPOTHESES__SUBHYPOTHESES:
-				return ((InternalEList<?>)getSubhypotheses()).basicRemove(otherEnd, msgs);
+		RelationType oldRelation = relation;
+		relation = newRelation == null ? RELATION_EDEFAULT : newRelation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDslv2Package.HYPOTHESES__RELATION, oldRelation, relation));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EList<Factor> getFactor()
+  {
+		if (factor == null) {
+			factor = new EObjectResolvingEList<Factor>(Factor.class, this, ExpDslv2Package.HYPOTHESES__FACTOR);
 		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return factor;
 	}
 
   /**
@@ -301,11 +370,16 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
 				return getDescription();
 			case ExpDslv2Package.HYPOTHESES__TYPE:
 				return getType();
-			case ExpDslv2Package.HYPOTHESES__FROM_GOAL:
-				if (resolve) return getFromGoal();
-				return basicGetFromGoal();
-			case ExpDslv2Package.HYPOTHESES__SUBHYPOTHESES:
-				return getSubhypotheses();
+			case ExpDslv2Package.HYPOTHESES__DEPENDENT_VARIABLE:
+				return getDependentVariable();
+			case ExpDslv2Package.HYPOTHESES__LEVELS:
+				return getLevels();
+			case ExpDslv2Package.HYPOTHESES__OPERATOR:
+				return getOperator();
+			case ExpDslv2Package.HYPOTHESES__RELATION:
+				return getRelation();
+			case ExpDslv2Package.HYPOTHESES__FACTOR:
+				return getFactor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -329,12 +403,23 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
 			case ExpDslv2Package.HYPOTHESES__TYPE:
 				setType((HypothesisType)newValue);
 				return;
-			case ExpDslv2Package.HYPOTHESES__FROM_GOAL:
-				setFromGoal((Goal)newValue);
+			case ExpDslv2Package.HYPOTHESES__DEPENDENT_VARIABLE:
+				getDependentVariable().clear();
+				getDependentVariable().addAll((Collection<? extends DependentVariable>)newValue);
 				return;
-			case ExpDslv2Package.HYPOTHESES__SUBHYPOTHESES:
-				getSubhypotheses().clear();
-				getSubhypotheses().addAll((Collection<? extends Subhypotheses>)newValue);
+			case ExpDslv2Package.HYPOTHESES__LEVELS:
+				getLevels().clear();
+				getLevels().addAll((Collection<? extends Levels>)newValue);
+				return;
+			case ExpDslv2Package.HYPOTHESES__OPERATOR:
+				setOperator((OperatorType)newValue);
+				return;
+			case ExpDslv2Package.HYPOTHESES__RELATION:
+				setRelation((RelationType)newValue);
+				return;
+			case ExpDslv2Package.HYPOTHESES__FACTOR:
+				getFactor().clear();
+				getFactor().addAll((Collection<? extends Factor>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,11 +443,20 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
 			case ExpDslv2Package.HYPOTHESES__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case ExpDslv2Package.HYPOTHESES__FROM_GOAL:
-				setFromGoal((Goal)null);
+			case ExpDslv2Package.HYPOTHESES__DEPENDENT_VARIABLE:
+				getDependentVariable().clear();
 				return;
-			case ExpDslv2Package.HYPOTHESES__SUBHYPOTHESES:
-				getSubhypotheses().clear();
+			case ExpDslv2Package.HYPOTHESES__LEVELS:
+				getLevels().clear();
+				return;
+			case ExpDslv2Package.HYPOTHESES__OPERATOR:
+				setOperator(OPERATOR_EDEFAULT);
+				return;
+			case ExpDslv2Package.HYPOTHESES__RELATION:
+				setRelation(RELATION_EDEFAULT);
+				return;
+			case ExpDslv2Package.HYPOTHESES__FACTOR:
+				getFactor().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -383,10 +477,16 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ExpDslv2Package.HYPOTHESES__TYPE:
 				return type != TYPE_EDEFAULT;
-			case ExpDslv2Package.HYPOTHESES__FROM_GOAL:
-				return fromGoal != null;
-			case ExpDslv2Package.HYPOTHESES__SUBHYPOTHESES:
-				return subhypotheses != null && !subhypotheses.isEmpty();
+			case ExpDslv2Package.HYPOTHESES__DEPENDENT_VARIABLE:
+				return dependentVariable != null && !dependentVariable.isEmpty();
+			case ExpDslv2Package.HYPOTHESES__LEVELS:
+				return levels != null && !levels.isEmpty();
+			case ExpDslv2Package.HYPOTHESES__OPERATOR:
+				return operator != OPERATOR_EDEFAULT;
+			case ExpDslv2Package.HYPOTHESES__RELATION:
+				return relation != RELATION_EDEFAULT;
+			case ExpDslv2Package.HYPOTHESES__FACTOR:
+				return factor != null && !factor.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -408,6 +508,10 @@ public class HypothesesImpl extends MinimalEObjectImpl.Container implements Hypo
 		result.append(description);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", operator: ");
+		result.append(operator);
+		result.append(", relation: ");
+		result.append(relation);
 		result.append(')');
 		return result.toString();
 	}

@@ -6,8 +6,6 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2.impl;
 
-import br.ufrn.dimap.ase.dsl.expDslv2.Activity;
-import br.ufrn.dimap.ase.dsl.expDslv2.ActivityMetric;
 import br.ufrn.dimap.ase.dsl.expDslv2.Alternatives;
 import br.ufrn.dimap.ase.dsl.expDslv2.AnalysisTechiqueType;
 import br.ufrn.dimap.ase.dsl.expDslv2.AnswerType;
@@ -37,10 +35,8 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
 import br.ufrn.dimap.ase.dsl.expDslv2.QuestionnaireType;
 import br.ufrn.dimap.ase.dsl.expDslv2.RelationType;
 import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
-import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
-import br.ufrn.dimap.ase.dsl.expDslv2.TimeMetric;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -101,25 +97,21 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
 		switch (eClass.getClassifierID()) {
 			case ExpDslv2Package.MODEL: return createModel();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT: return createExperimentElement();
-			case ExpDslv2Package.PROCESS: return createProcess();
-			case ExpDslv2Package.ACTIVITY: return createActivity();
-			case ExpDslv2Package.TASK: return createTask();
-			case ExpDslv2Package.ARTEFACT: return createArtefact();
-			case ExpDslv2Package.METRICS: return createMetrics();
-			case ExpDslv2Package.DETAIL: return createDetail();
-			case ExpDslv2Package.TIME_METRIC: return createTimeMetric();
-			case ExpDslv2Package.ACTIVITY_METRIC: return createActivityMetric();
-			case ExpDslv2Package.TASK_METRIC: return createTaskMetric();
-			case ExpDslv2Package.DATA_METRIC: return createDataMetric();
-			case ExpDslv2Package.COLLECTED_DATA: return createCollectedData();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN: return createExperimentalPlan();
 			case ExpDslv2Package.GOAL: return createGoal();
 			case ExpDslv2Package.HYPOTHESES: return createHypotheses();
-			case ExpDslv2Package.SUBHYPOTHESES: return createSubhypotheses();
 			case ExpDslv2Package.PARAMETER: return createParameter();
 			case ExpDslv2Package.DEPENDENT_VARIABLE: return createDependentVariable();
 			case ExpDslv2Package.FACTOR: return createFactor();
 			case ExpDslv2Package.LEVELS: return createLevels();
+			case ExpDslv2Package.PROCESS: return createProcess();
+			case ExpDslv2Package.TASK: return createTask();
+			case ExpDslv2Package.ARTEFACT: return createArtefact();
+			case ExpDslv2Package.METRICS: return createMetrics();
+			case ExpDslv2Package.DETAIL: return createDetail();
+			case ExpDslv2Package.TASK_METRIC: return createTaskMetric();
+			case ExpDslv2Package.DATA_METRIC: return createDataMetric();
+			case ExpDslv2Package.COLLECTED_DATA: return createCollectedData();
 			case ExpDslv2Package.QUESTIONNAIRE: return createQuestionnaire();
 			case ExpDslv2Package.QUESTION: return createQuestion();
 			case ExpDslv2Package.ALTERNATIVES: return createAlternatives();
@@ -137,12 +129,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   public Object createFromString(EDataType eDataType, String initialValue)
   {
 		switch (eDataType.getClassifierID()) {
-			case ExpDslv2Package.ROLE_TYPE:
-				return createRoleTypeFromString(eDataType, initialValue);
-			case ExpDslv2Package.ARTEFACT_TYPE:
-				return createArtefactTypeFromString(eDataType, initialValue);
-			case ExpDslv2Package.DATA_TYPE:
-				return createDataTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.RELATION_TYPE:
 				return createRelationTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.OPERATOR_TYPE:
@@ -153,6 +139,12 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
 				return createDesignTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.ANALYSIS_TECHIQUE_TYPE:
 				return createAnalysisTechiqueTypeFromString(eDataType, initialValue);
+			case ExpDslv2Package.ROLE_TYPE:
+				return createRoleTypeFromString(eDataType, initialValue);
+			case ExpDslv2Package.ARTEFACT_TYPE:
+				return createArtefactTypeFromString(eDataType, initialValue);
+			case ExpDslv2Package.DATA_TYPE:
+				return createDataTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.QUESTIONNAIRE_TYPE:
 				return createQuestionnaireTypeFromString(eDataType, initialValue);
 			case ExpDslv2Package.ANSWER_TYPE:
@@ -171,12 +163,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
 		switch (eDataType.getClassifierID()) {
-			case ExpDslv2Package.ROLE_TYPE:
-				return convertRoleTypeToString(eDataType, instanceValue);
-			case ExpDslv2Package.ARTEFACT_TYPE:
-				return convertArtefactTypeToString(eDataType, instanceValue);
-			case ExpDslv2Package.DATA_TYPE:
-				return convertDataTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.RELATION_TYPE:
 				return convertRelationTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.OPERATOR_TYPE:
@@ -187,6 +173,12 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
 				return convertDesignTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.ANALYSIS_TECHIQUE_TYPE:
 				return convertAnalysisTechiqueTypeToString(eDataType, instanceValue);
+			case ExpDslv2Package.ROLE_TYPE:
+				return convertRoleTypeToString(eDataType, instanceValue);
+			case ExpDslv2Package.ARTEFACT_TYPE:
+				return convertArtefactTypeToString(eDataType, instanceValue);
+			case ExpDslv2Package.DATA_TYPE:
+				return convertDataTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.QUESTIONNAIRE_TYPE:
 				return convertQuestionnaireTypeToString(eDataType, instanceValue);
 			case ExpDslv2Package.ANSWER_TYPE:
@@ -223,127 +215,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public br.ufrn.dimap.ase.dsl.expDslv2.Process createProcess()
-  {
-		ProcessImpl process = new ProcessImpl();
-		return process;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Activity createActivity()
-  {
-		ActivityImpl activity = new ActivityImpl();
-		return activity;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Task createTask()
-  {
-		TaskImpl task = new TaskImpl();
-		return task;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Artefact createArtefact()
-  {
-		ArtefactImpl artefact = new ArtefactImpl();
-		return artefact;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Metrics createMetrics()
-  {
-		MetricsImpl metrics = new MetricsImpl();
-		return metrics;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Detail createDetail()
-  {
-		DetailImpl detail = new DetailImpl();
-		return detail;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public TimeMetric createTimeMetric()
-  {
-		TimeMetricImpl timeMetric = new TimeMetricImpl();
-		return timeMetric;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public ActivityMetric createActivityMetric()
-  {
-		ActivityMetricImpl activityMetric = new ActivityMetricImpl();
-		return activityMetric;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public TaskMetric createTaskMetric()
-  {
-		TaskMetricImpl taskMetric = new TaskMetricImpl();
-		return taskMetric;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public DataMetric createDataMetric()
-  {
-		DataMetricImpl dataMetric = new DataMetricImpl();
-		return dataMetric;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public CollectedData createCollectedData()
-  {
-		CollectedDataImpl collectedData = new CollectedDataImpl();
-		return collectedData;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public ExperimentalPlan createExperimentalPlan()
   {
 		ExperimentalPlanImpl experimentalPlan = new ExperimentalPlanImpl();
@@ -370,17 +241,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   {
 		HypothesesImpl hypotheses = new HypothesesImpl();
 		return hypotheses;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public Subhypotheses createSubhypotheses()
-  {
-		SubhypothesesImpl subhypotheses = new SubhypothesesImpl();
-		return subhypotheses;
 	}
 
   /**
@@ -432,6 +292,94 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public br.ufrn.dimap.ase.dsl.expDslv2.Process createProcess()
+  {
+		ProcessImpl process = new ProcessImpl();
+		return process;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Task createTask()
+  {
+		TaskImpl task = new TaskImpl();
+		return task;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Artefact createArtefact()
+  {
+		ArtefactImpl artefact = new ArtefactImpl();
+		return artefact;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Metrics createMetrics()
+  {
+		MetricsImpl metrics = new MetricsImpl();
+		return metrics;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Detail createDetail()
+  {
+		DetailImpl detail = new DetailImpl();
+		return detail;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public TaskMetric createTaskMetric()
+  {
+		TaskMetricImpl taskMetric = new TaskMetricImpl();
+		return taskMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public DataMetric createDataMetric()
+  {
+		DataMetricImpl dataMetric = new DataMetricImpl();
+		return dataMetric;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public CollectedData createCollectedData()
+  {
+		CollectedDataImpl collectedData = new CollectedDataImpl();
+		return collectedData;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public Questionnaire createQuestionnaire()
   {
 		QuestionnaireImpl questionnaire = new QuestionnaireImpl();
@@ -458,72 +406,6 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
   {
 		AlternativesImpl alternatives = new AlternativesImpl();
 		return alternatives;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public RoleType createRoleTypeFromString(EDataType eDataType, String initialValue)
-  {
-		RoleType result = RoleType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public String convertRoleTypeToString(EDataType eDataType, Object instanceValue)
-  {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public ArtefactType createArtefactTypeFromString(EDataType eDataType, String initialValue)
-  {
-		ArtefactType result = ArtefactType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public String convertArtefactTypeToString(EDataType eDataType, Object instanceValue)
-  {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public DataType createDataTypeFromString(EDataType eDataType, String initialValue)
-  {
-		DataType result = DataType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public String convertDataTypeToString(EDataType eDataType, Object instanceValue)
-  {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
   /**
@@ -632,6 +514,72 @@ public class ExpDslv2FactoryImpl extends EFactoryImpl implements ExpDslv2Factory
 	 * @generated
 	 */
   public String convertAnalysisTechiqueTypeToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public RoleType createRoleTypeFromString(EDataType eDataType, String initialValue)
+  {
+		RoleType result = RoleType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertRoleTypeToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public ArtefactType createArtefactTypeFromString(EDataType eDataType, String initialValue)
+  {
+		ArtefactType result = ArtefactType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertArtefactTypeToString(EDataType eDataType, Object instanceValue)
+  {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public DataType createDataTypeFromString(EDataType eDataType, String initialValue)
+  {
+		DataType result = DataType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public String convertDataTypeToString(EDataType eDataType, Object instanceValue)
   {
 		return instanceValue == null ? null : instanceValue.toString();
 	}

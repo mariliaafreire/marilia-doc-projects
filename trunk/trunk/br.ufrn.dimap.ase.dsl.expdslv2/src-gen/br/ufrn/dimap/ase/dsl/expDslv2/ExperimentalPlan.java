@@ -19,12 +19,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getGoal <em>Goal</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getHypotheses <em>Hypotheses</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getType <em>Type</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getParameter <em>Parameter</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getDependentVariable <em>Dependent Variable</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getFactor <em>Factor</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTosubhypotheses <em>Tosubhypotheses</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTohypotheses <em>Tohypotheses</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getTechnique <em>Technique</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan#getInternalReplication <em>Internal Replication</em>}</li>
  * </ul>
@@ -51,22 +50,6 @@ public interface ExperimentalPlan extends EObject
 	 * @generated
 	 */
   EList<Goal> getGoal();
-
-  /**
-	 * Returns the value of the '<em><b>Hypotheses</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses}.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Hypotheses</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hypotheses</em>' containment reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentalPlan_Hypotheses()
-	 * @model containment="true"
-	 * @generated
-	 */
-  EList<Hypotheses> getHypotheses();
 
   /**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
@@ -146,20 +129,20 @@ public interface ExperimentalPlan extends EObject
   EList<Factor> getFactor();
 
   /**
-	 * Returns the value of the '<em><b>Tosubhypotheses</b></em>' reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses}.
+	 * Returns the value of the '<em><b>Tohypotheses</b></em>' reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses}.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Tosubhypotheses</em>' reference list isn't clear,
+   * If the meaning of the '<em>Tohypotheses</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tosubhypotheses</em>' reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentalPlan_Tosubhypotheses()
+	 * @return the value of the '<em>Tohypotheses</em>' reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentalPlan_Tohypotheses()
 	 * @model
 	 * @generated
 	 */
-  EList<Subhypotheses> getTosubhypotheses();
+  EList<Hypotheses> getTohypotheses();
 
   /**
 	 * Returns the value of the '<em><b>Technique</b></em>' attribute list.

@@ -25,13 +25,13 @@ public class ExpDslv2StandaloneSetup extends ExpDslv2StandaloneSetupGenerated {
 		
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		
-		URI uri = URI.createURI("SPL.expdsl");
+		URI uri = URI.createURI("ExemploProfes2014.expdsl");
 		// Resource xtextResource = resourceSet.createResource(uri);
 		Resource xtextResource = resourceSet.getResource(uri, true);
 		
 		EcoreUtil.resolveAll(xtextResource);
 		
-		Resource xmiResource = resourceSet.createResource(URI.createURI("SPL.xmi"));
+		Resource xmiResource = resourceSet.createResource(URI.createURI("ExemploProfes2014.xmi"));
 		xmiResource.getContents().add(xtextResource.getContents().get(0));
 		try {
 			xmiResource.save(null);

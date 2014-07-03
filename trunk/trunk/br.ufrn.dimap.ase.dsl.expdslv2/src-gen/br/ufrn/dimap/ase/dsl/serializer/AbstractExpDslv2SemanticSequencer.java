@@ -1,7 +1,5 @@
 package br.ufrn.dimap.ase.dsl.serializer;
 
-import br.ufrn.dimap.ase.dsl.expDslv2.Activity;
-import br.ufrn.dimap.ase.dsl.expDslv2.ActivityMetric;
 import br.ufrn.dimap.ase.dsl.expDslv2.Alternatives;
 import br.ufrn.dimap.ase.dsl.expDslv2.Artefact;
 import br.ufrn.dimap.ase.dsl.expDslv2.CollectedData;
@@ -19,7 +17,6 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
 import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
-import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
 import br.ufrn.dimap.ase.dsl.services.ExpDslv2GrammarAccess;
@@ -65,20 +62,6 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ExpDslv2Package.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case ExpDslv2Package.ACTIVITY:
-				if(context == grammarAccess.getActivityRule()) {
-					sequence_Activity(context, (Activity) semanticObject); 
-					return; 
-				}
-				else break;
-			case ExpDslv2Package.ACTIVITY_METRIC:
-				if(context == grammarAccess.getActivityMetricRule() ||
-				   context == grammarAccess.getDetailRule() ||
-				   context == grammarAccess.getTimeMetricRule()) {
-					sequence_ActivityMetric(context, (ActivityMetric) semanticObject); 
-					return; 
-				}
-				else break;
 			case ExpDslv2Package.ALTERNATIVES:
 				if(context == grammarAccess.getAlternativesRule()) {
 					sequence_Alternatives(context, (Alternatives) semanticObject); 
@@ -182,12 +165,6 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 					return; 
 				}
 				else break;
-			case ExpDslv2Package.SUBHYPOTHESES:
-				if(context == grammarAccess.getSubhypothesesRule()) {
-					sequence_Subhypotheses(context, (Subhypotheses) semanticObject); 
-					return; 
-				}
-				else break;
 			case ExpDslv2Package.TASK:
 				if(context == grammarAccess.getTaskRule()) {
 					sequence_Task(context, (Task) semanticObject); 
@@ -196,8 +173,7 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 				else break;
 			case ExpDslv2Package.TASK_METRIC:
 				if(context == grammarAccess.getDetailRule() ||
-				   context == grammarAccess.getTaskMetricRule() ||
-				   context == grammarAccess.getTimeMetricRule()) {
+				   context == grammarAccess.getTaskMetricRule()) {
 					sequence_TaskMetric(context, (TaskMetric) semanticObject); 
 					return; 
 				}
@@ -205,47 +181,6 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Constraint:
-	 *     (activityBegin=[Activity|QualifiedName] activityEnd=[Activity|QualifiedName]?)
-	 *
-	 * Features:
-	 *    activityBegin[1, 1]
-	 *    activityEnd[0, 1]
-	 */
-	protected void sequence_ActivityMetric(EObject context, ActivityMetric semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         description=STRING 
-	 *         next+=[Activity|QualifiedName]* 
-	 *         role+=RoleType* 
-	 *         collectData+=[CollectedData|QualifiedName]* 
-	 *         artefacts+=Artefact* 
-	 *         questionnaire+=[Questionnaire|QualifiedName]* 
-	 *         tasks+=Task*
-	 *     )
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    description[1, 1]
-	 *    next[0, *]
-	 *    role[0, *]
-	 *    collectData[0, *]
-	 *    artefacts[0, *]
-	 *    questionnaire[0, *]
-	 *    tasks[0, *]
-	 */
-	protected void sequence_Activity(EObject context, Activity semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Constraint:
@@ -345,13 +280,13 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING process+=Process* metrics+=Metrics* experiments+=ExperimentalPlan* questionnaire+=Questionnaire*)
+	 *     (name=STRING experiments+=ExperimentalPlan* process+=Process* metrics+=Metrics* questionnaire+=Questionnaire*)
 	 *
 	 * Features:
 	 *    name[1, 1]
+	 *    experiments[0, *]
 	 *    process[0, *]
 	 *    metrics[0, *]
-	 *    experiments[0, *]
 	 *    questionnaire[0, *]
 	 */
 	protected void sequence_ExperimentElement(EObject context, ExperimentElement semanticObject) {
@@ -363,23 +298,21 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         goal+=Goal* 
-	 *         hypotheses+=Hypotheses* 
 	 *         type=DesignType 
 	 *         parameter+=Parameter* 
 	 *         dependentVariable+=DependentVariable* 
 	 *         factor+=Factor* 
-	 *         (tosubhypotheses+=[Subhypotheses|QualifiedName]* Technique+=AnalysisTechiqueType*)* 
+	 *         (tohypotheses+=[Hypotheses|QualifiedName]* Technique+=AnalysisTechiqueType*)* 
 	 *         internalReplication=INT
 	 *     )
 	 *
 	 * Features:
 	 *    goal[0, *]
-	 *    hypotheses[0, *]
 	 *    type[1, 1]
 	 *    parameter[0, *]
 	 *    dependentVariable[0, *]
 	 *    factor[0, *]
-	 *    tosubhypotheses[0, *]
+	 *    tohypotheses[0, *]
 	 *    Technique[0, *]
 	 *    internalReplication[1, 1]
 	 */
@@ -404,37 +337,115 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID description=STRING)
+	 *     (name=ID description=STRING hypotheses+=Hypotheses*)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    description[1, 1]
+	 *    hypotheses[0, *]
 	 */
 	protected void sequence_Goal(EObject context, Goal semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.GOAL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.GOAL__NAME));
-			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.GOAL__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.GOAL__DESCRIPTION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getGoalAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGoalAccess().getDescriptionSTRINGTerminalRuleCall_1_0(), semanticObject.getDescription());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID description=STRING type=HypothesisType fromGoal=[Goal|QualifiedName] subhypotheses+=Subhypotheses*)
+	 *     (
+	 *         (
+	 *             name=ID 
+	 *             description=STRING? 
+	 *             type=HypothesisType 
+	 *             dependentVariable+=[DependentVariable|QualifiedName] 
+	 *             levels+=[Levels|QualifiedName]* 
+	 *             operator=OperatorType 
+	 *             dependentVariable+=[DependentVariable|QualifiedName] 
+	 *             levels+=[Levels|QualifiedName]*
+	 *         ) | 
+	 *         (name=ID dependentVariable+=[DependentVariable|QualifiedName] relation=RelationType factor+=[Factor|QualifiedName]*)
+	 *     )
 	 *
 	 * Features:
-	 *    name[1, 1]
-	 *    description[1, 1]
-	 *    type[1, 1]
-	 *    fromGoal[1, 1]
-	 *    subhypotheses[0, *]
+	 *    name[0, 2]
+	 *    description[0, 1]
+	 *         EXCLUDE_IF_UNSET name
+	 *         EXCLUDE_IF_UNSET type
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         EXCLUDE_IF_UNSET operator
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         EXCLUDE_IF_SET name
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET relation
+	 *         EXCLUDE_IF_SET factor
+	 *    type[0, 1]
+	 *         EXCLUDE_IF_UNSET name
+	 *         MANDATORY_IF_SET name
+	 *         MANDATORY_IF_SET description
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         MANDATORY_IF_SET dependentVariable
+	 *         MANDATORY_IF_SET levels
+	 *         EXCLUDE_IF_UNSET operator
+	 *         MANDATORY_IF_SET operator
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         MANDATORY_IF_SET dependentVariable
+	 *         MANDATORY_IF_SET levels
+	 *         EXCLUDE_IF_SET name
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET relation
+	 *         EXCLUDE_IF_SET factor
+	 *    dependentVariable[0, 3]
+	 *    levels[0, *]
+	 *         EXCLUDE_IF_UNSET name
+	 *         EXCLUDE_IF_UNSET type
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         EXCLUDE_IF_UNSET operator
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         EXCLUDE_IF_SET name
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET relation
+	 *         EXCLUDE_IF_SET factor
+	 *    operator[0, 1]
+	 *         EXCLUDE_IF_UNSET name
+	 *         MANDATORY_IF_SET name
+	 *         MANDATORY_IF_SET description
+	 *         EXCLUDE_IF_UNSET type
+	 *         MANDATORY_IF_SET type
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         MANDATORY_IF_SET dependentVariable
+	 *         MANDATORY_IF_SET levels
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         MANDATORY_IF_SET dependentVariable
+	 *         MANDATORY_IF_SET levels
+	 *         EXCLUDE_IF_SET name
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET relation
+	 *         EXCLUDE_IF_SET factor
+	 *    relation[0, 1]
+	 *         EXCLUDE_IF_UNSET name
+	 *         MANDATORY_IF_SET name
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         MANDATORY_IF_SET dependentVariable
+	 *         MANDATORY_IF_SET factor
+	 *         EXCLUDE_IF_SET name
+	 *         EXCLUDE_IF_SET description
+	 *         EXCLUDE_IF_SET type
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET levels
+	 *         EXCLUDE_IF_SET operator
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET levels
+	 *    factor[0, *]
+	 *         EXCLUDE_IF_UNSET name
+	 *         EXCLUDE_IF_UNSET dependentVariable
+	 *         EXCLUDE_IF_UNSET relation
+	 *         EXCLUDE_IF_SET name
+	 *         EXCLUDE_IF_SET description
+	 *         EXCLUDE_IF_SET type
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET levels
+	 *         EXCLUDE_IF_SET operator
+	 *         EXCLUDE_IF_SET dependentVariable
+	 *         EXCLUDE_IF_SET levels
 	 */
 	protected void sequence_Hypotheses(EObject context, Hypotheses semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -462,7 +473,7 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID relatesTo=[Process|ID] description=STRING detail+=Detail)
+	 *     (name=ID relatesTo=[Process|ID] description=STRING detail=Detail)
 	 *
 	 * Features:
 	 *    name[1, 1]
@@ -471,7 +482,23 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	 *    detail[1, 1]
 	 */
 	protected void sequence_Metrics(EObject context, Metrics semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.METRICS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.METRICS__NAME));
+			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.METRICS__RELATES_TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.METRICS__RELATES_TO));
+			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.METRICS__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.METRICS__DESCRIPTION));
+			if(transientValues.isValueTransient(semanticObject, ExpDslv2Package.Literals.METRICS__DETAIL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpDslv2Package.Literals.METRICS__DETAIL));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMetricsAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMetricsAccess().getRelatesToProcessIDTerminalRuleCall_3_0_1(), semanticObject.getRelatesTo());
+		feeder.accept(grammarAccess.getMetricsAccess().getDescriptionSTRINGTerminalRuleCall_5_1_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getMetricsAccess().getDetailDetailParserRuleCall_6_0(), semanticObject.getDetail());
+		feeder.finish();
 	}
 	
 	
@@ -512,13 +539,13 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID treatment+=[Levels|QualifiedName]* role+=RoleType* activities+=Activity*)
+	 *     (name=ID treatment+=[Levels|QualifiedName]* role+=RoleType* task+=Task*)
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    treatment[0, *]
 	 *    role[0, *]
-	 *    activities[0, *]
+	 *    task[0, *]
 	 */
 	protected void sequence_Process(EObject context, br.ufrn.dimap.ase.dsl.expDslv2.Process semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -558,77 +585,11 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             name=ID 
-	 *             dependentVariable+=[DependentVariable|QualifiedName] 
-	 *             levels+=[Levels|QualifiedName]* 
-	 *             operator=OperatorType 
-	 *             dependentVariable+=[DependentVariable|QualifiedName] 
-	 *             levels+=[Levels|QualifiedName]*
-	 *         ) | 
-	 *         (name=ID dependentVariable+=[DependentVariable|QualifiedName] relation=RelationType factor+=[Factor|QualifiedName]*)
-	 *     )
+	 *     (taskBegin=[Task|QualifiedName] taskEnd=[Task|QualifiedName]?)
 	 *
 	 * Features:
-	 *    name[0, 2]
-	 *    dependentVariable[0, 3]
-	 *    levels[0, *]
-	 *         EXCLUDE_IF_UNSET name
-	 *         EXCLUDE_IF_UNSET dependentVariable
-	 *         EXCLUDE_IF_UNSET operator
-	 *         EXCLUDE_IF_UNSET dependentVariable
-	 *         EXCLUDE_IF_SET name
-	 *         EXCLUDE_IF_SET dependentVariable
-	 *         EXCLUDE_IF_SET relation
-	 *         EXCLUDE_IF_SET factor
-	 *    operator[0, 1]
-	 *         EXCLUDE_IF_UNSET name
-	 *         MANDATORY_IF_SET name
-	 *         EXCLUDE_IF_UNSET dependentVariable
-	 *         MANDATORY_IF_SET dependentVariable
-	 *         MANDATORY_IF_SET levels
-	 *         EXCLUDE_IF_UNSET dependentVariable
-	 *         MANDATORY_IF_SET dependentVariable
-	 *         MANDATORY_IF_SET levels
-	 *         EXCLUDE_IF_SET name
-	 *         EXCLUDE_IF_SET dependentVariable
-	 *         EXCLUDE_IF_SET relation
-	 *         EXCLUDE_IF_SET factor
-	 *    relation[0, 1]
-	 *         EXCLUDE_IF_UNSET name
-	 *         MANDATORY_IF_SET name
-	 *         EXCLUDE_IF_UNSET dependentVariable
-	 *         MANDATORY_IF_SET dependentVariable
-	 *         MANDATORY_IF_SET factor
-	 *         EXCLUDE_IF_SET name
-	 *         EXCLUDE_IF_SET dependentVariable
-	 *         EXCLUDE_IF_SET levels
-	 *         EXCLUDE_IF_SET operator
-	 *         EXCLUDE_IF_SET dependentVariable
-	 *         EXCLUDE_IF_SET levels
-	 *    factor[0, *]
-	 *         EXCLUDE_IF_UNSET name
-	 *         EXCLUDE_IF_UNSET dependentVariable
-	 *         EXCLUDE_IF_UNSET relation
-	 *         EXCLUDE_IF_SET name
-	 *         EXCLUDE_IF_SET dependentVariable
-	 *         EXCLUDE_IF_SET levels
-	 *         EXCLUDE_IF_SET operator
-	 *         EXCLUDE_IF_SET dependentVariable
-	 *         EXCLUDE_IF_SET levels
-	 */
-	protected void sequence_Subhypotheses(EObject context, Subhypotheses semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (tasks+=[Task|QualifiedName]*)
-	 *
-	 * Features:
-	 *    tasks[0, *]
+	 *    taskBegin[1, 1]
+	 *    taskEnd[0, 1]
 	 */
 	protected void sequence_TaskMetric(EObject context, TaskMetric semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -637,12 +598,22 @@ public class AbstractExpDslv2SemanticSequencer extends AbstractSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID description=STRING var+=[CollectedData|QualifiedName]* artefacts+=Artefact* questionnaire+=[Questionnaire|QualifiedName]*)
+	 *     (
+	 *         name=ID 
+	 *         description=STRING 
+	 *         next+=[Task|QualifiedName]* 
+	 *         role+=RoleType* 
+	 *         collectData+=[CollectedData|QualifiedName]* 
+	 *         artefacts+=Artefact* 
+	 *         questionnaire+=[Questionnaire|QualifiedName]*
+	 *     )
 	 *
 	 * Features:
 	 *    name[1, 1]
 	 *    description[1, 1]
-	 *    var[0, *]
+	 *    next[0, *]
+	 *    role[0, *]
+	 *    collectData[0, *]
 	 *    artefacts[0, *]
 	 *    questionnaire[0, *]
 	 */

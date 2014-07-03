@@ -1,0 +1,429 @@
+Experiment "Configuration Knowledge Experiment" 
+
+Experimental Plan 
+Goals {
+G1 "Investigate whether the diferent techniques infuence the correct comprehension of the configuration knowledge" {
+	
+	H101 "The correct comprehension of the configuration knowledge do not depends on the diferent specification techniques" 
+		null_ NumCorrectAnswer (Technique.GenArchPlus) = NumCorrectAnswer (Technique.pureVariants) 
+	H102 "The correct comprehension of the configuration knowledge do not depends on the diferent specification techniques" 
+		null_ NumCorrectAnswer (Technique.GenArchPlus) = NumCorrectAnswer (Technique.CIDE)
+	H103 "The correct comprehension of the configuration knowledge do not depends on the diferent specification techniques" 
+		null_ NumCorrectAnswer (Technique.pureVariants) = NumCorrectAnswer (Technique.CIDE)
+	
+	H111 "The correct comprehension of the configuration knowledge depends on the diferent specification techniques" 
+		alternative NumCorrectAnswer (Technique.GenArchPlus) != NumCorrectAnswer (Technique.pureVariants) 
+	H112 "The correct comprehension of the configuration knowledge depends on the diferent specification techniques" 
+		alternative NumCorrectAnswer (Technique.GenArchPlus) != NumCorrectAnswer (Technique.CIDE)
+	H113 "The correct comprehension of the configuration knowledge depends on the diferent specification techniques" 
+		alternative NumCorrectAnswer (Technique.pureVariants) != NumCorrectAnswer (Technique.CIDE)
+}	
+	
+G2 "Investigate whether the diferent techniques infuence the time of configuration knowledge comprehension" {
+	H201 "The time to correctly comprehend the configuration knowledge independs on the diferent specification techniques" 
+		null_ ReplyTime (Technique.GenArchPlus) = ReplyTime (Technique.pureVariants) 
+	H202 "The time to correctly comprehend the configuration knowledge independs on the diferent specification techniques" 
+		null_ ReplyTime (Technique.GenArchPlus) = ReplyTime (Technique.CIDE)
+	H203 "The time to correctly comprehend the configuration knowledge independs on the diferent specification techniques" 
+		null_ ReplyTime (Technique.pureVariants) = ReplyTime (Technique.CIDE)
+		
+	H211 "The time to correctly comprehend the configuration knowledge depends on the diferent specification techniques" 
+		alternative ReplyTime (Technique.GenArchPlus) != ReplyTime (Technique.pureVariants)
+	H212 "The time to correctly comprehend the configuration knowledge depends on the diferent specification techniques" 
+		alternative ReplyTime (Technique.pureVariants) != ReplyTime (Technique.CIDE)
+	H213 "The time to correctly comprehend the configuration knowledge depends on the diferent specification techniques" 
+		alternative ReplyTime (Technique.pureVariants) != ReplyTime (Technique.CIDE)
+}
+	/*
+	H30 "The individual diferences among the expertise of product line engineers do not impact on the correct 
+		 comprehension of the configuration knowledge" null_
+		//...
+		
+	H31 "The individual diferences among the expertise of product line engineers impact on the correct 
+		 comprehension of the configuration knowledge" alternative
+		//...
+	*/
+}
+
+DesignOfExperiment = LS - Latin Square {	
+
+    Parameter ParticipantLevel = "Undergraduating Students"    
+    
+    Dependent Variable NumCorrectAnswer "Number of Correct answers" AnswersEShop AnswersByerAgent AnswersOLIS
+    Dependent Variable ReplyTime "Time to reply each questionnaire about the SPL" ReplyTimeEShop ReplyTimeByerAgent ReplyTimeOLIS
+    Dependent Variable KnowledgeLevel "Technological level of knowledge" 
+   
+    Factor Technique isDesiredVariation True {
+    	GenArchPlus
+        pureVariants
+        CIDE
+    }
+    Factor SPL isDesiredVariation False { 
+        EShop
+        BuyerAgent
+        OLIS
+    }
+    Factor Participants isDesiredVariation False {
+    	Participant1
+        Participant2
+        Participant3
+    }
+             
+   Statistical Analysis Technique //...
+   
+   Internal Replication  4   
+}         
+
+//Process1
+Process EShopProcess to SPL.EShop {	
+	Role Participant
+	
+	Task Q1_EShop description "Question 1 - EShop: Which Spring Bean implements the “Email” feature?" to Q2_EShop {		
+		var AnswersEShop.ASPL1
+		artefacts EShopSPL description "EShop SPL" type input
+	}	
+	Task Q2_EShop description "Question 2 - EShop: Which Bundles are related to the “Browsing” feature?" to Q3_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q3_EShop description "Question 3 - EShop: Which Entities implements the “List Orders” feature?" to Q4_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q4_EShop description "Question 4 - EShop: How many reusable assets (including files and code fragments) implements the “Product Navigation” Feature?" to Q5_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}	
+	Task Q5_EShop description "Question 5 - EShop: To which View and Business (Spring MVC and Spring, respectively) elements the “Edit” Feature is related to?" to Q6_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q6_EShop description "Question 6 - EShop: In which elements the “My List” feature impact?" to Q7_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q7_EShop description "Question 7 - EShop: If the shipAddress2 attribute related with “Different Address” feature were removed, how many reusable assets (code fragments) must be removed?" to Q8_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q8_EShop description "Question 8 - EShop: How many code assets is the “Edit” feature related to (files and code fragments)?" to Q9_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q9_EShop description "Question 9 - EShop: How may reusable assets is the “Different Address” feature related to (files and code fragments)?" to Q10_EShop {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+	Task Q10_EShop description "Question 10 - EShop: How may reusable assets is the “List Order” feature related to (files)?" {			
+		var AnswersEShop.ASPL1											
+		artefacts EShopSPL description "EShop SPL" type input		
+	}
+}
+
+//Process2
+Process ByerAgentProcess to SPL.BuyerAgent {	
+	Role Participant
+	
+	Task Q1_ByerAgent description "Question 1 - ByerAgent: To which feature(s) the goal CheckStoreStock is related?" to Q2_ByerAgent {		
+		var AnswersByerAgent.ASPL2
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input
+	}	
+	Task Q2_ByerAgent description "Question 2 - ByerAgent:How many plans are mapped to the “Pick up at Store” feature?" to Q3_ByerAgent {			
+		var AnswersByerAgent.ASPL2											
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q3_ByerAgent description "Question 3 - ByerAgent: Which variability granularities are found in the Buyer Agent SPL?" to Q4_ByerAgent {			
+		var AnswersByerAgent.ASPL2										
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q4_ByerAgent description "Question 4 - ByerAgent: Which implementation asset(s) is related to the Buy capability?" to Q5_ByerAgent {			
+		var AnswersByerAgent.ASPL2										
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}	
+	Task Q5_ByerAgent description "Question 5 - ByerAgent: Which plan(s) has its(their) behavior changed because of the “Credit Card” feature?" to Q6_ByerAgent  {			
+		var AnswersByerAgent.ASPL2										
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q6_ByerAgent description "Question 6 - ByerAgent: To which belief(s), goal(s) and plan(s) is the SearchStore capability related?" to Q7_ByerAgent  {			
+		var AnswersByerAgent.ASPL2										
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q7_ByerAgent description "Question 7 - ByerAgent: On which capability(ies) the “Store Selection Strategy” feature impact?" to Q8_ByerAgent  {			
+		var AnswersByerAgent.ASPL2											
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q8_ByerAgent description "Question 8 - ByerAgent: Which plan(s) related to the “Pick Up At Store” feature is part of the SearchStores capability?" to Q9_ByerAgent  {			
+		var AnswersByerAgent.ASPL2										
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q9_ByerAgent description "Question 9 - ByerAgent: If the pay goal were optional, which plan(s) would also be optional?" to Q10_ByerAgent  {			
+		var AnswersByerAgent.ASPL2										
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+	Task Q10_ByerAgent description "Question 10 - ByerAgent: If the payment process becomes optional in the next version of the SPL, which implementation 
+										  asset(s) must be changed (if any)?" {			
+		var AnswersByerAgent.ASPL2											
+		artefacts ByerAgentSPL description "ByerAgent SPL" type input		
+	}
+}
+
+//Process3
+Process OLISProcess to SPL.OLIS {	
+	Role Participant
+	
+	Task Q1_OLIS description "Question 1 - OLIS: On which agent(s) and/or capability(ies) the “Event Type” feature impact, (i.e. agent(s), capability(ies) that are
+						      			 related to this feature or whose internal elements are related to it)?" to Q2_OLIS {		
+		var AnswersOLIS.ASPL3
+		artefacts OLISSPL description "OLIS SPL" type input
+	}	
+	Task Q2_OLIS description "Question 2 - OLIS: How many code assets is the “Configure User Preferences” feature related to (either complete files or fragments, do
+						 				 not count packages)?" to Q3_OLIS {			
+		var AnswersOLIS.ASPL3											
+		artefacts OLISSPL description "OLIS SPL" type input		
+	}
+	Task Q3_OLIS description "Question 3 - OLIS: How many code assets is the “Event Scheduler” feature related to (either complete files or 
+										 fragments, do not count packages)?" to Q4_OLIS {			
+		var AnswersOLIS.ASPL3										
+		artefacts OLISSPL description "OLIS SPL" type input		
+	}
+	Task Q4_OLIS description "Question 4 - OLIS: Which plan(s) is related to the EventScheduler capability?" to Q5_OLIS {			
+		var AnswersOLIS.ASPL3										
+		artefacts OLISSPL description "OLIS SPL" type input		
+	}	
+	Task Q5_OLIS description "Question 5 - OLIS: Which Spring bean(s) is related to the “Travel” feature (id of the bean not its 
+										 implementation)?" to Q6_OLIS  {			
+		var AnswersOLIS.ASPL3										
+		artefacts ByerAgentSPL description "OLIS SPL" type input		
+	}
+	Task Q6_OLIS description "Question 6 - OLIS: If the “Configure User Preferences” is not selected, which is the implementation 
+										 used for the UserPreferencesAbstractFactory bean?" to Q7_OLIS  {			
+		var AnswersOLIS.ASPL3										
+		artefacts ByerAgentSPL description "OLIS SPL" type input		
+	}
+	Task Q7_OLIS description "Question 7 - OLIS: In which code asset(s) is the information that the Weather agent must be started?" to Q8_OLIS  {			
+		var AnswersOLIS.ASPL3											
+		artefacts ByerAgentSPL description "OLIS SPL" type input		
+	}
+	Task Q8_OLIS description "Question 8 - OLIS:In which code asset(s) is the information of the ontologies used in the derived product?" to Q9_OLIS  {			
+		var AnswersOLIS.ASPL3										
+		artefacts ByerAgentSPL description "OLIS SPL" type input		
+	}
+	Task Q9_OLIS description "Question 9 - ByerAgent: Which domain entity(ies) is related to the “Academic” feature?" to Q10_OLIS  {			
+		var AnswersOLIS.ASPL3										
+		artefacts ByerAgentSPL description "OLIS SPL" type input		
+	}
+	Task Q10_OLIS description "Question 10 - ByerAgent: If the WeatherOptionsAction, functionality that allows to configure the WeatherService, were related to an optional 
+						 				  subfeature of the “Weather” feature, which existing code asset(s) (either complete files or fragments, do not count
+						 				  packages) would be mapped to this new optional subfeature?" {			
+		var AnswersOLIS.ASPL3											
+		artefacts ByerAgentSPL description "OLIS SPL" type input		
+	}
+}
+
+
+Metric AnswersEShop relates EShopProcess {
+	description "Answer reported for questions during execution for EShopProcess" 
+	collectedData ASPL1: text
+}
+Metric AnswersByerAgent relates ByerAgentProcess {
+	description "Answer reported for questions during execution for ByerAgentProcess" 
+	collectedData ASPL2: text
+}
+Metric AnswersOLIS relates OLISProcess {
+	description "Answer reported for questions during execution for OLISProcess" 
+	collectedData ASPL3: text
+}
+Metric ReplyTimeEShop relates EShopProcess {
+	description "Time taken to answer a question correctly"
+	taskBegin EShopProcess.Q1_EShop 
+    taskEnd EShopProcess.Q10_EShop
+}
+Metric ReplyTimeByerAgent relates ByerAgentProcess {
+	description "Time taken to answer a question correctly"
+    taskBegin ByerAgentProcess.Q1_ByerAgent 
+    taskEnd ByerAgentProcess.Q10_ByerAgent
+}
+Metric ReplyTimeOLIS relates OLISProcess {
+	description "Time taken to answer a question correctly"
+    taskBegin OLISProcess.Q1_OLIS 
+    taskEnd OLISProcess.Q10_OLIS
+}
+Metric KnowledgeEShop relates EShopProcess {
+	description "Knowledge reported in questionnaire for EShopProcess" 
+	quest EShopKnowledgeTecnologies
+}
+Metric KnowledgeByerAgent relates ByerAgentProcess {
+	description "Knowledge reported for questionnaire for ByerAgentProcess" 
+	quest BuyerKnowledgeTechnologies
+}
+Metric KnowledgeOLIS relates OLISProcess {
+	description "Knowledge reported for questionnaire for OLISProcess" 
+	quest OLISKnowledgeTechnologies
+}
+
+Questionnaires 
+
+Questionnaire BuyerKnowledgeTechnologies relates ByerAgentProcess type Post {
+	Q1BuyerJadex {		
+		description "What is your experience using Jadex framework?"
+		type SingleChoice
+		required 1 
+		Alternatives  
+			Option "Start"
+			Option "Professional"
+			Option "Expert"																			
+	}
+	Q2BuyerJadex {
+		description "How long experience with Jadex?"
+		type SingleChoice
+		required 1
+		Alternatives 
+			Option "Less than 1 year"
+			Option "Between 1 and 3" 
+			Option "Over 3 years"																
+	}
+};
+
+Questionnaire OLISKnowledgeTechnologies relates OLISProcess type Post {
+	Q1OLISJadex {
+		description "What is your experience using Jadex framework?"
+		type SingleChoice
+		required 1 Alternatives
+		Option "Start"
+		Option "Professional"			
+		Option "Expert"	 
+	}																					        			
+	Q2OLISJadex {
+		description "How long experience with Jadex?"
+		type SingleChoice
+		required 1
+		Alternatives
+			Option "Less than 1 year"
+			Option "Between 1 and 3"
+			Option "Over 3 years"  																								
+	}
+	Q3OLISSpring {
+		description "What is your experience using Spring framework?"
+		type SingleChoice
+		required 1 Alternatives
+			Option "Start"
+			Option "Professional" 
+			Option "Expert"	 																							
+	}           			
+	Q4OLISSpring {
+		description "How long experience with Spring?"
+		type SingleChoice
+		required 1
+		Alternatives
+			 Option "Less than 1 year"
+			 Option "Between 1 and 3" 
+			 Option "Over 3 years" 																									
+	}
+	Q5OLISStruts {
+		description "What is your experience using Struts framework?"
+		type SingleChoice
+		required 1
+		Alternatives 
+			Option "Start"
+			Option "Professional" 
+			Option "Expert"	 																									
+	}           			
+	Q6OLISStruts {
+		description "How long experience with Struts?"
+		type SingleChoice
+		required 1
+		Alternatives
+			Option "Less than 1 year"
+			Option "Between 1 and 3"
+			Option "Over 3 years" 
+	} 																									
+	Q7OLISHibernate {
+		description "What is your experience using Hibernate framework?"
+		type SingleChoice
+		required 1
+		Alternatives 
+			Option "Start" 
+			Option "Professional"
+			Option "Expert"	 																							
+	}           			
+	Q8OLISHibernate {
+		description "How long experience with Hibernate?"
+		type SingleChoice
+		required 1
+		Alternatives
+			Option "Less than 1 year"
+			Option "Between 1 and 3" 
+			Option "Over 3 years" 																								
+	}			
+};
+	
+Questionnaire EShopKnowledgeTecnologies relates EShopProcess type Post {
+	Q1EShopSpring {
+		description "What is your experience using Spring framework?"
+		type SingleChoice
+		required 1
+		Alternatives 
+			Option "Start"
+			Option "Professional"
+			Option "Expert"				 																							
+	}           			
+	Q2EShopSpring {
+		description "How long experience with Spring?"
+		type SingleChoice
+		required 1 Alternatives
+			Option "Less than 1 year"
+			Option "Between 1 and 3"
+			Option "Over 3 years"			 																								
+	}							
+	Q3EShopSpringMVC {
+		description "What is your experience using SpringMVC framework?"
+		type SingleChoice
+		required 1 Alternatives 
+			Option "Start"
+			Option "Professional"
+			Option "Expert"	 																								
+	}           			
+	Q4EShopSpringMVC {
+		description "How long experience with SpringMVC?"
+		type SingleChoice
+		required 1
+		Alternatives
+			Option "Less than 1 year"
+			Option "Between 1 and 3"
+			Option "Over 3 years"																									
+	}			
+	Q5EShopSpringOSGi {
+		description "What is your experience using SpringOSGi framework?"
+		type SingleChoice
+		required 1 Alternatives
+			Option "Start"
+			Option "Professional" 
+			Option"Expert"	 																								
+	}           			
+	Q6EShopSpringOSGi {
+		description "How long experience with SpringOSGi?"
+		type SingleChoice
+		required 1 Alternatives
+	 		Option "Less than 1 year"
+	 		Option "Between 1 and 3"
+	 		Option "Over 3 years" 																									
+	}			
+	Q7EShopiBatis {
+		description "What is your experience using iBatis framework?"
+		type SingleChoice
+		required 1
+		Alternatives 
+			Option "Start"
+			Option "Professional"
+			Option "Expert"	 																								
+	}           			
+	Q8EShopiBatis {
+		description "How long experience with iBatis?"
+		type SingleChoice
+		required 1 
+		Alternatives
+			Option "Less than 1 year"
+			Option "Between 1 and 3"
+			Option "Over 3 years" 
+	}																																		
+};

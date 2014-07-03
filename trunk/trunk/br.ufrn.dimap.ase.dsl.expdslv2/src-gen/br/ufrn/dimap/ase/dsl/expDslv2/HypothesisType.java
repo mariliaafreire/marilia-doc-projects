@@ -24,14 +24,14 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum HypothesisType implements Enumerator
 {
   /**
-	 * The '<em><b>Null</b></em>' literal object.
+	 * The '<em><b>Null </b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #NULL_VALUE
+	 * @see #NULL__VALUE
 	 * @generated
 	 * @ordered
 	 */
-  NULL(0, "null", "null"),
+  NULL_(0, "null_", "null_"),
 
   /**
 	 * The '<em><b>Alternative</b></em>' literal object.
@@ -44,19 +44,19 @@ public enum HypothesisType implements Enumerator
   ALTERNATIVE(1, "alternative", "alternative");
 
   /**
-	 * The '<em><b>Null</b></em>' literal value.
+	 * The '<em><b>Null </b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Null</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>Null </b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #NULL
-	 * @model name="null"
+	 * @see #NULL_
+	 * @model name="null_"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int NULL_VALUE = 0;
+  public static final int NULL__VALUE = 0;
 
   /**
 	 * The '<em><b>Alternative</b></em>' literal value.
@@ -81,7 +81,7 @@ public enum HypothesisType implements Enumerator
 	 */
   private static final HypothesisType[] VALUES_ARRAY =
     new HypothesisType[] {
-			NULL,
+			NULL_,
 			ALTERNATIVE,
 		};
 
@@ -136,7 +136,7 @@ public enum HypothesisType implements Enumerator
   public static HypothesisType get(int value)
   {
 		switch (value) {
-			case NULL_VALUE: return NULL;
+			case NULL__VALUE: return NULL_;
 			case ALTERNATIVE_VALUE: return ALTERNATIVE;
 		}
 		return null;

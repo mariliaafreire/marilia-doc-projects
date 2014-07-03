@@ -6,10 +6,10 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2.impl;
 
-import br.ufrn.dimap.ase.dsl.expDslv2.Activity;
 import br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package;
 import br.ufrn.dimap.ase.dsl.expDslv2.Levels;
 import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
+import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 
 import java.util.Collection;
 
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getTreatment <em>Treatment</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getRole <em>Role</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getActivities <em>Activities</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ProcessImpl#getTask <em>Task</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,14 +88,14 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
   protected EList<RoleType> role;
 
   /**
-	 * The cached value of the '{@link #getActivities() <em>Activities</em>}' containment reference list.
+	 * The cached value of the '{@link #getTask() <em>Task</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getActivities()
+	 * @see #getTask()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Activity> activities;
+  protected EList<Task> task;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -172,12 +172,12 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Activity> getActivities()
+  public EList<Task> getTask()
   {
-		if (activities == null) {
-			activities = new EObjectContainmentEList<Activity>(Activity.class, this, ExpDslv2Package.PROCESS__ACTIVITIES);
+		if (task == null) {
+			task = new EObjectContainmentEList<Task>(Task.class, this, ExpDslv2Package.PROCESS__TASK);
 		}
-		return activities;
+		return task;
 	}
 
   /**
@@ -189,8 +189,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
-			case ExpDslv2Package.PROCESS__ACTIVITIES:
-				return ((InternalEList<?>)getActivities()).basicRemove(otherEnd, msgs);
+			case ExpDslv2Package.PROCESS__TASK:
+				return ((InternalEList<?>)getTask()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -210,8 +210,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 				return getTreatment();
 			case ExpDslv2Package.PROCESS__ROLE:
 				return getRole();
-			case ExpDslv2Package.PROCESS__ACTIVITIES:
-				return getActivities();
+			case ExpDslv2Package.PROCESS__TASK:
+				return getTask();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -237,9 +237,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 				getRole().clear();
 				getRole().addAll((Collection<? extends RoleType>)newValue);
 				return;
-			case ExpDslv2Package.PROCESS__ACTIVITIES:
-				getActivities().clear();
-				getActivities().addAll((Collection<? extends Activity>)newValue);
+			case ExpDslv2Package.PROCESS__TASK:
+				getTask().clear();
+				getTask().addAll((Collection<? extends Task>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,8 +263,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 			case ExpDslv2Package.PROCESS__ROLE:
 				getRole().clear();
 				return;
-			case ExpDslv2Package.PROCESS__ACTIVITIES:
-				getActivities().clear();
+			case ExpDslv2Package.PROCESS__TASK:
+				getTask().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -285,8 +285,8 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements br.ufrn
 				return treatment != null && !treatment.isEmpty();
 			case ExpDslv2Package.PROCESS__ROLE:
 				return role != null && !role.isEmpty();
-			case ExpDslv2Package.PROCESS__ACTIVITIES:
-				return activities != null && !activities.isEmpty();
+			case ExpDslv2Package.PROCESS__TASK:
+				return task != null && !task.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

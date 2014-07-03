@@ -6,6 +6,8 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Goal#getName <em>Name</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Goal#getDescription <em>Description</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Goal#getHypotheses <em>Hypotheses</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,5 +81,21 @@ public interface Goal extends EObject
 	 * @generated
 	 */
   void setDescription(String value);
+
+  /**
+	 * Returns the value of the '<em><b>Hypotheses</b></em>' containment reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Hypotheses</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hypotheses</em>' containment reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getGoal_Hypotheses()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<Hypotheses> getHypotheses();
 
 } // Goal

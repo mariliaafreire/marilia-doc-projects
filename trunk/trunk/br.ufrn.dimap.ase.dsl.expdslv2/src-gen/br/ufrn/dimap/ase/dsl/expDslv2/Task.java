@@ -20,7 +20,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getName <em>Name</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getDescription <em>Description</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getVar <em>Var</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getNext <em>Next</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getRole <em>Role</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getCollectData <em>Collect Data</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getArtefacts <em>Artefacts</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Task#getQuestionnaire <em>Questionnaire</em>}</li>
  * </ul>
@@ -85,20 +87,54 @@ public interface Task extends EObject
   void setDescription(String value);
 
   /**
-	 * Returns the value of the '<em><b>Var</b></em>' reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.CollectedData}.
+	 * Returns the value of the '<em><b>Next</b></em>' reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Task}.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' reference list isn't clear,
+   * If the meaning of the '<em>Next</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Var</em>' reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getTask_Var()
+	 * @return the value of the '<em>Next</em>' reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getTask_Next()
 	 * @model
 	 * @generated
 	 */
-  EList<CollectedData> getVar();
+  EList<Task> getNext();
+
+  /**
+	 * Returns the value of the '<em><b>Role</b></em>' attribute list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType}.
+	 * The literals are from the enumeration {@link br.ufrn.dimap.ase.dsl.expDslv2.RoleType}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Role</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role</em>' attribute list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.RoleType
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getTask_Role()
+	 * @model unique="false"
+	 * @generated
+	 */
+  EList<RoleType> getRole();
+
+  /**
+	 * Returns the value of the '<em><b>Collect Data</b></em>' reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.CollectedData}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Collect Data</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collect Data</em>' reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getTask_CollectData()
+	 * @model
+	 * @generated
+	 */
+  EList<CollectedData> getCollectData();
 
   /**
 	 * Returns the value of the '<em><b>Artefacts</b></em>' containment reference list.

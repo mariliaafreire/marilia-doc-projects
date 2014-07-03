@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDslv2:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDslv2="http://www.ufrn.br/dimap/ase/dsl/ExpDslv2">
+  <elements name="OO System Productivity">
+    <experiments type="LS - Latin Square" internalReplication="4">
+      <goal name="G1" description="To investigate whether the different languages can influence the development productivity">
+        <hypotheses name="H10" description="The time to develop an OO System do not depends on the programming language" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.0 //@elements.0/@experiments.0/@dependentVariable.0" levels="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.0/@level.1"/>
+        <hypotheses name="H11" description="The time to develop an OO System depends on the programming language" type="alternative" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.0 //@elements.0/@experiments.0/@dependentVariable.0" levels="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.0/@level.1" operator="!="/>
+      </goal>
+      <parameter variable="ParticipantLevel" value="Undergraduating Students"/>
+      <dependentVariable name="ReplyTime" description="Time to do each process development phase" metrics="//@elements.0/@metrics.0 //@elements.0/@metrics.1 //@elements.0/@metrics.2 //@elements.0/@metrics.4 //@elements.0/@metrics.5 //@elements.0/@metrics.6 //@elements.0/@metrics.8 //@elements.0/@metrics.9 //@elements.0/@metrics.10 //@elements.0/@metrics.12 //@elements.0/@metrics.13 //@elements.0/@metrics.14"/>
+      <dependentVariable name="CodeDeffect" description="Number of Defects found in the System during tests" metrics="//@elements.0/@metrics.3 //@elements.0/@metrics.7 //@elements.0/@metrics.11 //@elements.0/@metrics.15"/>
+      <factor name="ProgammingLanguage" isDesiredVariation="True">
+        <level name="Java"/>
+        <level name="CPlusPlus"/>
+      </factor>
+      <factor name="System" isDesiredVariation="False">
+        <level name="Phonebook"/>
+        <level name="EventManagement"/>
+      </factor>
+      <factor name="Participants" isDesiredVariation="False">
+        <level name="Participant1"/>
+        <level name="Participant2"/>
+      </factor>
+    </experiments>
+    <process name="ComparisonProcessJavaPhoneBook">
+      <task name="PhoneBook_UseCaseProject" description="Create the design of use cases" next="//@elements.0/@process.0/@task.1">
+        <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_ClassDiagram" description="Class Diagram" type="output"/>
+        <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface" type="output"/>
+      </task>
+      <task name="PhoneBook_ImplementUseCase" description="Implementation of Use Cases" next="//@elements.0/@process.0/@task.2">
+        <artefacts name="ClassDiagram" description="Class Diagram"/>
+        <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface"/>
+        <artefacts name="PhoneBook_JavaUseCaseCode" description="Use Cases Java Code" type="output"/>
+      </task>
+      <task name="UseCaseTest" description="Perform Test of Use Case">
+        <artefacts name="PhoneBook_JavaUseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_JavaUseCaseCode" description="Use Cases Java Code"/>
+        <artefacts name="PhoneBook_JavaTestCase" description="Specification of a set of tests" type="output"/>
+        <artefacts name="PhoneBook_TestLog" description="Report that is captured during a run of tests" type="output"/>
+      </task>
+    </process>
+    <process name="ComparisonProcessCPPPhoneBook">
+      <task name="PhoneBook_UseCaseProject" description="Create the design of use cases" next="//@elements.0/@process.1/@task.1">
+        <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_ClassDiagram" description="Class Diagram" type="output"/>
+        <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface" type="output"/>
+      </task>
+      <task name="PhoneBook_ImplementUseCase" description="Implementation of Use Cases" next="//@elements.0/@process.1/@task.2">
+        <artefacts name="ClassDiagram" description="Class Diagram"/>
+        <artefacts name="PhoneBook_PrototypeInterface" description="Prototype of interface"/>
+        <artefacts name="PhoneBook_CPPUseCaseCode" description="Use Cases CPP Code" type="output"/>
+      </task>
+      <task name="UseCaseTest" description="Perform Test of Use Cases">
+        <artefacts name="PhoneBook_UseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_CPPUseCaseCode" description="Use Cases CPP Code"/>
+        <artefacts name="PhoneBook_CPPTestCase" description="Specification of a set of  CPP tests" type="output"/>
+        <artefacts name="PhoneBook_TestLog" description="Report that is captured during a run of tests" type="output"/>
+      </task>
+    </process>
+    <process name="ComparisonProcessJavaEventManagement">
+      <task name="EventManagement_UseCaseProject" description="Create the design of use cases" next="//@elements.0/@process.2/@task.1">
+        <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_ClassDiagram" description="Class Diagram" type="output"/>
+        <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface" type="output"/>
+      </task>
+      <task name="EventManagement_ImplementUseCase" description="Implementation of Use Cases" next="//@elements.0/@process.2/@task.2">
+        <artefacts name="ClassDiagram" description="Class Diagram"/>
+        <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface"/>
+        <artefacts name="EventManagement_JavaUseCaseCode" description="Use Cases Java Code" type="output"/>
+      </task>
+      <task name="UseCaseTest" description="Perform Test of Use Case">
+        <artefacts name="EventManagement_JavaUseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_JavaTestCase" description="Specification of a set of tests" type="output"/>
+        <artefacts name="EventManagement_JavaUseCaseCode" description="Use Cases Java Code"/>
+        <artefacts name="EventManagement_TestLog" description="Report that is captured during a run of tests" type="output"/>
+      </task>
+    </process>
+    <process name="ComparisonProcessCPPEventManagement">
+      <task name="EventManagement_UseCaseProject" description="Create the design of use cases" next="//@elements.0/@process.3/@task.1">
+        <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_ClassDiagram" description="Class Diagram" type="output"/>
+        <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface" type="output"/>
+      </task>
+      <task name="EventManagement_ImplementUseCase" description="Implementation of Use Cases" next="//@elements.0/@process.3/@task.2">
+        <artefacts name="ClassDiagram" description="Class Diagram"/>
+        <artefacts name="EventManagement_PrototypeInterface" description="Prototype of interface"/>
+        <artefacts name="EventManagement_CPPUseCaseCode" description="Use Cases CPP Code" type="output"/>
+      </task>
+      <task name="UseCaseTest" description="Perform Test of Use Case">
+        <artefacts name="EventManagement_UseCaseSpecfication" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_CPPTestCase" description="Specification of a set of  CPP test" type="output"/>
+        <artefacts name="EventManagement_CPPUseCaseCode" description="Use Cases CPP Code"/>
+        <artefacts name="EventManagement_TestLog" description="Report that is captured during a run of tests" type="output"/>
+      </task>
+    </process>
+    <metrics name="ProjectTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.0/@task.0"/>
+    </metrics>
+    <metrics name="CodeTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.0/@task.1"/>
+    </metrics>
+    <metrics name="TestTime" relatesTo="//@elements.0/@process.0" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.0/@task.2"/>
+    </metrics>
+    <metrics name="CodeDefect" relatesTo="//@elements.0/@process.0" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDslv2:DataMetric" artefacts="//@elements.0/@process.0/@task.1/@artefacts.2"/>
+    </metrics>
+    <metrics name="ProjectTime2" relatesTo="//@elements.0/@process.1" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.1/@task.0"/>
+    </metrics>
+    <metrics name="CodeTime2" relatesTo="//@elements.0/@process.1" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.1/@task.1"/>
+    </metrics>
+    <metrics name="TestTime2" relatesTo="//@elements.0/@process.1" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.1/@task.2"/>
+    </metrics>
+    <metrics name="CodeDefect2" relatesTo="//@elements.0/@process.1" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDslv2:DataMetric" artefacts="//@elements.0/@process.1/@task.1/@artefacts.2"/>
+    </metrics>
+    <metrics name="ProjectTime3" relatesTo="//@elements.0/@process.2" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.2/@task.0"/>
+    </metrics>
+    <metrics name="CodeTime3" relatesTo="//@elements.0/@process.2" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.2/@task.1"/>
+    </metrics>
+    <metrics name="TestTime3" relatesTo="//@elements.0/@process.2" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.2/@task.2"/>
+    </metrics>
+    <metrics name="CodeDefect3" relatesTo="//@elements.0/@process.2" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDslv2:DataMetric" artefacts="//@elements.0/@process.2/@task.1/@artefacts.2"/>
+    </metrics>
+    <metrics name="ProjectTime4" relatesTo="//@elements.0/@process.3" description="Calculate the duration of tasks related to project the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.3/@task.0"/>
+    </metrics>
+    <metrics name="CodeTime4" relatesTo="//@elements.0/@process.3" description="Calculate the duration of tasks related to implement the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.3/@task.1"/>
+    </metrics>
+    <metrics name="TestTime4" relatesTo="//@elements.0/@process.3" description="Calculate the duration of tasks related to test the useCase">
+      <detail xsi:type="expDslv2:TaskMetric" taskBegin="//@elements.0/@process.3/@task.2"/>
+    </metrics>
+    <metrics name="CodeDefect4" relatesTo="//@elements.0/@process.3" description="Calculate the number of defects found in the UseCase code">
+      <detail xsi:type="expDslv2:DataMetric" artefacts="//@elements.0/@process.3/@task.2/@artefacts.2"/>
+    </metrics>
+    <questionnaire name="ExperienceQuestionnaire">
+      <question name="Question1" description="What is your experience in software development?" type="SingleChoice" req="1">
+        <alternatives description="Beginner"/>
+        <alternatives description="Professional"/>
+        <alternatives description="Expert"/>
+      </question>
+      <question name="Question2" description="How long have you - been working/worked - with Java?" type="SingleChoice" req="1">
+        <alternatives description="Less than 1 year"/>
+        <alternatives description="Between 1 and 3 years"/>
+        <alternatives description="More than 3 years"/>
+      </question>
+      <question name="Question3" description="How long have you - been working/worked - with CPP?" type="SingleChoice" req="1">
+        <alternatives description="Less than 1 year"/>
+        <alternatives description="Between 1 and 3 years"/>
+        <alternatives description="More than 3 years"/>
+      </question>
+    </questionnaire>
+  </elements>
+</expDslv2:Model>

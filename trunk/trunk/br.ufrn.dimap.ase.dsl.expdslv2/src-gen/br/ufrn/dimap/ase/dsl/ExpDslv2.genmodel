@@ -10,19 +10,6 @@
   <foreignModel>ExpDslv2.ecore</foreignModel>
   <genPackages prefix="ExpDslv2" basePackage="br.ufrn.dimap.ase.dsl" disposableProviderFactory="true"
       ecorePackage="ExpDslv2.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//RoleType">
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//RoleType/participant"/>
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//RoleType/researcher"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//ArtefactType">
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//ArtefactType/in_"/>
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//ArtefactType/out_"/>
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//ArtefactType/inout_"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//DataType">
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//DataType/num"/>
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//DataType/text"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//RelationType">
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//RelationType/isRelated"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//RelationType/isNotRelated"/>
@@ -36,7 +23,7 @@
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//OperatorType/lessEqual"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//HypothesisType">
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//HypothesisType/null"/>
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//HypothesisType/null_"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//HypothesisType/alternative"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//DesignType">
@@ -59,6 +46,19 @@
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnalysisTechiqueType/kruskalWallis"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnalysisTechiqueType/others"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//RoleType">
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//RoleType/participant"/>
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//RoleType/researcher"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//ArtefactType">
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//ArtefactType/in_"/>
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//ArtefactType/out_"/>
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//ArtefactType/inout_"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//DataType/num"/>
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//DataType/text"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="ExpDslv2.ecore#//QuestionnaireType">
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//QuestionnaireType/pre"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//QuestionnaireType/post"/>
@@ -67,8 +67,7 @@
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/Text"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/ParagraphText"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/MultipleChoice"/>
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/ComboBox"/>
-      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/CheckBoxes"/>
+      <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/SingleChoice"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/Scale"/>
       <genEnumLiterals ecoreEnumLiteral="ExpDslv2.ecore#//AnswerType/Grid"/>
     </genEnums>
@@ -77,92 +76,35 @@
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//ExperimentElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//ExperimentElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentElement/experiments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentElement/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentElement/metrics"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentElement/experiments"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentElement/questionnaire"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Process">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Process/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Process/treatment"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Process/role"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Process/activities"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Activity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Activity/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Activity/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Activity/next"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Activity/role"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Activity/collectData"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Activity/artefacts"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Activity/questionnaire"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Activity/tasks"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Task">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Task/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Task/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/var"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/artefacts"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/questionnaire"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Artefact">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Artefact/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Artefact/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Artefact/type"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Metrics">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Metrics/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Metrics/relatesTo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Metrics/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Metrics/detail"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Detail"/>
-    <genClasses ecoreClass="ExpDslv2.ecore#//TimeMetric"/>
-    <genClasses ecoreClass="ExpDslv2.ecore#//ActivityMetric">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ActivityMetric/activityBegin"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ActivityMetric/activityEnd"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//TaskMetric">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//TaskMetric/tasks"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//DataMetric">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//DataMetric/collectedData"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//DataMetric/dataType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//DataMetric/artefacts"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//DataMetric/questionnaires"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//CollectedData">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//CollectedData/name"/>
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//ExperimentalPlan">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/goal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/hypotheses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//ExperimentalPlan/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/parameter"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/dependentVariable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/factor"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/tosubhypotheses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//ExperimentalPlan/tohypotheses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//ExperimentalPlan/Technique"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//ExperimentalPlan/internalReplication"/>
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//Goal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Goal/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Goal/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Goal/hypotheses"/>
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//Hypotheses">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Hypotheses/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Hypotheses/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Hypotheses/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Hypotheses/fromGoal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Hypotheses/subhypotheses"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpDslv2.ecore#//Subhypotheses">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Subhypotheses/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Subhypotheses/dependentVariable"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Subhypotheses/levels"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Subhypotheses/operator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Subhypotheses/relation"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Subhypotheses/factor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Hypotheses/dependentVariable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Hypotheses/levels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Hypotheses/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Hypotheses/relation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Hypotheses/factor"/>
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Parameter/variable"/>
@@ -180,6 +122,46 @@
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//Levels">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Levels/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Process/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Process/treatment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Process/role"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Process/task"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Task/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Task/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/next"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Task/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/collectData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/artefacts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Task/questionnaire"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//Artefact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Artefact/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Artefact/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Artefact/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//Metrics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Metrics/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Metrics/relatesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Metrics/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//Metrics/detail"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//Detail"/>
+    <genClasses ecoreClass="ExpDslv2.ecore#//TaskMetric">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//TaskMetric/taskBegin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//TaskMetric/taskEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//DataMetric">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//DataMetric/collectedData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//DataMetric/dataType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//DataMetric/artefacts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpDslv2.ecore#//DataMetric/questionnaires"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpDslv2.ecore#//CollectedData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//CollectedData/name"/>
     </genClasses>
     <genClasses ecoreClass="ExpDslv2.ecore#//Questionnaire">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpDslv2.ecore#//Questionnaire/name"/>

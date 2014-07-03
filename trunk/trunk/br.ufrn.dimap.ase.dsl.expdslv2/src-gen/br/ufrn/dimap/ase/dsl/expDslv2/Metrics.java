@@ -6,8 +6,6 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -110,19 +108,29 @@ public interface Metrics extends EObject
   void setDescription(String value);
 
   /**
-	 * Returns the value of the '<em><b>Detail</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Detail}.
+	 * Returns the value of the '<em><b>Detail</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Detail</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Detail</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Detail</em>' containment reference list.
+	 * @return the value of the '<em>Detail</em>' containment reference.
+	 * @see #setDetail(Detail)
 	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getMetrics_Detail()
 	 * @model containment="true"
 	 * @generated
 	 */
-  EList<Detail> getDetail();
+  Detail getDetail();
+
+  /**
+	 * Sets the value of the '{@link br.ufrn.dimap.ase.dsl.expDslv2.Metrics#getDetail <em>Detail</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Detail</em>' containment reference.
+	 * @see #getDetail()
+	 * @generated
+	 */
+  void setDetail(Detail value);
 
 } // Metrics

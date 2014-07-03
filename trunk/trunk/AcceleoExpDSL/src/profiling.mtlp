@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ASCII"?>
+<profiler:ProfileResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:profiler="http://www.eclipse.org/acceleo/profiler/3.0">
+  <entries xsi:type="profiler:LoopProfileEntry" duration="87" count="1" percentage="100.0" createTime="1354845226761">
+    <callees xsi:type="profiler:LoopProfileEntry" duration="80" count="1" percentage="91.95402298850574" createTime="1354845226769">
+      <callees xsi:type="profiler:LoopProfileEntry" duration="5" count="1" percentage="5.747126436781609" createTime="1354845226769">
+        <callees xsi:type="profiler:LoopProfileEntry" duration="4" count="1" percentage="4.597701149425287" createTime="1354845226770">
+          <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@fileUrl/@source"/>
+          <loopElements duration="4" count="1" percentage="4.597701149425287" createTime="1354845226770">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+          </loopElements>
+        </callees>
+        <callees duration="1" percentage="1.1494252873563218" createTime="1354845236929">
+          <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+        </callees>
+        <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@fileUrl"/>
+        <loopElements duration="1" count="1" percentage="1.1494252873563218" createTime="1354845226769">
+          <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+        </loopElements>
+      </callees>
+      <callees xsi:type="profiler:LoopProfileEntry" duration="4" count="1" percentage="4.597701149425287" createTime="1354845226778">
+        <callees xsi:type="profiler:LoopProfileEntry" count="1" createTime="1354845226779">
+          <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.1/@iterSet"/>
+          <loopElements count="1" createTime="1354845226779">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+          </loopElements>
+        </callees>
+        <callees xsi:type="profiler:LoopProfileEntry" duration="1" count="4" percentage="1.1494252873563218" createTime="1354845226780">
+          <callees xsi:type="profiler:LoopProfileEntry" count="4" createTime="1354845226780">
+            <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.1/@body.1/@ifExpr"/>
+            <loopElements count="1" createTime="1354845226780">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.0"/>
+            </loopElements>
+            <loopElements count="1" createTime="1354845226781">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.1"/>
+            </loopElements>
+            <loopElements count="1" createTime="1354845226782">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.2"/>
+            </loopElements>
+            <loopElements count="1" createTime="1354845226782">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.3"/>
+            </loopElements>
+          </callees>
+          <callees xsi:type="profiler:LoopProfileEntry" count="4" createTime="1354845226781">
+            <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.1/@body.1/@elseIf.0/@ifExpr"/>
+            <loopElements count="1" createTime="1354845226781">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.0"/>
+            </loopElements>
+            <loopElements count="1" createTime="1354845226781">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.1"/>
+            </loopElements>
+            <loopElements count="1" createTime="1354845226782">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.2"/>
+            </loopElements>
+            <loopElements count="1" createTime="1354845226782">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.3"/>
+            </loopElements>
+          </callees>
+          <callees duration="1" percentage="1.1494252873563218" createTime="1354845236929">
+            <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+          </callees>
+          <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.1/@body.1"/>
+          <loopElements count="1" createTime="1354845226780">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.0"/>
+          </loopElements>
+          <loopElements count="1" createTime="1354845226781">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.1"/>
+          </loopElements>
+          <loopElements count="1" createTime="1354845226782">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.2"/>
+          </loopElements>
+          <loopElements count="1" createTime="1354845226782">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0/@link.3"/>
+          </loopElements>
+        </callees>
+        <callees duration="3" percentage="3.4482758620689653" createTime="1354845236929">
+          <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+        </callees>
+        <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.1"/>
+        <loopElements duration="1" count="1" percentage="1.1494252873563218" createTime="1354845226778">
+          <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+        </loopElements>
+      </callees>
+      <callees xsi:type="profiler:LoopProfileEntry" duration="43" count="1" percentage="49.42528735632184" createTime="1354845226782">
+        <callees xsi:type="profiler:LoopProfileEntry" duration="1" count="1" percentage="1.1494252873563218" createTime="1354845226782">
+          <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.2/@ifExpr"/>
+          <loopElements duration="1" count="1" percentage="1.1494252873563218" createTime="1354845226782">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+          </loopElements>
+        </callees>
+        <callees xsi:type="profiler:LoopProfileEntry" duration="42" count="1" percentage="48.275862068965516" createTime="1354845226783">
+          <callees xsi:type="profiler:LoopProfileEntry" duration="18" count="1" percentage="20.689655172413794" createTime="1354845226785">
+            <callees xsi:type="profiler:LoopProfileEntry" count="1" createTime="1354845226785">
+              <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateLS/@expression/@argument.2"/>
+              <loopElements count="1" createTime="1354845226785">
+                <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+              </loopElements>
+            </callees>
+            <callees duration="18" percentage="20.689655172413794" createTime="1354845236929">
+              <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+            </callees>
+            <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateLS/@expression"/>
+            <loopElements count="1" createTime="1354845226785">
+              <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+            </loopElements>
+          </callees>
+          <callees duration="24" percentage="27.586206896551722" createTime="1354845236929">
+            <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+          </callees>
+          <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.2/@body.1"/>
+          <loopElements duration="2" count="1" percentage="2.2988505747126435" createTime="1354845226783">
+            <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+          </loopElements>
+        </callees>
+        <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1/@body.2"/>
+        <loopElements count="1" createTime="1354845226782">
+          <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+        </loopElements>
+      </callees>
+      <callees duration="28" percentage="32.18390804597701" createTime="1354845236929">
+        <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+      </callees>
+      <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement/@body.1"/>
+      <loopElements count="1" createTime="1354845226769">
+        <monitored href="../../testeQVTO/model/SPLTestingStrategiesEASE.xmi#//@elements.0/@experiments.0"/>
+      </loopElements>
+    </callees>
+    <callees duration="7" percentage="8.045977011494253" createTime="1354845236929">
+      <monitored href="http://www.eclipse.org/acceleo/profiler/3.0#//Internal"/>
+    </callees>
+    <monitored href="../bin/AcceleoExpDSL/main/generate.emtl#/0/generateElement"/>
+    <loopElements duration="7" count="1" percentage="8.045977011494253" createTime="1354845226762"/>
+  </entries>
+</profiler:ProfileResource>

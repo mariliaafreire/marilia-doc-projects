@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentElement#getName <em>Name</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentElement#getExperiments <em>Experiments</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentElement#getProcess <em>Process</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentElement#getMetrics <em>Metrics</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentElement#getExperiments <em>Experiments</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentElement#getQuestionnaire <em>Questionnaire</em>}</li>
  * </ul>
  * </p>
@@ -59,6 +59,22 @@ public interface ExperimentElement extends EObject
   void setName(String value);
 
   /**
+	 * Returns the value of the '<em><b>Experiments</b></em>' containment reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan}.
+	 * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Experiments</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+	 * @return the value of the '<em>Experiments</em>' containment reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentElement_Experiments()
+	 * @model containment="true"
+	 * @generated
+	 */
+  EList<ExperimentalPlan> getExperiments();
+
+  /**
 	 * Returns the value of the '<em><b>Process</b></em>' containment reference list.
 	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Process}.
 	 * <!-- begin-user-doc -->
@@ -89,22 +105,6 @@ public interface ExperimentElement extends EObject
 	 * @generated
 	 */
   EList<Metrics> getMetrics();
-
-  /**
-	 * Returns the value of the '<em><b>Experiments</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.ExperimentalPlan}.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Experiments</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Experiments</em>' containment reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getExperimentElement_Experiments()
-	 * @model containment="true"
-	 * @generated
-	 */
-  EList<ExperimentalPlan> getExperiments();
 
   /**
 	 * Returns the value of the '<em><b>Questionnaire</b></em>' containment reference list.

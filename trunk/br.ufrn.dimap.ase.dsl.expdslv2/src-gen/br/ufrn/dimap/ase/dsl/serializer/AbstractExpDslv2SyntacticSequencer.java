@@ -18,50 +18,40 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ExpDslv2GrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Activity_ArtefactsKeyword_7_0_q;
-	protected AbstractElementAlias match_Activity_QuestKeyword_8_0_q;
-	protected AbstractElementAlias match_Activity_RoleKeyword_5_0_q;
-	protected AbstractElementAlias match_Activity_ToKeyword_4_0_q;
-	protected AbstractElementAlias match_Activity_VarKeyword_6_0_q;
-	protected AbstractElementAlias match_Activity___LeftCurlyBracketKeyword_9_0_RightCurlyBracketKeyword_9_2__q;
 	protected AbstractElementAlias match_DataMetric_ArtefactKeyword_2_0_q;
 	protected AbstractElementAlias match_DataMetric_QuestKeyword_3_0_q;
 	protected AbstractElementAlias match_ExperimentElement_QuestionnairesKeyword_5_0_q;
-	protected AbstractElementAlias match_ExperimentalPlan_ColonKeyword_16_1_a;
-	protected AbstractElementAlias match_ExperimentalPlan_ColonKeyword_16_1_p;
+	protected AbstractElementAlias match_ExperimentalPlan_ColonKeyword_12_1_a;
+	protected AbstractElementAlias match_ExperimentalPlan_ColonKeyword_12_1_p;
 	protected AbstractElementAlias match_Factor___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
-	protected AbstractElementAlias match_Hypotheses___LeftCurlyBracketKeyword_5_0_RightCurlyBracketKeyword_5_2__q;
 	protected AbstractElementAlias match_Process_RoleKeyword_4_0_q;
 	protected AbstractElementAlias match_Process_ToKeyword_2_0_q;
 	protected AbstractElementAlias match_Question_AlternativesKeyword_5_0_q;
 	protected AbstractElementAlias match_Questionnaire_RelatesKeyword_2_0_q;
-	protected AbstractElementAlias match_Task_ArtefactsKeyword_5_0_q;
-	protected AbstractElementAlias match_Task_QuestKeyword_6_0_q;
-	protected AbstractElementAlias match_Task_VarKeyword_4_0_q;
+	protected AbstractElementAlias match_Task_ArtefactsKeyword_8_0_q;
+	protected AbstractElementAlias match_Task_QuestKeyword_9_0_q;
+	protected AbstractElementAlias match_Task_RoleKeyword_5_0_q;
+	protected AbstractElementAlias match_Task_ToKeyword_4_0_q;
+	protected AbstractElementAlias match_Task_VarKeyword_7_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ExpDslv2GrammarAccess) access;
-		match_Activity_ArtefactsKeyword_7_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getArtefactsKeyword_7_0());
-		match_Activity_QuestKeyword_8_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getQuestKeyword_8_0());
-		match_Activity_RoleKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getRoleKeyword_5_0());
-		match_Activity_ToKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getToKeyword_4_0());
-		match_Activity_VarKeyword_6_0_q = new TokenAlias(true, false, grammarAccess.getActivityAccess().getVarKeyword_6_0());
-		match_Activity___LeftCurlyBracketKeyword_9_0_RightCurlyBracketKeyword_9_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_9_2()));
 		match_DataMetric_ArtefactKeyword_2_0_q = new TokenAlias(true, false, grammarAccess.getDataMetricAccess().getArtefactKeyword_2_0());
 		match_DataMetric_QuestKeyword_3_0_q = new TokenAlias(true, false, grammarAccess.getDataMetricAccess().getQuestKeyword_3_0());
 		match_ExperimentElement_QuestionnairesKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getExperimentElementAccess().getQuestionnairesKeyword_5_0());
-		match_ExperimentalPlan_ColonKeyword_16_1_a = new TokenAlias(true, true, grammarAccess.getExperimentalPlanAccess().getColonKeyword_16_1());
-		match_ExperimentalPlan_ColonKeyword_16_1_p = new TokenAlias(false, true, grammarAccess.getExperimentalPlanAccess().getColonKeyword_16_1());
+		match_ExperimentalPlan_ColonKeyword_12_1_a = new TokenAlias(true, true, grammarAccess.getExperimentalPlanAccess().getColonKeyword_12_1());
+		match_ExperimentalPlan_ColonKeyword_12_1_p = new TokenAlias(false, true, grammarAccess.getExperimentalPlanAccess().getColonKeyword_12_1());
 		match_Factor___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getRightCurlyBracketKeyword_4_2()));
-		match_Hypotheses___LeftCurlyBracketKeyword_5_0_RightCurlyBracketKeyword_5_2__q = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getHypothesesAccess().getLeftCurlyBracketKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getHypothesesAccess().getRightCurlyBracketKeyword_5_2()));
 		match_Process_RoleKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getProcessAccess().getRoleKeyword_4_0());
 		match_Process_ToKeyword_2_0_q = new TokenAlias(true, false, grammarAccess.getProcessAccess().getToKeyword_2_0());
 		match_Question_AlternativesKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getQuestionAccess().getAlternativesKeyword_5_0());
 		match_Questionnaire_RelatesKeyword_2_0_q = new TokenAlias(true, false, grammarAccess.getQuestionnaireAccess().getRelatesKeyword_2_0());
-		match_Task_ArtefactsKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getArtefactsKeyword_5_0());
-		match_Task_QuestKeyword_6_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getQuestKeyword_6_0());
-		match_Task_VarKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getVarKeyword_4_0());
+		match_Task_ArtefactsKeyword_8_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getArtefactsKeyword_8_0());
+		match_Task_QuestKeyword_9_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getQuestKeyword_9_0());
+		match_Task_RoleKeyword_5_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getRoleKeyword_5_0());
+		match_Task_ToKeyword_4_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getToKeyword_4_0());
+		match_Task_VarKeyword_7_0_q = new TokenAlias(true, false, grammarAccess.getTaskAccess().getVarKeyword_7_0());
 	}
 	
 	@Override
@@ -76,32 +66,18 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Activity_ArtefactsKeyword_7_0_q.equals(syntax))
-				emit_Activity_ArtefactsKeyword_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity_QuestKeyword_8_0_q.equals(syntax))
-				emit_Activity_QuestKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity_RoleKeyword_5_0_q.equals(syntax))
-				emit_Activity_RoleKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity_ToKeyword_4_0_q.equals(syntax))
-				emit_Activity_ToKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity_VarKeyword_6_0_q.equals(syntax))
-				emit_Activity_VarKeyword_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Activity___LeftCurlyBracketKeyword_9_0_RightCurlyBracketKeyword_9_2__q.equals(syntax))
-				emit_Activity___LeftCurlyBracketKeyword_9_0_RightCurlyBracketKeyword_9_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_DataMetric_ArtefactKeyword_2_0_q.equals(syntax))
+			if(match_DataMetric_ArtefactKeyword_2_0_q.equals(syntax))
 				emit_DataMetric_ArtefactKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_DataMetric_QuestKeyword_3_0_q.equals(syntax))
 				emit_DataMetric_QuestKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ExperimentElement_QuestionnairesKeyword_5_0_q.equals(syntax))
 				emit_ExperimentElement_QuestionnairesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ExperimentalPlan_ColonKeyword_16_1_a.equals(syntax))
-				emit_ExperimentalPlan_ColonKeyword_16_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ExperimentalPlan_ColonKeyword_16_1_p.equals(syntax))
-				emit_ExperimentalPlan_ColonKeyword_16_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ExperimentalPlan_ColonKeyword_12_1_a.equals(syntax))
+				emit_ExperimentalPlan_ColonKeyword_12_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ExperimentalPlan_ColonKeyword_12_1_p.equals(syntax))
+				emit_ExperimentalPlan_ColonKeyword_12_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Factor___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_Factor___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Hypotheses___LeftCurlyBracketKeyword_5_0_RightCurlyBracketKeyword_5_2__q.equals(syntax))
-				emit_Hypotheses___LeftCurlyBracketKeyword_5_0_RightCurlyBracketKeyword_5_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Process_RoleKeyword_4_0_q.equals(syntax))
 				emit_Process_RoleKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Process_ToKeyword_2_0_q.equals(syntax))
@@ -110,64 +86,20 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 				emit_Question_AlternativesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Questionnaire_RelatesKeyword_2_0_q.equals(syntax))
 				emit_Questionnaire_RelatesKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Task_ArtefactsKeyword_5_0_q.equals(syntax))
-				emit_Task_ArtefactsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Task_QuestKeyword_6_0_q.equals(syntax))
-				emit_Task_QuestKeyword_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Task_VarKeyword_4_0_q.equals(syntax))
-				emit_Task_VarKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Task_ArtefactsKeyword_8_0_q.equals(syntax))
+				emit_Task_ArtefactsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Task_QuestKeyword_9_0_q.equals(syntax))
+				emit_Task_QuestKeyword_9_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Task_RoleKeyword_5_0_q.equals(syntax))
+				emit_Task_RoleKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Task_ToKeyword_4_0_q.equals(syntax))
+				emit_Task_ToKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Task_VarKeyword_7_0_q.equals(syntax))
+				emit_Task_VarKeyword_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Syntax:
-	 *     'artefacts'?
-	 */
-	protected void emit_Activity_ArtefactsKeyword_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'quest'?
-	 */
-	protected void emit_Activity_QuestKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'Role'?
-	 */
-	protected void emit_Activity_RoleKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'to'?
-	 */
-	protected void emit_Activity_ToKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'var'?
-	 */
-	protected void emit_Activity_VarKeyword_6_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('{' '}')?
-	 */
-	protected void emit_Activity___LeftCurlyBracketKeyword_9_0_RightCurlyBracketKeyword_9_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Syntax:
 	 *     'artefact'?
@@ -196,7 +128,7 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 	 * Syntax:
 	 *     ':'*
 	 */
-	protected void emit_ExperimentalPlan_ColonKeyword_16_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ExperimentalPlan_ColonKeyword_12_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -204,7 +136,7 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 	 * Syntax:
 	 *     ':'+
 	 */
-	protected void emit_ExperimentalPlan_ColonKeyword_16_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ExperimentalPlan_ColonKeyword_12_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -213,14 +145,6 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 	 *     ('{' '}')?
 	 */
 	protected void emit_Factor___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('{' '}')?
-	 */
-	protected void emit_Hypotheses___LeftCurlyBracketKeyword_5_0_RightCurlyBracketKeyword_5_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -260,7 +184,7 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 	 * Syntax:
 	 *     'artefacts'?
 	 */
-	protected void emit_Task_ArtefactsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Task_ArtefactsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -268,7 +192,23 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 	 * Syntax:
 	 *     'quest'?
 	 */
-	protected void emit_Task_QuestKeyword_6_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Task_QuestKeyword_9_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'Role'?
+	 */
+	protected void emit_Task_RoleKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'to'?
+	 */
+	protected void emit_Task_ToKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -276,7 +216,7 @@ public class AbstractExpDslv2SyntacticSequencer extends AbstractSyntacticSequenc
 	 * Syntax:
 	 *     'var'?
 	 */
-	protected void emit_Task_VarKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Task_VarKeyword_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

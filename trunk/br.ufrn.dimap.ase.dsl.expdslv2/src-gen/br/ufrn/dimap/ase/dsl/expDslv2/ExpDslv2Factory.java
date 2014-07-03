@@ -45,6 +45,69 @@ public interface ExpDslv2Factory extends EFactory
   ExperimentElement createExperimentElement();
 
   /**
+	 * Returns a new object of class '<em>Experimental Plan</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Experimental Plan</em>'.
+	 * @generated
+	 */
+  ExperimentalPlan createExperimentalPlan();
+
+  /**
+	 * Returns a new object of class '<em>Goal</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Goal</em>'.
+	 * @generated
+	 */
+  Goal createGoal();
+
+  /**
+	 * Returns a new object of class '<em>Hypotheses</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hypotheses</em>'.
+	 * @generated
+	 */
+  Hypotheses createHypotheses();
+
+  /**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+  Parameter createParameter();
+
+  /**
+	 * Returns a new object of class '<em>Dependent Variable</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dependent Variable</em>'.
+	 * @generated
+	 */
+  DependentVariable createDependentVariable();
+
+  /**
+	 * Returns a new object of class '<em>Factor</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Factor</em>'.
+	 * @generated
+	 */
+  Factor createFactor();
+
+  /**
+	 * Returns a new object of class '<em>Levels</em>'.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Levels</em>'.
+	 * @generated
+	 */
+  Levels createLevels();
+
+  /**
 	 * Returns a new object of class '<em>Process</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -52,15 +115,6 @@ public interface ExpDslv2Factory extends EFactory
 	 * @generated
 	 */
   Process createProcess();
-
-  /**
-	 * Returns a new object of class '<em>Activity</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Activity</em>'.
-	 * @generated
-	 */
-  Activity createActivity();
 
   /**
 	 * Returns a new object of class '<em>Task</em>'.
@@ -99,24 +153,6 @@ public interface ExpDslv2Factory extends EFactory
   Detail createDetail();
 
   /**
-	 * Returns a new object of class '<em>Time Metric</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Time Metric</em>'.
-	 * @generated
-	 */
-  TimeMetric createTimeMetric();
-
-  /**
-	 * Returns a new object of class '<em>Activity Metric</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Activity Metric</em>'.
-	 * @generated
-	 */
-  ActivityMetric createActivityMetric();
-
-  /**
 	 * Returns a new object of class '<em>Task Metric</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -142,78 +178,6 @@ public interface ExpDslv2Factory extends EFactory
 	 * @generated
 	 */
   CollectedData createCollectedData();
-
-  /**
-	 * Returns a new object of class '<em>Experimental Plan</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Experimental Plan</em>'.
-	 * @generated
-	 */
-  ExperimentalPlan createExperimentalPlan();
-
-  /**
-	 * Returns a new object of class '<em>Goal</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Goal</em>'.
-	 * @generated
-	 */
-  Goal createGoal();
-
-  /**
-	 * Returns a new object of class '<em>Hypotheses</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hypotheses</em>'.
-	 * @generated
-	 */
-  Hypotheses createHypotheses();
-
-  /**
-	 * Returns a new object of class '<em>Subhypotheses</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Subhypotheses</em>'.
-	 * @generated
-	 */
-  Subhypotheses createSubhypotheses();
-
-  /**
-	 * Returns a new object of class '<em>Parameter</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter</em>'.
-	 * @generated
-	 */
-  Parameter createParameter();
-
-  /**
-	 * Returns a new object of class '<em>Dependent Variable</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dependent Variable</em>'.
-	 * @generated
-	 */
-  DependentVariable createDependentVariable();
-
-  /**
-	 * Returns a new object of class '<em>Factor</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Factor</em>'.
-	 * @generated
-	 */
-  Factor createFactor();
-
-  /**
-	 * Returns a new object of class '<em>Levels</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Levels</em>'.
-	 * @generated
-	 */
-  Levels createLevels();
 
   /**
 	 * Returns a new object of class '<em>Questionnaire</em>'.

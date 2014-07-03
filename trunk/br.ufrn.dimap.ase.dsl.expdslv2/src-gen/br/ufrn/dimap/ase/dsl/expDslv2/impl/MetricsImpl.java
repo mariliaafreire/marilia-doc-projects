@@ -10,21 +10,14 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Detail;
 import br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package;
 import br.ufrn.dimap.ase.dsl.expDslv2.Metrics;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,14 +88,14 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getDetail() <em>Detail</em>}' containment reference list.
+	 * The cached value of the '{@link #getDetail() <em>Detail</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getDetail()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Detail> detail;
+  protected Detail detail;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -217,12 +210,45 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Detail> getDetail()
+  public Detail getDetail()
   {
-		if (detail == null) {
-			detail = new EObjectContainmentEList<Detail>(Detail.class, this, ExpDslv2Package.METRICS__DETAIL);
-		}
 		return detail;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public NotificationChain basicSetDetail(Detail newDetail, NotificationChain msgs)
+  {
+		Detail oldDetail = detail;
+		detail = newDetail;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpDslv2Package.METRICS__DETAIL, oldDetail, newDetail);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setDetail(Detail newDetail)
+  {
+		if (newDetail != detail) {
+			NotificationChain msgs = null;
+			if (detail != null)
+				msgs = ((InternalEObject)detail).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpDslv2Package.METRICS__DETAIL, null, msgs);
+			if (newDetail != null)
+				msgs = ((InternalEObject)newDetail).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpDslv2Package.METRICS__DETAIL, null, msgs);
+			msgs = basicSetDetail(newDetail, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDslv2Package.METRICS__DETAIL, newDetail, newDetail));
 	}
 
   /**
@@ -235,7 +261,7 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
   {
 		switch (featureID) {
 			case ExpDslv2Package.METRICS__DETAIL:
-				return ((InternalEList<?>)getDetail()).basicRemove(otherEnd, msgs);
+				return basicSetDetail(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -267,7 +293,6 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -282,8 +307,7 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
 				setDescription((String)newValue);
 				return;
 			case ExpDslv2Package.METRICS__DETAIL:
-				getDetail().clear();
-				getDetail().addAll((Collection<? extends Detail>)newValue);
+				setDetail((Detail)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,7 +332,7 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case ExpDslv2Package.METRICS__DETAIL:
-				getDetail().clear();
+				setDetail((Detail)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -330,7 +354,7 @@ public class MetricsImpl extends MinimalEObjectImpl.Container implements Metrics
 			case ExpDslv2Package.METRICS__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ExpDslv2Package.METRICS__DETAIL:
-				return detail != null && !detail.isEmpty();
+				return detail != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,8 +6,6 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2.util;
 
-import br.ufrn.dimap.ase.dsl.expDslv2.Activity;
-import br.ufrn.dimap.ase.dsl.expDslv2.ActivityMetric;
 import br.ufrn.dimap.ase.dsl.expDslv2.Alternatives;
 import br.ufrn.dimap.ase.dsl.expDslv2.Artefact;
 import br.ufrn.dimap.ase.dsl.expDslv2.CollectedData;
@@ -26,10 +24,8 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Model;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
 import br.ufrn.dimap.ase.dsl.expDslv2.Question;
 import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
-import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
-import br.ufrn.dimap.ase.dsl.expDslv2.TimeMetric;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -109,15 +105,51 @@ public class ExpDslv2Switch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpDslv2Package.PROCESS: {
-				br.ufrn.dimap.ase.dsl.expDslv2.Process process = (br.ufrn.dimap.ase.dsl.expDslv2.Process)theEObject;
-				T result = caseProcess(process);
+			case ExpDslv2Package.EXPERIMENTAL_PLAN: {
+				ExperimentalPlan experimentalPlan = (ExperimentalPlan)theEObject;
+				T result = caseExperimentalPlan(experimentalPlan);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpDslv2Package.ACTIVITY: {
-				Activity activity = (Activity)theEObject;
-				T result = caseActivity(activity);
+			case ExpDslv2Package.GOAL: {
+				Goal goal = (Goal)theEObject;
+				T result = caseGoal(goal);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpDslv2Package.HYPOTHESES: {
+				Hypotheses hypotheses = (Hypotheses)theEObject;
+				T result = caseHypotheses(hypotheses);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpDslv2Package.PARAMETER: {
+				Parameter parameter = (Parameter)theEObject;
+				T result = caseParameter(parameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpDslv2Package.DEPENDENT_VARIABLE: {
+				DependentVariable dependentVariable = (DependentVariable)theEObject;
+				T result = caseDependentVariable(dependentVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpDslv2Package.FACTOR: {
+				Factor factor = (Factor)theEObject;
+				T result = caseFactor(factor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpDslv2Package.LEVELS: {
+				Levels levels = (Levels)theEObject;
+				T result = caseLevels(levels);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpDslv2Package.PROCESS: {
+				br.ufrn.dimap.ase.dsl.expDslv2.Process process = (br.ufrn.dimap.ase.dsl.expDslv2.Process)theEObject;
+				T result = caseProcess(process);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -145,25 +177,9 @@ public class ExpDslv2Switch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpDslv2Package.TIME_METRIC: {
-				TimeMetric timeMetric = (TimeMetric)theEObject;
-				T result = caseTimeMetric(timeMetric);
-				if (result == null) result = caseDetail(timeMetric);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.ACTIVITY_METRIC: {
-				ActivityMetric activityMetric = (ActivityMetric)theEObject;
-				T result = caseActivityMetric(activityMetric);
-				if (result == null) result = caseTimeMetric(activityMetric);
-				if (result == null) result = caseDetail(activityMetric);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExpDslv2Package.TASK_METRIC: {
 				TaskMetric taskMetric = (TaskMetric)theEObject;
 				T result = caseTaskMetric(taskMetric);
-				if (result == null) result = caseTimeMetric(taskMetric);
 				if (result == null) result = caseDetail(taskMetric);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -178,54 +194,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 			case ExpDslv2Package.COLLECTED_DATA: {
 				CollectedData collectedData = (CollectedData)theEObject;
 				T result = caseCollectedData(collectedData);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.EXPERIMENTAL_PLAN: {
-				ExperimentalPlan experimentalPlan = (ExperimentalPlan)theEObject;
-				T result = caseExperimentalPlan(experimentalPlan);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.GOAL: {
-				Goal goal = (Goal)theEObject;
-				T result = caseGoal(goal);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.HYPOTHESES: {
-				Hypotheses hypotheses = (Hypotheses)theEObject;
-				T result = caseHypotheses(hypotheses);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.SUBHYPOTHESES: {
-				Subhypotheses subhypotheses = (Subhypotheses)theEObject;
-				T result = caseSubhypotheses(subhypotheses);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.PARAMETER: {
-				Parameter parameter = (Parameter)theEObject;
-				T result = caseParameter(parameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.DEPENDENT_VARIABLE: {
-				DependentVariable dependentVariable = (DependentVariable)theEObject;
-				T result = caseDependentVariable(dependentVariable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.FACTOR: {
-				Factor factor = (Factor)theEObject;
-				T result = caseFactor(factor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExpDslv2Package.LEVELS: {
-				Levels levels = (Levels)theEObject;
-				T result = caseLevels(levels);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -284,6 +252,118 @@ public class ExpDslv2Switch<T> extends Switch<T>
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Experimental Plan</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Experimental Plan</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseExperimentalPlan(ExperimentalPlan object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Goal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseGoal(Goal object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Hypotheses</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hypotheses</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseHypotheses(Hypotheses object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseParameter(Parameter object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Dependent Variable</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dependent Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseDependentVariable(DependentVariable object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Factor</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Factor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseFactor(Factor object)
+  {
+		return null;
+	}
+
+  /**
+	 * Returns the result of interpreting the object as an instance of '<em>Levels</em>'.
+	 * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Levels</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+  public T caseLevels(Levels object)
+  {
+		return null;
+	}
+
+  /**
 	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -295,22 +375,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseProcess(br.ufrn.dimap.ase.dsl.expDslv2.Process object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Activity</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Activity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseActivity(Activity object)
   {
 		return null;
 	}
@@ -380,38 +444,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Time Metric</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Time Metric</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseTimeMetric(TimeMetric object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Activity Metric</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Activity Metric</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseActivityMetric(ActivityMetric object)
-  {
-		return null;
-	}
-
-  /**
 	 * Returns the result of interpreting the object as an instance of '<em>Task Metric</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -455,134 +487,6 @@ public class ExpDslv2Switch<T> extends Switch<T>
 	 * @generated
 	 */
   public T caseCollectedData(CollectedData object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Experimental Plan</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Experimental Plan</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseExperimentalPlan(ExperimentalPlan object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Goal</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseGoal(Goal object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Hypotheses</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hypotheses</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseHypotheses(Hypotheses object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Subhypotheses</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Subhypotheses</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseSubhypotheses(Subhypotheses object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseParameter(Parameter object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Dependent Variable</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dependent Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseDependentVariable(DependentVariable object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Factor</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Factor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseFactor(Factor object)
-  {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Levels</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Levels</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseLevels(Levels object)
   {
 		return null;
 	}

@@ -6,8 +6,6 @@
  */
 package br.ufrn.dimap.ase.dsl.expDslv2.impl;
 
-import br.ufrn.dimap.ase.dsl.expDslv2.Activity;
-import br.ufrn.dimap.ase.dsl.expDslv2.ActivityMetric;
 import br.ufrn.dimap.ase.dsl.expDslv2.Alternatives;
 import br.ufrn.dimap.ase.dsl.expDslv2.AnalysisTechiqueType;
 import br.ufrn.dimap.ase.dsl.expDslv2.AnswerType;
@@ -37,10 +35,8 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Questionnaire;
 import br.ufrn.dimap.ase.dsl.expDslv2.QuestionnaireType;
 import br.ufrn.dimap.ase.dsl.expDslv2.RelationType;
 import br.ufrn.dimap.ase.dsl.expDslv2.RoleType;
-import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
-import br.ufrn.dimap.ase.dsl.expDslv2.TimeMetric;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -77,83 +73,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private EClass processEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass activityEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass taskEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass artefactEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass metricsEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass detailEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass timeMetricEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass activityMetricEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass taskMetricEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass dataMetricEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass collectedDataEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   private EClass experimentalPlanEClass = null;
 
   /**
@@ -169,13 +88,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 * @generated
 	 */
   private EClass hypothesesEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass subhypothesesEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -210,6 +122,62 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  private EClass processEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass taskEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass artefactEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass metricsEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass detailEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass taskMetricEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass dataMetricEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EClass collectedDataEClass = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   private EClass questionnaireEClass = null;
 
   /**
@@ -225,27 +193,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 * @generated
 	 */
   private EClass alternativesEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EEnum roleTypeEEnum = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EEnum artefactTypeEEnum = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EEnum dataTypeEEnum = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -281,6 +228,27 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 * @generated
 	 */
   private EEnum analysisTechiqueTypeEEnum = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EEnum roleTypeEEnum = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EEnum artefactTypeEEnum = null;
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  private EEnum dataTypeEEnum = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -404,7 +372,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getExperimentElement_Process()
+  public EReference getExperimentElement_Experiments()
   {
 		return (EReference)experimentElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -414,7 +382,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getExperimentElement_Metrics()
+  public EReference getExperimentElement_Process()
   {
 		return (EReference)experimentElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -424,7 +392,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getExperimentElement_Experiments()
+  public EReference getExperimentElement_Metrics()
   {
 		return (EReference)experimentElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -437,436 +405,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
   public EReference getExperimentElement_Questionnaire()
   {
 		return (EReference)experimentElementEClass.getEStructuralFeatures().get(4);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getProcess()
-  {
-		return processEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getProcess_Name()
-  {
-		return (EAttribute)processEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getProcess_Treatment()
-  {
-		return (EReference)processEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getProcess_Role()
-  {
-		return (EAttribute)processEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getProcess_Activities()
-  {
-		return (EReference)processEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getActivity()
-  {
-		return activityEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getActivity_Name()
-  {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getActivity_Description()
-  {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivity_Next()
-  {
-		return (EReference)activityEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getActivity_Role()
-  {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivity_CollectData()
-  {
-		return (EReference)activityEClass.getEStructuralFeatures().get(4);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivity_Artefacts()
-  {
-		return (EReference)activityEClass.getEStructuralFeatures().get(5);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivity_Questionnaire()
-  {
-		return (EReference)activityEClass.getEStructuralFeatures().get(6);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivity_Tasks()
-  {
-		return (EReference)activityEClass.getEStructuralFeatures().get(7);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getTask()
-  {
-		return taskEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getTask_Name()
-  {
-		return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getTask_Description()
-  {
-		return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getTask_Var()
-  {
-		return (EReference)taskEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getTask_Artefacts()
-  {
-		return (EReference)taskEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getTask_Questionnaire()
-  {
-		return (EReference)taskEClass.getEStructuralFeatures().get(4);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getArtefact()
-  {
-		return artefactEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getArtefact_Name()
-  {
-		return (EAttribute)artefactEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getArtefact_Description()
-  {
-		return (EAttribute)artefactEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getArtefact_Type()
-  {
-		return (EAttribute)artefactEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getMetrics()
-  {
-		return metricsEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getMetrics_Name()
-  {
-		return (EAttribute)metricsEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getMetrics_RelatesTo()
-  {
-		return (EReference)metricsEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getMetrics_Description()
-  {
-		return (EAttribute)metricsEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getMetrics_Detail()
-  {
-		return (EReference)metricsEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getDetail()
-  {
-		return detailEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getTimeMetric()
-  {
-		return timeMetricEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getActivityMetric()
-  {
-		return activityMetricEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivityMetric_ActivityBegin()
-  {
-		return (EReference)activityMetricEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getActivityMetric_ActivityEnd()
-  {
-		return (EReference)activityMetricEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getTaskMetric()
-  {
-		return taskMetricEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getTaskMetric_Tasks()
-  {
-		return (EReference)taskMetricEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getDataMetric()
-  {
-		return dataMetricEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getDataMetric_CollectedData()
-  {
-		return (EReference)dataMetricEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getDataMetric_DataType()
-  {
-		return (EAttribute)dataMetricEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getDataMetric_Artefacts()
-  {
-		return (EReference)dataMetricEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getDataMetric_Questionnaires()
-  {
-		return (EReference)dataMetricEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getCollectedData()
-  {
-		return collectedDataEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getCollectedData_Name()
-  {
-		return (EAttribute)collectedDataEClass.getEStructuralFeatures().get(0);
 	}
 
   /**
@@ -894,19 +432,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getExperimentalPlan_Hypotheses()
-  {
-		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EAttribute getExperimentalPlan_Type()
   {
-		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(1);
 	}
 
   /**
@@ -916,7 +444,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 */
   public EReference getExperimentalPlan_Parameter()
   {
-		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(3);
+		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(2);
 	}
 
   /**
@@ -926,7 +454,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 */
   public EReference getExperimentalPlan_DependentVariable()
   {
-		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(4);
+		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(3);
 	}
 
   /**
@@ -936,7 +464,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 */
   public EReference getExperimentalPlan_Factor()
   {
-		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(5);
+		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(4);
 	}
 
   /**
@@ -944,9 +472,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getExperimentalPlan_Tosubhypotheses()
+  public EReference getExperimentalPlan_Tohypotheses()
   {
-		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(6);
+		return (EReference)experimentalPlanEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -956,7 +484,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 */
   public EAttribute getExperimentalPlan_Technique()
   {
-		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(6);
 	}
 
   /**
@@ -966,7 +494,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 	 */
   public EAttribute getExperimentalPlan_InternalReplication()
   {
-		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)experimentalPlanEClass.getEStructuralFeatures().get(7);
 	}
 
   /**
@@ -997,6 +525,16 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
   public EAttribute getGoal_Description()
   {
 		return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getGoal_Hypotheses()
+  {
+		return (EReference)goalEClass.getEStructuralFeatures().get(2);
 	}
 
   /**
@@ -1044,7 +582,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getHypotheses_FromGoal()
+  public EReference getHypotheses_DependentVariable()
   {
 		return (EReference)hypothesesEClass.getEStructuralFeatures().get(3);
 	}
@@ -1054,7 +592,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getHypotheses_Subhypotheses()
+  public EReference getHypotheses_Levels()
   {
 		return (EReference)hypothesesEClass.getEStructuralFeatures().get(4);
 	}
@@ -1064,9 +602,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EClass getSubhypotheses()
+  public EAttribute getHypotheses_Operator()
   {
-		return subhypothesesEClass;
+		return (EAttribute)hypothesesEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -1074,9 +612,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getSubhypotheses_Name()
+  public EAttribute getHypotheses_Relation()
   {
-		return (EAttribute)subhypothesesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)hypothesesEClass.getEStructuralFeatures().get(6);
 	}
 
   /**
@@ -1084,49 +622,9 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EReference getSubhypotheses_DependentVariable()
+  public EReference getHypotheses_Factor()
   {
-		return (EReference)subhypothesesEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getSubhypotheses_Levels()
-  {
-		return (EReference)subhypothesesEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getSubhypotheses_Operator()
-  {
-		return (EAttribute)subhypothesesEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getSubhypotheses_Relation()
-  {
-		return (EAttribute)subhypothesesEClass.getEStructuralFeatures().get(4);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getSubhypotheses_Factor()
-  {
-		return (EReference)subhypothesesEClass.getEStructuralFeatures().get(5);
+		return (EReference)hypothesesEClass.getEStructuralFeatures().get(7);
 	}
 
   /**
@@ -1264,6 +762,336 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EClass getProcess()
+  {
+		return processEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getProcess_Name()
+  {
+		return (EAttribute)processEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getProcess_Treatment()
+  {
+		return (EReference)processEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getProcess_Role()
+  {
+		return (EAttribute)processEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getProcess_Task()
+  {
+		return (EReference)processEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getTask()
+  {
+		return taskEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTask_Name()
+  {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTask_Description()
+  {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTask_Next()
+  {
+		return (EReference)taskEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getTask_Role()
+  {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTask_CollectData()
+  {
+		return (EReference)taskEClass.getEStructuralFeatures().get(4);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTask_Artefacts()
+  {
+		return (EReference)taskEClass.getEStructuralFeatures().get(5);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTask_Questionnaire()
+  {
+		return (EReference)taskEClass.getEStructuralFeatures().get(6);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getArtefact()
+  {
+		return artefactEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getArtefact_Name()
+  {
+		return (EAttribute)artefactEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getArtefact_Description()
+  {
+		return (EAttribute)artefactEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getArtefact_Type()
+  {
+		return (EAttribute)artefactEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getMetrics()
+  {
+		return metricsEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getMetrics_Name()
+  {
+		return (EAttribute)metricsEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getMetrics_RelatesTo()
+  {
+		return (EReference)metricsEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getMetrics_Description()
+  {
+		return (EAttribute)metricsEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getMetrics_Detail()
+  {
+		return (EReference)metricsEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getDetail()
+  {
+		return detailEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getTaskMetric()
+  {
+		return taskMetricEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTaskMetric_TaskBegin()
+  {
+		return (EReference)taskMetricEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getTaskMetric_TaskEnd()
+  {
+		return (EReference)taskMetricEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getDataMetric()
+  {
+		return dataMetricEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getDataMetric_CollectedData()
+  {
+		return (EReference)dataMetricEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getDataMetric_DataType()
+  {
+		return (EAttribute)dataMetricEClass.getEStructuralFeatures().get(1);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getDataMetric_Artefacts()
+  {
+		return (EReference)dataMetricEClass.getEStructuralFeatures().get(2);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EReference getDataMetric_Questionnaires()
+  {
+		return (EReference)dataMetricEClass.getEStructuralFeatures().get(3);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EClass getCollectedData()
+  {
+		return collectedDataEClass;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EAttribute getCollectedData_Name()
+  {
+		return (EAttribute)collectedDataEClass.getEStructuralFeatures().get(0);
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EClass getQuestionnaire()
   {
 		return questionnaireEClass;
@@ -1394,36 +1222,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EEnum getRoleType()
-  {
-		return roleTypeEEnum;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EEnum getArtefactType()
-  {
-		return artefactTypeEEnum;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EEnum getDataType()
-  {
-		return dataTypeEEnum;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EEnum getRelationType()
   {
 		return relationTypeEEnum;
@@ -1467,6 +1265,36 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
   public EEnum getAnalysisTechiqueType()
   {
 		return analysisTechiqueTypeEEnum;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EEnum getRoleType()
+  {
+		return roleTypeEEnum;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EEnum getArtefactType()
+  {
+		return artefactTypeEEnum;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public EEnum getDataType()
+  {
+		return dataTypeEEnum;
 	}
 
   /**
@@ -1524,94 +1352,35 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 
 		experimentElementEClass = createEClass(EXPERIMENT_ELEMENT);
 		createEAttribute(experimentElementEClass, EXPERIMENT_ELEMENT__NAME);
+		createEReference(experimentElementEClass, EXPERIMENT_ELEMENT__EXPERIMENTS);
 		createEReference(experimentElementEClass, EXPERIMENT_ELEMENT__PROCESS);
 		createEReference(experimentElementEClass, EXPERIMENT_ELEMENT__METRICS);
-		createEReference(experimentElementEClass, EXPERIMENT_ELEMENT__EXPERIMENTS);
 		createEReference(experimentElementEClass, EXPERIMENT_ELEMENT__QUESTIONNAIRE);
-
-		processEClass = createEClass(PROCESS);
-		createEAttribute(processEClass, PROCESS__NAME);
-		createEReference(processEClass, PROCESS__TREATMENT);
-		createEAttribute(processEClass, PROCESS__ROLE);
-		createEReference(processEClass, PROCESS__ACTIVITIES);
-
-		activityEClass = createEClass(ACTIVITY);
-		createEAttribute(activityEClass, ACTIVITY__NAME);
-		createEAttribute(activityEClass, ACTIVITY__DESCRIPTION);
-		createEReference(activityEClass, ACTIVITY__NEXT);
-		createEAttribute(activityEClass, ACTIVITY__ROLE);
-		createEReference(activityEClass, ACTIVITY__COLLECT_DATA);
-		createEReference(activityEClass, ACTIVITY__ARTEFACTS);
-		createEReference(activityEClass, ACTIVITY__QUESTIONNAIRE);
-		createEReference(activityEClass, ACTIVITY__TASKS);
-
-		taskEClass = createEClass(TASK);
-		createEAttribute(taskEClass, TASK__NAME);
-		createEAttribute(taskEClass, TASK__DESCRIPTION);
-		createEReference(taskEClass, TASK__VAR);
-		createEReference(taskEClass, TASK__ARTEFACTS);
-		createEReference(taskEClass, TASK__QUESTIONNAIRE);
-
-		artefactEClass = createEClass(ARTEFACT);
-		createEAttribute(artefactEClass, ARTEFACT__NAME);
-		createEAttribute(artefactEClass, ARTEFACT__DESCRIPTION);
-		createEAttribute(artefactEClass, ARTEFACT__TYPE);
-
-		metricsEClass = createEClass(METRICS);
-		createEAttribute(metricsEClass, METRICS__NAME);
-		createEReference(metricsEClass, METRICS__RELATES_TO);
-		createEAttribute(metricsEClass, METRICS__DESCRIPTION);
-		createEReference(metricsEClass, METRICS__DETAIL);
-
-		detailEClass = createEClass(DETAIL);
-
-		timeMetricEClass = createEClass(TIME_METRIC);
-
-		activityMetricEClass = createEClass(ACTIVITY_METRIC);
-		createEReference(activityMetricEClass, ACTIVITY_METRIC__ACTIVITY_BEGIN);
-		createEReference(activityMetricEClass, ACTIVITY_METRIC__ACTIVITY_END);
-
-		taskMetricEClass = createEClass(TASK_METRIC);
-		createEReference(taskMetricEClass, TASK_METRIC__TASKS);
-
-		dataMetricEClass = createEClass(DATA_METRIC);
-		createEReference(dataMetricEClass, DATA_METRIC__COLLECTED_DATA);
-		createEAttribute(dataMetricEClass, DATA_METRIC__DATA_TYPE);
-		createEReference(dataMetricEClass, DATA_METRIC__ARTEFACTS);
-		createEReference(dataMetricEClass, DATA_METRIC__QUESTIONNAIRES);
-
-		collectedDataEClass = createEClass(COLLECTED_DATA);
-		createEAttribute(collectedDataEClass, COLLECTED_DATA__NAME);
 
 		experimentalPlanEClass = createEClass(EXPERIMENTAL_PLAN);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__GOAL);
-		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__HYPOTHESES);
 		createEAttribute(experimentalPlanEClass, EXPERIMENTAL_PLAN__TYPE);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__PARAMETER);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__DEPENDENT_VARIABLE);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__FACTOR);
-		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__TOSUBHYPOTHESES);
+		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__TOHYPOTHESES);
 		createEAttribute(experimentalPlanEClass, EXPERIMENTAL_PLAN__TECHNIQUE);
 		createEAttribute(experimentalPlanEClass, EXPERIMENTAL_PLAN__INTERNAL_REPLICATION);
 
 		goalEClass = createEClass(GOAL);
 		createEAttribute(goalEClass, GOAL__NAME);
 		createEAttribute(goalEClass, GOAL__DESCRIPTION);
+		createEReference(goalEClass, GOAL__HYPOTHESES);
 
 		hypothesesEClass = createEClass(HYPOTHESES);
 		createEAttribute(hypothesesEClass, HYPOTHESES__NAME);
 		createEAttribute(hypothesesEClass, HYPOTHESES__DESCRIPTION);
 		createEAttribute(hypothesesEClass, HYPOTHESES__TYPE);
-		createEReference(hypothesesEClass, HYPOTHESES__FROM_GOAL);
-		createEReference(hypothesesEClass, HYPOTHESES__SUBHYPOTHESES);
-
-		subhypothesesEClass = createEClass(SUBHYPOTHESES);
-		createEAttribute(subhypothesesEClass, SUBHYPOTHESES__NAME);
-		createEReference(subhypothesesEClass, SUBHYPOTHESES__DEPENDENT_VARIABLE);
-		createEReference(subhypothesesEClass, SUBHYPOTHESES__LEVELS);
-		createEAttribute(subhypothesesEClass, SUBHYPOTHESES__OPERATOR);
-		createEAttribute(subhypothesesEClass, SUBHYPOTHESES__RELATION);
-		createEReference(subhypothesesEClass, SUBHYPOTHESES__FACTOR);
+		createEReference(hypothesesEClass, HYPOTHESES__DEPENDENT_VARIABLE);
+		createEReference(hypothesesEClass, HYPOTHESES__LEVELS);
+		createEAttribute(hypothesesEClass, HYPOTHESES__OPERATOR);
+		createEAttribute(hypothesesEClass, HYPOTHESES__RELATION);
+		createEReference(hypothesesEClass, HYPOTHESES__FACTOR);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__VARIABLE);
@@ -1630,6 +1399,47 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		levelsEClass = createEClass(LEVELS);
 		createEAttribute(levelsEClass, LEVELS__NAME);
 
+		processEClass = createEClass(PROCESS);
+		createEAttribute(processEClass, PROCESS__NAME);
+		createEReference(processEClass, PROCESS__TREATMENT);
+		createEAttribute(processEClass, PROCESS__ROLE);
+		createEReference(processEClass, PROCESS__TASK);
+
+		taskEClass = createEClass(TASK);
+		createEAttribute(taskEClass, TASK__NAME);
+		createEAttribute(taskEClass, TASK__DESCRIPTION);
+		createEReference(taskEClass, TASK__NEXT);
+		createEAttribute(taskEClass, TASK__ROLE);
+		createEReference(taskEClass, TASK__COLLECT_DATA);
+		createEReference(taskEClass, TASK__ARTEFACTS);
+		createEReference(taskEClass, TASK__QUESTIONNAIRE);
+
+		artefactEClass = createEClass(ARTEFACT);
+		createEAttribute(artefactEClass, ARTEFACT__NAME);
+		createEAttribute(artefactEClass, ARTEFACT__DESCRIPTION);
+		createEAttribute(artefactEClass, ARTEFACT__TYPE);
+
+		metricsEClass = createEClass(METRICS);
+		createEAttribute(metricsEClass, METRICS__NAME);
+		createEReference(metricsEClass, METRICS__RELATES_TO);
+		createEAttribute(metricsEClass, METRICS__DESCRIPTION);
+		createEReference(metricsEClass, METRICS__DETAIL);
+
+		detailEClass = createEClass(DETAIL);
+
+		taskMetricEClass = createEClass(TASK_METRIC);
+		createEReference(taskMetricEClass, TASK_METRIC__TASK_BEGIN);
+		createEReference(taskMetricEClass, TASK_METRIC__TASK_END);
+
+		dataMetricEClass = createEClass(DATA_METRIC);
+		createEReference(dataMetricEClass, DATA_METRIC__COLLECTED_DATA);
+		createEAttribute(dataMetricEClass, DATA_METRIC__DATA_TYPE);
+		createEReference(dataMetricEClass, DATA_METRIC__ARTEFACTS);
+		createEReference(dataMetricEClass, DATA_METRIC__QUESTIONNAIRES);
+
+		collectedDataEClass = createEClass(COLLECTED_DATA);
+		createEAttribute(collectedDataEClass, COLLECTED_DATA__NAME);
+
 		questionnaireEClass = createEClass(QUESTIONNAIRE);
 		createEAttribute(questionnaireEClass, QUESTIONNAIRE__NAME);
 		createEReference(questionnaireEClass, QUESTIONNAIRE__RELATES_TO);
@@ -1647,14 +1457,14 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		createEAttribute(alternativesEClass, ALTERNATIVES__DESCRIPTION);
 
 		// Create enums
-		roleTypeEEnum = createEEnum(ROLE_TYPE);
-		artefactTypeEEnum = createEEnum(ARTEFACT_TYPE);
-		dataTypeEEnum = createEEnum(DATA_TYPE);
 		relationTypeEEnum = createEEnum(RELATION_TYPE);
 		operatorTypeEEnum = createEEnum(OPERATOR_TYPE);
 		hypothesisTypeEEnum = createEEnum(HYPOTHESIS_TYPE);
 		designTypeEEnum = createEEnum(DESIGN_TYPE);
 		analysisTechiqueTypeEEnum = createEEnum(ANALYSIS_TECHIQUE_TYPE);
+		roleTypeEEnum = createEEnum(ROLE_TYPE);
+		artefactTypeEEnum = createEEnum(ARTEFACT_TYPE);
+		dataTypeEEnum = createEEnum(DATA_TYPE);
 		questionnaireTypeEEnum = createEEnum(QUESTIONNAIRE_TYPE);
 		answerTypeEEnum = createEEnum(ANSWER_TYPE);
 	}
@@ -1688,9 +1498,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		timeMetricEClass.getESuperTypes().add(this.getDetail());
-		activityMetricEClass.getESuperTypes().add(this.getTimeMetric());
-		taskMetricEClass.getESuperTypes().add(this.getTimeMetric());
+		taskMetricEClass.getESuperTypes().add(this.getDetail());
 		dataMetricEClass.getESuperTypes().add(this.getDetail());
 
 		// Initialize classes and features; add operations and parameters
@@ -1699,94 +1507,35 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 
 		initEClass(experimentElementEClass, ExperimentElement.class, "ExperimentElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExperimentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExperimentElement_Experiments(), this.getExperimentalPlan(), null, "experiments", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentElement_Process(), this.getProcess(), null, "process", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentElement_Metrics(), this.getMetrics(), null, "metrics", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExperimentElement_Experiments(), this.getExperimentalPlan(), null, "experiments", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentElement_Questionnaire(), this.getQuestionnaire(), null, "questionnaire", null, 0, -1, ExperimentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(processEClass, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProcess_Treatment(), this.getLevels(), null, "treatment", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProcess_Role(), this.getRoleType(), "role", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProcess_Activities(), this.getActivity(), null, "activities", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActivity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivity_Description(), ecorePackage.getEString(), "description", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Next(), this.getActivity(), null, "next", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivity_Role(), this.getRoleType(), "role", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_CollectData(), this.getCollectedData(), null, "collectData", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Questionnaire(), this.getQuestionnaire(), null, "questionnaire", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTask_Description(), ecorePackage.getEString(), "description", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Var(), this.getCollectedData(), null, "var", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTask_Questionnaire(), this.getQuestionnaire(), null, "questionnaire", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(artefactEClass, Artefact.class, "Artefact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArtefact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArtefact_Description(), ecorePackage.getEString(), "description", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArtefact_Type(), this.getArtefactType(), "type", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(metricsEClass, Metrics.class, "Metrics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMetrics_Name(), ecorePackage.getEString(), "name", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMetrics_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetrics_Description(), ecorePackage.getEString(), "description", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMetrics_Detail(), this.getDetail(), null, "detail", null, 0, -1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(detailEClass, Detail.class, "Detail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(timeMetricEClass, TimeMetric.class, "TimeMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(activityMetricEClass, ActivityMetric.class, "ActivityMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivityMetric_ActivityBegin(), this.getActivity(), null, "activityBegin", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivityMetric_ActivityEnd(), this.getActivity(), null, "activityEnd", null, 0, 1, ActivityMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(taskMetricEClass, TaskMetric.class, "TaskMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTaskMetric_Tasks(), this.getTask(), null, "tasks", null, 0, -1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataMetricEClass, DataMetric.class, "DataMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataMetric_CollectedData(), this.getCollectedData(), null, "collectedData", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataMetric_DataType(), this.getDataType(), "dataType", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataMetric_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataMetric_Questionnaires(), this.getQuestionnaire(), null, "questionnaires", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(collectedDataEClass, CollectedData.class, "CollectedData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCollectedData_Name(), ecorePackage.getEString(), "name", null, 0, 1, CollectedData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(experimentalPlanEClass, ExperimentalPlan.class, "ExperimentalPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExperimentalPlan_Goal(), this.getGoal(), null, "goal", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExperimentalPlan_Hypotheses(), this.getHypotheses(), null, "hypotheses", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExperimentalPlan_Type(), this.getDesignType(), "type", null, 0, 1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentalPlan_Parameter(), this.getParameter(), null, "parameter", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentalPlan_DependentVariable(), this.getDependentVariable(), null, "dependentVariable", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentalPlan_Factor(), this.getFactor(), null, "factor", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExperimentalPlan_Tosubhypotheses(), this.getSubhypotheses(), null, "tosubhypotheses", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExperimentalPlan_Tohypotheses(), this.getHypotheses(), null, "tohypotheses", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExperimentalPlan_Technique(), this.getAnalysisTechiqueType(), "Technique", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExperimentalPlan_InternalReplication(), ecorePackage.getEInt(), "internalReplication", null, 0, 1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoal_Description(), ecorePackage.getEString(), "description", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoal_Hypotheses(), this.getHypotheses(), null, "hypotheses", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hypothesesEClass, Hypotheses.class, "Hypotheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHypotheses_Name(), ecorePackage.getEString(), "name", null, 0, 1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHypotheses_Description(), ecorePackage.getEString(), "description", null, 0, 1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHypotheses_Type(), this.getHypothesisType(), "type", null, 0, 1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHypotheses_FromGoal(), this.getGoal(), null, "fromGoal", null, 0, 1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHypotheses_Subhypotheses(), this.getSubhypotheses(), null, "subhypotheses", null, 0, -1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(subhypothesesEClass, Subhypotheses.class, "Subhypotheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSubhypotheses_Name(), ecorePackage.getEString(), "name", null, 0, 1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubhypotheses_DependentVariable(), this.getDependentVariable(), null, "dependentVariable", null, 0, -1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubhypotheses_Levels(), this.getLevels(), null, "levels", null, 0, -1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubhypotheses_Operator(), this.getOperatorType(), "operator", null, 0, 1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSubhypotheses_Relation(), this.getRelationType(), "relation", null, 0, 1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubhypotheses_Factor(), this.getFactor(), null, "factor", null, 0, -1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHypotheses_DependentVariable(), this.getDependentVariable(), null, "dependentVariable", null, 0, -1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHypotheses_Levels(), this.getLevels(), null, "levels", null, 0, -1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHypotheses_Operator(), this.getOperatorType(), "operator", null, 0, 1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHypotheses_Relation(), this.getRelationType(), "relation", null, 0, 1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHypotheses_Factor(), this.getFactor(), null, "factor", null, 0, -1, Hypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1805,6 +1554,47 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		initEClass(levelsEClass, Levels.class, "Levels", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLevels_Name(), ecorePackage.getEString(), "name", null, 0, 1, Levels.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(processEClass, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Treatment(), this.getLevels(), null, "treatment", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProcess_Role(), this.getRoleType(), "role", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Task(), this.getTask(), null, "task", null, 0, -1, br.ufrn.dimap.ase.dsl.expDslv2.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_Description(), ecorePackage.getEString(), "description", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Next(), this.getTask(), null, "next", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_Role(), this.getRoleType(), "role", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_CollectData(), this.getCollectedData(), null, "collectData", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTask_Questionnaire(), this.getQuestionnaire(), null, "questionnaire", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(artefactEClass, Artefact.class, "Artefact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArtefact_Name(), ecorePackage.getEString(), "name", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArtefact_Description(), ecorePackage.getEString(), "description", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArtefact_Type(), this.getArtefactType(), "type", null, 0, 1, Artefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(metricsEClass, Metrics.class, "Metrics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMetrics_Name(), ecorePackage.getEString(), "name", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetrics_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetrics_Description(), ecorePackage.getEString(), "description", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetrics_Detail(), this.getDetail(), null, "detail", null, 0, 1, Metrics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(detailEClass, Detail.class, "Detail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(taskMetricEClass, TaskMetric.class, "TaskMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTaskMetric_TaskBegin(), this.getTask(), null, "taskBegin", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTaskMetric_TaskEnd(), this.getTask(), null, "taskEnd", null, 0, 1, TaskMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataMetricEClass, DataMetric.class, "DataMetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDataMetric_CollectedData(), this.getCollectedData(), null, "collectedData", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataMetric_DataType(), this.getDataType(), "dataType", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataMetric_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataMetric_Questionnaires(), this.getQuestionnaire(), null, "questionnaires", null, 0, -1, DataMetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(collectedDataEClass, CollectedData.class, "CollectedData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCollectedData_Name(), ecorePackage.getEString(), "name", null, 0, 1, CollectedData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(questionnaireEClass, Questionnaire.class, "Questionnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuestionnaire_Name(), ecorePackage.getEString(), "name", null, 0, 1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuestionnaire_RelatesTo(), this.getProcess(), null, "relatesTo", null, 0, -1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1822,19 +1612,6 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		initEAttribute(getAlternatives_Description(), ecorePackage.getEString(), "description", null, 0, 1, Alternatives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(roleTypeEEnum, RoleType.class, "RoleType");
-		addEEnumLiteral(roleTypeEEnum, RoleType.PARTICIPANT);
-		addEEnumLiteral(roleTypeEEnum, RoleType.RESEARCHER);
-
-		initEEnum(artefactTypeEEnum, ArtefactType.class, "ArtefactType");
-		addEEnumLiteral(artefactTypeEEnum, ArtefactType.IN_);
-		addEEnumLiteral(artefactTypeEEnum, ArtefactType.OUT_);
-		addEEnumLiteral(artefactTypeEEnum, ArtefactType.INOUT_);
-
-		initEEnum(dataTypeEEnum, DataType.class, "DataType");
-		addEEnumLiteral(dataTypeEEnum, DataType.NUM);
-		addEEnumLiteral(dataTypeEEnum, DataType.TEXT);
-
 		initEEnum(relationTypeEEnum, RelationType.class, "RelationType");
 		addEEnumLiteral(relationTypeEEnum, RelationType.IS_RELATED);
 		addEEnumLiteral(relationTypeEEnum, RelationType.IS_NOT_RELATED);
@@ -1848,7 +1625,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		addEEnumLiteral(operatorTypeEEnum, OperatorType.LESS_EQUAL);
 
 		initEEnum(hypothesisTypeEEnum, HypothesisType.class, "HypothesisType");
-		addEEnumLiteral(hypothesisTypeEEnum, HypothesisType.NULL);
+		addEEnumLiteral(hypothesisTypeEEnum, HypothesisType.NULL_);
 		addEEnumLiteral(hypothesisTypeEEnum, HypothesisType.ALTERNATIVE);
 
 		initEEnum(designTypeEEnum, DesignType.class, "DesignType");
@@ -1871,6 +1648,19 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.KRUSKAL_WALLIS);
 		addEEnumLiteral(analysisTechiqueTypeEEnum, AnalysisTechiqueType.OTHERS);
 
+		initEEnum(roleTypeEEnum, RoleType.class, "RoleType");
+		addEEnumLiteral(roleTypeEEnum, RoleType.PARTICIPANT);
+		addEEnumLiteral(roleTypeEEnum, RoleType.RESEARCHER);
+
+		initEEnum(artefactTypeEEnum, ArtefactType.class, "ArtefactType");
+		addEEnumLiteral(artefactTypeEEnum, ArtefactType.IN_);
+		addEEnumLiteral(artefactTypeEEnum, ArtefactType.OUT_);
+		addEEnumLiteral(artefactTypeEEnum, ArtefactType.INOUT_);
+
+		initEEnum(dataTypeEEnum, DataType.class, "DataType");
+		addEEnumLiteral(dataTypeEEnum, DataType.NUM);
+		addEEnumLiteral(dataTypeEEnum, DataType.TEXT);
+
 		initEEnum(questionnaireTypeEEnum, QuestionnaireType.class, "QuestionnaireType");
 		addEEnumLiteral(questionnaireTypeEEnum, QuestionnaireType.PRE);
 		addEEnumLiteral(questionnaireTypeEEnum, QuestionnaireType.POST);
@@ -1879,8 +1669,7 @@ public class ExpDslv2PackageImpl extends EPackageImpl implements ExpDslv2Package
 		addEEnumLiteral(answerTypeEEnum, AnswerType.TEXT);
 		addEEnumLiteral(answerTypeEEnum, AnswerType.PARAGRAPH_TEXT);
 		addEEnumLiteral(answerTypeEEnum, AnswerType.MULTIPLE_CHOICE);
-		addEEnumLiteral(answerTypeEEnum, AnswerType.COMBO_BOX);
-		addEEnumLiteral(answerTypeEEnum, AnswerType.CHECK_BOXES);
+		addEEnumLiteral(answerTypeEEnum, AnswerType.SINGLE_CHOICE);
 		addEEnumLiteral(answerTypeEEnum, AnswerType.SCALE);
 		addEEnumLiteral(answerTypeEEnum, AnswerType.GRID);
 

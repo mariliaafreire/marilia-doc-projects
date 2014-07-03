@@ -10,13 +10,12 @@ import br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package;
 import br.ufrn.dimap.ase.dsl.expDslv2.Task;
 import br.ufrn.dimap.ase.dsl.expDslv2.TaskMetric;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,23 +24,34 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.TaskMetricImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.TaskMetricImpl#getTaskBegin <em>Task Begin</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.TaskMetricImpl#getTaskEnd <em>Task End</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TaskMetricImpl extends TimeMetricImpl implements TaskMetric
+public class TaskMetricImpl extends DetailImpl implements TaskMetric
 {
   /**
-	 * The cached value of the '{@link #getTasks() <em>Tasks</em>}' reference list.
+	 * The cached value of the '{@link #getTaskBegin() <em>Task Begin</em>}' reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getTasks()
+	 * @see #getTaskBegin()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Task> tasks;
+  protected Task taskBegin;
+
+  /**
+	 * The cached value of the '{@link #getTaskEnd() <em>Task End</em>}' reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getTaskEnd()
+	 * @generated
+	 * @ordered
+	 */
+  protected Task taskEnd;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -69,12 +79,81 @@ public class TaskMetricImpl extends TimeMetricImpl implements TaskMetric
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Task> getTasks()
+  public Task getTaskBegin()
   {
-		if (tasks == null) {
-			tasks = new EObjectResolvingEList<Task>(Task.class, this, ExpDslv2Package.TASK_METRIC__TASKS);
+		if (taskBegin != null && taskBegin.eIsProxy()) {
+			InternalEObject oldTaskBegin = (InternalEObject)taskBegin;
+			taskBegin = (Task)eResolveProxy(oldTaskBegin);
+			if (taskBegin != oldTaskBegin) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpDslv2Package.TASK_METRIC__TASK_BEGIN, oldTaskBegin, taskBegin));
+			}
 		}
-		return tasks;
+		return taskBegin;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Task basicGetTaskBegin()
+  {
+		return taskBegin;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setTaskBegin(Task newTaskBegin)
+  {
+		Task oldTaskBegin = taskBegin;
+		taskBegin = newTaskBegin;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDslv2Package.TASK_METRIC__TASK_BEGIN, oldTaskBegin, taskBegin));
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Task getTaskEnd()
+  {
+		if (taskEnd != null && taskEnd.eIsProxy()) {
+			InternalEObject oldTaskEnd = (InternalEObject)taskEnd;
+			taskEnd = (Task)eResolveProxy(oldTaskEnd);
+			if (taskEnd != oldTaskEnd) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpDslv2Package.TASK_METRIC__TASK_END, oldTaskEnd, taskEnd));
+			}
+		}
+		return taskEnd;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public Task basicGetTaskEnd()
+  {
+		return taskEnd;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
+  public void setTaskEnd(Task newTaskEnd)
+  {
+		Task oldTaskEnd = taskEnd;
+		taskEnd = newTaskEnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpDslv2Package.TASK_METRIC__TASK_END, oldTaskEnd, taskEnd));
 	}
 
   /**
@@ -86,8 +165,12 @@ public class TaskMetricImpl extends TimeMetricImpl implements TaskMetric
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
 		switch (featureID) {
-			case ExpDslv2Package.TASK_METRIC__TASKS:
-				return getTasks();
+			case ExpDslv2Package.TASK_METRIC__TASK_BEGIN:
+				if (resolve) return getTaskBegin();
+				return basicGetTaskBegin();
+			case ExpDslv2Package.TASK_METRIC__TASK_END:
+				if (resolve) return getTaskEnd();
+				return basicGetTaskEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -97,14 +180,15 @@ public class TaskMetricImpl extends TimeMetricImpl implements TaskMetric
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
 		switch (featureID) {
-			case ExpDslv2Package.TASK_METRIC__TASKS:
-				getTasks().clear();
-				getTasks().addAll((Collection<? extends Task>)newValue);
+			case ExpDslv2Package.TASK_METRIC__TASK_BEGIN:
+				setTaskBegin((Task)newValue);
+				return;
+			case ExpDslv2Package.TASK_METRIC__TASK_END:
+				setTaskEnd((Task)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +203,11 @@ public class TaskMetricImpl extends TimeMetricImpl implements TaskMetric
   public void eUnset(int featureID)
   {
 		switch (featureID) {
-			case ExpDslv2Package.TASK_METRIC__TASKS:
-				getTasks().clear();
+			case ExpDslv2Package.TASK_METRIC__TASK_BEGIN:
+				setTaskBegin((Task)null);
+				return;
+			case ExpDslv2Package.TASK_METRIC__TASK_END:
+				setTaskEnd((Task)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -135,8 +222,10 @@ public class TaskMetricImpl extends TimeMetricImpl implements TaskMetric
   public boolean eIsSet(int featureID)
   {
 		switch (featureID) {
-			case ExpDslv2Package.TASK_METRIC__TASKS:
-				return tasks != null && !tasks.isEmpty();
+			case ExpDslv2Package.TASK_METRIC__TASK_BEGIN:
+				return taskBegin != null;
+			case ExpDslv2Package.TASK_METRIC__TASK_END:
+				return taskEnd != null;
 		}
 		return super.eIsSet(featureID);
 	}

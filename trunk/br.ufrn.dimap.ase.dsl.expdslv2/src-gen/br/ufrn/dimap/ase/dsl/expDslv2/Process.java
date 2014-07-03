@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getName <em>Name</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getTreatment <em>Treatment</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getRole <em>Role</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getActivities <em>Activities</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.Process#getTask <em>Task</em>}</li>
  * </ul>
  * </p>
  *
@@ -92,19 +92,19 @@ public interface Process extends EObject
   EList<RoleType> getRole();
 
   /**
-	 * Returns the value of the '<em><b>Activities</b></em>' containment reference list.
-	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Activity}.
+	 * Returns the value of the '<em><b>Task</b></em>' containment reference list.
+	 * The list contents are of type {@link br.ufrn.dimap.ase.dsl.expDslv2.Task}.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Activities</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Task</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Activities</em>' containment reference list.
-	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getProcess_Activities()
+	 * @return the value of the '<em>Task</em>' containment reference list.
+	 * @see br.ufrn.dimap.ase.dsl.expDslv2.ExpDslv2Package#getProcess_Task()
 	 * @model containment="true"
 	 * @generated
 	 */
-  EList<Activity> getActivities();
+  EList<Task> getTask();
 
 } // Process

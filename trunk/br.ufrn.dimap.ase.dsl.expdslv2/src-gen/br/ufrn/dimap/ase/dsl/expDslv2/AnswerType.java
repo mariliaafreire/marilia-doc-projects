@@ -54,24 +54,14 @@ public enum AnswerType implements Enumerator
   MULTIPLE_CHOICE(2, "MultipleChoice", "MultipleChoice"),
 
   /**
-	 * The '<em><b>Combo Box</b></em>' literal object.
+	 * The '<em><b>Single Choice</b></em>' literal object.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #COMBO_BOX_VALUE
+	 * @see #SINGLE_CHOICE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  COMBO_BOX(3, "ComboBox", "ComboBox"),
-
-  /**
-	 * The '<em><b>Check Boxes</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #CHECK_BOXES_VALUE
-	 * @generated
-	 * @ordered
-	 */
-  CHECK_BOXES(4, "CheckBoxes", "CheckBoxes"),
+  SINGLE_CHOICE(3, "SingleChoice", "SingleChoice"),
 
   /**
 	 * The '<em><b>Scale</b></em>' literal object.
@@ -81,7 +71,7 @@ public enum AnswerType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  SCALE(5, "Scale", "Scale"),
+  SCALE(4, "Scale", "Scale"),
 
   /**
 	 * The '<em><b>Grid</b></em>' literal object.
@@ -91,7 +81,7 @@ public enum AnswerType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  GRID(6, "Grid", "Grid");
+  GRID(5, "Grid", "Grid");
 
   /**
 	 * The '<em><b>Text</b></em>' literal value.
@@ -139,34 +129,19 @@ public enum AnswerType implements Enumerator
   public static final int MULTIPLE_CHOICE_VALUE = 2;
 
   /**
-	 * The '<em><b>Combo Box</b></em>' literal value.
+	 * The '<em><b>Single Choice</b></em>' literal value.
 	 * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Combo Box</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>Single Choice</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #COMBO_BOX
-	 * @model name="ComboBox"
+	 * @see #SINGLE_CHOICE
+	 * @model name="SingleChoice"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int COMBO_BOX_VALUE = 3;
-
-  /**
-	 * The '<em><b>Check Boxes</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>Check Boxes</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @see #CHECK_BOXES
-	 * @model name="CheckBoxes"
-	 * @generated
-	 * @ordered
-	 */
-  public static final int CHECK_BOXES_VALUE = 4;
+  public static final int SINGLE_CHOICE_VALUE = 3;
 
   /**
 	 * The '<em><b>Scale</b></em>' literal value.
@@ -181,7 +156,7 @@ public enum AnswerType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int SCALE_VALUE = 5;
+  public static final int SCALE_VALUE = 4;
 
   /**
 	 * The '<em><b>Grid</b></em>' literal value.
@@ -196,7 +171,7 @@ public enum AnswerType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-  public static final int GRID_VALUE = 6;
+  public static final int GRID_VALUE = 5;
 
   /**
 	 * An array of all the '<em><b>Answer Type</b></em>' enumerators.
@@ -209,8 +184,7 @@ public enum AnswerType implements Enumerator
 			TEXT,
 			PARAGRAPH_TEXT,
 			MULTIPLE_CHOICE,
-			COMBO_BOX,
-			CHECK_BOXES,
+			SINGLE_CHOICE,
 			SCALE,
 			GRID,
 		};
@@ -269,8 +243,7 @@ public enum AnswerType implements Enumerator
 			case TEXT_VALUE: return TEXT;
 			case PARAGRAPH_TEXT_VALUE: return PARAGRAPH_TEXT;
 			case MULTIPLE_CHOICE_VALUE: return MULTIPLE_CHOICE;
-			case COMBO_BOX_VALUE: return COMBO_BOX;
-			case CHECK_BOXES_VALUE: return CHECK_BOXES;
+			case SINGLE_CHOICE_VALUE: return SINGLE_CHOICE;
 			case SCALE_VALUE: return SCALE;
 			case GRID_VALUE: return GRID;
 		}

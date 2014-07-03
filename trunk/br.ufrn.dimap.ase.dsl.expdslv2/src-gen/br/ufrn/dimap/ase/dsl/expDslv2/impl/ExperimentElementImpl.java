@@ -36,9 +36,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentElementImpl#getExperiments <em>Experiments</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentElementImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentElementImpl#getMetrics <em>Metrics</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentElementImpl#getExperiments <em>Experiments</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentElementImpl#getQuestionnaire <em>Questionnaire</em>}</li>
  * </ul>
  * </p>
@@ -68,6 +68,16 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
   protected String name = NAME_EDEFAULT;
 
   /**
+	 * The cached value of the '{@link #getExperiments() <em>Experiments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getExperiments()
+	 * @generated
+	 * @ordered
+	 */
+  protected EList<ExperimentalPlan> experiments;
+
+  /**
 	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,16 +96,6 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
   protected EList<Metrics> metrics;
-
-  /**
-	 * The cached value of the '{@link #getExperiments() <em>Experiments</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getExperiments()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<ExperimentalPlan> experiments;
 
   /**
 	 * The cached value of the '{@link #getQuestionnaire() <em>Questionnaire</em>}' containment reference list.
@@ -156,6 +156,19 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
 	 * @generated
 	 */
+  public EList<ExperimentalPlan> getExperiments()
+  {
+		if (experiments == null) {
+			experiments = new EObjectContainmentEList<ExperimentalPlan>(ExperimentalPlan.class, this, ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS);
+		}
+		return experiments;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
+	 */
   public EList<br.ufrn.dimap.ase.dsl.expDslv2.Process> getProcess()
   {
 		if (process == null) {
@@ -182,19 +195,6 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<ExperimentalPlan> getExperiments()
-  {
-		if (experiments == null) {
-			experiments = new EObjectContainmentEList<ExperimentalPlan>(ExperimentalPlan.class, this, ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS);
-		}
-		return experiments;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EList<Questionnaire> getQuestionnaire()
   {
 		if (questionnaire == null) {
@@ -212,12 +212,12 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
 		switch (featureID) {
+			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
+				return ((InternalEList<?>)getExperiments()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__PROCESS:
 				return ((InternalEList<?>)getProcess()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__METRICS:
 				return ((InternalEList<?>)getMetrics()).basicRemove(otherEnd, msgs);
-			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
-				return ((InternalEList<?>)getExperiments()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__QUESTIONNAIRE:
 				return ((InternalEList<?>)getQuestionnaire()).basicRemove(otherEnd, msgs);
 		}
@@ -235,12 +235,12 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__NAME:
 				return getName();
+			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
+				return getExperiments();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__PROCESS:
 				return getProcess();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__METRICS:
 				return getMetrics();
-			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
-				return getExperiments();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__QUESTIONNAIRE:
 				return getQuestionnaire();
 		}
@@ -260,6 +260,10 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__NAME:
 				setName((String)newValue);
 				return;
+			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
+				getExperiments().clear();
+				getExperiments().addAll((Collection<? extends ExperimentalPlan>)newValue);
+				return;
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__PROCESS:
 				getProcess().clear();
 				getProcess().addAll((Collection<? extends br.ufrn.dimap.ase.dsl.expDslv2.Process>)newValue);
@@ -267,10 +271,6 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__METRICS:
 				getMetrics().clear();
 				getMetrics().addAll((Collection<? extends Metrics>)newValue);
-				return;
-			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
-				getExperiments().clear();
-				getExperiments().addAll((Collection<? extends ExperimentalPlan>)newValue);
 				return;
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__QUESTIONNAIRE:
 				getQuestionnaire().clear();
@@ -292,14 +292,14 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
+				getExperiments().clear();
+				return;
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__PROCESS:
 				getProcess().clear();
 				return;
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__METRICS:
 				getMetrics().clear();
-				return;
-			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
-				getExperiments().clear();
 				return;
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__QUESTIONNAIRE:
 				getQuestionnaire().clear();
@@ -319,12 +319,12 @@ public class ExperimentElementImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
+				return experiments != null && !experiments.isEmpty();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__PROCESS:
 				return process != null && !process.isEmpty();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__METRICS:
 				return metrics != null && !metrics.isEmpty();
-			case ExpDslv2Package.EXPERIMENT_ELEMENT__EXPERIMENTS:
-				return experiments != null && !experiments.isEmpty();
 			case ExpDslv2Package.EXPERIMENT_ELEMENT__QUESTIONNAIRE:
 				return questionnaire != null && !questionnaire.isEmpty();
 		}

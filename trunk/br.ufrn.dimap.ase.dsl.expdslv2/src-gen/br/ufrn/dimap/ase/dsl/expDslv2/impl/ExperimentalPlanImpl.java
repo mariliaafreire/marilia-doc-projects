@@ -15,7 +15,6 @@ import br.ufrn.dimap.ase.dsl.expDslv2.Factor;
 import br.ufrn.dimap.ase.dsl.expDslv2.Goal;
 import br.ufrn.dimap.ase.dsl.expDslv2.Hypotheses;
 import br.ufrn.dimap.ase.dsl.expDslv2.Parameter;
-import br.ufrn.dimap.ase.dsl.expDslv2.Subhypotheses;
 
 import java.util.Collection;
 
@@ -43,12 +42,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getHypotheses <em>Hypotheses</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getType <em>Type</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getDependentVariable <em>Dependent Variable</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getFactor <em>Factor</em>}</li>
- *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getTosubhypotheses <em>Tosubhypotheses</em>}</li>
+ *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getTohypotheses <em>Tohypotheses</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getTechnique <em>Technique</em>}</li>
  *   <li>{@link br.ufrn.dimap.ase.dsl.expDslv2.impl.ExperimentalPlanImpl#getInternalReplication <em>Internal Replication</em>}</li>
  * </ul>
@@ -67,16 +65,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
   protected EList<Goal> goal;
-
-  /**
-	 * The cached value of the '{@link #getHypotheses() <em>Hypotheses</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getHypotheses()
-	 * @generated
-	 * @ordered
-	 */
-  protected EList<Hypotheses> hypotheses;
 
   /**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -129,14 +117,14 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
   protected EList<Factor> factor;
 
   /**
-	 * The cached value of the '{@link #getTosubhypotheses() <em>Tosubhypotheses</em>}' reference list.
+	 * The cached value of the '{@link #getTohypotheses() <em>Tohypotheses</em>}' reference list.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getTosubhypotheses()
+	 * @see #getTohypotheses()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Subhypotheses> tosubhypotheses;
+  protected EList<Hypotheses> tohypotheses;
 
   /**
 	 * The cached value of the '{@link #getTechnique() <em>Technique</em>}' attribute list.
@@ -207,19 +195,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Hypotheses> getHypotheses()
-  {
-		if (hypotheses == null) {
-			hypotheses = new EObjectContainmentEList<Hypotheses>(Hypotheses.class, this, ExpDslv2Package.EXPERIMENTAL_PLAN__HYPOTHESES);
-		}
-		return hypotheses;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public DesignType getType()
   {
 		return type;
@@ -282,12 +257,12 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Subhypotheses> getTosubhypotheses()
+  public EList<Hypotheses> getTohypotheses()
   {
-		if (tosubhypotheses == null) {
-			tosubhypotheses = new EObjectResolvingEList<Subhypotheses>(Subhypotheses.class, this, ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES);
+		if (tohypotheses == null) {
+			tohypotheses = new EObjectResolvingEList<Hypotheses>(Hypotheses.class, this, ExpDslv2Package.EXPERIMENTAL_PLAN__TOHYPOTHESES);
 		}
-		return tosubhypotheses;
+		return tohypotheses;
 	}
 
   /**
@@ -337,8 +312,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__GOAL:
 				return ((InternalEList<?>)getGoal()).basicRemove(otherEnd, msgs);
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__HYPOTHESES:
-				return ((InternalEList<?>)getHypotheses()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__PARAMETER:
 				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__DEPENDENT_VARIABLE:
@@ -360,8 +333,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__GOAL:
 				return getGoal();
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__HYPOTHESES:
-				return getHypotheses();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TYPE:
 				return getType();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__PARAMETER:
@@ -370,8 +341,8 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				return getDependentVariable();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				return getFactor();
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
-				return getTosubhypotheses();
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOHYPOTHESES:
+				return getTohypotheses();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				return getTechnique();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__INTERNAL_REPLICATION:
@@ -394,10 +365,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				getGoal().clear();
 				getGoal().addAll((Collection<? extends Goal>)newValue);
 				return;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__HYPOTHESES:
-				getHypotheses().clear();
-				getHypotheses().addAll((Collection<? extends Hypotheses>)newValue);
-				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TYPE:
 				setType((DesignType)newValue);
 				return;
@@ -413,9 +380,9 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				getFactor().clear();
 				getFactor().addAll((Collection<? extends Factor>)newValue);
 				return;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
-				getTosubhypotheses().clear();
-				getTosubhypotheses().addAll((Collection<? extends Subhypotheses>)newValue);
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOHYPOTHESES:
+				getTohypotheses().clear();
+				getTohypotheses().addAll((Collection<? extends Hypotheses>)newValue);
 				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				getTechnique().clear();
@@ -440,9 +407,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__GOAL:
 				getGoal().clear();
 				return;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__HYPOTHESES:
-				getHypotheses().clear();
-				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -455,8 +419,8 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				getFactor().clear();
 				return;
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
-				getTosubhypotheses().clear();
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOHYPOTHESES:
+				getTohypotheses().clear();
 				return;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				getTechnique().clear();
@@ -479,8 +443,6 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__GOAL:
 				return goal != null && !goal.isEmpty();
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__HYPOTHESES:
-				return hypotheses != null && !hypotheses.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TYPE:
 				return type != TYPE_EDEFAULT;
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__PARAMETER:
@@ -489,8 +451,8 @@ public class ExperimentalPlanImpl extends MinimalEObjectImpl.Container implement
 				return dependentVariable != null && !dependentVariable.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__FACTOR:
 				return factor != null && !factor.isEmpty();
-			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOSUBHYPOTHESES:
-				return tosubhypotheses != null && !tosubhypotheses.isEmpty();
+			case ExpDslv2Package.EXPERIMENTAL_PLAN__TOHYPOTHESES:
+				return tohypotheses != null && !tohypotheses.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__TECHNIQUE:
 				return technique != null && !technique.isEmpty();
 			case ExpDslv2Package.EXPERIMENTAL_PLAN__INTERNAL_REPLICATION:

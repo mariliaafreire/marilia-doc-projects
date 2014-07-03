@@ -23,24 +23,24 @@ import org.eclipse.emf.ecore.EClass;
 public class CRBImpl extends DOEImpl implements CRB
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CRBImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.CRB;
-  }
+		return Expdslv3Package.Literals.CRB;
+	}
 
 } //CRBImpl

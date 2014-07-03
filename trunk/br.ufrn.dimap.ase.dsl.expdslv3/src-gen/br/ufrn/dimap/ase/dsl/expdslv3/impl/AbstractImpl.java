@@ -25,24 +25,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AbstractImpl extends MinimalEObjectImpl.Container implements Abstract
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AbstractImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.ABSTRACT;
-  }
+		return Expdslv3Package.Literals.ABSTRACT;
+	}
 
 } //AbstractImpl

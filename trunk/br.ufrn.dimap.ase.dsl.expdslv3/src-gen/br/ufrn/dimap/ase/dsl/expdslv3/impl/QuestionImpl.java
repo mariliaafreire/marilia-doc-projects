@@ -47,367 +47,361 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class QuestionImpl extends MinimalEObjectImpl.Container implements Question
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected static final AnswerType TYPE_EDEFAULT = AnswerType.TEXT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected AnswerType type = TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getReq() <em>Req</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getReq() <em>Req</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReq()
-   * @generated
-   * @ordered
-   */
+	 * @see #getReq()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int REQ_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getReq() <em>Req</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReq() <em>Req</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReq()
-   * @generated
-   * @ordered
-   */
+	 * @see #getReq()
+	 * @generated
+	 * @ordered
+	 */
   protected int req = REQ_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAlternatives() <em>Alternatives</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAlternatives() <em>Alternatives</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlternatives()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAlternatives()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Alternatives> alternatives;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected QuestionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.QUESTION;
-  }
+		return Expdslv3Package.Literals.QUESTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getDescription()
   {
-    return description;
-  }
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setDescription(String newDescription)
   {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__DESCRIPTION, oldDescription, description));
-  }
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__DESCRIPTION, oldDescription, description));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AnswerType getType()
   {
-    return type;
-  }
+		return type;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setType(AnswerType newType)
   {
-    AnswerType oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__TYPE, oldType, type));
-  }
+		AnswerType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__TYPE, oldType, type));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getReq()
   {
-    return req;
-  }
+		return req;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setReq(int newReq)
   {
-    int oldReq = req;
-    req = newReq;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__REQ, oldReq, req));
-  }
+		int oldReq = req;
+		req = newReq;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.QUESTION__REQ, oldReq, req));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Alternatives> getAlternatives()
   {
-    if (alternatives == null)
-    {
-      alternatives = new EObjectContainmentEList<Alternatives>(Alternatives.class, this, Expdslv3Package.QUESTION__ALTERNATIVES);
-    }
-    return alternatives;
-  }
+		if (alternatives == null) {
+			alternatives = new EObjectContainmentEList<Alternatives>(Alternatives.class, this, Expdslv3Package.QUESTION__ALTERNATIVES);
+		}
+		return alternatives;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTION__ALTERNATIVES:
-        return ((InternalEList<?>)getAlternatives()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTION__ALTERNATIVES:
+				return ((InternalEList<?>)getAlternatives()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTION__NAME:
-        return getName();
-      case Expdslv3Package.QUESTION__DESCRIPTION:
-        return getDescription();
-      case Expdslv3Package.QUESTION__TYPE:
-        return getType();
-      case Expdslv3Package.QUESTION__REQ:
-        return getReq();
-      case Expdslv3Package.QUESTION__ALTERNATIVES:
-        return getAlternatives();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTION__NAME:
+				return getName();
+			case Expdslv3Package.QUESTION__DESCRIPTION:
+				return getDescription();
+			case Expdslv3Package.QUESTION__TYPE:
+				return getType();
+			case Expdslv3Package.QUESTION__REQ:
+				return getReq();
+			case Expdslv3Package.QUESTION__ALTERNATIVES:
+				return getAlternatives();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTION__NAME:
-        setName((String)newValue);
-        return;
-      case Expdslv3Package.QUESTION__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
-      case Expdslv3Package.QUESTION__TYPE:
-        setType((AnswerType)newValue);
-        return;
-      case Expdslv3Package.QUESTION__REQ:
-        setReq((Integer)newValue);
-        return;
-      case Expdslv3Package.QUESTION__ALTERNATIVES:
-        getAlternatives().clear();
-        getAlternatives().addAll((Collection<? extends Alternatives>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTION__NAME:
+				setName((String)newValue);
+				return;
+			case Expdslv3Package.QUESTION__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case Expdslv3Package.QUESTION__TYPE:
+				setType((AnswerType)newValue);
+				return;
+			case Expdslv3Package.QUESTION__REQ:
+				setReq((Integer)newValue);
+				return;
+			case Expdslv3Package.QUESTION__ALTERNATIVES:
+				getAlternatives().clear();
+				getAlternatives().addAll((Collection<? extends Alternatives>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case Expdslv3Package.QUESTION__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
-      case Expdslv3Package.QUESTION__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
-      case Expdslv3Package.QUESTION__REQ:
-        setReq(REQ_EDEFAULT);
-        return;
-      case Expdslv3Package.QUESTION__ALTERNATIVES:
-        getAlternatives().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Expdslv3Package.QUESTION__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case Expdslv3Package.QUESTION__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case Expdslv3Package.QUESTION__REQ:
+				setReq(REQ_EDEFAULT);
+				return;
+			case Expdslv3Package.QUESTION__ALTERNATIVES:
+				getAlternatives().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.QUESTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Expdslv3Package.QUESTION__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case Expdslv3Package.QUESTION__TYPE:
-        return type != TYPE_EDEFAULT;
-      case Expdslv3Package.QUESTION__REQ:
-        return req != REQ_EDEFAULT;
-      case Expdslv3Package.QUESTION__ALTERNATIVES:
-        return alternatives != null && !alternatives.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.QUESTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Expdslv3Package.QUESTION__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case Expdslv3Package.QUESTION__TYPE:
+				return type != TYPE_EDEFAULT;
+			case Expdslv3Package.QUESTION__REQ:
+				return req != REQ_EDEFAULT;
+			case Expdslv3Package.QUESTION__ALTERNATIVES:
+				return alternatives != null && !alternatives.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(", type: ");
-    result.append(type);
-    result.append(", req: ");
-    result.append(req);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", description: ");
+		result.append(description);
+		result.append(", type: ");
+		result.append(type);
+		result.append(", req: ");
+		result.append(req);
+		result.append(')');
+		return result.toString();
+	}
 
 } //QuestionImpl

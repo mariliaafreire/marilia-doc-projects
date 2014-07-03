@@ -7,8 +7,8 @@
 package br.ufrn.dimap.ase.dsl.expdslv3.impl;
 
 import br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package;
-import br.ufrn.dimap.ase.dsl.expdslv3.Factor;
 import br.ufrn.dimap.ase.dsl.expdslv3.LS;
+import br.ufrn.dimap.ase.dsl.expdslv3.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -34,208 +34,200 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class LSImpl extends DOEImpl implements LS
 {
   /**
-   * The cached value of the '{@link #getCol() <em>Col</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCol() <em>Col</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCol()
-   * @generated
-   * @ordered
-   */
-  protected Factor col;
+	 * @see #getCol()
+	 * @generated
+	 * @ordered
+	 */
+  protected Variable col;
 
   /**
-   * The cached value of the '{@link #getRow() <em>Row</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRow() <em>Row</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRow()
-   * @generated
-   * @ordered
-   */
-  protected Factor row;
+	 * @see #getRow()
+	 * @generated
+	 * @ordered
+	 */
+  protected Variable row;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected LSImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.LS;
-  }
+		return Expdslv3Package.Literals.LS;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public Factor getCol()
+	 * @generated
+	 */
+  public Variable getCol()
   {
-    if (col != null && col.eIsProxy())
-    {
-      InternalEObject oldCol = (InternalEObject)col;
-      col = (Factor)eResolveProxy(oldCol);
-      if (col != oldCol)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.LS__COL, oldCol, col));
-      }
-    }
-    return col;
-  }
+		if (col != null && col.eIsProxy()) {
+			InternalEObject oldCol = (InternalEObject)col;
+			col = (Variable)eResolveProxy(oldCol);
+			if (col != oldCol) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.LS__COL, oldCol, col));
+			}
+		}
+		return col;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public Factor basicGetCol()
+	 * @generated
+	 */
+  public Variable basicGetCol()
   {
-    return col;
-  }
+		return col;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCol(Factor newCol)
+	 * @generated
+	 */
+  public void setCol(Variable newCol)
   {
-    Factor oldCol = col;
-    col = newCol;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.LS__COL, oldCol, col));
-  }
+		Variable oldCol = col;
+		col = newCol;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.LS__COL, oldCol, col));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public Factor getRow()
+	 * @generated
+	 */
+  public Variable getRow()
   {
-    if (row != null && row.eIsProxy())
-    {
-      InternalEObject oldRow = (InternalEObject)row;
-      row = (Factor)eResolveProxy(oldRow);
-      if (row != oldRow)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.LS__ROW, oldRow, row));
-      }
-    }
-    return row;
-  }
+		if (row != null && row.eIsProxy()) {
+			InternalEObject oldRow = (InternalEObject)row;
+			row = (Variable)eResolveProxy(oldRow);
+			if (row != oldRow) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.LS__ROW, oldRow, row));
+			}
+		}
+		return row;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public Factor basicGetRow()
+	 * @generated
+	 */
+  public Variable basicGetRow()
   {
-    return row;
-  }
+		return row;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRow(Factor newRow)
+	 * @generated
+	 */
+  public void setRow(Variable newRow)
   {
-    Factor oldRow = row;
-    row = newRow;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.LS__ROW, oldRow, row));
-  }
+		Variable oldRow = row;
+		row = newRow;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.LS__ROW, oldRow, row));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.LS__COL:
-        if (resolve) return getCol();
-        return basicGetCol();
-      case Expdslv3Package.LS__ROW:
-        if (resolve) return getRow();
-        return basicGetRow();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.LS__COL:
+				if (resolve) return getCol();
+				return basicGetCol();
+			case Expdslv3Package.LS__ROW:
+				if (resolve) return getRow();
+				return basicGetRow();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.LS__COL:
-        setCol((Factor)newValue);
-        return;
-      case Expdslv3Package.LS__ROW:
-        setRow((Factor)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.LS__COL:
+				setCol((Variable)newValue);
+				return;
+			case Expdslv3Package.LS__ROW:
+				setRow((Variable)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.LS__COL:
-        setCol((Factor)null);
-        return;
-      case Expdslv3Package.LS__ROW:
-        setRow((Factor)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.LS__COL:
+				setCol((Variable)null);
+				return;
+			case Expdslv3Package.LS__ROW:
+				setRow((Variable)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.LS__COL:
-        return col != null;
-      case Expdslv3Package.LS__ROW:
-        return row != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.LS__COL:
+				return col != null;
+			case Expdslv3Package.LS__ROW:
+				return row != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //LSImpl

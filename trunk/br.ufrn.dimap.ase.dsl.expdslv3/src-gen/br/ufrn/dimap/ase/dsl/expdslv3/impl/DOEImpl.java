@@ -8,7 +8,7 @@ package br.ufrn.dimap.ase.dsl.expdslv3.impl;
 
 import br.ufrn.dimap.ase.dsl.expdslv3.DOE;
 import br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package;
-import br.ufrn.dimap.ase.dsl.expdslv3.Factor;
+import br.ufrn.dimap.ase.dsl.expdslv3.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -34,144 +34,138 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DOEImpl extends MinimalEObjectImpl.Container implements DOE
 {
   /**
-   * The cached value of the '{@link #getTreatment() <em>Treatment</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTreatment() <em>Treatment</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTreatment()
-   * @generated
-   * @ordered
-   */
-  protected Factor treatment;
+	 * @see #getTreatment()
+	 * @generated
+	 * @ordered
+	 */
+  protected Variable treatment;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DOEImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.DOE;
-  }
+		return Expdslv3Package.Literals.DOE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public Factor getTreatment()
+	 * @generated
+	 */
+  public Variable getTreatment()
   {
-    if (treatment != null && treatment.eIsProxy())
-    {
-      InternalEObject oldTreatment = (InternalEObject)treatment;
-      treatment = (Factor)eResolveProxy(oldTreatment);
-      if (treatment != oldTreatment)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DOE__TREATMENT, oldTreatment, treatment));
-      }
-    }
-    return treatment;
-  }
+		if (treatment != null && treatment.eIsProxy()) {
+			InternalEObject oldTreatment = (InternalEObject)treatment;
+			treatment = (Variable)eResolveProxy(oldTreatment);
+			if (treatment != oldTreatment) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.DOE__TREATMENT, oldTreatment, treatment));
+			}
+		}
+		return treatment;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public Factor basicGetTreatment()
+	 * @generated
+	 */
+  public Variable basicGetTreatment()
   {
-    return treatment;
-  }
+		return treatment;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTreatment(Factor newTreatment)
+	 * @generated
+	 */
+  public void setTreatment(Variable newTreatment)
   {
-    Factor oldTreatment = treatment;
-    treatment = newTreatment;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DOE__TREATMENT, oldTreatment, treatment));
-  }
+		Variable oldTreatment = treatment;
+		treatment = newTreatment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.DOE__TREATMENT, oldTreatment, treatment));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DOE__TREATMENT:
-        if (resolve) return getTreatment();
-        return basicGetTreatment();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DOE__TREATMENT:
+				if (resolve) return getTreatment();
+				return basicGetTreatment();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DOE__TREATMENT:
-        setTreatment((Factor)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DOE__TREATMENT:
+				setTreatment((Variable)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DOE__TREATMENT:
-        setTreatment((Factor)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DOE__TREATMENT:
+				setTreatment((Variable)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.DOE__TREATMENT:
-        return treatment != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.DOE__TREATMENT:
+				return treatment != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //DOEImpl

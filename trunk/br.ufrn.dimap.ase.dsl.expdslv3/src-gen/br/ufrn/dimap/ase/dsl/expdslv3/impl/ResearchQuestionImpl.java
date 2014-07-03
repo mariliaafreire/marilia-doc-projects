@@ -36,269 +36,263 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ResearchQuestionImpl extends MinimalEObjectImpl.Container implements ResearchQuestion
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getGoal() <em>Goal</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getGoal() <em>Goal</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGoal()
-   * @generated
-   * @ordered
-   */
+	 * @see #getGoal()
+	 * @generated
+	 * @ordered
+	 */
   protected Goal goal;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ResearchQuestionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return Expdslv3Package.Literals.RESEARCH_QUESTION;
-  }
+		return Expdslv3Package.Literals.RESEARCH_QUESTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.RESEARCH_QUESTION__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.RESEARCH_QUESTION__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getDescription()
   {
-    return description;
-  }
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setDescription(String newDescription)
   {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION, oldDescription, description));
-  }
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION, oldDescription, description));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Goal getGoal()
   {
-    if (goal != null && goal.eIsProxy())
-    {
-      InternalEObject oldGoal = (InternalEObject)goal;
-      goal = (Goal)eResolveProxy(oldGoal);
-      if (goal != oldGoal)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.RESEARCH_QUESTION__GOAL, oldGoal, goal));
-      }
-    }
-    return goal;
-  }
+		if (goal != null && goal.eIsProxy()) {
+			InternalEObject oldGoal = (InternalEObject)goal;
+			goal = (Goal)eResolveProxy(oldGoal);
+			if (goal != oldGoal) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Expdslv3Package.RESEARCH_QUESTION__GOAL, oldGoal, goal));
+			}
+		}
+		return goal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Goal basicGetGoal()
   {
-    return goal;
-  }
+		return goal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setGoal(Goal newGoal)
   {
-    Goal oldGoal = goal;
-    goal = newGoal;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.RESEARCH_QUESTION__GOAL, oldGoal, goal));
-  }
+		Goal oldGoal = goal;
+		goal = newGoal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Expdslv3Package.RESEARCH_QUESTION__GOAL, oldGoal, goal));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.RESEARCH_QUESTION__NAME:
-        return getName();
-      case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
-        return getDescription();
-      case Expdslv3Package.RESEARCH_QUESTION__GOAL:
-        if (resolve) return getGoal();
-        return basicGetGoal();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Expdslv3Package.RESEARCH_QUESTION__NAME:
+				return getName();
+			case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
+				return getDescription();
+			case Expdslv3Package.RESEARCH_QUESTION__GOAL:
+				if (resolve) return getGoal();
+				return basicGetGoal();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.RESEARCH_QUESTION__NAME:
-        setName((String)newValue);
-        return;
-      case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
-      case Expdslv3Package.RESEARCH_QUESTION__GOAL:
-        setGoal((Goal)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Expdslv3Package.RESEARCH_QUESTION__NAME:
+				setName((String)newValue);
+				return;
+			case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case Expdslv3Package.RESEARCH_QUESTION__GOAL:
+				setGoal((Goal)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.RESEARCH_QUESTION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
-      case Expdslv3Package.RESEARCH_QUESTION__GOAL:
-        setGoal((Goal)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.RESEARCH_QUESTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case Expdslv3Package.RESEARCH_QUESTION__GOAL:
+				setGoal((Goal)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case Expdslv3Package.RESEARCH_QUESTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case Expdslv3Package.RESEARCH_QUESTION__GOAL:
-        return goal != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Expdslv3Package.RESEARCH_QUESTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case Expdslv3Package.RESEARCH_QUESTION__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case Expdslv3Package.RESEARCH_QUESTION__GOAL:
+				return goal != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", description: ");
+		result.append(description);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ResearchQuestionImpl

@@ -5,167 +5,183 @@
     editDirectory="/br.ufrn.dimap.ase.dsl.expdslv3.edit/src" editorDirectory="/br.ufrn.dimap.ase.dsl.expdslv3.editor/src"
     modelPluginID="br.ufrn.dimap.ase.dsl.expdslv3" forceOverwrite="true" modelName="Expdslv3"
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="br.ufrn.dimap.ase.dsl.expdslv3.edit"
-    editorPluginID="br.ufrn.dimap.ase.dsl.expdslv3.editor">
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    editPluginID="br.ufrn.dimap.ase.dsl.expdslv3.edit" editorPluginID="br.ufrn.dimap.ase.dsl.expdslv3.editor">
+  <foreignModel>Expdslv3.ecore</foreignModel>
   <genPackages prefix="Expdslv3" basePackage="br.ufrn.dimap.ase.dsl" disposableProviderFactory="true"
-      ecorePackage="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ScaleType">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ScaleType/Numericial"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ScaleType/Ordinal"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ScaleType/Nominal"/>
+      ecorePackage="Expdslv3.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//ScaleType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ScaleType/Numericial"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ScaleType/Ratio"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ScaleType/Ordinal"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ScaleType/Nominal"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DesignType">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DesignType/CDR"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DesignType/RCBD"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DesignType/LS"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DesignType/other"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//DesignType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//DesignType/CDR"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//DesignType/RCBD"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//DesignType/LS"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//DesignType/other"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//RoleType">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//RoleType/participant"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//RoleType/researcher"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//RoleType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//RoleType/participant"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//RoleType/researcher"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ArtefactType">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ArtefactType/in_"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ArtefactType/out_"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ArtefactType/inout_"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//ArtefactType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ArtefactType/in_"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ArtefactType/out_"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//ArtefactType/inout_"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//QuestionnaireType">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//QuestionnaireType/pre"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//QuestionnaireType/post"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//MetricType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//MetricType/autotime"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType/Text"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType/ParagraphText"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType/MultipleChoice"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType/SingleChoice"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType/Scale"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//AnswerType/Grid"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//QuestionnaireType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//QuestionnaireType/pre"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//QuestionnaireType/post"/>
     </genEnums>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Model/elements"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Expdslv3.ecore#//AnswerType">
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//AnswerType/Text"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//AnswerType/ParagraphText"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//AnswerType/MultipleChoice"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//AnswerType/SingleChoice"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//AnswerType/Scale"/>
+      <genEnumLiterals ecoreEnumLiteral="Expdslv3.ecore#//AnswerType/Grid"/>
+    </genEnums>
+    <genClasses ecoreClass="Expdslv3.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Model/elements"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentElement/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentElement/experiments"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentElement/process"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentElement/questionnaire"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//ExperimentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ExperimentElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ExperimentElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentElement/experiments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentElement/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentElement/questionnaire"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/author"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/abstract"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/keyword"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/goal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/researchQuestion"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/researchHypothesis"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/variable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/depVar"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/factor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/doe"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ExperimentalDesign/parameter"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//ExperimentalDesign">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/author"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/abstract"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/keyword"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/goal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/researchQuestion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/researchHypothesis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/depVar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/factor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ExperimentalDesign/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/doe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ExperimentalDesign/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ExperimentalDesign/replication"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Author">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Author/identifier"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Author/name"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Author">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Author/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Author/name"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Abstract"/>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//SimpleAbstract">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//SimpleAbstract/description"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Abstract"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//SimpleAbstract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//SimpleAbstract/description"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract/background"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract/objective"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract/methods"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract/results"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract/limitations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//StructuredAbstract/conclusions"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//StructuredAbstract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredAbstract/background"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredAbstract/objective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredAbstract/methods"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredAbstract/results"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredAbstract/limitations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredAbstract/conclusions"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Keyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Keyword/description"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Keyword">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Keyword/description"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Goal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Goal/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Goal/description"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Goal"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//SimpleGoal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//SimpleGoal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//SimpleGoal/description"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchQuestion/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchQuestion/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchQuestion/goal"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//StructuredGoal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredGoal/object"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredGoal/technique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredGoal/quality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredGoal/ptView"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//StructuredGoal/contextOf"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchHypothesis">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchHypothesis/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchHypothesis/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//ResearchHypothesis/goal"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//ResearchQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ResearchQuestion/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ResearchQuestion/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ResearchQuestion/goal"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Variable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Variable/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Variable/scaleType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Variable/range"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//ResearchHypothesis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ResearchHypothesis/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//ResearchHypothesis/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//ResearchHypothesis/goal"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Range">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Range/name"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Variable/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Variable/scaleType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Variable/range"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DepVariable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DepVariable/variable"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DepVariable/rq"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DepVariable/rh"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Range">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Range/name"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Factor">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Factor/variable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Factor/level"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//DepVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//DepVariable/variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//DepVariable/rq"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//DepVariable/rh"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Level">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Level/lev"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Factor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Factor/name"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DOE">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//DOE/treatment"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//DOE">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//DOE/treatment"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//LS">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//LS/col"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//LS/row"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//LS">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//LS/col"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//LS/row"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//RCBD">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//RCBD/blockVariable"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//RCBD">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//RCBD/blockVariable"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//CRB"/>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Parameter/variable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Parameter/value"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//CRB"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Parameter/variable"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Process">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Process/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Process/role"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Process/task"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Process/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Process/treatment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Process/role"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Process/task"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Task">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Task/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Task/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Task/next"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Task/role"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Task/artefacts"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Task/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Task/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Task/next"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Task/role"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Task/artefacts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Task/metric"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Artefact">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Artefact/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Artefact/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Artefact/type"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Artefact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Artefact/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Artefact/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Artefact/type"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Questionnaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Questionnaire/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Questionnaire/relatesTo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Questionnaire/questionnaireType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Questionnaire/question"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Metric">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Metric/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Metric/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Metric/varname"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Question">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Question/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Question/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Question/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Question/req"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Question/alternatives"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Questionnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Questionnaire/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Questionnaire/relatesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Questionnaire/questionnaireType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Questionnaire/question"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Alternatives">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/br.ufrn.dimap.ase.dsl.expdslv3/src-gen/br/ufrn/dimap/ase/dsl/Expdslv3.ecore#//Alternatives/description"/>
+    <genClasses ecoreClass="Expdslv3.ecore#//Question">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Question/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Question/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Question/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Question/req"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expdslv3.ecore#//Question/alternatives"/>
+    </genClasses>
+    <genClasses ecoreClass="Expdslv3.ecore#//Alternatives">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expdslv3.ecore#//Alternatives/description"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

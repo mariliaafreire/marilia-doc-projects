@@ -196,8 +196,8 @@ public class Jpdl31AdapterFactory extends AdapterFactoryImpl {
 				return createMetricInfoAdapter();
 			}
 			@Override
-			public Adapter caseHyphoteses(Hyphoteses object) {
-				return createHyphotesesAdapter();
+			public Adapter caseHyphotesis(Hyphotesis object) {
+				return createHyphotesisAdapter();
 			}
 			@Override
 			public Adapter caseSubhypotheses(Subhypotheses object) {
@@ -706,16 +706,16 @@ public class Jpdl31AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jpdl31.Hyphoteses <em>Hyphoteses</em>}'.
+	 * Creates a new adapter for an object of class '{@link jpdl31.Hyphotesis <em>Hyphotesis</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jpdl31.Hyphoteses
+	 * @see jpdl31.Hyphotesis
 	 * @generated
 	 */
-	public Adapter createHyphotesesAdapter() {
+	public Adapter createHyphotesisAdapter() {
 		return null;
 	}
 

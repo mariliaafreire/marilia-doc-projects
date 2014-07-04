@@ -164,8 +164,8 @@ public class Jpdl31Validator extends EObjectValidator {
 				return validateModel((Model)value, diagnostics, context);
 			case Jpdl31Package.METRIC_INFO:
 				return validateMetricInfo((MetricInfo)value, diagnostics, context);
-			case Jpdl31Package.HYPHOTESES:
-				return validateHyphoteses((Hyphoteses)value, diagnostics, context);
+			case Jpdl31Package.HYPHOTESIS:
+				return validateHyphotesis((Hyphotesis)value, diagnostics, context);
 			case Jpdl31Package.SUBHYPOTHESES:
 				return validateSubhypotheses((Subhypotheses)value, diagnostics, context);
 			case Jpdl31Package.DEPENDENT_VARIABLE:
@@ -533,8 +533,8 @@ public class Jpdl31Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHyphoteses(Hyphoteses hyphoteses, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(hyphoteses, diagnostics, context);
+	public boolean validateHyphotesis(Hyphotesis hyphotesis, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(hyphotesis, diagnostics, context);
 	}
 
 	/**

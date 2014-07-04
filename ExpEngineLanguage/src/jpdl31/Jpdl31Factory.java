@@ -305,13 +305,13 @@ public interface Jpdl31Factory extends EFactory {
 	MetricInfo createMetricInfo();
 
 	/**
-	 * Returns a new object of class '<em>Hyphoteses</em>'.
+	 * Returns a new object of class '<em>Hyphotesis</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hyphoteses</em>'.
+	 * @return a new object of class '<em>Hyphotesis</em>'.
 	 * @generated
 	 */
-	Hyphoteses createHyphoteses();
+	Hyphotesis createHyphotesis();
 
 	/**
 	 * Returns a new object of class '<em>Subhypotheses</em>'.

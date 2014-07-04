@@ -97,7 +97,7 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 			case Jpdl31Package.ARTEFACT: return createArtefact();
 			case Jpdl31Package.MODEL: return createModel();
 			case Jpdl31Package.METRIC_INFO: return createMetricInfo();
-			case Jpdl31Package.HYPHOTESES: return createHyphoteses();
+			case Jpdl31Package.HYPHOTESIS: return createHyphotesis();
 			case Jpdl31Package.SUBHYPOTHESES: return createSubhypotheses();
 			case Jpdl31Package.DEPENDENT_VARIABLE: return createDependentVariable();
 			case Jpdl31Package.FACTOR: return createFactor();
@@ -561,9 +561,9 @@ public class Jpdl31FactoryImpl extends EFactoryImpl implements Jpdl31Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hyphoteses createHyphoteses() {
-		HyphotesesImpl hyphoteses = new HyphotesesImpl();
-		return hyphoteses;
+	public Hyphotesis createHyphotesis() {
+		HyphotesisImpl hyphotesis = new HyphotesisImpl();
+		return hyphotesis;
 	}
 
 	/**

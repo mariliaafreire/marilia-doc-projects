@@ -1870,7 +1870,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artefacts" upperBound="-1"
         eType="#//Artefact" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="metricsInfo" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metricInfo" upperBound="-1"
         eType="#//MetricInfo" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimerType">
@@ -2173,11 +2173,10 @@
     <eLiterals name="artefact" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetricInfo">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metricType" eType="#//MetricType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metricReferenced" eType="#//Metric"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Hyphoteses">
+  <eClassifiers xsi:type="ecore:EClass" name="Hyphotesis">
     <eStructuralFeatures xsi:type="ecore:EReference" name="formalizes" upperBound="-1"
         eType="#//Subhypotheses" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
@@ -2185,6 +2184,10 @@
         eType="#//Goal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//HypothesisType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationOp" eType="#//RelationOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treatment" upperBound="-1"
+        eType="#//Level"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependentVariable" eType="#//DependentVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subhypotheses">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationOp" eType="#//RelationOperator"/>
@@ -2207,11 +2210,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metric">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//MetricType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relatesTo" upperBound="-1"
         eType="#//ProcessDefinitionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refname" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RelationOperator">
     <eLiterals name="equal"/>
@@ -2219,13 +2223,15 @@
     <eLiterals name="lessthan" value="2"/>
     <eLiterals name="moreequalthan" value="3"/>
     <eLiterals name="lessequalthan" value="4"/>
+    <eLiterals name="different" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Questionnaire">
     <eStructuralFeatures xsi:type="ecore:EReference" name="question" upperBound="-1"
         eType="#//Question" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//QuestionnaireType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//ProcessDefinitionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
+        eType="#//ProcessDefinitionType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Question">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
@@ -2247,12 +2253,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Goal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hypotheses" upperBound="-1"
+        eType="#//Hyphotesis" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExperimentalPlan">
     <eStructuralFeatures xsi:type="ecore:EReference" name="goals" upperBound="-1"
         eType="#//Goal" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hypothesis" lowerBound="1"
-        upperBound="-1" eType="#//Hyphoteses" containment="true"/>
+        upperBound="-1" eType="#//Hyphotesis" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="design" lowerBound="1"
         eType="#//Design" containment="true"/>
   </eClassifiers>
@@ -2278,7 +2286,7 @@
     <eLiterals name="other" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="HypothesisType">
-    <eLiterals name="null" literal="null_"/>
+    <eLiterals name="null_" literal="null_"/>
     <eLiterals name="alternative" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="QuestionnaireType">

@@ -81,6 +81,7 @@
       <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//RelationOperator/lessthan"/>
       <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//RelationOperator/moreequalthan"/>
       <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//RelationOperator/lessequalthan"/>
+      <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//RelationOperator/different"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="jpdl31.ecore#//AnswerType">
       <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//AnswerType/comboBox"/>
@@ -95,7 +96,7 @@
       <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//DoEType/other"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="jpdl31.ecore#//HypothesisType">
-      <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//HypothesisType/null"/>
+      <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//HypothesisType/null_"/>
       <genEnumLiterals ecoreEnumLiteral="jpdl31.ecore#//HypothesisType/alternative"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="jpdl31.ecore#//QuestionnaireType">
@@ -361,7 +362,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//TaskType/signalling"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//TaskType/swimlane"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//TaskType/artefacts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//TaskType/metricsInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//TaskType/metricInfo"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//TimerType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//TimerType/action"/>
@@ -407,16 +408,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Model/elements"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//MetricInfo">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//MetricInfo/metricReferenced"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//MetricInfo/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//MetricInfo/refName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//MetricInfo/metricType"/>
     </genClasses>
-    <genClasses ecoreClass="jpdl31.ecore#//Hyphoteses">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Hyphoteses/formalizes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphoteses/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Hyphoteses/fromGoal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphoteses/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphoteses/id"/>
+    <genClasses ecoreClass="jpdl31.ecore#//Hyphotesis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Hyphotesis/formalizes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphotesis/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Hyphotesis/fromGoal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphotesis/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphotesis/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Hyphotesis/relationOp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Hyphotesis/treatment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Hyphotesis/dependentVariable"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//Subhypotheses">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Subhypotheses/relationOp"/>
@@ -437,16 +440,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Level/name"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//Metric">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Metric/nome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Metric/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Metric/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Metric/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Metric/relatesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Metric/refname"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//Questionnaire">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Questionnaire/question"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Questionnaire/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Questionnaire/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Questionnaire/process"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Questionnaire/processes"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//Question">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Question/description"/>
@@ -461,6 +465,7 @@
     <genClasses ecoreClass="jpdl31.ecore#//Goal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Goal/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jpdl31.ecore#//Goal/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//Goal/hypotheses"/>
     </genClasses>
     <genClasses ecoreClass="jpdl31.ecore#//ExperimentalPlan">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jpdl31.ecore#//ExperimentalPlan/goals"/>

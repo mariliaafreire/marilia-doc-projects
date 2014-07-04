@@ -32,6 +32,7 @@ import jpdl31.ExperimentalPlan;
 import jpdl31.Factor;
 import jpdl31.ForkType;
 import jpdl31.Goal;
+import jpdl31.Hyphotesis;
 import jpdl31.Hyphoteses;
 import jpdl31.HypothesisType;
 import jpdl31.JoinType;
@@ -311,7 +312,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass hyphotesesEClass = null;
+	private EClass hyphotesisEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2680,7 +2681,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTaskType_MetricsInfo() {
+	public EReference getTaskType_MetricInfo() {
 		return (EReference)taskTypeEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -3031,8 +3032,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMetricInfo_Name() {
-		return (EAttribute)metricInfoEClass.getEStructuralFeatures().get(0);
+	public EReference getMetricInfo_MetricReferenced() {
+		return (EReference)metricInfoEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3040,7 +3041,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMetricInfo_RefName() {
+	public EAttribute getMetricInfo_Name() {
 		return (EAttribute)metricInfoEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3049,8 +3050,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMetricInfo_MetricType() {
-		return (EAttribute)metricInfoEClass.getEStructuralFeatures().get(2);
+	public EClass getHyphotesis() {
+		return hyphotesisEClass;
 	}
 
 	/**
@@ -3058,8 +3059,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHyphoteses() {
-		return hyphotesesEClass;
+	public EReference getHyphotesis_Formalizes() {
+		return (EReference)hyphotesisEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3067,8 +3068,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHyphoteses_Formalizes() {
-		return (EReference)hyphotesesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getHyphotesis_Description() {
+		return (EAttribute)hyphotesisEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3076,8 +3077,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHyphoteses_Description() {
-		return (EAttribute)hyphotesesEClass.getEStructuralFeatures().get(1);
+	public EReference getHyphotesis_FromGoal() {
+		return (EReference)hyphotesisEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3085,8 +3086,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHyphoteses_FromGoal() {
-		return (EReference)hyphotesesEClass.getEStructuralFeatures().get(2);
+	public EAttribute getHyphotesis_Type() {
+		return (EAttribute)hyphotesisEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3094,8 +3095,8 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHyphoteses_Type() {
-		return (EAttribute)hyphotesesEClass.getEStructuralFeatures().get(3);
+	public EAttribute getHyphotesis_Id() {
+		return (EAttribute)hyphotesisEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3103,8 +3104,26 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getHyphoteses_Id() {
-		return (EAttribute)hyphotesesEClass.getEStructuralFeatures().get(4);
+	public EAttribute getHyphotesis_RelationOp() {
+		return (EAttribute)hyphotesisEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHyphotesis_Treatment() {
+		return (EReference)hyphotesisEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHyphotesis_DependentVariable() {
+		return (EReference)hyphotesisEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3247,7 +3266,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMetric_Nome() {
+	public EAttribute getMetric_Name() {
 		return (EAttribute)metricEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3276,6 +3295,15 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 */
 	public EReference getMetric_RelatesTo() {
 		return (EReference)metricEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMetric_Refname() {
+		return (EAttribute)metricEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3319,7 +3347,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQuestionnaire_Process() {
+	public EReference getQuestionnaire_Processes() {
 		return (EReference)questionnaireEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3420,6 +3448,15 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 	 */
 	public EAttribute getGoal_Description() {
 		return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGoal_Hypotheses() {
+		return (EReference)goalEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4057,7 +4094,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		createEAttribute(taskTypeEClass, TASK_TYPE__SIGNALLING);
 		createEAttribute(taskTypeEClass, TASK_TYPE__SWIMLANE);
 		createEReference(taskTypeEClass, TASK_TYPE__ARTEFACTS);
-		createEReference(taskTypeEClass, TASK_TYPE__METRICS_INFO);
+		createEReference(taskTypeEClass, TASK_TYPE__METRIC_INFO);
 
 		timerTypeEClass = createEClass(TIMER_TYPE);
 		createEReference(timerTypeEClass, TIMER_TYPE__ACTION);
@@ -4103,16 +4140,18 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		createEReference(modelEClass, MODEL__ELEMENTS);
 
 		metricInfoEClass = createEClass(METRIC_INFO);
+		createEReference(metricInfoEClass, METRIC_INFO__METRIC_REFERENCED);
 		createEAttribute(metricInfoEClass, METRIC_INFO__NAME);
-		createEAttribute(metricInfoEClass, METRIC_INFO__REF_NAME);
-		createEAttribute(metricInfoEClass, METRIC_INFO__METRIC_TYPE);
 
-		hyphotesesEClass = createEClass(HYPHOTESES);
-		createEReference(hyphotesesEClass, HYPHOTESES__FORMALIZES);
-		createEAttribute(hyphotesesEClass, HYPHOTESES__DESCRIPTION);
-		createEReference(hyphotesesEClass, HYPHOTESES__FROM_GOAL);
-		createEAttribute(hyphotesesEClass, HYPHOTESES__TYPE);
-		createEAttribute(hyphotesesEClass, HYPHOTESES__ID);
+		hyphotesisEClass = createEClass(HYPHOTESIS);
+		createEReference(hyphotesisEClass, HYPHOTESIS__FORMALIZES);
+		createEAttribute(hyphotesisEClass, HYPHOTESIS__DESCRIPTION);
+		createEReference(hyphotesisEClass, HYPHOTESIS__FROM_GOAL);
+		createEAttribute(hyphotesisEClass, HYPHOTESIS__TYPE);
+		createEAttribute(hyphotesisEClass, HYPHOTESIS__ID);
+		createEAttribute(hyphotesisEClass, HYPHOTESIS__RELATION_OP);
+		createEReference(hyphotesisEClass, HYPHOTESIS__TREATMENT);
+		createEReference(hyphotesisEClass, HYPHOTESIS__DEPENDENT_VARIABLE);
 
 		subhypothesesEClass = createEClass(SUBHYPOTHESES);
 		createEAttribute(subhypothesesEClass, SUBHYPOTHESES__RELATION_OP);
@@ -4133,16 +4172,17 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		createEAttribute(levelEClass, LEVEL__NAME);
 
 		metricEClass = createEClass(METRIC);
-		createEAttribute(metricEClass, METRIC__NOME);
+		createEAttribute(metricEClass, METRIC__NAME);
 		createEAttribute(metricEClass, METRIC__DESCRIPTION);
 		createEAttribute(metricEClass, METRIC__TYPE);
 		createEReference(metricEClass, METRIC__RELATES_TO);
+		createEAttribute(metricEClass, METRIC__REFNAME);
 
 		questionnaireEClass = createEClass(QUESTIONNAIRE);
 		createEReference(questionnaireEClass, QUESTIONNAIRE__QUESTION);
 		createEAttribute(questionnaireEClass, QUESTIONNAIRE__NAME);
 		createEAttribute(questionnaireEClass, QUESTIONNAIRE__TYPE);
-		createEReference(questionnaireEClass, QUESTIONNAIRE__PROCESS);
+		createEReference(questionnaireEClass, QUESTIONNAIRE__PROCESSES);
 
 		questionEClass = createEClass(QUESTION);
 		createEAttribute(questionEClass, QUESTION__DESCRIPTION);
@@ -4157,6 +4197,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		goalEClass = createEClass(GOAL);
 		createEAttribute(goalEClass, GOAL__ID);
 		createEAttribute(goalEClass, GOAL__DESCRIPTION);
+		createEReference(goalEClass, GOAL__HYPOTHESES);
 
 		experimentalPlanEClass = createEClass(EXPERIMENTAL_PLAN);
 		createEReference(experimentalPlanEClass, EXPERIMENTAL_PLAN__GOALS);
@@ -4488,7 +4529,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		initEAttribute(getTaskType_Signalling(), this.getBooleanType(), "signalling", "true", 0, 1, TaskType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskType_Swimlane(), theXMLTypePackage.getString(), "swimlane", null, 0, 1, TaskType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTaskType_Artefacts(), this.getArtefact(), null, "artefacts", null, 0, -1, TaskType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTaskType_MetricsInfo(), this.getMetricInfo(), null, "metricsInfo", null, 0, -1, TaskType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTaskType_MetricInfo(), this.getMetricInfo(), null, "metricInfo", null, 0, -1, TaskType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timerTypeEClass, TimerType.class, "TimerType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimerType_Action(), this.getActionType(), null, "action", null, 0, 1, TimerType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4534,16 +4575,18 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		initEReference(getModel_Elements(), this.getDocumentRoot(), null, "elements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metricInfoEClass, MetricInfo.class, "MetricInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMetricInfo_Name(), theXMLTypePackage.getID(), "name", null, 0, 1, MetricInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetricInfo_RefName(), theXMLTypePackage.getString(), "refName", null, 0, 1, MetricInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetricInfo_MetricType(), this.getMetricType(), "metricType", null, 0, 1, MetricInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetricInfo_MetricReferenced(), this.getMetric(), null, "metricReferenced", null, 0, 1, MetricInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetricInfo_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MetricInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(hyphotesesEClass, Hyphoteses.class, "Hyphoteses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHyphoteses_Formalizes(), this.getSubhypotheses(), null, "formalizes", null, 0, -1, Hyphoteses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHyphoteses_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Hyphoteses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHyphoteses_FromGoal(), this.getGoal(), null, "fromGoal", null, 1, 1, Hyphoteses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHyphoteses_Type(), this.getHypothesisType(), "type", null, 0, 1, Hyphoteses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHyphoteses_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Hyphoteses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(hyphotesisEClass, Hyphotesis.class, "Hyphotesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHyphotesis_Formalizes(), this.getSubhypotheses(), null, "formalizes", null, 0, -1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHyphotesis_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHyphotesis_FromGoal(), this.getGoal(), null, "fromGoal", null, 1, 1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHyphotesis_Type(), this.getHypothesisType(), "type", null, 0, 1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHyphotesis_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHyphotesis_RelationOp(), this.getRelationOperator(), "relationOp", null, 0, 1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHyphotesis_Treatment(), this.getLevel(), null, "treatment", null, 0, -1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHyphotesis_DependentVariable(), this.getDependentVariable(), null, "dependentVariable", null, 0, 1, Hyphotesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subhypothesesEClass, Subhypotheses.class, "Subhypotheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubhypotheses_RelationOp(), this.getRelationOperator(), "relationOp", null, 0, 1, Subhypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4564,16 +4607,17 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		initEAttribute(getLevel_Name(), theXMLTypePackage.getID(), "name", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metricEClass, Metric.class, "Metric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMetric_Nome(), theXMLTypePackage.getID(), "nome", null, 0, 1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetric_Name(), theXMLTypePackage.getID(), "name", null, 0, 1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMetric_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMetric_Type(), this.getMetricType(), "type", null, 1, 1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMetric_RelatesTo(), this.getProcessDefinitionType(), null, "relatesTo", null, 0, -1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMetric_Refname(), theXMLTypePackage.getString(), "refname", null, 0, 1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(questionnaireEClass, Questionnaire.class, "Questionnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuestionnaire_Question(), this.getQuestion(), null, "question", null, 0, -1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuestionnaire_Name(), theXMLTypePackage.getID(), "name", null, 0, 1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuestionnaire_Type(), this.getQuestionnaireType(), "type", null, 0, 1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuestionnaire_Process(), this.getProcessDefinitionType(), null, "process", null, 0, 1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionnaire_Processes(), this.getProcessDefinitionType(), null, "processes", null, 0, -1, Questionnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getQuestion_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4588,10 +4632,11 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGoal_Id(), theXMLTypePackage.getID(), "id", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGoal_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGoal_Hypotheses(), this.getHyphotesis(), null, "hypotheses", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(experimentalPlanEClass, ExperimentalPlan.class, "ExperimentalPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExperimentalPlan_Goals(), this.getGoal(), null, "goals", null, 0, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getExperimentalPlan_Hypothesis(), this.getHyphoteses(), null, "hypothesis", null, 1, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExperimentalPlan_Hypothesis(), this.getHyphotesis(), null, "hypothesis", null, 1, -1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExperimentalPlan_Design(), this.getDesign(), null, "design", null, 1, 1, ExperimentalPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(designEClass, Design.class, "Design", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4683,6 +4728,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		addEEnumLiteral(relationOperatorEEnum, RelationOperator.LESSTHAN);
 		addEEnumLiteral(relationOperatorEEnum, RelationOperator.MOREEQUALTHAN);
 		addEEnumLiteral(relationOperatorEEnum, RelationOperator.LESSEQUALTHAN);
+		addEEnumLiteral(relationOperatorEEnum, RelationOperator.DIFFERENT);
 
 		initEEnum(answerTypeEEnum, AnswerType.class, "AnswerType");
 		addEEnumLiteral(answerTypeEEnum, AnswerType.COMBO_BOX);
@@ -4697,7 +4743,7 @@ public class Jpdl31PackageImpl extends EPackageImpl implements Jpdl31Package {
 		addEEnumLiteral(doETypeEEnum, DoEType.OTHER);
 
 		initEEnum(hypothesisTypeEEnum, HypothesisType.class, "HypothesisType");
-		addEEnumLiteral(hypothesisTypeEEnum, HypothesisType.NULL);
+		addEEnumLiteral(hypothesisTypeEEnum, HypothesisType.NULL_);
 		addEEnumLiteral(hypothesisTypeEEnum, HypothesisType.ALTERNATIVE);
 
 		initEEnum(questionnaireTypeEEnum, QuestionnaireType.class, "QuestionnaireType");

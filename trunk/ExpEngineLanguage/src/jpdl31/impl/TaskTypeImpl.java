@@ -55,7 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jpdl31.impl.TaskTypeImpl#getSignalling <em>Signalling</em>}</li>
  *   <li>{@link jpdl31.impl.TaskTypeImpl#getSwimlane <em>Swimlane</em>}</li>
  *   <li>{@link jpdl31.impl.TaskTypeImpl#getArtefacts <em>Artefacts</em>}</li>
- *   <li>{@link jpdl31.impl.TaskTypeImpl#getMetricsInfo <em>Metrics Info</em>}</li>
+ *   <li>{@link jpdl31.impl.TaskTypeImpl#getMetricInfo <em>Metric Info</em>}</li>
  * </ul>
  * </p>
  *
@@ -250,14 +250,14 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 	protected EList<Artefact> artefacts;
 
 	/**
-	 * The cached value of the '{@link #getMetricsInfo() <em>Metrics Info</em>}' containment reference list.
+	 * The cached value of the '{@link #getMetricInfo() <em>Metric Info</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMetricsInfo()
+	 * @see #getMetricInfo()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MetricInfo> metricsInfo;
+	protected EList<MetricInfo> metricInfo;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -565,11 +565,11 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MetricInfo> getMetricsInfo() {
-		if (metricsInfo == null) {
-			metricsInfo = new EObjectContainmentEList<MetricInfo>(MetricInfo.class, this, Jpdl31Package.TASK_TYPE__METRICS_INFO);
+	public EList<MetricInfo> getMetricInfo() {
+		if (metricInfo == null) {
+			metricInfo = new EObjectContainmentEList<MetricInfo>(MetricInfo.class, this, Jpdl31Package.TASK_TYPE__METRIC_INFO);
 		}
-		return metricsInfo;
+		return metricInfo;
 	}
 
 	/**
@@ -592,8 +592,8 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 				return ((InternalEList<?>)getTimer()).basicRemove(otherEnd, msgs);
 			case Jpdl31Package.TASK_TYPE__ARTEFACTS:
 				return ((InternalEList<?>)getArtefacts()).basicRemove(otherEnd, msgs);
-			case Jpdl31Package.TASK_TYPE__METRICS_INFO:
-				return ((InternalEList<?>)getMetricsInfo()).basicRemove(otherEnd, msgs);
+			case Jpdl31Package.TASK_TYPE__METRIC_INFO:
+				return ((InternalEList<?>)getMetricInfo()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -633,8 +633,8 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 				return getSwimlane();
 			case Jpdl31Package.TASK_TYPE__ARTEFACTS:
 				return getArtefacts();
-			case Jpdl31Package.TASK_TYPE__METRICS_INFO:
-				return getMetricsInfo();
+			case Jpdl31Package.TASK_TYPE__METRIC_INFO:
+				return getMetricInfo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -692,9 +692,9 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 				getArtefacts().clear();
 				getArtefacts().addAll((Collection<? extends Artefact>)newValue);
 				return;
-			case Jpdl31Package.TASK_TYPE__METRICS_INFO:
-				getMetricsInfo().clear();
-				getMetricsInfo().addAll((Collection<? extends MetricInfo>)newValue);
+			case Jpdl31Package.TASK_TYPE__METRIC_INFO:
+				getMetricInfo().clear();
+				getMetricInfo().addAll((Collection<? extends MetricInfo>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -747,8 +747,8 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 			case Jpdl31Package.TASK_TYPE__ARTEFACTS:
 				getArtefacts().clear();
 				return;
-			case Jpdl31Package.TASK_TYPE__METRICS_INFO:
-				getMetricsInfo().clear();
+			case Jpdl31Package.TASK_TYPE__METRIC_INFO:
+				getMetricInfo().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -788,8 +788,8 @@ public class TaskTypeImpl extends EObjectImpl implements TaskType {
 				return SWIMLANE_EDEFAULT == null ? swimlane != null : !SWIMLANE_EDEFAULT.equals(swimlane);
 			case Jpdl31Package.TASK_TYPE__ARTEFACTS:
 				return artefacts != null && !artefacts.isEmpty();
-			case Jpdl31Package.TASK_TYPE__METRICS_INFO:
-				return metricsInfo != null && !metricsInfo.isEmpty();
+			case Jpdl31Package.TASK_TYPE__METRIC_INFO:
+				return metricInfo != null && !metricInfo.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

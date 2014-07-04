@@ -14,19 +14,41 @@ main() {
 mapping DSL::Model::model2model():JPDL::Model{
 	elements := self.elements->map model2DSLModel();
 }
+
 mapping DSL::ExperimentElement::model2DSLModel():JPDL::DocumentRoot	 {
   processDefinition := self.process->map processToProcessDefinition(self.metrics,self.experiments->at(1).internalReplication);
-  questionnaires := self.questionnaire -> map questToQuestionnaire();   
-  plan := self.experiments -> map experimentalPlanToPlan(result);
+  questionnaires := self.questionnaire -> map questToQuestionnaire(result);   
   metrics := self.metrics -> map metricsToMetrics(result)->asOrderedSet();
+  plan := self.experiments -> map experimentalPlanToPlan(result);
 }
 
 mapping DSL::Metrics::metricsToMetrics(in res: JPDL::DocumentRoot): JPDL::Metric {
-	nome := self.name;
+	name := self.name;
 	description := self.description;
 	type := getMetricType(self.detail);
-	log(type.repr());
-	
+	refname := '';
+	if(type = JPDL::MetricType::quest) then {
+		self.detail.oclAsType(DSL::DataMetric).questionnaires->forEach(q){
+			refname := refname + ':' + q.name;
+		}
+	} else {
+		if(type = JPDL::MetricType::collectedData) then {
+		var dataMetric: DSL::DataMetric;
+		dataMetric := self.detail.oclAsType(DSL::DataMetric);
+		dataMetric.collectedData->forEach(c){
+			refname := refname + ':' + c.name ;//c.oclAsType(DSL::CollectedData) + dataMetric.dataType;
+		} 
+			
+		}else {
+			if (type = JPDL::MetricType::artefact) then {
+					self.detail.oclAsType(DSL::DataMetric).artefacts->forEach(a){
+						refname := refname + ':' + a.name;
+					}
+			}endif;
+		
+	} endif;
+	}endif;
+	//setar o nome da variavel ou o nome do questionario ou do artefato...
 	var processes := self.relatesTo;
 	var proJPDL := res.allSubobjectsOfType(JPDL::ProcessDefinitionType);
 	proJPDL->forEach(pj) {
@@ -51,32 +73,32 @@ mapping DSL::ExperimentalPlan::experimentalPlanToPlan(in res: JPDL::DocumentRoot
 	
 }
 
-mapping DSL::DependentVariable::depVarToDepVar(in pro: JPDL::DocumentRoot): JPDL::DependentVariable {
+mapping DSL::DependentVariable::depVarToDepVar(in res: JPDL::DocumentRoot): JPDL::DependentVariable {
 	name := self.name;
 	description := self.description;
-	measureBy := self.metrics -> map metricToMetric(pro)->asOrderedSet();	
+	measureBy :=  getMetric(res, self.metrics);	
 }
 
-mapping DSL::Metrics::metricToMetric(in pro: JPDL::DocumentRoot): JPDL::Metric {
-	nome := self.name;
-	description := self.description;
-	type := getMetricType(self.detail);
-	var processes := pro.allSubobjectsOfType(JPDL::ProcessDefinitionType);
-	processes->forEach(p) {
-		if(p.oclAsType(ProcessDefinitionType).name.equalsIgnoreCase(self.relatesTo.name))then {
-			relatesTo := p.oclAsType(JPDL::ProcessDefinitionType);	
-		}endif;
-	};
+query getMetric(in res: JPDL::DocumentRoot, in metDSL:Sequence(DSL::Metrics)): Set(JPDL::Metric) {
 	
+	var met := res.allSubobjectsOfType(JPDL::Metric);
+	var resultList : Set(JPDL::Metric);
+	met->forEach(m) {
+		metDSL->forEach(mdsl) {
+			if(m.oclAsType(JPDL::Metric).name.equalsIgnoreCase(mdsl.name))then {
+				 resultList += Sequence {m.oclAsType(JPDL::Metric)};	
+			}endif;
+		};
+	};
+	return resultList;
 }
 
 mapping DSL::Factor::factorToFactor(): JPDL::Factor {
 	name := self.name;
 	levels := self.level->map levelToLevel();
-	if(self.isDesiredVariation.equalsIgnoreCase("true"))then{
-		//result.isTreament := JPDL::BooleanType::true;
-	}endif;
+	result.isTreament := getBooleanValue(self.isDesiredVariation); 
 }
+
 mapping DSL::Levels::levelToLevel(): JPDL::Level{
 	name := self.name;
 }
@@ -96,8 +118,9 @@ mapping DSL::Goal::goalsToGoal(in des: JPDL::Design):JPDL::Goal {
 mapping DSL::Hypotheses::hypothesisToHypothesis(in des: JPDL::Design):JPDL::Hyphotesis {
 	description := self.description;
 	id := self.name;
-	type := getHypType(self.type);
 	relationOp :=  relationMapping(self.operator);
+	type := getHypType(self.type);
+	 
 	//link to dep variable
 	var deps : Set(JPDL::DependentVariable);
 	deps:= des.depVariable;
@@ -124,28 +147,30 @@ mapping DSL::Levels::levelToTreatments():JPDL::Level{
 	
 }
 
-mapping DSL::Questionnaire::questToQuestionnaire(): JPDL::Questionnaire {
+mapping DSL::Questionnaire::questToQuestionnaire(in res: JPDL::DocumentRoot): JPDL::Questionnaire {
 	name := self.name;
 	question := self.question->map questionToQuestion();
 	if(type<>null) then {
 		type := getQuestionnaireType(self.questionnaireType);
 	}endif;
-	/*var processes := result.allSubobjectsOfType(JPDL::ProcessDefinitionType);
-	processes->forEach(p) {
-		
-		log(p.oclAsType(ProcessDefinitionType).name);
-		if(p.oclAsType(ProcessDefinitionType).name.equalsIgnoreCase(self.re.name))then {
-			result.fromGoal := g.oclAsType(JPDL::Goal);	
-		}endif;
-	};*/
+
+	self.relatesTo->forEach(p){
+	   res.allSubobjectsOfType(JPDL::ProcessDefinitionType)->forEach(pro){
+	   		if(pro.oclAsType(JPDL::ProcessDefinitionType).name.equalsIgnoreCase(p.name))then{
+	   				result.processes += Sequence{pro.oclAsType(JPDL::ProcessDefinitionType)};
+	   		}endif;
+	   };
+	};
 }
 
 mapping DSL::Question::questionToQuestion():JPDL::Question{
 	description := self.description;
-	result.type := getQuestionType(self.type);
-	result.option := self.alternatives->alternativesToAlternatives();
+	type := getQuestionType(self.type);
+	option := self.alternatives->alternativesToAlternatives();
 	if (self.req = 1) then {
 	    required := true.oclAsType(BooleanType);
+	}else {
+		required := false.oclAsType(BooleanType);
 	}endif;
 }
 
@@ -192,31 +217,56 @@ mapping DSL::Process::processToProcessDefinition(in mets:OrderedSet(DSL::Metrics
   };
   name := self.name;
   quantity := num.round();
-  taskNode := self.task->map act2taskNode(mets,self)->asOrderedSet();
+  taskNode := self.task->map task2taskNode(mets,self)->asOrderedSet();
   
   //links
     self.allInstances(DSL::Task)-> map ligarAoNoFinal(result)->asOrderedSet();
 }
 
-mapping DSL::Task::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL::Process): JPDL::TaskNodeType{
+mapping DSL::Task::task2taskNode(in met:OrderedSet(DSL::Metrics), in pro:DSL::Process): JPDL::TaskNodeType{
 	name := self.name;
 	description := self.description;
-	
+	var metrName: String;
 		
 	if(not(self.questionnaire->isEmpty())) then {
+		
+	log('task -> quest');
 		self.questionnaire->forEach(i){
-		result.metrics += object JPDL::MetricInfo{
-			name := self.name;
-			refName := i.name;
-			metricType := MetricType::quest;
-		}
-	};
+			
+		 metrName := getMetricNameQuest(pro.name,met, i);
+		 result.metrics += Sequence{ object JPDL::MetricInfo{
+		 	name := metrName;
+		 }
+		 }
+	}
+	} else {	
 		
-		//metricType := MetricType::quest;
-		//result.metrics := self.questionnaire->map questToMetricInfo()->asOrderedSet();
-		
-		//incluir a ligação entre o taskNode e a metric info
-	} endif;
+		if(not(self.collectData->isEmpty()))then {
+			
+		log('task -> collect');
+			self.collectData->forEach(c){
+				
+				metrName := getMetricNameData(pro.name,met, c);
+				result.metrics += Sequence {object JPDL::MetricInfo{
+			    name := metrName;
+			
+		}}
+			}
+			}else {
+			
+				
+			if(not(self.artefacts->isEmpty()))then {
+			
+			log('task -> artefact');
+			self.artefacts->forEach(a){
+				metrName := getMetricNameArtefact(pro.name,met, a);
+				result.metrics += Sequence {object JPDL::MetricInfo{
+			    name := metrName;}}}
+			}endif;
+			
+			}endif;
+		}endif;
+
 		
 	artefacts := self.artefacts->map artefact2artefact()->asOrderedSet();
 	
@@ -231,13 +281,13 @@ mapping DSL::Task::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL:
 	
    var nomeInput: String;
    var i :=0;
-   metrics->forEach(ele) {    	
+   met->forEach(ele) {    	
    	if(ele.relatesTo.name.equalsIgnoreCase(pro.name)) then { // check if the metric is set to this process
    	  ele.detail->forEach(j){ 
-   	  	if(j.metaClassName().equalsIgnoreCase("ActivityMetric")) then {
-   	  		var part1:= j.oclAsType(ActivityMetric).activityBegin.name.equalsIgnoreCase(self.name);
-   			var part2:= j.oclAsType(ActivityMetric).activityEnd.name.equalsIgnoreCase(self.name);
-   			var part3:= checkBetween(j.oclAsType(ActivityMetric).activityBegin.name,j.oclAsType(ActivityMetric).activityEnd.name,self.name, pro);
+   	  	if(j.metaClassName().equalsIgnoreCase("TaskMetric")) then {
+   	  		var part1:= j.oclAsType(TaskMetric).taskBegin.name.equalsIgnoreCase(self.name);
+   			var part2:= j.oclAsType(TaskMetric).taskEnd.name.equalsIgnoreCase(self.name);
+   			var part3:= checkBetween(j.oclAsType(TaskMetric).taskBegin.name,j.oclAsType(TaskMetric).taskEnd.name,self.name, pro);
             if((part1 or part2 or part3)) then {// and not part4))then {
    				result.event += Sequence {
    					object JPDL::EventType{
@@ -263,13 +313,7 @@ mapping DSL::Task::act2taskNode(in metrics:OrderedSet(DSL::Metrics), in pro:DSL:
    
 }
 
-mapping DSL::Questionnaire::questToMetricInfo():JPDL::MetricInfo {
-	
-	log('&');
-	name := self.name;
-	metricType := MetricType::quest;
-	
-}
+
 	
 mapping DSL::Artefact::artefact2artefact():JPDL::Artefact{
 	name := self.name;
@@ -425,19 +469,18 @@ query isSuccessor(in rep: String,in act: Set(Task)): Boolean {
 //
 query getQuestionType(in type : DSL::AnswerType) : JPDL::AnswerType {
 	var res: JPDL::AnswerType;
-
-	if(type = DSL::AnswerType::ComboBox) then {
-		res := JPDL::AnswerType::comboBox;
-	}
-	else { 
-	if(type = DSL::AnswerType::CheckBoxes) then {
-		res := JPDL::AnswerType::checkBox;
-	} else {
-	if(type = DSL::AnswerType::ParagraphText) then {
+   
+    if(type.=(DSL::AnswerType::SingleChoice)) then {
+		res := JPDL::AnswerType::checkBox;    }
+	else {
+	if(type.= (DSL::AnswerType::ParagraphText)) then {
 		res := JPDL::AnswerType::paragraphText;
 	} else {
-		if(type = DSL::AnswerType::Text) then {
+		if(type.=(DSL::AnswerType::Text)) then {
 		res := JPDL::AnswerType::text;
+	} else {
+		if(type.=(DSL::AnswerType::MultipleChoice)) then {
+		res := JPDL::AnswerType::checkBox;
 	}endif;
 	}endif;
 	}endif;
@@ -448,16 +491,16 @@ query getQuestionType(in type : DSL::AnswerType) : JPDL::AnswerType {
 
 query getDesign(in type : DSL::DesignType) : JPDL::DoEType {
 	var res: JPDL::DoEType;
-	if( type = DSL::DesignType::CDR) then {
+	if( type.=(DSL::DesignType::CDR))then {
 		res := JPDL::DoEType::CRD;
 	} else {
-	if( type = DSL::DesignType::RCBD) then {
+	if( type.=(DSL::DesignType::RCBD)) then {
 		res := JPDL::DoEType::RCBD;
 	} else {
-		if( type = DSL::DesignType::LS) then {
+		if( type.=(DSL::DesignType::LS)) then {
 		res := JPDL::DoEType::LS;
 	} else {
-	if( type = DSL::DesignType::other) then {
+	if( type.=(DSL::DesignType::other)) then {
 		res := JPDL::DoEType::other;
 	}endif;
 	}endif;
@@ -466,17 +509,17 @@ query getDesign(in type : DSL::DesignType) : JPDL::DoEType {
 	return res;
 }
 
-query getMetricType(in detail: Set(DSL::Detail)): JPDL::MetricType {
+query getMetricType(in detail: DSL::Detail): JPDL::MetricType {
 	
-	detail->forEach(d) {
-		if(d.oclIsKindOf(DSL::DataMetric))then {
-			if(d.oclAsType(DSL::DataMetric).collectedData <> null) then {
+
+		if(detail.oclIsKindOf(DSL::DataMetric))then {
+			if(detail.oclAsType(DSL::DataMetric).collectedData <> null) then {
 				return MetricType::collectedData;
 			}else {
-			if(d.oclAsType(DSL::DataMetric).artefacts <> null) then {
+			if(detail.oclAsType(DSL::DataMetric).artefacts <> null) then {
 				return MetricType::artefact;
 			}else {
-			if(d.oclAsType(DSL::DataMetric).questionnaires <> null) then {
+			if(detail.oclAsType(DSL::DataMetric).questionnaires <> null) then {
 				return MetricType::quest;
 				}endif
 			}endif
@@ -487,13 +530,12 @@ query getMetricType(in detail: Set(DSL::Detail)): JPDL::MetricType {
 			
 		}endif;
 		
-	};
+	
 	
 }
 query getQuestionnaireType(in type: DSL::QuestionnaireType): JPDL::QuestionnaireType {
-	
-	
-		if(type = QuestionnaireType::pre)then {
+
+		if(type.=(QuestionnaireType::pre))then {
 			return JPDL::QuestionnaireType::Pre;
 		} else {
 			return JPDL::QuestionnaireType::Post;
@@ -504,32 +546,34 @@ query getQuestionnaireType(in type: DSL::QuestionnaireType): JPDL::Questionnaire
 }
 
 query getHypType(in type: DSL::HypothesisType): JPDL::HypothesisType {
-	
-	
-		if(type = HypothesisType::alternative)then {
-			return JPDL::HypothesisType::alternative;
+	    var res : JPDL::HypothesisType;
+	    
+		if(type<>(DSL::HypothesisType::null_))then {
+			res := JPDL::HypothesisType::alternative;
 		} else {
-			return JPDL::HypothesisType::null_;
+			res := JPDL::HypothesisType::null_;
 			
 		}endif;
-	
-
+		log('typo hyp:',res);
+		return res;
 }
 query relationMapping(in type: DSL::OperatorType):JPDL::RelationOperator {
-	if (type = OperatorType::equal) then {
+	
+
+	if (type.=(OperatorType::equal)) then {
 		return JPDL::RelationOperator::equal;
 	}else { 
-	if (type = OperatorType::different) then {
-		return JPDL::RelationOperator::morethan;	
+	if (type .=(OperatorType::different) )then {
+		return JPDL::RelationOperator::different;	
 	} else {
 		
-	if (type = OperatorType::more) then {
+	if (type.=(OperatorType::more)) then {
 		return JPDL::RelationOperator::morethan;
 	} else {
-		if (type = OperatorType::less) then {
+		if (type.=(OperatorType::less)) then {
 		return JPDL::RelationOperator::lessthan;
 	} else {
-		if (type = OperatorType::moreEqual) then {
+		if (type.=(OperatorType::moreEqual)) then {
 		return JPDL::RelationOperator::moreequalthan;
 	} else {
 		return JPDL::RelationOperator::lessequalthan;
@@ -539,4 +583,66 @@ query relationMapping(in type: DSL::OperatorType):JPDL::RelationOperator {
 	}endif;
 	}endif;
 	return null;
+}
+query getBooleanValue(in type: String): JPDL::BooleanType {
+	if(type.equalsIgnoreCase("true")) then {
+		return true.oclAsType(BooleanType);
+	} else{
+		return false.oclAsType(BooleanType);
+	}endif;
+	return null;
+}
+
+query getMetricNameQuest(in proc: String, in met: OrderedSet(DSL::Metrics), in quest: DSL::Questionnaire): String {
+log('process name: '+ proc);
+met->forEach(m){
+	m.relatesTo->forEach(p) {
+		if(p.name.equalsIgnoreCase(proc))then {
+		    m.allSubobjectsOfType(DSL::DataMetric)->forEach(d){
+		    	if(d.oclAsType(DSL::DataMetric).questionnaires->notEmpty())then{
+		    	    d.oclAsType(DSL::DataMetric).questionnaires->forEach(q) {
+		    	    	if(q.name.equalsIgnoreCase(quest.name))then {
+		    	    		return m.name;
+		    	    	}endif;
+		    	    };
+		    	  }endif;
+		    };
+		  }endif;
+	};
+};
+}
+query getMetricNameData(in proc: String, in met: OrderedSet(DSL::Metrics),in  cd: DSL::CollectedData): String {
+	log('process name: '+ proc);
+met->forEach(m){
+	m.relatesTo->forEach(p) {
+		if(p.name.equalsIgnoreCase(proc))then {
+		    m.allSubobjectsOfType(DSL::DataMetric)->forEach(d){
+		    	if(d.oclAsType(DSL::DataMetric).collectedData->notEmpty())then{
+		    	    d.oclAsType(DSL::DataMetric).collectedData->forEach(c) {
+		    	    	if(c.name.equalsIgnoreCase(cd.name))then {
+		    	    		return m.name;
+		    	    	}endif;
+		    	    };
+		    	  }endif;
+		    };
+		  }endif;
+	};
+};
+}
+query getMetricNameArtefact(in proc: String, in met: OrderedSet(DSL::Metrics),in  art: DSL::Artefact): String {
+met->forEach(m){
+	m.relatesTo->forEach(p) {
+		if(p.name.equalsIgnoreCase(proc))then {
+		    m.allSubobjectsOfType(DSL::DataMetric)->forEach(d){
+		    	if(d.oclAsType(DSL::DataMetric).artefacts->notEmpty())then{
+		    	    d.oclAsType(DSL::DataMetric).artefacts->forEach(a) {
+		    	    	if(a.name.equalsIgnoreCase(art.name))then {
+		    	    		return m.name;
+		    	    	}endif;
+		    	    };
+		    	  }endif;
+		    };
+		  }endif;
+	};
+};
 }

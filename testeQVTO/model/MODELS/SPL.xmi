@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="ASCII"?>
+<expDslv2:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:expDslv2="http://www.ufrn.br/dimap/ase/dsl/ExpDslv2">
+  <elements name="SPL Testing Strategies V2">
+    <process name="STTestingF1" treatment="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.1/@level.0">
+      <role>Participant</role>
+      <activities name="SP1_F1_1" description="Insert a new member - Product 1" next="//@elements.0/@process.0/@activities.1">
+        <tasks name="ExecuteTCSP1_F1_1" description="Execute the test case SP1_F1_1">
+          <artefacts name="TCSP1_F1_1" description="Teste Case SP1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F1_1" description="Report CR to test case SP1-F1_1" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F1_2" description="Insert a new conference paper  - Product 1" next="//@elements.0/@process.0/@activities.2">
+        <tasks name="ExecuteTCSP1_F1_2" description="Execute the test case SP1_F1_2">
+          <artefacts name="TCSP1_F1_2" description="Teste Case SP1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F1_2" description="Report CR to test case SP1-F1_2" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F1_3" description="Insert a doctoral thesis - Product 1" next="//@elements.0/@process.0/@activities.3">
+        <tasks name="ExecuteTCSP1_F1_3" description="Execute the test case SP1_F1_3">
+          <artefacts name="TCSP1_F1_3" description="Teste Case SP1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F1_3" description="Report CR to test case SP1F1_3" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F1_4" description="Generate Report of Publications - Product 1" next="//@elements.0/@process.0/@activities.4">
+        <tasks name="ExecuteTCSP1_F1_4" description="Execute the test case SP1_F1_4">
+          <artefacts name="TCSP1_F1_4" description="Teste Case SP1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F1_4" description="Report CR to test case SP1F1_4" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F1_5" description="Generate Report of Publications - Product 1" next="//@elements.0/@process.0/@activities.5">
+        <tasks name="ExecuteTCSP1_F1_5" description="Execute the test case SP1_F1_5">
+          <artefacts name="TCSP1_F1_5" description="Teste Case SP1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F1_5" description="Report CR to test case SP1F1_5" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F1_6" description="Check the format of the generated reports - Product 1" next="//@elements.0/@process.0/@activities.6">
+        <tasks name="ExecuteTCSP1_F1_6" description="Execute the test case SP1_F1_6">
+          <artefacts name="TCSP1_F1_6" description="Teste Case SP1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F1_6" description="Report CR to test case SP1F1_6" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F1_1" description="Insert a new member - Product 2" next="//@elements.0/@process.0/@activities.7">
+        <tasks name="ExecuteTCSP2_F1_1" description="Execute the test case SP2_F1_1">
+          <artefacts name="TCSP2_F1_1" description="Teste Case 1 SP2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F1_1" description="Report CR to test case 1 SP2F1_1" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F1_2" description="Insert a new conference paper  - Product 2" next="//@elements.0/@process.0/@activities.8">
+        <tasks name="ExecuteTCSP2_F1_2" description="Execute the test case SP2_F1_2">
+          <artefacts name="TCSP2_F1_2" description="Teste Case 2 SP2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F1_2" description="Report CR to test case 2 SP2F1_2" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F1_3" description="Insert a doctoral thesis - Product 2" next="//@elements.0/@process.0/@activities.9">
+        <tasks name="ExecuteTCSP2_F1_3" description="Execute the test case SP2_F1_3">
+          <artefacts name="TCSP2_F1_3" description="Teste Case 3 SP2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F1_3" description="Report CR to test case 3 SP2F1_3" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F1_4" description="Generate Report of Publications - Product 2" next="//@elements.0/@process.0/@activities.10">
+        <tasks name="ExecuteTCSP2_F1_4" description="Execute the test case SP2_F1_4">
+          <artefacts name="TCSP2_F1_4" description="Teste Case 4 SP2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F1_4" description="Report CR to test case 4 SP2F1_4" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F1_5" description="Generate Report of Publications - Product 2" next="//@elements.0/@process.0/@activities.11">
+        <tasks name="ExecuteTCSP2_F1_5" description="Execute the test case SP2_F1_5">
+          <artefacts name="TCSP2_F1_5" description="Teste Case 5 SP2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F1_5" description="Report CR to test case SP2F1_5" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F1_6" description="Check the format of the generated reports - Product 2">
+        <tasks name="ExecuteTCSP2_F1_6" description="Execute the test case SP2_F1_6">
+          <artefacts name="TCSP2_F1_6" description="Teste Case 6 SP2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F1_6" description="Report CR to test case SPF1_6" var="//@elements.0/@metrics.0/@detail.0/@collectedData.0"/>
+      </activities>
+    </process>
+    <process name="STTestingF2" treatment="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.1/@level.1">
+      <role>Participant</role>
+      <activities name="SP1_F2_1" description="Insert a new research line - Product 1" next="//@elements.0/@process.1/@activities.1">
+        <tasks name="ExecuteTCSP1_F2_1" description="Execute the test case SP1_F2_1">
+          <artefacts name="TCSP1_F2_1" description="Teste Case SP1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F2_1" description="Report CR to test case SP1F2_1" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F2_2" description="Associate a member to the research line  - Product 1" next="//@elements.0/@process.1/@activities.2">
+        <tasks name="ExecuteTCSP1_F2_2" description="Execute the test case SP1_F2_2">
+          <artefacts name="TCSP1_F2_2" description="Teste Case SP1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F2_2" description="Report CR to test case SP1F2_2" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F2_3" description="Remove a research line - Product 1" next="//@elements.0/@process.1/@activities.3">
+        <tasks name="ExecuteTCSP1_F2_3" description="Execute the test case SP1_F2_3">
+          <artefacts name="TCSP1_F2_3" description="Teste Case SP1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F2_3" description="Report CR to test case SP1F2_3" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F2_4" description="Insert a new research line - Product 1" next="//@elements.0/@process.1/@activities.4">
+        <tasks name="ExecuteTCSP1_F2_4" description="Execute the test case SP1_F2_4">
+          <artefacts name="TCSP1_F2_4" description="Teste Case SP1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F2_4" description="Report CR to test case SP1F2_4" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F2_5" description="Associate a publication to a research line - Product 1" next="//@elements.0/@process.1/@activities.5">
+        <tasks name="ExecuteTCSP1_F2_5" description="Execute the test case SP1_F2_5">
+          <artefacts name="TCSP1_F2_5" description="Teste Case SP1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F2_5" description="Report CR to test case SP1F2_5" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP1_F2_6" description="Edit a research line" next="//@elements.0/@process.1/@activities.6">
+        <tasks name="ExecuteTCSP1_F2_6" description="Execute the test case SP1_F2_6">
+          <artefacts name="TCSP1_F2_6" description="Teste Case SP1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP1_F2_6" description="Report CR to test case SP1F2_6" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F2_1" description="Insert a new research line - Product 2" next="//@elements.0/@process.1/@activities.7">
+        <tasks name="ExecuteTCSP2_F2_1" description="Execute the test case SP2_F2_1">
+          <artefacts name="TCSP2_F2_1" description="Teste Case 1 SP2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F2_1" description="Report CR to test case 1 SP2F2_1" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F2_2" description="Associate a member to the research line  - Product 2" next="//@elements.0/@process.1/@activities.8">
+        <tasks name="ExecuteTCSP2_F2_2" description="Execute the test case SP2_F2_2">
+          <artefacts name="TCSP2_F2_2" description="Teste Case 2 SP2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F2_2" description="Report CR to test case 2 SP2F2_2" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F2_3" description="Remove a research line - Product 2" next="//@elements.0/@process.1/@activities.9">
+        <tasks name="ExecuteTCSP2_F2_3" description="Execute the test case SP2_F2_3">
+          <artefacts name="TCSP2_F2_3" description="Teste Case 3 SP2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F2_3" description="Report CR to test case 3 SP2F2_3" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F2_4" description="Insert a new research line - Product 2" next="//@elements.0/@process.1/@activities.10">
+        <tasks name="ExecuteTCSP2_F2_4" description="Execute the test case SP2_F2_4">
+          <artefacts name="TCSP2_F2_4" description="Teste Case 4 SP2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F2_4" description="Report CR to test case 4 SP2F2_4" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F2_5" description="Associate a publication to a research line - Product 2" next="//@elements.0/@process.1/@activities.11">
+        <tasks name="ExecuteTCSP2_F2_5" description="Execute the test case SP2_F2_5">
+          <artefacts name="TCSP2_F2_5" description="Teste Case 5 SP2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F2_5" description="Report CR to test case SP2F2_5" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SP2_F2_6" description="Edit a research line - Product 2">
+        <tasks name="ExecuteTCSP2_F2_6" description="Execute the test case SP2_F2_6">
+          <artefacts name="TCSP2_F2_6" description="Teste Case 6 SP2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSP2_F2_6" description="Report CR to test case SPF2_6" var="//@elements.0/@metrics.1/@detail.0/@collectedData.0"/>
+      </activities>
+    </process>
+    <process name="GTTestingF1" treatment="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.1/@level.0">
+      <role>Participant</role>
+      <activities name="SG1_F1_1" description="Insert a new member - Product 1" next="//@elements.0/@process.2/@activities.1">
+        <tasks name="ExecuteTCSG1_F1_1" description="Execute the test case SG1_F1_1">
+          <artefacts name="TCSG1_F1_1" description="Teste Case SG1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F1_1" description="Report CR to test case SG1F1_1" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F1_2" description="Insert a new conference paper  - Product 1" next="//@elements.0/@process.2/@activities.2">
+        <tasks name="ExecuteTCSG1_F1_2" description="Execute the test case SG1_F1_2">
+          <artefacts name="TCSG1_F1_2" description="Teste Case SG1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F1_2" description="Report CR to test case SG1F1_2" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F1_3" description="Insert a doctoral thesis - Product 1" next="//@elements.0/@process.2/@activities.3">
+        <tasks name="ExecuteTCSG1_F1_3" description="Execute the test case SG1_F1_3">
+          <artefacts name="TCSG1_F1_3" description="Teste Case SG1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F1_3" description="Report CR to test case SG1F1_3" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F1_4" description="Generate Report of Publications - Product 1" next="//@elements.0/@process.2/@activities.4">
+        <tasks name="ExecuteTCSG1_F1_4" description="Execute the test case SG1_F1_4">
+          <artefacts name="TCSG1_F1_4" description="Teste Case SG1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F1_4" description="Report CR to test case SG1F1_4" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F1_5" description="Generate Report of Publications - Product 1" next="//@elements.0/@process.2/@activities.5">
+        <tasks name="ExecuteTCSG1_F1_5" description="Execute the test case SG1_F1_5">
+          <artefacts name="TCSG1_F1_5" description="Teste Case SG1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F1_5" description="Report CR to test case SG1F1_5" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F1_6" description="Check the format of the generated reports - Product 1" next="//@elements.0/@process.2/@activities.6">
+        <tasks name="ExecuteTCSG1_F1_6" description="Execute the test case SG1_F1_6">
+          <artefacts name="TCSG1_F1_6" description="Teste Case SG1 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F1_6" description="Report CR to test case SG1F1_6" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F1_1" description="Insert a new member - Product 2" next="//@elements.0/@process.2/@activities.7">
+        <tasks name="ExecuteTCSG2_F1_1" description="Execute the test case SG2_F1_1">
+          <artefacts name="TCSG2_F1_1" description="Teste Case 1 SG2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F1_1" description="Report CR to test case 1 SG2F1_1" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F1_2" description="Insert a new conference paper  - Product 2" next="//@elements.0/@process.2/@activities.8">
+        <tasks name="ExecuteTCSG2_F1_2" description="Execute the test case SG2_F1_2">
+          <artefacts name="TCSG2_F1_2" description="Teste Case 2 SG2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F1_2" description="Report CR to test case 2 SG2F1_2" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F1_3" description="Insert a doctoral thesis - Product 2" next="//@elements.0/@process.2/@activities.9">
+        <tasks name="ExecuteTCSG2_F1_3" description="Execute the test case SG2_F1_3">
+          <artefacts name="TCSG2_F1_3" description="Teste Case 3 SG2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F1_3" description="Report CR to test case 3 SG2F1_3" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F1_4" description="Generate Report of Publications - Product 2" next="//@elements.0/@process.2/@activities.10">
+        <tasks name="ExecuteTCSG2_F1_4" description="Execute the test case SG2_F1_4">
+          <artefacts name="TCSG2_F1_4" description="Teste Case 4 SG2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F1_4" description="Report CR to test case 4 SG2F1_4" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F1_5" description="Generate Report of Publications - Product 2" next="//@elements.0/@process.2/@activities.11">
+        <tasks name="ExecuteTCSG2_F1_5" description="Execute the test case SG2_F1_5">
+          <artefacts name="TCSG2_F1_5" description="Teste Case 5 SG2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F1_5" description="Report CR to test case SG2F1_5" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F1_6" description="Check the format of the generated reports - Product 2">
+        <tasks name="ExecuteTCSG2_F1_6" description="Execute the test case SG2_F1_6">
+          <artefacts name="TCSG2_F1_6" description="Teste Case 6 SG2 Feature 1"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F1_6" description="Report CR to test case SGF1_6" var="//@elements.0/@metrics.2/@detail.0/@collectedData.0"/>
+      </activities>
+    </process>
+    <process name="GTTestingF2" treatment="//@elements.0/@experiments.0/@factor.0/@level.0 //@elements.0/@experiments.0/@factor.1/@level.1">
+      <role>Participant</role>
+      <activities name="SG1_F2_1" description="Insert a new research line - Product 1" next="//@elements.0/@process.3/@activities.1">
+        <tasks name="ExecuteTCSG1_F2_1" description="Execute the test case SG1_F2_1">
+          <artefacts name="TCSG1_F2_1" description="Teste Case SG1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F2_1" description="Report CR to test case SG1F2_1" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F2_2" description="Associate a member to the research line  - Product 1" next="//@elements.0/@process.3/@activities.2">
+        <tasks name="ExecuteTCSG1_F2_2" description="Execute the test case SG1_F2_2">
+          <artefacts name="TCSG1_F2_2" description="Teste Case SG1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F2_2" description="Report CR to test case SG1F2_2" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F2_3" description="Remove a research line - Product 1" next="//@elements.0/@process.3/@activities.3">
+        <tasks name="ExecuteTCSG1_F2_3" description="Execute the test case SG1_F2_3">
+          <artefacts name="TCSG1_F2_3" description="Teste Case SG1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F2_3" description="Report CR to test case SG1F2_3" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F2_4" description="Insert a new research line - Product 1" next="//@elements.0/@process.3/@activities.4">
+        <tasks name="ExecuteTCSG1_F2_4" description="Execute the test case SG1_F2_4">
+          <artefacts name="TCSG1_F2_4" description="Teste Case SG1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F2_4" description="Report CR to test case SG1F2_4" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F2_5" description="Associate a publication to a research line - Product 1" next="//@elements.0/@process.3/@activities.5">
+        <tasks name="ExecuteTCSG1_F2_5" description="Execute the test case SG1_F2_5">
+          <artefacts name="TCSG1_F2_5" description="Teste Case SG1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F2_5" description="Report CR to test case SG1F2_5" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG1_F2_6" description="Edit a research line" next="//@elements.0/@process.3/@activities.6">
+        <tasks name="ExecuteTCSG1_F2_6" description="Execute the test case SG1_F2_6">
+          <artefacts name="TCSG1_F2_6" description="Teste Case SG1 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG1_F2_6" description="Report CR to test case SG1F2_6" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F2_1" description="Insert a new research line - Product 2" next="//@elements.0/@process.3/@activities.7">
+        <tasks name="ExecuteTCSG2_F2_1" description="Execute the test case SG2_F2_1">
+          <artefacts name="TCSG2_F2_1" description="Teste Case 1 SG2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F2_1" description="Report CR to test case 1 SG2F2_1" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F2_2" description="Associate a member to the research line  - Product 2" next="//@elements.0/@process.3/@activities.8">
+        <tasks name="ExecuteTCSG2_F2_2" description="Execute the test case SG2_F2_2">
+          <artefacts name="TCSG2_F2_2" description="Teste Case 2 SG2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F2_2" description="Report CR to test case 2 SG2-F2_2" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F2_3" description="Remove a research line - Product 2" next="//@elements.0/@process.3/@activities.9">
+        <tasks name="ExecuteTCSG2_F2_3" description="Execute the test case SG2_F2_3">
+          <artefacts name="TCSG2_F2_3" description="Teste Case 3 SG2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F2_3" description="Report CR to test case 3 SG2F2_3" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F2_4" description="Insert a new research line - Product 2" next="//@elements.0/@process.3/@activities.10">
+        <tasks name="ExecuteTCSG2_F2_4" description="Execute the test case SG2_F2_4">
+          <artefacts name="TCSG2_F2_4" description="Teste Case 4 SG2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F2_4" description="Report CR to test case 4 SG2F2_4" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F2_5" description="Associate a publication to a research line - Product 2" next="//@elements.0/@process.3/@activities.11">
+        <tasks name="ExecuteTCSG2_F2_5" description="Execute the test case SG2_F2_5">
+          <artefacts name="TCSG2_F2_5" description="Teste Case 5 SG2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F2_5" description="Report CR to test case SG2F2_5" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+      <activities name="SG2_F2_6" description="Edit a research line - Product 2">
+        <tasks name="ExecuteTCSG2_F2_6" description="Execute the test case SG2_F2_6">
+          <artefacts name="TCSG2_F2_6" description="Teste Case 6 SG2 Feature 2"/>
+        </tasks>
+        <tasks name="ReportCRSG2_F2_6" description="Report CR to test case SGF2_6" var="//@elements.0/@metrics.3/@detail.0/@collectedData.0"/>
+      </activities>
+    </process>
+    <metrics name="ReportedCR1" relatesTo="//@elements.0/@process.0" description="CR Reported during test execution for Specific Technique - Feature 1">
+      <detail xsi:type="expDslv2:DataMetric">
+        <collectedData name="CR"/>
+        <dataType>text</dataType>
+      </detail>
+    </metrics>
+    <metrics name="ReportedCR2" relatesTo="//@elements.0/@process.1" description="CR Reported during test execution">
+      <detail xsi:type="expDslv2:DataMetric">
+        <collectedData name="CR"/>
+        <dataType>text</dataType>
+      </detail>
+    </metrics>
+    <metrics name="ReportedCR3" relatesTo="//@elements.0/@process.2" description="CR Reported during test execution">
+      <detail xsi:type="expDslv2:DataMetric">
+        <collectedData name="CR"/>
+        <dataType>text</dataType>
+      </detail>
+    </metrics>
+    <metrics name="ReportedCR4" relatesTo="//@elements.0/@process.3" description="CR Reported during test execution">
+      <detail xsi:type="expDslv2:DataMetric">
+        <collectedData name="CR"/>
+        <dataType>text</dataType>
+      </detail>
+    </metrics>
+    <metrics name="TimeExecution1" relatesTo="//@elements.0/@process.0" description="Time To Execute Testing - Specific Technique - F1">
+      <detail xsi:type="expDslv2:TaskMetric" tasks="//@elements.0/@process.0/@activities.0/@tasks.0 //@elements.0/@process.0/@activities.1/@tasks.0 //@elements.0/@process.0/@activities.2/@tasks.0 //@elements.0/@process.0/@activities.3/@tasks.0 //@elements.0/@process.0/@activities.4/@tasks.0 //@elements.0/@process.0/@activities.5/@tasks.0 //@elements.0/@process.0/@activities.6/@tasks.0 //@elements.0/@process.0/@activities.8/@tasks.0 //@elements.0/@process.0/@activities.9/@tasks.0 //@elements.0/@process.0/@activities.10/@tasks.0 //@elements.0/@process.0/@activities.11/@tasks.0"/>
+    </metrics>
+    <metrics name="TimeExecution2" relatesTo="//@elements.0/@process.1" description="Time To Execute Testing - Specific Technique - F2">
+      <detail xsi:type="expDslv2:TaskMetric" tasks="//@elements.0/@process.1/@activities.0/@tasks.0 //@elements.0/@process.1/@activities.1/@tasks.0 //@elements.0/@process.1/@activities.2/@tasks.0 //@elements.0/@process.1/@activities.3/@tasks.0 //@elements.0/@process.1/@activities.4/@tasks.0 //@elements.0/@process.1/@activities.5/@tasks.0 //@elements.0/@process.1/@activities.6/@tasks.0 //@elements.0/@process.1/@activities.7/@tasks.0 //@elements.0/@process.1/@activities.8/@tasks.0 //@elements.0/@process.1/@activities.9/@tasks.0 //@elements.0/@process.1/@activities.10/@tasks.0 //@elements.0/@process.1/@activities.11/@tasks.0"/>
+    </metrics>
+    <metrics name="TimeExecution3" relatesTo="//@elements.0/@process.2" description="Time To Execute Testing - Generic Technique - F1">
+      <detail xsi:type="expDslv2:TaskMetric" tasks="//@elements.0/@process.2/@activities.0/@tasks.0 //@elements.0/@process.2/@activities.1/@tasks.0 //@elements.0/@process.2/@activities.2/@tasks.0 //@elements.0/@process.2/@activities.3/@tasks.0 //@elements.0/@process.2/@activities.4/@tasks.0 //@elements.0/@process.2/@activities.5/@tasks.0 //@elements.0/@process.2/@activities.6/@tasks.0 //@elements.0/@process.2/@activities.7/@tasks.0 //@elements.0/@process.2/@activities.8/@tasks.0 //@elements.0/@process.2/@activities.9/@tasks.0 //@elements.0/@process.2/@activities.10/@tasks.0 //@elements.0/@process.2/@activities.11/@tasks.0"/>
+    </metrics>
+    <metrics name="TimeExecution4" relatesTo="//@elements.0/@process.3" description="Time To Execute Testing - Generic Technique - F2">
+      <detail xsi:type="expDslv2:TaskMetric" tasks="//@elements.0/@process.3/@activities.0/@tasks.0 //@elements.0/@process.3/@activities.1/@tasks.0 //@elements.0/@process.3/@activities.2/@tasks.0 //@elements.0/@process.3/@activities.3/@tasks.0 //@elements.0/@process.3/@activities.4/@tasks.0 //@elements.0/@process.3/@activities.5/@tasks.0 //@elements.0/@process.3/@activities.6/@tasks.0 //@elements.0/@process.3/@activities.7/@tasks.0 //@elements.0/@process.3/@activities.8/@tasks.0 //@elements.0/@process.3/@activities.9/@tasks.0 //@elements.0/@process.3/@activities.10/@tasks.0 //@elements.0/@process.3/@activities.11/@tasks.0"/>
+    </metrics>
+    <experiments type="LS - Latin Square" tosubhypotheses="//@elements.0/@experiments.0/@hypotheses.0/@subhypotheses.0 //@elements.0/@experiments.0/@hypotheses.1/@subhypotheses.0 //@elements.0/@experiments.0/@hypotheses.2/@subhypotheses.0 //@elements.0/@experiments.0/@hypotheses.3/@subhypotheses.0" internalReplication="4">
+      <goal name="G1" description="Analyze the test execution process, for the purpose of evaluating two different SPL test case design techniques (GT vs. ST), with respect to their efficiency regarding&#xD;&#xA;          time to execute the test suites as well as the number of terminated CRs reported during the test execution process. Using the point of view of test engineers and &#xD;&#xA;          software engineering researchers in the context of controlled experiments done with graduate and undergraduate students."/>
+      <hypotheses name="H10" description="The test execution effort using ST is the same compared with the GT " fromGoal="//@elements.0/@experiments.0/@goal.0">
+        <subhypotheses name="H101" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.0 //@elements.0/@experiments.0/@dependentVariable.0" levels="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.0/@level.0"/>
+      </hypotheses>
+      <hypotheses name="H11" description="The test execution effort using ST is better than using the GT " type="alternative" fromGoal="//@elements.0/@experiments.0/@goal.0">
+        <subhypotheses name="H111" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.0 //@elements.0/@experiments.0/@dependentVariable.0" levels="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.0/@level.0" operator="&lt;="/>
+      </hypotheses>
+      <hypotheses name="H20" description="The number of terminated CRs using ST is the same compared with the GT" fromGoal="//@elements.0/@experiments.0/@goal.0">
+        <subhypotheses name="H201" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.1 //@elements.0/@experiments.0/@dependentVariable.1" levels="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.0/@level.0"/>
+      </hypotheses>
+      <hypotheses name="H21" description="The number of terminated CRs using ST is the same compared with the GT" type="alternative" fromGoal="//@elements.0/@experiments.0/@goal.0">
+        <subhypotheses name="H211" dependentVariable="//@elements.0/@experiments.0/@dependentVariable.1 //@elements.0/@experiments.0/@dependentVariable.1" levels="//@elements.0/@experiments.0/@factor.0/@level.1 //@elements.0/@experiments.0/@factor.0/@level.0" operator=">="/>
+      </hypotheses>
+      <parameter variable="SPLComplexity" value="low"/>
+      <parameter variable="ParticipantLevel" value="Undergraduating Students"/>
+      <dependentVariable name="TestExecutionTime" description="Test execution time for each test in the Test Suite" metrics="//@elements.0/@metrics.4 //@elements.0/@metrics.5 //@elements.0/@metrics.6 //@elements.0/@metrics.7"/>
+      <dependentVariable name="NumberofCR" description="Number of terminated CR" metrics="//@elements.0/@metrics.0 //@elements.0/@metrics.1 //@elements.0/@metrics.2 //@elements.0/@metrics.3"/>
+      <factor name="TestTechnique" isDesiredVariation="True">
+        <level name="Generic"/>
+        <level name="Specific"/>
+      </factor>
+      <factor name="Feature" isDesiredVariation="False">
+        <level name="F1"/>
+        <level name="F2"/>
+      </factor>
+      <factor name="Participants" isDesiredVariation="False">
+        <level name="Participant1"/>
+        <level name="Participant2"/>
+      </factor>
+      <Technique>ANOVA</Technique>
+      <Technique>Others</Technique>
+    </experiments>
+    <questionnaire name="ExperimentFeedback" questionnaireType="Post">
+      <question name="Q1_Scholling" description="What is your scholling:" type="ComboBox">
+        <alternatives description="Undergraduate student"/>
+        <alternatives description="Graduate"/>
+        <alternatives description="Graduate student"/>
+        <alternatives description="Master"/>
+      </question>
+      <question name="Q2Researchtheme" description="What is your research theme?"/>
+      <question name="Q3ExperienceTest" description="Have you ever worked as a software tester?" type="ComboBox" req="1">
+        <alternatives description="Yes"/>
+        <alternatives description="No"/>
+      </question>
+      <question name="Q4ExperienceBlackBoxTests" description="If yes, have you already worked with black-box tests &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(based on use case specifications)?" type="ComboBox">
+        <alternatives description="Yes"/>
+        <alternatives description="No"/>
+      </question>
+      <question name="Q5TestExperienceDetails" description="Describe your previous experience working with tests:" type="ParagraphText"/>
+    </questionnaire>
+    <questionnaire name="Scholling">
+      <question name="Nome" description="Qual seu nome:"/>
+      <question name="GraudeEscolaridade" description="Qual o grau de escolaridade:" type="ComboBox">
+        <alternatives description="Gradua&#xe7;&#xe3;o Em Andamento"/>
+        <alternatives description="Gradua&#xe7;&#xe3;o Completa"/>
+        <alternatives description="Mestrado Incompleto"/>
+        <alternatives description="Mestrado Completo"/>
+      </question>
+      <question name="Q1ExperienciaTestes" description="J&#xe1; trabalhou ou teve experi&#xea;ncia com testes de software?" type="ComboBox" req="1">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+      <question name="Q2DetalhesExperienciaTestes" description="Se sim, relate brevemente sua experi&#xea;ncia?" type="ComboBox">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+      <question name="Q3DisciplinaLPS" description="J&#xe1; pagou a disciplina de Linhas de Product de Software com Paulo Borba?" type="ComboBox">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+      <question name="Q4FamiliaridadeRGMS" description="Se sim, &#xe9; familiarizado com a linha RGMS e suas funcionalidades?" type="ParagraphText"/>
+      <question name="Q5ComentariosExtra" description="Participou do experimento passado?" type="ComboBox">
+        <alternatives description="Sim"/>
+        <alternatives description="N&#xe3;o"/>
+      </question>
+    </questionnaire>
+  </elements>
+</expDslv2:Model>

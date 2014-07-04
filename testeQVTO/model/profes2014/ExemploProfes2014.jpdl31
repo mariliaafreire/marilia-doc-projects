@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expl:Model xmlns:expl="urn:jbpm.org:jpdl-3.1">
+  <elements><questionnaires name="ExperienceQuestionnaire">
+      <question description="What is your experience in software development?" type="checkBox">
+        <option description="Beginner"/>
+        <option description="Professional"/>
+        <option description="Expert"/>
+      </question>
+      <question description="How long have you - been working/worked - with Java?" type="checkBox">
+        <option description="Less than 1 year"/>
+        <option description="Between 1 and 3 years"/>
+        <option description="More than 3 years"/>
+      </question>
+      <question description="How long have you - been working/worked - with CPP?" type="checkBox">
+        <option description="Less than 1 year"/>
+        <option description="Between 1 and 3 years"/>
+        <option description="More than 3 years"/>
+      </question>
+    </questionnaires><plan>
+      <goals id="G1" description="To investigate whether the different languages can influence the development productivity">
+        <hypotheses description="The time to develop an OO System do not depends on the programming language" id="H10" treatment="#//@elements.0/@plan.0/@design/@factors.0/@levels.0 #//@elements.0/@plan.0/@design/@factors.0/@levels.1" dependentVariable="#//@elements.0/@plan.0/@design/@depVariable.0"/>
+        <hypotheses description="The time to develop an OO System depends on the programming language" type="alternative" id="H11" relationOp="different" treatment="#//@elements.0/@plan.0/@design/@factors.0/@levels.0 #//@elements.0/@plan.0/@design/@factors.0/@levels.1" dependentVariable="#//@elements.0/@plan.0/@design/@depVariable.0"/>
+      </goals>
+      <design>
+        <factors name="ProgammingLanguage">
+          <levels name="Java"/>
+          <levels name="CPlusPlus"/>
+        </factors>
+        <factors name="System">
+          <levels name="Phonebook"/>
+          <levels name="EventManagement"/>
+        </factors>
+        <factors name="Participants">
+          <levels name="Participant1"/>
+          <levels name="Participant2"/>
+        </factors>
+        <parameters key="ParticipantLevel" value="Undergraduating Students"/>
+        <depVariable measureBy="#//@elements.0/@metrics.5 #//@elements.0/@metrics.12 #//@elements.0/@metrics.8 #//@elements.0/@metrics.9 #//@elements.0/@metrics.0 #//@elements.0/@metrics.6 #//@elements.0/@metrics.10 #//@elements.0/@metrics.1 #//@elements.0/@metrics.13 #//@elements.0/@metrics.14 #//@elements.0/@metrics.2 #//@elements.0/@metrics.4" name="ReplyTime" description="Time to do each process development phase"/>
+        <depVariable measureBy="#//@elements.0/@metrics.11 #//@elements.0/@metrics.3 #//@elements.0/@metrics.15 #//@elements.0/@metrics.7" name="CodeDeffect" description="Number of Defects found in the System during tests"/>
+      </design>
+    </plan>
+    <metrics name="ProjectTime" description="Calculate the duration of tasks related to project the useCase" relatesTo="#//@elements.0/@processDefinition.0" refname=""/><metrics name="CodeTime" description="Calculate the duration of tasks related to implement the useCase" relatesTo="#//@elements.0/@processDefinition.0" refname=""/><metrics name="TestTime" description="Calculate the duration of tasks related to test the useCase" relatesTo="#//@elements.0/@processDefinition.0" refname=""/><metrics name="CodeDefect" description="Calculate the number of defects found in the UseCase code" type="collectedData" relatesTo="#//@elements.0/@processDefinition.0" refname=""/><metrics name="ProjectTime2" description="Calculate the duration of tasks related to project the useCase" relatesTo="#//@elements.0/@processDefinition.1" refname=""/><metrics name="CodeTime2" description="Calculate the duration of tasks related to implement the useCase" relatesTo="#//@elements.0/@processDefinition.1" refname=""/><metrics name="TestTime2" description="Calculate the duration of tasks related to test the useCase" relatesTo="#//@elements.0/@processDefinition.1" refname=""/><metrics name="CodeDefect2" description="Calculate the number of defects found in the UseCase code" type="collectedData" relatesTo="#//@elements.0/@processDefinition.1" refname=""/><metrics name="ProjectTime3" description="Calculate the duration of tasks related to project the useCase" relatesTo="#//@elements.0/@processDefinition.2" refname=""/><metrics name="CodeTime3" description="Calculate the duration of tasks related to implement the useCase" relatesTo="#//@elements.0/@processDefinition.2" refname=""/><metrics name="TestTime3" description="Calculate the duration of tasks related to test the useCase" relatesTo="#//@elements.0/@processDefinition.2" refname=""/><metrics name="CodeDefect3" description="Calculate the number of defects found in the UseCase code" type="collectedData" relatesTo="#//@elements.0/@processDefinition.2" refname=""/><metrics name="ProjectTime4" description="Calculate the duration of tasks related to project the useCase" relatesTo="#//@elements.0/@processDefinition.3" refname=""/><metrics name="CodeTime4" description="Calculate the duration of tasks related to implement the useCase" relatesTo="#//@elements.0/@processDefinition.3" refname=""/><metrics name="TestTime4" description="Calculate the duration of tasks related to test the useCase" relatesTo="#//@elements.0/@processDefinition.3" refname=""/><metrics name="CodeDefect4" description="Calculate the number of defects found in the UseCase code" type="collectedData" relatesTo="#//@elements.0/@processDefinition.3" refname=""/><expl:process-definition name="ComparisonProcessJavaPhoneBook" quantity="4">
+    <expl:start-state name="Starting">
+        <expl:transition name="startTransitionPhoneBook_UseCaseProject" to="PhoneBook_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment/>
+      </expl:swimlane>
+      <expl:task-node name="PhoneBook_UseCaseProject" description="Create the design of use cases">
+        <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_ClassDiagram" type="output" description="Class Diagram"/>
+        <artefacts name="PhoneBook_PrototypeInterface" type="output" description="Prototype of interface"/>
+        <metrics/>
+        <metrics/>
+        <metrics/>
+        <expl:transition name="PhoneBook_UseCaseProject_Transition" to="PhoneBook_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTimeActionHandler" name="ProjectTime" ref-name="ProjectTime"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="PhoneBook_ImplementUseCase" description="Implementation of Use Cases">
+        <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+        <artefacts name="PhoneBook_PrototypeInterface" type="input" description="Prototype of interface"/>
+        <artefacts name="PhoneBook_JavaUseCaseCode" type="output" description="Use Cases Java Code"/>
+        <expl:transition name="PhoneBook_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTimeActionHandler" name="CodeTime" ref-name="CodeTime"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <artefacts name="PhoneBook_JavaUseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_JavaUseCaseCode" type="input" description="Use Cases Java Code"/>
+        <artefacts name="PhoneBook_JavaTestCase" type="output" description="Specification of a set of tests"/>
+        <artefacts name="PhoneBook_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        <metrics name="CodeDefect"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTimeActionHandler" name="TestTime" ref-name="TestTime"/>
+        </expl:event>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="ComparisonProcessCPPPhoneBook" quantity="4">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionPhoneBook_UseCaseProject" to="PhoneBook_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment/>
+      </expl:swimlane>
+      <expl:task-node name="PhoneBook_UseCaseProject" description="Create the design of use cases">
+        <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_ClassDiagram" type="output" description="Class Diagram"/>
+        <artefacts name="PhoneBook_PrototypeInterface" type="output" description="Prototype of interface"/>
+        <expl:transition name="PhoneBook_UseCaseProject_Transition" to="PhoneBook_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTime2ActionHandler" name="ProjectTime2" ref-name="ProjectTime2"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="PhoneBook_ImplementUseCase" description="Implementation of Use Cases">
+        <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+        <artefacts name="PhoneBook_PrototypeInterface" type="input" description="Prototype of interface"/>
+        <artefacts name="PhoneBook_CPPUseCaseCode" type="output" description="Use Cases CPP Code"/>
+        <metrics name="CodeDefect2"/>
+        <expl:transition name="PhoneBook_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTime2ActionHandler" name="CodeTime2" ref-name="CodeTime2"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Cases">
+        <artefacts name="PhoneBook_UseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="PhoneBook_CPPUseCaseCode" type="input" description="Use Cases CPP Code"/>
+        <artefacts name="PhoneBook_CPPTestCase" type="output" description="Specification of a set of  CPP tests"/>
+        <artefacts name="PhoneBook_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        <metrics name="CodeDefect2"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTime2ActionHandler" name="TestTime2" ref-name="TestTime2"/>
+        </expl:event>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="ComparisonProcessJavaEventManagement" quantity="4">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionEventManagement_UseCaseProject" to="EventManagement_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment/>
+      </expl:swimlane>
+      <expl:task-node name="EventManagement_UseCaseProject" description="Create the design of use cases">
+        <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_ClassDiagram" type="output" description="Class Diagram"/>
+        <artefacts name="EventManagement_PrototypeInterface" type="output" description="Prototype of interface"/>
+          <expl:transition name="EventManagement_UseCaseProject_Transition" to="EventManagement_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTime3ActionHandler" name="ProjectTime3" ref-name="ProjectTime3"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="EventManagement_ImplementUseCase" description="Implementation of Use Cases">
+        <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+        <artefacts name="EventManagement_PrototypeInterface" type="input" description="Prototype of interface"/>
+        <artefacts name="EventManagement_JavaUseCaseCode" type="output" description="Use Cases Java Code"/>
+        <metrics name="CodeDefect3"/>
+        <expl:transition name="EventManagement_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTime3ActionHandler" name="CodeTime3" ref-name="CodeTime3"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <artefacts name="EventManagement_JavaUseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_JavaTestCase" type="output" description="Specification of a set of tests"/>
+        <artefacts name="EventManagement_JavaUseCaseCode" type="input" description="Use Cases Java Code"/>
+        <artefacts name="EventManagement_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        <metrics name="CodeDefect3"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTime3ActionHandler" name="TestTime3" ref-name="TestTime3"/>
+        </expl:event>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition><expl:process-definition name="ComparisonProcessCPPEventManagement" quantity="4">
+      <expl:start-state name="Starting">
+        <expl:transition name="startTransitionEventManagement_UseCaseProject" to="EventManagement_UseCaseProject"/>
+      </expl:start-state>
+      <expl:end-state name="End"/>
+      <expl:swimlane>
+        <expl:assignment/>
+      </expl:swimlane>
+      <expl:task-node name="EventManagement_UseCaseProject" description="Create the design of use cases">
+        <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_ClassDiagram" type="output" description="Class Diagram"/>
+        <artefacts name="EventManagement_PrototypeInterface" type="output" description="Prototype of interface"/>
+        <expl:transition name="EventManagement_UseCaseProject_Transition" to="EventManagement_ImplementUseCase"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.ProjectTime4ActionHandler" name="ProjectTime4" ref-name="ProjectTime4"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="EventManagement_ImplementUseCase" description="Implementation of Use Cases">
+        <artefacts name="ClassDiagram" type="input" description="Class Diagram"/>
+        <artefacts name="EventManagement_PrototypeInterface" type="input" description="Prototype of interface"/>
+        <artefacts name="EventManagement_CPPUseCaseCode" type="output" description="Use Cases CPP Code"/>
+        <metrics name="CodeDefect4"/>
+        <expl:transition name="EventManagement_ImplementUseCase_Transition" to="UseCaseTest"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.CodeTime4ActionHandler" name="CodeTime4" ref-name="CodeTime4"/>
+        </expl:event>
+      </expl:task-node>
+      <expl:task-node name="UseCaseTest" description="Perform Test of Use Case">
+        <artefacts name="EventManagement_UseCaseSpecfication" type="input" description="Description of Use Cases"/>
+        <artefacts name="EventManagement_CPPTestCase" type="output" description="Specification of a set of  CPP test"/>
+        <artefacts name="EventManagement_CPPUseCaseCode" type="input" description="Use Cases CPP Code"/>
+        <artefacts name="EventManagement_TestLog" type="output" description="Report that is captured during a run of tests"/>
+        <metrics name="CodeDefect4"/>
+        <expl:event type="task-end">
+          <expl:action class="br.ufrn.dimap.ppgsc.TestTime4ActionHandler" name="TestTime4" ref-name="TestTime4"/>
+        </expl:event>
+        <expl:transition name="UseCaseTesttransition" to="End"/>
+      </expl:task-node>
+    </expl:process-definition></elements>
+</expl:Model>

@@ -21,22 +21,27 @@ public class ExpDslv2StandaloneSetup extends ExpDslv2StandaloneSetupGenerated {
 	}
 	
 	public static void main(String args[]){
+		ExpDslv2StandaloneSetup expDslExecutor = new ExpDslv2StandaloneSetup();
+		expDslExecutor.execute("ExemploProfes2014.expdsl", "ExemploProfes2014.xmi");
+	}
+
+	public void execute(String expDSLPath, String xmiPath) {
 		Injector injector = new ExpDslv2StandaloneSetup().createInjectorAndDoEMFRegistration();
 		
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		
-		URI uri = URI.createURI("ExemploProfes2014.expdsl");
+		URI uri = URI.createURI(expDSLPath);
 		// Resource xtextResource = resourceSet.createResource(uri);
 		Resource xtextResource = resourceSet.getResource(uri, true);
 		
 		EcoreUtil.resolveAll(xtextResource);
 		
-		Resource xmiResource = resourceSet.createResource(URI.createURI("ExemploProfes2014.xmi"));
+		Resource xmiResource = resourceSet.createResource(URI.createURI(xmiPath));
 		xmiResource.getContents().add(xtextResource.getContents().get(0));
 		try {
 			xmiResource.save(null);
 		} catch (IOException e) {
 			e.printStackTrace();
-	}
+		}
 	}
 }

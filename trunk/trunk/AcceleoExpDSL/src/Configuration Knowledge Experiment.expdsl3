@@ -1,0 +1,325 @@
+Experiment ConfigurationKnowledge "Configuration Knowledge Experiment" 
+
+Experimental Design
+
+Authorship  {
+	CiriloElder "Elder Cirilo"
+	NunesIngrid "Ingrid Nunes"
+	GarciaAlessandro "Alessandro Garcia"
+	LucenaCarlos "Carlos J.P. de Lucena"
+}
+
+Abstract {
+	"An empirical study to evaluate and compare three techniques for configuration knowledge specification.
+	 Each of them is centered on diferent means to express the configuration contraints: annotations,
+	 general-purpose modeling, and domain-specific modeling"
+}
+
+Keywords {
+	"Software product lines"
+	"Configuration knowledge"
+	"Controlled Experiment"
+}
+
+Goals {
+	G01 "Investigate Whether the different techniques influence the correct comprehension of the con figuration knowledge" 
+}	
+
+Research Hypotheses {
+	H1 "The correct comprehension of the configuration knowledge depends on the different specification techniques." relates to G01
+	H2 "The time to Correctly comprehend the configuration knowledge depends on the different specification techniques." relates to G01
+	H3 "The individual diferences among the expertise of product line engineers do not impact on the correct comprehension of the configuration knowledge." relates to G01
+}
+
+Dependent Variables {
+	CorrectAnswers "Measure of correct answers" Scale Absolute
+	relates to RH H1
+	Time "Time used on the correct answers" Scale Absolute
+	relates to RH H2
+	Expertise "Expertise of the participants" Scale Nominal Range {MuitoBom Bom Regular Ruim MuitoRuim}
+	relates to RH H3
+}
+
+Factors {
+	Technique "Abordagem utilizada" Scale Nominal Range {CIDE PureVariants GenArch}
+	SPL "Linha de produto utilizada" Scale Nominal Range {EShop OLIS Byer}
+	Subjects "Subjects" Scale Nominal Range {P1 P2 P3}
+}
+
+DoE = LS - Latin Square( column = SPL, row = Subjects, treatment = Technique )
+
+
+Context {
+	subjectsLevel "schoolar level of the participants" Scale Ordinal Range {MSc PhD}
+	subjectsKnowledge "schoolar level of the participants" Scale Ordinal Range {JAVA XML SPL}
+	trainningTime "participants trainning time" Scale Ordinal Range {OneHour}
+}    
+
+Internal Replication  2     
+        
+Process ByerAgent to SPL.Byer {	
+	Role Participant
+	
+	Task T1 description "To which feature(s) the goal CheckStoreStock is related?" to T2 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T2 description "How many plans are mapped to the Pick up at Store feature?" to T3 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T3 description "How many plans are mapped to the Pick up at Store feature?" to T4 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T4 description "Which variability granularities are found in the Buyer Agent SPL?" to T5 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T5 description "Which implementation asset(s) is related to the Buy capability?" to T6 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T6 description "Which plan(s) has its(their) behavior changed because of the Credit Card feature?" to T7 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T7 description "To which belief(s), goal(s) and plan(s) is the SearchStore capability related?" to T8 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T8 description "On which capability(ies) the Store Selection Strategy feature impact?" to T9 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T9 description "Which plan(s) related to the Pick Up At Store feature is part of the SearchStores capability?" to T10 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	} 
+	Task T10 description "If the pay goal were optional, which plan(s) would also be optional?" to T11 {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	}
+	Task T11 description "If the payment process becomes optional in the next version of the SPL, which implementation 
+						asset(s) must be changed (if any)?" {	
+		artefacts SPLCode description "SPL - ByerAgent" type input
+		field Answer "Answer"
+	}
+}
+
+Process OLIS to SPL.OLIS{	
+	Role Participant
+	
+	Task T1 description "On which agent(s) and/or capability(ies) the Event Type feature impact, (i.e. agent(s), 
+						capability(ies) that are related to this feature or whose internal elements are related to it)?" to T2 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	} 
+	Task T2 description "How many code assets is the Configure User Preferences feature related to (either complete 
+						files or fragments, do not count packages)?" to T3 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	} 
+	Task T3 description "How many code assets is the Event Scheduler feature related to (either complete files or 
+						fragments, do not count packages)?" to T4 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}
+	Task T4 description "Which plan(s) is related to the EventScheduler capability?" to T5 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}  
+	Task T5 description "Which Spring bean(s) is related to the Travel feature (id of the bean not its 
+						implementation)?" to T6 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}  
+	Task T6 description "If the Configure User Preferences is not selected, which is the implementation 
+						used for the UserPreferencesAbstractFactory bean?" to T7 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}  
+	Task T7 description "In which code asset(s) is the information that the Weather agent must be started?" to T8 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	} 
+	Task T8 description "In which code asset(s) is the information of the ontologies used in the derived product?" to T9 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}
+	Task T9 description "Which domain entity(ies) is related to the Academic feature?" to T10 {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}  
+	Task T10 description "If the WeatherOptionsAction, functionality that allows to configure the WeatherService,
+						were related to an optional subfeature of the Weather feature, which existing code 
+						asset(s) (either complete files or fragments, do not count packages) would be mapped to
+						this new optional subfeature?" {	
+		artefacts SPLCode description "SPL - OLIS" type input
+		field Answer "Answer"
+	}  
+}
+	
+Process Eshop to SPL.EShop {	
+	Role Participant
+	
+	Task T1 description "Which Spring Bean implements the Email feature?" to T2 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T2 description "Which Bundles are related to the Browsing feature?" to T3 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T3 description "Which Bundles are related to the Browsing feature?" to T4 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T4 description "Which Entities implements the List Orders feature?" to T5 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}    
+	Task T5 description "How many reusable assets (including files and code fragments) implements the Product Navigation Feature?" to T6 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}  
+	Task T6 description "To which View and Business (Spring MVC and Spring, respectively) elements the Edit Feature is related to?" to T7 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	} 
+	Task T7 description "In which elements the My List feature impact?" to T8 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T8 description "If the shipAddress2 attribute related with Different Address feature were removed, how many reusable assets (code fragments) must be removed?" to T9 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T9 description "How many code assets is the Edit feature related to (files and code fragments)?" to T10 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T10 description "How may reusable assets is the Different Address feature related to (files and code fragments)?" to T11 {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+	Task T11 description "How may reusable assets is the List Order feature related to (files)?" {	
+		artefacts SPLCode description "SPL - Eshop" type input
+		field Answer "Answer"
+	}
+}
+
+Questionnaires 
+Questionnaire GeneralQuestions type Pre
+{
+	Q1ByerJadex {
+		description "Qual sua experiência na utilização do framework Jadex?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q2ByerJadex {
+		description "Qual o tempo de experiência com Jadex?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	Q1OlisJadex {
+		description "Qual sua experiência na utilização do framework Jadex?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q2OlisJadex {
+		description "Qual o tempo de experiência com Jadex?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}	
+	Q3OLISSpring {
+		description "Qual sua experiência na utilização do framework Spring?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q4OlisSpring {
+		description "Qual o tempo de experiência com Spring?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	Q5OLISStruts {
+		description "Qual sua experiência na utilização do framework Struts?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q6OlisStruts {
+		description "Qual o tempo de experiência com Struts?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	Q7OLISHibernate {
+		description "Qual sua experiência na utilização do framework hibernate?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q8OlisHibernate {
+		description "Qual o tempo de experiência com hibernate?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	
+	Q1EShopSpring {
+		description "Qual sua experiência na utilização do framework Spring?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q2EShopSpring {
+		description "Qual o tempo de experiência com Spring?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	Q3EShopSpringMVC {
+		description "Qual sua experiência na utilização do framework SpringMVC?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q4EShopSpring {
+		description "Qual o tempo de experiência com SpringMVC?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	Q5EShopSpringOSGi {
+		description "Qual sua experiência na utilização do framework SpringOSGi?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q6EShopSpringOSGi {
+		description "Qual o tempo de experiência com SpringOSGi?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+	Q7EShopiBatis {
+		description "Qual sua experiência na utilização do framework iBatis?"
+		 type SingleChoice
+		 required 1 {"Iniciante" "Profissional" "Especialista"}
+	}
+	Q8EShopiBatis {
+		description "Qual o tempo de experiência com iBatis?"
+		 type SingleChoice
+		 required 1 {"Menos de 1 ano"
+					"Entre 1 e 3"
+					"Mais de 3 anos"}
+	}
+}
+

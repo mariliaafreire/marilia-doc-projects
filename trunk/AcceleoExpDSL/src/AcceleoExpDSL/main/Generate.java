@@ -12,17 +12,25 @@ package AcceleoExpDSL.main;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
+import org.eclipse.acceleo.model.mtl.resource.EMtlResourceFactoryImpl;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Factory;
+import br.ufrn.dimap.ase.dsl.expdslv3.Expdslv3Package;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -123,6 +131,17 @@ public class Generate extends AbstractAcceleoGenerator {
             if (args.length < 2) {
                 System.out.println("Arguments not valid : {model, folder}.");
             } else {
+            	
+            	
+            	Expdslv3Factory f = Expdslv3Factory.eINSTANCE;
+            	f.eClass();
+            	Expdslv3Package p = Expdslv3Package.eINSTANCE;
+            	p.eClass();
+
+            	System.out.println(Expdslv3Package.eNS_URI);
+            	EPackage.Registry.INSTANCE.put(Expdslv3Package.eNS_URI, p);
+
+            	
                 URI modelURI = URI.createFileURI(args[0]);
                 File folder = new File(args[1]);
                 
@@ -163,7 +182,27 @@ public class Generate extends AbstractAcceleoGenerator {
             e.printStackTrace();
         }
     }
-
+    
+    @Override
+    protected URI createTemplateURI(String entry) {
+    	if (entry.startsWith("rsrc:")){
+    		entry = entry.substring(entry.indexOf(":")+1);
+    		
+    		URL url = Generate.class.getProtectionDomain().getCodeSource().getLocation();
+    		File f = new File(url.toExternalForm());
+    		String path = f.getAbsolutePath() + f.getName();
+    		
+    		
+    	
+    		//entry = "jar:file:/C:/Users/Marilia/Desktop/acceleo/javaAcceleo.jar!/" + entry;
+    		entry = path; // + entry;
+    	}
+		if (entry.startsWith("file:") || entry.startsWith("jar:")) { //$NON-NLS-1$ //$NON-NLS-2$ 
+			return URI.createURI(URI.decode(entry));
+		}
+		return URI.createFileURI(URI.decode(entry));
+	}
+    
     /**
      * Launches the generation described by this instance.
      * 
@@ -175,6 +214,8 @@ public class Generate extends AbstractAcceleoGenerator {
      */
     @Override
     public void doGenerate(Monitor monitor) throws IOException {
+    	//System.out.println("Generating...");
+    	//resourceFactoryRegistry.getExtensionToFactoryMap().put("emtl", new EMtlResourceFactoryImpl());
         /*
          * TODO if you wish to change the generation as a whole, override this. The default behavior should
          * be sufficient in most cases. If you want to change the content of this method, do NOT forget to
@@ -198,7 +239,7 @@ public class Generate extends AbstractAcceleoGenerator {
         //        System.err.println(diagnostic.toString());
         //    }
         //}
-
+    	
         super.doGenerate(monitor);
     }
     

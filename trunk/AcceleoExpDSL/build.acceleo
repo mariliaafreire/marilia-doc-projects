@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../br.ufrn.dimap.ase;${target.folder}/../../br.ufrn.dimap.ase.edit;${target.folder}/../../br.ufrn.dimap.ase.editor;${target.folder}/../../br.ufrn.dimap.ase.tests;${target.folder}/../../br.ufrn.dimap.ase.ui;"
+            dependencies="${target.folder}/../../br.ufrn.dimap.ase;${target.folder}/../../br.ufrn.dimap.ase.edit;${target.folder}/../../br.ufrn.dimap.ase.editor;${target.folder}/../../br.ufrn.dimap.ase.tests;${target.folder}/../../br.ufrn.dimap.ase.ui;${target.folder}/../../br.ufrn.dimap.ase.dsl.expdslv3;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>

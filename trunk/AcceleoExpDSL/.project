@@ -3,6 +3,7 @@
 	<name>AcceleoExpDSL</name>
 	<comment></comment>
 	<projects>
+		<project>br.ufrn.dimap.ase.dsl.expdslv3</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
